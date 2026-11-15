@@ -75,9 +75,11 @@ const UserMenu: React.FC = () => {
             <div className="min-w-0">
               <p className="truncate text-sm font-semibold text-slate-900">{user.name}</p>
               <p className="truncate text-xs text-slate-500">{user.email}</p>
-              <div className="mt-1.5">
-                <RoleBadge role={user.role} />
-              </div>
+              {user.role !== 'user' && (
+                <div className="mt-1.5">
+                  <RoleBadge role={user.role} />
+                </div>
+              )}
             </div>
           </div>
           <div className="my-1 h-px bg-slate-100" />

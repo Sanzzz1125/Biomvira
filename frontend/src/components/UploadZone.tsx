@@ -4,7 +4,6 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardPaste,
-  FileText,
   FileUp,
   Loader2,
   Lock,
@@ -13,64 +12,13 @@ import {
 } from 'lucide-react';
 import { extractReport } from '../services/api';
 import { ExtractionResponse } from '../types';
-import { Alert, Badge, Button, Card, cx } from './ui';
+import { Alert, Button, Card, cx } from './ui';
 
 interface UploadZoneProps {
   onExtractionComplete: (data: ExtractionResponse) => void;
   isLoading: boolean;
   setIsLoading: (val: boolean) => void;
 }
-
-const SAMPLE_REPORTS = [
-  {
-    title: 'Iron & Vitamin D deficiency',
-    lab: 'Dr. Lal PathLabs',
-    profile: 'Female, 26 · Anaemia risk',
-    desc: 'Low Vitamin D (12.4 ng/mL) and Ferritin (8.2 ng/mL), borderline Hemoglobin (10.8 g/dL).',
-    text: `DR. LAL PATHLABS LTD.
-Patient Name: Rahul Sharma         Age: 26 Y / Female     Ref By: Dr. A. K. Verma
-Sample ID: DEL991823               Date: 12-Nov-2026      UHID: 881293812
-
-Test Name                        Result     Unit         Reference Interval
-25-OH Vitamin D (Total)          12.4       ng/mL        30.0 - 100.0
-Serum Ferritin                   8.2        ng/mL        15.0 - 307.0
-Hemoglobin (Hb)                  10.8       g/dL         12.0 - 15.5
-Serum Calcium                    9.4        mg/dL        8.8 - 10.2
-`,
-  },
-  {
-    title: 'Vegan B12 & Folate gap',
-    lab: 'Metropolis Healthcare',
-    profile: 'Female, 24 · Plant-based diet',
-    desc: 'Low Vitamin B12 (145 pg/mL) and borderline Folate (3.6 ng/mL).',
-    text: `METROPOLIS HEALTHCARE LABS
-Patient Name: Priya Nair           Age: 24 Y / Female     Ref By: Dr. S. Rao
-UHID: MET-882193                   Bill No: 20261102
-
-TEST DESCRIPTION                 RESULT     UNITS        BIOLOGICAL REF INTERVAL
-Vitamin B12 (Cobalamin)          145.0      pg/mL        211.0 - 911.0
-Serum Folate (Vit B9)            3.6        ng/mL        4.0 - 20.0
-25-OH Vitamin D                  18.5       ng/mL        30.0 - 100.0
-Total Calcium                    8.9        mg/dL        8.5 - 10.2
-`,
-  },
-  {
-    title: 'Critical anaemia advisory',
-    lab: 'SRL Diagnostics',
-    profile: 'Female, 23 · Severe anaemia',
-    desc: 'Triggers the physician advisory: Hemoglobin 7.4 g/dL and Ferritin 5.8 ng/mL.',
-    text: `SRL DIAGNOSTICS CLINICAL REFERENCE LAB
-Patient Name: Kavita Sharma        Age: 23 Y / Female     Ref By: Dr. M. Sundaram
-UHID: BLR-5521098                  Sample ID: SRL-99812   Date: 12-Nov-2026
-
-Test Description                 Observed   Unit         Biological Ref Interval
-Hemoglobin (Hb)                  7.4        g/dL         12.0 - 15.5
-Serum Ferritin                   5.8        ng/mL        15.0 - 307.0
-25-OH Vitamin D                  8.2        ng/mL        30.0 - 100.0
-Serum Folate                     2.8        ng/mL        4.0 - 20.0
-`,
-  },
-];
 
 export const UploadZone: React.FC<UploadZoneProps> = ({
   onExtractionComplete,
@@ -145,12 +93,6 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleLoadSample = (sampleText: string) => {
-    setMode('text');
-    setRawText(sampleText);
-    handleProcess(undefined, sampleText);
   };
 
   const tabs = [
@@ -341,46 +283,6 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
           </span>
         </div>
       </Card>
-
-      {/* Sample reports */}
-      <section aria-labelledby="samples-heading">
-        <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h3 id="samples-heading" className="text-lg font-semibold">
-              No report handy? Try a sample
-            </h3>
-            <p className="mt-0.5 text-sm text-slate-500">
-              One click loads a realistic report and runs the full flow.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid gap-4 md:grid-cols-3">
-          {SAMPLE_REPORTS.map((sample) => (
-            <button
-              key={sample.title}
-              type="button"
-              disabled={isLoading}
-              onClick={() => handleLoadSample(sample.text)}
-              className="group flex flex-col rounded-xl border border-slate-200 bg-white p-5 text-left shadow-card transition-all hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-card-lg disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
-            >
-              <div className="flex items-center justify-between gap-2">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-600 transition-colors group-hover:bg-brand-50 group-hover:text-brand-700">
-                  <FileText className="h-[18px] w-[18px]" aria-hidden />
-                </span>
-                <Badge>{sample.lab}</Badge>
-              </div>
-              <p className="mt-4 text-[15px] font-semibold text-slate-900">{sample.title}</p>
-              <p className="mt-0.5 text-xs font-medium text-brand-700">{sample.profile}</p>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{sample.desc}</p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
-                Try this report
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
-              </span>
-            </button>
-          ))}
-        </div>
-      </section>
     </div>
   );
 };

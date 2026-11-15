@@ -97,9 +97,11 @@ export const AccountPage: React.FC = () => {
             <Avatar name={user.name} size="lg" />
             <p className="mt-3 text-base font-semibold text-slate-900">{user.name}</p>
             <p className="text-sm text-slate-500">{user.email}</p>
-            <div className="mt-2.5">
-              <RoleBadge role={user.role} />
-            </div>
+            {user.role !== 'user' && (
+              <div className="mt-2.5">
+                <RoleBadge role={user.role} />
+              </div>
+            )}
           </div>
           <dl className="mt-6 space-y-3 border-t border-slate-100 pt-5 text-sm">
             <div className="flex items-center justify-between gap-3">

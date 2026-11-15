@@ -24,9 +24,9 @@ const SaveNotice: React.FC<{ saved: boolean }> = ({ saved }) => {
   if (saved) {
     return (
       <Alert tone="info" icon={<BookmarkCheck className="h-4 w-4" aria-hidden />} className="mx-auto max-w-6xl">
-        Saved to your private history.{' '}
+        All your reports are stored in History.{' '}
         <Link to="/history" className="font-semibold underline-offset-2 hover:underline">
-          View my reports
+          View history
         </Link>
       </Alert>
     );

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { CheckCircle2, Loader2, Sparkles, ShieldCheck, Database, Sliders, Dna } from 'lucide-react';
 import { UserProfile } from '../types';
 
@@ -77,13 +78,25 @@ export const AnalysisLoadingModal: React.FC<AnalysisLoadingModalProps> = ({
     return () => clearInterval(timer);
   }, [isOpen, onAnimationComplete]);
 
+  // Keep the page behind the overlay from scrolling while the analysis runs.
+  useEffect(() => {
+    if (!isOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const currentStageIndex = STAGES.findIndex((s) => progress <= s.threshold);
   const activeIndex = currentStageIndex === -1 ? STAGES.length - 1 : currentStageIndex;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 p-4 backdrop-blur-md animate-fade-in">
+  // Rendered on <body> so the overlay covers the whole window, navbar included (an animated
+  // ancestor would otherwise limit a fixed overlay to the page content area).
+  return createPortal(
+    <div className="fixed inset-0 z-[70] flex items-center justify-center overflow-y-auto bg-slate-900/60 p-4 backdrop-blur-md animate-fade-in">
       <div className="w-full max-w-xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl animate-fade-up">
         {/* Header */}
         <div className="relative border-b border-slate-100 bg-gradient-to-r from-brand-50/70 via-white to-brand-50/30 p-6">
@@ -178,6 +191,7 @@ export const AnalysisLoadingModal: React.FC<AnalysisLoadingModalProps> = ({
           </p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };

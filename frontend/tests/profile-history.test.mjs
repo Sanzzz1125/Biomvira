@@ -205,8 +205,16 @@ test('the application defaults to 25 and sends an edited age through analysis to
   };
   try {
     await act(() => root.render(React.createElement(App)));
-    const sample = [...document.querySelectorAll('button')].find(el => el.textContent.includes('Try this report'));
-    await act(async () => { sample.click(); await new Promise(resolve => setTimeout(resolve, 1500)); });
+    const pasteTab = [...document.querySelectorAll('button')].find(el => el.textContent.includes('Paste text'));
+    await act(() => pasteTab.click());
+    const textarea = document.getElementById('report-text');
+    await act(() => {
+      Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value')
+        .set.call(textarea, '25-OH Vitamin D  12  ng/mL  30 - 100');
+      textarea.dispatchEvent(new window.Event('input', { bubbles: true }));
+    });
+    const extract = [...document.querySelectorAll('button')].find(el => el.textContent.includes('Extract biomarkers'));
+    await act(async () => { extract.click(); await new Promise(resolve => setTimeout(resolve, 1500)); });
     const confirmation = document.querySelector('input[type="checkbox"]');
     await act(() => confirmation.click());
     const next = [...document.querySelectorAll('button')].find(el => el.textContent.trim() === 'Continue');
