@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDisclaimer }) => (
           </button>
         </nav>
       </div>
-      <div className="mt-8 flex flex-col gap-3 border-t border-slate-100 pt-6 text-xs leading-relaxed text-slate-500 md:flex-row md:items-center md:justify-between">
+      <div className="mt-5 flex flex-col gap-3 border-t border-slate-100 pt-4 text-xs leading-relaxed text-slate-500 md:flex-row md:items-center md:justify-between">
         <p>© {new Date().getFullYear()} NutriLens</p>
         <p className="max-w-2xl md:text-right">
           NutriLens is an educational nutrition tool. It does not provide medical diagnosis or treatment.
