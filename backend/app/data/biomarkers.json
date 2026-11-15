@@ -1,0 +1,185 @@
+{
+  "biomarkers": [
+    {
+      "key": "vitamin_d",
+      "display_name": "Vitamin D (25-OH)",
+      "category": "Fat-Soluble Vitamin",
+      "canonical_unit": "ng/mL",
+      "alternate_units": ["nmol/L"],
+      "aliases": [
+        "vitamin d",
+        "vit d",
+        "25-oh vitamin d",
+        "25-oh vit d",
+        "25-hydroxy vitamin d",
+        "25 hydroxycalciferol",
+        "25(oh)d",
+        "total vitamin d"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "severe_deficiency": {"max": 10.0},
+          "low": {"min": 10.0, "max": 19.99},
+          "borderline": {"min": 20.0, "max": 29.99},
+          "normal": {"min": 30.0, "max": 100.0},
+          "high": {"min": 100.01}
+        }
+      },
+      "clinical_warning_threshold": 10.0,
+      "clinical_warning_message": "Vitamin D level is severely depleted (<10 ng/mL). Consult a physician for therapeutic medical guidance.",
+      "target_nutrient_key": "vitamin_d_iu",
+      "absorption_notes": "Vitamin D is fat-soluble. Consuming Vitamin D rich foods with healthy dietary fats improves bioavailability."
+    },
+    {
+      "key": "vitamin_b12",
+      "display_name": "Vitamin B12 (Cobalamin)",
+      "category": "Water-Soluble Vitamin",
+      "canonical_unit": "pg/mL",
+      "alternate_units": ["pmol/L"],
+      "aliases": [
+        "vitamin b12",
+        "vit b12",
+        "b12",
+        "cobalamin",
+        "cyanocobalamin",
+        "serum b12"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "severe_deficiency": {"max": 120.0},
+          "low": {"min": 120.0, "max": 210.99},
+          "borderline": {"min": 211.0, "max": 299.99},
+          "normal": {"min": 300.0, "max": 900.0},
+          "high": {"min": 900.01}
+        }
+      },
+      "clinical_warning_threshold": 120.0,
+      "clinical_warning_message": "Vitamin B12 level is severely low (<120 pg/mL). Neurological or hematological symptoms require clinical evaluation.",
+      "target_nutrient_key": "vitamin_b12_mcg",
+      "absorption_notes": "B12 requires stomach acid and intrinsic factor. Strict vegans must rely on fortified foods or discuss supplementation with a doctor."
+    },
+    {
+      "key": "folate",
+      "display_name": "Folate (Vitamin B9)",
+      "category": "Water-Soluble Vitamin",
+      "canonical_unit": "ng/mL",
+      "alternate_units": ["nmol/L"],
+      "aliases": [
+        "folate",
+        "folic acid",
+        "serum folate",
+        "vitamin b9",
+        "vit b9"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "severe_deficiency": {"max": 2.0},
+          "low": {"min": 2.0, "max": 3.99},
+          "borderline": {"min": 4.0, "max": 5.39},
+          "normal": {"min": 5.4, "max": 20.0},
+          "high": {"min": 20.01}
+        }
+      },
+      "clinical_warning_threshold": 2.0,
+      "clinical_warning_message": "Folate level is critically low (<2 ng/mL). Consult your healthcare provider to check for megaloblastic anemia.",
+      "target_nutrient_key": "folate_mcg",
+      "absorption_notes": "Heat destroys folate easily during prolonged cooking. Prefer lightly steamed greens or raw salads when feasible."
+    },
+    {
+      "key": "ferritin",
+      "display_name": "Serum Ferritin (Iron Storage)",
+      "category": "Mineral Storage",
+      "canonical_unit": "ng/mL",
+      "alternate_units": ["µg/L", "ug/L"],
+      "aliases": [
+        "ferritin",
+        "serum ferritin",
+        "s. ferritin",
+        "iron storage"
+      ],
+      "standard_intervals": {
+        "male": {
+          "severe_deficiency": {"max": 12.0},
+          "low": {"min": 12.0, "max": 23.99},
+          "borderline": {"min": 24.0, "max": 39.99},
+          "normal": {"min": 40.0, "max": 336.0},
+          "high": {"min": 336.01}
+        },
+        "female": {
+          "severe_deficiency": {"max": 10.0},
+          "low": {"min": 10.0, "max": 14.99},
+          "borderline": {"min": 15.0, "max": 29.99},
+          "normal": {"min": 30.0, "max": 307.0},
+          "high": {"min": 307.01}
+        }
+      },
+      "clinical_warning_threshold": 10.0,
+      "clinical_warning_message": "Ferritin stores are critically depleted (<10-12 ng/mL), indicating iron deficiency. Consult a doctor regarding underlying causes and therapeutic iron.",
+      "target_nutrient_key": "iron_mg",
+      "absorption_notes": "Non-heme plant iron requires Vitamin C for absorption. Avoid tea, coffee, and dairy within 1 hour of iron-rich meals."
+    },
+    {
+      "key": "hemoglobin",
+      "display_name": "Hemoglobin (Hb)",
+      "category": "Hematology",
+      "canonical_unit": "g/dL",
+      "alternate_units": ["g/L"],
+      "aliases": [
+        "hemoglobin",
+        "haemoglobin",
+        "hb",
+        "hgb",
+        "total hemoglobin",
+        "blood hemoglobin"
+      ],
+      "standard_intervals": {
+        "male": {
+          "severe_deficiency": {"max": 8.0},
+          "low": {"min": 8.0, "max": 13.19},
+          "borderline": {"min": 13.2, "max": 13.79},
+          "normal": {"min": 13.8, "max": 17.2},
+          "high": {"min": 17.21}
+        },
+        "female": {
+          "severe_deficiency": {"max": 8.0},
+          "low": {"min": 8.0, "max": 11.99},
+          "borderline": {"min": 12.0, "max": 12.49},
+          "normal": {"min": 12.5, "max": 15.5},
+          "high": {"min": 15.51}
+        }
+      },
+      "clinical_warning_threshold": 8.0,
+      "clinical_warning_message": "Hemoglobin is critically low (<8 g/dL), indicating severe anemia. Prompt clinical evaluation is advised.",
+      "target_nutrient_key": "iron_mg",
+      "absorption_notes": "Hemoglobin synthesis requires both Iron and Folate/B12. Ensure a balance of folate-rich leafy greens and iron sources."
+    },
+    {
+      "key": "calcium",
+      "display_name": "Serum Calcium",
+      "category": "Mineral",
+      "canonical_unit": "mg/dL",
+      "alternate_units": ["mmol/L"],
+      "aliases": [
+        "calcium",
+        "serum calcium",
+        "s. calcium",
+        "total calcium",
+        "ca"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "severe_deficiency": {"max": 7.5},
+          "low": {"min": 7.5, "max": 8.49},
+          "borderline": {"min": 8.5, "max": 8.79},
+          "normal": {"min": 8.8, "max": 10.2},
+          "high": {"min": 10.21}
+        }
+      },
+      "clinical_warning_threshold": 7.5,
+      "clinical_warning_message": "Serum Calcium is significantly abnormal (<7.5 mg/dL). Immediate medical consultation is strongly recommended.",
+      "target_nutrient_key": "calcium_mg",
+      "absorption_notes": "Adequate Vitamin D is essential for the gut to absorb calcium efficiently."
+    }
+  ]
+}
+
