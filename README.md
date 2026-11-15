@@ -146,8 +146,6 @@ Default limits are 10 MiB, 20 PDF pages, 20 million image pixels and 90 seconds 
 
 Review every extracted value and unit, resolve duplicates, and confirm the verification checkbox before continuing. Missing units, qualified bounds and conflicts are surfaced rather than silently corrected. Gemini receives only allowlisted clinical tokens, never raw images; this intentionally limits recovery of ambiguous rows.
 
-See [implementation details, actual test results and manual verification](EXTRACTION_CHANGES.md) for the complete change inventory, limitations and acceptance checklist.
-
 
 ## Age input
 
@@ -180,5 +178,3 @@ Frontend regression tests: `cd frontend && npm test`.
 
 After the first deploy, create the owner from your laptop against the production database:
 `cd backend && DATABASE_URL="<neon url>" python -m app.cli create-owner --email you@example.com --name "Your Name"`.
-
-See [extraction changes](EXTRACTION_CHANGES.md) and the earlier [privacy containment report](SECURITY_FIXES.md) for history.
