@@ -10,6 +10,7 @@ from fastapi.staticfiles import StaticFiles
 
 from app.api.v1.router import api_router
 from app.config import settings
+from app import keep_awake
 from app.migrate import run_migrations
 
 
@@ -17,7 +18,10 @@ from app.migrate import run_migrations
 async def lifespan(_app: FastAPI):
     if settings.auto_migrate:
         run_migrations()
+    pinger = keep_awake.start()
     yield
+    if pinger:
+        pinger.cancel()
 
 
 app = FastAPI(

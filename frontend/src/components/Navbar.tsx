@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, History, LayoutDashboard, LogOut, ScanLine, Settings, ShieldCheck } from 'lucide-react';
-import { useAuth } from '../auth/AuthContext';
+import { useAuth, wasSignedIn } from '../auth/AuthContext';
 import { Avatar, Logo, RoleBadge, Skeleton } from './brand';
 import { useToast } from './Toast';
 import { cx } from './ui';
@@ -158,7 +158,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
 
           <span className="mx-1 hidden h-6 w-px bg-slate-200 sm:block" aria-hidden />
 
-          {!ready ? (
+          {!ready && wasSignedIn() ? (
             <Skeleton className="h-8 w-8 rounded-full" />
           ) : user ? (
             <UserMenu />

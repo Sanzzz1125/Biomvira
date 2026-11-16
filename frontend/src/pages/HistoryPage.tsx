@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, FileText, Lock, Plus, Stethoscope, Trash2 } from 'lucide-react';
-import { useAuth } from '../auth/AuthContext';
+import { useAuth, wasSignedIn } from '../auth/AuthContext';
 import { EmptyState, PageSpinner, Skeleton } from '../components/brand';
 import { ConfirmDialog } from '../components/Modal';
 import { useToast } from '../components/Toast';
@@ -216,6 +216,6 @@ const ReportList: React.FC = () => {
 
 export const HistoryPage: React.FC = () => {
   const { user, ready } = useAuth();
-  if (!ready) return <PageSpinner />;
+  if (!ready && wasSignedIn()) return <PageSpinner />;
   return user ? <ReportList /> : <GuestPrompt />;
 };
