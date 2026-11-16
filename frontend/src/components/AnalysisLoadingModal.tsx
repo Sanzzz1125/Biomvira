@@ -12,32 +12,32 @@ interface AnalysisLoadingModalProps {
 
 const STAGES = [
   {
-    title: 'Standardizing Units & Reference Ranges',
-    detail: 'Converting units to canonical metrics and binding laboratory-specific biological reference intervals.',
+    title: 'Comparing your results with healthy ranges',
+    detail: 'Units are standardised and each result is checked against your lab\'s range or clinical guidelines.',
     icon: Sliders,
     threshold: 20,
   },
   {
-    title: 'Scanning ICMR-NIN Food Database',
-    detail: 'Querying 180+ Indian foods from the ICMR-NIN food composition tables, per typical serving.',
+    title: 'Finding the right Indian foods',
+    detail: 'Searching 180+ Indian foods from the ICMR-NIN food composition tables.',
     icon: Database,
     threshold: 45,
   },
   {
-    title: 'Enforcing Dietary & Allergen Safety Guardrails',
-    detail: 'Filtering for diet preferences and zero-tolerance allergen exclusions.',
+    title: 'Matching your diet and allergies',
+    detail: 'Only foods that suit your diet, without anything you excluded.',
     icon: ShieldCheck,
     threshold: 70,
   },
   {
-    title: 'Computing Absorption Synergies & Inhibitors',
-    detail: 'Calculating bioavailability catalysts (Vit C + Iron) and spacing dietary antagonists (polyphenols/tannins).',
+    title: 'Adding helpful habits',
+    detail: 'Tips that help your body use these foods, such as pairing iron foods with vitamin C.',
     icon: Dna,
     threshold: 90,
   },
   {
-    title: 'Formulating Clinical Narrative & Food Protocol',
-    detail: 'Synthesizing evidence-grounded dietary action plan and clinical safety advisories.',
+    title: 'Preparing your plan',
+    detail: 'Your food plan, notes on each result, and anything to discuss with a doctor.',
     icon: Sparkles,
     threshold: 100,
   },
@@ -107,10 +107,10 @@ export const AnalysisLoadingModal: React.FC<AnalysisLoadingModalProps> = ({
               </span>
               <div>
                 <h3 className="text-lg font-bold text-slate-900">
-                  Nutritional Intelligence Engine
+                  Preparing your nutrition plan
                 </h3>
                 <p className="text-xs text-slate-500">
-                  Analyzing {markerCount} biomarkers for a{' '}
+                  {markerCount} results for a{' '}
                   <span className="font-semibold text-brand-700 capitalize">
                     {profile.diet_type.replace('_', ' ')}
                   </span>{' '}
@@ -187,7 +187,7 @@ export const AnalysisLoadingModal: React.FC<AnalysisLoadingModalProps> = ({
         {/* Footer info banner */}
         <div className="border-t border-slate-100 bg-slate-50 px-6 py-3 text-center">
           <p className="text-xs text-slate-500">
-            Evaluating laboratory values strictly against ICMR-NIN nutritional composition guidelines.
+            Food data: ICMR-NIN Indian Food Composition Tables. NutriLens does not replace medical advice.
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { WifiOff } from 'lucide-react';
+import { WAKE_EVENT } from '../services/http';
 
 /**
  * The free API server sleeps when idle and takes up to a minute to wake. Ping it as soon as the
@@ -31,9 +32,17 @@ export const ServerWakeNotice: React.FC = () => {
       }
     };
     ping(0);
+    // Requests made later (e.g. logging in after the server fell asleep again) report while they wait for it.
+    const onWake = (event: Event) => {
+      if (cancelled) return;
+      window.clearTimeout(slow);
+      setState((event as CustomEvent<boolean>).detail ? 'waking' : 'ok');
+    };
+    window.addEventListener(WAKE_EVENT, onWake);
     return () => {
       cancelled = true;
       window.clearTimeout(slow);
+      window.removeEventListener(WAKE_EVENT, onWake);
     };
   }, []);
 
@@ -55,7 +64,7 @@ export const ServerWakeNotice: React.FC = () => {
         </p>
         <p className="mt-0.5 text-sm leading-relaxed text-slate-600">
           {state === 'waking'
-            ? 'After a quiet period this can take up to a minute. You can keep browsing.'
+            ? 'After a quiet period this can take up to a minute. Your request will continue automatically.'
             : 'Please check your connection and refresh the page in a moment.'}
         </p>
       </div>

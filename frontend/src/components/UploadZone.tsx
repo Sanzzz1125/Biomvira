@@ -89,7 +89,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
       ]);
       onExtractionComplete(result);
     } catch (err: any) {
-      setError(err.message || 'Biomarker extraction failed. Please review report layout.');
+      setError(err.message || 'We could not read this report. Try a clearer copy, or paste the report text instead.');
     } finally {
       setIsLoading(false);
     }
@@ -147,7 +147,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
               <div className="min-w-0 flex-1">
                 <div className="flex items-center gap-2">
                   <p className="text-sm font-semibold text-brand-900">
-                    De-identifying PII &amp; Extracting Biomarkers…
+                    Reading your report…
                   </p>
                   <span className="inline-flex items-center gap-1 rounded bg-brand-100/80 px-1.5 py-0.5 text-[10px] font-medium text-brand-800">
                     <ShieldCheck className="h-3 w-3" /> Privacy Scrub Active
@@ -238,7 +238,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
                   loading={isLoading}
                   iconRight={<ArrowRight className="h-4 w-4" aria-hidden />}
                 >
-                  {isLoading ? 'Analysing report…' : 'Extract biomarkers'}
+                  {isLoading ? 'Reading report…' : 'Analyse my report'}
                 </Button>
               </div>
             </>
@@ -269,7 +269,7 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
                   loading={isLoading}
                   iconRight={<ArrowRight className="h-4 w-4" aria-hidden />}
                 >
-                  {isLoading ? 'Analysing text…' : 'Extract biomarkers'}
+                  {isLoading ? 'Reading text…' : 'Analyse my report'}
                 </Button>
               </div>
             </>

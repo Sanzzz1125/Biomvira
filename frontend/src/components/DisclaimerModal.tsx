@@ -10,13 +10,13 @@ interface DisclaimerModalProps {
 const POINTS = [
   {
     icon: FileCheck2,
-    title: 'Food-first guidance',
-    text: 'Recommendations are based on ICMR-NIN nutrient data and focus on foods. They never change medical treatment.',
+    title: 'Food plans only where diet helps',
+    text: 'Results such as iron, vitamins, sugar, cholesterol, protein and uric acid get Indian food plans based on ICMR-NIN data. Thyroid, electrolytes and results that point to kidney disease are referred to a doctor instead. NutriLens never changes medical treatment.',
   },
   {
     icon: AlertTriangle,
     title: 'Safety alerts',
-    text: 'Values below critical thresholds (for example Hb below 8 g/dL or Vitamin D below 10 ng/mL) trigger an advisory to see a physician.',
+    text: 'Dangerous values (for example haemoglobin below 8 g/dL, very low platelets, high potassium or liver enzymes above three times normal) are clearly marked with advice to see a doctor.',
   },
   {
     icon: Lock,

@@ -73,10 +73,10 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
               </span>
               <div>
                 <h3 className="text-lg font-bold text-slate-900">
-                  Clinical Synthesis & Metabolic Interpretation
+                  What Your Results Mean
                 </h3>
                 <p className="text-xs text-slate-500">
-                  Physiological evaluation grounded in ICMR-NIN nutritional composition
+                  A plain-language summary of your results and plan
                 </p>
               </div>
             </div>
@@ -84,11 +84,11 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
             <div className="flex items-center gap-2">
               <Badge tone={flaggedMarkers.length === 0 ? 'brand' : 'amber'}>
                 {flaggedMarkers.length === 0
-                  ? 'All Biomarkers Optimal'
-                  : `${flaggedMarkers.length} Parameter${flaggedMarkers.length > 1 ? 's' : ''} Flagged`}
+                  ? 'All results in range'
+                  : `${flaggedMarkers.length} result${flaggedMarkers.length > 1 ? 's' : ''} need attention`}
               </Badge>
               <Badge tone="neutral">
-                {Math.round((optimalMarkers.length / (result.marker_analyses.length || 1)) * 100)}% Optimal Index
+                {Math.round((optimalMarkers.length / (result.marker_analyses.length || 1)) * 100)}% in range
               </Badge>
             </div>
           </div>

@@ -127,15 +127,15 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <span className="text-[11px] font-mono tracking-wider uppercase text-emerald-400 font-semibold block">
-              Biomarker Homeostasis Score
+              Health score
             </span>
             <h3 className="text-2xl font-bold text-white tracking-tight mt-0.5">
-              {optimalCount} of {result.marker_analyses.length} Biomarkers in Target Range
+              {optimalCount} of {result.marker_analyses.length} results in the healthy range
             </h3>
             <p className="text-xs text-slate-300 mt-1 max-w-xl leading-relaxed">
               {flaggedCount === 0
-                ? 'All tested laboratory biomarkers are balanced within reference intervals.'
-                : `${flaggedCount} biomarker${flaggedCount > 1 ? 's require' : ' requires'} attention; food guidance is given where it applies, and anything urgent is marked clearly.`}
+                ? 'All your results are within healthy ranges.'
+                : `${flaggedCount} result${flaggedCount > 1 ? 's need' : ' needs'} attention. Your food plan is below, and anything for a doctor is marked clearly.`}
             </p>
           </div>
 
@@ -145,7 +145,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
                 {optimalPercent}%
               </span>
               <p className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
-                Optimal Index
+                In range
               </p>
             </div>
           </div>
@@ -198,11 +198,11 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
         <Alert
           tone="error"
           icon={<HeartPulse className="h-5 w-5 text-red-600" aria-hidden />}
-          title="Clinical Safety Warning — Doctor Consultation Required"
+          title="Please review these results with a doctor"
           className="p-5"
         >
           <p className="text-sm text-red-900 font-medium leading-relaxed">
-            One or more results need a doctor’s attention; food-first nutrition alone is not enough. Please consult a licensed physician:
+            Food changes can support your health, but the following results need medical advice:
           </p>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-xs text-red-800 marker:text-red-500">
             {result.consult_reasons.map((reason, idx) => (
@@ -216,8 +216,8 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
       <section aria-labelledby="biomarkers-heading" className="space-y-5">
         <SectionTitle
           icon={<Activity className="h-[18px] w-[18px]" aria-hidden />}
-          title="Laboratory Biomarker Evaluations"
-          description="Your values calibrated against printed laboratory reference intervals and clinical guidelines."
+          title="Your Test Results"
+          description="Each result compared with your lab's reference range or clinical guidelines."
           right={
             <div role="tablist" aria-label="Filter biomarkers" className="inline-flex self-start rounded-lg bg-slate-100 p-1">
               {filters.map((f) => (
@@ -246,7 +246,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
 
         {visibleMarkers.length === 0 ? (
           <Card className="px-6 py-10 text-center text-sm text-slate-500">
-            No biomarkers match the filter. All values are in the optimal biological range.
+            No results need attention. All values are within the healthy range.
           </Card>
         ) : (
           <div className="grid gap-4 md:grid-cols-2">
@@ -261,8 +261,8 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
       <section className="space-y-5">
         <SectionTitle
           icon={<Salad className="h-[18px] w-[18px]" aria-hidden />}
-          title="Targeted Nutrition Protocols"
-          description="Foods are chosen for the nutrient or property that matters for each result, with strict diet and allergen safety."
+          title="Your Food Plan"
+          description="Indian foods chosen for each result that needs attention, matched to your diet and allergies."
         />
 
         {improvePlans.length === 0 ? (
@@ -285,9 +285,9 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
                 <Card key={plan.target_biomarker} className="overflow-hidden shadow-card">
                   <div className="flex flex-col gap-2 border-b border-slate-200 bg-slate-50 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                      <p className="eyebrow">Target Goal</p>
+                      <p className="eyebrow">Food plan</p>
                       <h4 className="mt-0.5 text-lg font-semibold text-slate-900">
-                        Nutritional Protocol for {plan.biomarker_display_name}
+                        For {plan.biomarker_display_name}
                       </h4>
                     </div>
                     <Badge tone={meta.tone} className="self-start sm:self-auto">

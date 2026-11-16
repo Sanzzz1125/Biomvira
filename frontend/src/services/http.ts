@@ -29,11 +29,25 @@ function messageFrom(data: unknown, status: number): string {
   if (status === 403) return "You don't have permission to do that.";
   if (status === 404) return 'Not found.';
   if (status === 429) return 'Too many attempts. Please wait a minute and try again.';
+  if (GATEWAY.has(status)) return 'The server is taking too long to respond. Please try again in a minute.';
   if (status >= 500) return 'Something went wrong on our side. Please try again.';
   return 'Request failed. Please try again.';
 }
 
 type ApiInit = Omit<RequestInit, 'body'> & { json?: unknown; body?: BodyInit };
+
+// The free API server sleeps when idle and takes up to a minute to wake. While it wakes, requests fail with a
+// network error or a gateway status (502/503/504), so those are retried for up to WAKE_LIMIT_MS instead of being
+// shown as errors. Genuine application errors (500 and below) are never retried.
+const WAKE_LIMIT_MS = 90_000;
+const GATEWAY = new Set([502, 503, 504]);
+export const WAKE_EVENT = 'nutrilens:server-waking';
+
+function announceWaking(waking: boolean) {
+  if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(WAKE_EVENT, { detail: waking }));
+}
+
+const pause = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export async function apiFetch(path: string, init: ApiInit = {}): Promise<Response> {
   const { json, headers, ...rest } = init;
@@ -45,19 +59,37 @@ export async function apiFetch(path: string, init: ApiInit = {}): Promise<Respon
     if (csrf) finalHeaders.set('X-CSRF-Token', csrf);
   }
 
-  let response: Response;
-  try {
-    response = await fetch(`/api/v1${path}`, {
-      ...rest,
-      method,
-      headers: finalHeaders,
-      body: json !== undefined ? JSON.stringify(json) : rest.body,
-      credentials: 'same-origin',
-    });
-  } catch (err) {
-    if ((err as Error)?.name === 'TimeoutError' || (err as Error)?.name === 'AbortError') throw err;
-    throw new ApiError('Could not reach the server. Check your connection and try again.', 0);
+  const started = Date.now();
+  let response: Response | null = null;
+  let waited = false;
+  for (let attempt = 0; ; attempt++) {
+    let failed = false;
+    try {
+      response = await fetch(`/api/v1${path}`, {
+        ...rest,
+        method,
+        headers: finalHeaders,
+        body: json !== undefined ? JSON.stringify(json) : rest.body,
+        credentials: 'same-origin',
+      });
+      failed = GATEWAY.has(response.status);
+    } catch (err) {
+      if ((err as Error)?.name === 'TimeoutError' || (err as Error)?.name === 'AbortError') throw err;
+      failed = true;
+      response = null;
+    }
+    if (!failed) break;
+    if (Date.now() - started > WAKE_LIMIT_MS) {
+      announceWaking(false);
+      if (!response) throw new ApiError('Could not reach the server. Check your connection and try again.', 0);
+      break;
+    }
+    waited = true;
+    announceWaking(true);
+    await pause(Math.min(2000 * (attempt + 1), 8000));
   }
+  if (waited) announceWaking(false);
+  if (!response) throw new ApiError('Could not reach the server. Check your connection and try again.', 0);
 
   if (!response.ok) {
     const data = await response.json().catch(() => ({}));

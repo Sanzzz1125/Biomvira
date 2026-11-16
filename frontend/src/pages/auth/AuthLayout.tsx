@@ -7,13 +7,13 @@ import { Card } from '../../components/ui';
 const POINTS = [
   {
     icon: FileSearch,
-    title: 'Reads your lab report',
-    text: 'PDFs and photos from major Indian labs, checked by you before analysis.',
+    title: 'Reads 60+ common tests',
+    text: 'Blood count, sugar, cholesterol, liver, kidney, thyroid, iron and vitamins, from any Indian lab.',
   },
   {
     icon: Apple,
-    title: 'Indian food-first plans',
-    text: 'Matched to your diet and allergies from 180+ Indian foods (ICMR-NIN IFCT 2017).',
+    title: 'Indian food plans',
+    text: '180+ Indian foods from ICMR-NIN tables, matched to your diet and allergies.',
   },
   {
     icon: ShieldCheck,
