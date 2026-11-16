@@ -159,6 +159,52 @@ BIOMARKER_CLINICAL_PROFILES: Dict[str, Dict[str, str]] = {
     }
 }
 
+_NO_PLAN = "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+_CBC, _THY, _ELEC = "Complete Blood Count", "Thyroid Function", "Electrolytes"
+
+
+def _readonly(system, role, impact):
+    return {"system": system, "role": role, "depletion_impact": impact, "indian_context": "", "repletion_strategy": _NO_PLAN}
+
+
+BIOMARKER_CLINICAL_PROFILES.update({
+    "wbc": _readonly(_CBC, "White blood cells fight infection.", "A count outside the range can follow an infection, inflammation or a medicine, and can sometimes point to a blood or immune problem; a doctor should interpret it."),
+    "rbc": _readonly(_CBC, "Red blood cells carry oxygen from the lungs to the body.", "A low count is often seen with anaemia; a high count can occur with dehydration or other conditions."),
+    "platelets": _readonly(_CBC, "Platelets help blood to clot.", "A low count can raise the risk of bleeding and is common during dengue and some viral fevers; a high count needs review too."),
+    "pcv": _readonly(_CBC, "The share of the blood made up of red cells.", "It usually moves with haemoglobin; a low value is often seen with anaemia."),
+    "mcv": _readonly(_CBC, "The average size of red blood cells.", "Small cells (low MCV) are typical of iron deficiency; large cells (high MCV) are seen with low vitamin B12 or folate."),
+    "mch": _readonly(_CBC, "The average amount of haemoglobin in each red cell.", "A low value often goes with iron deficiency; a high value with large red cells."),
+    "mchc": _readonly(_CBC, "How concentrated haemoglobin is inside red cells.", "A low value is often seen with iron deficiency."),
+    "rdw": _readonly(_CBC, "How much red cells vary in size.", "A high value is common in early iron, B12 or folate deficiency."),
+    "mpv": _readonly(_CBC, "The average size of platelets.", "Interpreted together with the platelet count by a doctor."),
+    "esr": _readonly(_CBC, "A general marker of inflammation in the body.", "A raised ESR is non-specific; it can rise with infection, inflammation, anaemia or pregnancy."),
+    "tsh": _readonly(_THY, "The pituitary hormone that tells the thyroid gland how much hormone to make.", "A high TSH often means an underactive thyroid and a low TSH an overactive one; thyroid problems are treated by a doctor, not by diet."),
+    "t3": _readonly(_THY, "A thyroid hormone that controls the body's energy use.", "Read together with TSH and T4 by a doctor."),
+    "t4": _readonly(_THY, "The main hormone made by the thyroid gland.", "Read together with TSH by a doctor."),
+    "ft3": _readonly(_THY, "The active, unbound form of T3.", "Read together with TSH and free T4 by a doctor."),
+    "ft4": _readonly(_THY, "The unbound form of T4 available to the body.", "Read together with TSH by a doctor."),
+    "sodium": _readonly(_ELEC, "Keeps the body's water balance and helps nerves and muscles work.", "Values outside the range can cause weakness or confusion and need medical review."),
+    "potassium": _readonly(_ELEC, "Needed for nerve signals and a regular heartbeat.", "Both low and high potassium can affect the heart and need medical review."),
+    "chloride": _readonly(_ELEC, "Works with sodium to keep fluid and acid balance.", "Usually interpreted with sodium and other tests."),
+    "tibc": _readonly("Iron Studies", "Shows how much iron the blood's carrier protein can hold.", "A high TIBC is common in iron deficiency; the iron plan from your serum iron or ferritin result covers the food side."),
+    "ggt": _readonly("Liver Function", "A liver enzyme.", "Raised GGT can be linked to alcohol, fatty liver, medicines or bile-duct problems."),
+    "bilirubin_direct": _readonly("Liver Function", "The part of bilirubin already processed by the liver.", "A raised value can point to a liver or bile-flow problem."),
+    "bilirubin_indirect": _readonly("Liver Function", "Bilirubin not yet processed by the liver.", "A raised value can come from faster breakdown of red cells or from Gilbert's syndrome."),
+    "globulin": _readonly("Liver Function", "Proteins that include the body's antibodies.", "Interpreted together with albumin and total protein."),
+    "bun": _readonly("Kidney Function", "The nitrogen part of urea, a waste product cleared by the kidneys.", "Read together with creatinine; dehydration and high protein intake can also raise it."),
+    "egfr": _readonly("Kidney Function", "An estimate of how well the kidneys filter the blood, calculated from creatinine, age and sex.", "A value below the range can mean reduced kidney function and needs medical review."),
+    "phosphorus": _readonly("Kidney Function", "A mineral that works with calcium for bones and energy.", "Values outside the range are usually linked to kidney, bone or hormone conditions."),
+    "crp": _readonly("Inflammation", "A protein the liver makes when there is inflammation.", "A raised CRP usually means infection or inflammation somewhere in the body."),
+    "serum_iron": {"system": "Iron Studies", "role": "The amount of iron circulating in the blood, bound to transferrin.", "depletion_impact": "Low serum iron, especially with low ferritin or transferrin saturation, supports iron deficiency.", "indian_context": "", "repletion_strategy": "Iron-rich Indian foods paired with vitamin C, as in the plan below."},
+    "transferrin_saturation": {"system": "Iron Studies", "role": "The share of the iron carrier protein that is loaded with iron.", "depletion_impact": "A low saturation means little iron is available for making red blood cells.", "indian_context": "", "repletion_strategy": "Iron-rich Indian foods paired with vitamin C, as in the plan below."},
+})
+for _cell, _role in (("neutrophils", "the first defence against bacterial infection"), ("lymphocytes", "fight viral infections and make antibodies"),
+                     ("eosinophils", "rise with allergies and worm infections"), ("monocytes", "clear damaged cells and germs"),
+                     ("basophils", "take part in allergic reactions")):
+    _profile = _readonly(_CBC, f"A type of white blood cell; they {_role}." if not _role.startswith("the") else f"A type of white blood cell, {_role}.",
+                         "The pattern of white cell types is interpreted by a doctor together with the total count.")
+    BIOMARKER_CLINICAL_PROFILES[_cell] = BIOMARKER_CLINICAL_PROFILES[f"{_cell}_abs"] = _profile
+
 def generate_grounded_explanation(
     marker_analyses: List[MarkerAnalysisResult],
     recommendations: List[NutrientRecommendationPlan]

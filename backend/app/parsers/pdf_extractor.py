@@ -80,10 +80,10 @@ def extract_text_and_tables_from_pdf(file_bytes: bytes) -> str:
                 outside = page.filter(lambda obj: not any(
                     obj.get('x0', 0) >= t.bbox[0] and obj.get('x1', 0) <= t.bbox[2]
                     and obj.get('top', 0) >= t.bbox[1] and obj.get('bottom', 0) <= t.bbox[3]
-                    for t in tables)).extract_text() or ''
+                    for t in tables)).extract_text(y_tolerance=5) or ''  # some labs print the value a few points above its name
                 text = '\n'.join(rows + [outside])
-                from app.parsers.regex_matcher import mentioned_keys, extract_biomarkers_with_regex
-                missing = mentioned_keys(text) - {m.biomarker_key for m in extract_biomarkers_with_regex(text)}
+                from app.parsers.regex_matcher import mentioned_keys, extract_biomarkers_with_regex, found_keys
+                missing = mentioned_keys(text) - found_keys(extract_biomarkers_with_regex(text))
                 method = 'native'
                 # OCR is slow (especially on small servers), so it runs only for pages that look like images:
                 # a page with almost no text, or a page with an embedded image whose text is unusable or seems to be

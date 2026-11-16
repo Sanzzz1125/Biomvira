@@ -10,7 +10,7 @@ const FEATURES = [
   {
     icon: Apple,
     title: 'Indian food-first plans',
-    text: 'Recommendations come from 65 ICMR-NIN foods, matched to your diet and allergies.',
+    text: 'Recommendations come from 180+ Indian foods (ICMR-NIN IFCT 2017), matched to your diet and allergies.',
   },
   {
     icon: ShieldCheck,

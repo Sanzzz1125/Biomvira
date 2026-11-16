@@ -19,7 +19,7 @@ const STAGES = [
   },
   {
     title: 'Scanning ICMR-NIN Food Database',
-    detail: 'Querying 65+ whole Indian staples for high bioavailable nutrient yields per 100g serving.',
+    detail: 'Querying 180+ Indian foods from the ICMR-NIN food composition tables, per typical serving.',
     icon: Database,
     threshold: 45,
   },

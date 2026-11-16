@@ -1855,6 +1855,3235 @@
         "low_gi",
         "high_fibre"
       ]
+    },
+    {
+      "id": "ifct_a001_amaranth_seed",
+      "name": "Amaranth Seed / Rajgira",
+      "hindi_name": "Ramdana / Thotakoora Ginjalu",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 4.7,
+        "calcium_mg": 90.5,
+        "folate_mcg": 13.7,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [
+        "high_fibre",
+        "heart_healthy_fat"
+      ],
+      "source": "IFCT 2017 (A001: Amaranth seed, black)"
+    },
+    {
+      "id": "ifct_a004_barley",
+      "name": "Barley / Jau",
+      "hindi_name": "Jau / Barley",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "gluten"
+      ],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 0.8,
+        "calcium_mg": 14.3,
+        "folate_mcg": 15.8,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (A004: Barley)"
+    },
+    {
+      "id": "ifct_a006_maize_dry",
+      "name": "Maize, Dry / Makka",
+      "hindi_name": "Makka / Mokkajonna",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 1.2,
+        "calcium_mg": 4.5,
+        "folate_mcg": 12.9,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (A006: Maize, dry)"
+    },
+    {
+      "id": "ifct_a011_rice_flakes",
+      "name": "Rice Flakes / Poha",
+      "hindi_name": "Poha / Atukulu",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 2.2,
+        "calcium_mg": 4.6,
+        "folate_mcg": 4.2,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [],
+      "source": "IFCT 2017 (A011: Rice, flakes)"
+    },
+    {
+      "id": "ifct_a013_brown_rice",
+      "name": "Brown Rice",
+      "hindi_name": "Chawal / Dampudu Biyyam",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 5.5,
+        "folate_mcg": 5.8,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [],
+      "source": "IFCT 2017 (A013: Rice, raw, brown)"
+    },
+    {
+      "id": "ifct_a014_parboiled_rice",
+      "name": "Parboiled Rice",
+      "hindi_name": "Usna Chawal / Uppudu Biyyam",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 4.1,
+        "folate_mcg": 4.9,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [],
+      "source": "IFCT 2017 (A014: Rice, parboiled, milled)"
+    },
+    {
+      "id": "ifct_a015_white_rice_raw_milled",
+      "name": "White Rice (Raw, Milled)",
+      "hindi_name": "Chawal / Biyyam",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 3.7,
+        "folate_mcg": 4.7,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [],
+      "source": "IFCT 2017 (A015: Rice, raw, milled)"
+    },
+    {
+      "id": "ifct_a017_kodo_millet",
+      "name": "Kodo Millet / Varagu",
+      "hindi_name": "Karralu",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 1.2,
+        "calcium_mg": 7.6,
+        "folate_mcg": 19.7,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (A017: Varagu)"
+    },
+    {
+      "id": "ifct_a019_whole_wheat_flour",
+      "name": "Whole Wheat Flour / Atta",
+      "hindi_name": "Atta / Sampurna Godhuma Pindi",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "gluten"
+      ],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 2.1,
+        "calcium_mg": 15.5,
+        "folate_mcg": 14.6,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (A019: Wheat flour, atta)"
+    },
+    {
+      "id": "ifct_a020_whole_wheat",
+      "name": "Whole Wheat",
+      "hindi_name": "Gehun / Godhumalu",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "gluten"
+      ],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 2.0,
+        "calcium_mg": 19.7,
+        "folate_mcg": 15.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (A020: Wheat, whole)"
+    },
+    {
+      "id": "ifct_a021_broken_wheat",
+      "name": "Broken Wheat / Dalia",
+      "hindi_name": "Dalia / Bulgur",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "gluten"
+      ],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 1.9,
+        "calcium_mg": 13.5,
+        "folate_mcg": 13.1,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (A021: Wheat, bulgur)"
+    },
+    {
+      "id": "ifct_a022_semolina",
+      "name": "Semolina / Rava / Sooji",
+      "hindi_name": "Gehun Suji / Godhuma Rava",
+      "category": "Millets & Grains",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "gluten"
+      ],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 1.5,
+        "calcium_mg": 14.7,
+        "folate_mcg": 12.8,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Whole and less-polished grains keep more of their fibre and minerals."
+      ],
+      "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
+      "tags": [
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (A022: Wheat, semolina)"
+    },
+    {
+      "id": "ifct_b002_whole_bengal_gram",
+      "name": "Whole Bengal Gram / Kala Chana",
+      "hindi_name": "Chana / Sanagalu",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 2.0,
+        "calcium_mg": 45.0,
+        "folate_mcg": 69.9,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre",
+        "heart_healthy_fat"
+      ],
+      "source": "IFCT 2017 (B002: Bengal gram, whole)"
+    },
+    {
+      "id": "ifct_b003_split_black_gram",
+      "name": "Split Black Gram / Urad Dal",
+      "hindi_name": "Urad Dal / Minapa Pappu",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 1.4,
+        "calcium_mg": 16.7,
+        "folate_mcg": 26.6,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (B003: Black gram, dal)"
+    },
+    {
+      "id": "ifct_b010_split_green_gram",
+      "name": "Split Green Gram / Moong Dal",
+      "hindi_name": "Mug Dal / Pesara Pappu",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 1.2,
+        "calcium_mg": 12.9,
+        "folate_mcg": 27.6,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (B010: Green gram, dal)"
+    },
+    {
+      "id": "ifct_b011_whole_green_gram",
+      "name": "Whole Green Gram / Moong",
+      "hindi_name": "Mung / Pesalu",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 1.5,
+        "calcium_mg": 27.7,
+        "folate_mcg": 43.5,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (B011: Green gram, whole)"
+    },
+    {
+      "id": "ifct_b013_red_lentil_dal",
+      "name": "Red Lentil Dal / Masoor Dal",
+      "hindi_name": "Masoor Dal / Lanka Pappu",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 2.1,
+        "calcium_mg": 13.3,
+        "folate_mcg": 15.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (B013: Lentil, dal)"
+    },
+    {
+      "id": "ifct_b014_whole_brown_lentil",
+      "name": "Whole Brown Lentil / Sabut Masoor",
+      "hindi_name": "Masur Dal / Misur Pappu",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 2.3,
+        "calcium_mg": 22.8,
+        "folate_mcg": 39.6,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (B014: Lentil, whole, brown)"
+    },
+    {
+      "id": "ifct_b017_dried_peas",
+      "name": "Dried Peas / Sukhe Matar",
+      "hindi_name": "Sukhi Matar",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 1.5,
+        "calcium_mg": 22.5,
+        "folate_mcg": 33.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (B017: Peas, dry)"
+    },
+    {
+      "id": "ifct_b021_split_red_gram",
+      "name": "Split Red Gram / Toor Dal",
+      "hindi_name": "Kandi Pappu",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 1.2,
+        "calcium_mg": 21.5,
+        "folate_mcg": 32.4,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (B021: Red gram, dal)"
+    },
+    {
+      "id": "ifct_b022_whole_red_gram",
+      "name": "Whole Red Gram / Arhar",
+      "hindi_name": "Arhar Sabud / Kandulu",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 1.6,
+        "calcium_mg": 41.7,
+        "folate_mcg": 68.7,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (B022: Red gram, whole)"
+    },
+    {
+      "id": "ifct_b023_rice_bean",
+      "name": "Rice Bean / Naurangi Dal",
+      "hindi_name": "Meth",
+      "category": "Pulses & Legumes",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g raw (about 1 katori cooked)",
+      "nutrients": {
+        "iron_mg": 1.4,
+        "calcium_mg": 60.0,
+        "folate_mcg": 36.6,
+        "vitamin_c_mg": 0.3
+      },
+      "synergies": [
+        "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
+      ],
+      "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (B023: Ricebean)"
+    },
+    {
+      "id": "ifct_c001_agathi_leaves",
+      "name": "Agathi Leaves",
+      "hindi_name": "Agasthi / Avise Akulu",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 4.4,
+        "calcium_mg": 901.0,
+        "folate_mcg": 120.0,
+        "vitamin_c_mg": 121.0
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (C001: Agathi leaves)"
+    },
+    {
+      "id": "ifct_c007_malabar_spinach",
+      "name": "Malabar Spinach / Poi Saag",
+      "hindi_name": "Palak / Bachhali",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 4.2,
+        "calcium_mg": 93.9,
+        "folate_mcg": 90.3,
+        "vitamin_c_mg": 63.4
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C007: Basella leaves)"
+    },
+    {
+      "id": "ifct_c008_bathua_leaves",
+      "name": "Bathua Leaves",
+      "hindi_name": "Bathua Sagu / Pappukura",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 2.7,
+        "calcium_mg": 211.0,
+        "folate_mcg": 42.5,
+        "vitamin_c_mg": 41.0
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C008: Bathua leaves)"
+    },
+    {
+      "id": "ifct_c009_beetroot_greens",
+      "name": "Beetroot Greens",
+      "hindi_name": "Chukandhar Sag / Beet Root",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 5.8,
+        "calcium_mg": 151.0,
+        "folate_mcg": 11.5,
+        "vitamin_c_mg": 35.8
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C009: Beetroot leaves)"
+    },
+    {
+      "id": "ifct_c015_green_cabbage",
+      "name": "Green Cabbage / Patta Gobhi",
+      "hindi_name": "Bandh Gobi / Gos Koora",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 51.8,
+        "folate_mcg": 46.4,
+        "vitamin_c_mg": 33.2
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C015: Cabbage, green)"
+    },
+    {
+      "id": "ifct_c018_colocasia_leaves",
+      "name": "Colocasia Leaves / Arbi Patta",
+      "hindi_name": "Arvi Ka Sag / Chama Akulu",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 3.4,
+        "calcium_mg": 216.0,
+        "folate_mcg": 159.0,
+        "vitamin_c_mg": 40.7
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C018: Colocasia leaves, green)"
+    },
+    {
+      "id": "ifct_c021_garden_cress_greens",
+      "name": "Garden Cress Greens",
+      "hindi_name": "Halim Ka Patta / Adityala Akulu",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 6.2,
+        "calcium_mg": 217.0,
+        "folate_mcg": 58.1,
+        "vitamin_c_mg": 42.8
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C021: Garden cress)"
+    },
+    {
+      "id": "ifct_c022_gongura",
+      "name": "Gongura / Gogu Leaves",
+      "hindi_name": "Pitwa / Gongura",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 7.7,
+        "calcium_mg": 145.0,
+        "folate_mcg": 74.9,
+        "vitamin_c_mg": 29.6
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C022: Gogu leaves, green stem)"
+    },
+    {
+      "id": "ifct_c026_mustard_greens",
+      "name": "Mustard Greens / Sarson ka Saag",
+      "hindi_name": "Sarson Ka Sag / Ava Akulu",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 2.8,
+        "calcium_mg": 191.0,
+        "folate_mcg": 110.0,
+        "vitamin_c_mg": 60.3
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C026: Mustard leaves)"
+    },
+    {
+      "id": "ifct_c029_ponnaganni_leaves",
+      "name": "Ponnaganni Leaves",
+      "hindi_name": "Saranthi Sag / Ponnaganti Koora",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 3.9,
+        "calcium_mg": 388.0,
+        "folate_mcg": 48.4,
+        "vitamin_c_mg": 103.0
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (C029: Ponnaganni)"
+    },
+    {
+      "id": "ifct_c031_radish_leaves",
+      "name": "Radish Leaves / Mooli Patta",
+      "hindi_name": "Muli Ka Sag / Mullangi Akulu",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 3.8,
+        "calcium_mg": 234.0,
+        "folate_mcg": 53.1,
+        "vitamin_c_mg": 65.8
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C031: Radish leaves)"
+    },
+    {
+      "id": "ifct_c017_cauliflower_greens",
+      "name": "Cauliflower Greens",
+      "hindi_name": "Phul Gobi Patta / Go Puvvu",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 2.4,
+        "calcium_mg": 96.7,
+        "folate_mcg": 43.0,
+        "vitamin_c_mg": 52.8
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C017: Cauliflower leaves)"
+    },
+    {
+      "id": "ifct_c030_tender_pumpkin_leaves",
+      "name": "Tender Pumpkin Leaves",
+      "hindi_name": "Kumhra Sag / Gummadi Akulu",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 5.6,
+        "calcium_mg": 271.0,
+        "folate_mcg": 33.8,
+        "vitamin_c_mg": 12.3
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (C030: Pumpkin leaves, tender)"
+    },
+    {
+      "id": "ifct_c034_tender_tamarind_leaves",
+      "name": "Tender Tamarind Leaves",
+      "hindi_name": "Chinta Chiguru",
+      "category": "Green Leafy Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw (about 1 cup chopped)",
+      "nutrients": {
+        "iron_mg": 2.8,
+        "calcium_mg": 66.9,
+        "folate_mcg": 91.8,
+        "vitamin_c_mg": 28.2
+      },
+      "synergies": [
+        "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
+      ],
+      "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (C034: Tamarind leaves, tender)"
+    },
+    {
+      "id": "ifct_d001_ash_gourd",
+      "name": "Ash Gourd / Petha",
+      "hindi_name": "Petha / Boodida Gummadi",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 19.4,
+        "folate_mcg": 14.1,
+        "vitamin_c_mg": 11.4
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D001: Ash gourd)"
+    },
+    {
+      "id": "ifct_d031_brinjal",
+      "name": "Brinjal / Baingan",
+      "hindi_name": "Baingan / Vankaya",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 16.6,
+        "folate_mcg": 33.9,
+        "vitamin_c_mg": 2.1
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D031: Brinjal - all varieties)"
+    },
+    {
+      "id": "ifct_d033_green_capsicum",
+      "name": "Green Capsicum / Shimla Mirch",
+      "hindi_name": "Shimla Mirch / Shimla Mirchi",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 14.8,
+        "folate_mcg": 51.9,
+        "vitamin_c_mg": 123.0
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D033: Capsicum, green)"
+    },
+    {
+      "id": "ifct_d036_cauliflower",
+      "name": "Cauliflower / Phool Gobhi",
+      "hindi_name": "Phul Gobi / Go Puvvu",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.0,
+        "calcium_mg": 25.2,
+        "folate_mcg": 46.0,
+        "vitamin_c_mg": 47.1
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D036: Cauliflower)"
+    },
+    {
+      "id": "ifct_d039_cluster_beans",
+      "name": "Cluster Beans / Gawar",
+      "hindi_name": "Gaur-Ki-Phalli / Goruchikkudu",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 3.9,
+        "calcium_mg": 121.0,
+        "folate_mcg": 41.2,
+        "vitamin_c_mg": 18.0
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D039: Cluster beans)"
+    },
+    {
+      "id": "ifct_d043_cucumber",
+      "name": "Cucumber / Kheera",
+      "hindi_name": "Kheera / Dosa Kaya",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 16.4,
+        "folate_mcg": 16.8,
+        "vitamin_c_mg": 6.1
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D043: Cucumber, green, elongate)"
+    },
+    {
+      "id": "ifct_d049_french_beans",
+      "name": "French Beans",
+      "hindi_name": "Bakla / Sannachikkudu",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.2,
+        "calcium_mg": 56.0,
+        "folate_mcg": 47.5,
+        "vitamin_c_mg": 15.8
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D049: French beans, country)"
+    },
+    {
+      "id": "ifct_d054_ivy_gourd",
+      "name": "Ivy Gourd / Kundru / Dondakaya",
+      "hindi_name": "Konduri / Donda Kaya",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 34.4,
+        "folate_mcg": 48.7,
+        "vitamin_c_mg": 17.6
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D054: Kovai, big)"
+    },
+    {
+      "id": "ifct_d056_ladies_finger",
+      "name": "Ladies Finger / Bhindi",
+      "hindi_name": "Bhindi / Bendakaya",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.8,
+        "calcium_mg": 86.1,
+        "folate_mcg": 63.7,
+        "vitamin_c_mg": 22.5
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D056: Ladies finger)"
+    },
+    {
+      "id": "ifct_d060_pointed_gourd",
+      "name": "Pointed Gourd / Parwal",
+      "hindi_name": "Parwal / Kommu Potla",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 30.8,
+        "folate_mcg": 20.0,
+        "vitamin_c_mg": 19.2
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D060: Parwar)"
+    },
+    {
+      "id": "ifct_d061_fresh_green_peas",
+      "name": "Fresh Green Peas / Matar",
+      "hindi_name": "Matar",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.6,
+        "calcium_mg": 28.2,
+        "folate_mcg": 54.8,
+        "vitamin_c_mg": 38.4
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (D061: Peas, fresh)"
+    },
+    {
+      "id": "ifct_d062_banana_flower",
+      "name": "Banana Flower / Kele ka Phool",
+      "hindi_name": "Kele-Ka Phool / Arati Puvvu",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 34.1,
+        "folate_mcg": 49.3,
+        "vitamin_c_mg": 6.5
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D062: Plantain, flower)"
+    },
+    {
+      "id": "ifct_d064_banana_stem",
+      "name": "Banana Stem",
+      "hindi_name": "Kele-Ka-Tana / Arati Doota",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 11.2,
+        "folate_mcg": 12.9,
+        "vitamin_c_mg": 3.8
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D064: Plantain, stem)"
+    },
+    {
+      "id": "ifct_d066_pumpkin",
+      "name": "Pumpkin / Kaddu",
+      "hindi_name": "Kaddu / Gummadi",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 23.1,
+        "folate_mcg": 24.1,
+        "vitamin_c_mg": 8.0
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D066: Pumpkin, orange, round)"
+    },
+    {
+      "id": "ifct_d068_ridge_gourd",
+      "name": "Ridge Gourd / Turai",
+      "hindi_name": "Torai / Beera Kaya",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 13.7,
+        "folate_mcg": 29.3,
+        "vitamin_c_mg": 5.4
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D068: Ridge gourd)"
+    },
+    {
+      "id": "ifct_d070_snake_gourd",
+      "name": "Snake Gourd / Chichinda",
+      "hindi_name": "Chachinda / Potla Kaya",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 24.6,
+        "folate_mcg": 18.3,
+        "vitamin_c_mg": 2.7
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D070: Snake gourd, long, pale green)"
+    },
+    {
+      "id": "ifct_d073_round_gourd",
+      "name": "Round Gourd / Tinda",
+      "hindi_name": "Tinda",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 19.7,
+        "folate_mcg": 43.2,
+        "vitamin_c_mg": 14.2
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D073: Tinda, tender)"
+    },
+    {
+      "id": "ifct_d076_tomato",
+      "name": "Tomato / Tamatar",
+      "hindi_name": "Tamator / Ramamulagakaya",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 10.2,
+        "folate_mcg": 19.5,
+        "vitamin_c_mg": 27.5
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D076: Tomato, ripe, local)"
+    },
+    {
+      "id": "ifct_d032_broad_beans",
+      "name": "Broad Beans / Sem",
+      "hindi_name": "Bakla / Pedda Chikkudu",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.9,
+        "calcium_mg": 64.4,
+        "folate_mcg": 20.5,
+        "vitamin_c_mg": 11.0
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (D032: Broad beans)"
+    },
+    {
+      "id": "ifct_d053_knol_khol",
+      "name": "Knol-Khol / Ganth Gobhi",
+      "hindi_name": "Kohl-Rabi / Noolkol",
+      "category": "Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.2,
+        "calcium_mg": 35.3,
+        "folate_mcg": 14.8,
+        "vitamin_c_mg": 64.7
+      },
+      "synergies": [],
+      "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (D053: Knol - Khol)"
+    },
+    {
+      "id": "ifct_f002_carrot",
+      "name": "Carrot / Gajar",
+      "hindi_name": "Gajar / Gajjara Gadda",
+      "category": "Root Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.6,
+        "calcium_mg": 35.1,
+        "folate_mcg": 24.0,
+        "vitamin_c_mg": 6.2
+      },
+      "synergies": [],
+      "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
+      "tags": [],
+      "source": "IFCT 2017 (F002: Carrot, orange)"
+    },
+    {
+      "id": "ifct_f004_colocasia",
+      "name": "Colocasia / Arbi",
+      "hindi_name": "Arwi / Chama Dumpa",
+      "category": "Root Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.7,
+        "calcium_mg": 30.2,
+        "folate_mcg": 19.9,
+        "vitamin_c_mg": 1.8
+      },
+      "synergies": [],
+      "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
+      "tags": [],
+      "source": "IFCT 2017 (F004: Colocasia)"
+    },
+    {
+      "id": "ifct_f006_potato",
+      "name": "Potato / Aloo",
+      "hindi_name": "Alu / Bangala Dumpa",
+      "category": "Root Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.6,
+        "calcium_mg": 9.5,
+        "folate_mcg": 15.5,
+        "vitamin_c_mg": 23.1
+      },
+      "synergies": [],
+      "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
+      "tags": [],
+      "source": "IFCT 2017 (F006: Potato, brown skin, big)"
+    },
+    {
+      "id": "ifct_f010_white_radish",
+      "name": "White Radish / Mooli",
+      "hindi_name": "Muli / Mullangi",
+      "category": "Root Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 30.2,
+        "folate_mcg": 29.8,
+        "vitamin_c_mg": 19.9
+      },
+      "synergies": [],
+      "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
+      "tags": [],
+      "source": "IFCT 2017 (F010: Radish, elongate, white skin)"
+    },
+    {
+      "id": "ifct_f015_tapioca",
+      "name": "Tapioca / Cassava",
+      "hindi_name": "Simla Alu / Krrapendalamu",
+      "category": "Root Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.8,
+        "calcium_mg": 25.9,
+        "folate_mcg": 25.6,
+        "vitamin_c_mg": 15.5
+      },
+      "synergies": [],
+      "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
+      "tags": [],
+      "source": "IFCT 2017 (F015: Tapioca)"
+    },
+    {
+      "id": "ifct_f017_elephant_foot_yam",
+      "name": "Elephant Foot Yam / Suran",
+      "hindi_name": "Zimikandha / Kandha Dumpa",
+      "category": "Root Vegetables",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.2,
+        "calcium_mg": 46.9,
+        "folate_mcg": 20.5,
+        "vitamin_c_mg": 15.2
+      },
+      "synergies": [],
+      "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
+      "tags": [],
+      "source": "IFCT 2017 (F017: Yam, elephant)"
+    },
+    {
+      "id": "ifct_e001_apple",
+      "name": "Apple / Seb",
+      "hindi_name": "Sev / Sepu/Sema Regu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 13.7,
+        "folate_mcg": 3.0,
+        "vitamin_c_mg": 3.6
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (E001: Apple, big)"
+    },
+    {
+      "id": "ifct_e008_bael_fruit",
+      "name": "Bael Fruit",
+      "hindi_name": "Bel / Marendu Pandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.2,
+        "calcium_mg": 48.0,
+        "folate_mcg": 55.2,
+        "vitamin_c_mg": 7.5
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (E008: Bael fruit)"
+    },
+    {
+      "id": "ifct_e012_banana",
+      "name": "Banana / Kela (Ripe)",
+      "hindi_name": "Kela / Arati Pandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 5.1,
+        "folate_mcg": 16.8,
+        "vitamin_c_mg": 4.8
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E012: Banana, ripe, robusta)"
+    },
+    {
+      "id": "ifct_e016_custard_apple",
+      "name": "Custard Apple / Sitaphal",
+      "hindi_name": "Sharifa / Sitaphalam",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 28.2,
+        "folate_mcg": 7.6,
+        "vitamin_c_mg": 21.5
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E016: Custard apple)"
+    },
+    {
+      "id": "ifct_e025_black_grapes",
+      "name": "Black Grapes / Angoor",
+      "hindi_name": "Angoor / Draksha Padu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 15.3,
+        "folate_mcg": 7.2,
+        "vitamin_c_mg": 27.3
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E025: Grapes, seedless, oval, black)"
+    },
+    {
+      "id": "ifct_e030_ripe_jackfruit",
+      "name": "Ripe Jackfruit / Kathal",
+      "hindi_name": "Kathal / Panasa",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 35.0,
+        "folate_mcg": 32.2,
+        "vitamin_c_mg": 6.7
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E030: Jack fruit, ripe)"
+    },
+    {
+      "id": "ifct_e031_jamun",
+      "name": "Jamun / Black Plum",
+      "hindi_name": "Jamun / Neredupandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 25.4,
+        "folate_mcg": 7.6,
+        "vitamin_c_mg": 16.5
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E031: Jambu fruit, ripe)"
+    },
+    {
+      "id": "ifct_e036_mango",
+      "name": "Mango / Aam (Ripe)",
+      "hindi_name": "Aam (Paka) / Mamidi Pandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 15.8,
+        "folate_mcg": 82.0,
+        "vitamin_c_mg": 33.0
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E036: Mango, ripe, banganapalli)"
+    },
+    {
+      "id": "ifct_e047_orange",
+      "name": "Orange / Santra",
+      "hindi_name": "Santra / Kamala Padu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.8,
+        "calcium_mg": 19.5,
+        "folate_mcg": 19.5,
+        "vitamin_c_mg": 42.7
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (E047: Orange, pulp)"
+    },
+    {
+      "id": "ifct_e051_pear",
+      "name": "Pear / Nashpati",
+      "hindi_name": "Nashpati / Berikaya",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 6.6,
+        "folate_mcg": 5.3,
+        "vitamin_c_mg": 3.3
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [
+        "low_gi"
+      ],
+      "source": "IFCT 2017 (E051: Pear)"
+    },
+    {
+      "id": "ifct_e052_phalsa",
+      "name": "Phalsa",
+      "hindi_name": "Falsa / Falsa Pandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 2.0,
+        "calcium_mg": 153.0,
+        "folate_mcg": 22.6,
+        "vitamin_c_mg": 5.1
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E052: Phalsa)"
+    },
+    {
+      "id": "ifct_e053_pineapple",
+      "name": "Pineapple / Ananas",
+      "hindi_name": "Ananas / Anasa Pandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 10.9,
+        "folate_mcg": 18.2,
+        "vitamin_c_mg": 36.4
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E053: Pineapple)"
+    },
+    {
+      "id": "ifct_e055_pomegranate",
+      "name": "Pomegranate / Anar",
+      "hindi_name": "Anar / Danimma Pandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 10.7,
+        "folate_mcg": 38.6,
+        "vitamin_c_mg": 12.7
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E055: Pomegranate, maroon seeds)"
+    },
+    {
+      "id": "ifct_e060_sapota",
+      "name": "Sapota / Chikoo",
+      "hindi_name": "Chiku / Sapota",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 17.9,
+        "folate_mcg": 10.8,
+        "vitamin_c_mg": 21.0
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [
+        "high_fibre"
+      ],
+      "source": "IFCT 2017 (E060: Sapota)"
+    },
+    {
+      "id": "ifct_e065_watermelon",
+      "name": "Watermelon / Tarbooz",
+      "hindi_name": "Tarbuj / Puchakaya",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.2,
+        "calcium_mg": 5.3,
+        "folate_mcg": 5.9,
+        "vitamin_c_mg": 13.3
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E065: Water melon, dark green (sugar baby))"
+    },
+    {
+      "id": "ifct_e068_indian_jujube",
+      "name": "Indian Jujube / Ber",
+      "hindi_name": "Ber / Regu Pandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 46.5,
+        "folate_mcg": 6.0,
+        "vitamin_c_mg": 60.9
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E068: Zizyphus)"
+    },
+    {
+      "id": "ifct_e067_wood_apple",
+      "name": "Wood Apple / Kaitha",
+      "hindi_name": "Kaith / Velega Pandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 55.7,
+        "folate_mcg": 6.5,
+        "vitamin_c_mg": 22.2
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E067: Wood apple)"
+    },
+    {
+      "id": "ifct_e020_fresh_fig",
+      "name": "Fresh Fig / Anjeer",
+      "hindi_name": "Anjeer / Atti Pandu",
+      "category": "Fruits & Catalysts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g",
+      "nutrients": {
+        "iron_mg": 0.7,
+        "calcium_mg": 78.5,
+        "folate_mcg": 13.7,
+        "vitamin_c_mg": 16.9
+      },
+      "synergies": [],
+      "tip": "Eat whole and fresh as a snack rather than as juice.",
+      "tags": [],
+      "source": "IFCT 2017 (E020: Fig)"
+    },
+    {
+      "id": "ifct_g009_coriander_leaves",
+      "name": "Coriander Leaves / Dhaniya Patta",
+      "hindi_name": "Hara Dhania / Kothimiri",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "10g (a handful)",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 14.6,
+        "folate_mcg": 5.1,
+        "vitamin_c_mg": 2.4
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G009: Coriander leaves)"
+    },
+    {
+      "id": "ifct_g016_mint_leaves",
+      "name": "Mint Leaves / Pudina",
+      "hindi_name": "Pudina",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "10g (a handful)",
+      "nutrients": {
+        "iron_mg": 0.9,
+        "calcium_mg": 20.5,
+        "folate_mcg": 10.6,
+        "vitamin_c_mg": 1.7
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G016: Mint leaves)"
+    },
+    {
+      "id": "ifct_g011_garlic",
+      "name": "Garlic / Lahsun",
+      "hindi_name": "Lehsan / Vellulli",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "5g",
+      "nutrients": {
+        "iron_mg": 0.1,
+        "calcium_mg": 1.0,
+        "folate_mcg": 4.3,
+        "vitamin_c_mg": 0.6
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G011: Garlic, big cloves)"
+    },
+    {
+      "id": "ifct_g014_fresh_ginger",
+      "name": "Fresh Ginger / Adrak",
+      "hindi_name": "Adrak / Allam",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "5g",
+      "nutrients": {
+        "iron_mg": 0.1,
+        "calcium_mg": 0.9,
+        "folate_mcg": 0.5,
+        "vitamin_c_mg": 0.3
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G014: Ginger, fresh)"
+    },
+    {
+      "id": "ifct_g017_onion",
+      "name": "Onion / Pyaz",
+      "hindi_name": "Pyaz / Neerulli/Ullipaya",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "50g (1 small onion)",
+      "nutrients": {
+        "iron_mg": 0.2,
+        "calcium_mg": 10.5,
+        "folate_mcg": 14.4,
+        "vitamin_c_mg": 3.3
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G017: Onion, big)"
+    },
+    {
+      "id": "ifct_g024_coriander_seeds",
+      "name": "Coriander Seeds / Dhaniya",
+      "hindi_name": "Dhania / Dhaniyalu",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "5g",
+      "nutrients": {
+        "iron_mg": 0.9,
+        "calcium_mg": 35.9,
+        "folate_mcg": 1.1,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G024: Coriander seeds)"
+    },
+    {
+      "id": "ifct_g025_cumin_seeds",
+      "name": "Cumin Seeds / Jeera",
+      "hindi_name": "Jira / Jeelakarra",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "5g",
+      "nutrients": {
+        "iron_mg": 1.0,
+        "calcium_mg": 43.9,
+        "folate_mcg": 1.4,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G025: Cumin seeds)"
+    },
+    {
+      "id": "ifct_g026_fenugreek_seeds",
+      "name": "Fenugreek Seeds / Methi Dana",
+      "hindi_name": "Methi / Menthulu",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "10g (2 teaspoons)",
+      "nutrients": {
+        "iron_mg": 0.8,
+        "calcium_mg": 13.5,
+        "folate_mcg": 5.1,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G026: Fenugreek seeds)"
+    },
+    {
+      "id": "ifct_g029_ajwain",
+      "name": "Ajwain / Carom Seeds",
+      "hindi_name": "Ajwan / Vamu",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "5g",
+      "nutrients": {
+        "iron_mg": 0.7,
+        "calcium_mg": 51.7,
+        "folate_mcg": 2.6,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G029: Omum)"
+    },
+    {
+      "id": "ifct_g031_black_pepper",
+      "name": "Black Pepper / Kali Mirch",
+      "hindi_name": "Kalimirchi / Mirayalu",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "5g",
+      "nutrients": {
+        "iron_mg": 0.6,
+        "calcium_mg": 20.2,
+        "folate_mcg": 1.1,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G031: Pepper, black)"
+    },
+    {
+      "id": "ifct_g032_poppy_seeds",
+      "name": "Poppy Seeds / Khus Khus",
+      "hindi_name": "Postdana / Gasagasalu",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "10g (2 teaspoons)",
+      "nutrients": {
+        "iron_mg": 1.0,
+        "calcium_mg": 137.2,
+        "folate_mcg": 7.9,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G032: Poppy seeds)"
+    },
+    {
+      "id": "ifct_g033_turmeric_powder",
+      "name": "Turmeric Powder / Haldi",
+      "hindi_name": "Haldi / Pasupu",
+      "category": "Herbs & Condiments",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "5g",
+      "nutrients": {
+        "iron_mg": 2.3,
+        "calcium_mg": 6.1,
+        "folate_mcg": 0.7,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Use daily in tempering, chutneys and masalas.",
+      "tags": [],
+      "source": "IFCT 2017 (G033: Turmeric powder)"
+    },
+    {
+      "id": "ifct_h006_dry_coconut",
+      "name": "Dry Coconut / Kopra",
+      "hindi_name": "Nariyal / Endu Kobbari",
+      "category": "Seeds & Nuts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "20g (a small handful)",
+      "nutrients": {
+        "iron_mg": 0.6,
+        "calcium_mg": 6.4,
+        "folate_mcg": 4.9,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
+      "tags": [],
+      "source": "IFCT 2017 (H006: Coconut, kernel, dry)"
+    },
+    {
+      "id": "ifct_h007_fresh_coconut",
+      "name": "Fresh Coconut",
+      "hindi_name": "Nariyal / Kobbari",
+      "category": "Seeds & Nuts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "30g (2 tablespoons grated)",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 2.4,
+        "folate_mcg": 7.6,
+        "vitamin_c_mg": 0.2
+      },
+      "synergies": [],
+      "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
+      "tags": [],
+      "source": "IFCT 2017 (H007: Coconut, kernel, fresh)"
+    },
+    {
+      "id": "ifct_h012_groundnut",
+      "name": "Groundnut / Peanut",
+      "hindi_name": "Moog Phali / Verusenaga",
+      "category": "Seeds & Nuts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "nuts"
+      ],
+      "serving_size": "20g (a small handful)",
+      "nutrients": {
+        "iron_mg": 0.7,
+        "calcium_mg": 10.8,
+        "folate_mcg": 18.2,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
+      "tags": [
+        "low_gi",
+        "high_fibre",
+        "heart_healthy_fat"
+      ],
+      "source": "IFCT 2017 (H012: Ground nut)"
+    },
+    {
+      "id": "ifct_h013_mustard_seeds",
+      "name": "Mustard Seeds / Rai",
+      "hindi_name": "Rai / Avalu",
+      "category": "Seeds & Nuts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "10g (2 teaspoons)",
+      "nutrients": {
+        "iron_mg": 1.3,
+        "calcium_mg": 40.2,
+        "folate_mcg": 9.5,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
+      "tags": [
+        "low_gi",
+        "high_fibre",
+        "heart_healthy_fat",
+        "omega3"
+      ],
+      "source": "IFCT 2017 (H013: Mustard seeds)"
+    },
+    {
+      "id": "ifct_h015_niger_seeds",
+      "name": "Niger Seeds / Ramtil",
+      "hindi_name": "Kala Til / Valasulu",
+      "category": "Seeds & Nuts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "10g (1 tablespoon)",
+      "nutrients": {
+        "iron_mg": 1.8,
+        "calcium_mg": 57.2,
+        "folate_mcg": 14.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
+      "tags": [
+        "low_gi",
+        "high_fibre",
+        "heart_healthy_fat"
+      ],
+      "source": "IFCT 2017 (H015: Niger seeds, black)"
+    },
+    {
+      "id": "ifct_h018_pistachio",
+      "name": "Pistachio / Pista",
+      "hindi_name": "Pista",
+      "category": "Seeds & Nuts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "nuts"
+      ],
+      "serving_size": "20g (a small handful)",
+      "nutrients": {
+        "iron_mg": 0.9,
+        "calcium_mg": 27.0,
+        "folate_mcg": 13.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
+      "tags": [
+        "low_gi",
+        "high_fibre",
+        "heart_healthy_fat"
+      ],
+      "source": "IFCT 2017 (H018: Pistachio nuts)"
+    },
+    {
+      "id": "ifct_h021_walnut",
+      "name": "Walnut / Akhrot",
+      "hindi_name": "Akhrot / Akrot Kaya",
+      "category": "Seeds & Nuts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "nuts"
+      ],
+      "serving_size": "20g (a small handful)",
+      "nutrients": {
+        "iron_mg": 0.6,
+        "calcium_mg": 21.0,
+        "folate_mcg": 11.6,
+        "vitamin_c_mg": 0.2
+      },
+      "synergies": [],
+      "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
+      "tags": [
+        "low_gi",
+        "heart_healthy_fat",
+        "omega3"
+      ],
+      "source": "IFCT 2017 (H021: Walnut)"
+    },
+    {
+      "id": "ifct_h019_safflower_seeds",
+      "name": "Safflower Seeds / Kusum",
+      "hindi_name": "Kardi / Kusuma Ginzalu",
+      "category": "Seeds & Nuts",
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "10g (1 tablespoon)",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 21.1,
+        "folate_mcg": 8.2,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
+      "tags": [
+        "low_gi",
+        "high_fibre",
+        "heart_healthy_fat"
+      ],
+      "source": "IFCT 2017 (H019: Safflower seeds)"
+    },
+    {
+      "id": "ifct_l001_buffalo_milk_whole",
+      "name": "Buffalo Milk (Whole)",
+      "hindi_name": "Bhains Ka Dhood / Gedha/Barre Palu",
+      "category": "Dairy",
+      "diet_type": [
+        "veg",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "dairy"
+      ],
+      "serving_size": "200ml (1 glass)",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 242.0,
+        "folate_mcg": 17.1,
+        "vitamin_c_mg": 4.7
+      },
+      "synergies": [],
+      "tip": "Have as part of meals; choose plain, unsweetened forms.",
+      "tags": [],
+      "source": "IFCT 2017 (L001: Milk, whole, Buffalo)"
+    },
+    {
+      "id": "ifct_l004_khoa",
+      "name": "Khoa / Mawa",
+      "hindi_name": null,
+      "category": "Dairy",
+      "diet_type": [
+        "veg",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "dairy"
+      ],
+      "serving_size": "30g",
+      "nutrients": {
+        "iron_mg": 0.7,
+        "calcium_mg": 180.6,
+        "folate_mcg": 28.3,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Have as part of meals; choose plain, unsweetened forms.",
+      "tags": [],
+      "source": "IFCT 2017 (L004: Khoa)"
+    },
+    {
+      "id": "ifct_m009_country_hen_egg_boiled",
+      "name": "Country Hen Egg (Boiled)",
+      "hindi_name": "Ubla Desi Murgi Ka Anda / Udikinchina Naatu Kodi Guddu",
+      "category": "Eggs & Poultry",
+      "diet_type": [
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "eggs"
+      ],
+      "serving_size": "1 egg (50g)",
+      "nutrients": {
+        "iron_mg": 0.9,
+        "calcium_mg": 28.9,
+        "folate_mcg": 30.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Boil, grill or cook in a light curry with vegetables.",
+      "tags": [],
+      "source": "IFCT 2017 (M009: Egg, country hen, whole, boiled)"
+    },
+    {
+      "id": "ifct_m011_duck_egg_boiled",
+      "name": "Duck Egg (Boiled)",
+      "hindi_name": "Ubla Batakh Ka Anda / Udikinchina Baathu Guddu",
+      "category": "Eggs & Poultry",
+      "diet_type": [
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "eggs"
+      ],
+      "serving_size": "1 egg (50g)",
+      "nutrients": {
+        "iron_mg": 1.3,
+        "calcium_mg": 28.1,
+        "folate_mcg": 36.7,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Boil, grill or cook in a light curry with vegetables.",
+      "tags": [],
+      "source": "IFCT 2017 (M011: Egg, duck, whole, boiled)"
+    },
+    {
+      "id": "ifct_n001_chicken_leg_skinless",
+      "name": "Chicken Leg (Skinless)",
+      "hindi_name": "Murga Tang/Murgi Ki Raan / Kodi Kaallu",
+      "category": "Eggs & Poultry",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.3,
+        "calcium_mg": 20.5,
+        "folate_mcg": 7.5,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Boil, grill or cook in a light curry with vegetables.",
+      "tags": [],
+      "source": "IFCT 2017 (N001: Chicken, poultry, leg, skinless)"
+    },
+    {
+      "id": "ifct_n006_chicken_gizzard",
+      "name": "Chicken Gizzard",
+      "hindi_name": "Murge Ki Pathri/Sangdana / Kodi Gizzardu",
+      "category": "Eggs & Poultry",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 3.2,
+        "calcium_mg": 5.5,
+        "folate_mcg": 8.7,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [],
+      "tip": "Boil, grill or cook in a light curry with vegetables.",
+      "tags": [],
+      "source": "IFCT 2017 (N006: Poultry, chicken, gizzard)"
+    },
+    {
+      "id": "ifct_o011_goat_kidney",
+      "name": "Goat Kidney",
+      "hindi_name": "Bakre Ke Gurde / Meka Mutrapindalu",
+      "category": "Organ Meats",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [],
+      "serving_size": "50g raw",
+      "nutrients": {
+        "iron_mg": 3.4,
+        "calcium_mg": 6.2,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Organ meats provide easily absorbed (haem) iron."
+      ],
+      "tip": "Cook thoroughly; a small portion once or twice a week is enough.",
+      "tags": [],
+      "source": "IFCT 2017 (O011: Goat, kidneys)"
+    },
+    {
+      "id": "ifct_p003_anchovy",
+      "name": "Anchovy / Nethili",
+      "hindi_name": "Nattoo",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 36.6,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P003: Anchovy)"
+    },
+    {
+      "id": "ifct_p007_bombay_duck",
+      "name": "Bombay Duck / Bombil",
+      "hindi_name": "Cucah Sawahri",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.8,
+        "calcium_mg": 159.0,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [],
+      "source": "IFCT 2017 (P007: Bombay duck)"
+    },
+    {
+      "id": "ifct_p026_pearl_spot",
+      "name": "Pearl Spot / Karimeen",
+      "hindi_name": "Cashi Mara",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.6,
+        "calcium_mg": 11.7,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [],
+      "source": "IFCT 2017 (P026: Karimeen)"
+    },
+    {
+      "id": "ifct_p039_mullet",
+      "name": "Mullet",
+      "hindi_name": "Kathiparega",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.3,
+        "calcium_mg": 35.2,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P039: Mullet)"
+    },
+    {
+      "id": "ifct_p055_black_pomfret",
+      "name": "Black Pomfret",
+      "hindi_name": "Nallachanduva",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.8,
+        "calcium_mg": 18.1,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P055: Pomfret, black)"
+    },
+    {
+      "id": "ifct_p057_white_pomfret",
+      "name": "White Pomfret",
+      "hindi_name": "Thellachanduva",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.3,
+        "calcium_mg": 13.6,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P057: Pomfret, white)"
+    },
+    {
+      "id": "ifct_p060_queen_fish",
+      "name": "Queen Fish",
+      "hindi_name": "Pasupara",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.5,
+        "calcium_mg": 5.8,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P060: Queen fish)"
+    },
+    {
+      "id": "ifct_p065_red_snapper",
+      "name": "Red Snapper",
+      "hindi_name": "Rangu",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 8.4,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P065: Red snapper)"
+    },
+    {
+      "id": "ifct_p068_salmon",
+      "name": "Salmon / Rawas",
+      "hindi_name": null,
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.0,
+        "calcium_mg": 24.3,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P068: Salmon)"
+    },
+    {
+      "id": "ifct_p071_sardine",
+      "name": "Sardine / Mathi / Tarli",
+      "hindi_name": "Noona-Kavallu",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.8,
+        "calcium_mg": 42.3,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P071: Sardine)"
+    },
+    {
+      "id": "ifct_p084_tuna",
+      "name": "Tuna",
+      "hindi_name": null,
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.6,
+        "calcium_mg": 9.8,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P084: Tuna)"
+    },
+    {
+      "id": "ifct_p087_seer_fish",
+      "name": "Seer Fish / Vanjaram / Surmai",
+      "hindi_name": "Vanjiramu",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.4,
+        "calcium_mg": 9.8,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (P087: Vanjaram)"
+    },
+    {
+      "id": "ifct_p083_tilapia",
+      "name": "Tilapia",
+      "hindi_name": null,
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 2.8,
+        "calcium_mg": 99.4,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [],
+      "source": "IFCT 2017 (P083: Tilapia)"
+    },
+    {
+      "id": "ifct_q001_crab",
+      "name": "Crab / Kekda",
+      "hindi_name": "Kekda / Peetha",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.1,
+        "calcium_mg": 128.0,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [],
+      "source": "IFCT 2017 (Q001: Crab)"
+    },
+    {
+      "id": "ifct_s002_catla",
+      "name": "Catla",
+      "hindi_name": "Catla / Botcha",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 1.1,
+        "calcium_mg": 43.5,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [
+        "omega3"
+      ],
+      "source": "IFCT 2017 (S002: Catla)"
+    },
+    {
+      "id": "ifct_s005_pangas",
+      "name": "Pangas / Basa",
+      "hindi_name": "Pangas Machli",
+      "category": "Seafood & Fish",
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
+      "serving_size": "100g raw",
+      "nutrients": {
+        "iron_mg": 0.7,
+        "calcium_mg": 11.2,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0
+      },
+      "synergies": [
+        "Fish provides easily absorbed (haem) iron and high-quality protein."
+      ],
+      "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
+      "tags": [],
+      "source": "IFCT 2017 (S005: Pangas)"
     }
   ]
 }

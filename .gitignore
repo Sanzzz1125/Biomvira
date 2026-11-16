@@ -30,3 +30,7 @@ NutriLens.zip
 # Project documentation work (not part of the application)
 docs/
 report/
+
+# Real lab reports (personal data) - never commit
+sample_reports/
+test_reports/

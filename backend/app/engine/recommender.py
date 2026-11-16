@@ -35,6 +35,7 @@ TAG_NOTES = {
     "omega3": "A source of omega-3 fats.",
 }
 MAX_PER_CATEGORY = 2
+FOODS_PER_PLAN = 8
 
 ABSORPTION_RULES = {
     "glycemic_support": {
@@ -165,20 +166,32 @@ class RecommendationEngine:
         return marker.status in (MarkerStatus.LOW, MarkerStatus.BORDERLINE)
 
     @staticmethod
-    def rank_by_tags(foods, nutrient_key):
-        weights = TAG_PROFILES[nutrient_key]
-        scored = [(sum(w for tag, w in weights.items() if tag in f.get("tags", [])), f) for f in foods]
-        scored = sorted([x for x in scored if x[0] > 0], key=lambda x: (-x[0], x[1]["id"]))
+    def _diverse(ranked):
+        """Take the best foods in order, at most MAX_PER_CATEGORY from any one food group, so a plan
+        mixes greens, pulses, grains, fruit and so on instead of listing one group."""
         chosen, per_category = [], {}
-        for score, food in scored:
+        for food in ranked:
             category = food.get("category", "General")
             if per_category.get(category, 0) >= MAX_PER_CATEGORY:
                 continue
             per_category[category] = per_category.get(category, 0) + 1
             chosen.append(food)
-            if len(chosen) == 4:
+            if len(chosen) == FOODS_PER_PLAN:
                 break
         return chosen
+
+    @classmethod
+    def rank_by_tags(cls, foods, nutrient_key):
+        weights = TAG_PROFILES[nutrient_key]
+        scored = [(sum(w for tag, w in weights.items() if tag in f.get("tags", [])), f) for f in foods]
+        scored = sorted([x for x in scored if x[0] > 0], key=lambda x: (-x[0], x[1]["id"]))
+        return cls._diverse(food for _, food in scored)
+
+    @classmethod
+    def rank_by_nutrient(cls, foods, nutrient_key):
+        amount = lambda f: f.get("nutrients", {}).get(nutrient_key, 0.0) or 0.0
+        ranked = sorted((f for f in foods if amount(f) > 0), key=lambda f: (-amount(f), f["id"]))
+        return cls._diverse(ranked)
 
     def generate_recommendations(
         self,
@@ -197,14 +210,7 @@ class RecommendationEngine:
             if tag_based:
                 top_foods = self.rank_by_tags(eligible_foods, nutrient_key)
             else:
-                # Sort eligible foods by the specific target nutrient content descending
-                ranked_foods = sorted(
-                    eligible_foods,
-                    key=lambda f: f.get("nutrients", {}).get(nutrient_key, 0.0),
-                    reverse=True
-                )
-                # Pick top 4 foods that have meaningful amounts (> 0)
-                top_foods = [f for f in ranked_foods if f.get("nutrients", {}).get(nutrient_key, 0.0) > 0.0][:4]
+                top_foods = self.rank_by_nutrient(eligible_foods, nutrient_key)
 
             formatted_foods = []
             for food in top_foods:
@@ -249,15 +255,12 @@ class RecommendationEngine:
 
     @staticmethod
     def _merge_shared_plans(plans, marker_analyses):
-        """HbA1c and both glucose tests (or total/LDL cholesterol and triglycerides) lead to the same foods and advice,
-        so show them as one plan named after all the markers behind it."""
+        """Markers that lead to the same foods and advice (haemoglobin, ferritin and serum iron; HbA1c and glucose;
+        cholesterol and triglycerides) are shown as one plan named after all the markers behind it."""
         severity = {MarkerStatus.LOW: 1, MarkerStatus.BORDERLINE: 2, MarkerStatus.HIGH: 3}
         merged, groups = [], {}
         for plan in plans:
             key = BIOMARKERS_CONFIG.get(plan.target_biomarker, {}).get("target_nutrient_key")
-            if key not in TAG_PROFILES:
-                merged.append(plan)
-                continue
             if key not in groups:
                 groups[key] = {"plan": plan, "names": [plan.biomarker_display_name]}
                 merged.append(plan)
@@ -268,7 +271,7 @@ class RecommendationEngine:
                 group["plan"].status = plan.status
             seen = {f.id for f in group["plan"].recommended_foods}
             group["plan"].recommended_foods += [f for f in plan.recommended_foods if f.id not in seen]
-            group["plan"].recommended_foods = group["plan"].recommended_foods[:4]
+            group["plan"].recommended_foods = group["plan"].recommended_foods[:FOODS_PER_PLAN]
         for group in groups.values():
             if len(group["names"]) > 1:
                 short = [" ".join(re.sub(r"\s*\([^)]*\)", "", n).split()) for n in group["names"]]

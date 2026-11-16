@@ -13,7 +13,7 @@ const POINTS = [
   {
     icon: Apple,
     title: 'Indian food-first plans',
-    text: 'Matched to your diet and allergies from 65 ICMR-NIN foods.',
+    text: 'Matched to your diet and allergies from 180+ Indian foods (ICMR-NIN IFCT 2017).',
   },
   {
     icon: ShieldCheck,

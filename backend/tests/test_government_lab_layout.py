@@ -45,7 +45,7 @@ PAGES = [
     ["Post Lunch Blood Glucose", "(Method: Hexokinase)", "229 mg/dL <140 mg/dL"],
 ]
 EXPECTED = {
-    "hba1c": (6.3, "%"), "bilirubin_total": (0.29, "mg/dL"), "total_protein": (6.4, "gm/dL"), "albumin": (4.6, "gm/dL"),
+    "hba1c": (6.3, "%"), "bilirubin_total": (0.29, "mg/dL"), "bilirubin_direct": (0.1, "mg/dL"), "globulin": (2, "gm/dL"), "total_protein": (6.4, "gm/dL"), "albumin": (4.6, "gm/dL"),
     "sgot_ast": (14, "U/L"), "sgpt_alt": (22, "U/L"), "alkaline_phosphatase": (47, "U/L"), "uric_acid": (3.5, "mg/dL"),
     "calcium": (7.8, "mg/dL"), "urea": (21, "mg/dL"), "creatinine": (1.35, "mg/dL"), "total_cholesterol": (136, "mg/dL"),
     "triglycerides": (139, "mg/dL"), "hdl_cholesterol": (45, "mg/dL"), "ldl_cholesterol": (63, "mg/dL"),
@@ -93,7 +93,9 @@ def test_whole_real_world_report_is_read_correctly_without_ocr(monkeypatch):
     assert (by_key["creatinine"].report_reference_range.low, by_key["creatinine"].report_reference_range.high) == (0.7, 1.18)
     for key in ("total_cholesterol", "triglycerides", "hdl_cholesterol", "ldl_cholesterol"):
         assert by_key[key].report_reference_range is None
-    # Direct bilirubin, globulin, VLDL and the ratio rows are not supported tests and must not leak into others.
+    # A one-sided printed range ("<0.2") is kept as an upper limit.
+    assert (by_key["bilirubin_direct"].report_reference_range.low, by_key["bilirubin_direct"].report_reference_range.high) == (None, 0.2)
+    # VLDL and the ratio rows are not supported tests and must not leak into others.
     assert mentioned_keys(text) - set(got) == set()
 
 

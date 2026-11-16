@@ -13,28 +13,67 @@ interface VerificationTableProps {
 }
 
 const AVAILABLE_BIOMARKERS = [
-  { key: 'vitamin_d', name: 'Vitamin D (25-OH)', canonicalUnit: 'ng/mL' },
-  { key: 'vitamin_b12', name: 'Vitamin B12 (Cobalamin)', canonicalUnit: 'pg/mL' },
-  { key: 'folate', name: 'Folate (Vitamin B9)', canonicalUnit: 'ng/mL' },
-  { key: 'ferritin', name: 'Serum Ferritin', canonicalUnit: 'ng/mL' },
-  { key: 'hemoglobin', name: 'Hemoglobin (Hb)', canonicalUnit: 'g/dL' },
-  { key: 'calcium', name: 'Serum Calcium', canonicalUnit: 'mg/dL' },
-  { key: 'hba1c', name: 'HbA1c (Glycated Haemoglobin)', canonicalUnit: '%' },
-  { key: 'fasting_glucose', name: 'Fasting Blood Glucose', canonicalUnit: 'mg/dL' },
-  { key: 'postprandial_glucose', name: 'Post-Meal Blood Glucose', canonicalUnit: 'mg/dL' },
-  { key: 'total_cholesterol', name: 'Total Cholesterol', canonicalUnit: 'mg/dL' },
-  { key: 'triglycerides', name: 'Triglycerides', canonicalUnit: 'mg/dL' },
-  { key: 'ldl_cholesterol', name: 'LDL Cholesterol', canonicalUnit: 'mg/dL' },
-  { key: 'hdl_cholesterol', name: 'HDL Cholesterol', canonicalUnit: 'mg/dL' },
-  { key: 'creatinine', name: 'Serum Creatinine', canonicalUnit: 'mg/dL' },
-  { key: 'urea', name: 'Blood Urea', canonicalUnit: 'mg/dL' },
-  { key: 'uric_acid', name: 'Serum Uric Acid', canonicalUnit: 'mg/dL' },
-  { key: 'sgot_ast', name: 'SGOT / AST', canonicalUnit: 'U/L' },
-  { key: 'sgpt_alt', name: 'SGPT / ALT', canonicalUnit: 'U/L' },
-  { key: 'alkaline_phosphatase', name: 'Alkaline Phosphatase', canonicalUnit: 'U/L' },
-  { key: 'bilirubin_total', name: 'Total Bilirubin', canonicalUnit: 'mg/dL' },
-  { key: 'total_protein', name: 'Total Protein', canonicalUnit: 'g/dL' },
-  { key: 'albumin', name: 'Serum Albumin', canonicalUnit: 'g/dL' },
+  { key: 'vitamin_d', name: "Vitamin D (25-OH)", canonicalUnit: 'ng/mL', group: 'Fat-Soluble Vitamin' },
+  { key: 'vitamin_b12', name: "Vitamin B12 (Cobalamin)", canonicalUnit: 'pg/mL', group: 'Water-Soluble Vitamin' },
+  { key: 'folate', name: "Folate (Vitamin B9)", canonicalUnit: 'ng/mL', group: 'Water-Soluble Vitamin' },
+  { key: 'ferritin', name: "Serum Ferritin (Iron Storage)", canonicalUnit: 'ng/mL', group: 'Mineral Storage' },
+  { key: 'hemoglobin', name: "Hemoglobin (Hb)", canonicalUnit: 'g/dL', group: 'Hematology' },
+  { key: 'calcium', name: "Serum Calcium", canonicalUnit: 'mg/dL', group: 'Mineral' },
+  { key: 'hba1c', name: "HbA1c (Glycated Haemoglobin)", canonicalUnit: '%', group: 'Blood Sugar Control' },
+  { key: 'fasting_glucose', name: "Fasting Blood Glucose", canonicalUnit: 'mg/dL', group: 'Blood Sugar Control' },
+  { key: 'postprandial_glucose', name: "Post-Meal (Post-Prandial) Blood Glucose", canonicalUnit: 'mg/dL', group: 'Blood Sugar Control' },
+  { key: 'total_cholesterol', name: "Total Cholesterol", canonicalUnit: 'mg/dL', group: 'Blood Fats (Lipids)' },
+  { key: 'triglycerides', name: "Triglycerides", canonicalUnit: 'mg/dL', group: 'Blood Fats (Lipids)' },
+  { key: 'ldl_cholesterol', name: "LDL Cholesterol", canonicalUnit: 'mg/dL', group: 'Blood Fats (Lipids)' },
+  { key: 'hdl_cholesterol', name: "HDL Cholesterol", canonicalUnit: 'mg/dL', group: 'Blood Fats (Lipids)' },
+  { key: 'creatinine', name: "Serum Creatinine", canonicalUnit: 'mg/dL', group: 'Kidney Function' },
+  { key: 'urea', name: "Blood Urea", canonicalUnit: 'mg/dL', group: 'Kidney Function' },
+  { key: 'uric_acid', name: "Serum Uric Acid", canonicalUnit: 'mg/dL', group: 'Kidney Function' },
+  { key: 'sgot_ast', name: "SGOT / AST", canonicalUnit: 'U/L', group: 'Liver Function' },
+  { key: 'sgpt_alt', name: "SGPT / ALT", canonicalUnit: 'U/L', group: 'Liver Function' },
+  { key: 'alkaline_phosphatase', name: "Alkaline Phosphatase", canonicalUnit: 'U/L', group: 'Liver Function' },
+  { key: 'bilirubin_total', name: "Total Bilirubin", canonicalUnit: 'mg/dL', group: 'Liver Function' },
+  { key: 'total_protein', name: "Total Protein", canonicalUnit: 'g/dL', group: 'Liver Function' },
+  { key: 'albumin', name: "Serum Albumin", canonicalUnit: 'g/dL', group: 'Liver Function' },
+  { key: 'wbc', name: "Total WBC Count (TLC)", canonicalUnit: 'cells/µL', group: 'Complete Blood Count' },
+  { key: 'rbc', name: "RBC Count", canonicalUnit: 'million/µL', group: 'Complete Blood Count' },
+  { key: 'platelets', name: "Platelet Count", canonicalUnit: '×10³/µL', group: 'Complete Blood Count' },
+  { key: 'pcv', name: "Hematocrit (PCV)", canonicalUnit: '%', group: 'Complete Blood Count' },
+  { key: 'mcv', name: "MCV (Mean Cell Volume)", canonicalUnit: 'fL', group: 'Complete Blood Count' },
+  { key: 'mch', name: "MCH (Mean Cell Haemoglobin)", canonicalUnit: 'pg', group: 'Complete Blood Count' },
+  { key: 'mchc', name: "MCHC", canonicalUnit: 'g/dL', group: 'Complete Blood Count' },
+  { key: 'rdw', name: "RDW-CV", canonicalUnit: '%', group: 'Complete Blood Count' },
+  { key: 'mpv', name: "Mean Platelet Volume (MPV)", canonicalUnit: 'fL', group: 'Complete Blood Count' },
+  { key: 'neutrophils', name: "Neutrophils (%)", canonicalUnit: '%', group: 'Complete Blood Count' },
+  { key: 'neutrophils_abs', name: "Absolute Neutrophil Count", canonicalUnit: 'cells/µL', group: 'Complete Blood Count' },
+  { key: 'lymphocytes', name: "Lymphocytes (%)", canonicalUnit: '%', group: 'Complete Blood Count' },
+  { key: 'lymphocytes_abs', name: "Absolute Lymphocyte Count", canonicalUnit: 'cells/µL', group: 'Complete Blood Count' },
+  { key: 'eosinophils', name: "Eosinophils (%)", canonicalUnit: '%', group: 'Complete Blood Count' },
+  { key: 'eosinophils_abs', name: "Absolute Eosinophil Count", canonicalUnit: 'cells/µL', group: 'Complete Blood Count' },
+  { key: 'monocytes', name: "Monocytes (%)", canonicalUnit: '%', group: 'Complete Blood Count' },
+  { key: 'monocytes_abs', name: "Absolute Monocyte Count", canonicalUnit: 'cells/µL', group: 'Complete Blood Count' },
+  { key: 'basophils', name: "Basophils (%)", canonicalUnit: '%', group: 'Complete Blood Count' },
+  { key: 'basophils_abs', name: "Absolute Basophil Count", canonicalUnit: 'cells/µL', group: 'Complete Blood Count' },
+  { key: 'esr', name: "ESR", canonicalUnit: 'mm/hr', group: 'Complete Blood Count' },
+  { key: 'tsh', name: "TSH (Thyroid Stimulating Hormone)", canonicalUnit: 'µIU/mL', group: 'Thyroid Function' },
+  { key: 't3', name: "Total T3", canonicalUnit: 'ng/dL', group: 'Thyroid Function' },
+  { key: 't4', name: "Total T4", canonicalUnit: 'µg/dL', group: 'Thyroid Function' },
+  { key: 'ft3', name: "Free T3", canonicalUnit: 'pg/mL', group: 'Thyroid Function' },
+  { key: 'ft4', name: "Free T4", canonicalUnit: 'ng/dL', group: 'Thyroid Function' },
+  { key: 'sodium', name: "Sodium", canonicalUnit: 'mmol/L', group: 'Electrolytes' },
+  { key: 'potassium', name: "Potassium", canonicalUnit: 'mmol/L', group: 'Electrolytes' },
+  { key: 'chloride', name: "Chloride", canonicalUnit: 'mmol/L', group: 'Electrolytes' },
+  { key: 'serum_iron', name: "Serum Iron", canonicalUnit: 'µg/dL', group: 'Iron Studies' },
+  { key: 'tibc', name: "TIBC (Total Iron Binding Capacity)", canonicalUnit: 'µg/dL', group: 'Iron Studies' },
+  { key: 'transferrin_saturation', name: "Transferrin Saturation", canonicalUnit: '%', group: 'Iron Studies' },
+  { key: 'ggt', name: "GGT (Gamma GT)", canonicalUnit: 'U/L', group: 'Liver Function' },
+  { key: 'bilirubin_direct', name: "Direct Bilirubin", canonicalUnit: 'mg/dL', group: 'Liver Function' },
+  { key: 'bilirubin_indirect', name: "Indirect Bilirubin", canonicalUnit: 'mg/dL', group: 'Liver Function' },
+  { key: 'globulin', name: "Globulin", canonicalUnit: 'g/dL', group: 'Liver Function' },
+  { key: 'bun', name: "Blood Urea Nitrogen (BUN)", canonicalUnit: 'mg/dL', group: 'Kidney Function' },
+  { key: 'egfr', name: "eGFR", canonicalUnit: 'mL/min/1.73m²', group: 'Kidney Function' },
+  { key: 'phosphorus', name: "Phosphorus", canonicalUnit: 'mg/dL', group: 'Kidney Function' },
+  { key: 'crp', name: "C-Reactive Protein (CRP)", canonicalUnit: 'mg/L', group: 'Inflammation' },
 ];
 
 const GRID = 'md:grid md:grid-cols-[minmax(0,2fr)_minmax(0,1.1fr)_minmax(0,0.9fr)_minmax(0,1.5fr)_minmax(0,1.5fr)_40px] md:items-center md:gap-4';
@@ -326,19 +365,32 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
         )}
 
         {unaddedBiomarkers.length > 0 && (
-          <div className="flex flex-wrap items-center gap-2 border-t border-slate-200 bg-slate-50 px-5 py-4 md:px-6">
-            <span className="mr-1 text-sm font-medium text-slate-600">Add a biomarker</span>
-            {unaddedBiomarkers.map((b) => (
-              <button
-                key={b.key}
-                type="button"
-                onClick={() => handleAddMarker(b.key)}
-                className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-3 py-1 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:border-brand-400 hover:bg-brand-50 hover:text-brand-700"
-              >
-                <Plus className="h-3.5 w-3.5" aria-hidden />
-                {b.name}
-              </button>
-            ))}
+          <div className="flex flex-wrap items-center gap-3 border-t border-slate-200 bg-slate-50 px-5 py-4 md:px-6">
+            <label htmlFor="add-biomarker" className="flex items-center gap-1.5 text-sm font-medium text-slate-600">
+              <Plus className="h-4 w-4" aria-hidden />
+              Add a test from your report
+            </label>
+            <select
+              id="add-biomarker"
+              value=""
+              onChange={(e) => handleAddMarker(e.target.value)}
+              className="field w-full sm:w-auto sm:min-w-[18rem]"
+            >
+              <option value="" disabled>
+                Choose a test…
+              </option>
+              {[...new Set(unaddedBiomarkers.map((b) => b.group))].map((group) => (
+                <optgroup key={group} label={group}>
+                  {unaddedBiomarkers
+                    .filter((b) => b.group === group)
+                    .map((b) => (
+                      <option key={b.key} value={b.key}>
+                        {b.name}
+                      </option>
+                    ))}
+                </optgroup>
+              ))}
+            </select>
           </div>
         )}
       </Card>

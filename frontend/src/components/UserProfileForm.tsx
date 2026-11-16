@@ -279,7 +279,7 @@ export const UserProfileForm: React.FC<UserProfileFormProps> = ({
         {/* Action */}
         <div className="flex flex-col-reverse items-stretch justify-between gap-4 rounded-b-2xl bg-slate-50 px-6 py-5 sm:flex-row sm:items-center sm:px-8">
           <p className="text-sm text-slate-500">
-            Matched against <strong className="font-semibold text-slate-700">65 ICMR-NIN Indian foods</strong>.
+            Matched against <strong className="font-semibold text-slate-700">180+ ICMR-NIN Indian foods</strong>.
           </p>
           <Button
             size="lg"

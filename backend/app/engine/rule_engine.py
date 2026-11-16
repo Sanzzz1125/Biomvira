@@ -45,17 +45,23 @@ class RuleEngine:
 
         # Markers whose printed reference text is a multi-band table (lipids) or follows a guideline (blood sugar)
         # are judged against the standard bands; the others prefer the range printed on the report.
+        # A one-sided printed range ("< 5", "> 60") is completed with 0 or the standard upper limit.
         has_custom_report_range = (bio_info.get("use_report_range", True)
-                                   and range_low is not None and range_high is not None)
+                                   and (range_low is not None or range_high is not None))
 
         if not has_custom_report_range:
             range_low = normal_band.get("min", 0.0)
             range_high = normal_band.get("max", 100.0)
         else:
             # Normalize report ranges if passed in alternate units
-            if marker.unit.strip().lower() != canonical_unit.lower():
+            if range_low is not None:
                 range_low, _ = convert_to_canonical(marker.biomarker_key, range_low, marker.unit)
+            if range_high is not None:
                 range_high, _ = convert_to_canonical(marker.biomarker_key, range_high, marker.unit)
+            if range_low is None:
+                range_low = 0.0
+            if range_high is None:
+                range_high = max(normal_band.get("max", range_low), range_low)
 
         # 2. Status Classification
         status = MarkerStatus.NORMAL
@@ -108,7 +114,8 @@ class RuleEngine:
         if clinical_warning is None and status == MarkerStatus.LOW and bio_info.get("low_status_message"):
             clinical_warning = bio_info["low_status_message"]
         if clinical_warning is None and status != MarkerStatus.NORMAL and bio_info.get("abnormal_requires_consult"):
-            where = "below" if status == MarkerStatus.LOW else "above"
+            where = "below" if status == MarkerStatus.LOW or (
+                status == MarkerStatus.BORDERLINE and direction == "lower_is_worse") else "above"
             clinical_warning = (f"{bio_info['display_name']} is {where} its reference range. NutriLens does not give food advice "
                                 "for this test; please review it with your doctor.")
 

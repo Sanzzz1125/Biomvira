@@ -876,6 +876,1267 @@
       "target_nutrient_key": null,
       "absorption_notes": "",
       "abnormal_requires_consult": true
+    },
+    {
+      "key": "wbc",
+      "display_name": "Total WBC Count (TLC)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "cells/µL",
+      "alternate_units": [
+        "/cumm",
+        "×10³/µL",
+        "×10⁹/L"
+      ],
+      "aliases": [
+        "total wbc count",
+        "total leucocyte count",
+        "total leukocyte count",
+        "total leucocytes count",
+        "total leukocytes count",
+        "white blood cell count",
+        "white blood cells",
+        "white blood cell",
+        "wbc count",
+        "total wbc",
+        "tlc",
+        "wbc",
+        "total count",
+        "leucocyte count",
+        "leukocyte count",
+        "leucocytes",
+        "leukocytes"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 4000,
+            "max": 11000
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "rbc",
+      "display_name": "RBC Count",
+      "category": "Complete Blood Count",
+      "canonical_unit": "million/µL",
+      "alternate_units": [
+        "million/cumm",
+        "×10⁶/µL",
+        "×10¹²/L"
+      ],
+      "aliases": [
+        "total rbc count",
+        "red blood cell count",
+        "red blood cells",
+        "red blood cell",
+        "rbc count",
+        "total rbc",
+        "rbc",
+        "erythrocyte count",
+        "erythrocytes"
+      ],
+      "standard_intervals": {
+        "male": {
+          "normal": {
+            "min": 4.5,
+            "max": 5.5
+          }
+        },
+        "female": {
+          "normal": {
+            "min": 3.8,
+            "max": 4.8
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "platelets",
+      "display_name": "Platelet Count",
+      "category": "Complete Blood Count",
+      "canonical_unit": "×10³/µL",
+      "alternate_units": [
+        "lakhs/cumm",
+        "/cumm",
+        "×10⁹/L"
+      ],
+      "aliases": [
+        "platelet count",
+        "platelets count",
+        "platelets",
+        "platelet",
+        "plt count",
+        "plt",
+        "thrombocyte count",
+        "thrombocytes"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 150,
+            "max": 410
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true,
+      "clinical_warning_threshold": 50,
+      "clinical_warning_message": "Platelet count is very low (50,000/µL or less). Please contact a doctor promptly."
+    },
+    {
+      "key": "pcv",
+      "display_name": "Hematocrit (PCV)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "%",
+      "alternate_units": [],
+      "aliases": [
+        "packed cell volume",
+        "hematocrit",
+        "haematocrit",
+        "pcv",
+        "hct"
+      ],
+      "standard_intervals": {
+        "male": {
+          "normal": {
+            "min": 40,
+            "max": 50
+          }
+        },
+        "female": {
+          "normal": {
+            "min": 36,
+            "max": 46
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "mcv",
+      "display_name": "MCV (Mean Cell Volume)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "fL",
+      "alternate_units": [
+        "µm³"
+      ],
+      "aliases": [
+        "mean corpuscular volume",
+        "mean cell volume",
+        "mcv"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 83,
+            "max": 101
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "mch",
+      "display_name": "MCH (Mean Cell Haemoglobin)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "pg",
+      "alternate_units": [],
+      "aliases": [
+        "mean corpuscular hemoglobin",
+        "mean corpuscular haemoglobin",
+        "mean cell hemoglobin",
+        "mean cell haemoglobin",
+        "mch"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 27,
+            "max": 32
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "mchc",
+      "display_name": "MCHC",
+      "category": "Complete Blood Count",
+      "canonical_unit": "g/dL",
+      "alternate_units": [
+        "g/L",
+        "%"
+      ],
+      "aliases": [
+        "mean corpuscular hemoglobin concentration",
+        "mean corpuscular haemoglobin concentration",
+        "mean cell hemoglobin concentration",
+        "mean cell haemoglobin concentration",
+        "mchc"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 31.5,
+            "max": 34.5
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "rdw",
+      "display_name": "RDW-CV",
+      "category": "Complete Blood Count",
+      "canonical_unit": "%",
+      "alternate_units": [],
+      "aliases": [
+        "red cell distribution width",
+        "red cell distribution width - cv",
+        "rdw-cv",
+        "rdw cv",
+        "rdw"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 11.6,
+            "max": 14.0
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "mpv",
+      "display_name": "Mean Platelet Volume (MPV)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "fL",
+      "alternate_units": [],
+      "aliases": [
+        "mean platelet volume",
+        "mpv"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 7.5,
+            "max": 11.5
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "neutrophils",
+      "display_name": "Neutrophils (%)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "%",
+      "alternate_units": [],
+      "aliases": [
+        "neutrophils",
+        "neutrophil",
+        "polymorphs",
+        "segmented neutrophils",
+        "neutrophil count"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 40,
+            "max": 80
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true,
+      "count_variant": "neutrophils_abs"
+    },
+    {
+      "key": "neutrophils_abs",
+      "display_name": "Absolute Neutrophil Count",
+      "category": "Complete Blood Count",
+      "canonical_unit": "cells/µL",
+      "alternate_units": [
+        "/cumm",
+        "×10³/µL",
+        "×10⁹/L"
+      ],
+      "aliases": [
+        "absolute neutrophil count",
+        "absolute neutrophils count",
+        "absolute neutrophils",
+        "absolute neutrophil",
+        "abs. neutrophils",
+        "abs neutrophils",
+        "neutrophils absolute count",
+        "neutrophils absolute",
+        "neutrophil absolute count",
+        "neutrophils (absolute)",
+        "anc"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 2000,
+            "max": 7000
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "lymphocytes",
+      "display_name": "Lymphocytes (%)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "%",
+      "alternate_units": [],
+      "aliases": [
+        "lymphocytes",
+        "lymphocyte",
+        "lymphocyte count"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 20,
+            "max": 40
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true,
+      "count_variant": "lymphocytes_abs"
+    },
+    {
+      "key": "lymphocytes_abs",
+      "display_name": "Absolute Lymphocyte Count",
+      "category": "Complete Blood Count",
+      "canonical_unit": "cells/µL",
+      "alternate_units": [
+        "/cumm",
+        "×10³/µL",
+        "×10⁹/L"
+      ],
+      "aliases": [
+        "absolute lymphocyte count",
+        "absolute lymphocytes count",
+        "absolute lymphocytes",
+        "absolute lymphocyte",
+        "abs. lymphocytes",
+        "abs lymphocytes",
+        "lymphocytes absolute count",
+        "lymphocytes absolute",
+        "lymphocyte absolute count",
+        "lymphocytes (absolute)"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 1000,
+            "max": 3000
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "eosinophils",
+      "display_name": "Eosinophils (%)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "%",
+      "alternate_units": [],
+      "aliases": [
+        "eosinophils",
+        "eosinophil",
+        "eosinophil count"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 1,
+            "max": 6
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true,
+      "count_variant": "eosinophils_abs"
+    },
+    {
+      "key": "eosinophils_abs",
+      "display_name": "Absolute Eosinophil Count",
+      "category": "Complete Blood Count",
+      "canonical_unit": "cells/µL",
+      "alternate_units": [
+        "/cumm",
+        "×10³/µL",
+        "×10⁹/L"
+      ],
+      "aliases": [
+        "absolute eosinophil count",
+        "absolute eosinophils count",
+        "absolute eosinophils",
+        "absolute eosinophil",
+        "abs. eosinophils",
+        "abs eosinophils",
+        "eosinophils absolute count",
+        "eosinophils absolute",
+        "eosinophil absolute count",
+        "eosinophils (absolute)",
+        "aec"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 20,
+            "max": 500
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "monocytes",
+      "display_name": "Monocytes (%)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "%",
+      "alternate_units": [],
+      "aliases": [
+        "monocytes",
+        "monocyte",
+        "monocyte count"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 2,
+            "max": 10
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true,
+      "count_variant": "monocytes_abs"
+    },
+    {
+      "key": "monocytes_abs",
+      "display_name": "Absolute Monocyte Count",
+      "category": "Complete Blood Count",
+      "canonical_unit": "cells/µL",
+      "alternate_units": [
+        "/cumm",
+        "×10³/µL",
+        "×10⁹/L"
+      ],
+      "aliases": [
+        "absolute monocyte count",
+        "absolute monocytes count",
+        "absolute monocytes",
+        "absolute monocyte",
+        "abs. monocytes",
+        "abs monocytes",
+        "monocytes absolute count",
+        "monocytes absolute",
+        "monocyte absolute count",
+        "monocytes (absolute)"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 200,
+            "max": 1000
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "basophils",
+      "display_name": "Basophils (%)",
+      "category": "Complete Blood Count",
+      "canonical_unit": "%",
+      "alternate_units": [],
+      "aliases": [
+        "basophils",
+        "basophil",
+        "basophil count"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 0,
+            "max": 2
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true,
+      "count_variant": "basophils_abs"
+    },
+    {
+      "key": "basophils_abs",
+      "display_name": "Absolute Basophil Count",
+      "category": "Complete Blood Count",
+      "canonical_unit": "cells/µL",
+      "alternate_units": [
+        "/cumm",
+        "×10³/µL",
+        "×10⁹/L"
+      ],
+      "aliases": [
+        "absolute basophil count",
+        "absolute basophils count",
+        "absolute basophils",
+        "absolute basophil",
+        "abs. basophils",
+        "abs basophils",
+        "basophils absolute count",
+        "basophils absolute",
+        "basophil absolute count",
+        "basophils (absolute)"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 20,
+            "max": 100
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "esr",
+      "display_name": "ESR",
+      "category": "Complete Blood Count",
+      "canonical_unit": "mm/hr",
+      "alternate_units": [],
+      "aliases": [
+        "erythrocyte sedimentation rate",
+        "e.s.r",
+        "esr"
+      ],
+      "standard_intervals": {
+        "male": {
+          "normal": {
+            "min": 0,
+            "max": 15
+          }
+        },
+        "female": {
+          "normal": {
+            "min": 0,
+            "max": 20
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "tsh",
+      "display_name": "TSH (Thyroid Stimulating Hormone)",
+      "category": "Thyroid Function",
+      "canonical_unit": "µIU/mL",
+      "alternate_units": [
+        "mIU/L"
+      ],
+      "aliases": [
+        "thyroid stimulating hormone",
+        "tsh ultrasensitive",
+        "ultrasensitive tsh",
+        "ultra sensitive tsh",
+        "tsh - ultrasensitive",
+        "us tsh",
+        "s. tsh",
+        "serum tsh",
+        "tsh 3rd generation",
+        "tsh"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 0.4,
+            "max": 4.0
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "t3",
+      "display_name": "Total T3",
+      "category": "Thyroid Function",
+      "canonical_unit": "ng/dL",
+      "alternate_units": [
+        "ng/mL",
+        "nmol/L"
+      ],
+      "aliases": [
+        "total triiodothyronine",
+        "triiodothyronine total",
+        "triiodothyronine",
+        "total t3",
+        "t3 total",
+        "t3, total",
+        "tt3",
+        "t3"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 80,
+            "max": 200
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "t4",
+      "display_name": "Total T4",
+      "category": "Thyroid Function",
+      "canonical_unit": "µg/dL",
+      "alternate_units": [
+        "nmol/L"
+      ],
+      "aliases": [
+        "total thyroxine",
+        "thyroxine total",
+        "thyroxine",
+        "total t4",
+        "t4 total",
+        "t4, total",
+        "tt4",
+        "t4"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 5.1,
+            "max": 14.1
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "ft3",
+      "display_name": "Free T3",
+      "category": "Thyroid Function",
+      "canonical_unit": "pg/mL",
+      "alternate_units": [
+        "pmol/L"
+      ],
+      "aliases": [
+        "free triiodothyronine",
+        "free t3",
+        "t3 free",
+        "t3, free",
+        "ft3",
+        "triiodothyronine free",
+        "triiodothyronine, free"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 2.0,
+            "max": 4.4
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "ft4",
+      "display_name": "Free T4",
+      "category": "Thyroid Function",
+      "canonical_unit": "ng/dL",
+      "alternate_units": [
+        "pmol/L"
+      ],
+      "aliases": [
+        "free thyroxine",
+        "free t4",
+        "t4 free",
+        "t4, free",
+        "ft4",
+        "thyroxine free",
+        "thyroxine, free",
+        "free thyroxine (ft4)"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 0.93,
+            "max": 1.7
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "sodium",
+      "display_name": "Sodium",
+      "category": "Electrolytes",
+      "canonical_unit": "mmol/L",
+      "alternate_units": [
+        "mEq/L"
+      ],
+      "aliases": [
+        "serum sodium",
+        "s. sodium",
+        "s.sodium",
+        "sodium",
+        "na+"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 136,
+            "max": 145
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true,
+      "clinical_warning_threshold": 125,
+      "clinical_warning_high_threshold": 155,
+      "clinical_warning_message": "Sodium is at a level that can be dangerous (125 or below, or 155 mmol/L or above). Please contact a doctor promptly."
+    },
+    {
+      "key": "potassium",
+      "display_name": "Potassium",
+      "category": "Electrolytes",
+      "canonical_unit": "mmol/L",
+      "alternate_units": [
+        "mEq/L"
+      ],
+      "aliases": [
+        "serum potassium",
+        "s. potassium",
+        "s.potassium",
+        "potassium",
+        "k+"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 3.5,
+            "max": 5.1
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true,
+      "clinical_warning_threshold": 3.0,
+      "clinical_warning_high_threshold": 6.0,
+      "clinical_warning_message": "Potassium is at a level that can affect the heart (3.0 or below, or 6.0 mmol/L or above). Please contact a doctor promptly."
+    },
+    {
+      "key": "chloride",
+      "display_name": "Chloride",
+      "category": "Electrolytes",
+      "canonical_unit": "mmol/L",
+      "alternate_units": [
+        "mEq/L"
+      ],
+      "aliases": [
+        "serum chloride",
+        "s. chloride",
+        "s.chloride",
+        "chloride",
+        "cl-"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 98,
+            "max": 107
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "serum_iron",
+      "display_name": "Serum Iron",
+      "category": "Iron Studies",
+      "canonical_unit": "µg/dL",
+      "alternate_units": [
+        "µmol/L"
+      ],
+      "aliases": [
+        "serum iron",
+        "s. iron",
+        "s.iron",
+        "iron, serum",
+        "iron serum",
+        "iron"
+      ],
+      "standard_intervals": {
+        "male": {
+          "normal": {
+            "min": 65,
+            "max": 175
+          }
+        },
+        "female": {
+          "normal": {
+            "min": 50,
+            "max": 170
+          }
+        }
+      },
+      "direction": "lower_is_worse",
+      "use_report_range": true,
+      "supports_food_plan": true,
+      "target_nutrient_key": "iron_mg",
+      "absorption_notes": "Serum iron changes during the day and after meals; ferritin and haemoglobin give a fuller picture."
+    },
+    {
+      "key": "tibc",
+      "display_name": "TIBC (Total Iron Binding Capacity)",
+      "category": "Iron Studies",
+      "canonical_unit": "µg/dL",
+      "alternate_units": [
+        "µmol/L"
+      ],
+      "aliases": [
+        "total iron binding capacity",
+        "tibc"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 250,
+            "max": 450
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "transferrin_saturation",
+      "display_name": "Transferrin Saturation",
+      "category": "Iron Studies",
+      "canonical_unit": "%",
+      "alternate_units": [],
+      "aliases": [
+        "transferrin saturation",
+        "% transferrin saturation",
+        "iron saturation",
+        "% saturation",
+        "tsat"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 20,
+            "max": 50
+          }
+        }
+      },
+      "direction": "lower_is_worse",
+      "use_report_range": true,
+      "supports_food_plan": true,
+      "target_nutrient_key": "iron_mg",
+      "absorption_notes": "Low transferrin saturation means little iron is available for making red blood cells."
+    },
+    {
+      "key": "ggt",
+      "display_name": "GGT (Gamma GT)",
+      "category": "Liver Function",
+      "canonical_unit": "U/L",
+      "alternate_units": [
+        "IU/L"
+      ],
+      "aliases": [
+        "gamma glutamyl transferase",
+        "gamma-glutamyl transferase",
+        "gamma glutamyl transpeptidase",
+        "gamma-glutamyl transpeptidase",
+        "gamma gt",
+        "ggtp",
+        "ggt",
+        "g.g.t"
+      ],
+      "standard_intervals": {
+        "male": {
+          "normal": {
+            "min": 10,
+            "max": 71
+          }
+        },
+        "female": {
+          "normal": {
+            "min": 6,
+            "max": 42
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "bilirubin_direct",
+      "display_name": "Direct Bilirubin",
+      "category": "Liver Function",
+      "canonical_unit": "mg/dL",
+      "alternate_units": [
+        "µmol/L"
+      ],
+      "aliases": [
+        "direct bilirubin",
+        "bilirubin direct",
+        "bilirubin (direct)",
+        "bilirubin - direct",
+        "bilirubin-direct",
+        "conjugated bilirubin",
+        "s. bilirubin d",
+        "s.bilirubin d",
+        "bilirubin d"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 0.0,
+            "max": 0.3
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "bilirubin_indirect",
+      "display_name": "Indirect Bilirubin",
+      "category": "Liver Function",
+      "canonical_unit": "mg/dL",
+      "alternate_units": [
+        "µmol/L"
+      ],
+      "aliases": [
+        "indirect bilirubin",
+        "bilirubin indirect",
+        "bilirubin (indirect)",
+        "bilirubin - indirect",
+        "bilirubin-indirect",
+        "unconjugated bilirubin",
+        "s. bilirubin i",
+        "bilirubin i"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 0.1,
+            "max": 1.0
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "globulin",
+      "display_name": "Globulin",
+      "category": "Liver Function",
+      "canonical_unit": "g/dL",
+      "alternate_units": [
+        "g/L"
+      ],
+      "aliases": [
+        "serum globulin",
+        "s. globulin",
+        "s.globulin",
+        "globulin"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 2.0,
+            "max": 3.5
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "bun",
+      "display_name": "Blood Urea Nitrogen (BUN)",
+      "category": "Kidney Function",
+      "canonical_unit": "mg/dL",
+      "alternate_units": [
+        "mmol/L"
+      ],
+      "aliases": [
+        "blood urea nitrogen",
+        "serum urea nitrogen",
+        "urea nitrogen",
+        "bun"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 7,
+            "max": 20
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "egfr",
+      "display_name": "eGFR",
+      "category": "Kidney Function",
+      "canonical_unit": "mL/min/1.73m²",
+      "alternate_units": [],
+      "aliases": [
+        "estimated glomerular filtration rate",
+        "estimated gfr",
+        "egfr",
+        "e-gfr",
+        "gfr"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 90,
+            "max": 200
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "phosphorus",
+      "display_name": "Phosphorus",
+      "category": "Kidney Function",
+      "canonical_unit": "mg/dL",
+      "alternate_units": [
+        "mmol/L"
+      ],
+      "aliases": [
+        "inorganic phosphorus",
+        "serum phosphorus",
+        "s. phosphorus",
+        "phosphorus",
+        "phosphate"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 2.5,
+            "max": 4.5
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
+    },
+    {
+      "key": "crp",
+      "display_name": "C-Reactive Protein (CRP)",
+      "category": "Inflammation",
+      "canonical_unit": "mg/L",
+      "alternate_units": [
+        "mg/dL"
+      ],
+      "aliases": [
+        "c-reactive protein",
+        "c reactive protein",
+        "high sensitivity crp",
+        "hs-crp",
+        "hscrp",
+        "hs crp",
+        "crp quantitative",
+        "crp"
+      ],
+      "standard_intervals": {
+        "adult": {
+          "normal": {
+            "min": 0,
+            "max": 5
+          }
+        }
+      },
+      "direction": "two_sided",
+      "use_report_range": true,
+      "supports_food_plan": false,
+      "target_nutrient_key": null,
+      "absorption_notes": "",
+      "abnormal_requires_consult": true
     }
   ]
 }
