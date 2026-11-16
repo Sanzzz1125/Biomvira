@@ -113,7 +113,13 @@ class RuleEngine:
             clinical_warning = bio_info.get("clinical_warning_message")
         if clinical_warning is None and status == MarkerStatus.LOW and bio_info.get("low_status_message"):
             clinical_warning = bio_info["low_status_message"]
-        if clinical_warning is None and status != MarkerStatus.NORMAL and bio_info.get("abnormal_requires_consult"):
+        food_plan_on = bio_info.get("food_plan_on") or {}
+        factor = bio_info.get("doctor_above_factor")
+        if clinical_warning is None and factor and range_high > 0 and canonical_val >= factor * range_high:
+            clinical_warning = (f"{bio_info['display_name']} is more than {factor} times the upper limit of its reference "
+                                "range. Please see a doctor; diet changes alone are not enough.")
+        if (clinical_warning is None and status != MarkerStatus.NORMAL and bio_info.get("abnormal_requires_consult")
+                and status.value not in food_plan_on):
             where = "below" if status == MarkerStatus.LOW or (
                 status == MarkerStatus.BORDERLINE and direction == "lower_is_worse") else "above"
             clinical_warning = (f"{bio_info['display_name']} is {where} its reference range. NutriLens does not give food advice "
@@ -139,5 +145,5 @@ class RuleEngine:
             range_high=round(self._display_ceiling(range_high), 2),
             percentage_of_optimal=pct,
             clinical_warning=clinical_warning,
-            target_nutrient_key=bio_info.get("target_nutrient_key") or ""
+            target_nutrient_key=food_plan_on.get(status.value) or bio_info.get("target_nutrient_key") or ""
         )

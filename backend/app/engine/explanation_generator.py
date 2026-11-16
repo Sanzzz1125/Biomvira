@@ -273,9 +273,11 @@ def generate_grounded_explanation(
         lines.append(detail)
 
     # Section 3: Targeted Food Protocol
-    if recommendations:
+    improve = [p for p in recommendations if getattr(p, "purpose", "improve") == "improve"]
+    maintain = [p for p in recommendations if getattr(p, "purpose", "improve") == "maintain"]
+    if improve:
         lines.append("### Targeted Food Protocols")
-        for plan in recommendations:
+        for plan in improve:
             top_foods = [f"{f.name} ({f.key_nutrient_yield} per {f.serving_size})" for f in plan.recommended_foods[:3]]
             foods_joined = "; ".join(top_foods)
             lines.append(f"#### Protocol for {plan.biomarker_display_name} ({plan.status.value.upper()})")
@@ -285,6 +287,12 @@ def generate_grounded_explanation(
                 lines.append(f"- **Helpful Habit:** {plan.absorption_dos[0]}")
             if plan.absorption_donts:
                 lines.append(f"- **Habit to Limit:** {plan.absorption_donts[0]}")
+
+    if maintain:
+        lines.append("### Keeping Healthy Results Healthy")
+        for plan in maintain:
+            foods_joined = ", ".join(f.name for f in plan.recommended_foods)
+            lines.append(f"- **{plan.biomarker_display_name}:** within range. Regular foods that help keep it there: {foods_joined}.")
 
     # Section 5: Clinical Safety Advisory
     if requires_physician_consult:

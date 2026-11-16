@@ -7,6 +7,7 @@ import {
   MarkerInput,
   UserProfile,
 } from '../types';
+import { needsReview } from '../lib/review';
 
 export type Step = 'upload' | 'verify' | 'profile' | 'results';
 
@@ -32,7 +33,8 @@ export function useAnalyzer() {
     setSanitizedPreview(data.sanitized_preview);
     setExtractionWarnings(data.warnings || []);
     setExtractedMarkers(data.extracted_biomarkers);
-    setStep('verify');
+    // Clean results go straight on; the review step only appears when something needs the person's attention.
+    setStep(needsReview(data.extracted_biomarkers) ? 'verify' : 'profile');
   };
 
   const handleRunAnalysis = async (validatedProfile: UserProfile) => {

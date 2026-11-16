@@ -215,10 +215,8 @@ test('the application defaults to 25 and sends an edited age through analysis to
     });
     const extract = [...document.querySelectorAll('button')].find(el => el.textContent.includes('Extract biomarkers'));
     await act(async () => { extract.click(); await new Promise(resolve => setTimeout(resolve, 1500)); });
-    const confirmation = document.querySelector('input[type="checkbox"]');
-    await act(() => confirmation.click());
-    const next = [...document.querySelectorAll('button')].find(el => el.textContent.trim() === 'Continue');
-    await act(() => next.click());
+    // A cleanly read report skips the review step and goes straight to the profile, with a summary to review from.
+    assert.match(document.body.textContent, /1 result read from your report/);
     assert.equal(document.getElementById('age').value, '25');
     await editAge('');
     await editAge('65');

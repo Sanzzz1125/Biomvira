@@ -14,6 +14,7 @@ from app.models.schemas import ExtractionResponse
 from app.parsers.sanitizer import sanitize_report_text, clinical_evidence_only
 from app.parsers.pdf_extractor import extract_upload, ReportError
 from app.parsers.regex_matcher import extract_biomarkers_with_regex, mentioned_keys, found_keys
+from app.engine.rule_engine import BIOMARKERS_CONFIG
 from app.parsers.llm_fallback import extract_with_gemini_fallback
 
 router = APIRouter()
@@ -29,13 +30,15 @@ def process_report(data, filename, mime, raw_text):
     sanitized, _ = sanitize_report_text(text)
     markers = extract_biomarkers_with_regex(sanitized)
     missing = mentioned_keys(sanitized) - found_keys(markers)
-    warnings = [f'{key}: mentioned but no reliable result extracted; add manually.' for key in sorted(missing)]
+    names = [BIOMARKERS_CONFIG[key]['display_name'] for key in sorted(missing)]
+    warnings = [f'{name} is mentioned in the report but its value could not be read. Add it with "Add a test" if needed.'
+                for name in names]
     warnings += [f'Page {page} is a picture that could not be read automatically. If it shows results not listed '
                  'below, add them manually.' for page in re.findall(r'\[\[PAGE (\d+) unread\]\]', text)]
     if not markers or missing or any(m.warnings for m in markers):
         evidence = clinical_evidence_only(sanitized)
         if not evidence:
-            warnings.append('AI fallback withheld: no verifiably de-identified clinical evidence. Review manually.')
+            pass  # no de-identified evidence to send; local results stand
         else:
             try:
                 candidates = extract_with_gemini_fallback(sanitized)
@@ -45,12 +48,10 @@ def process_report(data, filename, mime, raw_text):
                         candidate.verification_status = 'conflict'
                         candidate.warnings.append('AI/local disagreement requires manual verification.')
                         markers.append(candidate)
-                if not candidates:
-                    warnings.append('AI fallback did not recover validated values; review missing or uncertain results manually.')
             except ValueError:
-                warnings.append('Gemini unavailable or invalid response; local results retained for review.')
+                pass  # the AI helper is optional; local results stand
     if not markers:
-        warnings.append('No supported biomarkers extracted. Retry with a clearer report or add results manually.')
+        warnings.append("We couldn't find supported test results in this report. Try a clearer copy, or add your results manually.")
     # Do not expose arbitrary report headers as an allegedly anonymous preview.
     return ExtractionResponse(session_id=str(uuid.uuid4()), sanitized_preview=clinical_evidence_only(sanitized)[:400],
                               extracted_biomarkers=markers, warnings=warnings,

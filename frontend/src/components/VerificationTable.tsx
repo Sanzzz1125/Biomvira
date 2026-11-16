@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowLeft, ArrowRight, Eye, EyeOff, Plus, ShieldCheck, Trash2 } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, ArrowRight, Eye, EyeOff, Info, Plus, ShieldCheck, Trash2 } from 'lucide-react';
 import { DetectedBiomarker } from '../types';
+import { isBlocking, reviewReason } from '../lib/review';
 import { Badge, Button, Card, PageHeader, cx } from './ui';
 
 interface VerificationTableProps {
@@ -82,6 +83,8 @@ const MobileLabel: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <span className="mb-1 block text-xs font-medium text-slate-500 md:hidden">{children}</span>
 );
 
+const edited = (m: DetectedBiomarker) => (m.extraction_method === 'manual' ? 'manual' : 'edited');
+
 export const VerificationTable: React.FC<VerificationTableProps> = ({
   markers,
   warnings = [],
@@ -90,14 +93,13 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
   onProceedToProfile,
   onReset,
 }) => {
-  const [confirmed, setConfirmed] = React.useState(false);
-  React.useEffect(() => setConfirmed(false), [markers]);
   const [showSanitized, setShowSanitized] = React.useState(false);
 
   const handleValueChange = (index: number, val: number) => {
     setMarkers((prev) => {
       const next = [...prev];
-      next[index] = { ...next[index], detected_value: val, canonical_value: val, qualifier: null };
+      // An edited value is the person's own reading of the report, so earlier extraction notes no longer apply.
+      next[index] = { ...next[index], detected_value: val, canonical_value: val, qualifier: null, warnings: [], extraction_method: edited(next[index]) };
       return next;
     });
   };
@@ -105,7 +107,7 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
   const handleUnitChange = (index: number, unit: string) => {
     setMarkers((prev) => {
       const next = [...prev];
-      next[index] = { ...next[index], detected_unit: unit };
+      next[index] = { ...next[index], detected_unit: unit, canonical_value: next[index].detected_value, warnings: [], extraction_method: edited(next[index]) };
       return next;
     });
   };
@@ -157,18 +159,30 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
     (b) => !markers.some((m) => m.biomarker_key === b.key)
   );
 
+  const attentionCount = markers.filter((m) => reviewReason(m, markers)).length;
+  const blocked = markers.length === 0 || markers.some((m) => isBlocking(m, markers));
+  // Results that need attention are listed first; the rest keep the report's order.
+  const ordered = markers
+    .map((marker, idx) => ({ marker, idx }))
+    .sort((a, b) => Number(!reviewReason(a.marker, markers)) - Number(!reviewReason(b.marker, markers)));
+
   const methodBadge = (method: string) => {
     if (method === 'llm_fallback') return <Badge tone="indigo">AI-assisted</Badge>;
     if (method === 'manual') return <Badge>Added by you</Badge>;
+    if (method === 'edited') return <Badge>Edited</Badge>;
     return <Badge tone="brand">Auto</Badge>;
   };
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
       <PageHeader
-        eyebrow="Step 2 of 4"
-        title="Check your results"
-        description="We found these values in your report. Please confirm they match your lab slip, and correct anything that looks off."
+        eyebrow="Review results"
+        title={attentionCount > 0 ? `${attentionCount} ${attentionCount === 1 ? 'result needs' : 'results need'} your attention` : 'Your results'}
+        description={
+          attentionCount > 0
+            ? `We read ${markers.length} results from your report. The highlighted ones could not be confirmed automatically; everything else is ready.`
+            : `We read ${markers.length} results from your report. You can correct a value or add a missing test before continuing.`
+        }
         actions={
           <>
             {sanitizedPreview && (
@@ -206,28 +220,16 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
         </Card>
       )}
 
-      {warnings.map((warning, i) => <p role="status" className="text-sm text-amber-800" key={i}>{warning}</p>)}
-      <label
-        className={cx(
-          'flex cursor-pointer items-start gap-3 rounded-xl border-2 p-4 shadow-card transition-colors',
-          confirmed ? 'border-brand-300 bg-brand-50' : 'border-amber-300 bg-amber-50',
-        )}
-      >
-        <input
-          type="checkbox"
-          checked={confirmed}
-          onChange={e => setConfirmed(e.target.checked)}
-          className="mt-0.5 h-5 w-5 shrink-0 cursor-pointer accent-brand-600"
-        />
-        <span className="text-sm leading-relaxed">
-          <span className={cx('block font-semibold', confirmed ? 'text-brand-800' : 'text-amber-900')}>
-            I checked every value and unit against the report and resolved warnings.
-          </span>
-          <span className={cx('mt-1 block', confirmed ? 'text-brand-700' : 'text-amber-800')}>
-            Qualified bounds must be removed or replaced with an exact result.
-          </span>
-        </span>
-      </label>
+      {warnings.length > 0 && (
+        <Card className="flex items-start gap-3 border-sky-200 bg-sky-50/60 p-4">
+          <Info className="mt-0.5 h-4 w-4 shrink-0 text-sky-700" aria-hidden />
+          <ul className="space-y-1 text-sm text-sky-900">
+            {warnings.map((warning, i) => (
+              <li key={i}>{warning}</li>
+            ))}
+          </ul>
+        </Card>
+      )}
       <Card className="overflow-hidden">
         {/* Column headings (desktop) */}
         <div
@@ -253,7 +255,8 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
           </div>
         ) : (
           <ul className="divide-y divide-slate-200">
-            {markers.map((marker, idx) => {
+            {ordered.map(({ marker, idx }) => {
+              const reason = reviewReason(marker, markers);
               const refLow = marker.report_reference_range?.low;
               const refHigh = marker.report_reference_range?.high;
               const isOutOfRange =
@@ -266,14 +269,20 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
                   key={`${id}-${idx}`}
                   className={cx(
                     GRID,
-                    'grid grid-cols-2 gap-x-4 gap-y-4 px-5 py-5 transition-colors hover:bg-slate-50/70 md:px-6 md:py-4'
+                    'grid grid-cols-2 gap-x-4 gap-y-4 px-5 py-5 transition-colors md:px-6 md:py-4',
+                    reason ? 'bg-amber-50/60' : 'hover:bg-slate-50/70'
                   )}
                 >
                   <div className="col-span-2 flex items-start justify-between gap-3 md:col-span-1 md:block">
                     <div>
                       <p className="text-[15px] font-semibold text-slate-900">{marker.display_name}</p>
-                      {isOutOfRange && (
-                        <p className="mt-0.5 text-xs font-medium text-amber-700">Outside reference range</p>
+                      {reason ? (
+                        <p className="mt-1 flex items-start gap-1.5 text-xs font-medium text-amber-800">
+                          <AlertTriangle className="mt-px h-3.5 w-3.5 shrink-0" aria-hidden />
+                          {reason}
+                        </p>
+                      ) : (
+                        isOutOfRange && <p className="mt-0.5 text-xs font-medium text-slate-500">Outside reference range</p>
                       )}
                     </div>
                     <button
@@ -341,11 +350,9 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
 
                   <div className="col-span-2 flex items-center gap-2 md:col-span-1">
                     {methodBadge(marker.extraction_method)}
-                    <span className="text-xs text-slate-500 tabular-nums">
-                      {marker.verification_status || "needs_review"}{marker.source_page ? ` · Page ${marker.source_page}` : ""}
-                      {marker.qualifier && <span> · Reported {marker.qualifier}{marker.detected_value}</span>}
-                      {marker.warnings?.map((warning, i) => <span className="block text-amber-700" key={i}>{warning}</span>)}
-                    </span>
+                    {marker.source_page ? (
+                      <span className="text-xs text-slate-500 tabular-nums">Page {marker.source_page}</span>
+                    ) : null}
                   </div>
 
                   <div className="hidden justify-end md:flex">
@@ -403,7 +410,7 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
         <Button
           size="lg"
           onClick={onProceedToProfile}
-          disabled={!confirmed || markers.length === 0 || markers.some(m => !m.detected_unit.trim() || m.qualifier || !Number.isFinite(m.detected_value)) || new Set(markers.map(m => m.biomarker_key)).size !== markers.length}
+          disabled={blocked}
           iconRight={<ArrowRight className="h-4 w-4" aria-hidden />}
         >
           Continue

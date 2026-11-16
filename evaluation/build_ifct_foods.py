@@ -149,6 +149,33 @@ NOTES = {
 }
 
 
+# Protein and purine tags. Generated foods get them from IFCT protein values and their food group; the hand-curated
+# foods get them here. Low purine follows common gout guidance: dairy, eggs, vegetables, fruit, grains, nuts and seeds are
+# low; organ meats, red meat, seafood, yeast and (conservatively) pulses, soy and mushrooms are left out.
+LOW_PURINE_CATEGORIES = {"Dairy", "Fruits & Catalysts", "Vegetables", "Root Vegetables", "Millets & Grains",
+                         "Green Leafy Vegetables", "Seeds & Nuts", "Dried Fruits"}
+# Approximate protein (g) per stated serving, from standard food tables. Used only to order the protein plan; the
+# app does not display these figures.
+CURATED_HIGH_PROTEIN = {
+    "paneer_cottage_cheese": 18, "curd_yogurt": 7, "cow_milk_whole": 8, "whole_egg_boiled": 13, "chicken_breast": 45,
+    "chicken_liver": 24, "mutton_goat_meat": 25, "rohu_freshwater_fish": 25, "mackerel_bangda": 23, "hilsa_fish_ilish": 22,
+    "prawn_shrimp": 24, "mutton_liver": 26, "roasted_chana": 11, "rajma_kidney_beans": 13, "chana_dal": 13,
+    "black_urad_dal": 12, "horse_gram_kulthi": 12, "moth_beans_matki": 11, "soybean_cooked": 25,
+    "lobia_black_eyed_peas": 12, "tofu_firm": 15, "tempeh": 19, "fortified_soy_milk": 8, "fortified_milk_fssai": 8,
+    "pumpkin_seeds": 9, "sunflower_seeds": 6,
+}
+
+
+def tag_curated(food):
+    tags = [t for t in food.get("tags", []) if t not in ("high_protein", "low_purine")]
+    if food["id"] in CURATED_HIGH_PROTEIN:
+        tags.append("high_protein")
+        food["protein_rank_g"] = CURATED_HIGH_PROTEIN[food["id"]]
+    if (food["category"] in LOW_PURINE_CATEGORIES or food["id"] == "whole_egg_boiled") and "mushroom" not in food["id"]:
+        tags.append("low_purine")
+    food["tags"] = tags
+
+
 def num(row, key):
     try:
         return float(row.get(key) or 0)
@@ -170,6 +197,8 @@ def slug(text):
 def build(csv_path):
     data = json.loads(FOODS.read_text(encoding="utf-8"))
     data["foods"] = [f for f in data["foods"] if not f["id"].startswith("ifct_")]  # rebuild cleanly on re-run
+    for food in data["foods"]:
+        tag_curated(food)
     existing_ids = {f["id"] for f in data["foods"]}
     rows = {r["code"]: r for r in csv.DictReader(open(csv_path, encoding="utf-8"))}
     added = []
@@ -206,7 +235,13 @@ def build(csv_path):
             tags.append("heart_healthy_fat")
         if not skip and num(row, "f18d3n3") >= 1.0 or (num(row, "f20d5n3") + num(row, "f22d6n3")) >= 0.2:
             tags.append("omega3")
-        added.append({
+        protein = num(row, "protcnt")
+        if row["grup"] != "Condiments and Spices" and (protein * grams / 100 >= 6 or protein >= 20):
+            tags.append("high_protein")
+        if (category in LOW_PURINE_CATEGORIES or row["grup"] == "Egg and Egg Products") and row["grup"] != "Condiments and Spices":
+            tags.append("low_purine")
+        nutrients["protein_g"] = round(protein * grams / 100, 1)
+        added.append({"protein_rank_g": nutrients["protein_g"],
             "id": food_id, "name": name, "hindi_name": regional_names(row.get("lang", "")), "category": category,
             "diet_type": diets, "allergens": sorted(set(allergens + extra_allergens)), "serving_size": label,
             "nutrients": nutrients, "synergies": [NOTES[category]] if category in NOTES else [],

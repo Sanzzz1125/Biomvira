@@ -78,6 +78,7 @@ export interface NutrientRecommendationPlan {
   recommended_foods: FoodRecommendation[];
   absorption_dos: string[];
   absorption_donts: string[];
+  purpose?: 'improve' | 'maintain';
 }
 
 export interface FullAnalysisResponse {

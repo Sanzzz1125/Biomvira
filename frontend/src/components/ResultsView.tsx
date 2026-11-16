@@ -7,6 +7,7 @@ import {
   FileText,
   HeartPulse,
   RotateCcw,
+  Leaf,
   Salad,
   Sparkles,
   Stethoscope,
@@ -63,6 +64,10 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
     { id: 'all' as const, label: `All (${result.marker_analyses.length})` },
     { id: 'flagged' as const, label: `Needs attention (${flaggedCount})` },
   ];
+
+  // Plans saved before "maintain" plans existed have no purpose and are improvement plans.
+  const improvePlans = result.recommendations.filter((p) => (p.purpose ?? 'improve') === 'improve');
+  const maintainPlans = result.recommendations.filter((p) => p.purpose === 'maintain');
 
   return (
     <div className="mx-auto max-w-6xl space-y-10 animate-fade-in">
@@ -260,7 +265,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
           description="Foods are chosen for the nutrient or property that matters for each result, with strict diet and allergen safety."
         />
 
-        {result.recommendations.length === 0 ? (
+        {improvePlans.length === 0 ? (
           <Card className="px-6 py-12 text-center">
             <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-600">
               <CheckCircle2 className="h-6 w-6" aria-hidden />
@@ -269,12 +274,12 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
               Biochemical Parameters Balanced
             </h4>
             <p className="mx-auto mt-1 max-w-md text-sm text-slate-500">
-              All tested markers fall within standard reference intervals. Maintain your current balanced dietary intake.
+              None of your results needs a corrective food plan. See the foods below to keep your healthy results where they are.
             </p>
           </Card>
         ) : (
           <div className="space-y-6">
-            {result.recommendations.map((plan) => {
+            {improvePlans.map((plan) => {
               const meta = STATUS_META[plan.status];
               return (
                 <Card key={plan.target_biomarker} className="overflow-hidden shadow-card">
@@ -340,6 +345,49 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
           </div>
         )}
       </section>
+
+      {maintainPlans.length > 0 && (
+        <section className="space-y-5">
+          <SectionTitle
+            icon={<Leaf className="h-[18px] w-[18px]" aria-hidden />}
+            title="Keep Your Healthy Results Healthy"
+            description="These results are within range. Including these foods regularly helps keep them there."
+          />
+          <div className="grid gap-5 lg:grid-cols-2">
+            {maintainPlans.map((plan) => (
+              <Card key={plan.target_biomarker} className="overflow-hidden">
+                <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-5 py-3.5">
+                  <h4 className="text-[15px] font-semibold text-slate-900">{plan.biomarker_display_name}</h4>
+                  <Badge tone="brand" className="shrink-0">
+                    <CheckCircle2 className="h-3.5 w-3.5" aria-hidden />
+                    Within range
+                  </Badge>
+                </div>
+                <div className="space-y-4 p-5">
+                  <ul className="grid gap-2.5 sm:grid-cols-2">
+                    {plan.recommended_foods.map((food) => (
+                      <li key={food.id} className="rounded-lg border border-slate-200 bg-slate-50/60 px-3.5 py-2.5">
+                        <p className="text-sm font-semibold text-slate-900">{food.name}</p>
+                        <p className="mt-0.5 text-xs text-slate-500">
+                          {/\d/.test(food.key_nutrient_yield)
+                            ? `${food.key_nutrient_yield} per ${food.serving_size}`
+                            : `${food.key_nutrient_yield} · ${food.serving_size}`}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                  {plan.absorption_dos[0] && (
+                    <p className="flex items-start gap-2 text-xs leading-relaxed text-slate-600">
+                      <ThumbsUp className="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-600" aria-hidden />
+                      {plan.absorption_dos[0]}
+                    </p>
+                  )}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Clinical Synthesis & Narrative */}
       <section>

@@ -88,6 +88,7 @@ class NutrientRecommendationPlan(BaseModel):
     recommended_foods: List[FoodRecommendation]
     absorption_dos: List[str]
     absorption_donts: List[str]
+    purpose: str = "improve"  # "improve" for out-of-range results, "maintain" for healthy ones
 
 class FullAnalysisResponse(BaseModel):
     analysis_id: str

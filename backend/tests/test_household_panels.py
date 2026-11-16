@@ -183,3 +183,37 @@ def test_unreadable_picture_page_does_not_fail_a_readable_report(monkeypatch):
     text = pdf.extract_text_and_tables_from_pdf(stream.getvalue())
     assert "[[PAGE 2 unread]]" in text
     assert [m.detected_value for m in extract_biomarkers_with_regex(text)] == [14.8]
+
+
+def plans_for(values, gender="male", diet="non_veg"):
+    profile = UserProfile(gender=gender, diet_type=diet)
+    results = [RuleEngine().evaluate_marker(MarkerInput(biomarker_key=k, value=v, unit=u), profile) for k, v, u in values]
+    return {r.biomarker_key: r for r in results}, RecommendationEngine().generate_recommendations(results, profile)
+
+
+def test_out_of_range_tests_that_food_can_help_get_a_plan():
+    results, plans = plans_for([("uric_acid", 8.4, "mg/dL"), ("sgpt_alt", 70, "U/L"), ("total_protein", 5.6, "g/dL"),
+                                ("mcv", 108, "fL"), ("pcv", 33, "%")])
+    by_marker = {p.target_biomarker: p for p in plans if p.purpose == "improve"}
+    assert set(by_marker) == {"uric_acid", "sgpt_alt", "total_protein", "mcv", "pcv"}
+    uric = by_marker["uric_acid"].recommended_foods
+    assert uric and not {f.category for f in uric} & {"Organ Meats", "Red Meat", "Seafood & Fish"}
+    assert any("alcohol" in d.lower() for d in by_marker["sgpt_alt"].absorption_donts)
+    assert by_marker["mcv"].recommended_foods[0].key_nutrient_yield.endswith("MCG")  # B12 plan for large red cells
+    assert all(results[k].clinical_warning is None for k in ("uric_acid", "sgpt_alt", "total_protein"))
+
+
+def test_risky_results_stay_with_the_doctor():
+    results, plans = plans_for([("creatinine", 2.1, "mg/dL"), ("sgpt_alt", 160, "U/L"), ("tsh", 9.0, "µIU/mL")])
+    assert not [p for p in plans if p.target_biomarker in ("creatinine", "tsh")]
+    assert "does not give food advice" in results["creatinine"].clinical_warning
+    assert "more than 3 times" in results["sgpt_alt"].clinical_warning
+
+
+def test_healthy_results_get_a_short_maintain_plan():
+    _, plans = plans_for([("vitamin_d", 45, "ng/mL"), ("hemoglobin", 14.8, "g/dL"), ("ferritin", 12, "ng/mL")])
+    maintain = [p for p in plans if p.purpose == "maintain"]
+    improve = [p for p in plans if p.purpose == "improve"]
+    assert [p.target_biomarker for p in maintain] == ["vitamin_d"] and len(maintain[0].recommended_foods) == 4
+    # Haemoglobin is normal but ferritin is low: iron is already being improved, so no separate iron maintain plan.
+    assert [p.target_biomarker for p in improve] == ["ferritin"]

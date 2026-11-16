@@ -627,7 +627,10 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "low": "protein_support"
+      }
     },
     {
       "key": "urea",
@@ -693,7 +696,10 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "high": "uric_acid_support"
+      }
     },
     {
       "key": "sgot_ast",
@@ -724,7 +730,11 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "high": "liver_support"
+      },
+      "doctor_above_factor": 3
     },
     {
       "key": "sgpt_alt",
@@ -755,7 +765,11 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "high": "liver_support"
+      },
+      "doctor_above_factor": 3
     },
     {
       "key": "alkaline_phosphatase",
@@ -849,7 +863,10 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "low": "protein_support"
+      }
     },
     {
       "key": "albumin",
@@ -878,7 +895,10 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "low": "protein_support"
+      }
     },
     {
       "key": "wbc",
@@ -964,7 +984,10 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "low": "iron_mg"
+      }
     },
     {
       "key": "platelets",
@@ -1035,7 +1058,10 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "low": "iron_mg"
+      }
     },
     {
       "key": "mcv",
@@ -1065,7 +1091,11 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "low": "iron_mg",
+        "high": "vitamin_b12_mcg"
+      }
     },
     {
       "key": "mch",
@@ -1095,7 +1125,10 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "low": "iron_mg"
+      }
     },
     {
       "key": "mchc",
@@ -1128,7 +1161,10 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "low": "iron_mg"
+      }
     },
     {
       "key": "rdw",
@@ -1929,7 +1965,11 @@
       "supports_food_plan": false,
       "target_nutrient_key": null,
       "absorption_notes": "",
-      "abnormal_requires_consult": true
+      "abnormal_requires_consult": true,
+      "food_plan_on": {
+        "high": "liver_support"
+      },
+      "doctor_above_factor": 3
     },
     {
       "key": "bilirubin_direct",

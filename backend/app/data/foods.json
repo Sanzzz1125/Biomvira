@@ -27,7 +27,8 @@
       "tip": "Add a handful to daily dal (pappu) or stir-fry as a dry sabzi with minimal oil.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -57,7 +58,8 @@
       "tip": "Steam or sauté lightly; pair with tomatoes or lemon juice rather than heavy cream/dairy.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -87,7 +89,8 @@
       "tip": "Incorporate into multigrain theplas, stir-fries, or dal.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -117,7 +120,8 @@
       "tip": "Cook with garlic and mustard seeds as a quick side sabzi.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -174,7 +178,8 @@
       "tip": "Consume as ragi mudde, malt/porridge, or combine with jowar for soft rotis.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -204,7 +209,8 @@
       "tip": "Make winter bajra rotis or bajra khichdi with moong dal and vegetables.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -234,7 +240,8 @@
       "tip": "Add til laddu with jaggery, sprinkle on rotis, or use in Andhra-style nuvvula podi.",
       "tags": [
         "high_fibre",
-        "heart_healthy_fat"
+        "heart_healthy_fat",
+        "low_purine"
       ]
     },
     {
@@ -264,7 +271,8 @@
       "tip": "Soak 1 tsp in lemon water or tender coconut water for 30 minutes before drinking.",
       "tags": [
         "high_fibre",
-        "heart_healthy_fat"
+        "heart_healthy_fat",
+        "low_purine"
       ]
     },
     {
@@ -293,8 +301,11 @@
       ],
       "tip": "Dry roast and eat as an evening snack.",
       "tags": [
-        "heart_healthy_fat"
-      ]
+        "heart_healthy_fat",
+        "high_protein",
+        "low_purine"
+      ],
+      "protein_rank_g": 9
     },
     {
       "id": "roasted_chana",
@@ -323,8 +334,10 @@
       "tip": "Pair with a slice of jaggery (chana-gur combination) or toss into chaat with tomatoes.",
       "tags": [
         "low_gi",
-        "high_fibre"
-      ]
+        "high_fibre",
+        "high_protein"
+      ],
+      "protein_rank_g": 11
     },
     {
       "id": "rajma_kidney_beans",
@@ -353,8 +366,10 @@
       "tip": "Cook with tomato and ginger-garlic gravy for enhanced taste and acidity to support absorption.",
       "tags": [
         "low_gi",
-        "high_fibre"
-      ]
+        "high_fibre",
+        "high_protein"
+      ],
+      "protein_rank_g": 13
     },
     {
       "id": "chana_dal",
@@ -383,8 +398,10 @@
       "tip": "Prepare as dal tadka or mix with leafy greens like palak or bottle gourd (lauki).",
       "tags": [
         "low_gi",
-        "high_fibre"
-      ]
+        "high_fibre",
+        "high_protein"
+      ],
+      "protein_rank_g": 13
     },
     {
       "id": "black_urad_dal",
@@ -413,8 +430,10 @@
       "tip": "Use in fermented idli/dosa batters or slow-cooked dal makhani (light on cream).",
       "tags": [
         "low_gi",
-        "high_fibre"
-      ]
+        "high_fibre",
+        "high_protein"
+      ],
+      "protein_rank_g": 12
     },
     {
       "id": "paneer_cottage_cheese",
@@ -442,7 +461,11 @@
         "High bioavailable dairy calcium and moderate natural B12 for vegetarians."
       ],
       "tip": "Consume raw, grilled, or gently tossed in curries.",
-      "tags": []
+      "tags": [
+        "high_protein",
+        "low_purine"
+      ],
+      "protein_rank_g": 18
     },
     {
       "id": "curd_yogurt",
@@ -470,7 +493,11 @@
         "Probiotics enhance general intestinal nutrient assimilation."
       ],
       "tip": "Have with lunch as plain curd, raita, or buttermilk (chaas).",
-      "tags": []
+      "tags": [
+        "high_protein",
+        "low_purine"
+      ],
+      "protein_rank_g": 7
     },
     {
       "id": "cow_milk_whole",
@@ -498,7 +525,11 @@
         "Key source of bioavailable B12 and calcium in traditional Indian lacto-vegetarian diets."
       ],
       "tip": "Drink warm at night with a pinch of turmeric and black pepper.",
-      "tags": []
+      "tags": [
+        "high_protein",
+        "low_purine"
+      ],
+      "protein_rank_g": 8
     },
     {
       "id": "whole_egg_boiled",
@@ -525,7 +556,11 @@
         "Yolk contains bioavailable Vitamin D3 and natural Vitamin B12."
       ],
       "tip": "Consume the whole egg (including yolk) to get fat-soluble Vitamin D.",
-      "tags": []
+      "tags": [
+        "high_protein",
+        "low_purine"
+      ],
+      "protein_rank_g": 13
     },
     {
       "id": "chicken_breast",
@@ -549,7 +584,10 @@
         "Lean heme iron with superior bioavailability over plant sources."
       ],
       "tip": "Tikka style, tandoori, or curry with light spices.",
-      "tags": []
+      "tags": [
+        "high_protein"
+      ],
+      "protein_rank_g": 45
     },
     {
       "id": "chicken_liver",
@@ -573,7 +611,10 @@
         "One of nature's densest sources of heme iron, Vitamin B12, and Folate."
       ],
       "tip": "Sauté with onions and black pepper once a week.",
-      "tags": []
+      "tags": [
+        "high_protein"
+      ],
+      "protein_rank_g": 24
     },
     {
       "id": "mutton_goat_meat",
@@ -597,7 +638,10 @@
         "Rich in heme iron and zinc with high Vitamin B12 content."
       ],
       "tip": "Curry or slow braised broth.",
-      "tags": []
+      "tags": [
+        "high_protein"
+      ],
+      "protein_rank_g": 25
     },
     {
       "id": "rohu_freshwater_fish",
@@ -623,7 +667,10 @@
         "Excellent source of natural Vitamin D and B12 for non-vegetarians in India."
       ],
       "tip": "Traditional mustard fish curry (Macher Jhol) or grilled fillet.",
-      "tags": []
+      "tags": [
+        "high_protein"
+      ],
+      "protein_rank_g": 25
     },
     {
       "id": "mackerel_bangda",
@@ -651,8 +698,10 @@
       "tip": "Tava fry with kokum and spices or bake.",
       "tags": [
         "heart_healthy_fat",
-        "omega3"
-      ]
+        "omega3",
+        "high_protein"
+      ],
+      "protein_rank_g": 23
     },
     {
       "id": "fortified_milk_fssai",
@@ -680,7 +729,10 @@
         "Government-mandated fortification adds 5mcg (200 IU) Vitamin D per liter."
       ],
       "tip": "Look for the blue '+F' logo on packaged Indian milk packets (Amul, Mother Dairy, Nandini).",
-      "tags": []
+      "tags": [
+        "high_protein"
+      ],
+      "protein_rank_g": 8
     },
     {
       "id": "fortified_soy_milk",
@@ -709,7 +761,10 @@
         "Critical staple for strict vegans to secure bioavailable Vitamin B12 and Vitamin D without supplements."
       ],
       "tip": "Use in morning oats, tea/coffee, or smoothies.",
-      "tags": []
+      "tags": [
+        "high_protein"
+      ],
+      "protein_rank_g": 8
     },
     {
       "id": "nutritional_yeast",
@@ -792,7 +847,8 @@
       "tip": "Eat raw with a pinch of rock salt, or take 20ml fresh juice alongside morning meals.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -820,7 +876,9 @@
         "Ascorbic acid converts ferric iron ($Fe^{3+}$) to absorbable ferrous ($Fe^{2+}$) iron."
       ],
       "tip": "Squeeze over dal, khichdi, chana, and green vegetables right before eating.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "guava_peru",
@@ -849,7 +907,8 @@
       "tip": "Eat as a midday snack with the skin intact.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -877,7 +936,9 @@
         "High in natural dietary folate and nitrates that improve blood circulation and RBC health."
       ],
       "tip": "Grate raw into salads, juice with amla, or steam into a poriyal/thoran.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "dates_khajoor",
@@ -904,7 +965,9 @@
         "Natural iron-rich sweetener for fatigue and energy support."
       ],
       "tip": "Eat 3-4 dates in the morning alongside soaked almonds.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "almonds_badam",
@@ -936,7 +999,8 @@
       "tags": [
         "low_gi",
         "high_fibre",
-        "heart_healthy_fat"
+        "heart_healthy_fat",
+        "low_purine"
       ]
     },
     {
@@ -964,7 +1028,9 @@
         "Traditional ayurvedic remedy for low hemoglobin and sluggish bowel transit."
       ],
       "tip": "Soak 10-12 munakkas in water overnight and consume the raisins along with the water on an empty stomach.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "tofu_firm",
@@ -994,8 +1060,10 @@
       ],
       "tip": "Pan-fry with Indian spices or substitute for paneer in curries.",
       "tags": [
-        "low_gi"
-      ]
+        "low_gi",
+        "high_protein"
+      ],
+      "protein_rank_g": 15
     },
     {
       "id": "horse_gram_kulthi",
@@ -1024,8 +1092,10 @@
       "tip": "Prepare as rasam (Ulavacharu) with tamarind and tomatoes, or as a dry stir-fry.",
       "tags": [
         "low_gi",
-        "high_fibre"
-      ]
+        "high_fibre",
+        "high_protein"
+      ],
+      "protein_rank_g": 12
     },
     {
       "id": "moth_beans_matki",
@@ -1054,8 +1124,10 @@
       "tip": "Sprout for 24–36 hours and prepare as misal pav or koshimbir salad.",
       "tags": [
         "low_gi",
-        "high_fibre"
-      ]
+        "high_fibre",
+        "high_protein"
+      ],
+      "protein_rank_g": 11
     },
     {
       "id": "soybean_cooked",
@@ -1086,8 +1158,10 @@
       "tip": "Boil and toss into chaat, curries, or dry stir-fry with spices.",
       "tags": [
         "low_gi",
-        "high_fibre"
-      ]
+        "high_fibre",
+        "high_protein"
+      ],
+      "protein_rank_g": 25
     },
     {
       "id": "lobia_black_eyed_peas",
@@ -1116,8 +1190,10 @@
       "tip": "Make lobia curry with tomatoes and ginger-garlic, or add to salads when boiled.",
       "tags": [
         "low_gi",
-        "high_fibre"
-      ]
+        "high_fibre",
+        "high_protein"
+      ],
+      "protein_rank_g": 12
     },
     {
       "id": "drumstick_vegetable",
@@ -1146,7 +1222,8 @@
       "tip": "Add to sambar, dal, or pressure-cook with lentils.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -1176,7 +1253,8 @@
       "tip": "Stir-fry with onions and masalas to reduce bitterness, or stuff with spiced filling.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -1205,7 +1283,8 @@
       ],
       "tip": "Cook as lauki chana dal or lauki kofta for a nutritious combination.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ]
     },
     {
@@ -1233,7 +1312,9 @@
         "Resistant starch supports gut microbiome which indirectly improves mineral absorption."
       ],
       "tip": "Boil and temper with mustard seeds, curry leaves, and coconut; or use in Kerala-style thoran.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "sweet_potato",
@@ -1260,7 +1341,9 @@
         "Contains beta-carotene and Vitamin C; serves as a naturally sweet iron absorption co-factor."
       ],
       "tip": "Roast in the oven, boil and chaat with lemon and chilli, or mash into parathas.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "lotus_seeds_makhana",
@@ -1288,7 +1371,8 @@
       ],
       "tip": "Dry roast in ghee with rock salt and black pepper as a nutritious evening snack.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ]
     },
     {
@@ -1320,7 +1404,8 @@
         "low_gi",
         "high_fibre",
         "heart_healthy_fat",
-        "omega3"
+        "omega3",
+        "low_purine"
       ]
     },
     {
@@ -1349,8 +1434,11 @@
       ],
       "tip": "Roast lightly and add to salads, granola, or trail mixes.",
       "tags": [
-        "heart_healthy_fat"
-      ]
+        "heart_healthy_fat",
+        "high_protein",
+        "low_purine"
+      ],
+      "protein_rank_g": 6
     },
     {
       "id": "cashewnuts_kaju",
@@ -1380,7 +1468,8 @@
       ],
       "tip": "Eat raw or lightly roasted; use in curries, kheer, or homemade barfi.",
       "tags": [
-        "heart_healthy_fat"
+        "heart_healthy_fat",
+        "low_purine"
       ]
     },
     {
@@ -1410,7 +1499,8 @@
       "tip": "Make jowar rotlas (thick flatbread) with garlic chutney and jaggery; also good as porridge.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -1440,7 +1530,8 @@
       "tip": "Cook as upma, pongal, or khichdi using foxtail millet instead of rice.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -1470,7 +1561,8 @@
       "tip": "Prepare as sama khichdi, sama chawal, or upma during Navratri fasting or regular meals.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ]
     },
     {
@@ -1525,8 +1617,10 @@
       "tip": "Steamed in mustard sauce (Ilish Bhapa) or curried in mustard oil with turmeric.",
       "tags": [
         "heart_healthy_fat",
-        "omega3"
-      ]
+        "omega3",
+        "high_protein"
+      ],
+      "protein_rank_g": 22
     },
     {
       "id": "prawn_shrimp",
@@ -1552,7 +1646,10 @@
         "Good heme iron and B12 with meaningful Vitamin D; a coastal Indian staple."
       ],
       "tip": "Prawn masala, dried prawn chutney, or prawn pulao with minimal heavy sauces.",
-      "tags": []
+      "tags": [
+        "high_protein"
+      ],
+      "protein_rank_g": 24
     },
     {
       "id": "mutton_liver",
@@ -1576,7 +1673,10 @@
         "One of the most nutrient-dense foods on earth for iron, B12, and folate combined."
       ],
       "tip": "Stir-fry kaleja masala or add to slow-cooked biryani. Consume in moderation (once a week).",
-      "tags": []
+      "tags": [
+        "high_protein"
+      ],
+      "protein_rank_g": 26
     },
     {
       "id": "papaya_ripe",
@@ -1603,7 +1703,9 @@
         "Contains papain enzyme which aids protein digestion and mineral assimilation; high Vitamin C catalyses iron absorption."
       ],
       "tip": "Eat fresh as a breakfast fruit, or blend into a smoothie with amla for a Vitamin C burst.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "orange_mosambi",
@@ -1630,7 +1732,9 @@
         "Readily available Indian citrus; fresh juice squeezed over dal/iron-rich meals significantly boosts absorption."
       ],
       "tip": "Drink fresh juice (avoid packaged) immediately before or alongside iron-rich meals.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "dried_figs_anjeer",
@@ -1657,7 +1761,9 @@
         "One of the best calcium-rich dried fruits for vegans; also provides meaningful iron."
       ],
       "tip": "Soak 2–3 anjeer in water overnight; eat the figs and drink the soaking water on an empty stomach.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "dried_apricots_khumani",
@@ -1684,7 +1790,9 @@
         "Traditional Kashmiri and Ladakhi source of iron; pair with lemon juice for enhanced non-heme absorption."
       ],
       "tip": "Soak overnight and add to porridge, oats, or homemade trail mix.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "ghee_clarified_butter",
@@ -1712,7 +1820,9 @@
         "Healthy saturated fat carrier; a small amount of ghee with Vitamin D-containing foods significantly enhances absorption of this fat-soluble vitamin."
       ],
       "tip": "Add 1 tsp ghee to warm dal, rice, or rotis; cook Vitamin D-containing mushrooms in ghee.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "coconut_oil_virgin",
@@ -1822,7 +1932,9 @@
         "Concentrated source of folate and iron from the innermost layer of whole wheat; also rich in Vitamin E and zinc."
       ],
       "tip": "Stir 2 tbsp into curd, smoothies, or breakfast upma for a quick folate boost.",
-      "tags": []
+      "tags": [
+        "low_purine"
+      ]
     },
     {
       "id": "tempeh",
@@ -1853,10 +1965,13 @@
       "tip": "Marinate in Indian spices (turmeric, chilli, coriander) and pan-fry or bake as a protein-rich side.",
       "tags": [
         "low_gi",
-        "high_fibre"
-      ]
+        "high_fibre",
+        "high_protein"
+      ],
+      "protein_rank_g": 19
     },
     {
+      "protein_rank_g": 7.3,
       "id": "ifct_a001_amaranth_seed",
       "name": "Amaranth Seed / Rajgira",
       "hindi_name": "Ramdana / Thotakoora Ginjalu",
@@ -1873,7 +1988,8 @@
         "iron_mg": 4.7,
         "calcium_mg": 90.5,
         "folate_mcg": 13.7,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 7.3
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
@@ -1881,11 +1997,14 @@
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
       "tags": [
         "high_fibre",
-        "heart_healthy_fat"
+        "heart_healthy_fat",
+        "high_protein",
+        "low_purine"
       ],
       "source": "IFCT 2017 (A001: Amaranth seed, black)"
     },
     {
+      "protein_rank_g": 5.5,
       "id": "ifct_a004_barley",
       "name": "Barley / Jau",
       "hindi_name": "Jau / Barley",
@@ -1904,7 +2023,8 @@
         "iron_mg": 0.8,
         "calcium_mg": 14.3,
         "folate_mcg": 15.8,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 5.5
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
@@ -1912,11 +2032,13 @@
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (A004: Barley)"
     },
     {
+      "protein_rank_g": 4.4,
       "id": "ifct_a006_maize_dry",
       "name": "Maize, Dry / Makka",
       "hindi_name": "Makka / Mokkajonna",
@@ -1933,18 +2055,21 @@
         "iron_mg": 1.2,
         "calcium_mg": 4.5,
         "folate_mcg": 12.9,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 4.4
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
       "tags": [
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (A006: Maize, dry)"
     },
     {
+      "protein_rank_g": 3.7,
       "id": "ifct_a011_rice_flakes",
       "name": "Rice Flakes / Poha",
       "hindi_name": "Poha / Atukulu",
@@ -1961,16 +2086,20 @@
         "iron_mg": 2.2,
         "calcium_mg": 4.6,
         "folate_mcg": 4.2,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 3.7
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (A011: Rice, flakes)"
     },
     {
+      "protein_rank_g": 4.6,
       "id": "ifct_a013_brown_rice",
       "name": "Brown Rice",
       "hindi_name": "Chawal / Dampudu Biyyam",
@@ -1987,16 +2116,20 @@
         "iron_mg": 0.5,
         "calcium_mg": 5.5,
         "folate_mcg": 5.8,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 4.6
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (A013: Rice, raw, brown)"
     },
     {
+      "protein_rank_g": 3.9,
       "id": "ifct_a014_parboiled_rice",
       "name": "Parboiled Rice",
       "hindi_name": "Usna Chawal / Uppudu Biyyam",
@@ -2013,16 +2146,20 @@
         "iron_mg": 0.4,
         "calcium_mg": 4.1,
         "folate_mcg": 4.9,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 3.9
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (A014: Rice, parboiled, milled)"
     },
     {
+      "protein_rank_g": 4.0,
       "id": "ifct_a015_white_rice_raw_milled",
       "name": "White Rice (Raw, Milled)",
       "hindi_name": "Chawal / Biyyam",
@@ -2039,16 +2176,20 @@
         "iron_mg": 0.3,
         "calcium_mg": 3.7,
         "folate_mcg": 4.7,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 4.0
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (A015: Rice, raw, milled)"
     },
     {
+      "protein_rank_g": 4.5,
       "id": "ifct_a017_kodo_millet",
       "name": "Kodo Millet / Varagu",
       "hindi_name": "Karralu",
@@ -2065,18 +2206,21 @@
         "iron_mg": 1.2,
         "calcium_mg": 7.6,
         "folate_mcg": 19.7,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 4.5
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
       "tags": [
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (A017: Varagu)"
     },
     {
+      "protein_rank_g": 5.3,
       "id": "ifct_a019_whole_wheat_flour",
       "name": "Whole Wheat Flour / Atta",
       "hindi_name": "Atta / Sampurna Godhuma Pindi",
@@ -2095,18 +2239,21 @@
         "iron_mg": 2.1,
         "calcium_mg": 15.5,
         "folate_mcg": 14.6,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 5.3
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
       "tags": [
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (A019: Wheat flour, atta)"
     },
     {
+      "protein_rank_g": 5.3,
       "id": "ifct_a020_whole_wheat",
       "name": "Whole Wheat",
       "hindi_name": "Gehun / Godhumalu",
@@ -2125,18 +2272,21 @@
         "iron_mg": 2.0,
         "calcium_mg": 19.7,
         "folate_mcg": 15.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 5.3
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
       "tags": [
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (A020: Wheat, whole)"
     },
     {
+      "protein_rank_g": 5.4,
       "id": "ifct_a021_broken_wheat",
       "name": "Broken Wheat / Dalia",
       "hindi_name": "Dalia / Bulgur",
@@ -2155,18 +2305,21 @@
         "iron_mg": 1.9,
         "calcium_mg": 13.5,
         "folate_mcg": 13.1,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 5.4
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
       "tags": [
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (A021: Wheat, bulgur)"
     },
     {
+      "protein_rank_g": 5.7,
       "id": "ifct_a022_semolina",
       "name": "Semolina / Rava / Sooji",
       "hindi_name": "Gehun Suji / Godhuma Rava",
@@ -2185,18 +2338,21 @@
         "iron_mg": 1.5,
         "calcium_mg": 14.7,
         "folate_mcg": 12.8,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 5.7
       },
       "synergies": [
         "Whole and less-polished grains keep more of their fibre and minerals."
       ],
       "tip": "Use as roti, khichdi, upma or porridge in place of polished rice or maida.",
       "tags": [
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (A022: Wheat, semolina)"
     },
     {
+      "protein_rank_g": 5.6,
       "id": "ifct_b002_whole_bengal_gram",
       "name": "Whole Bengal Gram / Kala Chana",
       "hindi_name": "Chana / Sanagalu",
@@ -2213,7 +2369,8 @@
         "iron_mg": 2.0,
         "calcium_mg": 45.0,
         "folate_mcg": 69.9,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 5.6
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2227,6 +2384,7 @@
       "source": "IFCT 2017 (B002: Bengal gram, whole)"
     },
     {
+      "protein_rank_g": 6.9,
       "id": "ifct_b003_split_black_gram",
       "name": "Split Black Gram / Urad Dal",
       "hindi_name": "Urad Dal / Minapa Pappu",
@@ -2243,7 +2401,8 @@
         "iron_mg": 1.4,
         "calcium_mg": 16.7,
         "folate_mcg": 26.6,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 6.9
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2251,11 +2410,13 @@
       "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "high_protein"
       ],
       "source": "IFCT 2017 (B003: Black gram, dal)"
     },
     {
+      "protein_rank_g": 7.2,
       "id": "ifct_b010_split_green_gram",
       "name": "Split Green Gram / Moong Dal",
       "hindi_name": "Mug Dal / Pesara Pappu",
@@ -2272,7 +2433,8 @@
         "iron_mg": 1.2,
         "calcium_mg": 12.9,
         "folate_mcg": 27.6,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 7.2
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2280,11 +2442,13 @@
       "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "high_protein"
       ],
       "source": "IFCT 2017 (B010: Green gram, dal)"
     },
     {
+      "protein_rank_g": 6.8,
       "id": "ifct_b011_whole_green_gram",
       "name": "Whole Green Gram / Moong",
       "hindi_name": "Mung / Pesalu",
@@ -2301,7 +2465,8 @@
         "iron_mg": 1.5,
         "calcium_mg": 27.7,
         "folate_mcg": 43.5,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 6.8
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2309,11 +2474,13 @@
       "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "high_protein"
       ],
       "source": "IFCT 2017 (B011: Green gram, whole)"
     },
     {
+      "protein_rank_g": 7.3,
       "id": "ifct_b013_red_lentil_dal",
       "name": "Red Lentil Dal / Masoor Dal",
       "hindi_name": "Masoor Dal / Lanka Pappu",
@@ -2330,7 +2497,8 @@
         "iron_mg": 2.1,
         "calcium_mg": 13.3,
         "folate_mcg": 15.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 7.3
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2338,11 +2506,13 @@
       "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "high_protein"
       ],
       "source": "IFCT 2017 (B013: Lentil, dal)"
     },
     {
+      "protein_rank_g": 6.7,
       "id": "ifct_b014_whole_brown_lentil",
       "name": "Whole Brown Lentil / Sabut Masoor",
       "hindi_name": "Masur Dal / Misur Pappu",
@@ -2359,7 +2529,8 @@
         "iron_mg": 2.3,
         "calcium_mg": 22.8,
         "folate_mcg": 39.6,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 6.7
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2367,11 +2538,13 @@
       "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "high_protein"
       ],
       "source": "IFCT 2017 (B014: Lentil, whole, brown)"
     },
     {
+      "protein_rank_g": 6.1,
       "id": "ifct_b017_dried_peas",
       "name": "Dried Peas / Sukhe Matar",
       "hindi_name": "Sukhi Matar",
@@ -2388,7 +2561,8 @@
         "iron_mg": 1.5,
         "calcium_mg": 22.5,
         "folate_mcg": 33.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 6.1
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2396,11 +2570,13 @@
       "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "high_protein"
       ],
       "source": "IFCT 2017 (B017: Peas, dry)"
     },
     {
+      "protein_rank_g": 6.5,
       "id": "ifct_b021_split_red_gram",
       "name": "Split Red Gram / Toor Dal",
       "hindi_name": "Kandi Pappu",
@@ -2417,7 +2593,8 @@
         "iron_mg": 1.2,
         "calcium_mg": 21.5,
         "folate_mcg": 32.4,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 6.5
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2425,11 +2602,13 @@
       "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "high_protein"
       ],
       "source": "IFCT 2017 (B021: Red gram, dal)"
     },
     {
+      "protein_rank_g": 6.1,
       "id": "ifct_b022_whole_red_gram",
       "name": "Whole Red Gram / Arhar",
       "hindi_name": "Arhar Sabud / Kandulu",
@@ -2446,7 +2625,8 @@
         "iron_mg": 1.6,
         "calcium_mg": 41.7,
         "folate_mcg": 68.7,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 6.1
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2454,11 +2634,13 @@
       "tip": "Soak overnight and pressure-cook as dal, sundal or usal, or sprout it; add lemon for better iron absorption.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "high_protein"
       ],
       "source": "IFCT 2017 (B022: Red gram, whole)"
     },
     {
+      "protein_rank_g": 6.0,
       "id": "ifct_b023_rice_bean",
       "name": "Rice Bean / Naurangi Dal",
       "hindi_name": "Meth",
@@ -2475,7 +2657,8 @@
         "iron_mg": 1.4,
         "calcium_mg": 60.0,
         "folate_mcg": 36.6,
-        "vitamin_c_mg": 0.3
+        "vitamin_c_mg": 0.3,
+        "protein_g": 6.0
       },
       "synergies": [
         "Pulses give plant protein and fibre; pairing with cereals makes a complete protein."
@@ -2488,6 +2671,7 @@
       "source": "IFCT 2017 (B023: Ricebean)"
     },
     {
+      "protein_rank_g": 8.0,
       "id": "ifct_c001_agathi_leaves",
       "name": "Agathi Leaves",
       "hindi_name": "Agasthi / Avise Akulu",
@@ -2504,7 +2688,8 @@
         "iron_mg": 4.4,
         "calcium_mg": 901.0,
         "folate_mcg": 120.0,
-        "vitamin_c_mg": 121.0
+        "vitamin_c_mg": 121.0,
+        "protein_g": 8.0
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
@@ -2512,11 +2697,14 @@
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "high_protein",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C001: Agathi leaves)"
     },
     {
+      "protein_rank_g": 1.6,
       "id": "ifct_c007_malabar_spinach",
       "name": "Malabar Spinach / Poi Saag",
       "hindi_name": "Palak / Bachhali",
@@ -2533,18 +2721,21 @@
         "iron_mg": 4.2,
         "calcium_mg": 93.9,
         "folate_mcg": 90.3,
-        "vitamin_c_mg": 63.4
+        "vitamin_c_mg": 63.4,
+        "protein_g": 1.6
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C007: Basella leaves)"
     },
     {
+      "protein_rank_g": 2.5,
       "id": "ifct_c008_bathua_leaves",
       "name": "Bathua Leaves",
       "hindi_name": "Bathua Sagu / Pappukura",
@@ -2561,18 +2752,21 @@
         "iron_mg": 2.7,
         "calcium_mg": 211.0,
         "folate_mcg": 42.5,
-        "vitamin_c_mg": 41.0
+        "vitamin_c_mg": 41.0,
+        "protein_g": 2.5
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C008: Bathua leaves)"
     },
     {
+      "protein_rank_g": 2.4,
       "id": "ifct_c009_beetroot_greens",
       "name": "Beetroot Greens",
       "hindi_name": "Chukandhar Sag / Beet Root",
@@ -2589,18 +2783,21 @@
         "iron_mg": 5.8,
         "calcium_mg": 151.0,
         "folate_mcg": 11.5,
-        "vitamin_c_mg": 35.8
+        "vitamin_c_mg": 35.8,
+        "protein_g": 2.4
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C009: Beetroot leaves)"
     },
     {
+      "protein_rank_g": 1.4,
       "id": "ifct_c015_green_cabbage",
       "name": "Green Cabbage / Patta Gobhi",
       "hindi_name": "Bandh Gobi / Gos Koora",
@@ -2617,18 +2814,21 @@
         "iron_mg": 0.3,
         "calcium_mg": 51.8,
         "folate_mcg": 46.4,
-        "vitamin_c_mg": 33.2
+        "vitamin_c_mg": 33.2,
+        "protein_g": 1.4
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C015: Cabbage, green)"
     },
     {
+      "protein_rank_g": 3.4,
       "id": "ifct_c018_colocasia_leaves",
       "name": "Colocasia Leaves / Arbi Patta",
       "hindi_name": "Arvi Ka Sag / Chama Akulu",
@@ -2645,18 +2845,21 @@
         "iron_mg": 3.4,
         "calcium_mg": 216.0,
         "folate_mcg": 159.0,
-        "vitamin_c_mg": 40.7
+        "vitamin_c_mg": 40.7,
+        "protein_g": 3.4
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C018: Colocasia leaves, green)"
     },
     {
+      "protein_rank_g": 5.6,
       "id": "ifct_c021_garden_cress_greens",
       "name": "Garden Cress Greens",
       "hindi_name": "Halim Ka Patta / Adityala Akulu",
@@ -2673,18 +2876,21 @@
         "iron_mg": 6.2,
         "calcium_mg": 217.0,
         "folate_mcg": 58.1,
-        "vitamin_c_mg": 42.8
+        "vitamin_c_mg": 42.8,
+        "protein_g": 5.6
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C021: Garden cress)"
     },
     {
+      "protein_rank_g": 1.9,
       "id": "ifct_c022_gongura",
       "name": "Gongura / Gogu Leaves",
       "hindi_name": "Pitwa / Gongura",
@@ -2701,18 +2907,21 @@
         "iron_mg": 7.7,
         "calcium_mg": 145.0,
         "folate_mcg": 74.9,
-        "vitamin_c_mg": 29.6
+        "vitamin_c_mg": 29.6,
+        "protein_g": 1.9
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C022: Gogu leaves, green stem)"
     },
     {
+      "protein_rank_g": 3.5,
       "id": "ifct_c026_mustard_greens",
       "name": "Mustard Greens / Sarson ka Saag",
       "hindi_name": "Sarson Ka Sag / Ava Akulu",
@@ -2729,18 +2938,21 @@
         "iron_mg": 2.8,
         "calcium_mg": 191.0,
         "folate_mcg": 110.0,
-        "vitamin_c_mg": 60.3
+        "vitamin_c_mg": 60.3,
+        "protein_g": 3.5
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C026: Mustard leaves)"
     },
     {
+      "protein_rank_g": 5.3,
       "id": "ifct_c029_ponnaganni_leaves",
       "name": "Ponnaganni Leaves",
       "hindi_name": "Saranthi Sag / Ponnaganti Koora",
@@ -2757,7 +2969,8 @@
         "iron_mg": 3.9,
         "calcium_mg": 388.0,
         "folate_mcg": 48.4,
-        "vitamin_c_mg": 103.0
+        "vitamin_c_mg": 103.0,
+        "protein_g": 5.3
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
@@ -2765,11 +2978,13 @@
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C029: Ponnaganni)"
     },
     {
+      "protein_rank_g": 2.2,
       "id": "ifct_c031_radish_leaves",
       "name": "Radish Leaves / Mooli Patta",
       "hindi_name": "Muli Ka Sag / Mullangi Akulu",
@@ -2786,18 +3001,21 @@
         "iron_mg": 3.8,
         "calcium_mg": 234.0,
         "folate_mcg": 53.1,
-        "vitamin_c_mg": 65.8
+        "vitamin_c_mg": 65.8,
+        "protein_g": 2.2
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C031: Radish leaves)"
     },
     {
+      "protein_rank_g": 3.9,
       "id": "ifct_c017_cauliflower_greens",
       "name": "Cauliflower Greens",
       "hindi_name": "Phul Gobi Patta / Go Puvvu",
@@ -2814,18 +3032,21 @@
         "iron_mg": 2.4,
         "calcium_mg": 96.7,
         "folate_mcg": 43.0,
-        "vitamin_c_mg": 52.8
+        "vitamin_c_mg": 52.8,
+        "protein_g": 3.9
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C017: Cauliflower leaves)"
     },
     {
+      "protein_rank_g": 4.2,
       "id": "ifct_c030_tender_pumpkin_leaves",
       "name": "Tender Pumpkin Leaves",
       "hindi_name": "Kumhra Sag / Gummadi Akulu",
@@ -2842,18 +3063,21 @@
         "iron_mg": 5.6,
         "calcium_mg": 271.0,
         "folate_mcg": 33.8,
-        "vitamin_c_mg": 12.3
+        "vitamin_c_mg": 12.3,
+        "protein_g": 4.2
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
       ],
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C030: Pumpkin leaves, tender)"
     },
     {
+      "protein_rank_g": 5.8,
       "id": "ifct_c034_tender_tamarind_leaves",
       "name": "Tender Tamarind Leaves",
       "hindi_name": "Chinta Chiguru",
@@ -2870,7 +3094,8 @@
         "iron_mg": 2.8,
         "calcium_mg": 66.9,
         "folate_mcg": 91.8,
-        "vitamin_c_mg": 28.2
+        "vitamin_c_mg": 28.2,
+        "protein_g": 5.8
       },
       "synergies": [
         "Pair with vitamin C (lemon, amla, tomato) to help the body absorb plant iron."
@@ -2878,11 +3103,13 @@
       "tip": "Cook lightly as saag, palya or poriyal, or add to dal; finish with a squeeze of lemon.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (C034: Tamarind leaves, tender)"
     },
     {
+      "protein_rank_g": 0.8,
       "id": "ifct_d001_ash_gourd",
       "name": "Ash Gourd / Petha",
       "hindi_name": "Petha / Boodida Gummadi",
@@ -2899,16 +3126,19 @@
         "iron_mg": 0.5,
         "calcium_mg": 19.4,
         "folate_mcg": 14.1,
-        "vitamin_c_mg": 11.4
+        "vitamin_c_mg": 11.4,
+        "protein_g": 0.8
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D001: Ash gourd)"
     },
     {
+      "protein_rank_g": 1.5,
       "id": "ifct_d031_brinjal",
       "name": "Brinjal / Baingan",
       "hindi_name": "Baingan / Vankaya",
@@ -2925,16 +3155,19 @@
         "iron_mg": 0.4,
         "calcium_mg": 16.6,
         "folate_mcg": 33.9,
-        "vitamin_c_mg": 2.1
+        "vitamin_c_mg": 2.1,
+        "protein_g": 1.5
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D031: Brinjal - all varieties)"
     },
     {
+      "protein_rank_g": 1.1,
       "id": "ifct_d033_green_capsicum",
       "name": "Green Capsicum / Shimla Mirch",
       "hindi_name": "Shimla Mirch / Shimla Mirchi",
@@ -2951,16 +3184,19 @@
         "iron_mg": 0.5,
         "calcium_mg": 14.8,
         "folate_mcg": 51.9,
-        "vitamin_c_mg": 123.0
+        "vitamin_c_mg": 123.0,
+        "protein_g": 1.1
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D033: Capsicum, green)"
     },
     {
+      "protein_rank_g": 2.1,
       "id": "ifct_d036_cauliflower",
       "name": "Cauliflower / Phool Gobhi",
       "hindi_name": "Phul Gobi / Go Puvvu",
@@ -2977,16 +3213,19 @@
         "iron_mg": 1.0,
         "calcium_mg": 25.2,
         "folate_mcg": 46.0,
-        "vitamin_c_mg": 47.1
+        "vitamin_c_mg": 47.1,
+        "protein_g": 2.1
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D036: Cauliflower)"
     },
     {
+      "protein_rank_g": 3.5,
       "id": "ifct_d039_cluster_beans",
       "name": "Cluster Beans / Gawar",
       "hindi_name": "Gaur-Ki-Phalli / Goruchikkudu",
@@ -3003,16 +3242,19 @@
         "iron_mg": 3.9,
         "calcium_mg": 121.0,
         "folate_mcg": 41.2,
-        "vitamin_c_mg": 18.0
+        "vitamin_c_mg": 18.0,
+        "protein_g": 3.5
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D039: Cluster beans)"
     },
     {
+      "protein_rank_g": 0.7,
       "id": "ifct_d043_cucumber",
       "name": "Cucumber / Kheera",
       "hindi_name": "Kheera / Dosa Kaya",
@@ -3029,16 +3271,19 @@
         "iron_mg": 0.5,
         "calcium_mg": 16.4,
         "folate_mcg": 16.8,
-        "vitamin_c_mg": 6.1
+        "vitamin_c_mg": 6.1,
+        "protein_g": 0.7
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D043: Cucumber, green, elongate)"
     },
     {
+      "protein_rank_g": 2.5,
       "id": "ifct_d049_french_beans",
       "name": "French Beans",
       "hindi_name": "Bakla / Sannachikkudu",
@@ -3055,16 +3300,19 @@
         "iron_mg": 1.2,
         "calcium_mg": 56.0,
         "folate_mcg": 47.5,
-        "vitamin_c_mg": 15.8
+        "vitamin_c_mg": 15.8,
+        "protein_g": 2.5
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D049: French beans, country)"
     },
     {
+      "protein_rank_g": 1.4,
       "id": "ifct_d054_ivy_gourd",
       "name": "Ivy Gourd / Kundru / Dondakaya",
       "hindi_name": "Konduri / Donda Kaya",
@@ -3081,16 +3329,19 @@
         "iron_mg": 0.4,
         "calcium_mg": 34.4,
         "folate_mcg": 48.7,
-        "vitamin_c_mg": 17.6
+        "vitamin_c_mg": 17.6,
+        "protein_g": 1.4
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D054: Kovai, big)"
     },
     {
+      "protein_rank_g": 2.1,
       "id": "ifct_d056_ladies_finger",
       "name": "Ladies Finger / Bhindi",
       "hindi_name": "Bhindi / Bendakaya",
@@ -3107,16 +3358,19 @@
         "iron_mg": 0.8,
         "calcium_mg": 86.1,
         "folate_mcg": 63.7,
-        "vitamin_c_mg": 22.5
+        "vitamin_c_mg": 22.5,
+        "protein_g": 2.1
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D056: Ladies finger)"
     },
     {
+      "protein_rank_g": 1.4,
       "id": "ifct_d060_pointed_gourd",
       "name": "Pointed Gourd / Parwal",
       "hindi_name": "Parwal / Kommu Potla",
@@ -3133,16 +3387,19 @@
         "iron_mg": 0.5,
         "calcium_mg": 30.8,
         "folate_mcg": 20.0,
-        "vitamin_c_mg": 19.2
+        "vitamin_c_mg": 19.2,
+        "protein_g": 1.4
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D060: Parwar)"
     },
     {
+      "protein_rank_g": 7.2,
       "id": "ifct_d061_fresh_green_peas",
       "name": "Fresh Green Peas / Matar",
       "hindi_name": "Matar",
@@ -3159,16 +3416,20 @@
         "iron_mg": 1.6,
         "calcium_mg": 28.2,
         "folate_mcg": 54.8,
-        "vitamin_c_mg": 38.4
+        "vitamin_c_mg": 38.4,
+        "protein_g": 7.2
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "high_fibre"
+        "high_fibre",
+        "high_protein",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D061: Peas, fresh)"
     },
     {
+      "protein_rank_g": 1.5,
       "id": "ifct_d062_banana_flower",
       "name": "Banana Flower / Kele ka Phool",
       "hindi_name": "Kele-Ka Phool / Arati Puvvu",
@@ -3185,16 +3446,19 @@
         "iron_mg": 0.4,
         "calcium_mg": 34.1,
         "folate_mcg": 49.3,
-        "vitamin_c_mg": 6.5
+        "vitamin_c_mg": 6.5,
+        "protein_g": 1.5
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D062: Plantain, flower)"
     },
     {
+      "protein_rank_g": 0.3,
       "id": "ifct_d064_banana_stem",
       "name": "Banana Stem",
       "hindi_name": "Kele-Ka-Tana / Arati Doota",
@@ -3211,16 +3475,19 @@
         "iron_mg": 0.3,
         "calcium_mg": 11.2,
         "folate_mcg": 12.9,
-        "vitamin_c_mg": 3.8
+        "vitamin_c_mg": 3.8,
+        "protein_g": 0.3
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D064: Plantain, stem)"
     },
     {
+      "protein_rank_g": 0.8,
       "id": "ifct_d066_pumpkin",
       "name": "Pumpkin / Kaddu",
       "hindi_name": "Kaddu / Gummadi",
@@ -3237,16 +3504,19 @@
         "iron_mg": 0.4,
         "calcium_mg": 23.1,
         "folate_mcg": 24.1,
-        "vitamin_c_mg": 8.0
+        "vitamin_c_mg": 8.0,
+        "protein_g": 0.8
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D066: Pumpkin, orange, round)"
     },
     {
+      "protein_rank_g": 0.9,
       "id": "ifct_d068_ridge_gourd",
       "name": "Ridge Gourd / Turai",
       "hindi_name": "Torai / Beera Kaya",
@@ -3263,16 +3533,19 @@
         "iron_mg": 0.4,
         "calcium_mg": 13.7,
         "folate_mcg": 29.3,
-        "vitamin_c_mg": 5.4
+        "vitamin_c_mg": 5.4,
+        "protein_g": 0.9
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D068: Ridge gourd)"
     },
     {
+      "protein_rank_g": 1.0,
       "id": "ifct_d070_snake_gourd",
       "name": "Snake Gourd / Chichinda",
       "hindi_name": "Chachinda / Potla Kaya",
@@ -3289,16 +3562,19 @@
         "iron_mg": 0.3,
         "calcium_mg": 24.6,
         "folate_mcg": 18.3,
-        "vitamin_c_mg": 2.7
+        "vitamin_c_mg": 2.7,
+        "protein_g": 1.0
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D070: Snake gourd, long, pale green)"
     },
     {
+      "protein_rank_g": 1.0,
       "id": "ifct_d073_round_gourd",
       "name": "Round Gourd / Tinda",
       "hindi_name": "Tinda",
@@ -3315,16 +3591,19 @@
         "iron_mg": 0.4,
         "calcium_mg": 19.7,
         "folate_mcg": 43.2,
-        "vitamin_c_mg": 14.2
+        "vitamin_c_mg": 14.2,
+        "protein_g": 1.0
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D073: Tinda, tender)"
     },
     {
+      "protein_rank_g": 0.9,
       "id": "ifct_d076_tomato",
       "name": "Tomato / Tamatar",
       "hindi_name": "Tamator / Ramamulagakaya",
@@ -3341,16 +3620,19 @@
         "iron_mg": 0.3,
         "calcium_mg": 10.2,
         "folate_mcg": 19.5,
-        "vitamin_c_mg": 27.5
+        "vitamin_c_mg": 27.5,
+        "protein_g": 0.9
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D076: Tomato, ripe, local)"
     },
     {
+      "protein_rank_g": 3.9,
       "id": "ifct_d032_broad_beans",
       "name": "Broad Beans / Sem",
       "hindi_name": "Bakla / Pedda Chikkudu",
@@ -3367,17 +3649,20 @@
         "iron_mg": 0.9,
         "calcium_mg": 64.4,
         "folate_mcg": 20.5,
-        "vitamin_c_mg": 11.0
+        "vitamin_c_mg": 11.0,
+        "protein_g": 3.9
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
         "low_gi",
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D032: Broad beans)"
     },
     {
+      "protein_rank_g": 1.6,
       "id": "ifct_d053_knol_khol",
       "name": "Knol-Khol / Ganth Gobhi",
       "hindi_name": "Kohl-Rabi / Noolkol",
@@ -3394,16 +3679,19 @@
         "iron_mg": 0.2,
         "calcium_mg": 35.3,
         "folate_mcg": 14.8,
-        "vitamin_c_mg": 64.7
+        "vitamin_c_mg": 64.7,
+        "protein_g": 1.6
       },
       "synergies": [],
       "tip": "Cook as a dry sabzi, curry or sambar with little oil.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (D053: Knol - Khol)"
     },
     {
+      "protein_rank_g": 0.9,
       "id": "ifct_f002_carrot",
       "name": "Carrot / Gajar",
       "hindi_name": "Gajar / Gajjara Gadda",
@@ -3420,14 +3708,18 @@
         "iron_mg": 0.6,
         "calcium_mg": 35.1,
         "folate_mcg": 24.0,
-        "vitamin_c_mg": 6.2
+        "vitamin_c_mg": 6.2,
+        "protein_g": 0.9
       },
       "synergies": [],
       "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (F002: Carrot, orange)"
     },
     {
+      "protein_rank_g": 3.3,
       "id": "ifct_f004_colocasia",
       "name": "Colocasia / Arbi",
       "hindi_name": "Arwi / Chama Dumpa",
@@ -3444,14 +3736,18 @@
         "iron_mg": 0.7,
         "calcium_mg": 30.2,
         "folate_mcg": 19.9,
-        "vitamin_c_mg": 1.8
+        "vitamin_c_mg": 1.8,
+        "protein_g": 3.3
       },
       "synergies": [],
       "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (F004: Colocasia)"
     },
     {
+      "protein_rank_g": 1.5,
       "id": "ifct_f006_potato",
       "name": "Potato / Aloo",
       "hindi_name": "Alu / Bangala Dumpa",
@@ -3468,14 +3764,18 @@
         "iron_mg": 0.6,
         "calcium_mg": 9.5,
         "folate_mcg": 15.5,
-        "vitamin_c_mg": 23.1
+        "vitamin_c_mg": 23.1,
+        "protein_g": 1.5
       },
       "synergies": [],
       "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (F006: Potato, brown skin, big)"
     },
     {
+      "protein_rank_g": 0.8,
       "id": "ifct_f010_white_radish",
       "name": "White Radish / Mooli",
       "hindi_name": "Muli / Mullangi",
@@ -3492,14 +3792,18 @@
         "iron_mg": 0.4,
         "calcium_mg": 30.2,
         "folate_mcg": 29.8,
-        "vitamin_c_mg": 19.9
+        "vitamin_c_mg": 19.9,
+        "protein_g": 0.8
       },
       "synergies": [],
       "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (F010: Radish, elongate, white skin)"
     },
     {
+      "protein_rank_g": 1.0,
       "id": "ifct_f015_tapioca",
       "name": "Tapioca / Cassava",
       "hindi_name": "Simla Alu / Krrapendalamu",
@@ -3516,14 +3820,18 @@
         "iron_mg": 0.8,
         "calcium_mg": 25.9,
         "folate_mcg": 25.6,
-        "vitamin_c_mg": 15.5
+        "vitamin_c_mg": 15.5,
+        "protein_g": 1.0
       },
       "synergies": [],
       "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (F015: Tapioca)"
     },
     {
+      "protein_rank_g": 2.6,
       "id": "ifct_f017_elephant_foot_yam",
       "name": "Elephant Foot Yam / Suran",
       "hindi_name": "Zimikandha / Kandha Dumpa",
@@ -3540,14 +3848,18 @@
         "iron_mg": 1.2,
         "calcium_mg": 46.9,
         "folate_mcg": 20.5,
-        "vitamin_c_mg": 15.2
+        "vitamin_c_mg": 15.2,
+        "protein_g": 2.6
       },
       "synergies": [],
       "tip": "Boil, roast or cook as a sabzi; keep portions moderate if watching blood sugar.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (F017: Yam, elephant)"
     },
     {
+      "protein_rank_g": 0.3,
       "id": "ifct_e001_apple",
       "name": "Apple / Seb",
       "hindi_name": "Sev / Sepu/Sema Regu",
@@ -3564,16 +3876,19 @@
         "iron_mg": 0.3,
         "calcium_mg": 13.7,
         "folate_mcg": 3.0,
-        "vitamin_c_mg": 3.6
+        "vitamin_c_mg": 3.6,
+        "protein_g": 0.3
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (E001: Apple, big)"
     },
     {
+      "protein_rank_g": 2.6,
       "id": "ifct_e008_bael_fruit",
       "name": "Bael Fruit",
       "hindi_name": "Bel / Marendu Pandu",
@@ -3590,16 +3905,19 @@
         "iron_mg": 0.2,
         "calcium_mg": 48.0,
         "folate_mcg": 55.2,
-        "vitamin_c_mg": 7.5
+        "vitamin_c_mg": 7.5,
+        "protein_g": 2.6
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
       "tags": [
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (E008: Bael fruit)"
     },
     {
+      "protein_rank_g": 1.2,
       "id": "ifct_e012_banana",
       "name": "Banana / Kela (Ripe)",
       "hindi_name": "Kela / Arati Pandu",
@@ -3616,14 +3934,18 @@
         "iron_mg": 0.3,
         "calcium_mg": 5.1,
         "folate_mcg": 16.8,
-        "vitamin_c_mg": 4.8
+        "vitamin_c_mg": 4.8,
+        "protein_g": 1.2
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E012: Banana, ripe, robusta)"
     },
     {
+      "protein_rank_g": 1.6,
       "id": "ifct_e016_custard_apple",
       "name": "Custard Apple / Sitaphal",
       "hindi_name": "Sharifa / Sitaphalam",
@@ -3640,14 +3962,18 @@
         "iron_mg": 0.4,
         "calcium_mg": 28.2,
         "folate_mcg": 7.6,
-        "vitamin_c_mg": 21.5
+        "vitamin_c_mg": 21.5,
+        "protein_g": 1.6
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E016: Custard apple)"
     },
     {
+      "protein_rank_g": 1.4,
       "id": "ifct_e025_black_grapes",
       "name": "Black Grapes / Angoor",
       "hindi_name": "Angoor / Draksha Padu",
@@ -3664,14 +3990,18 @@
         "iron_mg": 0.3,
         "calcium_mg": 15.3,
         "folate_mcg": 7.2,
-        "vitamin_c_mg": 27.3
+        "vitamin_c_mg": 27.3,
+        "protein_g": 1.4
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E025: Grapes, seedless, oval, black)"
     },
     {
+      "protein_rank_g": 2.7,
       "id": "ifct_e030_ripe_jackfruit",
       "name": "Ripe Jackfruit / Kathal",
       "hindi_name": "Kathal / Panasa",
@@ -3688,14 +4018,18 @@
         "iron_mg": 0.4,
         "calcium_mg": 35.0,
         "folate_mcg": 32.2,
-        "vitamin_c_mg": 6.7
+        "vitamin_c_mg": 6.7,
+        "protein_g": 2.7
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E030: Jack fruit, ripe)"
     },
     {
+      "protein_rank_g": 0.8,
       "id": "ifct_e031_jamun",
       "name": "Jamun / Black Plum",
       "hindi_name": "Jamun / Neredupandu",
@@ -3712,14 +4046,18 @@
         "iron_mg": 0.3,
         "calcium_mg": 25.4,
         "folate_mcg": 7.6,
-        "vitamin_c_mg": 16.5
+        "vitamin_c_mg": 16.5,
+        "protein_g": 0.8
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E031: Jambu fruit, ripe)"
     },
     {
+      "protein_rank_g": 0.5,
       "id": "ifct_e036_mango",
       "name": "Mango / Aam (Ripe)",
       "hindi_name": "Aam (Paka) / Mamidi Pandu",
@@ -3736,14 +4074,18 @@
         "iron_mg": 0.5,
         "calcium_mg": 15.8,
         "folate_mcg": 82.0,
-        "vitamin_c_mg": 33.0
+        "vitamin_c_mg": 33.0,
+        "protein_g": 0.5
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E036: Mango, ripe, banganapalli)"
     },
     {
+      "protein_rank_g": 0.7,
       "id": "ifct_e047_orange",
       "name": "Orange / Santra",
       "hindi_name": "Santra / Kamala Padu",
@@ -3760,16 +4102,19 @@
         "iron_mg": 0.8,
         "calcium_mg": 19.5,
         "folate_mcg": 19.5,
-        "vitamin_c_mg": 42.7
+        "vitamin_c_mg": 42.7,
+        "protein_g": 0.7
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (E047: Orange, pulp)"
     },
     {
+      "protein_rank_g": 0.4,
       "id": "ifct_e051_pear",
       "name": "Pear / Nashpati",
       "hindi_name": "Nashpati / Berikaya",
@@ -3786,16 +4131,19 @@
         "iron_mg": 0.3,
         "calcium_mg": 6.6,
         "folate_mcg": 5.3,
-        "vitamin_c_mg": 3.3
+        "vitamin_c_mg": 3.3,
+        "protein_g": 0.4
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
       "tags": [
-        "low_gi"
+        "low_gi",
+        "low_purine"
       ],
       "source": "IFCT 2017 (E051: Pear)"
     },
     {
+      "protein_rank_g": 1.7,
       "id": "ifct_e052_phalsa",
       "name": "Phalsa",
       "hindi_name": "Falsa / Falsa Pandu",
@@ -3812,14 +4160,18 @@
         "iron_mg": 2.0,
         "calcium_mg": 153.0,
         "folate_mcg": 22.6,
-        "vitamin_c_mg": 5.1
+        "vitamin_c_mg": 5.1,
+        "protein_g": 1.7
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E052: Phalsa)"
     },
     {
+      "protein_rank_g": 0.5,
       "id": "ifct_e053_pineapple",
       "name": "Pineapple / Ananas",
       "hindi_name": "Ananas / Anasa Pandu",
@@ -3836,14 +4188,18 @@
         "iron_mg": 0.3,
         "calcium_mg": 10.9,
         "folate_mcg": 18.2,
-        "vitamin_c_mg": 36.4
+        "vitamin_c_mg": 36.4,
+        "protein_g": 0.5
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E053: Pineapple)"
     },
     {
+      "protein_rank_g": 1.3,
       "id": "ifct_e055_pomegranate",
       "name": "Pomegranate / Anar",
       "hindi_name": "Anar / Danimma Pandu",
@@ -3860,14 +4216,18 @@
         "iron_mg": 0.3,
         "calcium_mg": 10.7,
         "folate_mcg": 38.6,
-        "vitamin_c_mg": 12.7
+        "vitamin_c_mg": 12.7,
+        "protein_g": 1.3
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E055: Pomegranate, maroon seeds)"
     },
     {
+      "protein_rank_g": 0.9,
       "id": "ifct_e060_sapota",
       "name": "Sapota / Chikoo",
       "hindi_name": "Chiku / Sapota",
@@ -3884,16 +4244,19 @@
         "iron_mg": 0.5,
         "calcium_mg": 17.9,
         "folate_mcg": 10.8,
-        "vitamin_c_mg": 21.0
+        "vitamin_c_mg": 21.0,
+        "protein_g": 0.9
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
       "tags": [
-        "high_fibre"
+        "high_fibre",
+        "low_purine"
       ],
       "source": "IFCT 2017 (E060: Sapota)"
     },
     {
+      "protein_rank_g": 0.6,
       "id": "ifct_e065_watermelon",
       "name": "Watermelon / Tarbooz",
       "hindi_name": "Tarbuj / Puchakaya",
@@ -3910,14 +4273,18 @@
         "iron_mg": 0.2,
         "calcium_mg": 5.3,
         "folate_mcg": 5.9,
-        "vitamin_c_mg": 13.3
+        "vitamin_c_mg": 13.3,
+        "protein_g": 0.6
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E065: Water melon, dark green (sugar baby))"
     },
     {
+      "protein_rank_g": 1.3,
       "id": "ifct_e068_indian_jujube",
       "name": "Indian Jujube / Ber",
       "hindi_name": "Ber / Regu Pandu",
@@ -3934,14 +4301,18 @@
         "iron_mg": 0.4,
         "calcium_mg": 46.5,
         "folate_mcg": 6.0,
-        "vitamin_c_mg": 60.9
+        "vitamin_c_mg": 60.9,
+        "protein_g": 1.3
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E068: Zizyphus)"
     },
     {
+      "protein_rank_g": 3.1,
       "id": "ifct_e067_wood_apple",
       "name": "Wood Apple / Kaitha",
       "hindi_name": "Kaith / Velega Pandu",
@@ -3958,14 +4329,18 @@
         "iron_mg": 0.5,
         "calcium_mg": 55.7,
         "folate_mcg": 6.5,
-        "vitamin_c_mg": 22.2
+        "vitamin_c_mg": 22.2,
+        "protein_g": 3.1
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E067: Wood apple)"
     },
     {
+      "protein_rank_g": 2.0,
       "id": "ifct_e020_fresh_fig",
       "name": "Fresh Fig / Anjeer",
       "hindi_name": "Anjeer / Atti Pandu",
@@ -3982,14 +4357,18 @@
         "iron_mg": 0.7,
         "calcium_mg": 78.5,
         "folate_mcg": 13.7,
-        "vitamin_c_mg": 16.9
+        "vitamin_c_mg": 16.9,
+        "protein_g": 2.0
       },
       "synergies": [],
       "tip": "Eat whole and fresh as a snack rather than as juice.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (E020: Fig)"
     },
     {
+      "protein_rank_g": 0.4,
       "id": "ifct_g009_coriander_leaves",
       "name": "Coriander Leaves / Dhaniya Patta",
       "hindi_name": "Hara Dhania / Kothimiri",
@@ -4006,7 +4385,8 @@
         "iron_mg": 0.5,
         "calcium_mg": 14.6,
         "folate_mcg": 5.1,
-        "vitamin_c_mg": 2.4
+        "vitamin_c_mg": 2.4,
+        "protein_g": 0.4
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4014,6 +4394,7 @@
       "source": "IFCT 2017 (G009: Coriander leaves)"
     },
     {
+      "protein_rank_g": 0.5,
       "id": "ifct_g016_mint_leaves",
       "name": "Mint Leaves / Pudina",
       "hindi_name": "Pudina",
@@ -4030,7 +4411,8 @@
         "iron_mg": 0.9,
         "calcium_mg": 20.5,
         "folate_mcg": 10.6,
-        "vitamin_c_mg": 1.7
+        "vitamin_c_mg": 1.7,
+        "protein_g": 0.5
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4038,6 +4420,7 @@
       "source": "IFCT 2017 (G016: Mint leaves)"
     },
     {
+      "protein_rank_g": 0.3,
       "id": "ifct_g011_garlic",
       "name": "Garlic / Lahsun",
       "hindi_name": "Lehsan / Vellulli",
@@ -4054,7 +4437,8 @@
         "iron_mg": 0.1,
         "calcium_mg": 1.0,
         "folate_mcg": 4.3,
-        "vitamin_c_mg": 0.6
+        "vitamin_c_mg": 0.6,
+        "protein_g": 0.3
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4062,6 +4446,7 @@
       "source": "IFCT 2017 (G011: Garlic, big cloves)"
     },
     {
+      "protein_rank_g": 0.1,
       "id": "ifct_g014_fresh_ginger",
       "name": "Fresh Ginger / Adrak",
       "hindi_name": "Adrak / Allam",
@@ -4078,7 +4463,8 @@
         "iron_mg": 0.1,
         "calcium_mg": 0.9,
         "folate_mcg": 0.5,
-        "vitamin_c_mg": 0.3
+        "vitamin_c_mg": 0.3,
+        "protein_g": 0.1
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4086,6 +4472,7 @@
       "source": "IFCT 2017 (G014: Ginger, fresh)"
     },
     {
+      "protein_rank_g": 0.8,
       "id": "ifct_g017_onion",
       "name": "Onion / Pyaz",
       "hindi_name": "Pyaz / Neerulli/Ullipaya",
@@ -4102,7 +4489,8 @@
         "iron_mg": 0.2,
         "calcium_mg": 10.5,
         "folate_mcg": 14.4,
-        "vitamin_c_mg": 3.3
+        "vitamin_c_mg": 3.3,
+        "protein_g": 0.8
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4110,6 +4498,7 @@
       "source": "IFCT 2017 (G017: Onion, big)"
     },
     {
+      "protein_rank_g": 0.5,
       "id": "ifct_g024_coriander_seeds",
       "name": "Coriander Seeds / Dhaniya",
       "hindi_name": "Dhania / Dhaniyalu",
@@ -4126,7 +4515,8 @@
         "iron_mg": 0.9,
         "calcium_mg": 35.9,
         "folate_mcg": 1.1,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 0.5
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4134,6 +4524,7 @@
       "source": "IFCT 2017 (G024: Coriander seeds)"
     },
     {
+      "protein_rank_g": 0.7,
       "id": "ifct_g025_cumin_seeds",
       "name": "Cumin Seeds / Jeera",
       "hindi_name": "Jira / Jeelakarra",
@@ -4150,7 +4541,8 @@
         "iron_mg": 1.0,
         "calcium_mg": 43.9,
         "folate_mcg": 1.4,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 0.7
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4158,6 +4550,7 @@
       "source": "IFCT 2017 (G025: Cumin seeds)"
     },
     {
+      "protein_rank_g": 2.5,
       "id": "ifct_g026_fenugreek_seeds",
       "name": "Fenugreek Seeds / Methi Dana",
       "hindi_name": "Methi / Menthulu",
@@ -4174,7 +4567,8 @@
         "iron_mg": 0.8,
         "calcium_mg": 13.5,
         "folate_mcg": 5.1,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 2.5
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4182,6 +4576,7 @@
       "source": "IFCT 2017 (G026: Fenugreek seeds)"
     },
     {
+      "protein_rank_g": 0.8,
       "id": "ifct_g029_ajwain",
       "name": "Ajwain / Carom Seeds",
       "hindi_name": "Ajwan / Vamu",
@@ -4198,7 +4593,8 @@
         "iron_mg": 0.7,
         "calcium_mg": 51.7,
         "folate_mcg": 2.6,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 0.8
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4206,6 +4602,7 @@
       "source": "IFCT 2017 (G029: Omum)"
     },
     {
+      "protein_rank_g": 0.5,
       "id": "ifct_g031_black_pepper",
       "name": "Black Pepper / Kali Mirch",
       "hindi_name": "Kalimirchi / Mirayalu",
@@ -4222,7 +4619,8 @@
         "iron_mg": 0.6,
         "calcium_mg": 20.2,
         "folate_mcg": 1.1,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 0.5
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4230,6 +4628,7 @@
       "source": "IFCT 2017 (G031: Pepper, black)"
     },
     {
+      "protein_rank_g": 2.0,
       "id": "ifct_g032_poppy_seeds",
       "name": "Poppy Seeds / Khus Khus",
       "hindi_name": "Postdana / Gasagasalu",
@@ -4246,7 +4645,8 @@
         "iron_mg": 1.0,
         "calcium_mg": 137.2,
         "folate_mcg": 7.9,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 2.0
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4254,6 +4654,7 @@
       "source": "IFCT 2017 (G032: Poppy seeds)"
     },
     {
+      "protein_rank_g": 0.4,
       "id": "ifct_g033_turmeric_powder",
       "name": "Turmeric Powder / Haldi",
       "hindi_name": "Haldi / Pasupu",
@@ -4270,7 +4671,8 @@
         "iron_mg": 2.3,
         "calcium_mg": 6.1,
         "folate_mcg": 0.7,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 0.4
       },
       "synergies": [],
       "tip": "Use daily in tempering, chutneys and masalas.",
@@ -4278,6 +4680,7 @@
       "source": "IFCT 2017 (G033: Turmeric powder)"
     },
     {
+      "protein_rank_g": 1.5,
       "id": "ifct_h006_dry_coconut",
       "name": "Dry Coconut / Kopra",
       "hindi_name": "Nariyal / Endu Kobbari",
@@ -4294,14 +4697,18 @@
         "iron_mg": 0.6,
         "calcium_mg": 6.4,
         "folate_mcg": 4.9,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 1.5
       },
       "synergies": [],
       "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (H006: Coconut, kernel, dry)"
     },
     {
+      "protein_rank_g": 1.2,
       "id": "ifct_h007_fresh_coconut",
       "name": "Fresh Coconut",
       "hindi_name": "Nariyal / Kobbari",
@@ -4318,14 +4725,18 @@
         "iron_mg": 0.4,
         "calcium_mg": 2.4,
         "folate_mcg": 7.6,
-        "vitamin_c_mg": 0.2
+        "vitamin_c_mg": 0.2,
+        "protein_g": 1.2
       },
       "synergies": [],
       "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (H007: Coconut, kernel, fresh)"
     },
     {
+      "protein_rank_g": 4.7,
       "id": "ifct_h012_groundnut",
       "name": "Groundnut / Peanut",
       "hindi_name": "Moog Phali / Verusenaga",
@@ -4344,18 +4755,22 @@
         "iron_mg": 0.7,
         "calcium_mg": 10.8,
         "folate_mcg": 18.2,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 4.7
       },
       "synergies": [],
       "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
       "tags": [
         "low_gi",
         "high_fibre",
-        "heart_healthy_fat"
+        "heart_healthy_fat",
+        "high_protein",
+        "low_purine"
       ],
       "source": "IFCT 2017 (H012: Ground nut)"
     },
     {
+      "protein_rank_g": 2.0,
       "id": "ifct_h013_mustard_seeds",
       "name": "Mustard Seeds / Rai",
       "hindi_name": "Rai / Avalu",
@@ -4372,7 +4787,8 @@
         "iron_mg": 1.3,
         "calcium_mg": 40.2,
         "folate_mcg": 9.5,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 2.0
       },
       "synergies": [],
       "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
@@ -4380,11 +4796,13 @@
         "low_gi",
         "high_fibre",
         "heart_healthy_fat",
-        "omega3"
+        "omega3",
+        "low_purine"
       ],
       "source": "IFCT 2017 (H013: Mustard seeds)"
     },
     {
+      "protein_rank_g": 1.9,
       "id": "ifct_h015_niger_seeds",
       "name": "Niger Seeds / Ramtil",
       "hindi_name": "Kala Til / Valasulu",
@@ -4401,18 +4819,21 @@
         "iron_mg": 1.8,
         "calcium_mg": 57.2,
         "folate_mcg": 14.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 1.9
       },
       "synergies": [],
       "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
       "tags": [
         "low_gi",
         "high_fibre",
-        "heart_healthy_fat"
+        "heart_healthy_fat",
+        "low_purine"
       ],
       "source": "IFCT 2017 (H015: Niger seeds, black)"
     },
     {
+      "protein_rank_g": 4.7,
       "id": "ifct_h018_pistachio",
       "name": "Pistachio / Pista",
       "hindi_name": "Pista",
@@ -4431,18 +4852,22 @@
         "iron_mg": 0.9,
         "calcium_mg": 27.0,
         "folate_mcg": 13.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 4.7
       },
       "synergies": [],
       "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
       "tags": [
         "low_gi",
         "high_fibre",
-        "heart_healthy_fat"
+        "heart_healthy_fat",
+        "high_protein",
+        "low_purine"
       ],
       "source": "IFCT 2017 (H018: Pistachio nuts)"
     },
     {
+      "protein_rank_g": 3.0,
       "id": "ifct_h021_walnut",
       "name": "Walnut / Akhrot",
       "hindi_name": "Akhrot / Akrot Kaya",
@@ -4461,18 +4886,21 @@
         "iron_mg": 0.6,
         "calcium_mg": 21.0,
         "folate_mcg": 11.6,
-        "vitamin_c_mg": 0.2
+        "vitamin_c_mg": 0.2,
+        "protein_g": 3.0
       },
       "synergies": [],
       "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
       "tags": [
         "low_gi",
         "heart_healthy_fat",
-        "omega3"
+        "omega3",
+        "low_purine"
       ],
       "source": "IFCT 2017 (H021: Walnut)"
     },
     {
+      "protein_rank_g": 1.8,
       "id": "ifct_h019_safflower_seeds",
       "name": "Safflower Seeds / Kusum",
       "hindi_name": "Kardi / Kusuma Ginzalu",
@@ -4489,18 +4917,21 @@
         "iron_mg": 0.4,
         "calcium_mg": 21.1,
         "folate_mcg": 8.2,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 1.8
       },
       "synergies": [],
       "tip": "Eat a small handful, or add to chutneys, laddoos or salads.",
       "tags": [
         "low_gi",
         "high_fibre",
-        "heart_healthy_fat"
+        "heart_healthy_fat",
+        "low_purine"
       ],
       "source": "IFCT 2017 (H019: Safflower seeds)"
     },
     {
+      "protein_rank_g": 7.4,
       "id": "ifct_l001_buffalo_milk_whole",
       "name": "Buffalo Milk (Whole)",
       "hindi_name": "Bhains Ka Dhood / Gedha/Barre Palu",
@@ -4518,14 +4949,19 @@
         "iron_mg": 0.3,
         "calcium_mg": 242.0,
         "folate_mcg": 17.1,
-        "vitamin_c_mg": 4.7
+        "vitamin_c_mg": 4.7,
+        "protein_g": 7.4
       },
       "synergies": [],
       "tip": "Have as part of meals; choose plain, unsweetened forms.",
-      "tags": [],
+      "tags": [
+        "high_protein",
+        "low_purine"
+      ],
       "source": "IFCT 2017 (L001: Milk, whole, Buffalo)"
     },
     {
+      "protein_rank_g": 4.9,
       "id": "ifct_l004_khoa",
       "name": "Khoa / Mawa",
       "hindi_name": null,
@@ -4543,14 +4979,18 @@
         "iron_mg": 0.7,
         "calcium_mg": 180.6,
         "folate_mcg": 28.3,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 4.9
       },
       "synergies": [],
       "tip": "Have as part of meals; choose plain, unsweetened forms.",
-      "tags": [],
+      "tags": [
+        "low_purine"
+      ],
       "source": "IFCT 2017 (L004: Khoa)"
     },
     {
+      "protein_rank_g": 7.2,
       "id": "ifct_m009_country_hen_egg_boiled",
       "name": "Country Hen Egg (Boiled)",
       "hindi_name": "Ubla Desi Murgi Ka Anda / Udikinchina Naatu Kodi Guddu",
@@ -4567,14 +5007,19 @@
         "iron_mg": 0.9,
         "calcium_mg": 28.9,
         "folate_mcg": 30.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 7.2
       },
       "synergies": [],
       "tip": "Boil, grill or cook in a light curry with vegetables.",
-      "tags": [],
+      "tags": [
+        "high_protein",
+        "low_purine"
+      ],
       "source": "IFCT 2017 (M009: Egg, country hen, whole, boiled)"
     },
     {
+      "protein_rank_g": 6.9,
       "id": "ifct_m011_duck_egg_boiled",
       "name": "Duck Egg (Boiled)",
       "hindi_name": "Ubla Batakh Ka Anda / Udikinchina Baathu Guddu",
@@ -4591,14 +5036,19 @@
         "iron_mg": 1.3,
         "calcium_mg": 28.1,
         "folate_mcg": 36.7,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 6.9
       },
       "synergies": [],
       "tip": "Boil, grill or cook in a light curry with vegetables.",
-      "tags": [],
+      "tags": [
+        "high_protein",
+        "low_purine"
+      ],
       "source": "IFCT 2017 (M011: Egg, duck, whole, boiled)"
     },
     {
+      "protein_rank_g": 19.4,
       "id": "ifct_n001_chicken_leg_skinless",
       "name": "Chicken Leg (Skinless)",
       "hindi_name": "Murga Tang/Murgi Ki Raan / Kodi Kaallu",
@@ -4612,14 +5062,18 @@
         "iron_mg": 1.3,
         "calcium_mg": 20.5,
         "folate_mcg": 7.5,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 19.4
       },
       "synergies": [],
       "tip": "Boil, grill or cook in a light curry with vegetables.",
-      "tags": [],
+      "tags": [
+        "high_protein"
+      ],
       "source": "IFCT 2017 (N001: Chicken, poultry, leg, skinless)"
     },
     {
+      "protein_rank_g": 18.2,
       "id": "ifct_n006_chicken_gizzard",
       "name": "Chicken Gizzard",
       "hindi_name": "Murge Ki Pathri/Sangdana / Kodi Gizzardu",
@@ -4633,14 +5087,18 @@
         "iron_mg": 3.2,
         "calcium_mg": 5.5,
         "folate_mcg": 8.7,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 18.2
       },
       "synergies": [],
       "tip": "Boil, grill or cook in a light curry with vegetables.",
-      "tags": [],
+      "tags": [
+        "high_protein"
+      ],
       "source": "IFCT 2017 (N006: Poultry, chicken, gizzard)"
     },
     {
+      "protein_rank_g": 7.8,
       "id": "ifct_o011_goat_kidney",
       "name": "Goat Kidney",
       "hindi_name": "Bakre Ke Gurde / Meka Mutrapindalu",
@@ -4654,16 +5112,20 @@
         "iron_mg": 3.4,
         "calcium_mg": 6.2,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 7.8
       },
       "synergies": [
         "Organ meats provide easily absorbed (haem) iron."
       ],
       "tip": "Cook thoroughly; a small portion once or twice a week is enough.",
-      "tags": [],
+      "tags": [
+        "high_protein"
+      ],
       "source": "IFCT 2017 (O011: Goat, kidneys)"
     },
     {
+      "protein_rank_g": 19.9,
       "id": "ifct_p003_anchovy",
       "name": "Anchovy / Nethili",
       "hindi_name": "Nattoo",
@@ -4679,18 +5141,21 @@
         "iron_mg": 0.5,
         "calcium_mg": 36.6,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 19.9
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P003: Anchovy)"
     },
     {
+      "protein_rank_g": 13.5,
       "id": "ifct_p007_bombay_duck",
       "name": "Bombay Duck / Bombil",
       "hindi_name": "Cucah Sawahri",
@@ -4706,16 +5171,20 @@
         "iron_mg": 0.8,
         "calcium_mg": 159.0,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 13.5
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
-      "tags": [],
+      "tags": [
+        "high_protein"
+      ],
       "source": "IFCT 2017 (P007: Bombay duck)"
     },
     {
+      "protein_rank_g": 19.7,
       "id": "ifct_p026_pearl_spot",
       "name": "Pearl Spot / Karimeen",
       "hindi_name": "Cashi Mara",
@@ -4731,16 +5200,20 @@
         "iron_mg": 0.6,
         "calcium_mg": 11.7,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 19.7
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
-      "tags": [],
+      "tags": [
+        "high_protein"
+      ],
       "source": "IFCT 2017 (P026: Karimeen)"
     },
     {
+      "protein_rank_g": 20.2,
       "id": "ifct_p039_mullet",
       "name": "Mullet",
       "hindi_name": "Kathiparega",
@@ -4756,18 +5229,21 @@
         "iron_mg": 1.3,
         "calcium_mg": 35.2,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 20.2
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P039: Mullet)"
     },
     {
+      "protein_rank_g": 18.9,
       "id": "ifct_p055_black_pomfret",
       "name": "Black Pomfret",
       "hindi_name": "Nallachanduva",
@@ -4783,18 +5259,21 @@
         "iron_mg": 0.8,
         "calcium_mg": 18.1,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 18.9
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P055: Pomfret, black)"
     },
     {
+      "protein_rank_g": 19.0,
       "id": "ifct_p057_white_pomfret",
       "name": "White Pomfret",
       "hindi_name": "Thellachanduva",
@@ -4810,18 +5289,21 @@
         "iron_mg": 0.3,
         "calcium_mg": 13.6,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 19.0
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P057: Pomfret, white)"
     },
     {
+      "protein_rank_g": 21.0,
       "id": "ifct_p060_queen_fish",
       "name": "Queen Fish",
       "hindi_name": "Pasupara",
@@ -4837,18 +5319,21 @@
         "iron_mg": 0.5,
         "calcium_mg": 5.8,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 21.0
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P060: Queen fish)"
     },
     {
+      "protein_rank_g": 22.8,
       "id": "ifct_p065_red_snapper",
       "name": "Red Snapper",
       "hindi_name": "Rangu",
@@ -4864,18 +5349,21 @@
         "iron_mg": 0.4,
         "calcium_mg": 8.4,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 22.8
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P065: Red snapper)"
     },
     {
+      "protein_rank_g": 21.0,
       "id": "ifct_p068_salmon",
       "name": "Salmon / Rawas",
       "hindi_name": null,
@@ -4891,18 +5379,21 @@
         "iron_mg": 1.0,
         "calcium_mg": 24.3,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 21.0
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P068: Salmon)"
     },
     {
+      "protein_rank_g": 17.9,
       "id": "ifct_p071_sardine",
       "name": "Sardine / Mathi / Tarli",
       "hindi_name": "Noona-Kavallu",
@@ -4918,18 +5409,21 @@
         "iron_mg": 0.8,
         "calcium_mg": 42.3,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 17.9
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P071: Sardine)"
     },
     {
+      "protein_rank_g": 24.5,
       "id": "ifct_p084_tuna",
       "name": "Tuna",
       "hindi_name": null,
@@ -4945,18 +5439,21 @@
         "iron_mg": 1.6,
         "calcium_mg": 9.8,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 24.5
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P084: Tuna)"
     },
     {
+      "protein_rank_g": 22.3,
       "id": "ifct_p087_seer_fish",
       "name": "Seer Fish / Vanjaram / Surmai",
       "hindi_name": "Vanjiramu",
@@ -4972,18 +5469,21 @@
         "iron_mg": 0.4,
         "calcium_mg": 9.8,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 22.3
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (P087: Vanjaram)"
     },
     {
+      "protein_rank_g": 18.5,
       "id": "ifct_p083_tilapia",
       "name": "Tilapia",
       "hindi_name": null,
@@ -4999,16 +5499,20 @@
         "iron_mg": 2.8,
         "calcium_mg": 99.4,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 18.5
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
-      "tags": [],
+      "tags": [
+        "high_protein"
+      ],
       "source": "IFCT 2017 (P083: Tilapia)"
     },
     {
+      "protein_rank_g": 10.2,
       "id": "ifct_q001_crab",
       "name": "Crab / Kekda",
       "hindi_name": "Kekda / Peetha",
@@ -5024,16 +5528,20 @@
         "iron_mg": 1.1,
         "calcium_mg": 128.0,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 10.2
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
-      "tags": [],
+      "tags": [
+        "high_protein"
+      ],
       "source": "IFCT 2017 (Q001: Crab)"
     },
     {
+      "protein_rank_g": 17.9,
       "id": "ifct_s002_catla",
       "name": "Catla",
       "hindi_name": "Catla / Botcha",
@@ -5049,18 +5557,21 @@
         "iron_mg": 1.1,
         "calcium_mg": 43.5,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 17.9
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
       "tags": [
-        "omega3"
+        "omega3",
+        "high_protein"
       ],
       "source": "IFCT 2017 (S002: Catla)"
     },
     {
+      "protein_rank_g": 17.1,
       "id": "ifct_s005_pangas",
       "name": "Pangas / Basa",
       "hindi_name": "Pangas Machli",
@@ -5076,13 +5587,16 @@
         "iron_mg": 0.7,
         "calcium_mg": 11.2,
         "folate_mcg": 0.0,
-        "vitamin_c_mg": 0.0
+        "vitamin_c_mg": 0.0,
+        "protein_g": 17.1
       },
       "synergies": [
         "Fish provides easily absorbed (haem) iron and high-quality protein."
       ],
       "tip": "Grill, steam or cook in a light curry rather than deep-frying.",
-      "tags": [],
+      "tags": [
+        "high_protein"
+      ],
       "source": "IFCT 2017 (S005: Pangas)"
     }
   ]
