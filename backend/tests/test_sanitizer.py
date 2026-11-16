@@ -32,3 +32,12 @@ def test_sanitizer_preserves_adjacent_clinical_fields():
     assert "Sex: Female" in sanitized
     assert "Hemoglobin: 11.2 g/dL" in sanitized
 
+
+
+def test_sanitizer_removes_phone_numbers_with_spaces_and_hyphens():
+    sample = "Ref By: Dr. A. K. Banerjee | Contact: +91 98450 12345 | UHID: DEL-9812401\nMobile: 098450-12345\nHemoglobin 10.4 g/dL 12.0 - 15.5"
+    sanitized, _ = sanitize_report_text(sample)
+    assert "98450" not in sanitized and "12345" not in sanitized
+    assert sanitized.count("[REDACTED_PHONE]") == 2
+    # Clinical numbers and reference ranges must survive.
+    assert "10.4 g/dL 12.0 - 15.5" in sanitized

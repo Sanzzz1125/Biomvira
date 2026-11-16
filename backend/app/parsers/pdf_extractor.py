@@ -85,14 +85,26 @@ def extract_text_and_tables_from_pdf(file_bytes: bytes) -> str:
                 from app.parsers.regex_matcher import mentioned_keys, extract_biomarkers_with_regex
                 missing = mentioned_keys(text) - {m.biomarker_key for m in extract_biomarkers_with_regex(text)}
                 method = 'native'
-                if not usable(text) or missing:
+                # OCR is slow (especially on small servers), so it runs only for pages that look like images:
+                # a page with almost no text, or a page with an embedded image whose text is unusable or seems to be
+                # missing a biomarker row. A text-only page (e.g. a continuation page of explanatory prose) is never
+                # OCRed. If OCR fails on a page that already has text, the text is kept instead of failing the report.
+                blank = len(text.strip()) < 40 and not usable(text)
+                if blank or (page.images and (not usable(text) or missing)):
+                    ocr_text = ''
                     if page.width * page.height * (180 / 72) ** 2 > settings.max_image_pixels:
-                        raise ReportError('PDF page exceeds safe rendering limits.')
-                    ocr_text = ocr_image(page.to_image(resolution=180).original, deadline)
-                    if not usable(text):
+                        if blank:
+                            raise ReportError('PDF page exceeds safe rendering limits.')
+                    else:
+                        try:
+                            ocr_text = ocr_image(page.to_image(resolution=180).original, deadline)
+                        except ReportError:
+                            if blank:
+                                raise
+                    if ocr_text and not usable(text):
                         text = ocr_text
                         method = 'ocr'
-                    else:
+                    elif ocr_text:
                         # Keep native evidence and add only new OCR measurements.
                         native_markers = extract_biomarkers_with_regex(text)
                         additions = [m.source_text for m in extract_biomarkers_with_regex(ocr_text)

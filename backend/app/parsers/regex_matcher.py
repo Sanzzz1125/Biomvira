@@ -20,7 +20,22 @@ def aliases(line):
 
 
 def mentioned_keys(text):
-    return {key for key, _ in aliases(text)}
+    """Biomarkers that appear as a test row (name near the start of a line with a number close by).
+
+    Explanatory prose such as "HbA1c is a form of hemoglobin ..." also contains biomarker names but is not
+    a result, so a name only counts when it starts a line and either a digit follows within the next two lines or the line is short.
+    """
+    lines = [l.strip() for l in text.splitlines() if not l.startswith('[[PAGE')]
+    keys = set()
+    for i, line in enumerate(lines):
+        for key, match in aliases(line):
+            if match.start() > 30:
+                continue
+            window = ' '.join(re.sub(r'\([^)]*\)', ' ', l) for l in lines[i:i + 3])
+            # A short line that begins with a test name is a row even if its value is missing; a long line is prose.
+            if re.search(r'\d', window) or len(line) <= 40:
+                keys.add(key)
+    return keys
 
 
 def extract_biomarkers_with_regex(text):

@@ -26,3 +26,7 @@ frontend/dist/
 
 # Old project archive
 NutriLens.zip
+
+# Project documentation work (not part of the application)
+docs/
+report/

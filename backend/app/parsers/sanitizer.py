@@ -8,8 +8,9 @@ PII_PATTERNS = [
     (r"(?i)(patient\s*name|name\s*of\s*patient|pt\s*name|client\s*name)\s*[:\-]\s*([A-Za-z\.\t ]+?)(?=\s*(?:\||age|sex|gender|dob|ref|doctor|dr\.|uhid|date|bill|\b\d)|\n|$)", r"\1: [REDACTED_NAME]"),
     # Referring doctor lines
     (r"(?i)(ref\s*by|referred\s*by|ref\s*doctor|doctor)\s*[:\-]\s*([^\n|]+?)(?=\s*(?:\||contact|phone|mobile|date|clinic|hospital|qual|reg|uhid|\b\d)|\n|$)", r"\1: [REDACTED_DOCTOR]"),
-    # Phone / Mobile numbers (Indian 10-digit formats with optional +91 or 0)
-    (r"(?:\+91[\-\s]?)?[6-9]\d{9}", "[REDACTED_PHONE]"),
+    # Phone / Mobile numbers: 10 digits starting 6-9, optionally prefixed with +91 or 0 and written
+    # with spaces or hyphens between digit groups (e.g. "+91 98450 12345", "098450-12345").
+    (r"(?<!\d)(?:\+91[\-\s]?|0)?[6-9](?:[\-\s]?\d){9}(?!\d)", "[REDACTED_PHONE]"),
     # Email addresses
     (r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+", "[REDACTED_EMAIL]"),
     # Lab IDs, UHID, Barcodes, Sample numbers
