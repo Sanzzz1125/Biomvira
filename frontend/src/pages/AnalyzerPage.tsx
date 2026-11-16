@@ -138,7 +138,7 @@ export const AnalyzerPage: React.FC<{ analyzer: Analyzer }> = ({ analyzer }) => 
             profile={analyzer.userProfile}
             setProfile={analyzer.setUserProfile}
             onSubmit={analyzer.handleRunAnalysis}
-            onBack={() => (reviewed ? analyzer.setStep('verify') : analyzer.reset())}
+            onBack={() => analyzer.setStep('verify')}
             isLoading={analyzer.isLoading}
           />
           </div>

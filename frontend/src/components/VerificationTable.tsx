@@ -405,7 +405,7 @@ export const VerificationTable: React.FC<VerificationTableProps> = ({
       <div className="flex items-center justify-between gap-4">
         <p className="text-sm text-slate-500">
           <span className="font-semibold text-slate-900 tabular-nums">{markers.length}</span>{' '}
-          {markers.length === 1 ? 'biomarker' : 'biomarkers'} to review
+          {markers.length === 1 ? 'result' : 'results'} from your report
         </p>
         <Button
           size="lg"

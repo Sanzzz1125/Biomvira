@@ -93,7 +93,7 @@ export const UserProfileForm: React.FC<UserProfileFormProps> = ({
   return (
     <div className="mx-auto max-w-4xl space-y-6">
       <PageHeader
-        eyebrow="Step 3 of 4"
+        eyebrow="Your profile"
         title="Tell us about you"
         description="Your age, sex and food preferences help us pick the right reference ranges and only suggest foods you can eat."
         actions={
@@ -103,7 +103,7 @@ export const UserProfileForm: React.FC<UserProfileFormProps> = ({
             onClick={onBack}
             icon={<ArrowLeft className="h-4 w-4" aria-hidden />}
           >
-            Review biomarkers
+            Review results
           </Button>
         }
       />
