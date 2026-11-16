@@ -28,7 +28,7 @@ export const Hero: React.FC = () => (
     </h1>
     <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-slate-600">
       Upload your lab results, tell us how you eat, and get evidence-based Indian food
-      recommendations for Vitamin D, B12, iron, folate and more.
+      recommendations for Vitamin D, B12, iron, folate, blood sugar, cholesterol and more.
     </p>
 
     <ul className="mx-auto mt-10 grid max-w-5xl gap-4 text-left sm:grid-cols-3">

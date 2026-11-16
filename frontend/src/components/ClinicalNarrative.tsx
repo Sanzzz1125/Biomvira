@@ -101,12 +101,12 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-600 mt-0.5" />
                 <p>
-                  All <strong>{result.marker_analyses.length} tested biomarkers</strong> reside comfortably within standard biological reference intervals. Your blood chemistry indicates robust physiological homeostasis across oxygen transport, bone mineralization, and neuro-cellular cellular stores.
+                  All <strong>{result.marker_analyses.length} tested biomarkers</strong> are within standard reference intervals. Your results look balanced across the tests included in this report.
                 </p>
               </div>
             ) : (
               <p>
-                Laboratory analysis reveals that <strong>{flaggedMarkers.length} of {result.marker_analyses.length} parameters</strong> are below reference intervals ({flaggedMarkers.filter(m => m.status === 'low').length} Low, {flaggedMarkers.filter(m => m.status === 'borderline').length} Borderline). The therapeutic food protocol below focuses on nutrient-dense Indian staples with high absorption bioavailability to support restoration.
+                Laboratory analysis reveals that <strong>{flaggedMarkers.length} of {result.marker_analyses.length} parameters</strong> are outside their reference intervals ({flaggedMarkers.filter(m => m.status === 'low').length} Low, {flaggedMarkers.filter(m => m.status === 'borderline').length} Borderline, {flaggedMarkers.filter(m => m.status === 'high').length} Elevated). Where a food plan applies, it uses Indian staples matched to your diet and allergies; it never replaces medical care.
               </p>
             )}
           </div>
@@ -116,7 +116,7 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
             <div className="space-y-4">
               <h4 className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-slate-800">
                 <Activity className="h-4 w-4 text-brand-600" />
-                Biomarker Depletion & Physiological Impact
+                Biomarker Findings & Physiological Impact
               </h4>
               <div className="grid gap-4 md:grid-cols-2">
                 {flaggedMarkers.map((m) => (
@@ -137,24 +137,28 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
                             'rounded-full px-2.5 py-0.5 text-xs font-semibold capitalize',
                             m.status === 'low'
                               ? 'bg-red-50 text-red-700 ring-1 ring-red-200'
+                              : m.status === 'high'
+                              ? 'bg-indigo-50 text-indigo-700 ring-1 ring-indigo-200'
                               : 'bg-amber-50 text-amber-800 ring-1 ring-amber-200'
                           )}
                         >
-                          {m.status} ({Math.round(m.percentage_of_optimal)}% optimal)
+                          {m.status === 'high' ? 'elevated' : m.status} ({Math.round(m.percentage_of_optimal)}% optimal)
                         </span>
                       </div>
 
                       <p className="mt-3 text-xs leading-relaxed text-slate-600">
                         {m.clinical_warning ||
                           (m.status === 'low'
-                            ? `Value is significantly below the laboratory's reference range (${m.range_low} ${m.unit}). Cellular stores require targeted nutritional repletion.`
-                            : `Value is on the borderline threshold. Preventative nutritional intervention recommended to avoid depletion.`)}
+                            ? `Value is below the reference range (${m.range_low} ${m.unit}). Follow the food protocol where one is listed, and discuss it with your doctor.`
+                            : m.status === 'high'
+                            ? `Value is above the reference range (${m.range_high} ${m.unit}). Follow the food protocol where one is listed, and discuss it with your doctor.`
+                            : `Value is on the borderline. Small, steady dietary changes are recommended and the test is worth repeating.`)}
                       </p>
                     </div>
 
                     <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-medium">
                       <span>Primary Target</span>
-                      <span className="text-brand-700 font-semibold capitalize">{m.target_nutrient_key.replace('_', ' ')}</span>
+                      <span className="text-brand-700 font-semibold capitalize">{m.target_nutrient_key ? m.target_nutrient_key.replace(/_/g, ' ') : 'Doctor review'}</span>
                     </div>
                   </div>
                 ))}
@@ -188,7 +192,7 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
                 <div className="rounded-xl border border-rose-200 bg-rose-50/50 p-5">
                   <div className="flex items-center gap-2 text-sm font-semibold text-rose-800">
                     <ThumbsDown className="h-4 w-4 text-rose-600" />
-                    Absorption Antagonists (Inhibitors to Space)
+                    Habits to Limit or Avoid
                   </div>
                   <ul className="mt-3 space-y-2.5 text-xs text-slate-700 leading-relaxed">
                     {result.recommendations.flatMap((r) => r.absorption_donts).slice(0, 3).map((tip, idx) => (
@@ -213,7 +217,7 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
                     Clinical Supervision Recommended
                   </h5>
                   <p className="mt-1 text-xs leading-relaxed text-red-800">
-                    One or more of your biomarkers have crossed critical depletion limits (e.g. severe anemia or acute deficiency). Dietary changes should complement, not replace, medical evaluation.
+                    One or more results need a doctor\u2019s attention. Dietary changes should complement, not replace, medical evaluation.
                   </p>
                   <ul className="mt-2 list-disc list-inside text-xs text-red-700 space-y-1">
                     {result.consult_reasons.map((reason, i) => (

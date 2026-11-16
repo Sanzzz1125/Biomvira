@@ -130,7 +130,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
             <p className="text-xs text-slate-300 mt-1 max-w-xl leading-relaxed">
               {flaggedCount === 0
                 ? 'All tested laboratory biomarkers are balanced within reference intervals.'
-                : `${flaggedCount} biomarker${flaggedCount > 1 ? 's require' : ' requires'} targeted nutritional repletion through ICMR-NIN bioavailable foods.`}
+                : `${flaggedCount} biomarker${flaggedCount > 1 ? 's require' : ' requires'} attention; food guidance is given where it applies, and anything urgent is marked clearly.`}
             </p>
           </div>
 
@@ -197,7 +197,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
           className="p-5"
         >
           <p className="text-sm text-red-900 font-medium leading-relaxed">
-            One or more biomarkers have reached critical depletion limits where food-first nutrition alone is insufficient. Please consult a licensed physician for therapeutic intervention:
+            One or more results need a doctor’s attention; food-first nutrition alone is not enough. Please consult a licensed physician:
           </p>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-xs text-red-800 marker:text-red-500">
             {result.consult_reasons.map((reason, idx) => (
@@ -256,8 +256,8 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
       <section className="space-y-5">
         <SectionTitle
           icon={<Salad className="h-[18px] w-[18px]" aria-hidden />}
-          title="Targeted Nutritional Repletion Protocols"
-          description="Prioritized by ICMR-NIN nutrient density per 100g, bioavailability co-factors, and strict allergen safety."
+          title="Targeted Nutrition Protocols"
+          description="Foods are chosen for the nutrient or property that matters for each result, with strict diet and allergen safety."
         />
 
         {result.recommendations.length === 0 ? (
@@ -280,7 +280,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
                 <Card key={plan.target_biomarker} className="overflow-hidden shadow-card">
                   <div className="flex flex-col gap-2 border-b border-slate-200 bg-slate-50 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
-                      <p className="eyebrow">Target Micronutrient Goal</p>
+                      <p className="eyebrow">Target Goal</p>
                       <h4 className="mt-0.5 text-lg font-semibold text-slate-900">
                         Nutritional Protocol for {plan.biomarker_display_name}
                       </h4>
@@ -306,7 +306,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
                       <div className="rounded-xl border border-brand-200 bg-brand-50/60 p-5">
                         <h5 className="flex items-center gap-2 text-sm font-semibold text-brand-800">
                           <ThumbsUp className="h-4 w-4" aria-hidden />
-                          Bioavailability Catalysts (Absorption Dos)
+                          Helpful Habits and Absorption Tips
                         </h5>
                         <ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-700">
                           {plan.absorption_dos.map((tip, i) => (
@@ -321,7 +321,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
                       <div className="rounded-xl border border-red-200 bg-red-50/60 p-5">
                         <h5 className="flex items-center gap-2 text-sm font-semibold text-red-800">
                           <Ban className="h-4 w-4" aria-hidden />
-                          Absorption Antagonists (Inhibitors to Space)
+                          Habits to Limit or Avoid
                         </h5>
                         <ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-700">
                           {plan.absorption_donts.map((tip, i) => (

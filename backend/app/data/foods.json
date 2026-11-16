@@ -5,7 +5,12 @@
       "name": "Drumstick / Moringa Leaves",
       "hindi_name": "Sahjan ke Patte / Munagaku",
       "category": "Green Leafy Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -16,15 +21,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["High in natural Vitamin C which boosts plant non-heme iron absorption significantly."],
-      "tip": "Add a handful to daily dal (pappu) or stir-fry as a dry sabzi with minimal oil."
+      "synergies": [
+        "High in natural Vitamin C which boosts plant non-heme iron absorption significantly."
+      ],
+      "tip": "Add a handful to daily dal (pappu) or stir-fry as a dry sabzi with minimal oil.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "palak_spinach",
       "name": "Spinach",
       "hindi_name": "Palak",
       "category": "Green Leafy Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -35,15 +51,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Contains oxalates that bind calcium and iron. Squeezing fresh lemon juice (Vitamin C) breaks inhibition."],
-      "tip": "Steam or sauté lightly; pair with tomatoes or lemon juice rather than heavy cream/dairy."
+      "synergies": [
+        "Contains oxalates that bind calcium and iron. Squeezing fresh lemon juice (Vitamin C) breaks inhibition."
+      ],
+      "tip": "Steam or sauté lightly; pair with tomatoes or lemon juice rather than heavy cream/dairy.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "methi_leaves",
       "name": "Fenugreek Leaves",
       "hindi_name": "Methi",
       "category": "Green Leafy Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -54,15 +81,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Rich in both calcium and iron with moderate Vitamin C to aid uptake."],
-      "tip": "Incorporate into multigrain theplas, stir-fries, or dal."
+      "synergies": [
+        "Rich in both calcium and iron with moderate Vitamin C to aid uptake."
+      ],
+      "tip": "Incorporate into multigrain theplas, stir-fries, or dal.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "amaranth_leaves",
       "name": "Amaranth Leaves / Chaulai",
       "hindi_name": "Chaulai / Thotakura",
       "category": "Green Leafy Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -73,15 +111,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["One of the most iron-dense traditional Indian greens."],
-      "tip": "Cook with garlic and mustard seeds as a quick side sabzi."
+      "synergies": [
+        "One of the most iron-dense traditional Indian greens."
+      ],
+      "tip": "Cook with garlic and mustard seeds as a quick side sabzi.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "curry_leaves",
       "name": "Curry Leaves",
       "hindi_name": "Kadi Patta / Karivepaku",
       "category": "Herbs & Condiments",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "15g (1 handful crushed/cooked)",
       "nutrients": {
@@ -92,15 +141,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Don't discard them on the plate: chew or powder into podi for maximum iron and calcium extraction."],
-      "tip": "Blend into chutneys, dry gun powders (karam podi), or herbal decoctions."
+      "synergies": [
+        "Don't discard them on the plate: chew or powder into podi for maximum iron and calcium extraction."
+      ],
+      "tip": "Blend into chutneys, dry gun powders (karam podi), or herbal decoctions.",
+      "tags": []
     },
     {
       "id": "ragi_flour",
       "name": "Finger Millet / Ragi",
       "hindi_name": "Nachni / Ragi / Mandua",
       "category": "Millets & Grains",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "60g dry (yields 1 bowl porridge or 2 rotis)",
       "nutrients": {
@@ -111,15 +168,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Highest calcium density among Indian cereal grains; naturally gluten-free."],
-      "tip": "Consume as ragi mudde, malt/porridge, or combine with jowar for soft rotis."
+      "synergies": [
+        "Highest calcium density among Indian cereal grains; naturally gluten-free."
+      ],
+      "tip": "Consume as ragi mudde, malt/porridge, or combine with jowar for soft rotis.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "bajra_pearl_millet",
       "name": "Pearl Millet / Bajra",
       "hindi_name": "Bajra / Sajje",
       "category": "Millets & Grains",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "60g dry",
       "nutrients": {
@@ -130,15 +198,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Superb iron-rich gluten-free grain, especially when paired with amla or lemon."],
-      "tip": "Make winter bajra rotis or bajra khichdi with moong dal and vegetables."
+      "synergies": [
+        "Superb iron-rich gluten-free grain, especially when paired with amla or lemon."
+      ],
+      "tip": "Make winter bajra rotis or bajra khichdi with moong dal and vegetables.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "sesame_seeds_til",
       "name": "White / Black Sesame Seeds",
       "hindi_name": "Til / Nuvvulu",
       "category": "Seeds & Nuts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "25g (2 tablespoons)",
       "nutrients": {
@@ -149,15 +228,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Calcium powerhouse for vegans with healthy fats that assist fat-soluble nutrient uptake."],
-      "tip": "Add til laddu with jaggery, sprinkle on rotis, or use in Andhra-style nuvvula podi."
+      "synergies": [
+        "Calcium powerhouse for vegans with healthy fats that assist fat-soluble nutrient uptake."
+      ],
+      "tip": "Add til laddu with jaggery, sprinkle on rotis, or use in Andhra-style nuvvula podi.",
+      "tags": [
+        "high_fibre",
+        "heart_healthy_fat"
+      ]
     },
     {
       "id": "garden_cress_seeds_aliv",
       "name": "Garden Cress Seeds / Halim",
       "hindi_name": "Halim / Aliv",
       "category": "Seeds & Nuts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "10g (1 tablespoon soaked)",
       "nutrients": {
@@ -168,15 +258,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Unmatched iron density (10mg in a single tablespoon!)."],
-      "tip": "Soak 1 tsp in lemon water or tender coconut water for 30 minutes before drinking."
+      "synergies": [
+        "Unmatched iron density (10mg in a single tablespoon!)."
+      ],
+      "tip": "Soak 1 tsp in lemon water or tender coconut water for 30 minutes before drinking.",
+      "tags": [
+        "high_fibre",
+        "heart_healthy_fat"
+      ]
     },
     {
       "id": "pumpkin_seeds",
       "name": "Pumpkin Seeds",
       "hindi_name": "Kaddu ke Beej",
       "category": "Seeds & Nuts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "30g (handful)",
       "nutrients": {
@@ -187,15 +288,25 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Rich in zinc and magnesium alongside iron."],
-      "tip": "Dry roast and eat as an evening snack."
+      "synergies": [
+        "Rich in zinc and magnesium alongside iron."
+      ],
+      "tip": "Dry roast and eat as an evening snack.",
+      "tags": [
+        "heart_healthy_fat"
+      ]
     },
     {
       "id": "roasted_chana",
       "name": "Roasted Bengal Gram",
       "hindi_name": "Bhuna Chana / Putnalu",
       "category": "Pulses & Legumes",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "50g",
       "nutrients": {
@@ -206,15 +317,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["High fiber and folate. Convenient ready-to-eat office/travel snack."],
-      "tip": "Pair with a slice of jaggery (chana-gur combination) or toss into chaat with tomatoes."
+      "synergies": [
+        "High fiber and folate. Convenient ready-to-eat office/travel snack."
+      ],
+      "tip": "Pair with a slice of jaggery (chana-gur combination) or toss into chaat with tomatoes.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "rajma_kidney_beans",
       "name": "Kidney Beans / Rajma",
       "hindi_name": "Rajma",
       "category": "Pulses & Legumes",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
@@ -225,15 +347,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["High folate and non-heme iron. Soaking overnight neutralizes phytates."],
-      "tip": "Cook with tomato and ginger-garlic gravy for enhanced taste and acidity to support absorption."
+      "synergies": [
+        "High folate and non-heme iron. Soaking overnight neutralizes phytates."
+      ],
+      "tip": "Cook with tomato and ginger-garlic gravy for enhanced taste and acidity to support absorption.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "chana_dal",
       "name": "Bengal Gram Dal",
       "hindi_name": "Chana Dal",
       "category": "Pulses & Legumes",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
@@ -244,15 +377,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Excellent plant protein and folate source."],
-      "tip": "Prepare as dal tadka or mix with leafy greens like palak or bottle gourd (lauki)."
+      "synergies": [
+        "Excellent plant protein and folate source."
+      ],
+      "tip": "Prepare as dal tadka or mix with leafy greens like palak or bottle gourd (lauki).",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "black_urad_dal",
       "name": "Whole Black Gram",
       "hindi_name": "Sabut Urad / Minumulu",
       "category": "Pulses & Legumes",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
@@ -263,16 +407,28 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["High calcium and folate among whole lentils."],
-      "tip": "Use in fermented idli/dosa batters or slow-cooked dal makhani (light on cream)."
+      "synergies": [
+        "High calcium and folate among whole lentils."
+      ],
+      "tip": "Use in fermented idli/dosa batters or slow-cooked dal makhani (light on cream).",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "paneer_cottage_cheese",
       "name": "Indian Cottage Cheese / Paneer",
       "hindi_name": "Paneer",
       "category": "Dairy",
-      "diet_type": ["veg", "eggetarian", "non_veg"],
-      "allergens": ["dairy"],
+      "diet_type": [
+        "veg",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "dairy"
+      ],
       "serving_size": "100g",
       "nutrients": {
         "iron_mg": 0.2,
@@ -282,16 +438,25 @@
         "vitamin_d_iu": 15.0,
         "vitamin_b12_mcg": 0.8
       },
-      "synergies": ["High bioavailable dairy calcium and moderate natural B12 for vegetarians."],
-      "tip": "Consume raw, grilled, or gently tossed in curries."
+      "synergies": [
+        "High bioavailable dairy calcium and moderate natural B12 for vegetarians."
+      ],
+      "tip": "Consume raw, grilled, or gently tossed in curries.",
+      "tags": []
     },
     {
       "id": "curd_yogurt",
       "name": "Plain Curd / Dahi",
       "hindi_name": "Dahi / Perugu",
       "category": "Dairy",
-      "diet_type": ["veg", "eggetarian", "non_veg"],
-      "allergens": ["dairy"],
+      "diet_type": [
+        "veg",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "dairy"
+      ],
       "serving_size": "200g (1 bowl)",
       "nutrients": {
         "iron_mg": 0.1,
@@ -301,16 +466,25 @@
         "vitamin_d_iu": 10.0,
         "vitamin_b12_mcg": 0.6
       },
-      "synergies": ["Probiotics enhance general intestinal nutrient assimilation."],
-      "tip": "Have with lunch as plain curd, raita, or buttermilk (chaas)."
+      "synergies": [
+        "Probiotics enhance general intestinal nutrient assimilation."
+      ],
+      "tip": "Have with lunch as plain curd, raita, or buttermilk (chaas).",
+      "tags": []
     },
     {
       "id": "cow_milk_whole",
       "name": "Cow's Milk (Boiled)",
       "hindi_name": "Doodh / Paalu",
       "category": "Dairy",
-      "diet_type": ["veg", "eggetarian", "non_veg"],
-      "allergens": ["dairy"],
+      "diet_type": [
+        "veg",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "dairy"
+      ],
       "serving_size": "250ml (1 glass)",
       "nutrients": {
         "iron_mg": 0.1,
@@ -320,16 +494,24 @@
         "vitamin_d_iu": 20.0,
         "vitamin_b12_mcg": 1.1
       },
-      "synergies": ["Key source of bioavailable B12 and calcium in traditional Indian lacto-vegetarian diets."],
-      "tip": "Drink warm at night with a pinch of turmeric and black pepper."
+      "synergies": [
+        "Key source of bioavailable B12 and calcium in traditional Indian lacto-vegetarian diets."
+      ],
+      "tip": "Drink warm at night with a pinch of turmeric and black pepper.",
+      "tags": []
     },
     {
       "id": "whole_egg_boiled",
       "name": "Boiled Chicken Egg (Whole)",
       "hindi_name": "Ubla Anda / Guddu",
       "category": "Eggs & Poultry",
-      "diet_type": ["eggetarian", "non_veg"],
-      "allergens": ["eggs"],
+      "diet_type": [
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "eggs"
+      ],
       "serving_size": "2 large eggs (approx 100g)",
       "nutrients": {
         "iron_mg": 1.8,
@@ -339,15 +521,20 @@
         "vitamin_d_iu": 88.0,
         "vitamin_b12_mcg": 1.2
       },
-      "synergies": ["Yolk contains bioavailable Vitamin D3 and natural Vitamin B12."],
-      "tip": "Consume the whole egg (including yolk) to get fat-soluble Vitamin D."
+      "synergies": [
+        "Yolk contains bioavailable Vitamin D3 and natural Vitamin B12."
+      ],
+      "tip": "Consume the whole egg (including yolk) to get fat-soluble Vitamin D.",
+      "tags": []
     },
     {
       "id": "chicken_breast",
       "name": "Skinless Chicken Breast",
       "hindi_name": "Murgh / Chicken",
       "category": "Eggs & Poultry",
-      "diet_type": ["non_veg"],
+      "diet_type": [
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
@@ -358,15 +545,20 @@
         "vitamin_d_iu": 12.0,
         "vitamin_b12_mcg": 0.7
       },
-      "synergies": ["Lean heme iron with superior bioavailability over plant sources."],
-      "tip": "Tikka style, tandoori, or curry with light spices."
+      "synergies": [
+        "Lean heme iron with superior bioavailability over plant sources."
+      ],
+      "tip": "Tikka style, tandoori, or curry with light spices.",
+      "tags": []
     },
     {
       "id": "chicken_liver",
       "name": "Chicken Liver",
       "hindi_name": "Kaleji",
       "category": "Organ Meats",
-      "diet_type": ["non_veg"],
+      "diet_type": [
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -377,15 +569,20 @@
         "vitamin_d_iu": 65.0,
         "vitamin_b12_mcg": 16.8
       },
-      "synergies": ["One of nature's densest sources of heme iron, Vitamin B12, and Folate."],
-      "tip": "Sauté with onions and black pepper once a week."
+      "synergies": [
+        "One of nature's densest sources of heme iron, Vitamin B12, and Folate."
+      ],
+      "tip": "Sauté with onions and black pepper once a week.",
+      "tags": []
     },
     {
       "id": "mutton_goat_meat",
       "name": "Goat Meat / Mutton",
       "hindi_name": "Gosht / Mutton",
       "category": "Red Meat",
-      "diet_type": ["non_veg"],
+      "diet_type": [
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -396,16 +593,23 @@
         "vitamin_d_iu": 15.0,
         "vitamin_b12_mcg": 2.5
       },
-      "synergies": ["Rich in heme iron and zinc with high Vitamin B12 content."],
-      "tip": "Curry or slow braised broth."
+      "synergies": [
+        "Rich in heme iron and zinc with high Vitamin B12 content."
+      ],
+      "tip": "Curry or slow braised broth.",
+      "tags": []
     },
     {
       "id": "rohu_freshwater_fish",
       "name": "Rohu / Freshwater Carp",
       "hindi_name": "Rohu Machli / Chepa",
       "category": "Seafood & Fish",
-      "diet_type": ["non_veg"],
-      "allergens": ["seafood"],
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
       "serving_size": "150g cooked",
       "nutrients": {
         "iron_mg": 1.4,
@@ -415,16 +619,23 @@
         "vitamin_d_iu": 140.0,
         "vitamin_b12_mcg": 1.8
       },
-      "synergies": ["Excellent source of natural Vitamin D and B12 for non-vegetarians in India."],
-      "tip": "Traditional mustard fish curry (Macher Jhol) or grilled fillet."
+      "synergies": [
+        "Excellent source of natural Vitamin D and B12 for non-vegetarians in India."
+      ],
+      "tip": "Traditional mustard fish curry (Macher Jhol) or grilled fillet.",
+      "tags": []
     },
     {
       "id": "mackerel_bangda",
       "name": "Indian Mackerel / Bangda",
       "hindi_name": "Bangda / Kanagurtulu",
       "category": "Seafood & Fish",
-      "diet_type": ["non_veg"],
-      "allergens": ["seafood"],
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
       "serving_size": "120g grilled",
       "nutrients": {
         "iron_mg": 1.6,
@@ -434,16 +645,28 @@
         "vitamin_d_iu": 380.0,
         "vitamin_b12_mcg": 7.3
       },
-      "synergies": ["Outstanding natural source of Vitamin D3 and Omega-3 fatty acids."],
-      "tip": "Tava fry with kokum and spices or bake."
+      "synergies": [
+        "Outstanding natural source of Vitamin D3 and Omega-3 fatty acids."
+      ],
+      "tip": "Tava fry with kokum and spices or bake.",
+      "tags": [
+        "heart_healthy_fat",
+        "omega3"
+      ]
     },
     {
       "id": "fortified_milk_fssai",
       "name": "FSSAI Fortified Cow/Buffalo Milk (+F)",
       "hindi_name": "Fortified Doodh (+F logo)",
       "category": "Fortified Foods",
-      "diet_type": ["veg", "eggetarian", "non_veg"],
-      "allergens": ["dairy"],
+      "diet_type": [
+        "veg",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "dairy"
+      ],
       "serving_size": "250ml",
       "nutrients": {
         "iron_mg": 0.1,
@@ -453,16 +676,26 @@
         "vitamin_d_iu": 125.0,
         "vitamin_b12_mcg": 1.2
       },
-      "synergies": ["Government-mandated fortification adds 5mcg (200 IU) Vitamin D per liter."],
-      "tip": "Look for the blue '+F' logo on packaged Indian milk packets (Amul, Mother Dairy, Nandini)."
+      "synergies": [
+        "Government-mandated fortification adds 5mcg (200 IU) Vitamin D per liter."
+      ],
+      "tip": "Look for the blue '+F' logo on packaged Indian milk packets (Amul, Mother Dairy, Nandini).",
+      "tags": []
     },
     {
       "id": "fortified_soy_milk",
       "name": "Fortified Soy Milk (+B12 & +Vit D)",
       "hindi_name": "Fortified Soya Doodh",
       "category": "Fortified Foods",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
-      "allergens": ["soy"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "soy"
+      ],
       "serving_size": "250ml",
       "nutrients": {
         "iron_mg": 1.2,
@@ -472,15 +705,23 @@
         "vitamin_d_iu": 100.0,
         "vitamin_b12_mcg": 1.5
       },
-      "synergies": ["Critical staple for strict vegans to secure bioavailable Vitamin B12 and Vitamin D without supplements."],
-      "tip": "Use in morning oats, tea/coffee, or smoothies."
+      "synergies": [
+        "Critical staple for strict vegans to secure bioavailable Vitamin B12 and Vitamin D without supplements."
+      ],
+      "tip": "Use in morning oats, tea/coffee, or smoothies.",
+      "tags": []
     },
     {
       "id": "nutritional_yeast",
       "name": "Fortified Nutritional Yeast Flakes",
       "hindi_name": "Nutritional Yeast",
       "category": "Fortified Foods",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "10g (2 tablespoons)",
       "nutrients": {
@@ -491,15 +732,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 4.8
       },
-      "synergies": ["Primary non-animal gold standard for Vitamin B12 and Folate among vegans."],
-      "tip": "Sprinkle over popcorn, dal, pasta, or sabzis for a savory cheesy umami flavor."
+      "synergies": [
+        "Primary non-animal gold standard for Vitamin B12 and Folate among vegans."
+      ],
+      "tip": "Sprinkle over popcorn, dal, pasta, or sabzis for a savory cheesy umami flavor.",
+      "tags": []
     },
     {
       "id": "sun_exposed_mushrooms",
       "name": "UV / Sun-Exposed Button Mushrooms",
       "hindi_name": "Dhoop me rakha Mushroom / Kukurmutta",
       "category": "Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -510,15 +759,23 @@
         "vitamin_d_iu": 400.0,
         "vitamin_b12_mcg": 0.1
       },
-      "synergies": ["Mushrooms synthesize natural Vitamin D2 when exposed to midday sunlight for 30-60 minutes before cooking."],
-      "tip": "Place sliced fresh mushrooms under direct sunlight between 11 AM - 1 PM before cooking."
+      "synergies": [
+        "Mushrooms synthesize natural Vitamin D2 when exposed to midday sunlight for 30-60 minutes before cooking."
+      ],
+      "tip": "Place sliced fresh mushrooms under direct sunlight between 11 AM - 1 PM before cooking.",
+      "tags": []
     },
     {
       "id": "amla_indian_gooseberry",
       "name": "Indian Gooseberry / Amla",
       "hindi_name": "Amla / Usirikaya",
       "category": "Fruits & Catalysts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "50g (1 large fruit or fresh juice)",
       "nutrients": {
@@ -529,15 +786,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Ultimate non-heme iron absorption booster! Contains heat-stable Vitamin C 20x higher than oranges."],
-      "tip": "Eat raw with a pinch of rock salt, or take 20ml fresh juice alongside morning meals."
+      "synergies": [
+        "Ultimate non-heme iron absorption booster! Contains heat-stable Vitamin C 20x higher than oranges."
+      ],
+      "tip": "Eat raw with a pinch of rock salt, or take 20ml fresh juice alongside morning meals.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "lemon_citrus",
       "name": "Fresh Lemon Juice",
       "hindi_name": "Nimbu Ras",
       "category": "Fruits & Catalysts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "30ml (juice of 1 lemon)",
       "nutrients": {
@@ -548,15 +816,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Ascorbic acid converts ferric iron ($Fe^{3+}$) to absorbable ferrous ($Fe^{2+}$) iron."],
-      "tip": "Squeeze over dal, khichdi, chana, and green vegetables right before eating."
+      "synergies": [
+        "Ascorbic acid converts ferric iron ($Fe^{3+}$) to absorbable ferrous ($Fe^{2+}$) iron."
+      ],
+      "tip": "Squeeze over dal, khichdi, chana, and green vegetables right before eating.",
+      "tags": []
     },
     {
       "id": "guava_peru",
       "name": "Ripe Guava",
       "hindi_name": "Amrood / Jama",
       "category": "Fruits & Catalysts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "1 medium fruit (120g)",
       "nutrients": {
@@ -567,15 +843,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Exceptional whole-fruit folate and Vitamin C source."],
-      "tip": "Eat as a midday snack with the skin intact."
+      "synergies": [
+        "Exceptional whole-fruit folate and Vitamin C source."
+      ],
+      "tip": "Eat as a midday snack with the skin intact.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "beetroot",
       "name": "Beetroot",
       "hindi_name": "Chukandar",
       "category": "Root Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked or raw",
       "nutrients": {
@@ -586,15 +873,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["High in natural dietary folate and nitrates that improve blood circulation and RBC health."],
-      "tip": "Grate raw into salads, juice with amla, or steam into a poriyal/thoran."
+      "synergies": [
+        "High in natural dietary folate and nitrates that improve blood circulation and RBC health."
+      ],
+      "tip": "Grate raw into salads, juice with amla, or steam into a poriyal/thoran.",
+      "tags": []
     },
     {
       "id": "dates_khajoor",
       "name": "Black Dates",
       "hindi_name": "Khajoor",
       "category": "Dried Fruits",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "4-5 dates (40g)",
       "nutrients": {
@@ -605,16 +900,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Natural iron-rich sweetener for fatigue and energy support."],
-      "tip": "Eat 3-4 dates in the morning alongside soaked almonds."
+      "synergies": [
+        "Natural iron-rich sweetener for fatigue and energy support."
+      ],
+      "tip": "Eat 3-4 dates in the morning alongside soaked almonds.",
+      "tags": []
     },
     {
       "id": "almonds_badam",
       "name": "Almonds (Soaked & Peeled)",
       "hindi_name": "Badam",
       "category": "Seeds & Nuts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
-      "allergens": ["nuts"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "nuts"
+      ],
       "serving_size": "25g (approx 15 nuts)",
       "nutrients": {
         "iron_mg": 1.0,
@@ -624,15 +929,27 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Healthy monounsaturated fats support absorption of fat-soluble vitamins."],
-      "tip": "Soak overnight in water and peel the brown skin to reduce tannins."
+      "synergies": [
+        "Healthy monounsaturated fats support absorption of fat-soluble vitamins."
+      ],
+      "tip": "Soak overnight in water and peel the brown skin to reduce tannins.",
+      "tags": [
+        "low_gi",
+        "high_fibre",
+        "heart_healthy_fat"
+      ]
     },
     {
       "id": "black_raisins_kishmish",
       "name": "Soaked Black Raisins",
       "hindi_name": "Munakka / Kishmish",
       "category": "Dried Fruits",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "30g (handful soaked)",
       "nutrients": {
@@ -643,16 +960,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Traditional ayurvedic remedy for low hemoglobin and sluggish bowel transit."],
-      "tip": "Soak 10-12 munakkas in water overnight and consume the raisins along with the water on an empty stomach."
+      "synergies": [
+        "Traditional ayurvedic remedy for low hemoglobin and sluggish bowel transit."
+      ],
+      "tip": "Soak 10-12 munakkas in water overnight and consume the raisins along with the water on an empty stomach.",
+      "tags": []
     },
     {
       "id": "tofu_firm",
       "name": "Calcium-Set Firm Tofu",
       "hindi_name": "Soy Paneer / Tofu",
       "category": "Soy Products",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
-      "allergens": ["soy"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "soy"
+      ],
       "serving_size": "100g",
       "nutrients": {
         "iron_mg": 2.7,
@@ -662,15 +989,25 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Calcium-sulfate setting makes tofu one of the highest plant-based calcium sources in the world."],
-      "tip": "Pan-fry with Indian spices or substitute for paneer in curries."
+      "synergies": [
+        "Calcium-sulfate setting makes tofu one of the highest plant-based calcium sources in the world."
+      ],
+      "tip": "Pan-fry with Indian spices or substitute for paneer in curries.",
+      "tags": [
+        "low_gi"
+      ]
     },
     {
       "id": "horse_gram_kulthi",
       "name": "Horse Gram",
       "hindi_name": "Kulthi / Ulavalu",
       "category": "Pulses & Legumes",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
@@ -681,15 +1018,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["One of the richest iron-yielding legumes in the ICMR-NIN database; also high in calcium."],
-      "tip": "Prepare as rasam (Ulavacharu) with tamarind and tomatoes, or as a dry stir-fry."
+      "synergies": [
+        "One of the richest iron-yielding legumes in the ICMR-NIN database; also high in calcium."
+      ],
+      "tip": "Prepare as rasam (Ulavacharu) with tamarind and tomatoes, or as a dry stir-fry.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "moth_beans_matki",
       "name": "Moth Beans / Matki",
       "hindi_name": "Matki / Moth",
       "category": "Pulses & Legumes",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
@@ -700,16 +1048,29 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Sprouting moth beans doubles folate content and reduces phytic acid, boosting iron absorption."],
-      "tip": "Sprout for 24–36 hours and prepare as misal pav or koshimbir salad."
+      "synergies": [
+        "Sprouting moth beans doubles folate content and reduces phytic acid, boosting iron absorption."
+      ],
+      "tip": "Sprout for 24–36 hours and prepare as misal pav or koshimbir salad.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "soybean_cooked",
       "name": "Cooked Soybeans",
       "hindi_name": "Soya / Bhatt",
       "category": "Pulses & Legumes",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
-      "allergens": ["soy"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "soy"
+      ],
       "serving_size": "150g cooked",
       "nutrients": {
         "iron_mg": 4.4,
@@ -719,15 +1080,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Complete plant protein; fermented forms (tempeh, miso) provide trace amounts of bioactive B12 analogues."],
-      "tip": "Boil and toss into chaat, curries, or dry stir-fry with spices."
+      "synergies": [
+        "Complete plant protein; fermented forms (tempeh, miso) provide trace amounts of bioactive B12 analogues."
+      ],
+      "tip": "Boil and toss into chaat, curries, or dry stir-fry with spices.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "lobia_black_eyed_peas",
       "name": "Black-Eyed Peas / Lobia",
       "hindi_name": "Lobia / Chawli",
       "category": "Pulses & Legumes",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
@@ -738,15 +1110,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Exceptionally high in folate — one cup provides over half the adult daily requirement."],
-      "tip": "Make lobia curry with tomatoes and ginger-garlic, or add to salads when boiled."
+      "synergies": [
+        "Exceptionally high in folate — one cup provides over half the adult daily requirement."
+      ],
+      "tip": "Make lobia curry with tomatoes and ginger-garlic, or add to salads when boiled.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "drumstick_vegetable",
       "name": "Drumstick Pods (Moringa)",
       "hindi_name": "Sahjan Phali / Murungakkai",
       "category": "Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -757,15 +1140,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Very high Vitamin C content (141 mg/100g) makes it an excellent absorption catalyst for iron-rich meals."],
-      "tip": "Add to sambar, dal, or pressure-cook with lentils."
+      "synergies": [
+        "Very high Vitamin C content (141 mg/100g) makes it an excellent absorption catalyst for iron-rich meals."
+      ],
+      "tip": "Add to sambar, dal, or pressure-cook with lentils.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "bitter_gourd_karela",
       "name": "Bitter Gourd / Karela",
       "hindi_name": "Karela / Pavakkai",
       "category": "Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -776,15 +1170,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["High folate and Vitamin C; traditionally used for blood sugar management."],
-      "tip": "Stir-fry with onions and masalas to reduce bitterness, or stuff with spiced filling."
+      "synergies": [
+        "High folate and Vitamin C; traditionally used for blood sugar management."
+      ],
+      "tip": "Stir-fry with onions and masalas to reduce bitterness, or stuff with spiced filling.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "bottle_gourd_lauki",
       "name": "Bottle Gourd / Lauki",
       "hindi_name": "Lauki / Sorakaya",
       "category": "Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
@@ -795,15 +1200,25 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Hydrating and easy to digest; ideal base for lentil and green-vegetable combinations."],
-      "tip": "Cook as lauki chana dal or lauki kofta for a nutritious combination."
+      "synergies": [
+        "Hydrating and easy to digest; ideal base for lentil and green-vegetable combinations."
+      ],
+      "tip": "Cook as lauki chana dal or lauki kofta for a nutritious combination.",
+      "tags": [
+        "low_gi"
+      ]
     },
     {
       "id": "raw_banana_plantain",
       "name": "Raw Banana / Green Plantain",
       "hindi_name": "Kachcha Kela / Aratikaya",
       "category": "Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -814,15 +1229,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Resistant starch supports gut microbiome which indirectly improves mineral absorption."],
-      "tip": "Boil and temper with mustard seeds, curry leaves, and coconut; or use in Kerala-style thoran."
+      "synergies": [
+        "Resistant starch supports gut microbiome which indirectly improves mineral absorption."
+      ],
+      "tip": "Boil and temper with mustard seeds, curry leaves, and coconut; or use in Kerala-style thoran.",
+      "tags": []
     },
     {
       "id": "sweet_potato",
       "name": "Sweet Potato",
       "hindi_name": "Shakarkandi / Genasu",
       "category": "Root Vegetables",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g boiled",
       "nutrients": {
@@ -833,15 +1256,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Contains beta-carotene and Vitamin C; serves as a naturally sweet iron absorption co-factor."],
-      "tip": "Roast in the oven, boil and chaat with lemon and chilli, or mash into parathas."
+      "synergies": [
+        "Contains beta-carotene and Vitamin C; serves as a naturally sweet iron absorption co-factor."
+      ],
+      "tip": "Roast in the oven, boil and chaat with lemon and chilli, or mash into parathas.",
+      "tags": []
     },
     {
       "id": "lotus_seeds_makhana",
       "name": "Fox Nuts / Makhana",
       "hindi_name": "Makhana / Phool Makhana",
       "category": "Seeds & Nuts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "30g (1 cup puffed)",
       "nutrients": {
@@ -852,15 +1283,25 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Low-calorie, high-calcium vegan snack; a preferred fasting food in Indian households."],
-      "tip": "Dry roast in ghee with rock salt and black pepper as a nutritious evening snack."
+      "synergies": [
+        "Low-calorie, high-calcium vegan snack; a preferred fasting food in Indian households."
+      ],
+      "tip": "Dry roast in ghee with rock salt and black pepper as a nutritious evening snack.",
+      "tags": [
+        "low_gi"
+      ]
     },
     {
       "id": "flaxseeds_alsi",
       "name": "Flaxseeds / Alsi",
       "hindi_name": "Alsi / Agase",
       "category": "Seeds & Nuts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "15g (1 tablespoon ground)",
       "nutrients": {
@@ -871,15 +1312,28 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Rich in plant omega-3 (ALA) which supports anti-inflammatory pathways aiding iron utilisation."],
-      "tip": "Grind and add to rotis, smoothies, or sprinkle over curd. Store ground flax in the fridge."
+      "synergies": [
+        "Rich in plant omega-3 (ALA) which supports anti-inflammatory pathways aiding iron utilisation."
+      ],
+      "tip": "Grind and add to rotis, smoothies, or sprinkle over curd. Store ground flax in the fridge.",
+      "tags": [
+        "low_gi",
+        "high_fibre",
+        "heart_healthy_fat",
+        "omega3"
+      ]
     },
     {
       "id": "sunflower_seeds",
       "name": "Sunflower Seeds",
       "hindi_name": "Surajmukhi ke Beej",
       "category": "Seeds & Nuts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "30g",
       "nutrients": {
@@ -890,16 +1344,28 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["One of the highest folate-containing seeds; also rich in Vitamin E which protects iron from oxidation."],
-      "tip": "Roast lightly and add to salads, granola, or trail mixes."
+      "synergies": [
+        "One of the highest folate-containing seeds; also rich in Vitamin E which protects iron from oxidation."
+      ],
+      "tip": "Roast lightly and add to salads, granola, or trail mixes.",
+      "tags": [
+        "heart_healthy_fat"
+      ]
     },
     {
       "id": "cashewnuts_kaju",
       "name": "Cashew Nuts",
       "hindi_name": "Kaju",
       "category": "Seeds & Nuts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
-      "allergens": ["nuts"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "nuts"
+      ],
       "serving_size": "30g (20 cashews)",
       "nutrients": {
         "iron_mg": 1.9,
@@ -909,15 +1375,25 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Higher iron content among common Indian nuts; copper in cashews helps iron metabolism."],
-      "tip": "Eat raw or lightly roasted; use in curries, kheer, or homemade barfi."
+      "synergies": [
+        "Higher iron content among common Indian nuts; copper in cashews helps iron metabolism."
+      ],
+      "tip": "Eat raw or lightly roasted; use in curries, kheer, or homemade barfi.",
+      "tags": [
+        "heart_healthy_fat"
+      ]
     },
     {
       "id": "jowar_sorghum",
       "name": "Sorghum / Jowar",
       "hindi_name": "Jowar / Jonna",
       "category": "Millets & Grains",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "60g dry",
       "nutrients": {
@@ -928,15 +1404,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Gluten-free ancient Indian grain with moderate iron; pairs well with greens in rotlas."],
-      "tip": "Make jowar rotlas (thick flatbread) with garlic chutney and jaggery; also good as porridge."
+      "synergies": [
+        "Gluten-free ancient Indian grain with moderate iron; pairs well with greens in rotlas."
+      ],
+      "tip": "Make jowar rotlas (thick flatbread) with garlic chutney and jaggery; also good as porridge.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "foxtail_millet_kangni",
       "name": "Foxtail Millet / Kangni",
       "hindi_name": "Kangni / Korralu",
       "category": "Millets & Grains",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "60g dry",
       "nutrients": {
@@ -947,15 +1434,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Richer in iron than rice; traditionally consumed in Andhra Pradesh and North India."],
-      "tip": "Cook as upma, pongal, or khichdi using foxtail millet instead of rice."
+      "synergies": [
+        "Richer in iron than rice; traditionally consumed in Andhra Pradesh and North India."
+      ],
+      "tip": "Cook as upma, pongal, or khichdi using foxtail millet instead of rice.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "little_millet_kutki",
       "name": "Little Millet / Kutki",
       "hindi_name": "Kutki / Sama",
       "category": "Millets & Grains",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "60g dry",
       "nutrients": {
@@ -966,16 +1464,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["One of the highest iron-containing Indian millets (9.3 mg/100g dry); a traditional fasting grain."],
-      "tip": "Prepare as sama khichdi, sama chawal, or upma during Navratri fasting or regular meals."
+      "synergies": [
+        "One of the highest iron-containing Indian millets (9.3 mg/100g dry); a traditional fasting grain."
+      ],
+      "tip": "Prepare as sama khichdi, sama chawal, or upma during Navratri fasting or regular meals.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     },
     {
       "id": "cod_liver_oil_capsule",
       "name": "Cod Liver Oil (Supplement/Capsule)",
       "hindi_name": "Cod Liver Oil",
       "category": "Seafood & Fish",
-      "diet_type": ["non_veg"],
-      "allergens": ["seafood"],
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
       "serving_size": "5ml (1 teaspoon or 2 capsules)",
       "nutrients": {
         "iron_mg": 0.0,
@@ -985,16 +1493,23 @@
         "vitamin_d_iu": 450.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Highly concentrated natural Vitamin D3 source; also rich in Omega-3 and preformed Vitamin A."],
-      "tip": "Take with a meal containing healthy fats for optimal fat-soluble vitamin absorption."
+      "synergies": [
+        "Highly concentrated natural Vitamin D3 source; also rich in Omega-3 and preformed Vitamin A."
+      ],
+      "tip": "Take with a meal containing healthy fats for optimal fat-soluble vitamin absorption.",
+      "tags": []
     },
     {
       "id": "hilsa_fish_ilish",
       "name": "Hilsa / Ilish Fish",
       "hindi_name": "Hilsa / Ilish",
       "category": "Seafood & Fish",
-      "diet_type": ["non_veg"],
-      "allergens": ["seafood"],
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
       "serving_size": "100g cooked",
       "nutrients": {
         "iron_mg": 1.5,
@@ -1004,16 +1519,26 @@
         "vitamin_d_iu": 320.0,
         "vitamin_b12_mcg": 5.4
       },
-      "synergies": ["Excellent B12 and Vitamin D source; widely consumed in Eastern India and Bangladesh."],
-      "tip": "Steamed in mustard sauce (Ilish Bhapa) or curried in mustard oil with turmeric."
+      "synergies": [
+        "Excellent B12 and Vitamin D source; widely consumed in Eastern India and Bangladesh."
+      ],
+      "tip": "Steamed in mustard sauce (Ilish Bhapa) or curried in mustard oil with turmeric.",
+      "tags": [
+        "heart_healthy_fat",
+        "omega3"
+      ]
     },
     {
       "id": "prawn_shrimp",
       "name": "Prawns / Shrimp",
       "hindi_name": "Jhinga / Royallu",
       "category": "Seafood & Fish",
-      "diet_type": ["non_veg"],
-      "allergens": ["seafood"],
+      "diet_type": [
+        "non_veg"
+      ],
+      "allergens": [
+        "seafood"
+      ],
       "serving_size": "100g cooked",
       "nutrients": {
         "iron_mg": 2.4,
@@ -1023,15 +1548,20 @@
         "vitamin_d_iu": 100.0,
         "vitamin_b12_mcg": 1.3
       },
-      "synergies": ["Good heme iron and B12 with meaningful Vitamin D; a coastal Indian staple."],
-      "tip": "Prawn masala, dried prawn chutney, or prawn pulao with minimal heavy sauces."
+      "synergies": [
+        "Good heme iron and B12 with meaningful Vitamin D; a coastal Indian staple."
+      ],
+      "tip": "Prawn masala, dried prawn chutney, or prawn pulao with minimal heavy sauces.",
+      "tags": []
     },
     {
       "id": "mutton_liver",
       "name": "Mutton / Goat Liver",
       "hindi_name": "Bheja / Kaleja (Bakri)",
       "category": "Organ Meats",
-      "diet_type": ["non_veg"],
+      "diet_type": [
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
@@ -1042,15 +1572,23 @@
         "vitamin_d_iu": 50.0,
         "vitamin_b12_mcg": 90.0
       },
-      "synergies": ["One of the most nutrient-dense foods on earth for iron, B12, and folate combined."],
-      "tip": "Stir-fry kaleja masala or add to slow-cooked biryani. Consume in moderation (once a week)."
+      "synergies": [
+        "One of the most nutrient-dense foods on earth for iron, B12, and folate combined."
+      ],
+      "tip": "Stir-fry kaleja masala or add to slow-cooked biryani. Consume in moderation (once a week).",
+      "tags": []
     },
     {
       "id": "papaya_ripe",
       "name": "Ripe Papaya",
       "hindi_name": "Papita / Boppaya",
       "category": "Fruits & Catalysts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "150g (1 medium slice)",
       "nutrients": {
@@ -1061,15 +1599,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Contains papain enzyme which aids protein digestion and mineral assimilation; high Vitamin C catalyses iron absorption."],
-      "tip": "Eat fresh as a breakfast fruit, or blend into a smoothie with amla for a Vitamin C burst."
+      "synergies": [
+        "Contains papain enzyme which aids protein digestion and mineral assimilation; high Vitamin C catalyses iron absorption."
+      ],
+      "tip": "Eat fresh as a breakfast fruit, or blend into a smoothie with amla for a Vitamin C burst.",
+      "tags": []
     },
     {
       "id": "orange_mosambi",
       "name": "Sweet Lime / Mosambi",
       "hindi_name": "Mosambi / Batabi Lebu",
       "category": "Fruits & Catalysts",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "1 medium fruit (150g)",
       "nutrients": {
@@ -1080,15 +1626,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Readily available Indian citrus; fresh juice squeezed over dal/iron-rich meals significantly boosts absorption."],
-      "tip": "Drink fresh juice (avoid packaged) immediately before or alongside iron-rich meals."
+      "synergies": [
+        "Readily available Indian citrus; fresh juice squeezed over dal/iron-rich meals significantly boosts absorption."
+      ],
+      "tip": "Drink fresh juice (avoid packaged) immediately before or alongside iron-rich meals.",
+      "tags": []
     },
     {
       "id": "dried_figs_anjeer",
       "name": "Dried Figs / Anjeer",
       "hindi_name": "Anjeer",
       "category": "Dried Fruits",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "4 dried figs (40g)",
       "nutrients": {
@@ -1099,15 +1653,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["One of the best calcium-rich dried fruits for vegans; also provides meaningful iron."],
-      "tip": "Soak 2–3 anjeer in water overnight; eat the figs and drink the soaking water on an empty stomach."
+      "synergies": [
+        "One of the best calcium-rich dried fruits for vegans; also provides meaningful iron."
+      ],
+      "tip": "Soak 2–3 anjeer in water overnight; eat the figs and drink the soaking water on an empty stomach.",
+      "tags": []
     },
     {
       "id": "dried_apricots_khumani",
       "name": "Dried Apricots / Khumani",
       "hindi_name": "Khumani / Jardalu",
       "category": "Dried Fruits",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "5–6 halves (40g)",
       "nutrients": {
@@ -1118,16 +1680,25 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Traditional Kashmiri and Ladakhi source of iron; pair with lemon juice for enhanced non-heme absorption."],
-      "tip": "Soak overnight and add to porridge, oats, or homemade trail mix."
+      "synergies": [
+        "Traditional Kashmiri and Ladakhi source of iron; pair with lemon juice for enhanced non-heme absorption."
+      ],
+      "tip": "Soak overnight and add to porridge, oats, or homemade trail mix.",
+      "tags": []
     },
     {
       "id": "ghee_clarified_butter",
       "name": "Desi Ghee (Clarified Butter)",
       "hindi_name": "Ghee / Tuppa",
       "category": "Dairy",
-      "diet_type": ["veg", "eggetarian", "non_veg"],
-      "allergens": ["dairy"],
+      "diet_type": [
+        "veg",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "dairy"
+      ],
       "serving_size": "1 teaspoon (5g)",
       "nutrients": {
         "iron_mg": 0.0,
@@ -1137,15 +1708,23 @@
         "vitamin_d_iu": 15.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Healthy saturated fat carrier; a small amount of ghee with Vitamin D-containing foods significantly enhances absorption of this fat-soluble vitamin."],
-      "tip": "Add 1 tsp ghee to warm dal, rice, or rotis; cook Vitamin D-containing mushrooms in ghee."
+      "synergies": [
+        "Healthy saturated fat carrier; a small amount of ghee with Vitamin D-containing foods significantly enhances absorption of this fat-soluble vitamin."
+      ],
+      "tip": "Add 1 tsp ghee to warm dal, rice, or rotis; cook Vitamin D-containing mushrooms in ghee.",
+      "tags": []
     },
     {
       "id": "coconut_oil_virgin",
       "name": "Virgin Coconut Oil",
       "hindi_name": "Nariyal Tel / Thengai Ennai",
       "category": "Herbs & Condiments",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "1 tablespoon (14g)",
       "nutrients": {
@@ -1156,15 +1735,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Medium-chain triglycerides (MCTs) support absorption of fat-soluble vitamins D and B12 cofactors; use as the cooking fat when preparing Vitamin D-rich foods."],
-      "tip": "Use for sautéing mushrooms, fish, or eggs to maximise fat-soluble vitamin bioavailability."
+      "synergies": [
+        "Medium-chain triglycerides (MCTs) support absorption of fat-soluble vitamins D and B12 cofactors; use as the cooking fat when preparing Vitamin D-rich foods."
+      ],
+      "tip": "Use for sautéing mushrooms, fish, or eggs to maximise fat-soluble vitamin bioavailability.",
+      "tags": []
     },
     {
       "id": "tamarind_imli",
       "name": "Tamarind Paste",
       "hindi_name": "Imli / Puli",
       "category": "Herbs & Condiments",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "20g (1 tablespoon paste)",
       "nutrients": {
@@ -1175,15 +1762,23 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Provides tartaric acid — an organic acid that chelates iron into a more soluble, absorbable form; a natural substitute for lemon in rasam and sambar."],
-      "tip": "Add to horse gram rasam, sambar, or chutneys to acidify and improve iron bioavailability."
+      "synergies": [
+        "Provides tartaric acid — an organic acid that chelates iron into a more soluble, absorbable form; a natural substitute for lemon in rasam and sambar."
+      ],
+      "tip": "Add to horse gram rasam, sambar, or chutneys to acidify and improve iron bioavailability.",
+      "tags": []
     },
     {
       "id": "jaggery_gud",
       "name": "Jaggery / Gur (Unrefined Cane Sugar)",
       "hindi_name": "Gur / Bellam",
       "category": "Herbs & Condiments",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
       "allergens": [],
       "serving_size": "20g (1 small block)",
       "nutrients": {
@@ -1194,16 +1789,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Traditional sweetener retaining trace minerals lost in refined sugar; iron + calcium in natural form; often paired with chana for synergistic effect."],
-      "tip": "Replace refined sugar with jaggery in chai, laddus, pongal, and payasam."
+      "synergies": [
+        "Traditional sweetener retaining trace minerals lost in refined sugar; iron + calcium in natural form; often paired with chana for synergistic effect."
+      ],
+      "tip": "Replace refined sugar with jaggery in chai, laddus, pongal, and payasam.",
+      "tags": []
     },
     {
       "id": "wheat_germ",
       "name": "Wheat Germ (Raw)",
       "hindi_name": "Gehoon ka Germ",
       "category": "Millets & Grains",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
-      "allergens": ["gluten"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "gluten"
+      ],
       "serving_size": "30g (2 tablespoons)",
       "nutrients": {
         "iron_mg": 2.0,
@@ -1213,16 +1818,26 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
-      "synergies": ["Concentrated source of folate and iron from the innermost layer of whole wheat; also rich in Vitamin E and zinc."],
-      "tip": "Stir 2 tbsp into curd, smoothies, or breakfast upma for a quick folate boost."
+      "synergies": [
+        "Concentrated source of folate and iron from the innermost layer of whole wheat; also rich in Vitamin E and zinc."
+      ],
+      "tip": "Stir 2 tbsp into curd, smoothies, or breakfast upma for a quick folate boost.",
+      "tags": []
     },
     {
       "id": "tempeh",
       "name": "Tempeh (Fermented Soybean Cake)",
       "hindi_name": "Tempeh / Fermented Soy",
       "category": "Soy Products",
-      "diet_type": ["veg", "vegan", "eggetarian", "non_veg"],
-      "allergens": ["soy"],
+      "diet_type": [
+        "veg",
+        "vegan",
+        "eggetarian",
+        "non_veg"
+      ],
+      "allergens": [
+        "soy"
+      ],
       "serving_size": "100g",
       "nutrients": {
         "iron_mg": 2.7,
@@ -1232,9 +1847,14 @@
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.1
       },
-      "synergies": ["Fermentation breaks down phytic acid, making iron and calcium more bioavailable than unfermented soy. Provides trace amounts of B12 analogues."],
-      "tip": "Marinate in Indian spices (turmeric, chilli, coriander) and pan-fry or bake as a protein-rich side."
+      "synergies": [
+        "Fermentation breaks down phytic acid, making iron and calcium more bioavailable than unfermented soy. Provides trace amounts of B12 analogues."
+      ],
+      "tip": "Marinate in Indian spices (turmeric, chilli, coriander) and pan-fry or bake as a protein-rich side.",
+      "tags": [
+        "low_gi",
+        "high_fibre"
+      ]
     }
   ]
 }
-

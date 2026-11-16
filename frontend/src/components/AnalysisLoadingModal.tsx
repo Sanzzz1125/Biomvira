@@ -36,7 +36,7 @@ const STAGES = [
     threshold: 90,
   },
   {
-    title: 'Formulating Clinical Narrative & Repletion Protocol',
+    title: 'Formulating Clinical Narrative & Food Protocol',
     detail: 'Synthesizing evidence-grounded dietary action plan and clinical safety advisories.',
     icon: Sparkles,
     threshold: 100,

@@ -23,7 +23,7 @@ export const FoodCard: React.FC<FoodCardProps> = ({ food, targetNutrientName }) 
       <div className="mt-3 rounded-lg bg-brand-50 px-3 py-2 ring-1 ring-inset ring-brand-100">
         <p className="text-sm font-semibold text-brand-800 tabular-nums">{food.key_nutrient_yield}</p>
         <p className="text-xs text-brand-700/80">
-          {targetNutrientName} per {food.serving_size}
+          {/\d/.test(food.key_nutrient_yield) ? `${targetNutrientName} per ${food.serving_size}` : `Per ${food.serving_size}`}
         </p>
       </div>
 

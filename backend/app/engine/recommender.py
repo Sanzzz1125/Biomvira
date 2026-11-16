@@ -1,6 +1,8 @@
 import json
+import re
 import os
 from typing import List, Dict, Any, Optional
+from app.engine.rule_engine import BIOMARKERS_CONFIG
 from app.models.schemas import (
     UserProfile,
     MarkerAnalysisResult,
@@ -19,7 +21,54 @@ def load_foods_data() -> List[Dict[str, Any]]:
 
 FOODS_DATABASE = load_foods_data()
 
+# Blood-sugar and blood-fat advice ranks foods by qualitative properties (no invented nutrient numbers).
+TAG_PROFILES = {
+    "glycemic_support": {"low_gi": 2, "high_fibre": 1},
+    "lipid_support": {"heart_healthy_fat": 2, "omega3": 2, "high_fibre": 1},
+    "hdl_support": {"heart_healthy_fat": 2, "omega3": 2},
+}
+TAG_LABELS = {"low_gi": "Low GI", "high_fibre": "High fibre", "heart_healthy_fat": "Healthy fats", "omega3": "Omega-3"}
+TAG_NOTES = {
+    "low_gi": "Releases its energy slowly, which helps keep blood sugar steadier than refined foods.",
+    "high_fibre": "Fibre slows digestion and supports healthy blood sugar and cholesterol.",
+    "heart_healthy_fat": "Provides unsaturated fats that can replace saturated fats in the diet.",
+    "omega3": "A source of omega-3 fats.",
+}
+MAX_PER_CATEGORY = 2
+
 ABSORPTION_RULES = {
+    "glycemic_support": {
+        "dos": [
+            "Build meals around whole grains and millets (ragi, jowar, bajra), pulses and non-starchy vegetables; eat grains with dal, sprouts or curd rather than on their own.",
+            "Choose whole fruit instead of fruit juice and keep portions modest.",
+            "Stay physically active as your doctor advises; a short walk after meals is a common habit."
+        ],
+        "donts": [
+            "Keep sugar, sweets, sweetened drinks and refined flour (maida) products small; national dietary guidance asks for added sugar to stay low.",
+            "Do not stop or change any diabetes medicine because of diet changes without asking your doctor."
+        ]
+    },
+    "lipid_support": {
+        "dos": [
+            "Eat pulses, whole grains, millets, vegetables and fruit every day for fibre.",
+            "Include a small handful of nuts or seeds (almonds, flaxseed, sesame, pumpkin or sunflower seeds) as part of your daily fat; non-vegetarians can choose fish such as mackerel.",
+            "Use cooking oil in moderation and vary the oils you use."
+        ],
+        "donts": [
+            "Limit ghee, butter, deep-fried snacks, bakery items, vanaspati and processed meats.",
+            "Do not stop or change cholesterol medicines because of diet changes without asking your doctor."
+        ]
+    },
+    "hdl_support": {
+        "dos": [
+            "Replace some saturated fat with unsaturated fat from nuts, seeds and, for non-vegetarians, fish.",
+            "Stay physically active as your doctor advises."
+        ],
+        "donts": [
+            "Avoid vanaspati, bakery fats and deep-fried packaged snacks.",
+            "Do not start supplements to raise HDL without asking your doctor."
+        ]
+    },
     "iron_mg": {
         "dos": [
             "Pair non-heme plant iron (palak, chana, moringa) with Vitamin C rich foods (fresh lemon juice, amla, guava) to increase absorption up to 300%.",
@@ -104,6 +153,33 @@ class RecommendationEngine:
 
         return eligible_foods
 
+    @staticmethod
+    def needs_plan(marker: MarkerAnalysisResult) -> bool:
+        """Markers where lower is worse need food when LOW/BORDERLINE; blood sugar and fats when BORDERLINE/HIGH.
+        Tests without a food plan (kidney, liver) are only reported."""
+        config = BIOMARKERS_CONFIG.get(marker.biomarker_key, {})
+        if not config.get("supports_food_plan", True):
+            return False
+        if config.get("direction", "lower_is_worse") == "higher_is_worse":
+            return marker.status in (MarkerStatus.BORDERLINE, MarkerStatus.HIGH)
+        return marker.status in (MarkerStatus.LOW, MarkerStatus.BORDERLINE)
+
+    @staticmethod
+    def rank_by_tags(foods, nutrient_key):
+        weights = TAG_PROFILES[nutrient_key]
+        scored = [(sum(w for tag, w in weights.items() if tag in f.get("tags", [])), f) for f in foods]
+        scored = sorted([x for x in scored if x[0] > 0], key=lambda x: (-x[0], x[1]["id"]))
+        chosen, per_category = [], {}
+        for score, food in scored:
+            category = food.get("category", "General")
+            if per_category.get(category, 0) >= MAX_PER_CATEGORY:
+                continue
+            per_category[category] = per_category.get(category, 0) + 1
+            chosen.append(food)
+            if len(chosen) == 4:
+                break
+        return chosen
+
     def generate_recommendations(
         self,
         marker_analyses: List[MarkerAnalysisResult],
@@ -112,27 +188,35 @@ class RecommendationEngine:
         eligible_foods = self.filter_foods(profile)
         plans = []
 
-        # Focus on markers that are LOW or BORDERLINE
-        flagged_markers = [m for m in marker_analyses if m.status in (MarkerStatus.LOW, MarkerStatus.BORDERLINE)]
+        flagged_markers = [m for m in marker_analyses if self.needs_plan(m)]
 
         for marker in flagged_markers:
             nutrient_key = marker.target_nutrient_key
             
-            # Sort eligible foods by the specific target nutrient content descending
-            ranked_foods = sorted(
-                eligible_foods,
-                key=lambda f: f.get("nutrients", {}).get(nutrient_key, 0.0),
-                reverse=True
-            )
-
-            # Pick top 4 foods that have meaningful amounts (> 0)
-            top_foods = [f for f in ranked_foods if f.get("nutrients", {}).get(nutrient_key, 0.0) > 0.0][:4]
+            tag_based = nutrient_key in TAG_PROFILES
+            if tag_based:
+                top_foods = self.rank_by_tags(eligible_foods, nutrient_key)
+            else:
+                # Sort eligible foods by the specific target nutrient content descending
+                ranked_foods = sorted(
+                    eligible_foods,
+                    key=lambda f: f.get("nutrients", {}).get(nutrient_key, 0.0),
+                    reverse=True
+                )
+                # Pick top 4 foods that have meaningful amounts (> 0)
+                top_foods = [f for f in ranked_foods if f.get("nutrients", {}).get(nutrient_key, 0.0) > 0.0][:4]
 
             formatted_foods = []
             for food in top_foods:
-                val = food["nutrients"].get(nutrient_key, 0.0)
-                unit_label = nutrient_key.split("_")[-1].upper()
-                yield_desc = f"{val} {unit_label}"
+                if tag_based:
+                    shown = [t for t in TAG_PROFILES[nutrient_key] if t in food.get("tags", [])]
+                    yield_desc = " \u00b7 ".join(TAG_LABELS[t] for t in shown)
+                    synergies = [TAG_NOTES[t] for t in shown]
+                else:
+                    val = food["nutrients"].get(nutrient_key, 0.0)
+                    unit_label = nutrient_key.split("_")[-1].upper()
+                    yield_desc = f"{val} {unit_label}"
+                    synergies = food.get("synergies", [])
 
                 formatted_foods.append(
                     FoodRecommendation(
@@ -142,7 +226,7 @@ class RecommendationEngine:
                         category=food.get("category", "General"),
                         serving_size=food.get("serving_size", "1 serving"),
                         key_nutrient_yield=yield_desc,
-                        synergies=food.get("synergies", []),
+                        synergies=synergies,
                         preparation_tip=food.get("tip")
                     )
                 )
@@ -161,5 +245,33 @@ class RecommendationEngine:
                 )
             )
 
-        return plans
+        return self._merge_shared_plans(plans, marker_analyses)
+
+    @staticmethod
+    def _merge_shared_plans(plans, marker_analyses):
+        """HbA1c and both glucose tests (or total/LDL cholesterol and triglycerides) lead to the same foods and advice,
+        so show them as one plan named after all the markers behind it."""
+        severity = {MarkerStatus.LOW: 1, MarkerStatus.BORDERLINE: 2, MarkerStatus.HIGH: 3}
+        merged, groups = [], {}
+        for plan in plans:
+            key = BIOMARKERS_CONFIG.get(plan.target_biomarker, {}).get("target_nutrient_key")
+            if key not in TAG_PROFILES:
+                merged.append(plan)
+                continue
+            if key not in groups:
+                groups[key] = {"plan": plan, "names": [plan.biomarker_display_name]}
+                merged.append(plan)
+                continue
+            group = groups[key]
+            group["names"].append(plan.biomarker_display_name)
+            if severity[plan.status] > severity[group["plan"].status]:
+                group["plan"].status = plan.status
+            seen = {f.id for f in group["plan"].recommended_foods}
+            group["plan"].recommended_foods += [f for f in plan.recommended_foods if f.id not in seen]
+            group["plan"].recommended_foods = group["plan"].recommended_foods[:4]
+        for group in groups.values():
+            if len(group["names"]) > 1:
+                short = [" ".join(re.sub(r"\s*\([^)]*\)", "", n).split()) for n in group["names"]]
+                group["plan"].biomarker_display_name = " \u00b7 ".join(short)
+        return merged
 

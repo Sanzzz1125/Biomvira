@@ -19,6 +19,22 @@ const AVAILABLE_BIOMARKERS = [
   { key: 'ferritin', name: 'Serum Ferritin', canonicalUnit: 'ng/mL' },
   { key: 'hemoglobin', name: 'Hemoglobin (Hb)', canonicalUnit: 'g/dL' },
   { key: 'calcium', name: 'Serum Calcium', canonicalUnit: 'mg/dL' },
+  { key: 'hba1c', name: 'HbA1c (Glycated Haemoglobin)', canonicalUnit: '%' },
+  { key: 'fasting_glucose', name: 'Fasting Blood Glucose', canonicalUnit: 'mg/dL' },
+  { key: 'postprandial_glucose', name: 'Post-Meal Blood Glucose', canonicalUnit: 'mg/dL' },
+  { key: 'total_cholesterol', name: 'Total Cholesterol', canonicalUnit: 'mg/dL' },
+  { key: 'triglycerides', name: 'Triglycerides', canonicalUnit: 'mg/dL' },
+  { key: 'ldl_cholesterol', name: 'LDL Cholesterol', canonicalUnit: 'mg/dL' },
+  { key: 'hdl_cholesterol', name: 'HDL Cholesterol', canonicalUnit: 'mg/dL' },
+  { key: 'creatinine', name: 'Serum Creatinine', canonicalUnit: 'mg/dL' },
+  { key: 'urea', name: 'Blood Urea', canonicalUnit: 'mg/dL' },
+  { key: 'uric_acid', name: 'Serum Uric Acid', canonicalUnit: 'mg/dL' },
+  { key: 'sgot_ast', name: 'SGOT / AST', canonicalUnit: 'U/L' },
+  { key: 'sgpt_alt', name: 'SGPT / ALT', canonicalUnit: 'U/L' },
+  { key: 'alkaline_phosphatase', name: 'Alkaline Phosphatase', canonicalUnit: 'U/L' },
+  { key: 'bilirubin_total', name: 'Total Bilirubin', canonicalUnit: 'mg/dL' },
+  { key: 'total_protein', name: 'Total Protein', canonicalUnit: 'g/dL' },
+  { key: 'albumin', name: 'Serum Albumin', canonicalUnit: 'g/dL' },
 ];
 
 const GRID = 'md:grid md:grid-cols-[minmax(0,2fr)_minmax(0,1.1fr)_minmax(0,0.9fr)_minmax(0,1.5fr)_minmax(0,1.5fr)_40px] md:items-center md:gap-4';

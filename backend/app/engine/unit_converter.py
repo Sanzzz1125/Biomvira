@@ -63,7 +63,34 @@ CONVERSION_FACTORS = {
             "mmol/l": 4.008,        # 1 mmol/L = 4.008 mg/dL
             "meq/l": 2.004          # 1 mEq/L = 2.004 mg/dL
         }
-    }
+    },
+    # --- blood sugar -------------------------------------------------------------------------------------------
+    # A conversion is a multiplier, or a (multiplier, offset) pair for formulas such as HbA1c.
+    "hba1c": {
+        "canonical": "%",
+        "conversions": {
+            "%": 1.0,
+            "mmol/mol": (0.0915, 2.15),   # IFCC mmol/mol -> NGSP %: % = 0.0915 x mmol/mol + 2.15
+        }
+    },
+    "fasting_glucose": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "mmol/l": 18.016}},
+    "postprandial_glucose": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "mmol/l": 18.016}},
+    # --- blood fats --------------------------------------------------------------------------------------------
+    "total_cholesterol": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "mmol/l": 38.67}},
+    "ldl_cholesterol": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "mmol/l": 38.67}},
+    "hdl_cholesterol": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "mmol/l": 38.67}},
+    "triglycerides": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "mmol/l": 88.57}},
+    # --- kidney ------------------------------------------------------------------------------------------------
+    "creatinine": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "umol/l": 1.0 / 88.4}},
+    "urea": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "mmol/l": 6.006}},
+    "uric_acid": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "umol/l": 1.0 / 59.48}},
+    # --- liver -------------------------------------------------------------------------------------------------
+    "sgot_ast": {"canonical": "U/L", "conversions": {"u/l": 1.0, "iu/l": 1.0}},
+    "sgpt_alt": {"canonical": "U/L", "conversions": {"u/l": 1.0, "iu/l": 1.0}},
+    "alkaline_phosphatase": {"canonical": "U/L", "conversions": {"u/l": 1.0, "iu/l": 1.0}},
+    "bilirubin_total": {"canonical": "mg/dL", "conversions": {"mg/dl": 1.0, "mg%": 1.0, "umol/l": 1.0 / 17.1}},
+    "total_protein": {"canonical": "g/dL", "conversions": {"g/dl": 1.0, "gm/dl": 1.0, "gms/dl": 1.0, "g%": 1.0, "gm%": 1.0, "g/l": 0.1}},
+    "albumin": {"canonical": "g/dL", "conversions": {"g/dl": 1.0, "gm/dl": 1.0, "gms/dl": 1.0, "g%": 1.0, "gm%": 1.0, "g/l": 0.1}},
 }
 
 def clean_unit_string(unit: str) -> str:
@@ -94,7 +121,8 @@ def convert_to_canonical(biomarker_key: str, value: float, unit: str) -> Tuple[f
     
     factor = conversions.get(cleaned_unit)
     if factor is not None:
-        converted_value = round(value * factor, 2)
+        multiplier, offset = factor if isinstance(factor, tuple) else (factor, 0.0)
+        converted_value = round(value * multiplier + offset, 2)
         return converted_value, canonical_unit
     
     raise ValueError(f"Unsupported unit for {biomarker_key}: {unit or 'missing'}")
