@@ -59,32 +59,42 @@ export const Hero: React.FC = () => (
       ))}
     </ul>
 
-    <div className="mx-auto mt-10 max-w-5xl text-left">
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-        <h2 className="text-base font-semibold text-slate-900">What NutriLens checks</h2>
-        <p className="text-xs text-slate-500">
-          Results outside the healthy range get a food plan where diet helps, or a clear note to see your doctor.
-        </p>
-      </div>
-      <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {PANELS.map(({ name, tests, guidance }) => (
-          <li key={name} className="rounded-xl border border-slate-200 bg-white p-4 shadow-card">
-            <div className="flex items-start justify-between gap-2">
-              <p className="text-sm font-semibold text-slate-900">{name}</p>
-              <span
-                className={
-                  guidance === 'Doctor review'
-                    ? 'shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-medium text-slate-600'
-                    : 'shrink-0 rounded-full bg-brand-50 px-2 py-0.5 text-[11px] font-medium text-brand-700 ring-1 ring-inset ring-brand-100'
-                }
-              >
-                {guidance}
-              </span>
-            </div>
-            <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{tests}</p>
+    <SupportedTests />
+  </section>
+);
+
+/** Compact overview of the supported panels: one chip per panel, coloured by the kind of guidance it gets. */
+const GUIDANCE_STYLE: Record<string, string> = {
+  'Food plan': 'bg-brand-500',
+  'Food plan + doctor': 'bg-amber-500',
+  'Doctor review': 'bg-slate-400',
+};
+
+const SupportedTests: React.FC = () => (
+  <div className="mx-auto mt-6 max-w-5xl rounded-xl border border-slate-200 bg-white px-5 py-4 text-left shadow-card">
+    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+      <p className="text-sm font-semibold text-slate-900">What NutriLens checks</p>
+      <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500" aria-label="Legend">
+        {Object.entries(GUIDANCE_STYLE).map(([label, dot]) => (
+          <li key={label} className="flex items-center gap-1.5">
+            <span className={`h-2 w-2 rounded-full ${dot}`} aria-hidden />
+            {label}
           </li>
         ))}
       </ul>
     </div>
-  </section>
+    <ul className="mt-3 flex flex-wrap gap-2">
+      {PANELS.map(({ name, tests, guidance }) => (
+        <li
+          key={name}
+          title={tests}
+          className="flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700"
+        >
+          <span className={`h-2 w-2 rounded-full ${GUIDANCE_STYLE[guidance]}`} aria-hidden />
+          {name}
+          <span className="sr-only">: {tests} ({guidance})</span>
+        </li>
+      ))}
+    </ul>
+  </div>
 );
