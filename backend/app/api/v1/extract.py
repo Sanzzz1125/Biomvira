@@ -1,4 +1,5 @@
 import asyncio
+import re
 import uuid
 from typing import Optional
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
@@ -12,7 +13,7 @@ from app.config import settings
 from app.models.schemas import ExtractionResponse
 from app.parsers.sanitizer import sanitize_report_text, clinical_evidence_only
 from app.parsers.pdf_extractor import extract_upload, ReportError
-from app.parsers.regex_matcher import extract_biomarkers_with_regex, mentioned_keys
+from app.parsers.regex_matcher import extract_biomarkers_with_regex, mentioned_keys, found_keys
 from app.parsers.llm_fallback import extract_with_gemini_fallback
 
 router = APIRouter()
@@ -27,8 +28,10 @@ def process_report(data, filename, mime, raw_text):
         raise ReportError('Report exceeds the configured text limit.')
     sanitized, _ = sanitize_report_text(text)
     markers = extract_biomarkers_with_regex(sanitized)
-    missing = mentioned_keys(sanitized) - {m.biomarker_key for m in markers}
+    missing = mentioned_keys(sanitized) - found_keys(markers)
     warnings = [f'{key}: mentioned but no reliable result extracted; add manually.' for key in sorted(missing)]
+    warnings += [f'Page {page} is a picture that could not be read automatically. If it shows results not listed '
+                 'below, add them manually.' for page in re.findall(r'\[\[PAGE (\d+) unread\]\]', text)]
     if not markers or missing or any(m.warnings for m in markers):
         evidence = clinical_evidence_only(sanitized)
         if not evidence:

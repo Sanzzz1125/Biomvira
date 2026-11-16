@@ -19,6 +19,10 @@ UNIT = re.compile(
 # Rows that share a name with a supported test but measure something else (platelet distribution width, RDW-SD, ...).
 IGNORE_ROW = re.compile(r'\b(?:pdw|platelet distribution width|plateletcrit|pct|p-?lcr|p-?lcc|platelet large cell'
                         r'|rdw[\s-]*sd|n\.?rbc|nucleated|immature|uibc|unsaturated iron)\b', re.I)
+METHOD_LINE = re.compile(r'[*\s]*method\s*[:.-]', re.I)
+# Ranges printed per sex or age group ("Male:3.5-7.2 Female:2.6-6.0", "12-18 years: 8.4-10.2") cannot be read as one
+# range without the patient's details, so the app's own sex-specific ranges are used instead.
+SEX_AGE_RANGE = re.compile(r'\b(?:males?|females?|men|women|years?|yrs?|yr|months?|child(?:ren)?|infants?|newborns?)\b|\d\s*yrs?\b', re.I)
 QUALIFIER_WORDS = ((re.compile(r'\b(?:up\s*to|upto|less\s+than|below)\s*:?\s*(?=\d)', re.I), '<'),
                    (re.compile(r'\b(?:more\s+than|greater\s+than|above)\s*:?\s*(?=\d)', re.I), '>'))
 
@@ -47,19 +51,22 @@ BAND_WORDS = re.compile(r'\b(?:desirable|optimal|near optimal|borderline(?: high
 def aliases(line):
     matches = []
     for key, info in BIOMARKERS_CONFIG.items():
-        found = [m for alias in info['aliases'] for m in [re.search(r'(?<!\w)' + re.escape(alias) + r'(?!\w)', line, re.I)] if m]
+        found = [m for alias in info['aliases'] for m in re.finditer(r'(?<!\w)' + re.escape(alias) + r'(?!\w)', line, re.I)]
         if found:
-            matches.append((key, max(found, key=lambda m: m.end()-m.start())))
+            # Prefer a mention outside brackets, then the longest one.
+            matches.append((key, max(found, key=lambda m: (not in_brackets(line, m), m.end() - m.start()))))
     # A name inside a longer name belongs to the longer one ("glycated hemoglobin" is not hemoglobin).
     matches = [(k, m) for k, m in matches
                if not any(o is not m and (o.start() <= m.start() and o.end() >= m.end()) and (o.end() - o.start()) > (m.end() - m.start())
                           for _, o in matches)]
     # A name in brackets only explains the test outside them: "Serum Ferritin (Iron Stores)" is ferritin, not iron.
-    brackets = [b.span() for b in re.finditer(r'\([^)]*\)', line)]
-    inside = lambda m: any(s <= m.start() and m.end() <= e for s, e in brackets)
-    if any(not inside(m) for _, m in matches):
-        matches = [(k, m) for k, m in matches if not inside(m)]
+    if any(not in_brackets(line, m) for _, m in matches):
+        matches = [(k, m) for k, m in matches if not in_brackets(line, m)]
     return matches
+
+
+def in_brackets(line, match):
+    return any(s <= match.start() and match.end() <= e for s, e in (b.span() for b in re.finditer(r'\([^)]*\)', line)))
 
 
 def mentioned_keys(text):
@@ -97,6 +104,9 @@ def extract_biomarkers_with_regex(text):
         cells = [s.strip() for s in re.split(r'\s*\|\s*|\t+|\s{2,}', line)]
         if any(re.fullmatch(r'(?:current\s+)?result|value', c, re.I) for c in cells) and any(re.search('test|parameter|investigation', c, re.I) for c in cells):
             header = [c.lower() for c in cells]; continue
+        # Ratio rows, look-alike tests, "Method: ..." notes and long explanatory paragraphs are never results.
+        if METHOD_LINE.match(line):
+            continue  # a "Method: ..." note between a test name and its value
         if RATIO_ROW.search(line) or IGNORE_ROW.search(line[:40]):
             pending = ''
             continue
@@ -107,6 +117,10 @@ def extract_biomarkers_with_regex(text):
         if len(hits) != 1:
             continue
         key, match = hits[0]
+        # A long paragraph that merely names a test ("A hemoglobin A1c test measures ...") is not a result row;
+        # a real row has its value right after the name, even when a PDF runs a whole page into one line.
+        if len(line) > 200 and not re.search(r'\d', re.sub(r'\([^)]*\)', ' ', line[match.end():match.end() + 40])):
+            continue
         rest = line[match.end():]
         rest = re.sub(r'\([^)]*\)', ' ', rest)
         for pattern, symbol in QUALIFIER_WORDS:
@@ -121,6 +135,9 @@ def extract_biomarkers_with_regex(text):
         search = rest[:ref.start()] if ref else rest
         ref = (to_float(ref[1]), to_float(ref[2])) if ref else None
         warnings = []
+        grouped = SEX_AGE_RANGE.search(rest)
+        if grouped:
+            search, ref = search[:grouped.start()], None
         if header and len(cells) == len(header):
             result_columns = [i for i,c in enumerate(header) if re.fullmatch(r'(?:current\s+)?result|value', c)]
             if len(result_columns) == 1:
@@ -136,12 +153,14 @@ def extract_biomarkers_with_regex(text):
         if len(numbers) > 1 and not numbers[0].group(1):
             # "14 U/L < 50 U/L": a later "<50" or ">60" is the reference limit, not a second result.
             bounds = [n for n in numbers[1:] if n.group(1)]
-            if bounds and not ref:
+            if bounds and not ref and not grouped:
                 limit = to_float(bounds[0].group(2))
                 ref = (None, limit) if bounds[0].group(1)[0] in '<≤' else (limit, None)
             numbers = [numbers[0]] + [n for n in numbers[1:] if not n.group(1)]
         if not numbers:
-            if not re.search(r'\d', rest) and len(line) < 100:
+            # Only a bare test name waits for its value on a following line; a description such as
+            # "Platelets: Adequate in number with normal morphology" does not.
+            if not re.search(r'\d', rest) and len(line) < 100 and len(re.findall(r'[A-Za-z]+', rest)) <= 2:
                 pending = line
             continue
         if len(numbers) != 1 or re.search(r'previous|historical|prior', line, re.I):

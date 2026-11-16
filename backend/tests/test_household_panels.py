@@ -146,3 +146,40 @@ def test_value_printed_slightly_above_its_name_stays_on_the_same_row():
     c.save()
     got = {m.biomarker_key: m.detected_value for m in extract_biomarkers_with_regex(extract_text_and_tables_from_pdf(stream.getvalue()))}
     assert got == {"mchc": 33.1, "neutrophils": 68, "lymphocytes": 25}
+
+
+def test_centromed_layout_method_lines_age_and_sex_ranges():
+    text = ("[[PAGE 1 native]]\n* SGOT / AST\nMethod:IFCC without pyridoxaal phosphate\n31.5 IU/L Males: Upto 50\nFemales: Upto 35\n"
+            "* PROTEIN-TOTAL\nMethod:Biuret\n6.25 g/dL 6.4-8.3\n* M C H C 35.2 g/dL 32.0 - 34.0\n"
+            "* CALCIUM\nMethod:NM-BAPTA\n8.97 mg/dL 12–18 years: 8.4 – 10.2\n"
+            "* UREA\nMethod:Urease UV\n22.5 mg/dL Female <50yr:15-40\n"
+            "A hemoglobin A1c (HbA1c) test measures the amount of blood sugar (glucose) attached to hemoglobin. If HbA1c "
+            "levels are high, it may be a sign of diabetes. American Diabetes Association. Standards of medical care in "
+            "diabetes—2014. Diabetes Care. 2014 Jan;37 Suppl 1:S14-80.\n")
+    got = {m.biomarker_key: m for m in extract_biomarkers_with_regex(text)}
+    assert {k: m.detected_value for k, m in got.items()} == {
+        "sgot_ast": 31.5, "total_protein": 6.25, "mchc": 35.2, "calcium": 8.97, "urea": 22.5}
+    # Age- or sex-specific printed ranges are not guessed; the app's own sex-specific ranges are used.
+    assert all(got[k].report_reference_range is None for k in ("sgot_ast", "calcium", "urea"))
+    assert not any(m.warnings for m in got.values())
+
+
+def test_unreadable_picture_page_does_not_fail_a_readable_report(monkeypatch):
+    import io
+    from PIL import Image
+    from reportlab.lib.utils import ImageReader
+    from reportlab.pdfgen import canvas
+    import app.parsers.pdf_extractor as pdf
+    def timeout(image, deadline, angles=None):
+        raise pdf.ReportError("OCR timed out. Try a clearer or smaller report.")
+    monkeypatch.setattr(pdf, "ocr_image", timeout)
+    stream = io.BytesIO()
+    c = canvas.Canvas(stream, pagesize=(595, 842))
+    c.drawString(40, 700, "Serum Ferritin 14.8 ng/mL 11.0 - 306.8")
+    c.showPage()
+    c.drawImage(ImageReader(Image.new("RGB", (400, 560), "white")), 0, 0, 595, 842)  # analyser printout page
+    c.showPage()
+    c.save()
+    text = pdf.extract_text_and_tables_from_pdf(stream.getvalue())
+    assert "[[PAGE 2 unread]]" in text
+    assert [m.detected_value for m in extract_biomarkers_with_regex(text)] == [14.8]

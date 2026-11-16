@@ -24,7 +24,7 @@ def usable(text):
             and sum(c == '\ufffd' or (ord(c) < 32 and c not in '\n\t') for c in text) / max(len(text), 1) < .02)
 
 
-def ocr_image(image, deadline):
+def ocr_image(image, deadline, angles=(0, 90, 270, 180)):
     if image.width * image.height > settings.max_image_pixels:
         raise ReportError('Image exceeds safe pixel limit.')
     if not shutil.which('tesseract'):
@@ -38,7 +38,7 @@ def ocr_image(image, deadline):
     with tempfile.TemporaryDirectory(prefix='nutrilens-') as directory:
         path = Path(directory) / 'page.png'
         # Bounded orientation trials also handle mobile captures lacking EXIF.
-        for angle in (0, 90, 270, 180):
+        for angle in angles:
             remaining = deadline - time.monotonic()
             if remaining <= 0:
                 raise ReportError('Report processing timed out. Try fewer pages.')
@@ -66,6 +66,7 @@ def ocr_image(image, deadline):
 def extract_text_and_tables_from_pdf(file_bytes: bytes) -> str:
     deadline = time.monotonic() + settings.processing_timeout_seconds
     chunks = []
+    failed = None  # OCR error from a picture-only page, raised only if no page was readable
     try:
         with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
             if not pdf.pages or len(pdf.pages) > settings.max_report_pages:
@@ -90,17 +91,27 @@ def extract_text_and_tables_from_pdf(file_bytes: bytes) -> str:
                 # missing a biomarker row. A text-only page (e.g. a continuation page of explanatory prose) is never
                 # OCRed. If OCR fails on a page that already has text, the text is kept instead of failing the report.
                 blank = len(text.strip()) < 40 and not usable(text)
-                if blank or (page.images and (not usable(text) or missing)):
+                # Logos, QR codes and signatures are small; only a page that is largely a picture (a scan or an
+                # analyser printout) can hold results that the text layer is missing.
+                covered = sum(max(0, min(i['x1'], page.width) - max(i['x0'], 0)) * max(0, min(i['bottom'], page.height) - max(i['top'], 0))
+                              for i in page.images) / max(page.width * page.height, 1)
+                if blank or (covered >= 0.3 and (not usable(text) or missing)):
                     ocr_text = ''
                     if page.width * page.height * (180 / 72) ** 2 > settings.max_image_pixels:
                         if blank:
-                            raise ReportError('PDF page exceeds safe rendering limits.')
+                            failed = ReportError('PDF page exceeds safe rendering limits.')
                     else:
                         try:
-                            ocr_text = ocr_image(page.to_image(resolution=180).original, deadline)
-                        except ReportError:
+                            # A PDF page is already upright, so only phone photos need the rotation trials.
+                            ocr_text = ocr_image(page.to_image(resolution=180).original, deadline, angles=(0,))
+                        except ReportError as exc:
                             if blank:
-                                raise
+                                failed = exc
+                    if blank and not ocr_text:
+                        # One unreadable picture page (e.g. an analyser printout) must not sink a report whose other
+                        # pages are readable; it is flagged for the user instead.
+                        chunks.append(f'[[PAGE {index} unread]]')
+                        continue
                     if ocr_text and not usable(text):
                         text = ocr_text
                         method = 'ocr'
@@ -122,6 +133,8 @@ def extract_text_and_tables_from_pdf(file_bytes: bytes) -> str:
         if isinstance(exc, PDFPasswordIncorrect) or isinstance(exc.__context__, PDFPasswordIncorrect):
             raise ReportError('Password-protected PDFs are not supported. Upload an unlocked copy.') from None
         raise ReportError('PDF is corrupted or cannot be read.') from None
+    if failed and not any(usable(chunk) for chunk in chunks):
+        raise failed
     return '\n'.join(chunks)
 
 

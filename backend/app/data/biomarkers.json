@@ -831,7 +831,10 @@
         "total protein",
         "s.total protein",
         "s. total protein",
-        "serum total protein"
+        "serum total protein",
+        "protein-total",
+        "protein total",
+        "protein, total"
       ],
       "standard_intervals": {
         "adult": {
@@ -1045,7 +1048,9 @@
       "aliases": [
         "mean corpuscular volume",
         "mean cell volume",
-        "mcv"
+        "mcv",
+        "m c v",
+        "m.c.v"
       ],
       "standard_intervals": {
         "adult": {
@@ -1073,7 +1078,9 @@
         "mean corpuscular haemoglobin",
         "mean cell hemoglobin",
         "mean cell haemoglobin",
-        "mch"
+        "mch",
+        "m c h",
+        "m.c.h"
       ],
       "standard_intervals": {
         "adult": {
@@ -1104,7 +1111,9 @@
         "mean corpuscular haemoglobin concentration",
         "mean cell hemoglobin concentration",
         "mean cell haemoglobin concentration",
-        "mchc"
+        "mchc",
+        "m c h c",
+        "m.c.h.c"
       ],
       "standard_intervals": {
         "adult": {
@@ -2087,8 +2096,7 @@
         "inorganic phosphorus",
         "serum phosphorus",
         "s. phosphorus",
-        "phosphorus",
-        "phosphate"
+        "phosphorus"
       ],
       "standard_intervals": {
         "adult": {

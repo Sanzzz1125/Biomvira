@@ -35,7 +35,7 @@ def test_images(monkeypatch,ext,mime,fmt):
 
 
 def test_scanned(monkeypatch):
-    monkeypatch.setattr(pdf,'ocr_image',lambda image,deadline:'Vitamin B12 180 pg/mL')
+    monkeypatch.setattr(pdf,'ocr_image',lambda image,deadline,angles=None:'Vitamin B12 180 pg/mL')
     assert parse(pdf.extract_upload(make_pdf(['']),'x.pdf','application/pdf'))[0].detected_value == 180
 
 
