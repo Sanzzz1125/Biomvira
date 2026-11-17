@@ -153,6 +153,7 @@ export const AnalyzerPage: React.FC<{ analyzer: Analyzer }> = ({ analyzer }) => 
               isExporting={analyzer.isExportingPdf}
               onDownload={analyzer.handleDownloadPdf}
               onReset={analyzer.reset}
+              savedReportId={analyzer.analysisResult.saved_to_history ? analyzer.analysisResult.analysis_id : null}
             />
           </div>
         )}

@@ -73,6 +73,7 @@ export const HistoryDetailPage: React.FC = () => {
         onReset={() => navigate('/')}
         resetLabel="Analyze another report"
         resetIcon={<ScanLine className="h-4 w-4" aria-hidden />}
+        savedReportId={id}
       />
     </div>
   );

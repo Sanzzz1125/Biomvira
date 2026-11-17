@@ -39,3 +39,54 @@ export async function downloadPlanPdf(analysisData: FullAnalysisResponse): Promi
   window.URL.revokeObjectURL(url);
   document.body.removeChild(a);
 }
+
+export interface AssistantReply {
+  reply: string;
+  kind: 'answer' | 'clarify' | 'fallback' | 'safety' | 'refuse' | 'smalltalk';
+  suggestions: string[];
+  topic: string | null;
+  conversation_id: string | null;
+  saved: boolean;
+}
+
+export interface AssistantRequest {
+  message: string;
+  topic: string | null;
+  context: unknown;
+  conversation_id?: string | null;
+  report_id?: string | null;
+}
+
+export async function askAssistant(request: AssistantRequest): Promise<AssistantReply> {
+  return apiJson<AssistantReply>('/chat', {
+    method: 'POST',
+    json: request,
+    signal: AbortSignal.timeout(30_000),
+  });
+}
+
+export interface ChatSummary {
+  id: string;
+  title: string;
+  report_id: string | null;
+  report_date: string | null;
+  preview: string;
+  message_count: number;
+  updated_at: string;
+}
+
+export interface ChatDetail {
+  id: string;
+  title: string;
+  report_id: string | null;
+  report_date: string | null;
+  topic: string | null;
+  updated_at: string;
+  messages: { role: 'user' | 'bot'; text: string; kind: string; suggestions: string[]; created_at: string }[];
+}
+
+export const chatApi = {
+  list: () => apiJson<ChatSummary[]>('/chat/conversations'),
+  get: (id: string) => apiJson<ChatDetail>(`/chat/conversations/${encodeURIComponent(id)}`),
+  remove: (id: string) => apiFetch(`/chat/conversations/${encodeURIComponent(id)}`, { method: 'DELETE' }),
+};

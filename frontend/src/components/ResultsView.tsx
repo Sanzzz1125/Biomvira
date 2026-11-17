@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Activity,
   Ban,
@@ -18,6 +18,7 @@ import { RangeSliderBar } from './RangeSliderBar';
 import { FoodCard } from './FoodCard';
 import { ClinicalNarrative } from './ClinicalNarrative';
 import { Alert, Badge, Button, Card, SectionTitle, STATUS_META, cx } from './ui';
+import { chatContextFromAnalysis, setChatContext } from '../lib/chatContext';
 
 interface ResultsViewProps {
   result: FullAnalysisResponse;
@@ -27,6 +28,8 @@ interface ResultsViewProps {
   onReset: () => void;
   resetLabel?: string;
   resetIcon?: React.ReactNode;
+  /** The saved report these results belong to (signed-in users), so assistant chats can be linked to it. */
+  savedReportId?: string | null;
 }
 
 const SUMMARY_CARDS = [
@@ -44,8 +47,15 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
   onReset,
   resetLabel = 'New analysis',
   resetIcon = <RotateCcw className="h-4 w-4" aria-hidden />,
+  savedReportId = null,
 }) => {
   const [markerFilter, setMarkerFilter] = useState<'all' | 'flagged'>('all');
+
+  // Let the assistant answer questions about these results while they are on screen.
+  useEffect(() => {
+    setChatContext(chatContextFromAnalysis(result, savedReportId));
+    return () => setChatContext(null);
+  }, [result, savedReportId]);
 
   const totalMarkers = result.marker_analyses.length || 1;
   const optimalCount = result.status_summary['normal'] || 0;

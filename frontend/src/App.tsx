@@ -4,6 +4,7 @@ import { Compass } from 'lucide-react';
 import { AuthProvider } from './auth/AuthContext';
 import { RequireAuth } from './auth/RequireAuth';
 import { EmptyState } from './components/brand';
+import { ChatAssistant } from './components/ChatAssistant';
 import { DisclaimerModal } from './components/DisclaimerModal';
 import { Footer } from './components/Footer';
 import { Navbar } from './components/Navbar';
@@ -49,6 +50,7 @@ const SiteLayout: React.FC = () => {
       </main>
       <Footer onOpenDisclaimer={() => setShowDisclaimer(true)} />
       <DisclaimerModal isOpen={showDisclaimer} onClose={() => setShowDisclaimer(false)} />
+      <ChatAssistant />
     </div>
   );
 };

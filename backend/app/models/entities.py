@@ -3,7 +3,7 @@ import uuid
 from datetime import datetime
 from typing import Any, Optional
 
-from sqlalchemy import JSON, Boolean, CheckConstraint, ForeignKey, Index, Integer, String, text
+from sqlalchemy import JSON, Boolean, CheckConstraint, ForeignKey, Index, Integer, String, Text, text
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -109,6 +109,42 @@ class Report(Base):
     requires_consult: Mapped[bool] = mapped_column(Boolean, default=False)
 
     __table_args__ = (Index("ix_reports_owner_created", "owner_id", "created_at"),)
+
+
+class ChatConversation(Base):
+    """A conversation with the assistant. Saved only for signed-in users; linked to a report when asked from one."""
+    __tablename__ = "chat_conversations"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
+    owner_id: Mapped[str] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"))
+    report_id: Mapped[Optional[str]] = mapped_column(ForeignKey("reports.id", ondelete="CASCADE"), nullable=True)
+    title: Mapped[str] = mapped_column(String(120), default="New chat")
+    topic: Mapped[Optional[str]] = mapped_column(String(80), nullable=True)
+    message_count: Mapped[int] = mapped_column(Integer, default=0)
+    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow)
+    updated_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow)
+
+    __table_args__ = (
+        Index("ix_chat_conversations_owner_updated", "owner_id", "updated_at"),
+        Index("ix_chat_conversations_report", "report_id"),
+    )
+
+
+class ChatMessage(Base):
+    __tablename__ = "chat_messages"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    conversation_id: Mapped[str] = mapped_column(ForeignKey("chat_conversations.id", ondelete="CASCADE"))
+    role: Mapped[str] = mapped_column(String(10))
+    text: Mapped[str] = mapped_column(Text)
+    kind: Mapped[str] = mapped_column(String(20), default="answer")
+    suggestions: Mapped[Optional[list[str]]] = mapped_column(JSONType, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(UTCDateTime, default=utcnow)
+
+    __table_args__ = (
+        CheckConstraint("role IN ('user', 'bot')", name="role"),
+        Index("ix_chat_messages_conversation", "conversation_id", "id"),
+    )
 
 
 class AuditLog(Base):
