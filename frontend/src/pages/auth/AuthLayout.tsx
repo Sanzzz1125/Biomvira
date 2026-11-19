@@ -1,3 +1,4 @@
+import { InteractiveGrid } from '../../components/InteractiveGrid';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Apple, ArrowLeft, FileSearch, ShieldCheck } from 'lucide-react';
@@ -13,7 +14,7 @@ const POINTS = [
   {
     icon: Apple,
     title: 'Indian food plans',
-    text: '180+ Indian foods from ICMR-NIN tables, matched to your diet and allergies.',
+    text: '278 Indian home dishes built from ICMR-NIN food data, matched to your diet and allergies.',
   },
   {
     icon: ShieldCheck,
@@ -39,12 +40,10 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ title, subtitle, childre
         style={{
           backgroundImage:
             'radial-gradient(600px 400px at 0% 0%, rgba(70,182,151,0.35), transparent 60%),' +
-            'radial-gradient(500px 380px at 100% 100%, rgba(99,102,241,0.25), transparent 60%),' +
-            'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),' +
-            'linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
-          backgroundSize: 'auto, auto, 32px 32px, 32px 32px',
+            'radial-gradient(500px 380px at 100% 100%, rgba(99,102,241,0.25), transparent 60%)',
         }}
       />
+      <InteractiveGrid />
       <Logo inverted className="relative" />
 
       <div className="relative max-w-md">

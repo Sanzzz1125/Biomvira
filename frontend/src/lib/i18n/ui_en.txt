@@ -1,7 +1,7 @@
 **Limit or avoid:**
 **Tips:**
 180+ ICMR-NIN Indian foods
-180+ Indian foods from ICMR-NIN tables, matched to your diet and allergies.
+278 Indian home dishes built from ICMR-NIN food data, matched to your diet and allergies.
 A PDF or a phone photo from any Indian lab. Your name and phone number are removed first.
 A good meal does not need special foods. ICMR-NIN suggests filling about half the plate with vegetables and fruit, and splitting the rest between cereals (rice, roti, millets) and pulses, eggs, fish or meat.
 A letter and a number
