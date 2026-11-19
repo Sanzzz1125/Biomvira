@@ -207,111 +207,80 @@ for _cell, _role in (("neutrophils", "the first defence against bacterial infect
 
 def generate_grounded_explanation(
     marker_analyses: List[MarkerAnalysisResult],
-    recommendations: List[NutrientRecommendationPlan]
+    recommendations: List[NutrientRecommendationPlan],
+    lang: str = "en",
 ) -> Tuple[str, bool, List[str]]:
     """
-    Generates a deterministic, medically safe explanation grounded solely in the structured findings.
+    Generates a deterministic, medically safe explanation grounded solely in the structured findings, in English,
+    Hindi or Telugu (sentence templates in app/i18n.py, so numbers are never translated).
     Returns (explanation_text, requires_physician_consult, consult_reasons).
     """
+    from app.i18n import T, tr
+    L = T(lang)
     attention = [m for m in marker_analyses if m.status != MarkerStatus.NORMAL]
-    normal = [m for m in marker_analyses if m.status == MarkerStatus.NORMAL]
 
-    consult_reasons = []
-    for m in marker_analyses:
-        if m.clinical_warning:
-            consult_reasons.append(m.clinical_warning)
-
+    consult_reasons = [m.clinical_warning for m in marker_analyses if m.clinical_warning]
     requires_physician_consult = len(consult_reasons) > 0
 
-    lines: List[str] = []
-
-    # Section 1: Executive Clinical Assessment
-    lines.append("## Executive Clinical Assessment")
+    lines: List[str] = [L["h_exec"]]
     total_markers = len(marker_analyses)
-
     if not attention:
-        lines.append(
-            f"All **{total_markers} tested biomarkers** are within established biological reference intervals. "
-            "The results show balanced values across the tests included in this report. Continue your current varied dietary regimen."
-        )
+        lines.append(L["all_normal"].format(n=total_markers))
         return "\n\n".join(lines), requires_physician_consult, consult_reasons
 
     counts = {s: len([m for m in attention if m.status == s]) for s in (MarkerStatus.LOW, MarkerStatus.BORDERLINE, MarkerStatus.HIGH)}
-    lines.append(
-        f"Analysis of your diagnostic panel reveals that **{len(attention)} of {total_markers} parameters** "
-        f"are outside their optimal reference intervals ({counts[MarkerStatus.LOW]} classified as Low, "
-        f"{counts[MarkerStatus.BORDERLINE]} Borderline, {counts[MarkerStatus.HIGH]} Elevated). "
-        "Where a food-based approach is appropriate, the strategy below uses Indian staples matched to your diet and allergies. "
-        "Results that need a doctor's attention are marked clearly, and no food plan replaces medical care."
-    )
+    lines.append(L["summary"].format(a=len(attention), n=total_markers, low=counts[MarkerStatus.LOW],
+                                     border=counts[MarkerStatus.BORDERLINE], high=counts[MarkerStatus.HIGH]))
 
-    # Section 2: Biomarker findings & physiological impact
-    lines.append("### Physiological Impact Analysis")
+    lines.append(L["h_impact"])
     for m in attention:
         profile = BIOMARKER_CLINICAL_PROFILES.get(m.biomarker_key, {})
         config = BIOMARKERS_CONFIG.get(m.biomarker_key, {})
         higher_is_worse = config.get("direction", "lower_is_worse") == "higher_is_worse"
         if m.status == MarkerStatus.LOW:
-            status_desc = "below the reference range"
+            status_desc = L["below"]
         elif m.status == MarkerStatus.HIGH:
-            status_desc = "above the reference range"
+            status_desc = L["above"]
         elif higher_is_worse:
-            status_desc = "above the optimal range (borderline)"
+            status_desc = L["above_border"]
         else:
-            status_desc = "approaching lower borderline threshold"
+            status_desc = L["below_border"]
 
-        detail = f"- **{m.display_name} ({m.value} {m.unit})**: Evaluated as **{m.status.value.upper()}**, {status_desc} " \
-                 f"(Normal Range: {m.range_low} \u2013 {m.range_high} {m.unit}; functioning at **{m.percentage_of_optimal:.1f}% of optimal**)."
+        detail = L["detail"].format(name=m.display_name, value=m.value, unit=m.unit, status=L["status"][m.status.value],
+                                    desc=status_desc, lo=m.range_low, hi=m.range_high, pct=f"{m.percentage_of_optimal:.1f}")
         micronutrient_high = m.status == MarkerStatus.HIGH and not higher_is_worse and config.get("supports_food_plan", True)
         if micronutrient_high:
-            detail += ("\n  - *Clinical Relevance:* This value is above the reference ceiling. Nutritional plans avoid adding more of this nutrient; "
-                       "please consult a licensed medical practitioner for evaluation.")
+            detail += L["micro_high"]
         elif profile:
-            detail += f"\n  - *Biological Role:* {profile.get('role', '')}"
-            detail += f"\n  - *Clinical Relevance:* {profile.get('depletion_impact', '')}"
-            detail += f"\n  - *Dietary Context:* {profile.get('repletion_strategy', '')}"
+            detail += L["role"].format(x=tr(profile.get("role", ""), lang))
+            detail += L["relevance"].format(x=tr(profile.get("depletion_impact", ""), lang))
+            detail += L["context"].format(x=tr(profile.get("repletion_strategy", ""), lang))
         lines.append(detail)
 
-    # Section 3: Targeted Food Protocol
     improve = [p for p in recommendations if getattr(p, "purpose", "improve") == "improve"]
     maintain = [p for p in recommendations if getattr(p, "purpose", "improve") == "maintain"]
     if improve:
-        lines.append("### Targeted Food Protocols")
+        lines.append(L["h_protocols"])
         for plan in improve:
-            top_foods = [f"{f.name} ({f.key_nutrient_yield} per {f.serving_size})" for f in plan.recommended_foods[:3]]
-            foods_joined = "; ".join(top_foods)
-            lines.append(f"#### Protocol for {plan.biomarker_display_name} ({plan.status.value.upper()})")
-            lines.append(f"- **Priority Foods:** {foods_joined}.")
-
+            top_foods = [L["food_item"].format(name=f.name, amount=f.key_nutrient_yield, serving=f.serving_size)
+                         for f in plan.recommended_foods[:3]]
+            lines.append(L["protocol"].format(name=plan.biomarker_display_name, status=L["status"][plan.status.value]))
+            lines.append(L["priority"].format(foods="; ".join(top_foods)))
             if plan.absorption_dos:
-                lines.append(f"- **Helpful Habit:** {plan.absorption_dos[0]}")
+                lines.append(L["habit"].format(x=plan.absorption_dos[0]))
             if plan.absorption_donts:
-                lines.append(f"- **Habit to Limit:** {plan.absorption_donts[0]}")
+                lines.append(L["limit"].format(x=plan.absorption_donts[0]))
 
     if maintain:
-        lines.append("### Keeping Healthy Results Healthy")
+        lines.append(L["h_maintain"])
         for plan in maintain:
-            foods_joined = ", ".join(f.name for f in plan.recommended_foods)
-            lines.append(f"- **{plan.biomarker_display_name}:** within range. Regular foods that help keep it there: {foods_joined}.")
+            lines.append(L["maintain"].format(name=plan.biomarker_display_name,
+                                              foods=", ".join(f.name for f in plan.recommended_foods)))
 
-    # Section 5: Clinical Safety Advisory
     if requires_physician_consult:
-        lines.append("### Clinical Attention Required")
-        lines.append(
-            "> [!CAUTION]\n"
-            "> **Medical Safety Alert:** One or more results need a doctor\u2019s attention; food changes alone are not enough. "
-            + " ".join(consult_reasons)
-            + " Please schedule an appointment with your qualified physician for diagnostic review and treatment."
-        )
+        lines.append(L["h_attention"])
+        lines.append(L["alert"].format(reasons=" ".join(consult_reasons)))
 
-    # Section 6: Recommended Monitoring & Educational Disclaimer
-    lines.append("### Re-evaluation Roadmap")
-    lines.append(
-        "Dietary changes usually need **8 to 12 weeks** of consistent adherence before blood values change. "
-        "A follow-up laboratory test after about 10\u201312 weeks, or sooner if your doctor advises, shows whether the changes are working.\n\n"
-        "*Disclaimer: NutriLens is an educational nutrition-support platform grounded in ICMR-NIN reference data. "
-        "It does not provide medical diagnoses, treatment plans, or clinical pharmaceutical prescriptions. "
-        "Always seek the advice of a qualified physician or certified clinical dietitian regarding any health condition.*"
-    )
-
+    lines.append(L["h_roadmap"])
+    lines.append(L["roadmap"])
     return "\n\n".join(lines), requires_physician_consult, consult_reasons

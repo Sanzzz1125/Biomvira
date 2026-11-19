@@ -4,11 +4,12 @@ from io import BytesIO
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.responses import StreamingResponse
+from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
 from app.core.deps import get_current_user
 from app.models.account_schemas import HistoryItem, HistoryMarker, HistoryPage
-from app.models.database import get_db
+from app.models.database import get_db, utcnow
 from app.models.entities import Report, User
 from app.models.schemas import FullAnalysisResponse
 from app.utils.pdf_generator import generate_plan_pdf
@@ -54,6 +55,21 @@ def get_report(report_id: str, db: Session = Depends(get_db), user: User = Depen
     return _own_report(db, user, report_id).analysis
 
 
+class SavedPlan(BaseModel):
+    style: str = Field(max_length=20)
+    days: list = Field(min_length=1, max_length=7)
+    shopping_list: list = Field(default_factory=list, max_length=300)
+
+
+@router.put("/history/{report_id}/diet-plan", status_code=204)
+def save_diet_plan(report_id: str, plan: SavedPlan, db: Session = Depends(get_db),
+                   user: User = Depends(get_current_user)):
+    """Keep the person's 7-day plan with the report it was built from."""
+    report = _own_report(db, user, report_id)
+    report.analysis = {**report.analysis, "diet_plan": {**plan.model_dump(), "saved_at": utcnow().isoformat()}}
+    db.commit()
+
+
 @router.delete("/history/{report_id}", status_code=204)
 def delete_report(report_id: str, db: Session = Depends(get_db), user: User = Depends(get_current_user)):
     db.delete(_own_report(db, user, report_id))
@@ -61,12 +77,12 @@ def delete_report(report_id: str, db: Session = Depends(get_db), user: User = De
 
 
 @router.post("/export-plan-pdf")
-def export_plan_pdf(analysis_data: FullAnalysisResponse):
-    """Generate and stream a branded A4 PDF of the analysis supplied in the request body."""
+def export_plan_pdf(analysis_data: FullAnalysisResponse, lang: str = "en"):
+    """Generate and stream a branded A4 PDF of the analysis supplied in the request body (en, hi or te)."""
     analysis_data = analysis_data.model_dump(mode="json")
 
     try:
-        pdf_bytes = generate_plan_pdf(analysis_data)
+        pdf_bytes = generate_plan_pdf(analysis_data, lang)
     except Exception:
         raise HTTPException(
             status_code=500,

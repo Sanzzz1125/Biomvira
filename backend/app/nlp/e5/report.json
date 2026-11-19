@@ -1,0 +1,151 @@
+{
+ "word_matching_names": 0.01913477537437604,
+ "base_names": 0.4559068219633943,
+ "base_questions": 0.7602459016393442,
+ "base_questions_english": 0.9836065573770492,
+ "tuned_names": 0.5016638935108153,
+ "tuned_questions": 0.7418032786885246,
+ "tuned_questions_english": 0.9918032786885246,
+ "name_threshold": 0.815,
+ "non_food_above_threshold": 0.20833333333333334,
+ "faq_threshold": 0.5660341382026672,
+ "breakdown_names": {
+  "hindi_script": {
+   "n": 124,
+   "accuracy": 0.347,
+   "ci95": [
+    0.269,
+    0.434
+   ]
+  },
+  "dish": {
+   "n": 531,
+   "accuracy": 0.627,
+   "ci95": [
+    0.585,
+    0.667
+   ]
+  },
+  "all": {
+   "n": 1202,
+   "accuracy": 0.502,
+   "ci95": [
+    0.473,
+    0.53
+   ]
+  },
+  "telugu_script": {
+   "n": 124,
+   "accuracy": 0.226,
+   "ci95": [
+    0.161,
+    0.307
+   ]
+  },
+  "latin": {
+   "n": 954,
+   "accuracy": 0.558,
+   "ci95": [
+    0.526,
+    0.589
+   ]
+  },
+  "ingredient": {
+   "n": 301,
+   "accuracy": 0.399,
+   "ci95": [
+    0.345,
+    0.455
+   ]
+  },
+  "food": {
+   "n": 370,
+   "accuracy": 0.405,
+   "ci95": [
+    0.357,
+    0.456
+   ]
+  }
+ },
+ "breakdown_questions": {
+  "hindi_script": {
+   "n": 122,
+   "accuracy": 0.959,
+   "ci95": [
+    0.908,
+    0.982
+   ]
+  },
+  "faq": {
+   "n": 488,
+   "accuracy": 0.742,
+   "ci95": [
+    0.701,
+    0.779
+   ]
+  },
+  "all": {
+   "n": 488,
+   "accuracy": 0.742,
+   "ci95": [
+    0.701,
+    0.779
+   ]
+  },
+  "telugu_script": {
+   "n": 122,
+   "accuracy": 0.861,
+   "ci95": [
+    0.788,
+    0.911
+   ]
+  },
+  "latin": {
+   "n": 244,
+   "accuracy": 0.574,
+   "ci95": [
+    0.511,
+    0.634
+   ]
+  }
+ },
+ "test_counts": {
+  "names": 1202,
+  "questions": 488,
+  "questions_english": 122
+ },
+ "compressed_names": 0.4908485856905158,
+ "compressed_questions": 0.7397540983606558,
+ "compressed_questions_english": 0.9918032786885246,
+ "model_mb": 22.7,
+ "live": {
+  "questions": true,
+  "names": false
+ },
+ "live_reason": "Questions: Hindi/Telugu understood on held-out topics (before: 0%), English 99% (no drop). Names: 85% top-1 on unseen real phrases, below the agreed 95%: name matching stays off, word matching is used.",
+ "unseen_phrase_test": {
+  "queries": 721,
+  "top1_accuracy": 0.85,
+  "threshold": 0.815,
+  "correct_at_threshold": 0.587,
+  "wrong_at_threshold": 0.019,
+  "non_food_matched_at_threshold": 0.0,
+  "by_script": {
+   "telugu_script": {
+    "n": 32,
+    "top1": 0.531,
+    "correct_at_threshold": 0.156
+   },
+   "latin": {
+    "n": 651,
+    "top1": 0.883,
+    "correct_at_threshold": 0.622
+   },
+   "hindi_script": {
+    "n": 38,
+    "top1": 0.553,
+    "correct_at_threshold": 0.342
+   }
+  }
+ }
+}

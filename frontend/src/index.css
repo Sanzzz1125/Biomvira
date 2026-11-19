@@ -68,3 +68,7 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* full-width homepage bands may reach the viewport edge; never allow sideways page scroll */
+html, body { overflow-x: clip; }
+

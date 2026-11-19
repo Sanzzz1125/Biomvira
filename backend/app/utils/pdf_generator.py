@@ -27,6 +27,7 @@ from reportlab.platypus import (
 )
 
 from app.engine.rule_engine import BIOMARKERS_CONFIG
+from app.utils.pdf_text import LANG, L, font, lang as _lang
 
 # ── Palette (the Tailwind values the website uses) ────────────────────────────
 WHITE = colors.white
@@ -72,6 +73,8 @@ def _clean(value: Any) -> str:
     text = "" if value is None else str(value)
     for old, new in _REPLACEMENTS.items():
         text = text.replace(old, new)
+    if _lang() != "en":
+        return text.strip()  # the Noto fonts draw the Indian scripts and these symbols
     out = []
     for ch in text:
         try:
@@ -132,8 +135,39 @@ def _report_time(timestamp: Any) -> str:
     if moment.tzinfo is None:
         moment = moment.replace(tzinfo=timezone.utc)
     local = moment.astimezone(IST)
+    if _lang() != "en":
+        return f"{local.day}.{local.month}.{local.year}, {local.strftime('%H:%M')} IST"
     hour = local.strftime("%I").lstrip("0") or "12"
     return f"{local.day} {local.strftime('%b %Y')}, {hour}:{local.strftime('%M')} {local.strftime('%p').lower()} IST"
+
+
+def _width(text: str, fontname: str, size: float) -> float:
+    """Width of text as drawn (shaped in Hindi and Telugu, where letters join)."""
+    if _lang() == "en":
+        return stringWidth(text, fontname, size)
+    from reportlab.pdfgen.textobject import bidiShapedText
+    return bidiShapedText(text, None, fontName=font(fontname), fontSize=size, shaping=True)[1]
+
+
+def _spaced(c, x: float, y: float, text: str, fontname: str, size: float, space: float, *, right: bool = False) -> None:
+    """Letter-spaced capitals in English; plain text in Hindi and Telugu (spacing would break joined letters)."""
+    if _lang() != "en":
+        c.setFont(fontname, size)
+        (c.drawRightString if right else c.drawString)(x, y, text)
+        return
+    width = stringWidth(text, fontname, size) + space * (len(text) - 1)
+    obj = c.beginText(x - width if right else x, y)
+    obj.setFont(fontname, size)
+    obj.setCharSpace(space)
+    obj.textOut(text)
+    obj.setCharSpace(0)  # character spacing would otherwise carry over to the next text drawn
+    c.drawText(obj)
+
+
+def _tr(text: Any) -> str:
+    """An analysis text (category, explanation note) in the PDF's language."""
+    from app.i18n import tr
+    return tr(text, _lang()) if text else ""
 
 
 def _hex(color: colors.Color) -> str:
@@ -146,7 +180,24 @@ def _style(name: str, size: float, color: colors.Color, *, font: str = "Helvetic
                           textColor=color, alignment=align, **extra)
 
 
-ST = {
+class _Styles(dict):
+    """The paragraph styles; in Hindi or Telugu the same styles with the Noto font, shaping and a little more leading."""
+
+    _local: dict = {}
+
+    def __getitem__(self, key):
+        style = super().__getitem__(key)
+        current = _lang()
+        if current == "en":
+            return style
+        if (key, current) not in self._local:
+            self._local[key, current] = ParagraphStyle(f"{style.name}_{current}", parent=style,
+                                                       fontName=font(style.fontName), leading=style.leading * 1.18,
+                                                       shaping=1)
+        return self._local[key, current]
+
+
+ST = _Styles({
     "title": _style("title", 19, SLATE_900, font="Helvetica-Bold", leading=23),
     "subtitle": _style("subtitle", 9.5, SLATE_500, leading=13),
     "h2": _style("h2", 12.5, SLATE_900, font="Helvetica-Bold", leading=15),
@@ -176,7 +227,14 @@ ST = {
     "do_item": _style("do_item", 7.8, SLATE_700, leading=10.8, leftIndent=9, bulletIndent=0),
     "warn_item": _style("warn_item", 8, RED_800, leading=11, leftIndent=9, bulletIndent=0),
     "disclaimer": _style("disclaimer", 7, SLATE_500, font="Helvetica-Oblique", leading=10),
-}
+    "table_head": _style("table_head", 6.6, SLATE_500, font="Helvetica-Bold", leading=8.5),
+    "cell": _style("cell", 8, SLATE_700, leading=10.6),
+    "cell_bold": _style("cell_bold", 8.2, SLATE_900, font="Helvetica-Bold", leading=10.6),
+    "cell_small": _style("cell_small", 6.9, SLATE_500, leading=9),
+    "group": _style("group", 7.4, BRAND_800, font="Helvetica-Bold", leading=9.5),
+    "plan_title": _style("plan_title", 10.5, SLATE_900, font="Helvetica-Bold", leading=13),
+    "count": _style("count", 17, SLATE_900, font="Helvetica-Bold", leading=19),
+})
 
 
 # ── Drawing building blocks ───────────────────────────────────────────────────
@@ -293,7 +351,7 @@ class Pill(Flowable):
         super().__init__()
         self.text, self.fg, self.bg, self.ring, self.size, self.dot = _clean(text), fg, bg, ring, size, dot
         self.pad = 5.0
-        self.width = stringWidth(self.text, "Helvetica-Bold", size) + 2 * self.pad + (6.5 if dot else 0)
+        self.width = _width(self.text, "Helvetica-Bold", size) + 2 * self.pad + (6.5 if dot else 0)
         self.height = size + 6
 
     def wrap(self, avail_w, avail_h):
@@ -377,37 +435,26 @@ class ScoreCard(Flowable):
         c.setFillColor(SLATE_900)
         c.roundRect(0, 0, w, h, 9, stroke=0, fill=1)
 
-        text = c.beginText(16, h - 20)
-        text.setFont("Helvetica-Bold", 6.8)
-        text.setFillColor(EMERALD_400)
-        text.setCharSpace(0.9)
-        text.textOut("HEALTH SCORE")
-        text.setCharSpace(0)  # character spacing would otherwise carry over to the next text drawn
-        c.drawText(text)
+        c.setFillColor(EMERALD_400)
+        _spaced(c, 16, h - 20, L("HEALTH SCORE"), "Helvetica-Bold", 6.8, 0.9)
 
         c.setFillColor(WHITE)
         c.setFont("Helvetica-Bold", 15)
-        c.drawString(16, h - 39, f"{optimal} of {self.total} results in range")
+        c.drawString(16, h - 39, L("{a} of {n} results in range", a=optimal, n=self.total))
         c.setFillColor(SLATE_300)
         c.setFont("Helvetica", 8)
         if flagged == 0:
-            note = "All tested laboratory biomarkers are balanced within reference intervals."
+            note = L("All tested laboratory biomarkers are balanced within reference intervals.")
         else:
-            note = f"{flagged} {'need' if flagged > 1 else 'needs'} attention; see the plan below."
+            note = L("{n} need attention; see the plan below." if flagged > 1 else "{n} needs attention; see the plan below.",
+                     n=flagged)
         c.drawString(16, h - 52, note)
 
         c.setFillColor(EMERALD_400)
         c.setFont("Helvetica-Bold", 22)
         c.drawRightString(w - 16, h - 40, f"{round(optimal / self.total * 100)}%")
-        index = c.beginText(0, h - 52)
-        index.setFont("Helvetica", 6.5)
-        index.setCharSpace(0.7)
-        label = "OPTIMAL INDEX"
-        index.setTextOrigin(w - 16 - stringWidth(label, "Helvetica", 6.5) - 0.7 * (len(label) - 1), h - 52)
-        index.setFillColor(SLATE_400)
-        index.textOut(label)
-        index.setCharSpace(0)
-        c.drawText(index)
+        c.setFillColor(SLATE_400)
+        _spaced(c, w - 16, h - 52, L("OPTIMAL INDEX"), "Helvetica", 6.5, 0.7, right=True)
 
         bar_x, bar_y, bar_w, bar_h = 16, 15, w - 32, 6
         c.saveState()
@@ -474,12 +521,6 @@ def _grid(cards: list, gap: float = 8.0) -> list:
 
 
 # ── Report sections ───────────────────────────────────────────────────────────
-TABLE_HEAD = _style("table_head", 6.6, SLATE_500, font="Helvetica-Bold", leading=8.5)
-CELL = _style("cell", 8, SLATE_700, leading=10.6)
-CELL_BOLD = _style("cell_bold", 8.2, SLATE_900, font="Helvetica-Bold", leading=10.6)
-CELL_SMALL = _style("cell_small", 6.9, SLATE_500, leading=9)
-GROUP = _style("group", 7.4, BRAND_800, font="Helvetica-Bold", leading=9.5)
-PLAN_TITLE = _style("plan_title", 10.5, SLATE_900, font="Helvetica-Bold", leading=13)
 
 
 class MiniBar(Flowable):
@@ -534,19 +575,19 @@ def _table(rows: list, widths: list[float], *, head: bool = True, zebra: bool = 
 
 def _status_pill(status: Any) -> Pill:
     meta = STATUS.get(status, STATUS["normal"])
-    return Pill(meta["label"], meta["text"], meta["soft"], meta["ring"])
+    return Pill(L(meta["label"]), meta["text"], meta["soft"], meta["ring"])
 
 
 def _range_text(marker: dict) -> str:
     low, high, unit = marker.get("range_low"), marker.get("range_high"), _clean(marker.get("unit"))
     if not float(low or 0):
-        return f"Up to {_num(high)} {unit}".strip()
+        return L("Up to {x}", x=f"{_num(high)} {unit}".strip())
     return f"{_num(low)} – {_num(high)} {unit}".strip()
 
 
 def _result_cell(marker: dict) -> Paragraph:
-    return Paragraph(f'<font name="Helvetica-Bold" size="9" color="{_hex(SLATE_900)}">{_num(marker.get("value"))}</font>'
-                     f'&nbsp;<font size="7" color="{_hex(SLATE_500)}">{_t(marker.get("unit"))}</font>', CELL)
+    return Paragraph(f'<font name="{font("Helvetica-Bold")}" size="9" color="{_hex(SLATE_900)}">{_num(marker.get("value"))}</font>'
+                     f'&nbsp;<font size="7" color="{_hex(SLATE_500)}">{_t(marker.get("unit"))}</font>', ST["cell"])
 
 
 def _short(name: Any) -> str:
@@ -554,14 +595,15 @@ def _short(name: Any) -> str:
 
 
 def _profile_strip(profile: dict) -> Box:
-    allergens = [_clean(a).title() for a in profile.get("allergens") or [] if _clean(a)]
+    allergens = [L(_clean(a).title()) for a in profile.get("allergens") or [] if _clean(a)]
     facts = [
-        ("AGE", f"{_num(profile.get('age'))} years" if profile.get("age") is not None else "-"),
-        ("SEX", _clean(profile.get("gender")).title() or "-"),
-        ("DIET", DIET_LABEL.get(profile.get("diet_type"), _clean(profile.get("diet_type")).replace("_", " ").title() or "-")),
-        ("FOODS EXCLUDED", ", ".join(allergens) if allergens else "None"),
+        ("AGE", L("{n} years", n=_num(profile.get("age"))) if profile.get("age") is not None else "-"),
+        ("SEX", L(_clean(profile.get("gender")).title()) or "-"),
+        ("DIET", L(DIET_LABEL.get(profile.get("diet_type"),
+                                  _clean(profile.get("diet_type")).replace("_", " ").title() or "-"))),
+        ("FOODS EXCLUDED", ", ".join(allergens) if allergens else L("None")),
     ]
-    cells = [(_stack(Paragraph(label, ST["label"]), Spacer(1, 2), Paragraph(_t(value), ST["value"])), None, "left")
+    cells = [(_stack(Paragraph(L(label), ST["label"]), Spacer(1, 2), Paragraph(_t(value), ST["value"])), None, "left")
              for label, value in facts]
     return Box([Row(cells, gap=10)], fill=SLATE_50, radius=6, pad_y=8)
 
@@ -571,9 +613,9 @@ def _summary(counts: dict[str, int], total: int) -> Row:
     tiles = []
     for status in STATUS_ORDER:
         meta = STATUS[status]
-        tiles.append(Box([Paragraph(meta["label"].upper(), ST["label"]), Spacer(1, 2),
+        tiles.append(Box([Paragraph(L(meta["label"]).upper(), ST["label"]), Spacer(1, 2),
                           Paragraph(f'<font color="{_hex(meta["text"])}">{counts.get(status, 0)}</font>',
-                                    _style("count", 17, SLATE_900, font="Helvetica-Bold", leading=19))],
+                                    ST["count"])],
                          accent=meta["fill"], pad_x=9, pad_y=7))
     grid = _stack(Row([(tiles[0], None, "left"), (tiles[1], None, "left")], gap=6, equal_height=True), Spacer(1, 6),
                   Row([(tiles[2], None, "left"), (tiles[3], None, "left")], gap=6, equal_height=True))
@@ -582,16 +624,16 @@ def _summary(counts: dict[str, int], total: int) -> Row:
 
 def _safety_warning(reasons: list) -> Box:
     return Box([
-        Paragraph("Please review these results with a doctor", ST["warn_title"]),
+        Paragraph(L("Please review these results with a doctor"), ST["warn_title"]),
         Spacer(1, 3),
-        Paragraph("Food changes can support your health, but the following results need medical advice:", ST["warn_body"]),
+        Paragraph(L("Food changes can support your health, but the following results need medical advice:"), ST["warn_body"]),
         Spacer(1, 4),
         *_bullets(list(dict.fromkeys(reasons)), ST["warn_item"]),
     ], fill=RED_50, stroke=RED_200, pad_y=10)
 
 
-def _plan_note(marker: dict, improve_plans: list[dict]) -> str:
-    if _clean(marker.get("clinical_warning")) and "does not give food advice" in _clean(marker.get("clinical_warning")):
+def _plan_note(marker: dict, improve_plans: list[dict], doctor_only: set) -> str:
+    if marker.get("biomarker_key") in doctor_only:
         return "Doctor review"
     name = _short(marker.get("display_name"))
     for plan in improve_plans:
@@ -600,13 +642,13 @@ def _plan_note(marker: dict, improve_plans: list[dict]) -> str:
     return "Monitor"
 
 
-def _at_a_glance(flagged: list[dict], improve_plans: list[dict]) -> list:
-    rows = [[Paragraph(h, TABLE_HEAD) for h in ("TEST", "YOUR RESULT", "HEALTHY RANGE", "STATUS", "WHAT NEXT")]]
+def _at_a_glance(flagged: list[dict], improve_plans: list[dict], doctor_only: set) -> list:
+    rows = [[Paragraph(L(h), ST["table_head"]) for h in ("TEST", "YOUR RESULT", "HEALTHY RANGE", "STATUS", "WHAT NEXT")]]
     for m in flagged:
-        rows.append([Paragraph(_t(m.get("display_name")), CELL_BOLD), _result_cell(m), Paragraph(_t(_range_text(m)), CELL),
-                     _status_pill(m.get("status")), Paragraph(_t(_plan_note(m, improve_plans)), CELL)])
-    return [KeepTogether([SectionTitle("Results That Need Attention",
-                                       f"{len(flagged)} of your results are outside the healthy range."),
+        rows.append([Paragraph(_t(m.get("display_name")), ST["cell_bold"]), _result_cell(m), Paragraph(_t(_range_text(m)), ST["cell"]),
+                     _status_pill(m.get("status")), Paragraph(_t(L(_plan_note(m, improve_plans, doctor_only))), ST["cell"])])
+    return [KeepTogether([SectionTitle(L("Results That Need Attention"),
+                                       L("{n} of your results are outside the healthy range.", n=len(flagged))),
                           Spacer(1, 8), _table(rows, [0.32, 0.17, 0.21, 0.14, 0.16])])]
 
 
@@ -615,47 +657,47 @@ def _all_results(markers: list[dict]) -> list:
     for m in markers:
         category = BIOMARKERS_CONFIG.get(m.get("biomarker_key"), {}).get("category") or "Other Tests"
         groups.setdefault(category, []).append(m)
-    head = [Paragraph(h, TABLE_HEAD) for h in ("TEST", "RESULT", "HEALTHY RANGE", "STATUS", "POSITION IN RANGE")]
+    head = [Paragraph(L(h), ST["table_head"]) for h in ("TEST", "RESULT", "HEALTHY RANGE", "STATUS", "POSITION IN RANGE")]
     rows, extra = [head], []
     for category, items in groups.items():
         extra += [("SPAN", (0, len(rows)), (-1, len(rows))), ("BACKGROUND", (0, len(rows)), (-1, len(rows)), BRAND_50),
                   ("TOPPADDING", (0, len(rows)), (-1, len(rows)), 4), ("BOTTOMPADDING", (0, len(rows)), (-1, len(rows)), 4)]
-        rows.append([Paragraph(_t(category).upper(), GROUP), "", "", "", ""])
+        rows.append([Paragraph(_t(_tr(category) or L(category)).upper(), ST["group"]), "", "", "", ""])
         for m in items:
-            rows.append([Paragraph(_t(m.get("display_name")), CELL), _result_cell(m), Paragraph(_t(_range_text(m)), CELL),
+            rows.append([Paragraph(_t(m.get("display_name")), ST["cell"]), _result_cell(m), Paragraph(_t(_range_text(m)), ST["cell"]),
                          _status_pill(m.get("status")),
                          MiniBar(m.get("value"), m.get("range_low"), m.get("range_high"), m.get("status"))])
     table = _table(rows, [0.33, 0.15, 0.2, 0.13, 0.19], extra=extra)
-    return [SectionTitle("All Test Results", "Grouped by panel and compared with the report's reference ranges or "
-                                             "clinical guidelines."), Spacer(1, 8), table]
+    return [SectionTitle(L("All Test Results"), L("Grouped by panel and compared with the report's reference ranges or "
+                                                  "clinical guidelines.")), Spacer(1, 8), table]
 
 
 def _food_cell(food: dict) -> list:
-    parts = [Paragraph(_t(food.get("name")), CELL_BOLD)]
-    local = _clean(food.get("hindi_name"))
+    parts = [Paragraph(_t(food.get("name")), ST["cell_bold"])]
+    local = _clean(food.get("hindi_name")) if _lang() == "en" else ""  # romanised; the name is already translated
     sub = " · ".join(p for p in (local, _clean(food.get("category"))) if p)
     if sub:
-        parts.append(Paragraph(_t(sub), CELL_SMALL))
+        parts.append(Paragraph(_t(sub), ST["cell_small"]))
     return parts
 
 
 def _provides(food: dict, nutrient: str) -> Paragraph:
     amount = _amount(food.get("key_nutrient_yield"))
     if re.search(r"\d", amount):
-        text = f'<font name="Helvetica-Bold" color="{_hex(BRAND_700)}">{_t(amount)}</font>'
+        text = f'<font name="{font("Helvetica-Bold")}" color="{_hex(BRAND_700)}">{_t(amount)}</font>'
         if nutrient:
             text += f'<br/><font size="6.9" color="{_hex(SLATE_500)}">{_t(nutrient)}</font>'
-        return Paragraph(text, CELL)
-    return Paragraph(f'<font color="{_hex(BRAND_700)}"><b>{_t(amount)}</b></font>', CELL)
+        return Paragraph(text, ST["cell"])
+    return Paragraph(f'<font color="{_hex(BRAND_700)}"><b>{_t(amount)}</b></font>', ST["cell"])
 
 
 def _dos_and_donts(dos: list, donts: list) -> Optional[Row]:
     panels = []
     if [d for d in dos if _clean(d)]:
-        panels.append((Box([Paragraph("Helpful habits", ST["do_title"]), Spacer(1, 4), *_bullets(dos, ST["do_item"])],
+        panels.append((Box([Paragraph(L("Helpful habits"), ST["do_title"]), Spacer(1, 4), *_bullets(dos, ST["do_item"])],
                            fill=BRAND_50, stroke=BRAND_200, pad_y=9), None, "left"))
     if [d for d in donts if _clean(d)]:
-        panels.append((Box([Paragraph("Limit or avoid", ST["dont_title"]), Spacer(1, 4), *_bullets(donts, ST["do_item"])],
+        panels.append((Box([Paragraph(L("Limit or avoid"), ST["dont_title"]), Spacer(1, 4), *_bullets(donts, ST["do_item"])],
                            fill=RED_50, stroke=RED_200, pad_y=9), None, "left"))
     return Row(panels, gap=8, equal_height=True) if panels else None
 
@@ -663,38 +705,91 @@ def _dos_and_donts(dos: list, donts: list) -> Optional[Row]:
 def _food_plan(plan: dict, markers_by_key: dict[str, dict], number: int) -> list:
     status = plan.get("status") if plan.get("status") in STATUS else "low"
     marker = markers_by_key.get(plan.get("target_biomarker"), {})
-    nutrient = _nutrient_name(marker.get("target_nutrient_key"))
+    nutrient = L(_nutrient_name(marker.get("target_nutrient_key")))
     title = Row([
-        (Paragraph(f'<font color="{_hex(BRAND_700)}">{number}.</font>&nbsp; For {_t(plan.get("biomarker_display_name"))}',
-                   PLAN_TITLE), None, "left"),
+        (Paragraph(f'<font color="{_hex(BRAND_700)}">{number}.</font>&nbsp; ' + L("For {name}", name=_t(plan.get("biomarker_display_name"))),
+                   ST["plan_title"]), None, "left"),
         (_status_pill(status), "auto", "right"),
     ], gap=8, valign="middle")
     foods = plan.get("recommended_foods") or []
     if foods:
-        rows = [[Paragraph(h, TABLE_HEAD) for h in ("FOOD", "SERVING", "PROVIDES", "HOW TO EAT IT")]]
+        rows = [[Paragraph(L(h), ST["table_head"]) for h in ("FOOD", "SERVING", "PROVIDES", "HOW TO EAT IT")]]
         for food in foods:
-            rows.append([_food_cell(food), Paragraph(_t(food.get("serving_size")), CELL), _provides(food, nutrient),
-                         Paragraph(_md(food.get("preparation_tip")), CELL)])
+            rows.append([_food_cell(food), Paragraph(_t(food.get("serving_size")), ST["cell"]), _provides(food, nutrient),
+                         Paragraph(_md(food.get("preparation_tip")), ST["cell"])])
         body = _table(rows, [0.31, 0.18, 0.15, 0.36], extra=[("VALIGN", (0, 1), (-1, -1), "TOP")])
     else:
-        body = Paragraph("No foods matched your diet and allergen settings for this result. "
-                         "Please ask a dietitian for suitable alternatives.", ST["body"])
+        body = Paragraph(L("No foods matched your diet and allergen settings for this result. "
+                           "Please ask a dietitian for suitable alternatives."), ST["body"])
     advice = _dos_and_donts(plan.get("absorption_dos") or [], plan.get("absorption_donts") or [])
     # A plan (title, foods and habits) stays on one page so its advice is never separated from its foods.
     return [KeepTogether([title, Spacer(1, 6), body, *([Spacer(1, 7), advice] if advice else [])]), Spacer(1, 16)]
 
 
 def _maintain(plans: list[dict]) -> list:
-    rows = [[Paragraph(h, TABLE_HEAD) for h in ("RESULT", "FOODS TO INCLUDE REGULARLY", "TIP")]]
+    rows = [[Paragraph(L(h), ST["table_head"]) for h in ("RESULT", "FOODS TO INCLUDE REGULARLY", "TIP")]]
     for plan in plans:
         foods = ", ".join(_clean(f.get("name")) for f in plan.get("recommended_foods") or [])
         tip = (plan.get("absorption_dos") or [""])[0]
-        rows.append([Paragraph(_t(_short(plan.get("biomarker_display_name"))), CELL_BOLD), Paragraph(_t(foods), CELL),
-                     Paragraph(_md(tip), CELL_SMALL)])
-    return [KeepTogether([SectionTitle("Keep Your Healthy Results Healthy",
-                                       "These results are within range. Including these foods regularly helps keep them there."),
+        rows.append([Paragraph(_t(_short(plan.get("biomarker_display_name"))), ST["cell_bold"]), Paragraph(_t(foods), ST["cell"]),
+                     Paragraph(_md(tip), ST["cell_small"])])
+    return [KeepTogether([SectionTitle(L("Keep Your Healthy Results Healthy"),
+                                       L("These results are within range. Including these foods regularly helps keep them there.")),
                           Spacer(1, 8), _table(rows, [0.24, 0.4, 0.36], extra=[("VALIGN", (0, 1), (-1, -1), "TOP")])]),
             Spacer(1, 16)]
+
+
+STYLE_NAMES = {"familiar": "Familiar", "nutritious": "Most nutritious", "regional": "Regional"}
+DAYS = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+
+
+def _diet_plan(plan: dict) -> list:
+    """The 7-day diet plan chosen on the results page: one row per day, one column per meal, then the shopping list."""
+    from app.utils.diet_plan_pdf import localize_words, portion
+    from app.plan.ingredient_local import NAMES
+
+    current = _lang()
+    days = [d for d in plan.get("days") or [] if isinstance(d, dict)][:7]
+    if not days:
+        return []
+
+    def dishes(items: list) -> Paragraph:
+        lines = []
+        for item in items or []:
+            name = ((item.get("names") or {}).get(current) if current != "en" else None) or item.get("name", "")
+            amount = localize_words(portion(item.get("servings", 1), str(item.get("serving", ""))), current)
+            lines.append(f'<b>{_t(name)}</b><br/><font size="6.6" color="{_hex(SLATE_500)}">{_t(amount)}</font>')
+        return Paragraph("<br/>".join(lines) or "-", ST["cell_small"])
+
+    rows = [[Paragraph(L(h), ST["table_head"]) for h in ("DAY", "BREAKFAST", "LUNCH", "EVENING SNACK", "DINNER")]]
+    for i, day in enumerate(days):
+        meals = day.get("meals") or {}
+        kcal = round((day.get("totals") or {}).get("energy_kcal", 0))
+        rows.append([Paragraph(f'{_t(L(DAYS[i]))}<br/><font size="6.6" color="{_hex(SLATE_500)}">{kcal} kcal</font>',
+                               ST["cell_bold"]),
+                     *[dishes(meals.get(slot)) for slot in ("breakfast", "lunch", "snack", "dinner")]])
+    style = L(STYLE_NAMES.get(plan.get("style"), "Familiar"))
+    story = [SectionTitle(L("Your 7-day diet plan"), L("Plan style: {style}. Amounts are per person and each day is built "
+                                                       "for your calorie, protein and nutrient targets.", style=style)),
+             Spacer(1, 8),
+             _table(rows, [0.12, 0.2, 0.28, 0.16, 0.24], zebra=True, extra=[("VALIGN", (0, 1), (-1, -1), "TOP")]),
+             Spacer(1, 12)]
+    items = [i for i in plan.get("shopping_list") or [] if isinstance(i, dict) and i.get("buy_g", 0) >= 5]
+    if items:
+        def label(item: dict) -> str:
+            name = item.get("name", "")
+            if current != "en":
+                name = (item.get("names") or {}).get(current) or NAMES.get(name, (name, name))[current == "te"]
+            grams = item.get("buy_g", 0)
+            weight = f"{round(grams / 1000, 1)} kg" if grams >= 1000 else f"{-(-grams // 10) * 10} g"
+            return f"{_t(name[:1].upper() + name[1:])}: {weight}"
+
+        cells = [Paragraph(label(i), ST["cell"]) for i in items]
+        grid = [cells[j:j + 4] + [""] * (4 - len(cells[j:j + 4])) for j in range(0, len(cells), 4)]
+        story += [KeepTogether([Paragraph(L("Shopping list for the week"), ST["card_title"]), Spacer(1, 2),
+                                Paragraph(L("Weights as bought, before peeling and cleaning."), ST["small"]), Spacer(1, 6),
+                                _table(grid, [0.25] * 4, head=False)])]
+    return story + [Spacer(1, 16)]
 
 
 def _explanation_parts(explanation: str) -> dict[str, dict[str, str]]:
@@ -717,19 +812,19 @@ def _explanation_parts(explanation: str) -> dict[str, dict[str, str]]:
     return impact
 
 
-def _meanings(flagged: list[dict], explanation: str) -> list:
-    notes = _explanation_parts(explanation)
-    rows = [[Paragraph(h, TABLE_HEAD) for h in ("TEST", "WHAT IT DOES", "WHAT YOUR RESULT MAY MEAN")]]
+def _meanings(flagged: list[dict], notes: dict[str, dict[str, str]]) -> list:
+    """notes: per biomarker key, from the English explanation (its headings are what the parser reads)."""
+    rows = [[Paragraph(L(h), ST["table_head"]) for h in ("TEST", "WHAT IT DOES", "WHAT YOUR RESULT MAY MEAN")]]
     for m in flagged:
-        note = notes.get(_clean(m.get("display_name")).lower(), {})
-        role, meaning = note.get("biological role", ""), note.get("clinical relevance", "")
+        note = notes.get(m.get("biomarker_key"), {})
+        role, meaning = _tr(note.get("biological role", "")), _tr(note.get("clinical relevance", ""))
         if not (role or meaning):
             continue
-        rows.append([Paragraph(_t(m.get("display_name")), CELL_BOLD), Paragraph(_md(role), CELL),
-                     Paragraph(_md(meaning), CELL)])
+        rows.append([Paragraph(_t(m.get("display_name")), ST["cell_bold"]), Paragraph(_md(role), ST["cell"]),
+                     Paragraph(_md(meaning), ST["cell"])])
     if len(rows) == 1:
         return []
-    return [SectionTitle("What Your Results Mean", "Plain-language notes for the results outside the healthy range."),
+    return [SectionTitle(L("What Your Results Mean"), L("Plain-language notes for the results outside the healthy range.")),
             Spacer(1, 8), _table(rows, [0.24, 0.33, 0.43], extra=[("VALIGN", (0, 1), (-1, -1), "TOP")]), Spacer(1, 16)]
 
 
@@ -737,15 +832,15 @@ def _closing(flagged: bool) -> list:
     story = []
     if flagged:
         story += [Box([Row([
-            (_stack(Paragraph("Follow-up", ST["card_title"]), Spacer(1, 2),
-                    Paragraph("Follow the food plan consistently for 8 to 12 weeks, then repeat the tests that were outside "
-                              "the healthy range, or earlier if your doctor advises.", ST["small"])), None, "left"),
-            (Pill("Retest in 8–12 weeks", BRAND_700, BRAND_50, BRAND_200, size=7, dot=False), "auto", "right"),
+            (_stack(Paragraph(L("Follow-up"), ST["card_title"]), Spacer(1, 2),
+                    Paragraph(L("Follow the food plan consistently for 8 to 12 weeks, then repeat the tests that were "
+                                "outside the healthy range, or earlier if your doctor advises."), ST["small"])), None, "left"),
+            (Pill(L("Retest in 8–12 weeks"), BRAND_700, BRAND_50, BRAND_200, size=7, dot=False), "auto", "right"),
         ], gap=10, valign="middle")], fill=SLATE_50, pad_y=10), Spacer(1, 10)]
-    story.append(Paragraph(
+    story.append(Paragraph(L(
         "Disclaimer: NutriLens is an educational nutrition-support tool based on ICMR-NIN food composition data and "
         "published clinical reference ranges. It does not diagnose or treat any condition. Please consult a qualified "
-        "doctor before changing your diet, medicines or supplements.", ST["disclaimer"]))
+        "doctor before changing your diet, medicines or supplements."), ST["disclaimer"]))
     return story
 
 
@@ -756,6 +851,18 @@ class _NumberedCanvas(rl_canvas.Canvas):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._pages: list[dict] = []
+
+    def setFont(self, psfontname, size, leading=None):
+        super().setFont(font(psfontname), size, leading)
+
+    def drawString(self, x, y, text, *args, **kwargs):
+        super().drawString(x, y, text, *args, **{**kwargs, "shaping": _lang() != "en"})
+
+    def drawRightString(self, x, y, text, *args, **kwargs):
+        super().drawRightString(x, y, text, *args, **{**kwargs, "shaping": _lang() != "en"})
+
+    def drawCentredString(self, x, y, text, *args, **kwargs):
+        super().drawCentredString(x, y, text, *args, **{**kwargs, "shaping": _lang() != "en"})
 
     def showPage(self):
         self._pages.append(dict(self.__dict__))
@@ -770,11 +877,11 @@ class _NumberedCanvas(rl_canvas.Canvas):
             self.line(MARGIN_X, 13 * mm, PAGE_W - MARGIN_X, 13 * mm)
             self.setFont("Helvetica", 6.8)
             self.setFillColor(SLATE_400)
-            self.drawString(MARGIN_X, 9 * mm, "NutriLens is an educational nutrition tool. It does not replace "
-                                              "medical diagnosis or treatment.")
+            self.drawString(MARGIN_X, 9 * mm, L("NutriLens is an educational nutrition tool. It does not replace "
+                                                "medical diagnosis or treatment."))
             self.setFillColor(SLATE_500)
             self.setFont("Helvetica", 7)
-            self.drawRightString(PAGE_W - MARGIN_X, 9 * mm, f"Page {self._pageNumber} of {total}")
+            self.drawRightString(PAGE_W - MARGIN_X, 9 * mm, L("Page {page} of {total}", page=self._pageNumber, total=total))
             super().showPage()
         super().save()
 
@@ -788,14 +895,14 @@ def _first_page(ref: str, when: str):
         c.drawString(MARGIN_X + 30, top - 10, "NutriLens")
         c.setFillColor(SLATE_500)
         c.setFont("Helvetica", 7.6)
-        c.drawString(MARGIN_X + 30, top - 20, "Evidence-based nutrition guidance from your lab report")
+        c.drawString(MARGIN_X + 30, top - 20, L("Evidence-based nutrition guidance from your lab report"))
         c.setFillColor(SLATE_700)
         c.setFont("Helvetica", 8.4)
         if when:
             c.drawRightString(PAGE_W - MARGIN_X, top - 9, when)
         c.setFillColor(SLATE_500)
         c.setFont("Helvetica", 7.6)
-        c.drawRightString(PAGE_W - MARGIN_X, top - 20, f"Ref #{ref}")
+        c.drawRightString(PAGE_W - MARGIN_X, top - 20, L("Ref #{ref}", ref=ref))
         c.setStrokeColor(SLATE_200)
         c.setLineWidth(0.6)
         c.line(MARGIN_X, PAGE_H - 25 * mm, PAGE_W - MARGIN_X, PAGE_H - 25 * mm)
@@ -811,7 +918,7 @@ def _later_pages(ref: str):
         c.drawString(MARGIN_X + 17, top - 9, "NutriLens")
         c.setFillColor(SLATE_500)
         c.setFont("Helvetica", 7)
-        c.drawRightString(PAGE_W - MARGIN_X, top - 9, f"Personalized Clinical Nutrition Plan  |  Ref #{ref}")
+        c.drawRightString(PAGE_W - MARGIN_X, top - 9, f"{L('Personalized Clinical Nutrition Plan')}  |  {L('Ref #{ref}', ref=ref)}")
         c.setStrokeColor(SLATE_200)
         c.setLineWidth(0.6)
         c.line(MARGIN_X, PAGE_H - 16 * mm, PAGE_W - MARGIN_X, PAGE_H - 16 * mm)
@@ -819,9 +926,25 @@ def _later_pages(ref: str):
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────
-def generate_plan_pdf(analysis_data: dict[str, Any]) -> bytes:
-    """Build the A4 PDF for a FullAnalysisResponse (as a JSON-ready dict) and return its bytes."""
-    result = analysis_data or {}
+def generate_plan_pdf(analysis_data: dict[str, Any], lang: str = "en") -> bytes:
+    """Build the A4 PDF for a FullAnalysisResponse (as a JSON-ready dict) in English, Hindi or Telugu."""
+    lang = lang if lang in ("hi", "te") else "en"
+    token = LANG.set(lang)
+    try:
+        return _build(analysis_data or {}, lang)
+    finally:
+        LANG.reset(token)
+
+
+def _build(result: dict[str, Any], lang: str) -> bytes:
+    english = [m for m in result.get("marker_analyses") or [] if isinstance(m, dict)]
+    parts = _explanation_parts(result.get("grounded_explanation") or "")
+    notes = {m.get("biomarker_key"): parts.get(_clean(m.get("display_name")).lower(), {}) for m in english}
+    doctor_only = {m.get("biomarker_key") for m in english
+                   if "does not give food advice" in str(m.get("clinical_warning") or "")}
+    if lang != "en":
+        from app.i18n import localize_analysis
+        result = localize_analysis(result, lang)
     markers = [m for m in result.get("marker_analyses") or [] if isinstance(m, dict)]
     profile = result.get("user_profile") or {}
     ref = re.sub(r"[^A-Za-z0-9]", "", str(result.get("analysis_id") or ""))[:8] or "--------"
@@ -832,16 +955,18 @@ def generate_plan_pdf(analysis_data: dict[str, Any]) -> bytes:
     improve = [p for p in plans if (p.get("purpose") or "improve") == "improve"]
     maintain = [p for p in plans if p.get("purpose") == "maintain"]
 
-    diet = DIET_LABEL.get(profile.get("diet_type"), _clean(profile.get("diet_type")).replace("_", " ")).lower()
-    allergens = [_clean(a).lower() for a in profile.get("allergens") or [] if _clean(a)]
-    exclusions = f"excluding {', '.join(allergens)}" if allergens else "with no food exclusions"
+    diet = DIET_LABEL.get(profile.get("diet_type"), _clean(profile.get("diet_type")).replace("_", " "))
+    diet = diet.lower() if lang == "en" else L(diet)
+    allergens = [_clean(a).lower() if lang == "en" else L(_clean(a).title())
+                 for a in profile.get("allergens") or [] if _clean(a)]
+    exclusions = L("excluding {list}", list=", ".join(allergens)) if allergens else L("with no food exclusions")
 
     story: list = [
         NextPageTemplate("later"),
-        Paragraph("Personalized Clinical Nutrition Plan", ST["title"]),
+        Paragraph(L("Personalized Clinical Nutrition Plan"), ST["title"]),
         Spacer(1, 2),
-        Paragraph(f"Based on {len(markers)} laboratory results, for a <b>{_t(diet or 'personal')}</b> diet "
-                  f"{_t(exclusions)}.", ST["subtitle"]),
+        Paragraph(L("Based on {n} laboratory results, for a <b>{diet}</b> diet {exclusions}.", n=len(markers),
+                    diet=_t(diet or L("personal")), exclusions=_t(exclusions)), ST["subtitle"]),
         Spacer(1, 10),
         _profile_strip(profile),
         Spacer(1, 10),
@@ -851,11 +976,13 @@ def generate_plan_pdf(analysis_data: dict[str, Any]) -> bytes:
     reasons = [r for r in result.get("consult_reasons") or [] if _clean(r)]
     if result.get("requires_physician_consult") and reasons:
         story += [_safety_warning(reasons), Spacer(1, 14)]
+    if isinstance(result.get("diet_plan"), dict):
+        story += _diet_plan(result["diet_plan"])
     if flagged:
-        story += _at_a_glance(flagged, improve) + [Spacer(1, 16)]
+        story += _at_a_glance(flagged, improve, doctor_only) + [Spacer(1, 16)]
 
-    plan_section = [SectionTitle("Your Food Plan", "Indian foods chosen for each result, matched to your diet and "
-                                                   "food exclusions. Servings are typical household portions."),
+    plan_section = [SectionTitle(L("Your Food Plan"), L("Indian foods chosen for each result, matched to your diet and "
+                                                       "food exclusions. Servings are typical household portions.")),
                     Spacer(1, 10)]
     if improve:
         for number, plan in enumerate(improve, 1):
@@ -864,14 +991,14 @@ def generate_plan_pdf(analysis_data: dict[str, Any]) -> bytes:
                 part[0] = KeepTogether([*plan_section, *part[0]._content])
             story += part
     else:
-        message = ("None of your results needs a corrective food plan. Please review any results marked for a doctor."
-                   if flagged else "All your results are within healthy ranges, so no corrective food plan is needed.")
+        message = L("None of your results needs a corrective food plan. Please review any results marked for a doctor."
+                    if flagged else "All your results are within healthy ranges, so no corrective food plan is needed.")
         story += [KeepTogether([*plan_section, Box([Paragraph(message, ST["body"])], fill=BRAND_50, stroke=BRAND_200,
                                                     pad_y=10)]), Spacer(1, 16)]
     if maintain:
         story += _maintain(maintain)
     if flagged:
-        story += _meanings(flagged, result.get("grounded_explanation") or "")
+        story += _meanings(flagged, notes)
     if markers:
         story += [PageBreak()] + _all_results(markers) + [Spacer(1, 16)]
     story += _closing(bool(flagged))

@@ -10,11 +10,12 @@ FAQ_SITE = [
                   "give me a diet plan", "make a diet plan for me", "i want a diet chart", "diet plan kaise milega",
                   "how can i get food suggestions", "how do i get personalised foods", "create my nutrition plan",
                   "how to see my food recommendations"],
-     "To get your personalised food plan:\n\n"
-     "- On the home page, **upload your blood report** (PDF or photo) or choose **Paste text**, then click **Analyse my report**.\n"
-     "- In **Your profile**, enter your age and sex, choose your diet type and tick any allergies.\n"
-     "- Click **Generate my plan**. Your plan appears under **Your Food Plan** on the results page.\n\n"
-     "You can also ask me directly, for example \"iron foods for vegetarians\".",
+     'To get your diet plan:\n\n- **Upload your blood report** (PDF or photo) or choose **Paste text**, then '
+     'click **Analyse my report**.\n- In **Your profile**, enter age, sex, **height and weight**, your '
+     'state and activity, diet type and allergies, then click **Generate my plan**.\n- On the results page, '
+     '**1. Pick foods**: tap **Add to plan** on foods you like, then **Build my diet plan**.\n- In **2. '
+     'Diet plan**, choose one of the three plan options and click **Make my 7-day plan**.\n\nDiet plans are '
+     'for adults (18+). Height and weight are needed to work out your calories.',
      ["Which file types can I upload?", "Can I download my plan?", "What is the food plan?"]),
     ("no_report", ["i dont have a report", "can i get a plan without a blood test", "i have not done any test",
                    "can i use it without a report", "can i enter my values manually", "i only know my hemoglobin value",
@@ -39,14 +40,13 @@ FAQ_SITE = [
     ("results_page", ["what is on the results page", "explain the results page", "how to read my results",
                       "i dont understand my results", "what does the results page show", "how to understand this report",
                       "where do i see my results"],
-     "The results page has these parts, from top to bottom:\n\n"
-     "- **Health score:** how many results are in the healthy range.\n"
-     "- **Summary cards:** counts of low, borderline, optimal and elevated results.\n"
-     "- **Your Test Results:** every test with a coloured bar showing where your value sits in its range.\n"
-     "- **Please review these results with a doctor:** shown only when a result needs medical attention.\n"
-     "- **Your Food Plan** and **Keep Your Healthy Results Healthy:** foods, tips and foods to limit.\n"
-     "- **What Your Results Mean:** a plain-language explanation.\n\n"
-     "You can ask me about any result, for example \"What does my vitamin D mean?\"",
+     'The results page is titled **Your personalised diet plan**:\n\n- **Health score** band: how many '
+     'results are in range, with counts of low, borderline, optimal and elevated.\n- **Please review these '
+     'results with a doctor:** only when a result needs medical attention.\n- **1. Pick foods:** Indian '
+     'foods that help your results; tap **Add to plan** on the ones you like.\n- **2. Diet plan:** three '
+     'one-day plan options, then your 7-day plan with swaps, shopping list and PDF.\n- **Test results:** '
+     'every test with a bar showing where your value sits, and a plain-language explanation.\n\nYou can ask '
+     'me about any part, for example "What does my vitamin D mean?"',
      ["Summarise my results", "What is the health score?", "Can I download my plan?"]),
     ("range_bar", ["what is the coloured bar", "what does the bar under each test mean", "what is the range slider",
                    "what does the marker on the bar show", "why is the bar red", "green bar meaning"],
@@ -77,17 +77,20 @@ FAQ_SITE = [
      ["How does NutriLens work?"]),
     ("portions", ["how much should i eat", "what is the serving size", "what does per 100 g mean", "how many grams per day",
                   "portion size of these foods", "how much ragi should i eat daily"],
-     "Nutrient values are shown **per 100 g** so foods can be compared fairly; it isn't a daily amount. Use the foods in "
-     "normal portions, for example a katori of dal or greens, a roti or two of millet, or a handful of seeds or nuts. "
-     "Mixing several foods from your plan works better than eating a lot of one.",
+     'In the **7-day plan**, every dish already has a household portion (for example 1 katori dal, 2 '
+     'phulkas, 1 cup cooked rice), chosen so the day meets your calorie and protein targets. In **Pick '
+     'foods**, each food shows the amount of the key nutrient in a normal serving. Mixing several foods '
+     'works better than eating a lot of one.',
      ["What is a healthy diet?", "What is the food plan?"]),
     ("meal_plan", ["give me a weekly meal plan", "can you make a diet chart", "give me recipes", "7 day diet plan",
                    "what should i eat for breakfast lunch and dinner", "daily menu for me", "meal timetable",
                    "can you plan my meals"],
-     "NutriLens gives a **list of foods** that suit your results, diet and allergies, rather than a fixed day-by-day menu. "
-     "An easy way to use it: add one or two foods from your plan to each meal, for example ragi or bajra roti at lunch, "
-     "greens or sprouts in the evening, and a vitamin C fruit with iron-rich meals. Each food also has a cooking tip.\n\n"
-     "For a detailed meal chart, a dietitian can build one from your NutriLens plan.",
+     'Yes. NutriLens builds day-by-day meal plans:\n\n- **Three one-day options:** *Familiar* (dishes from '
+     'your region plus the foods you picked), *Most nutritious* (the most nutrients for your calories) and '
+     '*Regional* (only dishes cooked in your state).\n- Choose one and click **Make my 7-day plan**: '
+     'breakfast, lunch, evening snack and dinner for 7 days, varied across the week.\n- **Swap** any dish '
+     "you don't like; the day is rebalanced and your other meals stay the same.\n- Get the week's "
+     '**shopping list**, download it as a **PDF**, and (when signed in) **save** it with your report.',
      ["What should I eat?", "What is a healthy diet?"]),
     ("dont_like_food", ["i dont like these foods", "can i replace a food in my plan", "alternatives to these foods",
                         "i cannot find these foods", "suggest other foods", "these foods are not available near me"],
@@ -96,9 +99,11 @@ FAQ_SITE = [
      ["Which foods are rich in iron?", "Which foods are rich in calcium?"]),
     ("regional", ["south indian foods", "do you have north indian foods", "telugu food names", "local foods",
                   "foods from my state", "do you include regional foods"],
-     "Yes. The 188 foods come from Indian food tables and include everyday foods from across India: millets such as ragi, "
-     "jowar and bajra, many dals, regional greens such as gongura and drumstick leaves, local fish and more. Foods show "
-     "their common Indian names too.",
+     'Yes. Diet plans use **278 home-style dishes** from every Indian state and union territory: for '
+     'example pesarattu and gongura pachadi from Andhra and Telangana, sambar and kootu from Tamil Nadu, '
+     'puttu and avial from Kerala, rajma and makki roti from Punjab, poha and thalipeeth from Maharashtra, '
+     'machher jhol from Bengal and litti chokha from Bihar. Choose your state in your profile; the '
+     "*Regional* plan uses only your state's dishes. Foods also show their common Indian names.",
      ["Where does the food data come from?", "Are millets healthy?"]),
     ("change_profile", ["i selected the wrong diet type", "how do i change my diet type", "i chose the wrong diet", "change my age after results",
                         "edit my profile after analysis", "i entered wrong gender", "change allergies after plan"],
@@ -285,8 +290,9 @@ FAQ_SITE = [
      "Any up-to-date browser works: Chrome, Safari, Edge or Firefox, on phone or computer.", ["Does it work on mobile?"]),
     ("language", ["is hindi supported", "can i use telugu", "other languages", "language options",
                   "can you answer in hindi", "regional language support"],
-     "NutriLens is in **English** for now. Foods also show their common Indian names (for example Ragi / Nachni), and I "
-     "understand a few common Hinglish words.",
+     'Yes. NutriLens works in **English, हिन्दी (Hindi) and తెలుగు (Telugu)**. Use the language button at '
+     'the top of the page. The whole website, your results, your diet plan and both PDFs switch to that '
+     'language.',
      ["What is NutriLens?"]),
     ("internet", ["does it work offline", "do i need internet", "can i use without internet"],
      "Yes, you need an internet connection, because reports are analysed on the NutriLens server.", ["Is my data private?"]),
@@ -324,8 +330,10 @@ FAQ_SITE = [
      ["What is NutriLens?"]),
     ("calories_bmi", ["calorie counter", "how many calories should i eat", "calculate my bmi", "what is my bmi",
                       "calorie plan"],
-     "NutriLens doesn't count calories or calculate BMI; it focuses on the nutrients your blood report shows you need. "
-     "For weight goals, a doctor or dietitian can help.",
+     'NutriLens works out your **daily calorie and protein targets** from your age, sex, height, weight '
+     'and activity (FAO/WHO/UNU energy equations). If your BMI is 25 or more the target is about 15% '
+     'lower, and under 18.5 about 10% higher. Each day of your diet plan shows its calories and protein '
+     'next to your targets, plus the nutrients your report shows as low.',
      ["How to lose weight?"]),
     ("chatbot", ["are my chats saved", "where are my old chats", "how do i delete a chat", "continue my previous chat",
                  "how does this chatbot work", "do you store my chats", "is this chat private", "are you chatgpt",
@@ -424,6 +432,71 @@ FAQ_SITE = [
      "Steaming, pressure-cooking, light sautéing and roasting keep more nutrients than deep frying. Don't overcook greens, "
      "use the cooking water in dals or soups, and avoid reusing frying oil.",
      ["Which oil is best?"]),
+
+    # ---- Diet plans (added with the 7-day planner) ----
+    ("plan_styles", ["what are the three plan options", "difference between familiar and regional plan",
+                     "what is most nutritious plan", "which plan should i choose", "familiar vs nutritious",
+                     "what is the regional plan"],
+     "The three one-day options are built for the same targets:\n\n"
+     "- **Familiar:** dishes from your region plus the foods you picked, the easiest to follow.\n"
+     "- **Most nutritious:** the most nutrients for your calories, good when several results are low.\n"
+     "- **Regional:** only dishes cooked in your state.\n\n"
+     "Pick the one you like and click **Make my 7-day plan**.",
+     ["How do I swap a dish?", "Can I get a shopping list?"]),
+    ("swap_dish", ["how do i swap a dish", "i dont like this dish", "change a dish in my plan", "replace a food in the plan",
+                   "can i change my meals", "remove a dish from the plan"],
+     "In your 7-day plan, click **Swap** next to any dish. NutriLens picks a different dish for that meal, rebalances "
+     "the day so it still meets your targets, and keeps your other meals the same.",
+     ["Can I get a shopping list?", "Can I save my diet plan?"]),
+    ("shopping_list", ["can i get a shopping list", "grocery list for the week", "what should i buy",
+                       "how much to buy for the week", "shopping list"],
+     "Yes. In your 7-day plan, click **Shopping list**. It adds up every ingredient for the week, with weights as "
+     "bought (before peeling and cleaning), and it is included in the plan PDF.",
+     ["Can I download my plan?", "Can I save my diet plan?"]),
+    ("save_plan", ["can i save my diet plan", "how to save the 7 day plan", "where is my saved plan",
+                   "will my diet plan be saved"],
+     "When you are **signed in**, click **Save with my report** in your 7-day plan. Opening that report from "
+     "**History** later shows the saved plan. Guests can download the plan as a PDF instead.",
+     ["Where is my history?", "Can I download my plan?"]),
+    ("pick_foods", ["how do i add foods to my plan", "what is add to plan", "can i choose my own foods",
+                    "how to include a food in diet plan", "pick foods", "update my diet plan"],
+     "In **1. Pick foods**, tap **Add to plan** on the foods you like, then click **Build my diet plan** (or **Update "
+     "my diet plan** if you already made one). The plan builds around those foods while still meeting your targets.",
+     ["What are the three plan options?", "How do I swap a dish?"]),
+    ("plan_not_showing", ["diet plan not showing", "build my diet plan button disabled", "why cant i get a diet plan",
+                          "plan not building", "no diet plan for me", "diet plan error"],
+     "Diet plans need two things:\n\n"
+     "- **Age 18 or over:** plans are for adults.\n"
+     "- **Height (120 to 220 cm) and weight (30 to 200 kg):** used to work out your calories. If you skipped them, "
+     "enter them in the **2. Diet plan** tab and click **Build my diet plans**.\n\n"
+     "If you see *Plan not built*, click **Try again**; the server may have been waking up.",
+     ["How do I get my diet plan?", "What are the three plan options?"]),
+    ("plan_targets", ["how are my calories calculated", "what are the targets in my plan", "why this many calories",
+                      "how much protein is in my plan", "what does target mean in my plan", "calorie target"],
+     "Each plan day shows **calories** and **protein** next to your targets, and the nutrients your report shows as low "
+     "(for example iron or vitamin B12) next to the recommended amount. Calories come from your age, sex, height, "
+     "weight and activity (FAO/WHO/UNU equations, adjusted for BMI); protein and nutrient targets come from the "
+     "ICMR-NIN 2020 recommended amounts.",
+     ["How is the diet decided?", "Is this a weight-loss plan?"]),
+    ("non_veg_meats", ["i eat only chicken", "choose which meats", "i dont eat beef", "fish only non veg",
+                       "can i exclude pork", "custom allergy", "i dont like a food"],
+     "In **Your profile**, choose **Non-vegetarian** and tick the meats you eat (for example chicken, fish, eggs, mutton); "
+     "the others are never used. You can also type foods you are allergic to or don't eat, and dishes containing them "
+     "are left out.",
+     ["How do I get my diet plan?", "Which diets are supported?"]),
+    ("plan_children", ["can my 15 year old use the diet plan", "diet plan for children", "plan for my kid",
+                       "is the diet plan for teenagers", "diet plan for a child"],
+     "The diet plans are made for **adults (18 and over)**, because children's calorie and nutrient needs change "
+     "with growth. You can still read a child's test results and the foods that help, but please ask a paediatrician "
+     "or dietitian for a child's meal plan.",
+     ["How do I get my diet plan?", "Which tests are supported?"]),
+    ("dish_count", ["how many dishes are there", "how many recipes do you have", "how many dishes in the planner",
+                    "is my favourite dish there", "list of dishes"],
+     "The planner uses **278 home-style dishes** from every Indian state and union territory: breakfasts, rice and "
+     "roti, dals, curries, chutneys, snacks, drinks and a few sweets. Each dish's nutrients are calculated from its "
+     "raw ingredients using the Indian Food Composition Tables. Choose your state in your profile to see your "
+     "region's dishes more often.",
+     ["What are the three plan options?", "Do you have South Indian foods?"]),
 ]
 
 # Extra phrasings for topics defined in faq.py.
@@ -456,3 +529,17 @@ EXTRA_PHRASINGS = {
     "sugar_intake": ["are sweeteners safe", "is sugar free ok for diabetes", "can i use stevia"],
     "healthy_plate": ["what should i eat daily", "healthy food habits", "daily diet for good health"],
 }
+
+EXTRA_PHRASINGS.update({
+    "regional": ["do you have bengali food", "do you have punjabi dishes", "dishes from my state", "gujarati food",
+                 "kerala dishes", "north east food", "maharashtrian dishes", "bihari food", "tamil food"],
+    "non_veg_meats": ["i only eat chicken and fish", "i eat chicken but not mutton", "which meats can i choose"],
+    "portions": ["what is a katori", "how big is a katori", "what does 1 katori mean", "what does serving mean in my plan"],
+    "plan_targets": ["how is protein target calculated", "protein target in my plan", "how much protein in my diet plan",
+                     "what is the calorie target in my plan"],
+    "meal_plan": ["does the plan include snacks", "what meals are in the plan", "does it have breakfast lunch dinner"],
+    "pdf": ["can i print the 7 day plan", "download diet plan pdf", "print shopping list", "download my weekly plan"],
+    "language": ["why is my plan in english", "results still in english", "how to change language to telugu",
+                 "pdf in telugu", "report in hindi"],
+    "results_page": ["how do i see my test results", "where are my test results", "where is the test results tab"],
+})

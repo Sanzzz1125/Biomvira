@@ -14,10 +14,10 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 4.2,
-        "calcium_mg": 440.0,
-        "folate_mcg": 40.0,
-        "vitamin_c_mg": 120.0,
+        "iron_mg": 5.9,
+        "calcium_mg": 408.2,
+        "folate_mcg": 36.2,
+        "vitamin_c_mg": 84.2,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -29,7 +29,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "palak_spinach",
@@ -45,10 +46,10 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 2.7,
-        "calcium_mg": 99.0,
-        "folate_mcg": 146.0,
-        "vitamin_c_mg": 28.0,
+        "iron_mg": 3.8,
+        "calcium_mg": 107.0,
+        "folate_mcg": 120.0,
+        "vitamin_c_mg": 23.6,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -60,7 +61,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "methi_leaves",
@@ -76,10 +78,10 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 3.8,
-        "calcium_mg": 395.0,
-        "folate_mcg": 84.0,
-        "vitamin_c_mg": 52.0,
+        "iron_mg": 7.4,
+        "calcium_mg": 356.2,
+        "folate_mcg": 63.6,
+        "vitamin_c_mg": 45.4,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -91,7 +93,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "amaranth_leaves",
@@ -107,10 +110,10 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 5.4,
-        "calcium_mg": 330.0,
-        "folate_mcg": 85.0,
-        "vitamin_c_mg": 43.0,
+        "iron_mg": 7.4,
+        "calcium_mg": 365.7,
+        "folate_mcg": 62.4,
+        "vitamin_c_mg": 64.2,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -122,7 +125,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "curry_leaves",
@@ -138,10 +142,10 @@
       "allergens": [],
       "serving_size": "15g (1 handful crushed/cooked)",
       "nutrients": {
-        "iron_mg": 1.2,
-        "calcium_mg": 125.0,
-        "folate_mcg": 35.0,
-        "vitamin_c_mg": 4.0,
+        "iron_mg": 1.3,
+        "calcium_mg": 98.8,
+        "folate_mcg": 11.4,
+        "vitamin_c_mg": 0.5,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -149,7 +153,8 @@
         "Don't discard them on the plate: chew or powder into podi for maximum iron and calcium extraction."
       ],
       "tip": "Blend into chutneys, dry gun powders (karam podi), or herbal decoctions.",
-      "tags": []
+      "tags": [],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "ragi_flour",
@@ -165,9 +170,9 @@
       "allergens": [],
       "serving_size": "60g dry (yields 1 bowl porridge or 2 rotis)",
       "nutrients": {
-        "iron_mg": 2.4,
-        "calcium_mg": 206.0,
-        "folate_mcg": 18.0,
+        "iron_mg": 2.8,
+        "calcium_mg": 218.4,
+        "folate_mcg": 13.5,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -180,7 +185,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "bajra_pearl_millet",
@@ -196,9 +202,9 @@
       "allergens": [],
       "serving_size": "60g dry",
       "nutrients": {
-        "iron_mg": 4.8,
-        "calcium_mg": 25.0,
-        "folate_mcg": 27.0,
+        "iron_mg": 3.9,
+        "calcium_mg": 16.4,
+        "folate_mcg": 16.2,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -211,7 +217,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "sesame_seeds_til",
@@ -227,9 +234,9 @@
       "allergens": [],
       "serving_size": "25g (2 tablespoons)",
       "nutrients": {
-        "iron_mg": 3.6,
-        "calcium_mg": 243.0,
-        "folate_mcg": 24.0,
+        "iron_mg": 3.7,
+        "calcium_mg": 343.4,
+        "folate_mcg": 29.2,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -242,7 +249,8 @@
         "high_fibre",
         "heart_healthy_fat",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "garden_cress_seeds_aliv",
@@ -258,22 +266,23 @@
       "allergens": [],
       "serving_size": "10g (1 tablespoon soaked)",
       "nutrients": {
-        "iron_mg": 10.0,
-        "calcium_mg": 37.0,
-        "folate_mcg": 22.0,
-        "vitamin_c_mg": 2.0,
+        "iron_mg": 1.7,
+        "calcium_mg": 31.8,
+        "folate_mcg": 3.1,
+        "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
       "synergies": [
-        "Unmatched iron density (10mg in a single tablespoon!)."
+        "Iron-rich for a small serving: about 1.7 mg in a tablespoon; soak before eating."
       ],
       "tip": "Soak 1 tsp in lemon water or tender coconut water for 30 minutes before drinking.",
       "tags": [
         "high_fibre",
         "heart_healthy_fat",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "pumpkin_seeds",
@@ -289,10 +298,10 @@
       "allergens": [],
       "serving_size": "30g (handful)",
       "nutrients": {
-        "iron_mg": 2.5,
-        "calcium_mg": 15.0,
-        "folate_mcg": 17.0,
-        "vitamin_c_mg": 0.0,
+        "iron_mg": 2.6,
+        "calcium_mg": 13.8,
+        "folate_mcg": 17.4,
+        "vitamin_c_mg": 0.6,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -305,7 +314,8 @@
         "high_protein",
         "low_purine"
       ],
-      "protein_rank_g": 9
+      "protein_rank_g": 9,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "roasted_chana",
@@ -321,9 +331,9 @@
       "allergens": [],
       "serving_size": "50g",
       "nutrients": {
-        "iron_mg": 3.2,
-        "calcium_mg": 45.0,
-        "folate_mcg": 72.0,
+        "iron_mg": 3.0,
+        "calcium_mg": 23.1,
+        "folate_mcg": 68.2,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -337,7 +347,8 @@
         "high_fibre",
         "high_protein"
       ],
-      "protein_rank_g": 11
+      "protein_rank_g": 11,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "rajma_kidney_beans",
@@ -353,10 +364,10 @@
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
-        "iron_mg": 3.8,
-        "calcium_mg": 52.0,
-        "folate_mcg": 130.0,
-        "vitamin_c_mg": 1.5,
+        "iron_mg": 3.1,
+        "calcium_mg": 63.0,
+        "folate_mcg": 102.7,
+        "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -369,7 +380,8 @@
         "high_fibre",
         "high_protein"
       ],
-      "protein_rank_g": 13
+      "protein_rank_g": 13,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "chana_dal",
@@ -385,9 +397,9 @@
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
-        "iron_mg": 2.8,
-        "calcium_mg": 40.0,
-        "folate_mcg": 110.0,
+        "iron_mg": 3.0,
+        "calcium_mg": 23.1,
+        "folate_mcg": 59.1,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -401,7 +413,8 @@
         "high_fibre",
         "high_protein"
       ],
-      "protein_rank_g": 13
+      "protein_rank_g": 13,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "black_urad_dal",
@@ -417,9 +430,9 @@
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
-        "iron_mg": 3.5,
-        "calcium_mg": 110.0,
-        "folate_mcg": 125.0,
+        "iron_mg": 2.7,
+        "calcium_mg": 35.5,
+        "folate_mcg": 36.2,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -433,7 +446,8 @@
         "high_fibre",
         "high_protein"
       ],
-      "protein_rank_g": 12
+      "protein_rank_g": 12,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "paneer_cottage_cheese",
@@ -450,11 +464,11 @@
       ],
       "serving_size": "100g",
       "nutrients": {
-        "iron_mg": 0.2,
-        "calcium_mg": 480.0,
-        "folate_mcg": 18.0,
+        "iron_mg": 0.9,
+        "calcium_mg": 476.0,
+        "folate_mcg": 93.3,
         "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 15.0,
+        "vitamin_d_iu": 8.0,
         "vitamin_b12_mcg": 0.8
       },
       "synergies": [
@@ -465,7 +479,8 @@
         "high_protein",
         "low_purine"
       ],
-      "protein_rank_g": 18
+      "protein_rank_g": 18,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "curd_yogurt",
@@ -483,11 +498,11 @@
       "serving_size": "200g (1 bowl)",
       "nutrients": {
         "iron_mg": 0.1,
-        "calcium_mg": 260.0,
+        "calcium_mg": 242.0,
         "folate_mcg": 14.0,
-        "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 10.0,
-        "vitamin_b12_mcg": 0.6
+        "vitamin_c_mg": 1.0,
+        "vitamin_d_iu": 8.0,
+        "vitamin_b12_mcg": 0.7
       },
       "synergies": [
         "Probiotics enhance general intestinal nutrient assimilation."
@@ -497,7 +512,8 @@
         "high_protein",
         "low_purine"
       ],
-      "protein_rank_g": 7
+      "protein_rank_g": 7,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "cow_milk_whole",
@@ -514,12 +530,12 @@
       ],
       "serving_size": "250ml (1 glass)",
       "nutrients": {
-        "iron_mg": 0.1,
-        "calcium_mg": 300.0,
-        "folate_mcg": 12.0,
-        "vitamin_c_mg": 1.0,
-        "vitamin_d_iu": 20.0,
-        "vitamin_b12_mcg": 1.1
+        "iron_mg": 0.4,
+        "calcium_mg": 295.0,
+        "folate_mcg": 11.4,
+        "vitamin_c_mg": 3.0,
+        "vitamin_d_iu": 9.0,
+        "vitamin_b12_mcg": 0.9
       },
       "synergies": [
         "Key source of bioavailable B12 and calcium in traditional Indian lacto-vegetarian diets."
@@ -529,7 +545,8 @@
         "high_protein",
         "low_purine"
       ],
-      "protein_rank_g": 8
+      "protein_rank_g": 8,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "whole_egg_boiled",
@@ -546,11 +563,11 @@
       "serving_size": "2 large eggs (approx 100g)",
       "nutrients": {
         "iron_mg": 1.8,
-        "calcium_mg": 56.0,
-        "folate_mcg": 44.0,
+        "calcium_mg": 49.4,
+        "folate_mcg": 32.0,
         "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 88.0,
-        "vitamin_b12_mcg": 1.2
+        "vitamin_d_iu": 72.0,
+        "vitamin_b12_mcg": 0.8
       },
       "synergies": [
         "Yolk contains bioavailable Vitamin D3 and natural Vitamin B12."
@@ -560,7 +577,8 @@
         "high_protein",
         "low_purine"
       ],
-      "protein_rank_g": 13
+      "protein_rank_g": 13,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "chicken_breast",
@@ -573,12 +591,12 @@
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
-        "iron_mg": 1.5,
-        "calcium_mg": 18.0,
-        "folate_mcg": 10.0,
+        "iron_mg": 1.7,
+        "calcium_mg": 25.8,
+        "folate_mcg": 13.5,
         "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 12.0,
-        "vitamin_b12_mcg": 0.7
+        "vitamin_d_iu": 0.0,
+        "vitamin_b12_mcg": 0.3
       },
       "synergies": [
         "Lean heme iron with superior bioavailability over plant sources."
@@ -587,7 +605,8 @@
       "tags": [
         "high_protein"
       ],
-      "protein_rank_g": 45
+      "protein_rank_g": 45,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "chicken_liver",
@@ -600,12 +619,12 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 11.6,
-        "calcium_mg": 15.0,
-        "folate_mcg": 588.0,
-        "vitamin_c_mg": 28.0,
-        "vitamin_d_iu": 65.0,
-        "vitamin_b12_mcg": 16.8
+        "iron_mg": 12.4,
+        "calcium_mg": 5.1,
+        "folate_mcg": 838.5,
+        "vitamin_c_mg": 0.0,
+        "vitamin_d_iu": 0.0,
+        "vitamin_b12_mcg": 15.5
       },
       "synergies": [
         "One of nature's densest sources of heme iron, Vitamin B12, and Folate."
@@ -614,7 +633,8 @@
       "tags": [
         "high_protein"
       ],
-      "protein_rank_g": 24
+      "protein_rank_g": 24,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "mutton_goat_meat",
@@ -627,21 +647,22 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 3.2,
-        "calcium_mg": 12.0,
-        "folate_mcg": 6.0,
+        "iron_mg": 2.4,
+        "calcium_mg": 9.2,
+        "folate_mcg": 0.0,
         "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 15.0,
-        "vitamin_b12_mcg": 2.5
+        "vitamin_d_iu": 0.0,
+        "vitamin_b12_mcg": 1.2
       },
       "synergies": [
-        "Rich in heme iron and zinc with high Vitamin B12 content."
+        "Rich in easily absorbed (heme) iron and zinc, with good vitamin B12."
       ],
       "tip": "Curry or slow braised broth.",
       "tags": [
         "high_protein"
       ],
-      "protein_rank_g": 25
+      "protein_rank_g": 25,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "rohu_freshwater_fish",
@@ -656,12 +677,12 @@
       ],
       "serving_size": "150g cooked",
       "nutrients": {
-        "iron_mg": 1.4,
-        "calcium_mg": 120.0,
-        "folate_mcg": 15.0,
+        "iron_mg": 2.0,
+        "calcium_mg": 74.1,
+        "folate_mcg": 0.0,
         "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 140.0,
-        "vitamin_b12_mcg": 1.8
+        "vitamin_d_iu": 1671.7,
+        "vitamin_b12_mcg": 2.7
       },
       "synergies": [
         "Excellent source of natural Vitamin D and B12 for non-vegetarians in India."
@@ -670,7 +691,11 @@
       "tags": [
         "high_protein"
       ],
-      "protein_rank_g": 25
+      "protein_rank_g": 25,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py",
+      "uncertain": [
+        "vitamin_d_iu"
+      ]
     },
     {
       "id": "mackerel_bangda",
@@ -685,12 +710,12 @@
       ],
       "serving_size": "120g grilled",
       "nutrients": {
-        "iron_mg": 1.6,
-        "calcium_mg": 85.0,
-        "folate_mcg": 12.0,
+        "iron_mg": 2.2,
+        "calcium_mg": 47.0,
+        "folate_mcg": 0.0,
         "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 380.0,
-        "vitamin_b12_mcg": 7.3
+        "vitamin_d_iu": 416.1,
+        "vitamin_b12_mcg": 3.2
       },
       "synergies": [
         "Outstanding natural source of Vitamin D3 and Omega-3 fatty acids."
@@ -701,7 +726,11 @@
         "omega3",
         "high_protein"
       ],
-      "protein_rank_g": 23
+      "protein_rank_g": 23,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py",
+      "uncertain": [
+        "vitamin_d_iu"
+      ]
     },
     {
       "id": "fortified_milk_fssai",
@@ -718,12 +747,12 @@
       ],
       "serving_size": "250ml",
       "nutrients": {
-        "iron_mg": 0.1,
-        "calcium_mg": 300.0,
-        "folate_mcg": 15.0,
-        "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 125.0,
-        "vitamin_b12_mcg": 1.2
+        "iron_mg": 0.4,
+        "calcium_mg": 295.0,
+        "folate_mcg": 11.4,
+        "vitamin_c_mg": 3.0,
+        "vitamin_d_iu": 45.0,
+        "vitamin_b12_mcg": 0.9
       },
       "synergies": [
         "Government-mandated fortification adds 5mcg (200 IU) Vitamin D per liter."
@@ -732,7 +761,8 @@
       "tags": [
         "high_protein"
       ],
-      "protein_rank_g": 8
+      "protein_rank_g": 8,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "fortified_soy_milk",
@@ -750,12 +780,12 @@
       ],
       "serving_size": "250ml",
       "nutrients": {
-        "iron_mg": 1.2,
-        "calcium_mg": 300.0,
-        "folate_mcg": 24.0,
+        "iron_mg": 1.1,
+        "calcium_mg": 307.5,
+        "folate_mcg": 22.5,
         "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 100.0,
-        "vitamin_b12_mcg": 1.5
+        "vitamin_d_iu": 110.0,
+        "vitamin_b12_mcg": 2.1
       },
       "synergies": [
         "Critical staple for strict vegans to secure bioavailable Vitamin B12 and Vitamin D without supplements."
@@ -764,34 +794,8 @@
       "tags": [
         "high_protein"
       ],
-      "protein_rank_g": 8
-    },
-    {
-      "id": "nutritional_yeast",
-      "name": "Fortified Nutritional Yeast Flakes",
-      "hindi_name": "Nutritional Yeast",
-      "category": "Fortified Foods",
-      "diet_type": [
-        "veg",
-        "vegan",
-        "eggetarian",
-        "non_veg"
-      ],
-      "allergens": [],
-      "serving_size": "10g (2 tablespoons)",
-      "nutrients": {
-        "iron_mg": 1.0,
-        "calcium_mg": 10.0,
-        "folate_mcg": 250.0,
-        "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 0.0,
-        "vitamin_b12_mcg": 4.8
-      },
-      "synergies": [
-        "Primary non-animal gold standard for Vitamin B12 and Folate among vegans."
-      ],
-      "tip": "Sprinkle over popcorn, dal, pasta, or sabzis for a savory cheesy umami flavor.",
-      "tags": []
+      "protein_rank_g": 8,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "sun_exposed_mushrooms",
@@ -807,18 +811,22 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 0.5,
-        "calcium_mg": 18.0,
-        "folate_mcg": 28.0,
-        "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 400.0,
-        "vitamin_b12_mcg": 0.1
+        "iron_mg": 0.7,
+        "calcium_mg": 4.2,
+        "folate_mcg": 15.5,
+        "vitamin_c_mg": 1.8,
+        "vitamin_d_iu": 1320.5,
+        "vitamin_b12_mcg": 0.0
       },
       "synergies": [
         "Mushrooms synthesize natural Vitamin D2 when exposed to midday sunlight for 30-60 minutes before cooking."
       ],
       "tip": "Place sliced fresh mushrooms under direct sunlight between 11 AM - 1 PM before cooking.",
-      "tags": []
+      "tags": [],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry",
+      "uncertain": [
+        "vitamin_d_iu"
+      ]
     },
     {
       "id": "amla_indian_gooseberry",
@@ -834,22 +842,23 @@
       "allergens": [],
       "serving_size": "50g (1 large fruit or fresh juice)",
       "nutrients": {
-        "iron_mg": 1.2,
-        "calcium_mg": 25.0,
-        "folate_mcg": 10.0,
-        "vitamin_c_mg": 300.0,
+        "iron_mg": 0.6,
+        "calcium_mg": 10.1,
+        "folate_mcg": 4.0,
+        "vitamin_c_mg": 126.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
       "synergies": [
-        "Ultimate non-heme iron absorption booster! Contains heat-stable Vitamin C 20x higher than oranges."
+        "Helps the body absorb plant iron: about 6 times more vitamin C than oranges."
       ],
       "tip": "Eat raw with a pinch of rock salt, or take 20ml fresh juice alongside morning meals.",
       "tags": [
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "lemon_citrus",
@@ -865,10 +874,10 @@
       "allergens": [],
       "serving_size": "30ml (juice of 1 lemon)",
       "nutrients": {
-        "iron_mg": 0.2,
-        "calcium_mg": 15.0,
-        "folate_mcg": 10.0,
-        "vitamin_c_mg": 45.0,
+        "iron_mg": 0.0,
+        "calcium_mg": 6.8,
+        "folate_mcg": 3.7,
+        "vitamin_c_mg": 14.5,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -878,7 +887,8 @@
       "tip": "Squeeze over dal, khichdi, chana, and green vegetables right before eating.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "guava_peru",
@@ -895,9 +905,9 @@
       "serving_size": "1 medium fruit (120g)",
       "nutrients": {
         "iron_mg": 0.4,
-        "calcium_mg": 22.0,
-        "folate_mcg": 60.0,
-        "vitamin_c_mg": 220.0,
+        "calcium_mg": 19.6,
+        "folate_mcg": 37.2,
+        "vitamin_c_mg": 261.6,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -909,7 +919,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "beetroot",
@@ -925,10 +936,10 @@
       "allergens": [],
       "serving_size": "100g cooked or raw",
       "nutrients": {
-        "iron_mg": 1.0,
-        "calcium_mg": 20.0,
-        "folate_mcg": 109.0,
-        "vitamin_c_mg": 5.0,
+        "iron_mg": 0.8,
+        "calcium_mg": 17.3,
+        "folate_mcg": 97.4,
+        "vitamin_c_mg": 5.3,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -938,7 +949,8 @@
       "tip": "Grate raw into salads, juice with amla, or steam into a poriyal/thoran.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "dates_khajoor",
@@ -954,10 +966,10 @@
       "allergens": [],
       "serving_size": "4-5 dates (40g)",
       "nutrients": {
-        "iron_mg": 1.1,
-        "calcium_mg": 26.0,
-        "folate_mcg": 8.0,
-        "vitamin_c_mg": 0.0,
+        "iron_mg": 1.6,
+        "calcium_mg": 27.5,
+        "folate_mcg": 6.3,
+        "vitamin_c_mg": 1.6,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -967,7 +979,8 @@
       "tip": "Eat 3-4 dates in the morning alongside soaked almonds.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "almonds_badam",
@@ -985,10 +998,10 @@
       ],
       "serving_size": "25g (approx 15 nuts)",
       "nutrients": {
-        "iron_mg": 1.0,
-        "calcium_mg": 65.0,
-        "folate_mcg": 12.0,
-        "vitamin_c_mg": 0.0,
+        "iron_mg": 1.1,
+        "calcium_mg": 57.0,
+        "folate_mcg": 9.1,
+        "vitamin_c_mg": 0.2,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1001,7 +1014,8 @@
         "high_fibre",
         "heart_healthy_fat",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "black_raisins_kishmish",
@@ -1017,10 +1031,10 @@
       "allergens": [],
       "serving_size": "30g (handful soaked)",
       "nutrients": {
-        "iron_mg": 1.6,
-        "calcium_mg": 30.0,
-        "folate_mcg": 5.0,
-        "vitamin_c_mg": 1.0,
+        "iron_mg": 2.0,
+        "calcium_mg": 22.0,
+        "folate_mcg": 11.5,
+        "vitamin_c_mg": 0.6,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1030,7 +1044,8 @@
       "tip": "Soak 10-12 munakkas in water overnight and consume the raisins along with the water on an empty stomach.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "tofu_firm",
@@ -1049,9 +1064,9 @@
       "serving_size": "100g",
       "nutrients": {
         "iron_mg": 2.7,
-        "calcium_mg": 350.0,
-        "folate_mcg": 19.0,
-        "vitamin_c_mg": 0.0,
+        "calcium_mg": 683.0,
+        "folate_mcg": 29.0,
+        "vitamin_c_mg": 0.2,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1063,7 +1078,8 @@
         "low_gi",
         "high_protein"
       ],
-      "protein_rank_g": 15
+      "protein_rank_g": 15,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "horse_gram_kulthi",
@@ -1079,10 +1095,10 @@
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
-        "iron_mg": 7.0,
-        "calcium_mg": 287.0,
-        "folate_mcg": 65.0,
-        "vitamin_c_mg": 1.0,
+        "iron_mg": 4.4,
+        "calcium_mg": 134.5,
+        "folate_mcg": 53.0,
+        "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1095,7 +1111,8 @@
         "high_fibre",
         "high_protein"
       ],
-      "protein_rank_g": 12
+      "protein_rank_g": 12,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "moth_beans_matki",
@@ -1111,10 +1128,10 @@
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
-        "iron_mg": 4.6,
-        "calcium_mg": 150.0,
-        "folate_mcg": 90.0,
-        "vitamin_c_mg": 1.0,
+        "iron_mg": 4.0,
+        "calcium_mg": 77.0,
+        "folate_mcg": 113.4,
+        "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1127,7 +1144,8 @@
         "high_fibre",
         "high_protein"
       ],
-      "protein_rank_g": 11
+      "protein_rank_g": 11,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "soybean_cooked",
@@ -1145,10 +1163,10 @@
       ],
       "serving_size": "150g cooked",
       "nutrients": {
-        "iron_mg": 4.4,
-        "calcium_mg": 175.0,
-        "folate_mcg": 55.0,
-        "vitamin_c_mg": 1.5,
+        "iron_mg": 4.1,
+        "calcium_mg": 108.5,
+        "folate_mcg": 95.1,
+        "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1161,7 +1179,8 @@
         "high_fibre",
         "high_protein"
       ],
-      "protein_rank_g": 25
+      "protein_rank_g": 25,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "lobia_black_eyed_peas",
@@ -1177,10 +1196,10 @@
       "allergens": [],
       "serving_size": "150g cooked",
       "nutrients": {
-        "iron_mg": 2.9,
-        "calcium_mg": 41.0,
-        "folate_mcg": 208.0,
-        "vitamin_c_mg": 1.5,
+        "iron_mg": 2.7,
+        "calcium_mg": 41.5,
+        "folate_mcg": 78.0,
+        "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1193,7 +1212,8 @@
         "high_fibre",
         "high_protein"
       ],
-      "protein_rank_g": 12
+      "protein_rank_g": 12,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "drumstick_vegetable",
@@ -1209,22 +1229,23 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 0.4,
-        "calcium_mg": 30.0,
-        "folate_mcg": 44.0,
-        "vitamin_c_mg": 141.0,
+        "iron_mg": 0.8,
+        "calcium_mg": 36.6,
+        "folate_mcg": 44.8,
+        "vitamin_c_mg": 47.5,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
       "synergies": [
-        "Very high Vitamin C content (141 mg/100g) makes it an excellent absorption catalyst for iron-rich meals."
+        "Good vitamin C (about 72 mg per 100 g) helps the body absorb iron from the same meal."
       ],
       "tip": "Add to sambar, dal, or pressure-cook with lentils.",
       "tags": [
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "bitter_gourd_karela",
@@ -1240,10 +1261,10 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 0.6,
-        "calcium_mg": 20.0,
-        "folate_mcg": 72.0,
-        "vitamin_c_mg": 84.0,
+        "iron_mg": 1.3,
+        "calcium_mg": 20.3,
+        "folate_mcg": 40.9,
+        "vitamin_c_mg": 33.4,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1255,7 +1276,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "bottle_gourd_lauki",
@@ -1272,9 +1294,9 @@
       "serving_size": "150g cooked",
       "nutrients": {
         "iron_mg": 0.5,
-        "calcium_mg": 32.0,
-        "folate_mcg": 10.0,
-        "vitamin_c_mg": 12.0,
+        "calcium_mg": 25.9,
+        "folate_mcg": 49.3,
+        "vitamin_c_mg": 4.2,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1285,7 +1307,8 @@
       "tags": [
         "low_gi",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "raw_banana_plantain",
@@ -1301,10 +1324,10 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 0.6,
-        "calcium_mg": 12.0,
-        "folate_mcg": 22.0,
-        "vitamin_c_mg": 12.0,
+        "iron_mg": 0.4,
+        "calcium_mg": 15.2,
+        "folate_mcg": 13.6,
+        "vitamin_c_mg": 15.4,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1314,7 +1337,8 @@
       "tip": "Boil and temper with mustard seeds, curry leaves, and coconut; or use in Kerala-style thoran.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "sweet_potato",
@@ -1330,10 +1354,10 @@
       "allergens": [],
       "serving_size": "150g boiled",
       "nutrients": {
-        "iron_mg": 0.8,
-        "calcium_mg": 32.0,
-        "folate_mcg": 11.0,
-        "vitamin_c_mg": 23.0,
+        "iron_mg": 0.7,
+        "calcium_mg": 42.3,
+        "folate_mcg": 14.6,
+        "vitamin_c_mg": 18.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1343,7 +1367,8 @@
       "tip": "Roast in the oven, boil and chaat with lemon and chilli, or mash into parathas.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "lotus_seeds_makhana",
@@ -1359,9 +1384,9 @@
       "allergens": [],
       "serving_size": "30g (1 cup puffed)",
       "nutrients": {
-        "iron_mg": 1.4,
-        "calcium_mg": 60.0,
-        "folate_mcg": 10.0,
+        "iron_mg": 0.4,
+        "calcium_mg": 18.0,
+        "folate_mcg": 0.0,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -1373,7 +1398,8 @@
       "tags": [
         "low_gi",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "flaxseeds_alsi",
@@ -1389,9 +1415,9 @@
       "allergens": [],
       "serving_size": "15g (1 tablespoon ground)",
       "nutrients": {
-        "iron_mg": 1.1,
-        "calcium_mg": 36.0,
-        "folate_mcg": 7.0,
+        "iron_mg": 0.8,
+        "calcium_mg": 38.5,
+        "folate_mcg": 13.0,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -1406,7 +1432,8 @@
         "heart_healthy_fat",
         "omega3",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "sunflower_seeds",
@@ -1422,10 +1449,10 @@
       "allergens": [],
       "serving_size": "30g",
       "nutrients": {
-        "iron_mg": 1.9,
-        "calcium_mg": 20.0,
-        "folate_mcg": 67.0,
-        "vitamin_c_mg": 0.4,
+        "iron_mg": 1.8,
+        "calcium_mg": 52.8,
+        "folate_mcg": 24.5,
+        "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1438,7 +1465,8 @@
         "high_protein",
         "low_purine"
       ],
-      "protein_rank_g": 6
+      "protein_rank_g": 6,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "cashewnuts_kaju",
@@ -1456,10 +1484,10 @@
       ],
       "serving_size": "30g (20 cashews)",
       "nutrients": {
-        "iron_mg": 1.9,
-        "calcium_mg": 10.0,
-        "folate_mcg": 7.0,
-        "vitamin_c_mg": 0.5,
+        "iron_mg": 1.8,
+        "calcium_mg": 10.2,
+        "folate_mcg": 7.6,
+        "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1470,7 +1498,8 @@
       "tags": [
         "heart_healthy_fat",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "jowar_sorghum",
@@ -1486,9 +1515,9 @@
       "allergens": [],
       "serving_size": "60g dry",
       "nutrients": {
-        "iron_mg": 2.6,
-        "calcium_mg": 25.0,
-        "folate_mcg": 20.0,
+        "iron_mg": 2.4,
+        "calcium_mg": 16.6,
+        "folate_mcg": 17.7,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -1501,7 +1530,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "foxtail_millet_kangni",
@@ -1517,9 +1547,9 @@
       "allergens": [],
       "serving_size": "60g dry",
       "nutrients": {
-        "iron_mg": 2.8,
-        "calcium_mg": 31.0,
-        "folate_mcg": 15.0,
+        "iron_mg": 1.7,
+        "calcium_mg": 18.6,
+        "folate_mcg": 0.0,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -1532,7 +1562,8 @@
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "little_millet_kutki",
@@ -1548,22 +1579,23 @@
       "allergens": [],
       "serving_size": "60g dry",
       "nutrients": {
-        "iron_mg": 9.3,
-        "calcium_mg": 17.0,
-        "folate_mcg": 10.0,
+        "iron_mg": 0.8,
+        "calcium_mg": 9.7,
+        "folate_mcg": 14.1,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
       "synergies": [
-        "One of the highest iron-containing Indian millets (9.3 mg/100g dry); a traditional fasting grain."
+        "A gluten-free traditional fasting grain with fibre; pair it with iron-rich dal or greens."
       ],
       "tip": "Prepare as sama khichdi, sama chawal, or upma during Navratri fasting or regular meals.",
       "tags": [
         "low_gi",
         "high_fibre",
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "cod_liver_oil_capsule",
@@ -1589,7 +1621,8 @@
         "Highly concentrated natural Vitamin D3 source; also rich in Omega-3 and preformed Vitamin A."
       ],
       "tip": "Take with a meal containing healthy fats for optimal fat-soluble vitamin absorption.",
-      "tags": []
+      "tags": [],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "hilsa_fish_ilish",
@@ -1605,14 +1638,14 @@
       "serving_size": "100g cooked",
       "nutrients": {
         "iron_mg": 1.5,
-        "calcium_mg": 180.0,
-        "folate_mcg": 10.0,
+        "calcium_mg": 24.8,
+        "folate_mcg": 0.0,
         "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 320.0,
-        "vitamin_b12_mcg": 5.4
+        "vitamin_d_iu": 216.0,
+        "vitamin_b12_mcg": 0.2
       },
       "synergies": [
-        "Excellent B12 and Vitamin D source; widely consumed in Eastern India and Bangladesh."
+        "A good vitamin D source; widely eaten in Eastern India and Bangladesh."
       ],
       "tip": "Steamed in mustard sauce (Ilish Bhapa) or curried in mustard oil with turmeric.",
       "tags": [
@@ -1620,7 +1653,11 @@
         "omega3",
         "high_protein"
       ],
-      "protein_rank_g": 22
+      "protein_rank_g": 22,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py",
+      "uncertain": [
+        "vitamin_d_iu"
+      ]
     },
     {
       "id": "prawn_shrimp",
@@ -1635,21 +1672,25 @@
       ],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 2.4,
-        "calcium_mg": 90.0,
-        "folate_mcg": 11.0,
-        "vitamin_c_mg": 1.8,
-        "vitamin_d_iu": 100.0,
-        "vitamin_b12_mcg": 1.3
+        "iron_mg": 1.0,
+        "calcium_mg": 72.7,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0,
+        "vitamin_d_iu": 4.5,
+        "vitamin_b12_mcg": 1.2
       },
       "synergies": [
-        "Good heme iron and B12 with meaningful Vitamin D; a coastal Indian staple."
+        "Good protein with some B12; a coastal Indian staple."
       ],
       "tip": "Prawn masala, dried prawn chutney, or prawn pulao with minimal heavy sauces.",
       "tags": [
         "high_protein"
       ],
-      "protein_rank_g": 24
+      "protein_rank_g": 24,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py",
+      "uncertain": [
+        "vitamin_d_iu"
+      ]
     },
     {
       "id": "mutton_liver",
@@ -1662,12 +1703,12 @@
       "allergens": [],
       "serving_size": "100g cooked",
       "nutrients": {
-        "iron_mg": 10.5,
-        "calcium_mg": 10.0,
-        "folate_mcg": 400.0,
-        "vitamin_c_mg": 20.0,
-        "vitamin_d_iu": 50.0,
-        "vitamin_b12_mcg": 90.0
+        "iron_mg": 8.2,
+        "calcium_mg": 7.6,
+        "folate_mcg": 0.0,
+        "vitamin_c_mg": 0.0,
+        "vitamin_d_iu": 0.0,
+        "vitamin_b12_mcg": 84.4
       },
       "synergies": [
         "One of the most nutrient-dense foods on earth for iron, B12, and folate combined."
@@ -1676,7 +1717,8 @@
       "tags": [
         "high_protein"
       ],
-      "protein_rank_g": 26
+      "protein_rank_g": 26,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "papaya_ripe",
@@ -1693,9 +1735,9 @@
       "serving_size": "150g (1 medium slice)",
       "nutrients": {
         "iron_mg": 0.3,
-        "calcium_mg": 24.0,
-        "folate_mcg": 37.0,
-        "vitamin_c_mg": 61.0,
+        "calcium_mg": 22.5,
+        "folate_mcg": 91.3,
+        "vitamin_c_mg": 64.7,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1705,7 +1747,8 @@
       "tip": "Eat fresh as a breakfast fruit, or blend into a smoothie with amla for a Vitamin C burst.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "orange_mosambi",
@@ -1721,10 +1764,10 @@
       "allergens": [],
       "serving_size": "1 medium fruit (150g)",
       "nutrients": {
-        "iron_mg": 0.4,
-        "calcium_mg": 40.0,
-        "folate_mcg": 30.0,
-        "vitamin_c_mg": 50.0,
+        "iron_mg": 0.7,
+        "calcium_mg": 34.0,
+        "folate_mcg": 26.2,
+        "vitamin_c_mg": 67.3,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1734,7 +1777,8 @@
       "tip": "Drink fresh juice (avoid packaged) immediately before or alongside iron-rich meals.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "dried_figs_anjeer",
@@ -1750,10 +1794,10 @@
       "allergens": [],
       "serving_size": "4 dried figs (40g)",
       "nutrients": {
-        "iron_mg": 1.1,
-        "calcium_mg": 76.0,
-        "folate_mcg": 7.0,
-        "vitamin_c_mg": 1.0,
+        "iron_mg": 0.8,
+        "calcium_mg": 64.8,
+        "folate_mcg": 3.6,
+        "vitamin_c_mg": 0.5,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1763,7 +1807,8 @@
       "tip": "Soak 2–3 anjeer in water overnight; eat the figs and drink the soaking water on an empty stomach.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "dried_apricots_khumani",
@@ -1779,10 +1824,10 @@
       "allergens": [],
       "serving_size": "5–6 halves (40g)",
       "nutrients": {
-        "iron_mg": 1.4,
-        "calcium_mg": 14.0,
-        "folate_mcg": 7.0,
-        "vitamin_c_mg": 1.0,
+        "iron_mg": 1.0,
+        "calcium_mg": 11.4,
+        "folate_mcg": 4.2,
+        "vitamin_c_mg": 0.2,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1792,7 +1837,8 @@
       "tip": "Soak overnight and add to porridge, oats, or homemade trail mix.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "ghee_clarified_butter",
@@ -1810,10 +1856,10 @@
       "serving_size": "1 teaspoon (5g)",
       "nutrients": {
         "iron_mg": 0.0,
-        "calcium_mg": 1.0,
+        "calcium_mg": 0.0,
         "folate_mcg": 0.0,
         "vitamin_c_mg": 0.0,
-        "vitamin_d_iu": 15.0,
+        "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
       "synergies": [
@@ -1822,7 +1868,8 @@
       "tip": "Add 1 tsp ghee to warm dal, rice, or rotis; cook Vitamin D-containing mushrooms in ghee.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "coconut_oil_virgin",
@@ -1846,10 +1893,11 @@
         "vitamin_b12_mcg": 0.0
       },
       "synergies": [
-        "Medium-chain triglycerides (MCTs) support absorption of fat-soluble vitamins D and B12 cofactors; use as the cooking fat when preparing Vitamin D-rich foods."
+        "A little cooking fat helps the body absorb fat-soluble vitamin D from the food it is cooked with."
       ],
       "tip": "Use for sautéing mushrooms, fish, or eggs to maximise fat-soluble vitamin bioavailability.",
-      "tags": []
+      "tags": [],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "tamarind_imli",
@@ -1865,10 +1913,10 @@
       "allergens": [],
       "serving_size": "20g (1 tablespoon paste)",
       "nutrients": {
-        "iron_mg": 1.3,
-        "calcium_mg": 35.0,
-        "folate_mcg": 4.0,
-        "vitamin_c_mg": 1.9,
+        "iron_mg": 1.8,
+        "calcium_mg": 29.8,
+        "folate_mcg": 2.0,
+        "vitamin_c_mg": 0.7,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
       },
@@ -1876,7 +1924,8 @@
         "Provides tartaric acid — an organic acid that chelates iron into a more soluble, absorbable form; a natural substitute for lemon in rasam and sambar."
       ],
       "tip": "Add to horse gram rasam, sambar, or chutneys to acidify and improve iron bioavailability.",
-      "tags": []
+      "tags": [],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "jaggery_gud",
@@ -1892,9 +1941,9 @@
       "allergens": [],
       "serving_size": "20g (1 small block)",
       "nutrients": {
-        "iron_mg": 2.6,
-        "calcium_mg": 80.0,
-        "folate_mcg": 0.0,
+        "iron_mg": 0.9,
+        "calcium_mg": 21.4,
+        "folate_mcg": 2.9,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -1903,7 +1952,8 @@
         "Traditional sweetener retaining trace minerals lost in refined sugar; iron + calcium in natural form; often paired with chana for synergistic effect."
       ],
       "tip": "Replace refined sugar with jaggery in chai, laddus, pongal, and payasam.",
-      "tags": []
+      "tags": [],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py"
     },
     {
       "id": "wheat_germ",
@@ -1921,9 +1971,9 @@
       ],
       "serving_size": "30g (2 tablespoons)",
       "nutrients": {
-        "iron_mg": 2.0,
-        "calcium_mg": 11.0,
-        "folate_mcg": 78.0,
+        "iron_mg": 1.9,
+        "calcium_mg": 11.7,
+        "folate_mcg": 84.3,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
         "vitamin_b12_mcg": 0.0
@@ -1934,7 +1984,8 @@
       "tip": "Stir 2 tbsp into curd, smoothies, or breakfast upma for a quick folate boost.",
       "tags": [
         "low_purine"
-      ]
+      ],
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "id": "tempeh",
@@ -1957,7 +2008,7 @@
         "folate_mcg": 24.0,
         "vitamin_c_mg": 0.0,
         "vitamin_d_iu": 0.0,
-        "vitamin_b12_mcg": 0.1
+        "vitamin_b12_mcg": 0.0
       },
       "synergies": [
         "Fermentation breaks down phytic acid, making iron and calcium more bioavailable than unfermented soy. Provides trace amounts of B12 analogues."
@@ -1968,7 +2019,8 @@
         "high_fibre",
         "high_protein"
       ],
-      "protein_rank_g": 19
+      "protein_rank_g": 19,
+      "source": "IFCT 2017 (ICMR-NIN) via evaluation/verify_foods.py; USDA SR Legacy / NVIF where IFCT has no entry"
     },
     {
       "protein_rank_g": 7.3,

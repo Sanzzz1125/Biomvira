@@ -23,6 +23,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDisclaimer }) => (
           <Link to="/history" className="text-slate-600 hover:text-slate-900">
             My reports
           </Link>
+          <Link to="/science" className="text-slate-600 hover:text-slate-900">Science</Link>
+          <Link to="/articles" className="text-slate-600 hover:text-slate-900">Articles</Link>
+          <Link to="/faq" className="text-slate-600 hover:text-slate-900">FAQ</Link>
           <button type="button" onClick={onOpenDisclaimer} className="text-slate-600 hover:text-slate-900">
             Safety &amp; privacy
           </button>

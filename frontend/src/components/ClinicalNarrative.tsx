@@ -1,3 +1,4 @@
+import { hasKey, StringKey, useT } from '../lib/i18n';
 import React from 'react';
 import {
   Activity,
@@ -27,6 +28,7 @@ interface ClinicalNarrativeProps {
 }
 
 export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) => {
+  const t = useT();
   const explanation = result.grounded_explanation || '';
   const flaggedMarkers = result.marker_analyses.filter((m) => m.status !== 'normal');
   const optimalMarkers = result.marker_analyses.filter((m) => m.status === 'normal');
@@ -85,10 +87,10 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
               <Badge tone={flaggedMarkers.length === 0 ? 'brand' : 'amber'}>
                 {flaggedMarkers.length === 0
                   ? 'All results in range'
-                  : `${flaggedMarkers.length} result${flaggedMarkers.length > 1 ? 's' : ''} need attention`}
+                  : t(flaggedMarkers.length > 1 ? 'needMany' : 'needOne', { n: flaggedMarkers.length })}
               </Badge>
               <Badge tone="neutral">
-                {Math.round((optimalMarkers.length / (result.marker_analyses.length || 1)) * 100)}% in range
+                {t('pctInRange', { n: Math.round((optimalMarkers.length / (result.marker_analyses.length || 1)) * 100) })}
               </Badge>
             </div>
           </div>
@@ -100,13 +102,16 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
             {flaggedMarkers.length === 0 ? (
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-brand-600 mt-0.5" />
-                <p>
-                  All <strong>{result.marker_analyses.length} tested biomarkers</strong> are within standard reference intervals. Your results look balanced across the tests included in this report.
-                </p>
+                <p>{t('allTested', { n: result.marker_analyses.length })}</p>
               </div>
             ) : (
               <p>
-                Laboratory analysis reveals that <strong>{flaggedMarkers.length} of {result.marker_analyses.length} parameters</strong> are outside their reference intervals ({flaggedMarkers.filter(m => m.status === 'low').length} Low, {flaggedMarkers.filter(m => m.status === 'borderline').length} Borderline, {flaggedMarkers.filter(m => m.status === 'high').length} Elevated). Where a food plan applies, it uses Indian staples matched to your diet and allergies; it never replaces medical care.
+                {t('labSummary', {
+                  a: flaggedMarkers.length, n: result.marker_analyses.length,
+                  low: flaggedMarkers.filter((m) => m.status === 'low').length,
+                  border: flaggedMarkers.filter((m) => m.status === 'borderline').length,
+                  high: flaggedMarkers.filter((m) => m.status === 'high').length,
+                })}
               </p>
             )}
           </div>
@@ -142,23 +147,23 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
                               : 'bg-amber-50 text-amber-800 ring-1 ring-amber-200'
                           )}
                         >
-                          {m.status === 'high' ? 'elevated' : m.status} ({Math.round(m.percentage_of_optimal)}% optimal)
+                          {t('statusPct', { status: t(`status_${m.status}` as StringKey), n: Math.round(m.percentage_of_optimal) })}
                         </span>
                       </div>
 
                       <p className="mt-3 text-xs leading-relaxed text-slate-600">
                         {m.clinical_warning ||
                           (m.status === 'low'
-                            ? `Value is below the reference range (${m.range_low} ${m.unit}). Follow the food protocol where one is listed, and discuss it with your doctor.`
+                            ? t('valueBelow', { x: `${m.range_low} ${m.unit}` })
                             : m.status === 'high'
-                            ? `Value is above the reference range (${m.range_high} ${m.unit}). Follow the food protocol where one is listed, and discuss it with your doctor.`
-                            : `Value is on the borderline. Small, steady dietary changes are recommended and the test is worth repeating.`)}
+                            ? t('valueAbove', { x: `${m.range_high} ${m.unit}` })
+                            : t('valueBorder'))}
                       </p>
                     </div>
 
                     <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-medium">
                       <span>Primary Target</span>
-                      <span className="text-brand-700 font-semibold capitalize">{m.target_nutrient_key ? m.target_nutrient_key.replace(/_/g, ' ') : 'Doctor review'}</span>
+                      <span className="text-brand-700 font-semibold capitalize">{m.target_nutrient_key ? (hasKey(`target_${m.target_nutrient_key}`) ? t(`target_${m.target_nutrient_key}` as StringKey) : m.target_nutrient_key.replace(/_/g, ' ')) : t('doctorReview')}</span>
                     </div>
                   </div>
                 ))}
@@ -217,7 +222,7 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
                     Clinical Supervision Recommended
                   </h5>
                   <p className="mt-1 text-xs leading-relaxed text-red-800">
-                    One or more results need a doctor\u2019s attention. Dietary changes should complement, not replace, medical evaluation.
+                    One or more results need a doctor’s attention. Dietary changes should complement, not replace, medical evaluation.
                   </p>
                   <ul className="mt-2 list-disc list-inside text-xs text-red-700 space-y-1">
                     {result.consult_reasons.map((reason, i) => (

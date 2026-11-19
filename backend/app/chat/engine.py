@@ -686,11 +686,11 @@ def food_label(food: dict) -> str:
 def food_line(food: dict, plan: str) -> str:
     if plan in NUTRIENTS:
         name, unit = NUTRIENTS[plan]
-        return f"- **{food_label(food)}**: {fmt(round(food['nutrients'].get(plan, 0), 1))} {unit} {name} per 100 g"
+        return f"- **{food_label(food)}**: {fmt(round(food['nutrients'].get(plan, 0), 1))} {unit} {name} per {food.get('serving_size', 'serving')}"
     tags = TAG_PROFILES.get(plan) or {plan[4:]: 1}
     labels = [TAG_LABELS[t] for t in tags if t in food.get("tags", [])]
     if plan == "protein_support" and food.get("protein_rank_g"):
-        labels.insert(0, f"about {fmt(food['protein_rank_g'])} g protein per 100 g")
+        labels.insert(0, f"about {fmt(food['protein_rank_g'])} g protein per {food.get('serving_size', 'serving')}")
     return f"- **{food_label(food)}**: {', '.join(labels)}"
 
 
@@ -886,10 +886,10 @@ def answer_food(food: dict, concept: Optional[str], diet, allergens) -> Reply:
         amount = food["nutrients"].get(plan, 0) or 0
         position, total = food_rank(food, plan)
         if amount and position <= 40:
-            lines += ["", f"**Yes.** It has {fmt(round(amount, 1))} {unit} {name} per 100 g, ranking #{position} of {total} foods for {name}."]
+            lines += ["", f"**Yes.** It has {fmt(round(amount, 1))} {unit} {name} per {food.get('serving_size', 'serving')}, ranking #{position} of {total} foods for {name}."]
         else:
             better = ranked_foods(plan, diet or "veg", allergens, limit=3)
-            lines += ["", f"It isn't a strong source of {name} ({fmt(round(amount, 1))} {unit} per 100 g). Better options: "
+            lines += ["", f"It isn't a strong source of {name} ({fmt(round(amount, 1))} {unit} per {food.get('serving_size', 'serving')}). Better options: "
                           + ", ".join(food_label(f) for f in better) + "."]
     elif plan:
         weights = TAG_PROFILES.get(plan) or {plan[4:]: 1}
@@ -1015,7 +1015,8 @@ def personal_food_reason(food: dict, context: dict) -> Optional[Reply]:
 
 SELF_HARM = re.compile(r"\b(suicid\w*|kill myself|end my life|want to die|self harm|hurt myself|no reason to live|"
                        r"dont want to live|take my life)\b")
-EMERGENCY = re.compile(r"\b(chest pain|heart attack|cant breathe|cannot breathe|can not breathe|difficulty breathing|"
+EMERGENCY = re.compile(r"\b(chest pain|pain in (?:my |the )?chest|chest (?:is )?(?:hurting|paining|tightness|tight)|"
+                       r"heart attack|cant breathe|cannot breathe|can not breathe|difficulty breathing|"
                        r"trouble breathing|not breathing|unconscious|fainted|fainting|passed out|seizure|seizures|fits|"
                        r"stroke|paralys\w*|severe bleeding|bleeding heavily|heavy bleeding|vomiting blood|coughing blood|"
                        r"blood in vomit|black stool|overdose|poisoning|swallowed poison|collapsed?|collapsing|"
@@ -1097,14 +1098,15 @@ def safety_and_smalltalk(text: str, raw: str, context: Optional[dict], has_entit
                      kind="safety")
     if INJECTION.search(text):
         return Reply(SCOPE_LINE + " I can't change how I work, but I'm happy to help with a question about your report.",
-                     kind="refuse", suggestions=_suggest(context))
+                     kind="refuse", suggestions=_suggest(context), topic="injection")
     if ABUSE.search(text):
         return Reply("I'm here to help. If something isn't working the way you expected, tell me what you're trying to do "
-                     "and I'll do my best.", kind="refuse", suggestions=_suggest(context))
+                     "and I'll do my best.", kind="refuse", suggestions=_suggest(context), topic="abuse")
     letters = re.findall(r"[^\W\d_]", raw)
     if letters and sum(1 for ch in letters if ord(ch) > 127) / len(letters) > 0.5:
         return Reply("Sorry, I can only understand **English** for now. Please ask in English, for example: "
-                     "\"What foods help with low haemoglobin?\"", kind="fallback", suggestions=_suggest(context))
+                     "\"What foods help with low haemoglobin?\"", kind="fallback", suggestions=_suggest(context),
+                     topic="non_english")
     if has_entity:
         return None
     words = text.split()
@@ -1191,6 +1193,8 @@ def answer(message: str, topic: Optional[str] = None, context: Optional[dict] = 
     early = (safety_and_smalltalk(normalize(raw), raw, context, True)
              or safety_and_smalltalk(text, raw, context, bool(entities)))
     if early:
+        if early.topic == "non_english":  # Hindi or Telugu: the e5 model finds the answer or safety topic it means
+            return _semantic_reply(raw, context) or early
         return early
     if CODE.search(raw.lower()):
         return Reply(SCOPE_LINE + " I can't help with that one, but feel free to ask me about your report or diet.",
@@ -1213,7 +1217,8 @@ def answer(message: str, topic: Optional[str] = None, context: Optional[dict] = 
         return Reply("I can't advise on **medicines, supplements or doses**; that depends on your full health picture, so "
                      "please ask your doctor before starting, stopping or changing any of them.\n\nWhat I can do is suggest "
                      "foods that are naturally rich in what you need.", kind="refuse",
-                     suggestions=follow + ["Which foods are rich in iron?", "Which foods are rich in vitamin D?"])
+                     suggestions=follow + ["Which foods are rich in iron?", "Which foods are rich in vitamin D?"],
+                     topic="medicine")
 
     faq_hits = faq_search(text)
     named_now = [m.group("p") for m in _PHRASE_RE.finditer(text_for_foods)]
@@ -1307,11 +1312,32 @@ def answer(message: str, topic: Optional[str] = None, context: Optional[dict] = 
         return Reply("I can help with a few things close to that. Which one did you mean?", kind="clarify",
                      suggestions=options)
 
+    semantic = _semantic_reply(raw, context)
+    if semantic:
+        return semantic
     if in_domain:
         return Reply("I don't have a good answer for that yet. Try asking about a specific test, nutrient or food, for "
                      "example: \"What foods help with low vitamin D?\"", kind="fallback", suggestions=_suggest(context))
     return Reply(SCOPE_LINE + " I can't help with that one, but feel free to ask me about your report or diet.",
                  kind="refuse", suggestions=_suggest(context))
+
+
+# Fixed replies the e5 model's safety topics lead to (the same replies the English patterns give).
+_SAFETY_PROBES = {"safety:emergency": "I have severe chest pain right now", "safety:self_harm": "I want to end my life",
+                  "safety:medicine": "which tablet should i take for iron"}
+
+
+def _semantic_reply(raw: str, context: Optional[dict]) -> Optional[Reply]:
+    """An FAQ answer or safety reply for a question the patterns did not place, in any of the three languages."""
+    from app.nlp import embed
+    label, _score = embed.match_question(raw)
+    if not label:
+        return None
+    if label in _SAFETY_PROBES:
+        return answer(_SAFETY_PROBES[label], None, context)
+    faq_id = label.split(":", 1)[1]
+    index = next((i for i, f in enumerate(FAQ) if f[0] == faq_id), None)
+    return _faq_reply(index) if index is not None else None
 
 
 def _topic_reply(topic: str, intent, direction, diet, allergens) -> Optional[Reply]:

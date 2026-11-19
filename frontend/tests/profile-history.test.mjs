@@ -227,7 +227,7 @@ test('the application defaults to 25 and sends an edited age through analysis to
     });
     assert.equal(submittedAnalysis.user_profile.age, 65);
     assert.equal(submittedAnalysis.biomarkers[0].value, 12);
-    assert.match(document.body.textContent, /Personalized Clinical Nutrition Plan/);
+    assert.match(document.body.textContent, /Your personalised diet plan/);
     assert.match(document.body.textContent, /isn't saved because you're browsing as a guest/);
   } finally { globalThis.fetch = originalFetch; }
 });

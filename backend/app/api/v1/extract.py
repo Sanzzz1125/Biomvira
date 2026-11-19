@@ -58,6 +58,38 @@ def process_report(data, filename, mime, raw_text):
                               unmatched_text_lines=sorted(missing))
 
 
+@router.post('/diet-text')
+async def diet_text(file: UploadFile = File(...)):
+    """Text from a photo or PDF of the person's usual diet (OCR with Tesseract), for the profile's existing-diet box."""
+    try:
+        data = await file.read(settings.max_upload_bytes + 1)
+    finally:
+        await file.close()
+    if len(data) > settings.max_upload_bytes:
+        raise HTTPException(413, 'File exceeds the configured upload size limit.')
+    if _slots.locked():
+        raise HTTPException(503, 'Report processor is busy. Please retry shortly.')
+    async with _slots:
+        payload = json.dumps(dict(mode='diet', data=base64.b64encode(data).decode(), filename=file.filename or '',
+                                  mime=file.content_type or '', text=None)).encode()
+        env = dict(os.environ, PYTHONPATH=str(Path(__file__).resolve().parents[3]))
+        worker = await asyncio.create_subprocess_exec(sys.executable, '-m', 'app.parsers.worker',
+            stdin=asyncio.subprocess.PIPE, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.DEVNULL,
+            env=env, start_new_session=True)
+        try:
+            stdout, _ = await asyncio.wait_for(worker.communicate(payload), timeout=settings.processing_timeout_seconds)
+        except (asyncio.TimeoutError, asyncio.CancelledError):
+            os.killpg(worker.pid, signal.SIGKILL)
+            await worker.wait()
+            raise HTTPException(504, 'Reading the file timed out. Try a clearer photo or type your meals.') from None
+    response = json.loads(stdout)
+    if 'error' in response:
+        raise HTTPException(422, response['error'])
+    if not response['result']['text']:
+        raise HTTPException(422, 'No text could be read. Try a clearer photo or type your meals.')
+    return response['result']
+
+
 @router.post('/extract-report', response_model=ExtractionResponse)
 async def extract_report(file: Optional[UploadFile] = File(None), raw_text: Optional[str] = Form(None)):
     if file is not None and raw_text:

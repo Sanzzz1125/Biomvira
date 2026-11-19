@@ -34,3 +34,7 @@ report/
 # Real lab reports (personal data) - never commit
 sample_reports/
 test_reports/
+
+# Local only: reports and Claude Code settings are never pushed
+NutriLens Final Report*.pdf
+.claude/

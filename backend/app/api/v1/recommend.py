@@ -79,3 +79,12 @@ def analyze_and_recommend(
         ))
         db.commit()
     return response
+
+
+@router.post("/localize-analysis")
+def localize_analysis(analysis: FullAnalysisResponse, lang: str = "en"):
+    """The same results in Hindi or Telugu (results are stored in English)."""
+    from app.i18n import LANGUAGES, localize_analysis as localize
+    if lang not in LANGUAGES:
+        raise HTTPException(422, "Unsupported language.")
+    return localize(analysis.model_dump(mode="json"), lang)

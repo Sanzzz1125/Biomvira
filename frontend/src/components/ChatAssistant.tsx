@@ -1,3 +1,4 @@
+import { currentLanguage } from '../lib/i18n';
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -316,6 +317,10 @@ export const ChatAssistant: React.FC = () => {
         context: pageMatches ? contextPayload(context) : null,
         conversation_id: signedIn ? conversationId : null,
         report_id: signedIn && !conversationId ? current.reportId : null,
+        language: currentLanguage(),
+        history: signedIn ? [] : current.messages
+          .filter((m, i, all) => !(i === all.length - 1 && m.role === 'user' && m.text === text))
+          .slice(-6).map((m) => ({ role: m.role, text: m.text.slice(0, 4000) })),
       });
     };
     try {
@@ -460,7 +465,7 @@ export const ChatAssistant: React.FC = () => {
   return (
     <>
       {showHint && (
-        <div className="fixed bottom-[88px] right-5 z-40 flex w-[300px] max-w-[calc(100vw-2.5rem)] animate-fade-up items-start gap-3 rounded-2xl border border-slate-200 bg-white p-3.5 pl-4 shadow-card-lg">
+        <div className="fixed bottom-[88px] right-5 z-40 hidden w-[300px] sm:flex max-w-[calc(100vw-2.5rem)] animate-fade-up items-start gap-3 rounded-2xl border border-slate-200 bg-white p-3.5 pl-4 shadow-card-lg">
           <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[10px] bg-brand-50 text-brand-600">
             <MessageCircleQuestion className="h-4 w-4" aria-hidden />
           </span>

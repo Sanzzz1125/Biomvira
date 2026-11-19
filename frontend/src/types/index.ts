@@ -2,11 +2,62 @@ export type DietType = 'veg' | 'vegan' | 'eggetarian' | 'non_veg';
 
 export type MarkerStatus = 'low' | 'borderline' | 'normal' | 'high';
 
+export type Activity = 'none' | 'walking' | 'cycling' | 'running';
+
 export interface UserProfile {
   age: number;
   gender: string;
   diet_type: DietType;
   allergens: string[];
+  name?: string;
+  height_cm?: number | null;
+  weight_kg?: number | null;
+  activity?: Activity;
+  region?: string;
+  meats?: string[];
+  custom_allergies?: string[];
+  existing_diet?: string;
+}
+
+/* ------------------------------------------------------------------ diet plans */
+
+export type MealSlot = 'breakfast' | 'lunch' | 'snack' | 'dinner';
+export type PlanStyle = 'familiar' | 'nutritious' | 'regional';
+
+export interface PlanItem {
+  dish_id: string;
+  name: string;
+  names?: { hi?: string; te?: string };
+  servings: number;
+  serving: string;
+  role: string;
+  energy_kcal: number;
+}
+
+export interface PlanTargets {
+  energy_kcal: number;
+  protein_g: number;
+  rda: Record<string, number>;
+  low: string[];
+  sodium_mg: number;
+  bmi: number;
+}
+
+export interface PlanDay {
+  meals: Record<MealSlot, PlanItem[]>;
+  totals: Record<string, number>;
+  targets: PlanTargets;
+  rda_met: Record<string, boolean>;
+  salt_g: number;
+  style?: PlanStyle;
+  title?: string;
+}
+
+export interface ShoppingItem {
+  name: string;
+  names?: { hi: string; te: string };
+  edible_g: number;
+  buy_g: number;
 }
 
 export interface ReferenceRange {
@@ -97,6 +148,7 @@ export interface FullAnalysisResponse {
   requires_physician_consult: boolean;
   consult_reasons: string[];
   saved_to_history?: boolean;
+  diet_plan?: { style: PlanStyle; days: PlanDay[]; shopping_list: ShoppingItem[]; saved_at?: string } | null;
 }
 
 /* ------------------------------------------------------------------ accounts */

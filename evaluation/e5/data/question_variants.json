@@ -1,0 +1,2914 @@
+{
+ "faq:about:0": [
+  "न्यूट्रीलेन्स क्या है?",
+  "న్యూట్రిలెన్స్ అంటే ఏమిటి?",
+  "nutrilens kya hai?",
+  "nutrilens enta?",
+  "What exactly is Nutrilens?"
+ ],
+ "faq:about:1": [
+  "यह वेबसाइट क्या करती है?",
+  "ఈ వెబ్‌సైట్ ఏమి చేస్తుంది?",
+  "ye website kya karti hai?",
+  "ee website emi chestundi?",
+  "What does this site actually do?"
+ ],
+ "faq:about:2": [
+  "यह ऐप क्या है?",
+  "ఈ యాప్ ఏమిటి?",
+  "ye app kya hai?",
+  "ee app enti?",
+  "What is this application?"
+ ],
+ "faq:how_it_works:0": [
+  "न्यूट्रीलेन्स कैसे काम करता है?",
+  "న్యూట్రిలెన్స్ ఎలా పనిచేస్తుంది?",
+  "nutrilens kaise kaam karta hai?",
+  "nutrilens ela panichestundi?",
+  "How does Nutrilens function?"
+ ],
+ "faq:how_it_works:1": [
+  "यह मेरी रिपोर्ट का विश्लेषण कैसे करता है?",
+  "ఇది నా రిపోర్ట్‌ను ఎలా విశ్లేషిస్తుంది?",
+  "ye meri report ka analysis kaise karta hai?",
+  "idi naa report ni ela vishleshinchundi?",
+  "How does it analyze my report?"
+ ],
+ "faq:how_it_works:2": [
+  "आप कौन सा एल्गोरिद्म उपयोग करते हैं?",
+  "మీరు ఏ అల్గారిథమ్ ఉపయోగిస్తున్నారు?",
+  "aap kaun sa algorithm use karte ho?",
+  "meeru ye algorithm vadutunnaru?",
+  "Which algorithm do you employ?"
+ ],
+ "faq:who_made:0": [
+  "न्यूट्रीलेन्स किसने बनाया?",
+  "న్యూట్రిలెన్స్‌ను ఎవరు నిర్మించారు?",
+  "nutrilens kisne banaya?",
+  "nutrilens ni evaru create chesaru?",
+  "Who developed Nutrilens?"
+ ],
+ "faq:who_made:1": [
+  "इसे किसने बनाया?",
+  "దీన్ని ఎవరు నిర్మించారు?",
+  "ise kisne banaya?",
+  "idi ni evaru create chesaru?",
+  "Who built this?"
+ ],
+ "faq:who_made:2": [
+  "आपको किसने बनाया?",
+  "మీను ఎవరు సృష్టించారు?",
+  "aapko kisne banaya?",
+  "meeru ni evaru create chesaru?",
+  "Who created you?"
+ ],
+ "faq:is_free:0": [
+  "क्या न्यूट्रीलेन्स मुफ्त है?",
+  "న్యూట్రిలెన్స్ ఉచితమా?",
+  "nutrilens free hai?",
+  "nutrilens free ga unda?",
+  "Is Nutrilens free of charge?"
+ ],
+ "faq:is_free:1": [
+  "क्या मुझे भुगतान करना पड़ेगा?",
+  "నాకు చెల్లించాలా?",
+  "kya mujhe pay karna padega?",
+  "naaku pay cheyyala?",
+  "Do I need to pay?"
+ ],
+ "faq:is_free:2": [
+  "कीमत क्या है?",
+  "ధర ఎంత?",
+  "cost kitna hai?",
+  "cost enta?",
+  "What is the price?"
+ ],
+ "faq:supported_tests:0": [
+  "कौन से टेस्ट सपोर्टेड हैं?",
+  "ఏ టెస్టులు సపోర్ట్ చేయబడుతాయి?",
+  "kaun se tests supported hain?",
+  "ye tests support chestayi?",
+  "Which tests are supported?"
+ ],
+ "faq:supported_tests:1": [
+  "आप कौन से टेस्ट पढ़ सकते हैं?",
+  "మీరు ఏ పరీక్షలను చదవగలరు?",
+  "aap kaun se tests padh sakte ho?",
+  "meeru ye tests chadavadam chestaru?",
+  "What tests can you read?"
+ ],
+ "faq:supported_tests:2": [
+  "आप कौन से बायोमार्कर विश्लेषण करते हैं?",
+  "మీరు ఏ బయోమార్కర్లు విశ్లేషిస్తారు?",
+  "aap kaun se biomarkers analyse karte ho?",
+  "meeru ye biomarkers analyse chestaru?",
+  "Which biomarkers do you analyze?"
+ ],
+ "faq:plan_tests:0": [
+  "कौन से टेस्ट के लिए फ़ूड प्लान मिलता है?",
+  "ఏ టెస్టులకు ఫుడ్ ప్లాన్ లభిస్తుంది?",
+  "kaun se test ke liye food plan milta hai?",
+  "ē testlaku phuḍ plan labhistundi?",
+  "Which tests come with a food plan?"
+ ],
+ "faq:plan_tests:1": [
+  "थायरॉयड के लिए फ़ूड प्लान क्यों नहीं है?",
+  "థైరాయిడ్‌కి ఫుడ్ ప్లాన్ ఎందుకు లేదు?",
+  "thyroid ke liye food plan kyun nahi hai?",
+  "thairāyiḍki phuḍ plan enduku ledu?",
+  "Why isn’t there a food plan for thyroid?"
+ ],
+ "faq:plan_tests:2": [
+  "मेरे किडनी टेस्ट के लिए डाइट क्यों नहीं है?",
+  "నా కిడ్నీ టెస్ట్ కోసం డైట్ ఎందుకు లేదు?",
+  "mere kidney test ke liye diet kyun nahi hai?",
+  "naa kiḍnī ṭesṭ kōsam dāiṭ enduku ledu?",
+  "Why is there no diet for my kidney test?"
+ ],
+ "faq:food_source:0": [
+  "फ़ूड डेटा कहां से आता है?",
+  "ఫుడ్ డేటా ఎక్కడి నుండి వస్తుంది?",
+  "food data kahan se aata hai?",
+  "phuḍ ḍēṭa ekkaḍi nundi vastundi?",
+  "Where does the food data come from?"
+ ],
+ "faq:food_source:1": [
+  "पोषक तत्वों के मानों का स्रोत क्या है?",
+  "పోషక విలువల మూలం ఏమిటి?",
+  "poshak tatvon ke maan ka source kya hai?",
+  "pōṣaka viluvula mūla emi?",
+  "What is the source of nutrient values?"
+ ],
+ "faq:food_source:2": [
+  "क्या पोषक तत्वों के मान सही हैं?",
+  "పోషక విలువలు సరిగా ఉన్నాయా?",
+  "kya poshak tatvon ke maan sahi hain?",
+  "pōṣaka viluvulu sarigā unnāya?",
+  "Are the nutrient values correct?"
+ ],
+ "faq:ranges_source:0": [
+  "नॉर्मल रेंजेज़ कहां से आती हैं?",
+  "సాధారణ రేంజ్‌లు ఎక్కడి నుండి వస్తాయి?",
+  "normal ranges kahan se aati hain?",
+  "sādhāraṇa rējlu ekkaḍi nundi vastāyi?",
+  "Where do the normal ranges come from?"
+ ],
+ "faq:ranges_source:1": [
+  "आप कौन सा रेफ़रेंस रेंज इस्तेमाल करते हैं?",
+  "మీరు ఏ రిఫరెన్స్ రేంజ్‌ను ఉపయోగిస్తున్నారు?",
+  "aap kaun sa reference range istemal karte hain?",
+  "meeru ē referens rējnu upayogistunnāru?",
+  "Which reference range do you use?"
+ ],
+ "faq:ranges_source:2": [
+  "मेरे लैब रेंज मेरे सामान्य रेंज से क्यों अलग है?",
+  "నా ల్యాబ్ రేంజ్ నా సాధారణ రేంజ్‌కి ఎందుకు వేరుగా ఉంది?",
+  "mere lab range mere normal range se kyun alag hai?",
+  "naa lab rēj naa sādhāraṇa rēj ki enduku veruga undi?",
+  "Why is my lab range different from the standard?"
+ ],
+ "faq:upload:0": [
+  "अपलोड करने के बाद अगला कदम क्या है?",
+  "అప్‌లోడ్‌ తర్వాత తదుపరి స్టెప్ ఏమిటి?",
+  "upload karne ke baad agla kadam kya hai?",
+  "apload taruvāta tadupari step enti?",
+  "What’s the next step after uploading?"
+ ],
+ "faq:upload:1": [
+  "रिपोर्ट अपलोड करने के बाद मुझे क्या करना चाहिए?",
+  "రిపోర్ట్ అప్‌లోడ్ చేసిన తర్వాత నేను ఏమి చేయాలి?",
+  "report upload karne ke baad mujhe kya karna chahiye?",
+  "rapōrt apload chesina taruvāta nēnu ēmi cēyāli?",
+  "What should I do after uploading the report?"
+ ],
+ "faq:upload:2": [
+  "मैं अपनी रिपोर्ट कैसे अपलोड करूँ?",
+  "నేను నా రిపోర్ట్‌ను ఎలా అప్‌లోడ్ చేయాలి?",
+  "main apni report kaise upload karun?",
+  "nēnu naa rapōrtni ela apload cheyyāli?",
+  "How do I upload my report?"
+ ],
+ "faq:file_types:0": [
+  "मैं कौन से फाइल प्रकार अपलोड कर सकता हूँ?",
+  "నేను ఏ ఫైల్ టైప్స్‌ను అప్‌లోడ్ చేయగలను?",
+  "main kaun se file types upload kar sakta hun?",
+  "nēnu ē file typesni apload cheyyavacchu?",
+  "Which file types can I upload?"
+ ],
+ "faq:file_types:1": [
+  "क्या मैं फोटो अपलोड कर सकता हूँ?",
+  "నేను ఫోటో అప్‌లోడ్ చేయగలనా?",
+  "kya main photo upload kar sakta hun?",
+  "nēnu photo apload cheyyavacchā?",
+  "Can I upload a photo?"
+ ],
+ "faq:file_types:2": [
+  "क्या मैं इमेज अपलोड कर सकता हूँ?",
+  "నేను ఇమేజ్ అప్‌లోడ్ చేయగలనా?",
+  "kya main image upload kar sakta hun?",
+  "nēnu image apload cheyyavacchā?",
+  "Can I upload an image?"
+ ],
+ "faq:labs:0": [
+  "कौन से लैब सपोर्टेड हैं?",
+  "ఏ ల్యాబ్‌లు సపోర్ట్ చేయబడుతున్నాయి?",
+  "kaun se lab supported hain?",
+  "ē lyāb lu supōrṭ cēyabaḍutunnāyi?",
+  "Which labs are supported?"
+ ],
+ "faq:labs:1": [
+  "क्या यह मेरे लैब के साथ काम करता है?",
+  "ఇది నా ల్యాబ్‌తో పనిచేస్తుందా?",
+  "kya yeh mere lab ke sath kaam karta hai?",
+  "idi nā lyāb tō pān̄cēstundā?",
+  "Does it work with my lab?"
+ ],
+ "faq:labs:2": [
+  "क्या यह अपोलो रिपोर्ट के लिए काम करता है?",
+  "ఇది అపోలో రిపోర్ట్ కోసం పనిచేస్తుందా?",
+  "kya yeh Apollo report ke liye kaam karta hai?",
+  "idi Apollo report kosam pān̄cēstundā?",
+  "Does it work for Apollo report?"
+ ],
+ "faq:not_read:0": [
+  "किसी वैल्यू को पढ़ा क्यों नहीं गया?",
+  "ఏ విలువ చదవబడలేదు ఎందుకు?",
+  "kisi value ko padha kyun nahi gaya?",
+  "ē viluva caḍavabaḍaledu enduku?",
+  "Why was a value not read?"
+ ],
+ "faq:not_read:1": [
+  "मेरा टेस्ट गायब है?",
+  "నా టెస్ట్ మిస్ అయిందా?",
+  "mera test missing hai?",
+  "nā ṭesṭ miss ayindā?",
+  "My test is missing?"
+ ],
+ "faq:not_read:2": [
+  "कुछ परिणाम गायब हैं?",
+  "కొన్ని ఫలితాలు మిస్ అయ్యాయా?",
+  "kuch results missing hain?",
+  "konni phalitālu miss ayyayā?",
+  "Some results are missing?"
+ ],
+ "faq:review_step:0": [
+  "मुझे परिणाम रिव्यू क्यों करना पड़ता है?",
+  "నాకు ఫలితాలను రివ్యూ చేయాల్సి ఎందుకు?",
+  "mujhe results review kyun karna padta hai?",
+  "nāku phalitālani review cēyālasi enduku?",
+  "Why do I have to review results?"
+ ],
+ "faq:review_step:1": [
+  "किसी वैल्यू को रिव्यू के लिए मार्क क्यों किया गया?",
+  "ఏ విలువను రివ్యూ కోసం మార్క్ చేశారు?",
+  "kisi value ko review ke liye mark kyun kiya gaya?",
+  "ē viluvanu review kosam mark chesaru?",
+  "Why was a value marked for review?"
+ ],
+ "faq:review_step:2": [
+  "'Needs attention' का मतलब क्या है?",
+  "'Needs attention' అంటే ఏమిటి?",
+  "'Needs attention' ka matlab kya hai?",
+  "'Needs attention' ante ēmiṭi?",
+  "What does needs attention mean?"
+ ],
+ "faq:edit_values:0": [
+  "मैं वैल्यू कैसे एडिट करूँ?",
+  "నేను విలువను ఎలా ఎడిట్ చేయాలి?",
+  "main value kaise edit karun?",
+  "nēnu viluvunu elā edit cēyāli?",
+  "How do I edit a value?"
+ ],
+ "faq:edit_values:1": [
+  "क्या मैं परिणाम बदल सकता हूँ?",
+  "నేను ఫలితాన్ని మార్చగలనా?",
+  "kya main result change kar sakta hun?",
+  "nēnu phalitānni mārcagalāna?",
+  "Can I change a result?"
+ ],
+ "faq:edit_values:2": [
+  "टेस्ट मैन्युअली कैसे जोड़ूँ?",
+  "టెస్ట్‌ను మాన్యువల్‌గా ఎలా జోడించాలి?",
+  "test manually kaise add karun?",
+  "ṭesṭnu mānyualgā elā jōḍi cēyāli?",
+  "How to add a test manually?"
+ ],
+ "faq:paste_text:0": [
+  "क्या मैं टेक्स्ट पेस्ट कर सकता हूँ?",
+  "నేను టెక్స్ట్ పేస్ట్ చేయగలనా?",
+  "kya main text paste kar sakta hun?",
+  "nēnu ṭeksṭ paste cēyagalāna?",
+  "Can I paste text?"
+ ],
+ "faq:paste_text:1": [
+  "मेरी रिपोर्ट कैसे पेस्ट करूँ?",
+  "నా రిపోర్ట్‌ను ఎలా పేస్ట్ చేయాలి?",
+  "meri report kaise paste karun?",
+  "nā reportnu elā paste cēyāli?",
+  "How to paste my report?"
+ ],
+ "faq:paste_text:2": [
+  "क्या मैं वैल्यू टाइप कर सकता हूँ?",
+  "నేను విలువలను టైప్ చేయగలనా?",
+  "kya main values type kar sakta hun?",
+  "nēnu viluvlanu type cēyagalāna?",
+  "Can I type my values?"
+ ],
+ "faq:profile:0": [
+  "मुझे मेरी उम्र क्यों चाहिए?",
+  "నా వయస్సు ఎందుకు కావాలి?",
+  "Mujhe meri umar kyon chahiye?",
+  "na vayassu enduku kavali?",
+  "Why do you need my age?"
+ ],
+ "faq:profile:1": [
+  "आपका लिंग क्यों पूछ रहे हैं?",
+  "మీ లింగం ఎందుకు అడుగుతున్నారు?",
+  "Aapka ling kyon pooch rahe hain?",
+  "mee lingam enduku adugutunnaru?",
+  "Why ask my gender?"
+ ],
+ "faq:profile:2": [
+  "आपको मेरे डाइट टाइप की ज़रूरत क्यों है?",
+  "మీ ఆహార రకాన్ని ఎందుకు తెలుసుకోవాలి?",
+  "Aapko mere diet type ki zaroorat kyon hai?",
+  "mee aahara rakam enduku telusukovali?",
+  "Why do you need my diet type?"
+ ],
+ "faq:allergies:0": [
+  "मैं अपनी एलर्जी कैसे सेट करूँ?",
+  "నేను నా అలర్జీలను ఎలా సెట్ చేయాలి?",
+  "Main apni allergy kaise set karun?",
+  "nenu naa alarjilu ela set cheyyali?",
+  "How do I set my allergies?"
+ ],
+ "faq:allergies:1": [
+  "क्या मैं खाद्य पदार्थों को बाहर कर सकता हूँ?",
+  "నేను ఆహార అంశాలను తొలగించగలనా?",
+  "Kya main khadya padarthon ko bahar kar sakta hoon?",
+  "nenu aahara amshalu tholagincha galava?",
+  "Can I exclude foods?"
+ ],
+ "faq:allergies:2": [
+  "मुझे नट्स से एलर्जी है",
+  "నాకు నట్లు అలర్జీ ఉంది",
+  "Mujhe nuts se allergy hai",
+  "naaku nutlu alarji undi",
+  "I am allergic to nuts."
+ ],
+ "faq:statuses:0": [
+  "लो, बॉर्डरलाइन और हाई का मतलब क्या है?",
+  "తక్కువ, బోర్డర్‌లైన్ మరియు హై అంటే ఏమిటి?",
+  "Low, borderline aur high ka matlab kya hai?",
+  "takkuva, borderline mariyu high ante emi?",
+  "What do low, borderline and high mean?"
+ ],
+ "faq:statuses:1": [
+  "बॉर्डरलाइन का क्या मतलब है?",
+  "బోర్డర్‌లైన్ అంటే ఏమిటి?",
+  "Borderline ka kya matlab hai?",
+  "borderline ante emi?",
+  "What does borderline mean?"
+ ],
+ "faq:statuses:2": [
+  "नॉर्मल का क्या अर्थ है?",
+  "నార్మల్ అంటే ఏమిటి?",
+  "Normal ka kya arth hai?",
+  "normal ante emi?",
+  "What does normal mean?"
+ ],
+ "faq:health_score:0": [
+  "हेल्थ स्कोर क्या है?",
+  "ఆరోగ్య స్కోరు అంటే ఏమిటి?",
+  "Health score kya hai?",
+  "aarogya score enti?",
+  "What is the health score?"
+ ],
+ "faq:health_score:1": [
+  "हेल्थ स्कोर कैसे निकाला जाता है?",
+  "ఆరోగ్య స్కోరు ఎలా లెక్కించబడుతుంది?",
+  "Health score kaise nikala jata hai?",
+  "aarogya score ela lekkistaru?",
+  "How is the health score calculated?"
+ ],
+ "faq:health_score:2": [
+  "मेरे स्कोर का क्या मतलब है?",
+  "నా స్కోర్ అంటే ఏమిటి?",
+  "Mere score ka kya matlab hai?",
+  "naa score ante emi?",
+  "What does my score mean?"
+ ],
+ "faq:food_plan:0": [
+  "मैं फूड प्लान कैसे पढ़ूँ?",
+  "నేను ఫుడ్ ప్లాన్‌ను ఎలా చదవాలి?",
+  "Main food plan kaise padun?",
+  "nenu food plan ela chadaval?",
+  "How do I read the food plan?"
+ ],
+ "faq:food_plan:1": [
+  "फूड प्लान क्या है?",
+  "ఫుడ్ ప్లాన్ అంటే ఏమిటి?",
+  "Food plan kya hai?",
+  "food plan enti?",
+  "What is the food plan?"
+ ],
+ "faq:food_plan:2": [
+  "ये खाद्य क्यों हैं?",
+  "ఈ ఆహారాలు ఎందుకు ఉన్నాయి?",
+  "Ye khadya kyon hain?",
+  "ee aaharalu enduku unnayi?",
+  "Why these foods?"
+ ],
+ "faq:pdf:0": [
+  "क्या मैं अपना प्लान डाउनलोड कर सकता हूँ?",
+  "నా ప్లాన్‌ను డౌన్‌లోడ్ చేసుకోవచ్చా?",
+  "kya main apna plan download kar sakta hoon?",
+  "naa plaannu download cheyyavacchaa?",
+  "Can I download my plan?"
+ ],
+ "faq:pdf:1": [
+  "पीडीएफ कैसे डाउनलोड करें?",
+  "PDF ను ఎలా డౌన్‌లోడ్ చేయాలి?",
+  "PDF kaise download karein?",
+  "PDF ela download cheyyali?",
+  "How to download PDF?"
+ ],
+ "faq:pdf:2": [
+  "क्या मैं अपना प्लान प्रिंट कर सकता हूँ?",
+  "నా ప్లాన్‌ను ప్రింట్ చేయగలనా?",
+  "kya main apna plan print kar sakta hoon?",
+  "naa plaannu print cheyyavacchaa?",
+  "Can I print my plan?"
+ ],
+ "faq:history:0": [
+  "मेरी हिस्ट्री कहाँ है?",
+  "నా హిస్టరీ ఎక్కడుంది?",
+  "meri history kahaan hai?",
+  "naa history ekkada undi?",
+  "Where is my history?"
+ ],
+ "faq:history:1": [
+  "पुराने रिपोर्ट्स कैसे देखें?",
+  "పాత రిపోర్ట్స్‌ను ఎలా చూడాలి?",
+  "purane reports kaise dekhen?",
+  "paatha reports ela choostha?",
+  "How do I see old reports?"
+ ],
+ "faq:history:2": [
+  "क्या मेरे विश्लेषण सेव हो रहे हैं?",
+  "నా విశ్లేషణలు సేవ్ అవుతున్నాయా?",
+  "kya mere vishleshan save ho rahe hain?",
+  "naa vishleshanlu save avuthunnaya?",
+  "Are my analyses saved?"
+ ],
+ "faq:account:0": [
+  "क्या मुझे अकाउंट चाहिए?",
+  "నాకు అకౌంట్ అవసరమా?",
+  "kya mujhe account chahiye?",
+  "naaku account avasaram?",
+  "Do I need an account?"
+ ],
+ "faq:account:1": [
+  "मैं साइन अप कैसे करूँ?",
+  "నేను సైన్‑అప్ ఎలా చేయాలి?",
+  "main sign up kaise karun?",
+  "nenu sign up ela cheyyali?",
+  "How do I sign up?"
+ ],
+ "faq:account:2": [
+  "रजिस्टर कैसे करें?",
+  "రెజిస్టర్ ఎలా చేయాలి?",
+  "register kaise karein?",
+  "register ela cheyyali?",
+  "How to register?"
+ ],
+ "faq:password:0": [
+  "मैंने पासवर्ड भूल गया हूँ",
+  "నేను పాస్వర్డ్ మరిచిపోయాను",
+  "maine password bhool gaya hoon",
+  "nenu password marichipoyanu",
+  "I forgot my password"
+ ],
+ "faq:password:1": [
+  "पासवर्ड रीसेट कैसे करें?",
+  "పాస్వర్డ్ రీసెట్ ఎలా చేయాలి?",
+  "password reset kaise karein?",
+  "password reset ela cheyyali?",
+  "How to reset password?"
+ ],
+ "faq:password:2": [
+  "लॉग इन नहीं हो पा रहा हूँ",
+  "లాగిన్ కావడం లేదు",
+  "log in nahi ho pa raha hoon",
+  "login kaadu",
+  "Cannot log in"
+ ],
+ "faq:delete_account:0": [
+  "मैं अपना अकाउंट कैसे डिलीट करूँ?",
+  "నేను నా అకౌంట్‌ను ఎలా తొలగించాలి?",
+  "main apna account kaise delete karun?",
+  "nenu naa account ela delete cheyyali?",
+  "How do I delete my account?"
+ ],
+ "faq:delete_account:1": [
+  "मेरे अकाउंट को हटाओ",
+  "నా అకౌంట్‌ను తొలగించండి",
+  "mere account ko hatao",
+  "naa account ni delete cheyyi",
+  "Remove my account"
+ ],
+ "faq:delete_account:2": [
+  "मेरे डेटा को डिलीट करो",
+  "నా డేటాను తొలగించండి",
+  "mere data ko delete karo",
+  "naa data ni delete cheyyi",
+  "Delete my data"
+ ],
+ "faq:privacy:0": [
+  "मेरी डेटा प्राइवेट है क्या?",
+  "నా డేటా ప్రైవేట్‌నా?",
+  "mera data private hai kya?",
+  "naa data privatenaa?",
+  "Is my data private?"
+ ],
+ "faq:privacy:1": [
+  "क्या मेरी रिपोर्ट सुरक्षित है?",
+  "నా రిపోర్ట్ సేఫ్‌నా?",
+  "kya meri report safe hai?",
+  "naa report safe naa?",
+  "Is my report safe?"
+ ],
+ "faq:privacy:2": [
+  "क्या आप मेरी रिपोर्ट स्टोर करते हैं?",
+  "మీరు నా రిపోర్ట్ స్టోర్ చేస్తారా?",
+  "kya aap meri report store karte ho?",
+  "meeru naa report store chestava?",
+  "Do you store my report?"
+ ],
+ "faq:diagnosis:0": [
+  "क्या यह मेडिकल डायग्नोसिस है?",
+  "ఇది మెడికల్ డయాగ్నోసిస్‌నా?",
+  "kya yeh medical diagnosis hai?",
+  "idi medical diagnosis naa?",
+  "Is this a medical diagnosis?"
+ ],
+ "faq:diagnosis:1": [
+  "क्या मैं डॉक्टर की जगह इसे भरोसा कर सकता हूँ?",
+  "నేను డాక్టర్ బదులు దీనిని నమ్మవచ్చా?",
+  "kya main doctor ki jagah ise trust kar sakta hoon?",
+  "nenu doctor badilu idi trust chestava?",
+  "Can I trust this instead of a doctor?"
+ ],
+ "faq:diagnosis:2": [
+  "क्या यह मेडिकल सलाह है?",
+  "ఇది మెడికల్ అడ్వైస్‌నా?",
+  "kya yeh medical advice hai?",
+  "idi medical advice naa?",
+  "Is this medical advice?"
+ ],
+ "faq:see_doctor:0": [
+  "मुझे डॉक्टर को कब देखना चाहिए?",
+  "నేను డాక్టర్‌ను ఎప్పుడు చూడాలి?",
+  "mujhe doctor ko kab dekhna chahiye?",
+  "nenu doctor ni eppudu choosali?",
+  "When should I see a doctor?"
+ ],
+ "faq:see_doctor:1": [
+  "क्या मेरा परिणाम गंभीर है?",
+  "నా ఫలితం సీరియస్‌నా?",
+  "kya mera result serious hai?",
+  "naa result serious naa?",
+  "Is my result serious?"
+ ],
+ "faq:see_doctor:2": [
+  "क्या मुझे चिंता करनी चाहिए?",
+  "నాకు చింతించాలి?",
+  "kya mujhe worry karna chahiye?",
+  "naaku worry cheyyala?",
+  "Should I be worried?"
+ ],
+ "faq:accuracy:0": [
+  "नुट्रीलेन्स की सटीकता कितनी है?",
+  "న్యూట్రిలెన్స్ ఖచ్చితత్వం ఎంత?",
+  "nutrilens ki accuracy kitni hai?",
+  "nutrilens accuracy enta?",
+  "How accurate is Nutrilens?"
+ ],
+ "faq:accuracy:1": [
+  "क्या मैं परिणामों पर भरोसा कर सकता हूँ?",
+  "నేను ఫలితాలపై నమ్మకం పెట్టుకోవచ్చా?",
+  "kya main results par trust kar sakta hoon?",
+  "nenu results me trust cheyyavaccha?",
+  "Can I trust the results?"
+ ],
+ "faq:accuracy:2": [
+  "क्या पढ़ाई सही है?",
+  "పఠనం సరిగా ఉందా?",
+  "kya reading sahi hai?",
+  "reading correctaa?",
+  "Is the reading correct?"
+ ],
+ "faq:medicines:0": [
+  "क्या मुझे सप्लीमेंट्स लेने चाहिए?",
+  "నాకు సప్లిమెంట్స్ తీసుకోవాలా?",
+  "kya mujhe supplements lene chahiye?",
+  "naaku supplements teesukovaala?",
+  "Should I take supplements?"
+ ],
+ "faq:medicines:1": [
+  "क्या मैं आयरन टैबलेट ले सकता हूँ?",
+  "నేను ఐరన్ టాబ్లెట్ తీసుకోవచ్చా?",
+  "kya main iron tablets le sakta hoon?",
+  "nenu iron tablets teesukovaala?",
+  "Can I take iron tablets?"
+ ],
+ "faq:medicines:2": [
+  "कौन सी विटामिन डी टैबलेट लेनी चाहिए?",
+  "ఏ Vitamin D టాబ్లెట్ తీసుకోవాలి?",
+  "kaun si vitamin D tablet leni chahiye?",
+  "e vitamin D tablet teesukovali?",
+  "Which vitamin D tablet should I take?"
+ ],
+ "faq:pregnancy:0": [
+  "मैं गर्भवती हूँ",
+  "నేను గర్భవతి",
+  "main pregnant hoon",
+  "nenu garbhavati",
+  "I'm expecting a baby"
+ ],
+ "faq:pregnancy:1": [
+  "क्या यह योजना गर्भावस्था में सुरक्षित है?",
+  "గర్భధారణలో ఈ ప్లాన్ సురక్షితమా?",
+  "kya yeh plan pregnancy mein safe hai?",
+  "garbhadharanalo ee plan surakshithama?",
+  "Is this plan safe during pregnancy?"
+ ],
+ "faq:pregnancy:2": [
+  "क्या गर्भवती महिलाएं इसे इस्तेमाल कर सकती हैं?",
+  "గర్భిణీ స్త్రీలు దీనిని ఉపయోగించగలరా?",
+  "kya pregnant women use kar sakti hain?",
+  "garbhinI strIlu deenini upayoginchagalara?",
+  "Can pregnant women use this?"
+ ],
+ "faq:children:0": [
+  "क्या बच्चे इसे उपयोग कर सकते हैं?",
+  "పిల్లలు దీనిని ఉపయోగించగలరా?",
+  "kya bachche isse use kar sakte hain?",
+  "pillalu deenini upayoginchagalara?",
+  "Can kids use this?"
+ ],
+ "faq:children:1": [
+  "क्या यह बच्चों के लिए है?",
+  "ఇది పిల్లల కోసం అనుకూలమా?",
+  "kya yeh kids ke liye hai?",
+  "idi pillala kosam anukoolama?",
+  "Is this meant for children?"
+ ],
+ "faq:children:2": [
+  "मेरे बच्चे की रिपोर्ट क्या कहती है?",
+  "నా పిల్లల రిపోర్ట్ ఏమంటుంది?",
+  "mere child ki report kya kehti hai?",
+  "naa pillala report emantundi?",
+  "What does my child's report say?"
+ ],
+ "faq:fasting_test:0": [
+  "क्या मुझे ब्लड टेस्ट से पहले उपवास करना चाहिए?",
+  "బ్లడ్ టెస్ట్‌కు ముందు ఉపవాసం అవసరమా?",
+  "kya mujhe blood test se pehle fast karna chahiye?",
+  "blood test ki mundu upavaasam avasaram?",
+  "Should I fast before a blood test?"
+ ],
+ "faq:fasting_test:1": [
+  "क्या मुझे उपवास की जरूरत है?",
+  "నాకు ఉపవాసం అవసరమా?",
+  "kya mujhe fast ki zaroorat hai?",
+  "naaku upavaasam avasaram?",
+  "Do I need to fast?"
+ ],
+ "faq:fasting_test:2": [
+  "क्या ब्लड टेस्ट से पहले पानी पी सकता हूँ?",
+  "బ్లడ్ టెస్ట్‌కు ముందు నీరు తాగవచ్చా?",
+  "kya blood test se pehle paani pe sakta hoon?",
+  "blood test ki mundu neeru taagavaccha?",
+  "Can I drink water before a blood test?"
+ ],
+ "faq:retest:0": [
+  "मुझे अपने टेस्ट कितनी बार दोहराने चाहिए?",
+  "నా టెస్టులను ఎన్ని సార్లు పునరావృతం చేయాలి?",
+  "mujhe apne test kitni baar repeat karne chahiye?",
+  "naa testlu enni saarlu punaraavrutam cheyyali?",
+  "How often should I repeat my tests?"
+ ],
+ "faq:retest:1": [
+  "अगली बार टेस्ट कब करना चाहिए?",
+  "తదుపరి టెస్ట్ ఎప్పుడు చేయాలి?",
+  "agli baar test kab karna chahiye?",
+  "tadupuri test eppudu cheyyali?",
+  "When should I test again?"
+ ],
+ "faq:retest:2": [
+  "मेरे लेवल्स कब सुधरेंगे?",
+  "నా లెవల్స్ ఎప్పుడు మెరుగవుతాయి?",
+  "mere levels kab sudhrenge?",
+  "naa levels eppudu meruguthayi?",
+  "How soon will my levels improve?"
+ ],
+ "faq:tiredness:0": [
+  "मैं हमेशा थका हुआ महसूस करता हूँ",
+  "నేను ఎప్పుడూ అలసటగా అనిపిస్తోంది",
+  "main hamesha thaka hua feel karta hoon",
+  "nenu eppudu alasataga anipistunnanu",
+  "I feel constantly exhausted"
+ ],
+ "faq:tiredness:1": [
+  "मैं हमेशा थका क्यों रहता हूँ?",
+  "నేను ఎప్పుడూ ఎందుకు అలసిపోతున్నాను?",
+  "main hamesha thaka kyon rehta hoon?",
+  "nenu eppudu enduku alasipothunnanu?",
+  "Why am I always tired?"
+ ],
+ "faq:tiredness:2": [
+  "लगातार थकान क्यों?",
+  "నిరంతర అలసటకు కారణం ఏమిటి?",
+  "lagataar thakaan kyon?",
+  "nirantara alasataku kaaranam emiti?",
+  "Why constant fatigue?"
+ ],
+ "faq:hair_fall:0": [
+  "बाल गिरना",
+  "జుట్టు పడటం",
+  "baal girna",
+  "juttu padatam",
+  "hair shedding"
+ ],
+ "faq:hair_fall:1": [
+  "मेरे बाल क्यों गिर रहे हैं?",
+  "నా జుట్టు ఎందుకు పడుతుంది?",
+  "mere baal kyun gir rahe hain?",
+  "naa juttu enduku padutundi?",
+  "why is my hair shedding?"
+ ],
+ "faq:hair_fall:2": [
+  "बालों के झड़ने के लिए कौन सा आहार?",
+  "జుట్టు పడిపోవడానికి ఏ ఆహారం?",
+  "baalon ke jhadne ke liye kaun sa aahar?",
+  "juttu padipovadaniki ee aaharam?",
+  "diet for hair loss"
+ ],
+ "faq:tea_iron:0": [
+  "क्या चाय आयरन को प्रभावित करती है?",
+  "టీ ఐరన్‌పై ప్రభావం చూపుతుందా?",
+  "kya chai iron ko prabhavit karti hai?",
+  "tee iron pai prabhaavam chuputhundaa?",
+  "does tea affect iron?"
+ ],
+ "faq:tea_iron:1": [
+  "क्या मैं खाने के बाद चाय पी सकता हूँ?",
+  "భోజనానంతరం నేను టీ తాగవచ్చా?",
+  "kya main khane ke baad chai pee sakta hoon?",
+  "bhodhanantharam nenu tee taagavaccha?",
+  "can I drink tea after meals?"
+ ],
+ "faq:tea_iron:2": [
+  "क्या कॉफी स्वास्थ्य के लिए बुरी है?",
+  "కాఫీ ఆరోగ్యానికి హానికరమా?",
+  "kya coffee swasthya ke liye buri hai?",
+  "kaafi aarogyaniki haanikarama?",
+  "is coffee harmful to health?"
+ ],
+ "faq:iron_cooking:0": [
+  "क्या लोहे की कड़ाही में खाना बनाने से लाभ मिलता है?",
+  "ఇనుము పాన్‌లో వంట చేయడం ప్రయోజనకరమా?",
+  "kya lohe ki kadhai mein khana banane se labh milta hai?",
+  "inumu pan lo vantacheyadam prayojanakara?",
+  "does cooking in iron pan help?"
+ ],
+ "faq:iron_cooking:1": [
+  "लोहे की कड़ाही",
+  "ఇనుము కడాయి",
+  "lohe ki kadhai",
+  "inumu kadai",
+  "iron kadai"
+ ],
+ "faq:iron_cooking:2": [
+  "आयरन का अधिक अवशोषण कैसे करें?",
+  "ఇనుము ఎక్కువగా శోషించడానికి ఎలా?",
+  "iron ka adhik avshoshana kaise karein?",
+  "inumu ekkuvaga shoshinchadaniki ela?",
+  "how to absorb more iron"
+ ],
+ "faq:sunlight:0": [
+  "विटामिन D के लिए कितनी धूप चाहिए?",
+  "విటమిన్ D కోసం ఎంత సూర్యకాంతి అవసరం?",
+  "vitamin D ke liye kitni dhoop chahiye?",
+  "vitamin D kosam entha suryakanti avasaram?",
+  "how much sunlight for vitamin D?"
+ ],
+ "faq:sunlight:1": [
+  "क्या धूप से विटामिन D मिलता है?",
+  "సూర్యకాంతి ద్వారా విటమిన్ D వస్తుందా?",
+  "kya dhoop se vitamin D milta hai?",
+  "surya kanti dvara vitamin D vastunda?",
+  "does sunlight give vitamin D?"
+ ],
+ "faq:sunlight:2": [
+  "सूर्य की सबसे अच्छी समय कौन सा है?",
+  "సూర్యకాంతి కోసం ఉత్తమ సమయం ఏది?",
+  "surya ki sabse achhi samay kaun sa hai?",
+  "surya kanti kosam uttama samayam edi?",
+  "best time for sunlight"
+ ],
+ "faq:water:0": [
+  "मुझे रोज़ कितना पानी पीना चाहिए?",
+  "నాకు రోజుకు ఎంత నీరు తాగాలి?",
+  "mujhe roz kitna paani peena chahiye?",
+  "naaku rojuku entha neeru taagali?",
+  "how much water should I drink daily?"
+ ],
+ "faq:water:1": [
+  "दैनिक जल सेवन कितना होना चाहिए?",
+  "ప్రతిరోజు నీటి తీసుకోవడం ఎంత?",
+  "daily jal sevan kitna hona chahiye?",
+  "pratiroju neeti teesukovadam enta?",
+  "daily water intake"
+ ],
+ "faq:water:2": [
+  "क्या पानी पीना जरूरी है?",
+  "నీరు తాగడం అవసరమా?",
+  "kya paani peena zaroori hai?",
+  "neeru taagadam avasaram?",
+  "is drinking water important?"
+ ],
+ "faq:healthy_plate:0": [
+  "स्वस्थ आहार क्या है",
+  "ఆరోగ్యకరమైన ఆహారం అంటే ఏమిటి",
+  "healthy diet kya hai",
+  "aarogyakaramaina aahaaram ante emiti",
+  "What defines a wholesome diet"
+ ],
+ "faq:healthy_plate:1": [
+  "संतुलित भोजन कैसा दिखना चाहिए",
+  "సమతుల్య భోజనం ఎలా ఉండాలి",
+  "balanced meal kaisa dikhna chahiye",
+  "samatulya bhojanam ela undaali",
+  "What should a well‑balanced plate look like"
+ ],
+ "faq:healthy_plate:2": [
+  "स्वस्थ भारतीय आहार",
+  "ఆరోగ్యకరమైన భారతీయ ఆహారం",
+  "healthy Indian diet",
+  "aarogyakaramaina Bharatiya aahaaram",
+  "Nutritious diet for Indians"
+ ],
+ "faq:weight:0": [
+  "वज़न कैसे घटाएँ",
+  "బరువు ఎలా తగ్గించాలి",
+  "how to lose weight",
+  "baruvu ela tagginchali",
+  "Ways to shed pounds"
+ ],
+ "faq:weight:1": [
+  "वज़न घटाने के लिए डाइट",
+  "బరువు తగ్గడానికి డైట్",
+  "diet for weight loss",
+  "baruvu taggadaniki diet",
+  "Meal plan for slimming down"
+ ],
+ "faq:weight:2": [
+  "पेट की चर्बी कैसे कम करें",
+  "పొట్ట కొవ్వు ఎలా తగ్గించాలి",
+  "how to reduce belly fat",
+  "potta kovvu ela tagginchali",
+  "Tips to trim abdominal fat"
+ ],
+ "faq:exercise:0": [
+  "मैं कितना व्यायाम करूँ?",
+  "నేను ఎంత వ్యాయామం చేయాలి?",
+  "how much exercise should i do",
+  "nenu entha vyaayaamam cheyaali",
+  "Recommended amount of physical activity"
+ ],
+ "faq:exercise:1": [
+  "क्या व्यायाम मदद करता है?",
+  "వ్యాయామం సహాయపడుతుందా?",
+  "does exercise help",
+  "vyaayaamam sahaayapadutunda?",
+  "Is working out beneficial?"
+ ],
+ "faq:exercise:2": [
+  "स्वास्थ्य के लिए सबसे अच्छा व्यायाम कौन सा है?",
+  "ఆరోగ్యానికి ఉత్తమ వ్యాయామం ఏమిటి?",
+  "best exercise for health",
+  "aarogyaniki uttama vyaayaamam emi?",
+  "Top workout for good health"
+ ],
+ "faq:salt_bp:0": [
+  "रक्तचाप के लिए कौन सा आहार ठीक है?",
+  "రక్తపోటుకు ఏ ఆహారం మంచిది?",
+  "blood pressure diet",
+  "rakta pothuku ae aahaaram manchidi?",
+  "Diet suitable for high blood pressure"
+ ],
+ "faq:salt_bp:1": [
+  "मुझे कितना नमक खाना चाहिए?",
+  "నాకు ఎంత ఉప్పు తినాలి?",
+  "how much salt should i eat",
+  "naaku entha uppu tinavaali?",
+  "Recommended daily salt intake"
+ ],
+ "faq:salt_bp:2": [
+  "उच्च रक्तचाप वाले खाने क्या हैं?",
+  "అధిక రక్తపోటు ఉన్న ఆహారాలు ఏవి?",
+  "high bp food",
+  "adhika rakta pothu unna aahaaralu evi?",
+  "Foods to avoid with hypertension"
+ ],
+ "faq:sugar_intake:0": [
+  "शुगर बुरी है क्या?",
+  "చక్కెర చెడు인가?",
+  "is sugar bad",
+  "chakkera chedu kada?",
+  "Is sugar harmful?"
+ ],
+ "faq:sugar_intake:1": [
+  "क्या मैं मिठाई खा सकता हूँ?",
+  "నేను మిఠాయి తినవచ్చా?",
+  "can i eat sweets",
+  "nenu mithai tinavaccha?",
+  "Is it okay to have desserts?"
+ ],
+ "faq:sugar_intake:2": [
+  "दिन में कितना शुगर ले सकते हैं?",
+  "రోజుకు ఎంత చక్కెర తీసుకోవచ్చు?",
+  "how much sugar per day",
+  "rojuku entha chakkera teesukovachu?",
+  "Daily sugar limit"
+ ],
+ "faq:oils:0": [
+  "सबसे अच्छा तेल कौन सा है?",
+  "ఏ ఆయిల్ ఉత్తమం?",
+  "sabse accha tel kaun sa hai?",
+  "ē āyil uttamaṁ?",
+  "Which oil is the best?"
+ ],
+ "faq:oils:1": [
+  "सबसे बेहतरीन खाना पकाने का तेल कौन सा है?",
+  "వంట కోసం ఉత్తమమైన నూనె ఏది?",
+  "sabse behtareen khana pakane ka tel kaun sa hai?",
+  "vaṇṭa kōsaṁ uttamaṁ nūnē ēdi?",
+  "What’s the top cooking oil?"
+ ],
+ "faq:oils:2": [
+  "क्या घी स्वास्थ्यवर्धक है?",
+  "గీ ఆరోగ్యానికి మంచిదా?",
+  "kya ghee svaasthya vardhak hai?",
+  "gī ārōg'yāniki man̄cidā?",
+  "Is ghee good for health?"
+ ],
+ "faq:millets:0": [
+  "क्या बाजरा स्वास्थ्य के लिए अच्छा है?",
+  "మిల్లెట్ ఆరోగ్యానికి మంచిదా?",
+  "kya bajra svaasthya ke liye achha hai?",
+  "milleṭ ārōg'yāniki man̄cidā?",
+  "Are millets good for health?"
+ ],
+ "faq:millets:1": [
+  "बाजरा के क्या लाभ हैं?",
+  "మిల్లెట్ ప్రయోజనాలు ఏమిటి?",
+  "bajra ke kya laabh hain?",
+  "milleṭ prayōjanālu ēmiṭi?",
+  "What are the benefits of millets?"
+ ],
+ "faq:millets:2": [
+  "कौन सा बाजरा सबसे अच्छा है?",
+  "ఏ మిల్లెట్ ఉత్తమం?",
+  "kaun sa bajra sabse accha hai?",
+  "ē milleṭ uttamaṁ?",
+  "Which millet is the best?"
+ ],
+ "faq:alcohol_smoking:0": [
+  "शराब लीवर को नुकसान पहुंचाती है क्या?",
+  "మద్యం కాలేయానికి హానికరమా?",
+  "sharaab liver ko nuksan pahunchati hai kya?",
+  "madyaṁ kālēyāniki hānikaramā?",
+  "Is alcohol harmful to the liver?"
+ ],
+ "faq:alcohol_smoking:1": [
+  "क्या मैं शराब पी सकता हूँ?",
+  "నేను మద్యం తాగవచ్చా?",
+  "kya main sharaab pee sakta hoon?",
+  "nēnu madyaṁ tāgavaccā?",
+  "Can I drink alcohol?"
+ ],
+ "faq:alcohol_smoking:2": [
+  "धूम्रपान का रक्त परीक्षण पर असर?",
+  "పొగ త్రాగడం రక్త పరీక్షను ప్రభావితం చేస్తుందా?",
+  "dhumrapaan ka rakt parikshan par asar?",
+  "poga trāgaḍaṁ rakta parīkṣaṇanu prabhāvita chestundā?",
+  "Does smoking affect blood tests?"
+ ],
+ "faq:sleep_stress:0": [
+  "नींद स्वास्थ्य को कैसे प्रभावित करती है?",
+  "నిద్ర ఆరోగ్యాన్ని ఎలా ప్రభావితం చేస్తుంది?",
+  "neend svaasthya ko kaise prabhavit karti hai?",
+  "nidrā ārōg'yānni elā prabhāvita chestundi?",
+  "How does sleep impact health?"
+ ],
+ "faq:sleep_stress:1": [
+  "तनाव और ब्लड शुगर का क्या संबंध है?",
+  "స్ట్రెస్ మరియు రక్త చక్కెర మధ్య సంబంధం?",
+  "tanaav aur blood sugar ka kya sambandh hai?",
+  "stress mariyu rakta chakkera madhya sambandhaṁ?",
+  "What’s the link between stress and blood sugar?"
+ ],
+ "faq:sleep_stress:2": [
+  "तनाव मेरे रिपोर्ट को कैसे बदलता है?",
+  "స్ట్రెస్ నా రిపోర్ట్‌ను ఎలా మార్చుతుంది?",
+  "tanaav mere report ko kaise badalta hai?",
+  "stress nā reportnu elā mārcutundi?",
+  "How does stress alter my report?"
+ ],
+ "faq:get_plan:0": [
+  "डाइट प्लान पाने के कदम क्या हैं?",
+  "డైట్ ప్లాన్ పొందడానికి చర్యలు ఏమిటి?",
+  "diet plan paane ke kadam kya hain?",
+  "ḍa'iṭ plān pondadāniki car̥yalu ēmiṭi?",
+  "What are the steps to get a diet plan?"
+ ],
+ "faq:get_plan:1": [
+  "मेरी ब्लड रिपोर्ट से डाइट प्लान कैसे बनवाऊँ?",
+  "నా రక్త రిపోర్ట్ నుండి డైట్ ప్లాన్ ఎలా పొందాలి?",
+  "meri blood report se diet plan kaise banvaun?",
+  "nā rakta report nundi ḍa'iṭ plān elā pondāli?",
+  "How to get a diet plan from my blood report?"
+ ],
+ "faq:get_plan:2": [
+  "रिपोर्ट से डाइट प्लान बनवाने की प्रक्रिया?",
+  "రిపోర్ట్ నుండి డైట్ ప్లాన్ తయారు చేసే విధానం?",
+  "report se diet plan banvane ki prakriya?",
+  "report nundi ḍa'iṭ plān tayāru cēse vidhānaṁ?",
+  "Procedure to create a diet plan from a report?"
+ ],
+ "faq:no_report:0": [
+  "मेरे पास रिपोर्ट नहीं है",
+  "నా దగ్గర రిపోర్ట్ లేదు",
+  "mere paas report nahi hai",
+  "naa daggara report ledu",
+  "I don't have any report"
+ ],
+ "faq:no_report:1": [
+  "क्या मैं बिना ब्लड टेस्ट के प्लान ले सकता हूँ?",
+  "బ్లడ్ టెస్ట్ లేకుండా ప్లాన్ తీసుకోవచ్చా?",
+  "kya main bina blood test ke plan le sakta hun?",
+  "blod test lekunda plan teesukovaamaa?",
+  "Can I get a plan without a blood test?"
+ ],
+ "faq:no_report:2": [
+  "मैंने कोई टेस्ट नहीं किया है",
+  "నేను ఎటువంటి టెస్ట్ చేయలేదు",
+  "maine koi test nahi kiya hai",
+  "nenu etuvanti test cheyaledu",
+  "I have not done any test"
+ ],
+ "faq:which_tests_to_do:0": [
+  "मुझे कौन सा ब्लड टेस्ट करना चाहिए?",
+  "నేను ఏ బ్లడ్ టెస్ట్ చేయాలి?",
+  "mujhe kaun sa blood test karna chahiye?",
+  "nenu ye blood test cheyali?",
+  "Which blood test should I do?"
+ ],
+ "faq:which_tests_to_do:1": [
+  "मुझे कौन से टेस्ट करवाने चाहिए?",
+  "నేను ఏ టెస్టులు చేయించుకోవాలి?",
+  "mujhe kaun se tests karwane chahiye?",
+  "nenu ye tests cheyinchukovali?",
+  "Which tests should I get done?"
+ ],
+ "faq:which_tests_to_do:2": [
+  "फुल बॉडी चेकअप के लिए कौन से टेस्ट चाहिए?",
+  "పూర్తి బాడీ చెకప్ కోసం ఏ టెస్టులు అవసరం?",
+  "full body checkup ke liye kaun se tests chahiye?",
+  "pūrti body checkup kosam ye tests avasaram?",
+  "What tests for a full body checkup?"
+ ],
+ "faq:results_page:0": [
+  "रिज़ल्ट पेज पर क्या है?",
+  "ఫలితాల పేజీలో ఏముంది?",
+  "results page par kya hai?",
+  "phalithala page lo emundi?",
+  "What is on the results page?"
+ ],
+ "faq:results_page:1": [
+  "रिज़ल्ट पेज को समझाइए",
+  "ఫలితాల పేజీని వివరించండి",
+  "results page ko samjhaiye",
+  "phalithala page ni vivarimchandi",
+  "Explain the results page"
+ ],
+ "faq:results_page:2": [
+  "मेरे रिज़ल्ट कैसे पढ़ूँ?",
+  "నా ఫలితాలు ఎలా చదవాలి?",
+  "mere results kaise padhu?",
+  "naa phalitalu ela chadaval?",
+  "How to read my results"
+ ],
+ "faq:range_bar:0": [
+  "रंगीन बार क्या है?",
+  "రంగు బార్ అంటే ఏమిటి?",
+  "range bar kya hai?",
+  "rangu bar ante emiti?",
+  "What is the coloured bar?"
+ ],
+ "faq:range_bar:1": [
+  "हर टेस्ट के नीचे बार क्या दर्शाता है?",
+  "ప్రతి టెస్ట్ కింద బార్ ఏమి సూచిస్తుంది?",
+  "har test ke neeche bar kya darshata hai?",
+  "prati test kinda bar emi suchistundi?",
+  "What does the bar under each test mean?"
+ ],
+ "faq:range_bar:2": [
+  "रेंज स्लाइडर क्या है?",
+  "రేంజ్ స్లైడర్ అంటే ఏమిటి?",
+  "range slider kya hai?",
+  "range slider ante emiti?",
+  "What is the range slider?"
+ ],
+ "faq:filter_results:0": [
+  "केवल असामान्य रिज़ल्ट कैसे देखें?",
+  "కేవలం అసాధారణ ఫలితాలు ఎలా చూడాలి?",
+  "keval asamanya results kaise dekhen?",
+  "keval asadharana phalitalu ela choosali?",
+  "How to see only abnormal results?"
+ ],
+ "faq:filter_results:1": [
+  "सिर्फ बुरे रिज़ल्ट दिखाओ",
+  "కేవలం చెడ్డ ఫలితాలు చూపించు",
+  "sirf bure results dikhao",
+  "keval chedda phalitalu chupinchu",
+  "Show only bad results"
+ ],
+ "faq:filter_results:2": [
+  "ध्यान देने योग्य फ़िल्टर क्या है?",
+  "గమనించవలసిన ఫిల్టర్ ఏమిటి?",
+  "dhyan dene yogya filter kya hai?",
+  "gamaninchavalasina filter emiti?",
+  "What is needs attention filter"
+ ],
+ "faq:doctor_section:0": [
+  "डॉक्टर से रिव्यू करवाना क्या मतलब है?",
+  "డాక్టర్ తో సమీక్ష చేయడం అంటే ఏమిటి?",
+  "doctor se review karna kya matlab hai?",
+  "Daakṭar tō samīkṣa cēyaḍaṁ entē?",
+  "What does it mean to have a review with a doctor?"
+ ],
+ "faq:doctor_section:1": [
+  "डॉक्टर का चेतावनी क्यों दिख रहा है?",
+  "డాక్టర్ హెచ్చరిక ఎందుకు కనిపిస్తోంది?",
+  "doctor ka warning kyun dikh rahi hai?",
+  "Daakṭar hēcchārika ēṅkū kanipistunnadi?",
+  "Why am I seeing a doctor warning?"
+ ],
+ "faq:doctor_section:2": [
+  "इसे डॉक्टर को दिखाने को कहा गया है, क्यों?",
+  "ఇది డాక్టర్‌ను చూడమని ఎందుకు చెప్పబడింది?",
+  "ise doctor ko dikhane ko kaha gaya hai, kyun?",
+  "Idi daakṭrnu cūḍamani ēṅkū ceppabadindi?",
+  "Why does it say see a doctor?"
+ ],
+ "faq:dos_donts:0": [
+  "क्या करना चाहिए और क्या नहीं करना चाहिए?",
+  "ఏం చేయాలి, ఏం చేయకూడదు?",
+  "kya karna chahiye aur kya nahi karna chahiye?",
+  "Ēṁ cēyāli, ēṁ cēyakūḍadu?",
+  "What are the dos and don’ts?"
+ ],
+ "faq:dos_donts:1": [
+  "मेरे प्लान में टिप्स क्या हैं?",
+  "నా ప్లాన్‌లో చిట్కాలు ఏమిటి?",
+  "mere plan mein tips kya hain?",
+  "Nā plān lō ciṭkālu ēmiṭi?",
+  "What tips are in my plan?"
+ ],
+ "faq:dos_donts:2": [
+  "सीमित करने वाले खाद्य पदार्थ कौन से हैं?",
+  "ఏం ఆహారాన్ని పరిమితం చేయాలి?",
+  "seemit karne wale khadya padarth kaun se hain?",
+  "Ēṁ āhārānni parimita cēyāli?",
+  "What foods should be limited?"
+ ],
+ "faq:explanation:0": [
+  "मेरे परिणाम क्या दर्शाते हैं?",
+  "నా ఫలితాలు ఏమి అర్ధం?",
+  "mere parinaam kya dikhate hain?",
+  "Nā phalitālu ēmi ardhaṁ?",
+  "What do my results indicate?"
+ ],
+ "faq:explanation:1": [
+  "व्याख्या सेक्शन में क्या है?",
+  "వివరణ విభాగంలో ఏముంది?",
+  "vyakhya section mein kya hai?",
+  "Vivaraṇa vibhāgamlō ēmuṇḍi?",
+  "What is in the explanation section?"
+ ],
+ "faq:explanation:2": [
+  "व्याख्या किसने लिखी?",
+  "వివరణను ఎవరు రాశారు?",
+  "vyakhya kisne likhi?",
+  "Vivaraṇanu evaru rāśāru?",
+  "Who wrote the explanation?"
+ ],
+ "faq:portions:0": [
+  "मुझे कितनी मात्रा में खाना चाहिए?",
+  "నేను ఎంత పరిమాణంలో తినాలి?",
+  "mujhe kitni maatra mein khana chahiye?",
+  "Nēnu enta parimāṇamlō tināli?",
+  "How much should I eat?"
+ ],
+ "faq:portions:1": [
+  "सर्विंग साइज क्या है?",
+  "సర్వింగ్ సైజ్ ఏమిటి?",
+  "serving size kya hai?",
+  "Sarviṅg saiḍ ēmiṭi?",
+  "What is the serving size?"
+ ],
+ "faq:portions:2": [
+  "प्रति 100 ग्राम का क्या मतलब है?",
+  "ప్రతి 100 గ్రాముకు ఏమిటి?",
+  "prati 100 gram ka kya matlab hai?",
+  "Prati 100 grāmu ki ēmiṭi?",
+  "What does per 100 g mean?"
+ ],
+ "faq:meal_plan:0": [
+  "एक हफ्ते का भोजन योजना दे दो",
+  "ఒక వారపు భోజన పథకం ఇవ్వండి",
+  "ek hafte ka bhojan yojana de do",
+  "Oka vārapu bhōjana pathakaṁ ivvaṇḍi",
+  "Give me a weekly meal plan"
+ ],
+ "faq:meal_plan:1": [
+  "क्या आप डाइट चार्ट बना सकते हैं?",
+  "మీరు డైట్ చార్ట్ తయారు చేయగలరా?",
+  "kya aap diet chart bana sakte hain?",
+  "Mīru ḍāiṭ cārṭ tayāru cēyagalarā?",
+  "Can you create a diet chart?"
+ ],
+ "faq:meal_plan:2": [
+  "रिसिपीज़़ बताओ",
+  "వంటకాలు చెప్పండి",
+  "recipez batao",
+  "Vaṇṭakālu ceppandi",
+  "Share some recipes"
+ ],
+ "faq:dont_like_food:0": [
+  "मैं इन खाद्य पदार्थों को पसंद नहीं करता",
+  "నేను ఈ ఆహారాలను ఇష్టపడను",
+  "main in khadya padarthon ko pasand nahi karta",
+  "nenu ee aahaaramlo ishtapadanu",
+  "I don't like these foods"
+ ],
+ "faq:dont_like_food:1": [
+  "क्या मैं अपनी योजना में एक भोजन बदल सकता हूँ?",
+  "నేను నా ప్లాన్‌లో ఒక ఆహారాన్ని మార్చుకోవచ్చా?",
+  "kya main apni yojna mein ek bhojan badal sakta hoon?",
+  "naenu naa plan lo oka aahaaram marchukovachaa?",
+  "Can I replace a food in my plan?"
+ ],
+ "faq:dont_like_food:2": [
+  "इन खाद्य पदार्थों के विकल्प क्या हैं?",
+  "ఈ ఆహారాలకి ప్రత్యామ్నాయాలు ఏమిటి?",
+  "in khadya padarthon ke vikalp kya hain?",
+  "ee aahaaraloki pratyamaanaalu emiti?",
+  "What are alternatives to these foods?"
+ ],
+ "faq:regional:0": [
+  "दक्षिण भारतीय भोजन कौन से हैं?",
+  "దక్షిణ భారతీయ ఆహారాలు ఏమిటి?",
+  "dakshin bhartiya bhojan kaun se hain?",
+  "dakshina bhartiya aahaaralu emiti?",
+  "Which South Indian foods are there?"
+ ],
+ "faq:regional:1": [
+  "क्या आपके पास उत्तर भारतीय भोजन हैं?",
+  "మీ వద్ద ఉత్తర భారతీయ ఆహారాలు ఉన్నాయా?",
+  "kya aapke paas uttara bhartiya bhojan hain?",
+  "mee vadda uttara bhartiya aahaaralu unnaya?",
+  "Do you have North Indian foods?"
+ ],
+ "faq:regional:2": [
+  "तेलुगु भोजन के नाम क्या हैं?",
+  "తెలుగు ఆహార పేర్లు ఏమిటి?",
+  "telugu bhojan ke naam kya hain?",
+  "telugu aahara peru emiti?",
+  "What are the names of Telugu foods?"
+ ],
+ "faq:change_profile:0": [
+  "मैंने गलत डाइट टाइप चुना था",
+  "నేను తప్పు డైట్ టైప్ ఎంచుకున్నాను",
+  "maine galat diet type chuna tha",
+  "nenu thappu diet type enchukunnanu",
+  "I selected the wrong diet type"
+ ],
+ "faq:change_profile:1": [
+  "मैं अपनी डाइट टाइप कैसे बदलूँ?",
+  "నేను నా డైట్ టైప్‌ను ఎలా మార్చాలి?",
+  "main apni diet type kaise badlun?",
+  "nenu naa diet type ela marchali?",
+  "How do I change my diet type?"
+ ],
+ "faq:change_profile:2": [
+  "मैंने गलत डाइट चुनी है",
+  "నేను తప్పు డైట్ ఎంచుకున్నాను",
+  "maine galat diet chuni hai",
+  "nenu thappu diet enchukunnanu",
+  "I chose the wrong diet"
+ ],
+ "faq:start_over:0": [
+  "मैं फिर से कैसे शुरू करूँ?",
+  "నేను మళ్లీ ఎలా ప్రారంభించాలి?",
+  "main phir se kaise shuru karun?",
+  "nenu malli ela prarambhinchali?",
+  "How to start again?"
+ ],
+ "faq:start_over:1": [
+  "मैं एक नया रिपोर्ट कैसे विश्लेषण करूँ?",
+  "నేను కొత్త రిపోర్ట్‌ను ఎలా విశ్లేషించాలి?",
+  "main ek naya report kaise vishleshan karun?",
+  "nenu kotta report ela vishleshinchali?",
+  "How do I analyse another report?"
+ ],
+ "faq:start_over:2": [
+  "नई विश्लेषण प्रक्रिया",
+  "కొత్త విశ్లేషణ",
+  "nayi vishleshan prakriya",
+  "kotha vishleshana",
+  "New analysis"
+ ],
+ "faq:remove_row:0": [
+  "मैं एक टेस्ट कैसे हटाऊँ?",
+  "నేను ఒక టెస్ట్‌ను ఎలా తొలగించాలి?",
+  "main ek test kaise hataun?",
+  "nenu oka test ela tholaginchali?",
+  "How do I remove a test?"
+ ],
+ "faq:remove_row:1": [
+  "गलत वैल्यू को डिलीट करें",
+  "తప్పు విలువను తొలగించండి",
+  "galat value ko delete karein",
+  "thappu value ni tholaginchandi",
+  "Delete a wrong value"
+ ],
+ "faq:remove_row:2": [
+  "सूची से परिणाम हटाएँ",
+  "జాబితా నుండి ఫలితాన్ని తొలగించండి",
+  "soochi se parinaam hataen",
+  "jaabitha nundi phalitam ni tholaginchandi",
+  "Remove a result from the list"
+ ],
+ "faq:units:0": [
+  "कौन‑से यूनिट्स सपोर्ट होते हैं?",
+  "ఏ యూనిట్లు సపోర్ట్ చేస్తారు?",
+  "kaun‑se units support hote hain?",
+  "ē yūṇiṭlu support chestāru?",
+  "Which units are supported?"
+ ],
+ "faq:units:1": [
+  "मेरे लैब में अलग‑अलग यूनिट्स हैं।",
+  "నా ల్యాబ్‌లో వేర్వేరు యూనిట్స్ ఉన్నాయి.",
+  "mere lab mein alag‑alag units hain.",
+  "nā lab lō vērvēru yūṇiṭs unnāyi?",
+  "My lab uses different units."
+ ],
+ "faq:units:2": [
+  "mmol/L या mg/dL?",
+  "mmol/L లేదా mg/dL?",
+  "mmol/L ya mg/dL?",
+  "mmol/L lēdā mg/dL?",
+  "mmol/L or mg/dL?"
+ ],
+ "faq:multi_page:0": [
+  "मेरी रिपोर्ट में कई पेज़ हैं।",
+  "నా రిపోర్ట్‌లో అనేక పేజీలు ఉన్నాయి.",
+  "meri report mein kai pages hain.",
+  "nā report lō anēka pejulu unnāyi?",
+  "My report has many pages."
+ ],
+ "faq:multi_page:1": [
+  "क्या यह सभी पेज़ पढ़ सकता है?",
+  "ఇది అన్ని పేజీలు చదవగలదా?",
+  "kya yeh sabhi pages padh sakta hai?",
+  "idi anni pejulu chadavadā?",
+  "Can it read all pages?"
+ ],
+ "faq:multi_page:2": [
+  "मल्टी‑पेज़ PDF।",
+  "మల్టీ‑పేజ్ PDF.",
+  "multi‑page PDF.",
+  "maḷṭī‑pēj PDF.",
+  "multi page pdf."
+ ],
+ "faq:multiple_files:0": [
+  "एक साथ कई PDF अपलोड करो।",
+  "ఒక్కేసారి అనేక PDFలను అప్‌లోడ్ చేయండి.",
+  "ek saath kai PDF upload karo.",
+  "okkēsāri anēka PDFlanu upload cēyandi?",
+  "Upload multiple PDFs."
+ ],
+ "faq:multiple_files:1": [
+  "दो PDF फाइलें अपलोड करो।",
+  "రెండు PDF ఫైళ్లను అప్‌లోడ్ చేయండి।",
+  "do PDF files upload karo.",
+  "rendu PDF fayllu upload cēyandi?",
+  "Upload two PDF files."
+ ],
+ "faq:multiple_files:2": [
+  "क्या मैं दो रिपोर्ट अपलोड कर सकता हूँ?",
+  "నేను రెండు రిపోర్ట్‌లు అప్‌లోడ్ చేయవచ్చా?",
+  "kya main do report upload kar sakta hun?",
+  "nēnu rendu reportlu upload cēyavaccā?",
+  "Can i upload two reports?"
+ ],
+ "faq:password_pdf:0": [
+  "मेरे PDF में पासवर्ड है।",
+  "నా PDFలో పాస్వర్డ్ ఉంది.",
+  "mere PDF mein password hai.",
+  "nā PDF lō password undi?",
+  "My pdf has a password."
+ ],
+ "faq:password_pdf:1": [
+  "लॉक्ड PDF।",
+  "లాక్‌డ్ PDF.",
+  "locked PDF.",
+  "locked PDF.",
+  "Locked pdf."
+ ],
+ "faq:password_pdf:2": [
+  "एन्क्रिप्टेड रिपोर्ट।",
+  "ఎన్క్రిప్టెడ్ రిపోర్ట్.",
+  "encrypted report.",
+  "encrypted report.",
+  "Encrypted report."
+ ],
+ "faq:handwritten:0": [
+  "क्या यह हैंडरिटन रिपोर्ट पढ़ सकता है?",
+  "ఇది హ్యాండ్‌రిటన్ రిపోర్ట్ చదవగలదా?",
+  "kya yeh handwritten report padh sakta hai?",
+  "idi handritan report chadavadā?",
+  "Can it read handwritten reports?"
+ ],
+ "faq:handwritten:1": [
+  "हैंडरिटन वैल्यूज़।",
+  "హ్యాండ్‌రిటన్ విలువలు.",
+  "handwritten values.",
+  "handritan values.",
+  "Handwritten values."
+ ],
+ "faq:handwritten:2": [
+  "डॉक्टर ने हाथ से वैल्यूज़ लिखी हैं।",
+  "డాక్టర్ చేతితో విలువలు వ్రాశారు.",
+  "doctor ne haath se values likhi hain.",
+  "ḍākṭar cētithō values rasāru?",
+  "Doctor wrote the values by hand."
+ ],
+ "faq:photo_tips:0": [
+  "अच्छी फोटो कैसे लें?",
+  "మంచి ఫోటో ఎలా తీసుకోవాలి?",
+  "Acchi photo kaise lein?",
+  "Manchi photo ela teesukovali?",
+  "How can I capture a good picture?"
+ ],
+ "faq:photo_tips:1": [
+  "फोटो धुंधली क्यों आ रही है?",
+  "ఫోటో బ్లరీగా ఎందుకు ఉంది?",
+  "Photo dhundhli kyon aa rahi hai?",
+  "Photo blurry ga enduku undi?",
+  "Why is the picture coming out blurry?"
+ ],
+ "faq:photo_tips:2": [
+  "इमेज साफ़ नहीं दिख रही है?",
+  "చిత్రం స్పష్టంగా లేదు?",
+  "Image saaf nahi dikh rahi hai?",
+  "Chitra spashthanga ledu?",
+  "Why isn’t the image clear?"
+ ],
+ "faq:ocr_error:0": [
+  "OCR टाइमआउट हो गया?",
+  "OCR టైమ్‌అవుట్ అయింది?",
+  "OCR timeout ho gaya?",
+  "OCR timeout ayindi?",
+  "Did the OCR process time out?"
+ ],
+ "faq:ocr_error:1": [
+  "कहता है OCR फेल हो गया?",
+  "ఇది OCR ఫెయిల్ అయిందని చెబుతోంది?",
+  "Keh raha hai OCR fail ho gaya?",
+  "Iti OCR fail ayindani chepthundi?",
+  "It says the OCR failed."
+ ],
+ "faq:ocr_error:2": [
+  "रिपोर्ट प्रोसेसिंग फेल हो गई?",
+  "రిపోర్ట్ ప్రాసెసింగ్ ఫెయిల్ అయింది?",
+  "Report processing fail ho gayi?",
+  "Report processing fail ayindi?",
+  "Report processing has failed."
+ ],
+ "faq:file_error:0": [
+  "फ़ाइल टाइप सपोर्टेड नहीं है?",
+  "ఫైల్ టైప్ సపోర్ట్ కాదు?",
+  "File type supported nahi hai?",
+  "File type support ledu?",
+  "Is the file type unsupported?"
+ ],
+ "faq:file_error:1": [
+  "MIME टाइप मेल नहीं खा रहा?",
+  "MIME టైప్ మ్యాచ్ కావట్లేదు?",
+  "MIME type match nahi kar raha?",
+  "MIME type match kaavadhu?",
+  "Does the MIME type not match?"
+ ],
+ "faq:file_error:2": [
+  "फ़ाइल PDF नहीं है?",
+  "ఫైల్ PDF కాదు?",
+  "File PDF nahi hai?",
+  "File PDF kaadu?",
+  "Is the file not a PDF?"
+ ],
+ "faq:site_slow:0": [
+  "वेबसाइट बहुत धीमी है?",
+  "వెబ్‌సైట్ చాలా స్లోగా ఉంది?",
+  "Website bahut dheemi hai?",
+  "Website chaala slow ga undi?",
+  "Is the website very slow?"
+ ],
+ "faq:site_slow:1": [
+  "पेज लोड नहीं हो रहा?",
+  "పేజీ లోడ్ కావడం లేదు?",
+  "Page load nahi ho raha?",
+  "Page load kaadhu?",
+  "Is the page not loading?"
+ ],
+ "faq:site_slow:2": [
+  "लोड होने में बहुत समय लग रहा है?",
+  "లోడ్ కావడానికి చాలా సమయం పడుతోంది?",
+  "Load hone mein bahut samay lag raha hai?",
+  "Load avvadam ki chala samayam padutundi?",
+  "Is it taking a long time to load?"
+ ],
+ "faq:badges:0": [
+  "AI असिस्टेड का मतलब क्या है?",
+  "AI అసిస్టెడ్ అంటే ఏమిటి?",
+  "AI assisted ka matlab kya hai?",
+  "AI assisted ante emi?",
+  "What does AI assisted mean?"
+ ],
+ "faq:badges:1": [
+  "Added by you का क्या अर्थ है?",
+  "Added by you అంటే ఏమిటి?",
+  "Added by you ka kya arth hai?",
+  "Added by you ante emi?",
+  "What does 'added by you' signify?"
+ ],
+ "faq:badges:2": [
+  "Edited का मतलब क्या है?",
+  "Edited అంటే ఏమిటి?",
+  "Edited ka matlab kya hai?",
+  "Edited ante emi?",
+  "What does 'edited' mean?"
+ ],
+ "faq:all_normal:0": [
+  "भोजन योजना क्यों नहीं है?",
+  "భోజన ప్రణాళిక ఎందుకు లేదు?",
+  "food plan kyun nahi hai?",
+  "bhojana pranalika enduku ledu?",
+  "Why isn’t there a meal schedule?"
+ ],
+ "faq:all_normal:1": [
+  "मुझे कोई भोजन योजना नहीं मिली।",
+  "నాకు ఏమైనా భోజన ప్రణాళిక రాలేదు.",
+  "mujhe koi food plan nahi mila.",
+  "naaku evaru bhodhana pranalika raaledu.",
+  "I didn’t receive any meal plan."
+ ],
+ "faq:all_normal:2": [
+  "मेरी योजना खाली है।",
+  "నా ప్రణాళిక ఖాళీగా ఉంది.",
+  "meri plan khaali hai.",
+  "naa pranalika khaali undi.",
+  "My plan shows nothing."
+ ],
+ "faq:plan_changed:0": [
+  "मेरी भोजन योजना बदल गई है।",
+  "నా భోజన ప్రణాళిక మార్చబడింది.",
+  "meri food plan change ho gayi.",
+  "naa bhodhana pranalika maarindi.",
+  "My meal plan has been altered."
+ ],
+ "faq:plan_changed:1": [
+  "मेरी योजना पिछले बार से अलग क्यों है?",
+  "నా ప్రణాళిక గత సారి తో భిన్నంగా ఎందుకు ఉంది?",
+  "meri plan pichle baar se alag kyun hai?",
+  "naa pranalika previous saari tho beda enduku?",
+  "Why is my schedule different from before?"
+ ],
+ "faq:plan_changed:2": [
+  "मेरे भोजन में बदलाव क्यों हुए?",
+  "నా ఆహారంలో మార్పులు ఎందుకు వచ్చాయి?",
+  "mere foods mein changes kyun hue?",
+  "naa aahara lo maarpulu enduku vachayi?",
+  "What caused the changes in my foods?"
+ ],
+ "faq:wrong_food:0": [
+  "ऐसा भोजन क्यों सुझाया जो मैं नहीं खा सकता?",
+  "నేను తినలేని ఆహారాన్ని ఎందుకు సూచించారు?",
+  "aisa food kyun suggest kiya jo main nahi kha sakta?",
+  "naa tinnaleni aaharani enduku suggest chesaru?",
+  "Why was a food suggested that I can’t eat?"
+ ],
+ "faq:wrong_food:1": [
+  "इसने दूध सुझाया, लेकिन मैं वीगन हूँ।",
+  "ఇది పాలు సూచించింది, కానీ నేను వీగన్‌ను.",
+  "isne milk suggest kiya but main vegan hoon.",
+  "idi paalu suggest chesindi kaani nenu vegan.",
+  "It recommended milk even though I’m vegan."
+ ],
+ "faq:wrong_food:2": [
+  "इसने मछली दिखाई, लेकिन मैं शाकाहारी हूँ।",
+  "ఇది చేప చూపించింది, కానీ నేను వెజిటేరియన్‌ను.",
+  "isne fish dikhaya but main vegetarian hoon.",
+  "idi chepa chupinchaindi kaani nenu vegetarian.",
+  "It showed fish although I’m vegetarian."
+ ],
+ "faq:other_allergy:0": [
+  "मुझे सरसों से एलर्जी है।",
+  "నాకు సార్సో (మస్టర్డ్) అలర్జీ ఉంది.",
+  "mujhe sarson se allergy hai.",
+  "naaku mustard allergy undi.",
+  "I’m allergic to mustard."
+ ],
+ "faq:other_allergy:1": [
+  "ਤਿਲ से एलर्जी है।",
+  "సెసమి అలర్జీ ఉంది.",
+  "til se allergy hai.",
+  "sesame allergy undi.",
+  "I have a sesame allergy."
+ ],
+ "faq:other_allergy:2": [
+  "क्या मैं किसी विशेष भोजन को बाहर कर सकता हूँ?",
+  "నేను ఒక నిర్దిష్ట ఆహారాన్ని తప్పించుకోవచ్చా?",
+  "kya main koi specific food exclude kar sakta hoon?",
+  "naa specific aaharanni exclude cheyyavachaa?",
+  "Can I exclude a particular food?"
+ ],
+ "faq:jain:0": [
+  "जैन डाइट क्या है?",
+  "జైన ఆహారం అంటే ఏమిటి?",
+  "jain diet kya hai?",
+  "jain aahara enti?",
+  "What is a Jain diet?"
+ ],
+ "faq:jain:1": [
+  "बिना प्याज और लहसुन के डाइट चाहिए।",
+  "ఉల్లి, వెల్లుల్లి లేకుండా డైట్ కావాలి.",
+  "bina pyaz aur lehsun ke diet chahiye.",
+  "ulla, vellulli lekunda diet kavali.",
+  "I need a diet with no onion or garlic."
+ ],
+ "faq:jain:2": [
+  "मैं जड़ वाली सब्जियां नहीं खाता।",
+  "నేను రూట్ వెజిటబుల్స్ తినను.",
+  "main jad wali sabziyan nahi khata.",
+  "nenu root vegetables tinanu.",
+  "I don’t eat root vegetables."
+ ],
+ "faq:sex_option:0": [
+  "केवल पुरुष और महिला क्यों?",
+  "ఎందుకు కేవలం పురుషుడు మరియు మహిళ మాత్రమే?",
+  "sirf male aur female kyun?",
+  "enduku kevalam purushudu mariyu mahila matrame?",
+  "Why just male and female?"
+ ],
+ "faq:sex_option:1": [
+  "अन्य लिंग विकल्प?",
+  "ఇతర లింగ ఎంపిక?",
+  "any other gender option?",
+  "ithara linga empika?",
+  "Is there an option for another gender?"
+ ],
+ "faq:sex_option:2": [
+  "मैं नॉन‑बाइनरी हूँ",
+  "నేను నాన్ బైనరీని",
+  "I am non binary",
+  "nenu non binaryni",
+  "I'm non‑binary"
+ ],
+ "faq:history_compare:0": [
+  "क्या मैं अपने रिपोर्ट्स की तुलना कर सकता हूँ?",
+  "నా రిపోర్ట్స్‌ను పోల్చగలనా?",
+  "can i compare my reports?",
+  "naa reportsnu polchagalanaa?",
+  "Can I compare my reports?"
+ ],
+ "faq:history_compare:1": [
+  "मेरी प्रगति को ट्रैक करें",
+  "నా పురోగతిని ట్రాక్ చేయండి",
+  "track my progress",
+  "naa progreso track cheyyandi?",
+  "Track my progress"
+ ],
+ "faq:history_compare:2": [
+  "क्या मेरे लेवल सुधरे हैं?",
+  "నా లెవెల్స్ మెరుగయ్యాయా?",
+  "see if my levels improved",
+  "naa levels marugayi?",
+  "Check if my levels have improved"
+ ],
+ "faq:old_pdf:0": [
+  "पुरानी रिपोर्ट डाउनलोड करें",
+  "పాత రిపోర్ట్‌ను డౌన్‌లోడ్ చేయండి",
+  "download an old report",
+  "paatha report download cheyyandi?",
+  "Download an old report"
+ ],
+ "faq:old_pdf:1": [
+  "पहले के विश्लेषण की पीडीएफ चाहिए",
+  "మునుపటి విశ్లేషణ PDF కావాలి",
+  "get pdf of previous analysis",
+  "munupati analysis pdf kavali?",
+  "Get a PDF of the previous analysis"
+ ],
+ "faq:old_pdf:2": [
+  "इतिहास से PDF चाहिए",
+  "చరిత్ర నుండి PDF కావాలి",
+  "pdf from history",
+  "charitra nundi pdf kavali?",
+  "Need a PDF from history"
+ ],
+ "faq:share_doctor:0": [
+  "रिपोर्ट डॉक्टर को कैसे भेजूँ?",
+  "రిపోర్ట్‌ను డాక్టర్‌కు ఎలా పంపాలి?",
+  "how do i share my report with my doctor",
+  "report ni doctor ki ela pampali?",
+  "How do I share my report with the doctor?"
+ ],
+ "faq:share_doctor:1": [
+  "अपना प्लान डॉक्टर को भेजें",
+  "నా ప్లాన్‌ను డాక్టర్‌కు పంపండి",
+  "send my plan to doctor",
+  "naa plan doctor ki pampandi?",
+  "Send my plan to the doctor"
+ ],
+ "faq:share_doctor:2": [
+  "रिपोर्ट परिवार के साथ शेयर करें",
+  "రిపోర్ట్‌ను కుటుంబంతో పంచుకోండి",
+  "share with family",
+  "report ni kutumbamto panchukondi?",
+  "Share the report with family"
+ ],
+ "faq:export_formats:0": [
+  "एक्सेल में डाउनलोड करें",
+  "ఎక్సెల్‌లో డౌన్‌లోడ్ చేయండి",
+  "download as excel",
+  "excel lo download cheyyandi?",
+  "Download as Excel"
+ ],
+ "faq:export_formats:1": [
+  "CSV एक्सपोर्ट करें",
+  "CSV ఎక్స్‌పోర్ట్ చేయండి",
+  "export csv",
+  "CSV export cheyyandi?",
+  "Export CSV"
+ ],
+ "faq:export_formats:2": [
+  "क्या मैं वर्ड फाइल ले सकता हूँ?",
+  "నేను వర్డ్ ఫైల్ పొందవచ్చా?",
+  "can i get word file",
+  "nenu word file pondavaccha?",
+  "Can I get a Word file?"
+ ],
+ "faq:data_retention:0": [
+  "डेटा आप कितने समय तक रखते हैं?",
+  "డేటా మీరు ఎంత కాలం ఉంచుతారు?",
+  "data aap kitne samay tak rakhte hain?",
+  "Data meeru enta samayam unchutaaru?",
+  "How long do you retain my data?"
+ ],
+ "faq:data_retention:1": [
+  "मेरे डेटा को कब डिलीट किया जाता है?",
+  "నా డేటా ఎప్పుడూ తొలగించబడుతుంది?",
+  "mere data ko kab delete kiya jaata hai?",
+  "Na data eppudu delete avuthundi?",
+  "When is my data deleted?"
+ ],
+ "faq:data_retention:2": [
+  "क्या आप रिपोर्ट्स हमेशा के लिए रखते हैं?",
+  "మీరు రిపోర్టులను శాశ్వతంగా ఉంచుతారా?",
+  "kya aap reports hamesha ke liye rakhte hain?",
+  "Meeru reports ni shashvata ga unchutaaru?",
+  "Do you keep reports forever?"
+ ],
+ "faq:delete_report:0": [
+  "मेरी पुरानी रिपोर्ट हटाओ",
+  "నా పాత రిపోర్ట్‌ను తొలగించండి",
+  "meri purani report hatao",
+  "Na paatha report ni delete cheyyandi?",
+  "Delete my old report."
+ ],
+ "faq:delete_report:1": [
+  "एक रिपोर्ट कैसे डिलीट करें?",
+  "ఒక రిపోర్ట్‌ను ఎలా తొలగించాలి?",
+  "ek report kaise delete karein?",
+  "Oka report ni ela delete cheyyali?",
+  "How to delete one report?"
+ ],
+ "faq:delete_report:2": [
+  "इतिहास से रिपोर्ट हटाओ",
+  "చరిత్ర నుండి రిపోర్ట్‌ను తొలగించండి",
+  "itihaas se report hatao",
+  "Charitra nundi report ni delete cheyyandi?",
+  "Remove a report from history."
+ ],
+ "faq:guest:0": [
+  "गेस्ट के तौर पर NutriLens का उपयोग",
+  "గెస్ట్ గా NutriLens ని ఉపయోగించడం",
+  "guest ke taur par NutriLens ka upyog",
+  "Guest ga NutriLens vadadam?",
+  "Using NutriLens as a guest."
+ ],
+ "faq:guest:1": [
+  "अगर मैं लॉग इन नहीं करता तो क्या होगा?",
+  "నేను లాగిన్ కాకపోతే ఏమవుతుంది?",
+  "agar main log in nahi karta to kya hoga?",
+  "Nenu login kakapothe em jarugutundi?",
+  "What happens if I do not log in?"
+ ],
+ "faq:guest:2": [
+  "गेस्ट मोड क्या है?",
+  "గెస్ట్ మోడ్ అంటే ఏమిటి?",
+  "guest mode kya hai?",
+  "Guest mode ante enti?",
+  "What is guest mode?"
+ ],
+ "faq:password_rules:0": [
+  "पासवर्ड की ज़रूरतें क्या हैं?",
+  "పాస్వర్డ్ అవసరాలు ఏమిటి?",
+  "password ki zaruratein kya hain?",
+  "Password avasaram enti?",
+  "Password requirements."
+ ],
+ "faq:password_rules:1": [
+  "मेरा पासवर्ड स्वीकार नहीं हो रहा है",
+  "నా పాస్వర్డ్ అంగీకరించబడడం లేదు",
+  "mera password sweekar nahi ho raha hai",
+  "Na password accept kaaledu?",
+  "My password is not accepted."
+ ],
+ "faq:password_rules:2": [
+  "कौन सा पासवर्ड इस्तेमाल करूँ?",
+  "ఏ పాస్వర్డ్ ఉపయోగించాలి?",
+  "kaun sa password istemal karun?",
+  "Em password vadali?",
+  "What password should I use?"
+ ],
+ "faq:email_exists:0": [
+  "ईमेल पहले से मौजूद है",
+  "ఈమెయిల్ ఇప్పటికే ఉంది",
+  "email pehle se maujood hai",
+  "Email already undi?",
+  "Email already exists."
+ ],
+ "faq:email_exists:1": [
+  "इस ईमेल से अकाउंट पहले से है",
+  "ఈ ఇమెయిల్‌తో ఖాతా ఇప్పటికే ఉంది",
+  "is email se account pehle se hai",
+  "Ee email tho account already undi?",
+  "Account with this email already exists."
+ ],
+ "faq:email_exists:2": [
+  "मेरे ईमेल से रजिस्टर नहीं हो रहा",
+  "నా ఇమెయిల్‌తో రిజిస్టర్ చేయలేను",
+  "mere email se register nahi ho raha",
+  "Na email tho register cheyyaledu?",
+  "Cannot register with my email."
+ ],
+ "faq:reset_link:0": [
+  "reset link नहीं आया",
+  "రీసెట్ లింక్ రాలేదు",
+  "reset link nahi aaya",
+  "reest link raaledu",
+  "didn't receive the reset link"
+ ],
+ "faq:reset_link:1": [
+  "reset link काम नहीं कर रहा है",
+  "రీసెట్ లింక్ పనిచేయడం లేదు",
+  "reset link kaam nahi kar raha hai",
+  "reest link panicheyadu ledu",
+  "reset link is not working"
+ ],
+ "faq:reset_link:2": [
+  "reset link एक्सपायर हो गया",
+  "రీసెట్ లింక్ కాలం ముగిసింది",
+  "reset link expire ho gaya",
+  "reest link kaala mugisindi",
+  "reset link has expired"
+ ],
+ "faq:session:0": [
+  "मैं कितने समय तक लॉग इन रहूँ?",
+  "నేను ఎంతసేపు లాగిన్‌లో ఉంటాను?",
+  "main kitna samay tak log in rahun?",
+  "nenu entasepu login lo untanu?",
+  "how long will I stay logged in?"
+ ],
+ "faq:session:1": [
+  "मुझे क्यों लॉग आउट किया गया?",
+  "నన్ను ఎందుకు లాగ్ అవుట్ చేశారు?",
+  "mujhe kyun log out kiya gaya?",
+  "nannu enduku log out chesaru?",
+  "why was I logged out?"
+ ],
+ "faq:session:2": [
+  "स्वचालित रूप से लॉग आउट हो गया",
+  "స్వయంచాలకంగా లాగ్ అవుట్ అయింది",
+  "swachalit roop se log out ho gaya",
+  "svayanchaalakaanga log out ayindi",
+  "logged out automatically"
+ ],
+ "faq:logout:0": [
+  "मैं कैसे लॉग आउट करूँ?",
+  "నేను ఎలా లాగ్ అవుట్ చేయాలి?",
+  "main kaise log out karun?",
+  "nenu ela log out cheyyali?",
+  "how do I log out?"
+ ],
+ "faq:logout:1": [
+  "साइन आउट कैसे करें?",
+  "సైన్ అవుట్ ఎలా చేయాలి?",
+  "sign out kaise karen?",
+  "sign out ela cheyyali?",
+  "how to sign out?"
+ ],
+ "faq:logout:2": [
+  "लॉगआउट बटन कहाँ है?",
+  "లాగ్ అవుట్ బటన్ ఎక్కడ?",
+  "logout button kahan hai?",
+  "logout button ekkada?",
+  "where is the logout button?"
+ ],
+ "faq:change_name_email:0": [
+  "मैं अपना नाम कैसे बदलूँ?",
+  "నేను నా పేరు ఎలా మార్చాలి?",
+  "main apna naam kaise badlun?",
+  "nenu naa peru ela marchali?",
+  "how do I change my name?"
+ ],
+ "faq:change_name_email:1": [
+  "अपना ईमेल बदलें",
+  "మీ ఇమెయిల్ మార్చండి",
+  "apna email badlen",
+  "mee email marchandi?",
+  "change my email"
+ ],
+ "faq:change_name_email:2": [
+  "प्रोफ़ाइल नाम अपडेट करें",
+  "ప్రొఫైల్ పేరు అప్డేట్ చేయండి",
+  "profile name update karen",
+  "profile peru update cheyyandi",
+  "update my profile name"
+ ],
+ "faq:too_many_attempts:0": [
+  "बहुत अधिक प्रयास किए",
+  "చాలా ప్రయత్నాలు చేశారు",
+  "bahut adhik prayas kiye",
+  "chaala prayathnalu chesaru",
+  "too many attempts"
+ ],
+ "faq:too_many_attempts:1": [
+  "यह कहता है एक मिनट रुकें",
+  "ఇది ఒక నిమిషం వేచి ఉండండి అని చెబుతుంది",
+  "yeh kehta hai ek minute rukho",
+  "idi oka nimisham veyi ani cheptundi",
+  "it says wait a minute"
+ ],
+ "faq:too_many_attempts:2": [
+  "लॉगिन से ब्लॉक हो गया हूँ",
+  "లాగిన్ నుండి బ్లాక్ అయ్యాను",
+  "login se block ho gaya hoon",
+  "login nundi block ayanu",
+  "blocked from login"
+ ],
+ "faq:disabled:0": [
+  "मेरा अकाउंट डिसेबल हो गया है, क्या करूँ?",
+  "నా ఖాతా డిసేబుల్ అయింది, ఏమి చేయాలి?",
+  "mera account disabled ho gaya hai, kya karun?",
+  "na khāta ḍisēbul āyindi, ēmi cēyāli?",
+  "My account got disabled, what should I do?"
+ ],
+ "faq:disabled:1": [
+  "अकाउंट ब्लॉक हो गया है, कैसे अनब्लॉक करें?",
+  "ఖాతా బ్లాక్ అయింది, ఎలా అన్‌బ్లాక్ చేయాలి?",
+  "account blocked ho gaya hai, kaise unblock karun?",
+  "khāta blok ayindi, elā anblāk cēyāli?",
+  "My account is blocked, how can I unblock it?"
+ ],
+ "faq:disabled:2": [
+  "डिसेबल हो जाने की वजह से मैं अपने अकाउंट तक नहीं पहुँच पा रहा हूँ।",
+  "డిసేబుల్ అయిపోయి నేను నా ఖాతాకు యాక్సెస్ చేయలేకపోతున్నాను.",
+  "disabled hone ki wajah se main apne account tak access nahi kar pa raha hoon.",
+  "ḍisēbul ayipoyina nēnu nā khātaku access cheyyalekapōtunnānu.",
+  "I can't access my account because it's disabled."
+ ],
+ "faq:admin:0": [
+  "ऐडमिन पैनल क्या है?",
+  "అడ్మిన్ ప్యానెల్ అంటే ఏమిటి?",
+  "admin panel kya hai?",
+  "admin pānel enti?",
+  "What is the admin panel?"
+ ],
+ "faq:admin:1": [
+  "मैं एडमिन कैसे बन सकता हूँ?",
+  "నేను అడ్మిన్ ఎలా అవ్వగలను?",
+  "main admin kaise ban sakta hoon?",
+  "nēnu admin elā avvāḍaṁ?",
+  "How can I become an admin?"
+ ],
+ "faq:admin:2": [
+  "एडमिनिस्ट्रेटर कौन है?",
+  "అడ్మినిస్ట్రేటర్ ఎవరు?",
+  "administrator kaun hai?",
+  "administrator vāru?",
+  "Who is the administrator?"
+ ],
+ "faq:mobile:0": [
+  "क्या यह मोबाइल पर काम करता है?",
+  "ఇది మొబైల్‌లో పనిచేస్తుందా?",
+  "kya yeh mobile par kaam karta hai?",
+  "idi mobile-lō panichēstundā?",
+  "Does it work on mobile?"
+ ],
+ "faq:mobile:1": [
+  "क्या कोई ऐप उपलब्ध है?",
+  "ఏదైనా యాప్ ఉందా?",
+  "koi app available hai?",
+  "ēdaina app undā?",
+  "Is there an app?"
+ ],
+ "faq:mobile:2": [
+  "एंड्रॉइड ऐप है क्या?",
+  "ఆండ్రాయిడ్ యాప్ ఉందా?",
+  "android app hai kya?",
+  "android app undā?",
+  "Is there an Android app?"
+ ],
+ "faq:browser:0": [
+  "कौन सा ब्राउज़र इस्तेमाल करना चाहिए?",
+  "ఏ బ్రౌజర్ వాడాలి?",
+  "kaun sa browser istemal karna chahiye?",
+  "ē browser vadāli?",
+  "Which browser should I use?"
+ ],
+ "faq:browser:1": [
+  "क्या यह सफारी पर चलता है?",
+  "ఇది సఫారి లో పని చేస్తుందా?",
+  "kya yeh safari par chalta hai?",
+  "idi safari lō panichēstundā?",
+  "Does it work on Safari?"
+ ],
+ "faq:browser:2": [
+  "क्रोम या फ़ायरफ़ॉक्स में से कौन बेहतर है?",
+  "క్రోమ్ లేదా ఫైర్‌ఫాక్స్‌లో ఏది బెటర్?",
+  "chrome ya firefox mein se kaun behtar hai?",
+  "chrome lēda firefox lō ēdi better?",
+  "Chrome or Firefox—which is better?"
+ ],
+ "faq:language:0": [
+  "क्या हिंदी सपोर्टेड है?",
+  "హిందీ సపోర్ట్ ఉందా?",
+  "kya hindi supported hai?",
+  "hindi support undā?",
+  "Is Hindi supported?"
+ ],
+ "faq:language:1": [
+  "क्या मैं तेलुगु इस्तेमाल कर सकता हूँ?",
+  "నేను తెలుగులో ఉపయోగించవచ్చా?",
+  "kya main telugu use kar sakta hoon?",
+  "nēnu telugu vadavaccā?",
+  "Can I use Telugu?"
+ ],
+ "faq:language:2": [
+  "अन्य भाषाओं का क्या हाल है?",
+  "ఇతర భాషలు ఎలా ఉన్నాయి?",
+  "anya bhashayein ka kya haal hai?",
+  "marri bhāṣalu ela unnāyi?",
+  "What about other languages?"
+ ],
+ "faq:internet:0": [
+  "ऑफ़लाइन काम करता है क्या?",
+  "ఆఫ్లైన్లో పని చేస్తుందా?",
+  "offline kaam karta hai kya?",
+  "āphlāinlō pan̄i cēstundā?",
+  "Does it function without internet?"
+ ],
+ "faq:internet:1": [
+  "क्या मुझे इंटरनेट चाहिए?",
+  "నాకు ఇంటర్నెట్ అవసరమా?",
+  "kya mujhe internet chahiye?",
+  "nāku iṇṭarneṭ avasaramā?",
+  "Is internet required?"
+ ],
+ "faq:internet:2": [
+  "क्या मैं बिना इंटरनेट के इस्तेमाल कर सकता हूँ?",
+  "నేను ఇంటర్నెట్ లేకుండా ఉపయోగించగలనా?",
+  "kya main bina internet ke use kar sakta hun?",
+  "nēnu iṇṭarneṭ lēkunda upayōgin̄cagalānā?",
+  "Can it be used without an internet connection?"
+ ],
+ "faq:security:0": [
+  "क्या वेबसाइट सुरक्षित है?",
+  "వెబ్సైట్ సురక్షితం인가?",
+  "kya website surakshit hai?",
+  "vebasaiṭ surakṣitaṁgā?",
+  "Is the site safe?"
+ ],
+ "faq:security:1": [
+  "क्या मेरा पासवर्ड सुरक्षित है?",
+  "నా పాస్వర్డ్ సురక్షితం?",
+  "kya mera password surakshit hai?",
+  "nā pāsvārḍ surakṣitaṁgā?",
+  "Is my password protected?"
+ ],
+ "faq:security:2": [
+  "क्या आप डेटा एन्क्रिप्ट करते हैं?",
+  "మీరు డేటా ఎన్‌క్రిప్ట్ చేస్తారా?",
+  "kya aap data encrypt karte hain?",
+  "mīru ḍēṭā enkripṭ cēstārā?",
+  "Do you encrypt the data?"
+ ],
+ "faq:cookies_ads:0": [
+  "क्या आप कुकीज़ इस्तेमाल करते हैं?",
+  "మీరు కుకీలు ఉపయోగిస్తారా?",
+  "kya aap cookies use karte hain?",
+  "mīru kukīlu upayōgin̄cārā?",
+  "Do you use cookies?"
+ ],
+ "faq:cookies_ads:1": [
+  "क्या यहाँ विज्ञापन हैं?",
+  "ఇక్కడ అడ్స్ ఉన్నాయా?",
+  "kya yahan ads hain?",
+  "ikkada ads unnāyā?",
+  "Are there ads here?"
+ ],
+ "faq:cookies_ads:2": [
+  "क्या आप मेरी ट्रैकिंग करते हैं?",
+  "మీను మీరు ట్రాక్ చేస్తున్నారా?",
+  "kya aap meri tracking karte hain?",
+  "mīni mīru ṭrāk cēstunnārā?",
+  "Do you track me?"
+ ],
+ "faq:contact:0": [
+  "आपसे कैसे संपर्क करूँ?",
+  "మీతో ఎలా సంప్రదించాలి?",
+  "aapse kaise sampark karun?",
+  "mīto elā sampradiñcālī?",
+  "How can I get in touch with you?"
+ ],
+ "faq:contact:1": [
+  "कस्टमर केयर नंबर क्या है?",
+  "కస్టమర్ కేర్ నంబర్ ఏమిటి?",
+  "customer care number kya hai?",
+  "kaṣṭamar kēra nambar ēmiṭi?",
+  "What is the customer care number?"
+ ],
+ "faq:contact:2": [
+  "बग रिपोर्ट कैसे भेजें?",
+  "బగ్ రిపోర్ట్ ఎలా పంపాలి?",
+  "bug report kaise bhejen?",
+  "bag ripōrt elā pampālī?",
+  "How do I submit a bug report?"
+ ],
+ "faq:who_for:0": [
+  "क्या डॉक्टर न्यूट्रिलेंस इस्तेमाल कर सकते हैं?",
+  "డాక్టర్లు న్యూట్రిలెన్స్ ఉపయోగించగలరా?",
+  "kya doctors nutrilens use kar sakte hain?",
+  "ḍākṭarlru nyūṭrilens upayōgin̄cagalārā?",
+  "Can doctors use Nutrilens?"
+ ],
+ "faq:who_for:1": [
+  "न्यूट्रिलेंस किसके लिए है?",
+  "న్యూట్రిలెన్స్ ఎవరికోసం?",
+  "nutrilens kiske liye hai?",
+  "nyūṭrilens evarikōsamā?",
+  "Who is Nutrilens intended for?"
+ ],
+ "faq:who_for:2": [
+  "यह किसे उपयोग कर सकता है?",
+  "ఇది ఎవరు ఉపయోగించగలరు?",
+  "yeh kiske use kar sakta hai?",
+  "idi evaru upayōgin̄cagalru?",
+  "Who can use this?"
+ ],
+ "faq:foreign_report:0": [
+  "क्या मैं भारत के बाहर की रिपोर्ट अपलोड कर सकता हूँ?",
+  "భారతదేశం వెలుపల నివేదికను అప్‌లోడ్ చేయగలనా?",
+  "kya main Bharat ke bahar ki report upload kar sakta hoon?",
+  "nenu bharat ke velupala report upload cheyagalava?",
+  "Can I upload a report from outside India?"
+ ],
+ "faq:foreign_report:1": [
+  "यूएसए लैब रिपोर्ट कहाँ मिल सकती है?",
+  "యూఎస్ఎ ల్యాబ్ రిపోర్ట్ ఎక్కడ పొందవచ్చు?",
+  "USA lab report kahaan mil sakti hai?",
+  "USA lab report ekkada dorukutundi?",
+  "Where can I get a USA lab report?"
+ ],
+ "faq:foreign_report:2": [
+  "यूके की रिपोर्ट चाहिए, कहाँ मिल सकती है?",
+  "యుకె రిపోర్ట్ కావాలి, ఎక్కడ పొందవచ్చు?",
+  "UK ki report chahiye, kahaan mil sakti hai?",
+  "UK report kavali, ekkada dorukutundi?",
+  "Where can I find a UK report?"
+ ],
+ "faq:old_report:0": [
+  "क्या एक साल पुरानी रिपोर्ट चलाएगी?",
+  "ఒక సంవత్సరం పాత నివేదిక పనిచేస్తుందా?",
+  "kya ek saal purani report chalayegi?",
+  "oka samvasaram padi report panichestundaa?",
+  "Will a one‑year‑old report work?"
+ ],
+ "faq:old_report:1": [
+  "क्या मैं पुरानी रिपोर्ट अपलोड कर सकता हूँ?",
+  "నేను పాత రిపోర్ట్‌ను అప్‌లోడ్ చేయగలనా?",
+  "kya main purani report upload kar sakta hoon?",
+  "nenu padi report upload cheyagalava?",
+  "Can I upload an old report?"
+ ],
+ "faq:old_report:2": [
+  "पिछले साल की रिपोर्ट चाहिए, क्या अपलोड कर सकते हैं?",
+  "గత సంవత్సరం రిపోర్ట్ కావాలి, అప్‌లోడ్ చేయగలరా?",
+  "pichhle saal ki report chahiye, kya upload kar sakte hain?",
+  "gatha samvasaram report kavali, upload cheyagalara?",
+  "Can I upload a report from last year?"
+ ],
+ "faq:unsupported_reports:0": [
+  "क्या मैं यूरिन टेस्ट रिपोर्ट अपलोड कर सकता हूँ?",
+  "నేను మూత్ర పరీక్ష రిపోర్ట్‌ను అప్‌లోడ్ చేయగలనా?",
+  "kya main urine test report upload kar sakta hoon?",
+  "nenu urine test report upload cheyagalava?",
+  "Can I upload a urine test report?"
+ ],
+ "faq:unsupported_reports:1": [
+  "क्या मैं एक्स‑रे रिपोर्ट अपलोड कर सकता हूँ?",
+  "నేను ఎక్స్‑రే రిపోర్ట్‌ను అప్‌లోడ్ చేయగలనా?",
+  "kya main X ray report upload kar sakta hoon?",
+  "nenu X ray report upload cheyagalava?",
+  "Can I upload an X‑ray report?"
+ ],
+ "faq:unsupported_reports:2": [
+  "क्या मैं ईसीजी रिपोर्ट अपलोड कर सकता हूँ?",
+  "నేను ECG రిపోర్ట్‌ను అప్‌లోడ్ చేయగలనా?",
+  "kya main ECG report upload kar sakta hoon?",
+  "nenu ECG report upload cheyagalava?",
+  "Can I upload an ECG report?"
+ ],
+ "faq:other_features:0": [
+  "ऐप में डार्क मोड है क्या?",
+  "యాప్‌లో డార్క్ మోడ్ ఉందా?",
+  "app mein dark mode hai kya?",
+  "app lo dark mode unda?",
+  "Does the app have a dark mode?"
+ ],
+ "faq:other_features:1": [
+  "क्या आप रिमाइंडर भेज सकते हैं?",
+  "మీరు రిమైండర్లు పంపగలరా?",
+  "kya aap reminders bhej sakte hain?",
+  "meeru reminders pampagalara?",
+  "Can you send me reminders?"
+ ],
+ "faq:other_features:2": [
+  "क्या नोटिफिकेशन मिलते हैं?",
+  "నోటిఫికేషన్లు వస్తాయా?",
+  "kya notifications milte hain?",
+  "notifications vastaya?",
+  "Do I receive notifications?"
+ ],
+ "faq:calories_bmi:0": [
+  "कैलोरी काउंटर कहाँ है?",
+  "క్యాలరీ కౌంటర్ ఎక్కడ ఉంది?",
+  "calorie counter kahan hai?",
+  "calorie counter ekkada undi?",
+  "Where is the calorie counter?"
+ ],
+ "faq:calories_bmi:1": [
+  "मुझे कितनी कैलोरी लेनी चाहिए?",
+  "నాకు ఎంత క్యాలరీలు తీసుకోవాలి?",
+  "mujhe kitni calories leni chahiye?",
+  "naaku entha calories teesukovali?",
+  "How many calories should I consume?"
+ ],
+ "faq:calories_bmi:2": [
+  "मेरे बीएमआई की गणना करें।",
+  "నా బిఎమ్‌ఐని లెక్కించండి.",
+  "mere BMI ki ganana karo.",
+  "na BMI calculate cheyandi.",
+  "Calculate my BMI."
+ ],
+ "faq:chatbot:0": [
+  "क्या मेरे चैट सेव होते हैं?",
+  "నా చాట్లు సేవ్ అవుతాయా?",
+  "kya mere chat saved hote hain?",
+  "naa chatlu save avuta?",
+  "Are my conversations stored?"
+ ],
+ "faq:chatbot:1": [
+  "मेरी पुरानी चैट्स कहाँ हैं?",
+  "నా పాత చాట్లు ఎక్కడ ఉన్నాయి?",
+  "meri purani chats kahan hain?",
+  "naa paatha chatlu ekkada unnayi?",
+  "Where can I find my previous conversations?"
+ ],
+ "faq:chatbot:2": [
+  "मैं एक चैट कैसे डिलीट करूँ?",
+  "నేను ఒక చాట్‌ను ఎలా తొలగించాలి?",
+  "main ek chat kaise delete karun?",
+  "nenu oka chat ni ela delete cheyyali?",
+  "How do I remove a conversation?"
+ ],
+ "faq:unsupported_test:0": [
+  "क्या जिंक सपोर्टेड है?",
+  "జింక్ సపోర్ట్ చేయబడిందా?",
+  "kya zinc supported hai?",
+  "zink support chestundaa?",
+  "Is zinc covered?"
+ ],
+ "faq:unsupported_test:1": [
+  "क्या आप मैग्नीशियम पढ़ सकते हैं?",
+  "మీరు మ్యాగ్నీషియం చదవగలరా?",
+  "kya aap magnesium read kar sakte ho?",
+  "meeru magnesium chadavadam cheyyagalara?",
+  "Can you interpret magnesium?"
+ ],
+ "faq:unsupported_test:2": [
+  "विटामिन ए टेस्ट",
+  "విటమిన్ A టెస్ట్",
+  "vitamin A test",
+  "vitamin A test",
+  "Vitamin A examination"
+ ],
+ "faq:protein_need:0": [
+  "मुझे रोज़ कितना प्रोटीन चाहिए?",
+  "నాకు రోజుకు ఎంత ప్రోటీన్ అవసరం?",
+  "mujhe roz kitna protein chahiye?",
+  "naaku roju entha protein kavali?",
+  "How much protein should I consume daily?"
+ ],
+ "faq:protein_need:1": [
+  "दैनिक प्रोटीन आवश्यकता क्या है?",
+  "రోజువారీ ప్రోటీన్ అవసరం ఏమిటి?",
+  "daily protein requirement kya hai?",
+  "daily protein requirement enti?",
+  "What is the daily protein need?"
+ ],
+ "faq:protein_need:2": [
+  "एक दिन में प्रोटीन कितना चाहिए?",
+  "ఒక రోజులో ప్రోటీన్ ఎంత కావాలి?",
+  "ek din mein protein kitna chahiye?",
+  "oka roju protein enta kavali?",
+  "Protein needed per day?"
+ ],
+ "faq:calcium_need:0": [
+  "मुझे रोज़ कितना कैल्शियम चाहिए?",
+  "నాకు రోజుకు ఎంత కాల్షియం అవసరం?",
+  "mujhe roz kitna calcium chahiye?",
+  "naaku roju entha calcium kavali?",
+  "How much calcium do I need each day?"
+ ],
+ "faq:calcium_need:1": [
+  "दैनिक कैल्शियम आवश्यकता क्या है?",
+  "రోజువారీ కాల్షియం అవసరం ఏమిటి?",
+  "daily calcium requirement kya hai?",
+  "daily calcium requirement enti?",
+  "What is the daily calcium requirement?"
+ ],
+ "faq:calcium_need:2": [
+  "एक दिन में कैल्शियम कितना चाहिए?",
+  "ఒక రోజులో కాల్షియం ఎంత కావాలి?",
+  "ek din mein calcium kitna chahiye?",
+  "oka roju calcium enta kavali?",
+  "Calcium needed per day?"
+ ],
+ "faq:vitd_need:0": [
+  "मुझे रोज़ कितना विटामिन डी चाहिए?",
+  "నాకు రోజుకు ఎంత విటమిన్ D అవసరం?",
+  "mujhe roz kitna vitamin D chahiye?",
+  "naaku roju entha vitamin D kavali?",
+  "How much vitamin D should I take daily?"
+ ],
+ "faq:vitd_need:1": [
+  "दैनिक विटामिन डी आवश्यकता क्या है?",
+  "రోజువారీ విటమిన్ D అవసరం ఏమిటి?",
+  "daily vitamin D requirement kya hai?",
+  "daily vitamin D requirement enti?",
+  "What is the daily vitamin D need?"
+ ],
+ "faq:fruits_diabetes:0": [
+  "डायबिटीज़ के लिए कौन‑से फल अच्छे हैं?",
+  "డయాబెటీస్‌కు ఏ ఫలాలు మంచివి?",
+  "diabetes ke liye kaunse phal acche hain?",
+  "diabetes ki kosam ye phal manchi?",
+  "Which fruits are suitable for diabetes?"
+ ],
+ "faq:fruits_diabetes:1": [
+  "क्या डायबिटीज़ वाले फलों को खा सकते हैं?",
+  "డయాబెటీస్ ఉన్నవారు పండ్లు తినవచ్చా?",
+  "Kya diabetics fruits kha sakte hain?",
+  "Dayaabetees unnavaaru pandlu tinavaccha?",
+  "Is it okay for people with diabetes to eat fruit?"
+ ],
+ "faq:fruits_diabetes:2": [
+  "डायबिटीज़ रोगियों के लिए कौन से फल सबसे बेहतर हैं?",
+  "డయాబెటీస్ రోగులకు ఉత్తమ ఫలాలు ఏవి?",
+  "Diabetics ke liye best fruits kaunse hain?",
+  "Dayaabetees roogula ki best pandlu yevi?",
+  "Which fruits are most suitable for people with diabetes?"
+ ],
+ "faq:nuts_daily:0": [
+  "रोज़ कितने नट्स खाने चाहिए?",
+  "రోజుకు ఎంత నట్లు తినాలి?",
+  "Roz kitne nuts khane chahiye?",
+  "Rojuku entha nattu tinali?",
+  "How many nuts should one consume each day?"
+ ],
+ "faq:nuts_daily:1": [
+  "क्या नट्स खाने से वजन बढ़ता है?",
+  "నట్లు తింటే బరువు పెరుగుతుందా?",
+  "Kya nuts khane se weight badhta hai?",
+  "Nattu tinappudu vajan periguthunda?",
+  "Do nuts cause weight gain?"
+ ],
+ "faq:nuts_daily:2": [
+  "क्या रोज़ बादाम खाने से लाभ मिलता है?",
+  "రోజూ బాదం తింటే లాభం ఉంటుందా?",
+  "Kya roz almonds khane se fayda hota hai?",
+  "Rojoo baadam tinappudu labham unda?",
+  "Is there a benefit to eating almonds daily?"
+ ],
+ "faq:eggs_cholesterol:0": [
+  "एक दिन में कितने अंडे खाने चाहिए?",
+  "ఒక రోజులో ఎంత గుడ్లు తినాలి?",
+  "Ek din mein kitne eggs khane chahiye?",
+  "Oka roju lo entha gudlu tinali?",
+  "How many eggs should be eaten in a day?"
+ ],
+ "faq:eggs_cholesterol:1": [
+  "क्या अंडे कोलेस्ट्रॉल के लिए हानिकारक हैं?",
+  "గుడ్లు కొలెస్ట్రాల్ కోసం హానికరమా?",
+  "Kya eggs cholesterol ke liye harmful hain?",
+  "Gudlu cholesterol kosam hanikaram?",
+  "Are eggs detrimental to cholesterol levels?"
+ ],
+ "faq:eggs_cholesterol:2": [
+  "एक दिन में अंडे कितने ले सकते हैं?",
+  "ఒక రోజులో గుడ్లు ఎంత తీసుకోవచ్చు?",
+  "Ek din mein eggs kitne le sakte hain?",
+  "Oka roju lo gudlu entha teesukovachu?",
+  "What is the maximum number of eggs one can have per day?"
+ ],
+ "faq:intermittent_fasting:0": [
+  "इंटरमिटेंट फास्टिंग लाभदायक है क्या?",
+  "ఇంటర్మిటెంట్ ఫాస్టింగ్ మంచిదా?",
+  "Intermittent fasting labhdayak hai kya?",
+  "Intermittent fasting manchida?",
+  "Is intermittent fasting beneficial?"
+ ],
+ "faq:intermittent_fasting:1": [
+  "केटो डाइट क्या है?",
+  "కీటో డైట్ అంటే ఏమిటి?",
+  "Keto diet kya hai?",
+  "Keto diet ante emiti?",
+  "What is the keto diet?"
+ ],
+ "faq:intermittent_fasting:2": [
+  "केटो डाइट सुरक्षित है क्या?",
+  "కీటో డైట్ సురక్షితమా?",
+  "Keto diet surakshit hai kya?",
+  "Keto diet surakshitham?",
+  "Is the keto diet safe?"
+ ],
+ "faq:gym:0": [
+  "जिम के लिए कौन सा डाइट सही रहेगा?",
+  "జిమ్ కోసం ఏ డైట్ బాగుంటుంది?",
+  "Gym ke liye kaun sa diet sahi rahega?",
+  "Gym kosam ye diet baaguntundi?",
+  "Which diet is appropriate for gym workouts?"
+ ],
+ "faq:gym:1": [
+  "मसल गेन के लिए कौन सी डाइट बेहतर है?",
+  "మసిల్ గెయిన్ కోసం ఏ డైట్ బెటర్?",
+  "Muscle gain ke liye kaun si diet behtar hai?",
+  "Muscle gain kosam ye diet better?",
+  "What diet is best for muscle gain?"
+ ],
+ "faq:gym:2": [
+  "क्या व्हे प्रोटीन सुरक्षित है?",
+  "వే ప్రోటీన్ సురక్షితమా?",
+  "Kya whey protein surakshit hai?",
+  "Whey protein surakshitham?",
+  "Is whey protein safe to use?"
+ ],
+ "faq:sprouts:0": [
+  "स्प्राउट्स खाना स्वस्थ है क्या?",
+  "స్ప్రౌట్స్ తినడం ఆరోగ్యకరమా?",
+  "Sprouts khana healthy hai kya?",
+  "Sprouts tinadam arogya karam?",
+  "Are sprouts a healthy food choice?"
+ ],
+ "faq:sprouts:1": [
+  "स्प्राउट्स के क्या फायदे हैं?",
+  "స్ప్రౌట్స్ ప్రయోజనాలు ఏమిటి?",
+  "sprouts ke kya fayde hain?",
+  "sprouts prayojanalu emiti?",
+  "What are the advantages of eating sprouts?"
+ ],
+ "faq:sprouts:2": [
+  "स्प्राउट्स कैसे बनाते हैं?",
+  "స్ప్రౌట్స్ ఎలా తయారు చేయాలి?",
+  "sprouts kaise banate hain?",
+  "sprouts ela tayaru cheyyali?",
+  "How do you prepare sprouts?"
+ ],
+ "faq:night_food:0": [
+  "रात में क्या खाना चाहिए?",
+  "రాత్రి సమయంలో ఏమి తినాలి?",
+  "raat mein kya khana chahiye?",
+  "raatri lo emi tinali?",
+  "What should one eat during the night?"
+ ],
+ "faq:night_food:1": [
+  "डायबिटीज़ वाले लोगों के लिए डिनर क्या होना चाहिए?",
+  "డయాబెటీస్ ఉన్నవారికి రాత్రి భోజనం ఏమి ఉండాలి?",
+  "diabetes wale logon ke liye dinner kya hona chahiye?",
+  "diabetes unna variki dinner emi undali?",
+  "What dinner is suitable for someone with diabetes?"
+ ],
+ "faq:night_food:2": [
+  "लेट नाइट स्नैक्स के क्या विकल्प हैं?",
+  "లేట్ నైట్ స్నాక్స్ ఏవీ ఉన్నాయి?",
+  "late night snacks ke kya vikalp hain?",
+  "late night snacks yevi unnayi?",
+  "What are some options for late‑night snacks?"
+ ],
+ "faq:snacks:0": [
+  "स्वस्थ स्नैक्स कौन‑से हैं?",
+  "ఆరోగ్యకరమైన స్నాక్స్ ఏమిటి?",
+  "swasth snacks kaun‑se hain?",
+  "aarogyakaramaina snacks emi?",
+  "Which snacks are considered healthy?"
+ ],
+ "faq:snacks:1": [
+  "शाम के स्नैक आइडियाज़ क्या हैं?",
+  "సాయంత్రం స్నాక్స్ ఐడియాలు ఏమిటి?",
+  "shaam ke snack ideas kya hain?",
+  "saayantram snack ideas enti?",
+  "What are some ideas for evening snacks?"
+ ],
+ "faq:snacks:2": [
+  "डायबिटीज़ के लिए कौन‑से स्नैक्स ठीक हैं?",
+  "డయాబెటీస్ కోసం ఏ స్నాక్స్ మంచివి?",
+  "diabetes ke liye kaun‑se snacks theek hain?",
+  "diabetes kosam ye snacks manchi?",
+  "Which snacks are appropriate for diabetes?"
+ ],
+ "faq:vegetarian_b12:0": [
+  "शाकाहारी B12 कैसे प्राप्त कर सकते हैं?",
+  "శాకాహారి B12 ఎలా పొందాలి?",
+  "shakahari B12 kaise prapt kar sakte hain?",
+  "shakahari B12 ela pondali?",
+  "How can a vegetarian obtain vitamin B12?"
+ ],
+ "faq:vegetarian_b12:1": [
+  "शाकाहारियों के लिए B12 स्रोत क्या हैं?",
+  "శాకాహారులకు B12 మూలాలు ఏమిటి?",
+  "shakahariyon ke liye B12 srot kya hain?",
+  "shakahari ki B12 moolalu enti?",
+  "What are B12 sources for vegetarians?"
+ ],
+ "faq:vegetarian_b12:2": [
+  "शुद्ध शाकाहारी B12 के स्रोत कौन‑से हैं?",
+  "పూర్తి శాకాహారి B12 మూలాలు ఏమిటి?",
+  "shuddh shakahari B12 ke srot kaun‑se hain?",
+  "purnam shakahari B12 moolalu emi?",
+  "Which pure‑veg sources provide B12?"
+ ],
+ "faq:iron_women:0": [
+  "महिलाओं के लिए आयरन के स्रोत क्या हैं?",
+  "స్త్రీల కోసం ఐరన్ మూలాలు ఏమిటి?",
+  "mahilaon ke liye iron ke srot kya hain?",
+  "sthri ki iron moolalu emi?",
+  "What are iron sources for women?"
+ ],
+ "faq:iron_women:1": [
+  "पीरियड्स के दौरान आयरन की जरूरत क्यों बढ़ती है?",
+  "పీరియడ్స్ సమయంలో ఐరన్ అవసరం ఎందుకు పెరుగుతుంది?",
+  "periods ke dauran iron ki zaroorat kyon badhti hai?",
+  "periods lo iron avasaram enduku perugutundi?",
+  "Why does iron requirement increase during periods?"
+ ],
+ "faq:iron_women:2": [
+  "महिला एनीमिया के लिए कौन‑सा डाइट प्लान है?",
+  "మహిళా అనీమియా కోసం ఏ డైట్ ప్లాన్?",
+  "mahila anemia ke liye kaun‑sa diet plan hai?",
+  "mahila anemia ki diet plan enti?",
+  "What diet plan is recommended for women with anemia?"
+ ],
+ "faq:elderly:0": [
+  "बुजुर्गों के लिए कौन‑सा आहार उपयुक्त है?",
+  "వృద్ధుల కోసం ఏ డైట్ సరైనది?",
+  "buzurgon ke liye kaun‑sa aahar upyukt hai?",
+  "vruddhulaki diet yedi saraina?",
+  "Which diet is suitable for elderly people?"
+ ],
+ "faq:elderly:1": [
+  "सिनियर सिटिजन का डाइट क्या होना चाहिए?",
+  "సీనియర్ సిటిజన్ డైట్ ఏమిటి?",
+  "senior citizen ka diet kya hona chahiye?",
+  "senior citizen diet emiti?",
+  "What should a senior citizen’s diet include?"
+ ],
+ "faq:elderly:2": [
+  "बुज़ुर्गों की पोषण संबंधी जरूरतें क्या हैं?",
+  "వృద్ధుల పోషక అవసరాలు ఏమిటి?",
+  "buurgon ki nutrition kya hai?",
+  "vriddhula poshaka avasaraalu enti?",
+  "What are the nutritional needs of elderly people?"
+ ],
+ "faq:hydration_drinks:0": [
+  "क्या ग्रीन टी स्वास्थ्यवर्धक है?",
+  "గ్రీన్ టీ ఆరోగ్యానికి మంచిదా?",
+  "kya green tea healthy hai?",
+  "green tea arogyaaniki manchi kada?",
+  "Is green tea good for health?"
+ ],
+ "faq:hydration_drinks:1": [
+  "क्या नारियल पानी फायदेमंद है?",
+  "కొబ్బరి నీరు మంచిదా?",
+  "kya coconut water good hai?",
+  "kobbarinieru manchi kada?",
+  "Is coconut water beneficial?"
+ ],
+ "faq:hydration_drinks:2": [
+  "क्या छाछ स्वास्थ्य के लिए ठीक है?",
+  "మజ్జిగ ఆరోగ్యానికి మంచిదా?",
+  "kya buttermilk healthy hai?",
+  "majjiga arogyaaniki manchi kada?",
+  "Is buttermilk good for health?"
+ ],
+ "faq:processed_food:0": [
+  "क्या मैदा बुरा है?",
+  "మైదా చెడ్డదా?",
+  "kya maida bad hai?",
+  "maida cheddada?",
+  "Is maida harmful?"
+ ],
+ "faq:processed_food:1": [
+  "जंक फूड का शरीर पर क्या असर पड़ता है?",
+  "జంక్ ఫుడ్ శరీరంపై ఏమి ప్రభావం చూపుతుంది?",
+  "junk food effects kya hain?",
+  "junk food shariram pai em effect untundi?",
+  "What impact does junk food have on the body?"
+ ],
+ "faq:processed_food:2": [
+  "क्या ब्रेड स्वास्थ्यकर है?",
+  "బ్రెడ్ ఆరోగ్యకరమా?",
+  "kya bread healthy hai?",
+  "bread arogyaakaramaa?",
+  "Is bread considered healthy?"
+ ],
+ "faq:cooking_methods:0": [
+  "स्वस्थ खाना बनाने के तरीके कौन से हैं?",
+  "ఆరోగ్యకరమైన వంట పద్ధతులు ఏమిటి?",
+  "healthy cooking methods kya hain?",
+  "aarogya karaamaana vantapaddhatulu enti?",
+  "What are the healthy cooking methods?"
+ ],
+ "faq:cooking_methods:1": [
+  "क्या तलना हानिकारक है?",
+  "వేపడం హానికరమా?",
+  "kya frying bad hai?",
+  "vepadam haanikarama?",
+  "Is frying harmful?"
+ ],
+ "faq:cooking_methods:2": [
+  "एयर फ्रायर का उपयोग कैसे करें?",
+  "ఎయిర్ ఫ్రయ్యర్ ఎలా ఉపయోగించాలి?",
+  "air fryer kaise use kare?",
+  "air fryer ela upayoginchali?",
+  "How to use an air fryer?"
+ ],
+ "faq:plan_styles:0": [
+  "तीन प्लान विकल्प क्या हैं?",
+  "మూడు ప్లాన్ ఎంపికలు ఏమిటి?",
+  "what are the three plan options?",
+  "moodu plan empilulu enti?",
+  "What are the three plan choices?"
+ ],
+ "faq:plan_styles:1": [
+  "फैमिलियर और रीजनल प्लान में क्या अंतर है?",
+  "ఫ్యామిలియర్ మరియు రీజనల్ ప్లాన్‌లో తేడా ఏమిటి?",
+  "difference between familiar and regional plan?",
+  "familiar mariyu regional plan lo theda enti?",
+  "How do familiar and regional plans differ?"
+ ],
+ "faq:plan_styles:2": [
+  "सबसे पोषक प्लान कौन सा है?",
+  "అత్యంత పోషకత కలిగిన ప్లాన్ ఏది?",
+  "what is most nutritious plan?",
+  "atyanta poshakatha kaligina plan yedi?",
+  "Which plan is the most nutritious?"
+ ],
+ "faq:swap_dish:0": [
+  "मैं डिश कैसे बदलूं?",
+  "నేను డిష్‌ను ఎలా మార్చుకోవచ్చు?",
+  "how do i swap a dish?",
+  "nenu dish ni ela marchukovachu?",
+  "How can I replace a dish?"
+ ],
+ "faq:swap_dish:1": [
+  "मैं इस डिश को पसंद नहीं करता/करती",
+  "నేను ఈ వంటకాన్ని ఇష్టపడటం లేదు",
+  "i dont like this dish",
+  "Nenu ee vantakanni ishtapadanu",
+  "I’m not a fan of this meal"
+ ],
+ "faq:swap_dish:2": [
+  "मेरे प्लान में कोई डिश बदलें",
+  "నా ప్లాన్‌లో ఒక వంటకం మార్చండి",
+  "change a dish in my plan",
+  "Na plan lo oka vantakam marchandi",
+  "Swap a meal in my schedule"
+ ],
+ "faq:shopping_list:0": [
+  "क्या मुझे शॉपिंग लिस्ट मिल सकती है?",
+  "నా షాపింగ్ లిస్ట్ ఇవ్వగలరా?",
+  "can i get a shopping list",
+  "na shopping list ivvagalara?",
+  "Could you provide a grocery list?"
+ ],
+ "faq:shopping_list:1": [
+  "सप्ताह के लिए ग्रोसरी लिस्ट चाहिए",
+  "వారానికి గ్రోసరీ లిస్ట్ కావాలి",
+  "grocery list for the week",
+  "varaniki grocery list kavali",
+  "Need a weekly grocery rundown"
+ ],
+ "faq:shopping_list:2": [
+  "मुझे क्या खरीदना चाहिए?",
+  "నాకు ఏమి కొనాలి?",
+  "what should i buy",
+  "naaku emi konali?",
+  "What items should I pick up?"
+ ],
+ "faq:save_plan:0": [
+  "क्या मैं अपना डाइट प्लान सेव कर सकता/सकती हूँ?",
+  "నేను నా డైట్ ప్లాన్ సేవ్ చేయగలనా?",
+  "can i save my diet plan",
+  "nenu naa diet plan save cheyagalava?",
+  "Is it possible to store my diet schedule?"
+ ],
+ "faq:save_plan:1": [
+  "7‑दिन का प्लान कैसे सेव करें?",
+  "7‑రోజుల ప్లాన్ ఎలా సేవ్ చేయాలి?",
+  "how to save the 7 day plan",
+  "7 rojul plan ela save cheyali?",
+  "Steps to store a week‑long plan"
+ ],
+ "faq:save_plan:2": [
+  "मेरी सेव्ड प्लान कहां है?",
+  "నా సేవ్ చేసిన ప్లాన్ ఎక్కడుంది?",
+  "where is my saved plan",
+  "naa saved plan ekkada?",
+  "Location of my stored plan?"
+ ],
+ "faq:pick_foods:0": [
+  "मैं अपने प्लान में फ़ूड कैसे जोड़ूँ?",
+  "నేను నా ప్లాన్‌లో ఫుడ్స్ ఎలా జోడించాలి?",
+  "how do i add foods to my plan",
+  "nenu naa plan lo foods ela add cheyyali?",
+  "How to insert foods into my schedule?"
+ ],
+ "faq:pick_foods:1": [
+  "'ऐड टू प्लान' का मतलब क्या है?",
+  "'Add to plan' అంటే ఏమిటి?",
+  "what is add to plan",
+  "'Add to plan' ante enti?",
+  "Explain the 'add to plan' feature"
+ ],
+ "faq:pick_foods:2": [
+  "क्या मैं अपनी पसंद की फ़ूड्स चुन सकता/सकती हूँ?",
+  "నేను నా ఇష్టమైన ఫుడ్స్ ఎంచుకోవచ్చా?",
+  "can i choose my own foods",
+  "nenu naa ishtamaina foods select cheyagalava?",
+  "Is self‑selection of foods allowed?"
+ ],
+ "faq:plan_not_showing:0": [
+  "डाइट प्लान नहीं दिख रहा है",
+  "డైట్ ప్లాన్ చూపించడం లేదు",
+  "diet plan not showing",
+  "diet plan chupinchadam ledu",
+  "My diet schedule isn’t appearing"
+ ],
+ "faq:plan_not_showing:1": [
+  "'बिल्ड माय डाइट प्लान' बटन ग्रेआउट है",
+  "'Build my diet plan' బటన్ డిసేబుల్ అయింది",
+  "build my diet plan button disabled",
+  "build my diet plan button disabled",
+  "The build plan button is inactive"
+ ],
+ "faq:plan_not_showing:2": [
+  "मुझे डाइट प्लान क्यों नहीं मिल रहा?",
+  "నాకు డైట్ ప్లాన్ ఎందుకు రాదు?",
+  "why cant i get a diet plan",
+  "naa diet plan enduku raaledu?",
+  "Why can’t I obtain a diet schedule?"
+ ],
+ "faq:plan_targets:0": [
+  "मेरी कैलोरी कैसे गणना की जाती है?",
+  "నా కాలరీలు ఎలా లెక్కించబడతాయి?",
+  "how are my calories calculated",
+  "na calories ela calculate chestaru?",
+  "What’s the method for computing my calorie count?"
+ ],
+ "faq:plan_targets:1": [
+  "मेरे प्लान में लक्ष्य क्या हैं?",
+  "నా ప్లాన్‌లో లక్ష్యాలు ఏమిటి?",
+  "mere plan mein targets kya hain?",
+  "na plan lo lakshyalu emiti?",
+  "What are the goals in my plan?"
+ ],
+ "faq:plan_targets:2": [
+  "इतनी कैलोरीज़ क्यों?",
+  "ఇంత కాలరీలు ఎందుకు?",
+  "itni calories kyun?",
+  "inta calories enduku?",
+  "Why so many calories?"
+ ],
+ "faq:non_veg_meats:0": [
+  "मैं सिर्फ़ चिकन खाता/खाती हूँ",
+  "నేను కేవలం చికెన్ మాత్రమే తింటాను",
+  "main sirf chicken khata/khati hoon",
+  "nenu keval chicken matrame tinṭanu",
+  "I only eat chicken"
+ ],
+ "faq:non_veg_meats:1": [
+  "कौन‑से मांस चुनूँ?",
+  "ఏ మాంసాలు ఎంచుకోవాలి?",
+  "kaun‑se meats chunoon?",
+  "e maansalu enchoavali?",
+  "Which meats should I pick?"
+ ],
+ "faq:non_veg_meats:2": [
+  "मैं बीफ़ नहीं खाता/खाती",
+  "నేను బీఫ్ తినను",
+  "main beef nahi khata/khati",
+  "nenu beef tinanu",
+  "I don’t eat beef"
+ ],
+ "faq:plan_children:0": [
+  "क्या मेरा 15 साल का बच्चा इस डाइट प्लान को इस्तेमाल कर सकता है?",
+  "నా 15 ఏళ్ల బిడ్డ ఈ డైట్ ప్లాన్‌ ను ఉపయోగించగలడా?",
+  "kya mera 15 saal ka bachcha is diet plan ko use kar sakta hai?",
+  "na 15 varshala pillaa ee diet plan vadukovachu?",
+  "Can my 15‑year‑old use this diet plan?"
+ ],
+ "faq:plan_children:1": [
+  "बच्चों के लिए डाइट प्लान",
+  "బిడ్డల కోసం డైట్ ప్లాన్",
+  "bachchon ke liye diet plan",
+  "pillalu kosam diet plan",
+  "Diet plan for kids"
+ ],
+ "faq:plan_children:2": [
+  "मेरे बच्चे के लिए प्लान चाहिए",
+  "నా బిడ్డకు ప్లాన్ కావాలి",
+  "mere bachche ke liye plan chahiye",
+  "na pillaku plan kavali",
+  "I need a plan for my child"
+ ],
+ "faq:dish_count:0": [
+  "प्लानर में कुल कितने डिश हैं?",
+  "ప్లానర్‌లో మొత్తం ఎంత డిష్‌లు ఉన్నాయి?",
+  "planner mein kul kitne dish hain?",
+  "planner lo mottham entha dishlu unnayi?",
+  "How many dishes are there in the planner?"
+ ],
+ "faq:dish_count:1": [
+  "आपके पास कितनी रेसिपी हैं?",
+  "మీ వద్ద ఎంత రిసిపీలు ఉన్నాయి?",
+  "aapke paas kitni recipe hain?",
+  "mee vaddam entha recipes unnayi?",
+  "How many recipes do you have?"
+ ],
+ "faq:dish_count:2": [
+  "प्लानर में डिशों की संख्या क्या है?",
+  "ప్లానర్‌లో డిష్‌ల సంఖ్య ఏమిటి?",
+  "planner mein dishon ki sankhya kya hai?",
+  "planner lo dishlu sankhya enti?",
+  "What’s the dish count in the planner?"
+ ]
+}

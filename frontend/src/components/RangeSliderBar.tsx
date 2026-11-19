@@ -1,3 +1,4 @@
+import { useT } from '../lib/i18n';
 import React from 'react';
 import { AlertTriangle } from 'lucide-react';
 import { MarkerAnalysisResult } from '../types';
@@ -25,19 +26,20 @@ export const RangeSliderBar: React.FC<RangeSliderBarProps> = ({ analysis }) => {
   const pointerPercent = Math.max(2, Math.min(98, ((clampedVal - visualMin) / span) * 100));
 
   const meta = STATUS_META[status];
+  const t = useT();
 
   const delta = (() => {
     switch (status) {
       case 'low':
-        return `${fmt(Math.abs(range_low - value))} ${unit} below the healthy range`;
+        return t('belowHealthy', { x: `${fmt(Math.abs(range_low - value))} ${unit}` });
       case 'borderline':
-        if (value > range_high) return `${fmt(value - range_high)} ${unit} above the healthy range`;
-        if (value < range_low) return `${fmt(range_low - value)} ${unit} below the healthy range`;
-        return `Close to the lower limit of ${range_low} ${unit}`;
+        if (value > range_high) return t('aboveHealthy', { x: `${fmt(value - range_high)} ${unit}` });
+        if (value < range_low) return t('belowHealthy', { x: `${fmt(range_low - value)} ${unit}` });
+        return t('closeLower', { x: `${range_low} ${unit}` });
       case 'normal':
         return 'Within the healthy range';
       case 'high':
-        return `${fmt(value - range_high)} ${unit} above the healthy range`;
+        return t('aboveHealthy', { x: `${fmt(value - range_high)} ${unit}` });
     }
   })();
 

@@ -25,6 +25,16 @@ class Settings(BaseSettings):
     gemini_api_key: str = ""
     gemini_model: str = "gemini-2.5-flash"
 
+    # --- Assistant language model (optional) ---
+    # Any OpenAI-compatible chat API. The default is Groq's free plan (no card needed, no data kept by default);
+    # set GROQ_API_KEY to turn it on. Without a key the assistant answers from its rule-based knowledge only.
+    groq_api_key: str = ""
+    chat_llm_api_key: str = ""   # for another provider; takes precedence over groq_api_key
+    chat_llm_base_url: str = "https://api.groq.com/openai/v1"
+    # Tried in order; when one is rate-limited or down the next is used, then the rule-based answer.
+    chat_llm_models: str = "openai/gpt-oss-120b,qwen/qwen3.8-27b,openai/gpt-oss-20b"
+    chat_llm_timeout_seconds: float = 12.0
+
     max_upload_bytes: int = 10 * 1024 * 1024
     max_report_pages: int = 20
     max_image_pixels: int = 20_000_000

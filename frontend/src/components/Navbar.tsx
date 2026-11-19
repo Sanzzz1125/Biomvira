@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { ChevronDown, History, LayoutDashboard, LogOut, ScanLine, Settings, ShieldCheck } from 'lucide-react';
+import { Language, LANGUAGES, setLanguage, useLanguage } from '../lib/i18n';
+import { BookOpen, ChevronDown, FlaskConical, History, Languages, LayoutDashboard, LogOut, ScanLine, Settings, ShieldCheck } from 'lucide-react';
 import { useAuth, wasSignedIn } from '../auth/AuthContext';
 import { Avatar, Logo, RoleBadge, Skeleton } from './brand';
 import { useToast } from './Toast';
@@ -116,6 +117,7 @@ const UserMenu: React.FC = () => {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
   const { user, ready, isStaff } = useAuth();
+  const language = useLanguage();
   const links = [
     { to: '/', label: 'Analyze', icon: ScanLine, end: true },
     { to: '/history', label: 'History', icon: History, end: false },
@@ -134,6 +136,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
                 {label}
               </NavLink>
             ))}
+            {[{ to: '/science', label: 'Science', icon: FlaskConical }, { to: '/articles', label: 'Articles', icon: BookOpen }].map(
+              ({ to, label, icon: Icon }) => (
+                <NavLink key={to} to={to} className={(p) => `${navClass(p)} hidden lg:flex`}>
+                  <Icon className="h-4 w-4" aria-hidden />
+                  {label}
+                </NavLink>
+              )
+            )}
           </nav>
         </div>
 
@@ -149,12 +159,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
           <button
             type="button"
             onClick={onOpenDisclaimer}
-            className="flex h-9 items-center gap-2 rounded-lg px-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            className="hidden h-9 items-center gap-2 rounded-lg px-2.5 sm:flex text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
           >
             <ShieldCheck className="h-4 w-4 text-brand-600" aria-hidden />
             <span className="hidden lg:inline">Safety &amp; privacy</span>
             <span className="sr-only lg:hidden">Safety and privacy</span>
           </button>
+
+          <label className="flex h-9 items-center gap-1 rounded-lg px-1.5 text-slate-600 hover:bg-slate-100 focus-within:ring-2 focus-within:ring-brand-600">
+            <Languages className="h-4 w-4 text-brand-600" aria-hidden />
+            <span className="sr-only">Language</span>
+            <select value={language} onChange={(e) => setLanguage(e.target.value as Language)}
+              className="cursor-pointer appearance-none border-0 bg-transparent bg-none p-0 text-sm font-medium focus:outline-none focus:ring-0">
+              {LANGUAGES.map((l) => <option key={l.id} value={l.id} aria-label={l.native}>{{ en: 'EN', hi: 'हि', te: 'తె' }[l.id]}</option>)}
+            </select>
+          </label>
 
           <span className="mx-1 hidden h-6 w-px bg-slate-200 sm:block" aria-hidden />
 

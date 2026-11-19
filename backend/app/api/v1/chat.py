@@ -14,7 +14,8 @@ from pydantic import BaseModel, Field
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from app.chat.engine import answer
+from app.chat import llm
+from app.chat.engine import Reply, answer
 from app.core.deps import get_current_user, get_optional_user
 from app.core.ratelimit import client_ip, limiter
 from app.models.database import get_db, utcnow
@@ -41,12 +42,28 @@ class ChatPlan(BaseModel):
     foods: List[str] = Field(default_factory=list, max_length=20)
 
 
+class ChatPlanDay(BaseModel):
+    kcal: Optional[float] = None
+    meals: dict[str, List[str]] = Field(default_factory=dict)  # slot -> dish names
+
+
+class ChatDietPlan(BaseModel):
+    style: str = Field(default="", max_length=20)
+    days: List[ChatPlanDay] = Field(default_factory=list, max_length=7)
+
+
 class ChatContext(BaseModel):
     """The user's own analysed results, sent by the results page so answers can be personal."""
     markers: List[ChatMarker] = Field(default_factory=list, max_length=100)
     plans: List[ChatPlan] = Field(default_factory=list, max_length=40)
     diet_type: Optional[str] = Field(default=None, max_length=20)
     allergens: List[str] = Field(default_factory=list, max_length=10)
+    diet_plan: Optional[ChatDietPlan] = None
+
+
+class ChatTurn(BaseModel):
+    role: str = Field(max_length=10)
+    text: str = Field(max_length=4000)
 
 
 class ChatRequest(BaseModel):
@@ -55,6 +72,18 @@ class ChatRequest(BaseModel):
     context: Optional[ChatContext] = None
     conversation_id: Optional[str] = Field(default=None, max_length=36)
     report_id: Optional[str] = Field(default=None, max_length=36)
+    language: Optional[str] = Field(default=None, max_length=5)  # the website's language: en, hi or te
+    history: List[ChatTurn] = Field(default_factory=list, max_length=8)  # guests' recent turns (not stored)
+
+
+def _respond(body: "ChatRequest", topic: Optional[str], context: Optional[dict], history: list[dict]) -> Reply:
+    """The rule-based answer, rewritten by the language model when one is configured and the reply allows it."""
+    result = answer(body.message, topic, context)
+    better = llm.improve(body.message, result, context, history, body.language)
+    if better:
+        text, kind = better
+        return Reply(text, kind=kind, suggestions=result.suggestions, topic=result.topic)
+    return result
 
 
 class ChatResponse(BaseModel):
@@ -118,7 +147,19 @@ def _context_from_report(report: Report) -> dict[str, Any]:
                   for p in analysis.get("recommendations", [])],
         "diet_type": (analysis.get("user_profile") or {}).get("diet_type"),
         "allergens": (analysis.get("user_profile") or {}).get("allergens", []),
+        "diet_plan": plan_summary(analysis.get("diet_plan")),
     }
+
+
+def plan_summary(plan: Any) -> Optional[dict]:
+    """A saved 7-day plan as the assistant sees it: style, and dish names per meal for each day."""
+    if not isinstance(plan, dict) or not plan.get("days"):
+        return None
+    return {"style": str(plan.get("style", ""))[:20],
+            "days": [{"kcal": round(float((d.get("totals") or {}).get("energy_kcal", 0))),
+                      "meals": {slot: [str(i.get("name", ""))[:80] for i in items][:8]
+                                for slot, items in (d.get("meals") or {}).items()}}
+                     for d in plan["days"][:7] if isinstance(d, dict)]}
 
 
 def _own_conversation(db: Session, user: User, conversation_id: str) -> ChatConversation:
@@ -136,7 +177,7 @@ def chat(body: ChatRequest, request: Request, db: Session = Depends(get_db),
     context = body.context.model_dump() if body.context else None
 
     if user is None:  # guests: answer only, nothing stored
-        result = answer(body.message, body.topic, context)
+        result = _respond(body, body.topic, context, [t.model_dump() for t in body.history])
         return ChatResponse(reply=result.reply, kind=result.kind, suggestions=result.suggestions[:4], topic=result.topic)
 
     report = None
@@ -157,7 +198,10 @@ def chat(body: ChatRequest, request: Request, db: Session = Depends(get_db),
 
     if context is None and report is not None:
         context = _context_from_report(report)
-    result = answer(body.message, body.topic or conversation.topic, context)
+    earlier = db.scalars(select(ChatMessage).where(ChatMessage.conversation_id == conversation.id)
+                         .order_by(ChatMessage.id.desc()).limit(6)).all() if body.conversation_id else []
+    history = [{"role": m.role, "text": m.text} for m in reversed(earlier)]
+    result = _respond(body, body.topic or conversation.topic, context, history)
     suggestions = result.suggestions[:4]
     now = utcnow()
     db.add(ChatMessage(conversation_id=conversation.id, role="user", text=body.message.strip()[:500],
@@ -165,7 +209,8 @@ def chat(body: ChatRequest, request: Request, db: Session = Depends(get_db),
     db.add(ChatMessage(conversation_id=conversation.id, role="bot", text=result.reply, kind=result.kind,
                        suggestions=suggestions, created_at=now))
     conversation.message_count += 2
-    conversation.topic = result.topic or conversation.topic
+    if result.topic not in llm.NEVER_TO_MODEL | {"non_english"}:
+        conversation.topic = result.topic or conversation.topic
     conversation.updated_at = now
     db.commit()
     return ChatResponse(reply=result.reply, kind=result.kind, suggestions=suggestions, topic=result.topic,

@@ -8,21 +8,26 @@ FAQ = [
     # ---- About NutriLens ----
     ("about", ["what is nutrilens", "what does this website do", "what is this app", "tell me about nutrilens",
                "what can this site do", "how does nutrilens help me", "what is the purpose of this website"],
-     "NutriLens reads your blood report and turns it into a **personalised Indian food plan**.\n\n"
-     "- Upload a PDF or photo of your report, or paste its text.\n"
-     "- NutriLens reads 60+ common tests (blood count, sugar, cholesterol, liver, kidney, thyroid, iron and vitamins).\n"
-     "- It marks each result low, normal or high and suggests Indian foods for the results that need them, matched to your diet and allergies.",
+     'NutriLens reads your blood report and turns it into a **personalised Indian diet plan**.\n\n- Upload a '
+     'PDF or photo of your report, or paste its text. It reads 61 common tests (blood count, sugar, '
+     'cholesterol, liver, kidney, thyroid, iron and vitamins).\n- Each result is marked low, borderline, '
+     'normal or high and explained in plain language.\n- You pick Indian foods that help your results, and '
+     'NutriLens builds **diet plans** from 278 home-style dishes of your state: three one-day options, '
+     'then a full **7-day plan** with a shopping list.\n- Everything works in **English, Hindi and '
+     'Telugu**, including the PDFs.',
      ["How do I upload my report?", "Which tests are supported?", "Is my data private?"]),
     ("how_it_works", ["how does nutrilens work", "how does it analyse my report", "what algorithm do you use",
                       "is this ai", "do you use ai", "how are foods chosen", "how do you recommend foods",
                       "what is the logic behind the diet plan", "do you use machine learning", "how is the diet decided"],
-     "NutriLens uses a **knowledge-based system**, not a guessing AI model:\n\n"
-     "- It reads the values, units and ranges from your report.\n"
-     "- Each result is compared with the range on your report (or a standard range) and marked low, normal or high.\n"
-     "- For results that need it, foods are ranked by real nutrient values from the **ICMR-NIN Indian Food Composition Tables**, "
-     "or by helpful properties such as low GI or high fibre.\n"
-     "- Foods that don't match your diet or allergies are removed, and the plan is kept varied.\n\n"
-     "Every food shows why it was chosen, so you can check the reasoning.",
+     'NutriLens uses **checked data and fixed rules**, not guesses:\n\n- It reads the values, units and '
+     "ranges from your report and marks each result against your lab's range (or a published range).\n- "
+     'Foods for each result are ranked by real nutrient values from the **ICMR-NIN Indian Food Composition '
+     'Tables (IFCT 2017)**, or by properties such as low GI or high fibre, and filtered by your diet and '
+     'allergies.\n- Your daily **calorie and protein targets** come from your age, sex, height, weight and '
+     'activity; nutrient targets come from the ICMR-NIN 2020 recommended amounts.\n- An **optimisation '
+     'solver** then picks dishes and portions that meet those targets, favour the nutrients your report '
+     'shows as low and respect your diet, allergies and region.\n\nEvery food shows why it was chosen, so '
+     'you can check the reasoning.',
      ["Where does the food data come from?", "Which tests get a food plan?"]),
     ("who_made", ["who made nutrilens", "who built this", "who created you", "who developed this website",
                   "who are the developers"],
@@ -57,9 +62,12 @@ FAQ = [
      ["Which tests are supported?", "How does NutriLens work?"]),
     ("food_source", ["where does the food data come from", "what is the source of nutrient values",
                      "are the nutrient values correct", "which food database do you use", "how many foods are there"],
-     "Food nutrient values come from the **Indian Food Composition Tables (IFCT 2017)** published by ICMR-National Institute "
-     "of Nutrition, Hyderabad. NutriLens includes **188 Indian foods**: millets, pulses, greens, vegetables, fruits, nuts, seeds, "
-     "dairy, eggs, fish and meat.",
+     'Nutrient values come from the **Indian Food Composition Tables (IFCT 2017)** by ICMR-National '
+     'Institute of Nutrition, Hyderabad, with USDA values for a few foods IFCT does not list. The food '
+     'suggestions use **187 Indian foods**; the diet plans use **278 dishes** whose nutrients are '
+     'calculated from their raw ingredients, with cooking losses from IFCT. Dishes were checked against '
+     'lab-measured values of cooked food (UK CoFID) and typical days against the salt Indians actually '
+     'eat.',
      ["How are foods chosen?", "Which foods are rich in iron?"]),
     ("ranges_source", ["where do the normal ranges come from", "which reference range do you use",
                        "why is my lab range different", "why does the range differ from my report"],
@@ -70,10 +78,12 @@ FAQ = [
     # ---- Using the app ----
     ("upload", ["what is the next step after uploading", "what to do after uploading the report", "how do i upload my report", "how to use this website", "how to analyse my report", "where do i upload",
                 "how do i start", "steps to use nutrilens", "how to use the website", "how to use the app", "how to check my report"],
-     "It takes three steps:\n\n"
-     "- **Upload** your report on the home page: drag in a PDF or photo, or choose **Paste text**.\n"
-     "- **Tell us about you:** age, sex, diet type and any food allergies.\n"
-     "- **Get your results:** each test explained, plus a food plan for results that need it. You can download it as a PDF.",
+     'It takes three steps:\n\n- **Upload** your report on the home page: drag in a PDF or photo, or choose '
+     '**Paste text**, then check the values that were read.\n- **Your profile:** age, sex, height, weight, '
+     'state, activity, diet type (and which meats, for non-veg), allergies, and optionally what you '
+     'usually eat.\n- **Results:** first **pick foods** you like, then open **Diet plan** to get three plan '
+     'options and a 7-day plan. Your test results are in the third tab. You can download everything as a '
+     'PDF.',
      ["Which file types can I upload?", "Do I need an account?"]),
     ("file_types", ["which file types can i upload", "can i upload a photo", "can i upload an image", "is jpg supported",
                     "can i upload a scanned report", "what formats are supported", "can i take a picture of my report",
@@ -138,16 +148,18 @@ FAQ = [
      ["What do low, borderline and high mean?"]),
     ("food_plan", ["how do i read the food plan", "what is the food plan", "why these foods", "why 8 foods",
                    "what does keep it healthy mean", "what are maintain plans"],
-     "Each food plan is linked to a result:\n\n"
-     "- **Improve plans** (up to 8 foods) are for results outside the range.\n"
-     "- **Keep healthy plans** (4 foods) help keep normal results normal.\n"
-     "- Each food shows its key nutrient per 100 g, a cooking tip and why it helps. Plans mix food groups so meals stay varied.\n\n"
-     "Use them as everyday swaps and additions, in normal portions, rather than eating large amounts of one food.",
+     'The foods in **1. Pick foods** are linked to your results:\n\n- **Improve plans** (up to 8 foods) are '
+     'for results outside the range.\n- **Keep healthy plans** (4 foods) help keep normal results normal.\n- '
+     'Each food shows how much of the key nutrient a normal serving gives, a cooking tip and why it '
+     'helps.\n\nTap **Add to plan** on the foods you like, then **Build my diet plan**: your diet plan will '
+     'include them.',
      ["Can I download my plan?", "How does NutriLens work?"]),
     ("pdf", ["can i download my plan", "how to download pdf", "can i print my plan",
              "download pdf not working"],
-     "Yes. On the results page, click **Download PDF**. You get a clean report with your results, food plan and guidance that you "
-     "can print or share with your doctor.",
+     'Yes, there are two PDFs, both in the language you have chosen (English, Hindi or Telugu):\n\n- '
+     '**Download PDF** at the top of the results page: your results, your 7-day diet plan (if you made '
+     "one), the food plans and what your results mean.\n- **PDF** inside the 7-day plan: just the week's "
+     'meals and the shopping list, handy for the kitchen.',
      ["Where is my history?"]),
     ("history", ["where is my history", "how do i see old reports", "are my analyses saved", "how to view previous results",
                  "my report is not in history"],
@@ -279,12 +291,12 @@ FAQ = [
      ["Which foods are low GI?", "Which foods are high in protein?"]),
     ("weight", ["how to lose weight", "diet for weight loss", "how to reduce belly fat", "how to gain weight",
                 "is my weight ok", "obesity diet"],
-     "NutriLens focuses on blood results, not weight plans, but a few safe principles help:\n\n"
-     "- Fill half your plate with vegetables and add protein at each meal.\n"
-     "- Choose millets and whole grains over refined flour and white rice.\n"
-     "- Limit sugar, sweet drinks, fried snacks and late-night eating.\n"
-     "- Aim for about 150 minutes of activity a week.\n\n"
-     "For a personal weight plan, please consult a doctor or dietitian.",
+     'NutriLens adjusts your diet plan to your body: if your BMI is 25 or more, the daily calorie target '
+     'is set about 15% lower (at most 500 kcal less); if it is under 18.5, about 10% higher. A few safe '
+     'principles also help:\n\n- Fill half your plate with vegetables and add protein at each meal.\n- Choose '
+     'millets and whole grains over refined flour.\n- Limit sugar, sweet drinks, fried snacks and '
+     'late-night eating.\n- Aim for about 150 minutes of activity a week.\n\nFor a medical weight-loss '
+     'programme, please consult a doctor or dietitian.',
      ["What is a healthy diet?", "Which foods are low GI?"]),
     ("exercise", ["how much exercise should i do", "does exercise help", "best exercise for health",
                   "exercise for cholesterol", "walking after meals"],
@@ -330,4 +342,5 @@ from app.chat.faq_site import EXTRA_PHRASINGS, FAQ_SITE  # noqa: E402
 
 _ids = {entry[0] for entry in FAQ}
 FAQ = [(fid, questions + EXTRA_PHRASINGS.get(fid, []), answer, follow) for fid, questions, answer, follow in FAQ]
-FAQ += [entry for entry in FAQ_SITE if entry[0] not in _ids]
+FAQ += [(fid, questions + EXTRA_PHRASINGS.get(fid, []), answer, follow)
+        for fid, questions, answer, follow in FAQ_SITE if fid not in _ids]

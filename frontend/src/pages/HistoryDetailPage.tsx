@@ -24,11 +24,11 @@ export const HistoryDetailPage: React.FC = () => {
     historyApi.get(id).then(setResult).catch((err: Error) => setError(err.message));
   }, [id]);
 
-  const download = async () => {
+  const download = async (dietPlan?: FullAnalysisResponse['diet_plan']) => {
     if (!result) return;
     setExporting(true);
     try {
-      await downloadPlanPdf(result);
+      await downloadPlanPdf(dietPlan ? { ...result, diet_plan: dietPlan } : result);
     } catch (err) {
       notify('error', 'PDF download failed', (err as Error).message);
     } finally {

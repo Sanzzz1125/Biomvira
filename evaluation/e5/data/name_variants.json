@@ -1,0 +1,5041 @@
+{
+ "dish:steamed_rice": [
+  "bhat",
+  "bhatta",
+  "steamed rice bhaji",
+  "भात",
+  "బాత్",
+  "steemed rice"
+ ],
+ "dish:brown_rice": [
+  "bhura chawal",
+  "bhooru annam",
+  "brown rice roti",
+  "भूरा चावल",
+  "బ్రౌన్ రైస్",
+  "brownr rice"
+ ],
+ "dish:phulka": [
+  "phulka roti",
+  "phulka roti (tel)",
+  "phulka roti (hing)",
+  "फुलका रोटी",
+  "ఫుల్కా",
+  "fulka"
+ ],
+ "dish:chapati": [
+  "chapati roti",
+  "chapati roti (tel)",
+  "chapati with oil",
+  "चपाती रोटी",
+  "చపాతీ రొటి",
+  "chapti"
+ ],
+ "dish:whole_wheat_bread": [
+  "gawah roti",
+  "gawah roti (tel)",
+  "whole wheat toast",
+  "गेहूँ रोटी",
+  "గోధుమ రొట్టి",
+  "whle wheat bread"
+ ],
+ "dish:oats_milk": [
+  "doodh me oats",
+  "paalu lo oats",
+  "oats with milk",
+  "दूध में ओट्स",
+  "పాలు లో ఓట్స్",
+  "oats milkk"
+ ],
+ "dish:poha": [
+  "poha flakes",
+  "poha (tel)",
+  "poha upma",
+  "पोहे",
+  "పొహా",
+  "pohha"
+ ],
+ "dish:rava_upma": [
+  "rava upma",
+  "uppindi (tel)",
+  "rava upma (hing)",
+  "रवा उपमा",
+  "రవా ఉప్మా",
+  "rava upmma"
+ ],
+ "dish:moong_dal_khichdi": [
+  "moong khichdi",
+  "pesara pappu (tel)",
+  "moong dal khichdi (hing)",
+  "मूंग खिचड़ी",
+  "మూఙ్ దాల్ ఖిచ్డి",
+  "moong dal khichdiy"
+ ],
+ "dish:veg_pulao": [
+  "veg pulao",
+  "veg pulav (tel)",
+  "veg pulao (hing)",
+  "वेज पुलाव",
+  "వెజ్ పులావ్",
+  "veg pulaw"
+ ],
+ "dish:curd": [
+  "dahi",
+  "perugu (tel)",
+  "curd (hing)",
+  "दही",
+  "పెరుగు",
+  "curddd"
+ ],
+ "dish:buttermilk": [
+  "chaas",
+  "majjiga (tel)",
+  "buttermilk (hing)",
+  "छाछ",
+  "మజ్జిగా",
+  "buttermilkk"
+ ],
+ "dish:milk": [
+  "doodh",
+  "paalu (tel)",
+  "milk (hing)",
+  "दूध",
+  "పాలు",
+  "milkk"
+ ],
+ "dish:fortified_milk": [
+  "vitamin D milk",
+  "vitamin D paalu (tel)",
+  "fortified milk (hing)",
+  "विटामिन D वाला दूध",
+  "విటమిన్ D పాలు",
+  "fortified milkk"
+ ],
+ "dish:tea": [
+  "chai",
+  "tea (tel)",
+  "tea with milk (hing)",
+  "चाय",
+  "చాయ్",
+  "teaa"
+ ],
+ "dish:filter_coffee": [
+  "kaapi",
+  "filter coffee (tel)",
+  "filter coffee (hing)",
+  "फ़िल्टर कॉफ़ी",
+  "ఫిల్టర్ కాఫీ",
+  "filter coffe"
+ ],
+ "dish:lemon_water": [
+  "nimbu paani",
+  "nimmarasam (tel)",
+  "lemon water (hing)",
+  "नींबू पानी",
+  "నిమ్మరసం",
+  "lemon watter"
+ ],
+ "dish:boiled_egg": [
+  "anda ubla",
+  "anda (tel)",
+  "boiled egg (hing)",
+  "उबला अंडा",
+  "ఉడకబెట్టిన గుడ్డు",
+  "boiled eg"
+ ],
+ "dish:onion_omelette": [
+  "pyaaz omelette",
+  "pyaaz omelette (tel)",
+  "onion omelette (hing)",
+  "प्याज़ ऑमलेट",
+  "ఉల్లిపాయ ఒమ్లెట్",
+  "onion omlette"
+ ],
+ "dish:kachumber": [
+  "kachumber salad",
+  "kachumber (tel)",
+  "kachumber (hing)",
+  "खीरा-गाजर सलाद",
+  "కచుంబర్",
+  "kachumberr"
+ ],
+ "dish:moong_sprouts": [
+  "moong ki salad",
+  "mungaa pappu",
+  "moong sprout chat",
+  "मूंग सलाद",
+  "ముంగ స్ప్రౌట్స్",
+  "mung sprout"
+ ],
+ "dish:roasted_gram": [
+  "bhuna chana",
+  "pottu kaala",
+  "roasted chana chat",
+  "भुना चना",
+  "పొట్టు చణా",
+  "roassted chana"
+ ],
+ "dish:mushroom_curry": [
+  "mushroom ki sabzi",
+  "kuruputu kura",
+  "mushroom masala chat",
+  "मशरूम की करी",
+  "మష్రూమ్ కర్రీ",
+  "mushroom curri"
+ ],
+ "ingredient:banana": [
+  "arati pandu",
+  "kela",
+  "banana fruit",
+  "अरती पंडु",
+  "అరటి పండు",
+  "arati pandu"
+ ],
+ "ingredient:guava": [
+  "amrud",
+  "jama pandu",
+  "guava fruit",
+  "अमरूद",
+  "అమ్రుద్",
+  "amrud"
+ ],
+ "ingredient:apple": [
+  "sepu regu",
+  "sev",
+  "apple fruit",
+  "सेपु रेगु",
+  "సేపు రెగు",
+  "sepu regu"
+ ],
+ "ingredient:orange": [
+  "kamala padu",
+  "santra",
+  "orange fruit",
+  "कमला पाडु",
+  "కమల పాడు",
+  "kamala padu"
+ ],
+ "ingredient:papaya": [
+  "boppayi pandu",
+  "papita",
+  "papaya fruit",
+  "बोप्पायी पंडु",
+  "బొప్పాయి పండు",
+  "boppayi pandu"
+ ],
+ "ingredient:watermelon": [
+  "puchakaya",
+  "tarbuj",
+  "watermelon fruit",
+  "पुचाकाया",
+  "పుచకాయ",
+  "puchakaya"
+ ],
+ "ingredient:pomegranate": [
+  "anari",
+  "danimma pandu",
+  "pomegranate fruit",
+  "अनरि",
+  "దనిమ్మ పండు",
+  "anari"
+ ],
+ "ingredient:sapota": [
+  "chikoo",
+  "chikku",
+  "chiku bhai",
+  "चीको",
+  "చిక్కు",
+  "chikoo"
+ ],
+ "ingredient:mango": [
+  "aam",
+  "mamidi",
+  "mango bhai",
+  "आम",
+  "మామిడి",
+  "amgo"
+ ],
+ "ingredient:grapes": [
+  "angoor",
+  "draksha",
+  "grapes bhai",
+  "अंगूर",
+  "ద్రాక్ష",
+  "angor"
+ ],
+ "dish:jonna_rotte": [
+  "jowar roti",
+  "jolada rotti",
+  "jowar roti chat",
+  "ज्वार रोटी",
+  "జొన్న రొట్టె",
+  "jowar rotti"
+ ],
+ "dish:sajja_rotte": [
+  "bajra roti",
+  "bajre ki roti",
+  "bajra roti chat",
+  "बाजरे की रोटी",
+  "బజ్రా రొట్టె",
+  "bajra rotii"
+ ],
+ "dish:ragi_sankati": [
+  "ragi mudde",
+  "ragi sangati",
+  "ragi mudda chat",
+  "रागी मुद्दा",
+  "రాగి సంకతి",
+  "ragi sankatti"
+ ],
+ "dish:samala_annam": [
+  "kutki rice",
+  "sama rice",
+  "samala annam chat",
+  "समाला अन्नम्",
+  "సమల అన్నం",
+  "samala anan"
+ ],
+ "dish:idli": [
+  "idly",
+  "idli chat",
+  "इडली",
+  "ఇడ్లీ",
+  "idlli"
+ ],
+ "dish:plain_dosa": [
+  "attu",
+  "dosai",
+  "plain dosa chat",
+  "डोसा",
+  "డోసా",
+  "dosae"
+ ],
+ "dish:masala_dosa": [
+  "masala dosa",
+  "masala dosai",
+  "masala dosa chat",
+  "मसाला डोसा",
+  "మసాలా దోస",
+  "masala dossa"
+ ],
+ "dish:onion_uttapam": [
+  "pyaaz uttapam",
+  "ullipaya attu",
+  "onion uttapaam",
+  "प्याज़ उत्तपम",
+  "ఉల్లిపాయ ఉప్పం",
+  "onion uttapammm"
+ ],
+ "dish:ragi_dosa": [
+  "ragi dosha",
+  "ragi attu",
+  "ragi dosaa",
+  "रागी डोसा",
+  "రాగి దోస",
+  "ragi d0sa"
+ ],
+ "dish:pesarattu": [
+  "green moong dosa",
+  "pesara dosa",
+  "pesarattu dosi",
+  "पेसरट्टू (हरी मूंग का डोसा)",
+  "పెసరట్టు దోస",
+  "pesaratu"
+ ],
+ "dish:sarva_pindi": [
+  "sarva pindi rotti",
+  "ginnappa",
+  "sarva pindi bhakri",
+  "सर्व पिंडी",
+  "సర్వ పిండి",
+  "sarva pindy"
+ ],
+ "dish:uggani": [
+  "puffed rice upma",
+  "borugula upma",
+  "uggani upma",
+  "उग्गानी (मुरमुरे का उपमा)",
+  "ఉగ్గాని ఉప్మా",
+  "uggani upmaa"
+ ],
+ "dish:semiya_upma": [
+  "semeeya upma",
+  "shavige bath",
+  "semiyah upma",
+  "सेमिया उपमा",
+  "సేమియా ఉప్మ",
+  "semyia upma"
+ ],
+ "dish:medu_vada": [
+  "medhu vada",
+  "garelu",
+  "medu vadda",
+  "मेढु वड़ा",
+  "మెదు వడ",
+  "medu vadaa"
+ ],
+ "dish:punugulu": [
+  "punugu lu",
+  "punugulu snack",
+  "punugu lu",
+  "पुन्नुगुळु",
+  "పునుగులు",
+  "punuguluu"
+ ],
+ "dish:mirchi_bajji": [
+  "mirchi bajji",
+  "menasinakai bajji",
+  "mirchi bajjee",
+  "मिर्ची बज्जी",
+  "మిర్చి బజ్జి",
+  "mirchi bajjii"
+ ],
+ "dish:onion_pakoda": [
+  "pyaaz pakoda",
+  "ullipaya pakodi",
+  "onion pakoraa",
+  "प्याज़ पकोड़ा",
+  "ఉల్లిపాయ పకోడా",
+  "onion pakodaa"
+ ],
+ "dish:guggillu": [
+  "guggilu",
+  "senagala guggillu",
+  "guggillu chana",
+  "घुघनी (मसालेदार चने)",
+  "గుగ్గిల్లు",
+  "guggilluul"
+ ],
+ "dish:boiled_peanuts": [
+  "ubli moongfali",
+  "boiled groundnuts",
+  "boiled peanuts",
+  "उबली मूंगफली",
+  "వండిన పీనట్‌లు",
+  "boiled peanuts"
+ ],
+ "dish:roasted_corn": [
+  "bhutta roasted",
+  "kalchina mokkajonna",
+  "roasted corn",
+  "भुना भुट्टा",
+  "రొస్టెడ్ కార్న్",
+  "roasted cornn"
+ ],
+ "dish:sakinalu": [
+  "sakinaalu",
+  "chakinalu",
+  "sakinaalu snack",
+  "सकिनालु",
+  "సకినాలు",
+  "sakinaluu"
+ ],
+ "dish:borugula_mixture": [
+  "borugula mix",
+  "bhel",
+  "borugulu mixture",
+  "जहल मुरि",
+  "బొరుగుల మిశ్రమం",
+  "borugula mixtre"
+ ],
+ "dish:pulihora": [
+  "puli horra",
+  "chintapandu pulihora",
+  "pulihora rice",
+  "पुलिहोरा",
+  "పులిహోర",
+  "pulihoraa"
+ ],
+ "dish:lemon_rice": [
+  "nimmakaya pulihora",
+  "chitranna",
+  "lemon rice",
+  "नींबू चावल",
+  "నిమ్మకాయ పులిహోర",
+  "lemon ricee"
+ ],
+ "dish:tomato_rice": [
+  "thakkali sadam",
+  "tomato bath",
+  "tomato rice",
+  "टमाटर चावल",
+  "టమాటో సాడం",
+  "tomato rrice"
+ ],
+ "dish:curd_rice": [
+  "daddojanam",
+  "dahi chawal",
+  "curd rice",
+  "दही चावल",
+  "దోసకాయ అన్నం",
+  "curd rrice"
+ ],
+ "dish:bagara_annam": [
+  "bagara khana",
+  "bagara rice",
+  "bagara annam",
+  "बघारा चावल",
+  "బగర అన్నం",
+  "bagara annamm"
+ ],
+ "dish:chicken_biryani": [
+  "chikna biryani",
+  "చికెన్ బిర్యాని",
+  "chicken biryani masala style",
+  "चिकन बिरयानी",
+  "చికెన్ బిర్యాని",
+  "chiken biryani"
+ ],
+ "dish:mutton_biryani": [
+  "bakra biryani",
+  "మటన్ బిర్యాని",
+  "mutton biryani spicy",
+  "मटन बिरयानी",
+  "మటన్ బిర్యాని",
+  "mouton biryani"
+ ],
+ "dish:tomato_pappu": [
+  "tamatar pappu",
+  "టమాటో పప్పు",
+  "tomato dal chatpata",
+  "टमाटर पप्पु",
+  "టమాటో పప్పు",
+  "tomato papu"
+ ],
+ "dish:palakura_pappu": [
+  "palak pappu",
+  "పాలకూర పప్పు",
+  "spinach dal tadka",
+  "पालक पप्पु",
+  "పాలకూర పప్పు",
+  "palakur pappu"
+ ],
+ "dish:thotakura_pappu": [
+  "chaulai pappu",
+  "చోలోయి పప్పు",
+  "amaranth dal fry",
+  "चौलाई पप्पु",
+  "చోలోయి పప్పు",
+  "thotakura papu"
+ ],
+ "dish:gongura_pappu": [
+  "gonger pappu",
+  "గోంగూర పప్పు",
+  "sour leaf dal",
+  "गोंगूर पप्पु",
+  "గోంగూర పప్పు",
+  "gongura papu"
+ ],
+ "dish:menthikura_pappu": [
+  "methikura pappu",
+  "మెంతికూర పప్పు",
+  "fenugreek dal tadka",
+  "मेथी कूरा पप्पु",
+  "మెంతికూర పప్పు",
+  "menthikura papu"
+ ],
+ "dish:dosakaya_pappu": [
+  "dosakai pappu",
+  "దోసకాయ పప్పు",
+  "yellow cucumber dal",
+  "दोसकाया पप्पु",
+  "దోసకాయ పప్పు",
+  "dosakaya papu"
+ ],
+ "dish:mamidikaya_pappu": [
+  "mamidikaya pappu",
+  "మామిడికాయ పప్పు",
+  "raw mango dal tadka",
+  "कच्चे आम पप्पु",
+  "మామిడికాయ పప్పు",
+  "mamidikaya papu"
+ ],
+ "dish:mudda_pappu": [
+  "mudda pappu",
+  "ముద్ద పప్పు",
+  "plain dal with ghee",
+  "मुद्दा पप्पु",
+  "ముద్ద పప్పు",
+  "mudda papu"
+ ],
+ "dish:pesara_pappu": [
+  "pesara pappu",
+  "పెసర పప్పు",
+  "green gram dal",
+  "पेसर पप्पु",
+  "పెసర పప్పు",
+  "pesara papu"
+ ],
+ "dish:dalcha": [
+  "dalcha",
+  "దల్చా",
+  "bottle gourd dal",
+  "दालचा",
+  "దల్చా",
+  "dalchaa"
+ ],
+ "dish:sambar": [
+  "sambar",
+  "సాంబార్",
+  "south indian dal",
+  "सांबर",
+  "సాంబార్",
+  "sambhar"
+ ],
+ "dish:pappu_charu": [
+  "pappu charu",
+  "పప్పు చారు",
+  "dal soup",
+  "पप्पु चारु",
+  "పప్పు చారు",
+  "pappu charoo"
+ ],
+ "dish:rasam": [
+  "rasam",
+  "రసం",
+  "tangy tomato rasam",
+  "रसम",
+  "రసం",
+  "rasammm"
+ ],
+ "dish:pachi_pulusu": [
+  "pachi pulusu",
+  "పచ్చి పులుసు",
+  "raw tamarind rasam",
+  "पच्ची पुलुसु",
+  "పచ్చి పులుసు",
+  "pachi pulus"
+ ],
+ "dish:mukkala_pulusu": [
+  "mukkala pulusu",
+  "ముక్కల పులుసు",
+  "veg pulusu",
+  "मुक्कला पुलुसु",
+  "ముక్కల పులుసు",
+  "mukkala pulus"
+ ],
+ "dish:majjiga_pulusu": [
+  "majjiga pulusu",
+  "మజ్జిగ పులుసు",
+  "buttermilk curry",
+  "मज्जीगा पुलुसु",
+  "మజ్జిగ పులుసు",
+  "majjiga pulus"
+ ],
+ "dish:ulava_charu": [
+  "ulava charu",
+  "ఉలవ చారు",
+  "horse gram rasam",
+  "उलवा चारु",
+  "ఉలవ చారు",
+  "ulava charoo"
+ ],
+ "dish:ragi_java_salt": [
+  "ragi java",
+  "రాగి జావా",
+  "ragi malt with buttermilk",
+  "रागी जावा",
+  "రాగి జావా",
+  "ragi javaa"
+ ],
+ "dish:ragi_java_milk": [
+  "ragi doodh",
+  "ragi paalu",
+  "रागी जावा मिल्क",
+  "రాగి జావా",
+  "ragi javu milk",
+  "ragi jave milk"
+ ],
+ "dish:bendakaya_fry": [
+  "bendakaya fry",
+  "bendi fry",
+  "बेंदा फ्राई",
+  "బెండకాయ ఫ్రై",
+  "bendakaya vepudu fry",
+  "bendakaya frie"
+ ],
+ "dish:gutti_vankaya": [
+  "gutti vankaya kura",
+  "gutti baingan",
+  "गुट्टी वांकेय",
+  "గుట్టి వంకాయ",
+  "gutti vankai",
+  "gutti vankaya curra"
+ ],
+ "dish:vankaya_tomato": [
+  "vankaya tomato",
+  "baingan tomato",
+  "वांकेय टमाटर",
+  "వంకాయ టమాటా",
+  "vankaya tomatar",
+  "vankaya tomoto"
+ ],
+ "dish:aloo_fry": [
+  "aloo fry",
+  "urulai fry",
+  "आलू फ्राई",
+  "உருளை ஃப்ரை",
+  "aloo vepudu",
+  "aloo frie"
+ ],
+ "dish:dondakaya_fry": [
+  "dondakaya fry",
+  "kondakaya fry",
+  "कुंदरू फ्राई",
+  "కుండకాయ ఫ్రై",
+  "dondakaya vepudu fry",
+  "dondakaya frie"
+ ],
+ "dish:beerakaya_kura": [
+  "beerakaya kura",
+  "turai curry",
+  "बीरैकाय कूड़ा",
+  "బీరకాయ కారా",
+  "beerakaya curra",
+  "beerakaya kora"
+ ],
+ "dish:sorakaya_kura": [
+  "sorakaya kura",
+  "lauki chana dal",
+  "सोरैकाय कूड़ा",
+  "సొరకాయ కూరా",
+  "sorakaya curra",
+  "sorakaya kora"
+ ],
+ "dish:kakarakaya_fry": [
+  "kakarakaya fry",
+  "karela fry",
+  "करकेला फ्राई",
+  "కాకరకాయ ఫ్రై",
+  "kakarakaya vepudu",
+  "kakarakaya frie"
+ ],
+ "dish:cabbage_kura": [
+  "cabbage kura",
+  "patta gobhi curry",
+  "पत्ता गोभी कूड़ा",
+  "క్యాబేజ్ కూరా",
+  "cabbage curra",
+  "cabbage kora"
+ ],
+ "dish:beans_kura": [
+  "beans kura",
+  "beans curry",
+  "बीन्स कूड़ा",
+  "బీన్స్ కూరా",
+  "beans curra",
+  "beans kora"
+ ],
+ "dish:thotakura_vepudu": [
+  "thotakura vepudu",
+  "chaulai stir fry",
+  "चौलाई वेपुडु",
+  "చోటకురా వేపుడు",
+  "thotakura fry",
+  "thotakura veepudu"
+ ],
+ "dish:chikkudukaya_kura": [
+  "chikkudukaya kura",
+  "sem ki sabzi",
+  "चिक्कुडुकाया कूड़ा",
+  "చిక్కుడుకాయ కూరా",
+  "chikkudukaya curra",
+  "chikkudukaya kora"
+ ],
+ "dish:aratikaya_vepudu": [
+  "aratikaya fry",
+  "kacche kele fry",
+  "अरतीकाया वेपुडु",
+  "అరటికాయ వేపుడు",
+  "aratikaya vepudu",
+  "aratikaya frie"
+ ],
+ "dish:kanda_vepudu": [
+  "kanda fry",
+  "suran roast",
+  "कंदा वेपुडु",
+  "కంద వేపుడు",
+  "kanda vepudu",
+  "kanda frie"
+ ],
+ "dish:chamadumpa_pulusu": [
+  "chamadumpa pulusu",
+  "arbi pulusu",
+  "चामडुंपा पुलुसु",
+  "చమడంప పులుసు",
+  "chamadumpa pulus",
+  "chamadumpa pulusu"
+ ],
+ "dish:goruchikkudu_kura": [
+  "goruchikkudu kura",
+  "gawar sabzi",
+  "गोरुचिक्कुडु कूड़ा",
+  "గొరుచిక్కుడు కూరా",
+  "goruchikkudu curra",
+  "goruchikkudu kora"
+ ],
+ "dish:mirchi_ka_salan": [
+  "mirchi ka salan",
+  "mirchi salan",
+  "मिर्ची का सालन",
+  "మిర్చి సలాన్",
+  "mirchi ka salan",
+  "mirchi ka salan"
+ ],
+ "dish:egg_curry": [
+  "egg curry",
+  "anda curry",
+  "एग करी",
+  "ముడి కర్రీ",
+  "egg curri",
+  "egg currry"
+ ],
+ "dish:egg_bhurji": [
+  "egg bhurji",
+  "anda bhurji",
+  "एग भुर्जी",
+  "ఎగ్ భుర్జీ",
+  "egg bhurjee",
+  "egg bhurji"
+ ],
+ "dish:chicken_curry": [
+  "murga curry",
+  "kodi kura",
+  "chicken masala chat",
+  "चिकन करी",
+  "కోడి కూర",
+  "chiken curry"
+ ],
+ "dish:natu_kodi_pulusu": [
+  "desi murga pulusu",
+  "natu kodi pulusu",
+  "country chicken chat",
+  "देशी चिकन करी",
+  "దేశీ కోడి పులుసు",
+  "desi chicken pulusu"
+ ],
+ "dish:chicken_fry": [
+  "murga fry",
+  "kodi vepudu",
+  "chicken fry chat",
+  "चिकन फ्राई",
+  "కోడి వేయిపుడు",
+  "chicken frie"
+ ],
+ "dish:chicken_liver_fry": [
+  "murga kaleja fry",
+  "kaleja vepudu",
+  "chicken liver fry chat",
+  "चिकन कलेजी फ्राई",
+  "కోడి కాలేజా వేయిపుడు",
+  "chicken liver frie"
+ ],
+ "dish:mutton_curry": [
+  "bakra curry",
+  "mamsam kura",
+  "mutton masala chat",
+  "मटन करी",
+  "మాంసం కూర",
+  "muttan curry"
+ ],
+ "dish:gongura_mamsam": [
+  "gongura bakra",
+  "gongura mamsam",
+  "gongura mutton chat",
+  "गोंगुरा मटन",
+  "గోంగూర మాంసం",
+  "gongura muton"
+ ],
+ "dish:chepala_pulusu": [
+  "meen pulusu",
+  "chepala pulusu",
+  "fish curry chat",
+  "मछली पुलुसु",
+  "చేప పులుసు",
+  "fish pulusu"
+ ],
+ "dish:fish_fry": [
+  "meen fry",
+  "chepala vepudu",
+  "fish fry chat",
+  "मछली फ्राई",
+  "చేప వేపుడు",
+  "fish frie"
+ ],
+ "dish:royyala_iguru": [
+  "jhinga curry",
+  "royyala iguru",
+  "prawn masala chat",
+  "झींगा करी",
+  "రొయ్యల ఇగురు",
+  "prawn currey"
+ ],
+ "dish:kobbari_pachadi": [
+  "nariyal chutney",
+  "kobbari pachadi",
+  "coconut chutney chat",
+  "नारियल चटनी",
+  "కొబ్బరి పచ్చడి",
+  "coconut chutny"
+ ],
+ "dish:palli_pachadi": [
+  "moong chutney",
+  "palli pachadi",
+  "peanut chutney chat",
+  "मूंग चटनी",
+  "పల్లి పచ్చడి",
+  "peanut chutny"
+ ],
+ "dish:tomato_pachadi": [
+  "tamatar chutney",
+  "tomato pachadi",
+  "tomato chutney chat",
+  "टमाटर चटनी",
+  "టమాటో పచ్చడి",
+  "tomato chutny"
+ ],
+ "dish:gongura_pachadi": [
+  "gongura chutney",
+  "gongura pachadi",
+  "gongura chutney chat",
+  "गोंगुरा चटनी",
+  "గోంగూర పచ్చడి",
+  "gongura chutny"
+ ],
+ "dish:allam_pachadi": [
+  "adrak chutney",
+  "allam pachadi",
+  "ginger chutney chat",
+  "अदरक चटनी",
+  "అల్లం పచ్చడి",
+  "ginger chutny"
+ ],
+ "dish:pudina_pachadi": [
+  "pudina chutney",
+  "pudina pachadi",
+  "mint chutney chat",
+  "पुदीना चटनी",
+  "పుదీనా పచ్చడి",
+  "mint chutny"
+ ],
+ "dish:beerakaya_pachadi": [
+  "turai chutney",
+  "beerakaya pachadi",
+  "ridge gourd chutney chat",
+  "तुरई चटनी",
+  "బీరకాయ పచ్చడి",
+  "ridge gourd chutny"
+ ],
+ "dish:vankaya_pachadi": [
+  "baingan chutney",
+  "vankaya pachadi",
+  "roasted brinjal chutney chat",
+  "भुना बैंगन चटनी",
+  "వంకాయ పచ్చడి",
+  "baingan chutny"
+ ],
+ "dish:kandi_podi": [
+  "kandi podi",
+  "kandi podi with ghee",
+  "gunpowder chat",
+  "कांडी पोड़ी",
+  "కండి పొడి",
+  "kandi poddy"
+ ],
+ "dish:karivepaku_podi": [
+  "curry leaf podi",
+  "karivepaku podi",
+  "curry leaf powder chat",
+  "करी पत्ता पोड़ी",
+  "కరివేపాకు పొడి",
+  "curry leaf poddy"
+ ],
+ "dish:perugu_pachadi": [
+  "dahi raita",
+  "perugu pachadi",
+  "curd raita chat",
+  "दही राइता",
+  "పెరుగు పచ్చడి",
+  "curd raitaa"
+ ],
+ "dish:bobbatlu": [
+  "puranpoli",
+  "puranpoli",
+  "bobbatlu bhaji",
+  "बॉबबट्लु",
+  "బొబ్బట్లు",
+  "bobbatluu"
+ ],
+ "dish:ariselu": [
+  "adi rasam",
+  "adi rasam",
+  "ariselu laddu",
+  "अरिसेलु",
+  "అరిసేలు",
+  "arisell"
+ ],
+ "dish:semiya_payasam": [
+  "sevai kheer",
+  "sevai payasam",
+  "semiya kheer",
+  "सेमिया पायसम",
+  "సెమియా పాయసం",
+  "semeeya"
+ ],
+ "dish:chakkera_pongali": [
+  "sakkarai pongal",
+  "sakkarai pongal",
+  "sweet pongal",
+  "चक्केरा पोंगल",
+  "చక్కెర పొంగల్",
+  "chakkera pongal"
+ ],
+ "dish:sunnundalu": [
+  "urad laddu",
+  "urad laddu",
+  "sunnundalu sweets",
+  "सुनंदालु",
+  "సున్నుందలు",
+  "sunundalu"
+ ],
+ "dish:ven_pongal": [
+  "ven pongal",
+  "ven pongal",
+  "ghee pongal",
+  "वेन पोंगल",
+  "వెన్ పొంగల్",
+  "venpongal"
+ ],
+ "dish:adai": [
+  "adai dosa",
+  "adi dosa",
+  "adai dosai",
+  "अडै",
+  "అడై",
+  "addai"
+ ],
+ "dish:rava_dosa": [
+  "rava dosa",
+  "rava dosa",
+  "rava dosai",
+  "रवा डोसा",
+  "రవా దోస",
+  "rava dosa"
+ ],
+ "dish:kuzhi_paniyaram": [
+  "kuzhi paniyaram",
+  "kuzhi paniyaram",
+  "paniyaram",
+  "कुज़ी पनियारम",
+  "కుఝి పనియారం",
+  "kuzhi paneyaram"
+ ],
+ "dish:idiyappam": [
+  "idiyappam",
+  "idiyappam",
+  "string hopper",
+  "इडियप्पम",
+  "ఇడియప్పం",
+  "idiyappam"
+ ],
+ "dish:thengai_sadam": [
+  "thengai sadam",
+  "thengai sadam",
+  "coconut rice",
+  "तेंगई सदम",
+  "తెంగై సడం",
+  "thengai sadam"
+ ],
+ "dish:kara_kuzhambu": [
+  "kara kuzhambu",
+  "kara kuzhambu",
+  "tamarind gravy",
+  "कारा कुझम्बु",
+  "కారా కుజంబు",
+  "kara kuzhambu"
+ ],
+ "dish:chow_chow_kootu": [
+  "chow chow kootu",
+  "chow chow kootu",
+  "kootu",
+  "चौ चौ कूटु",
+  "చౌ చౌ కూటు",
+  "chow chow kootu"
+ ],
+ "dish:keerai_masiyal": [
+  "keerai masiyal",
+  "keerai masiyal",
+  "amaranth masiyal",
+  "कीरई मसियाल",
+  "కీరై మసియల్",
+  "keerai masial"
+ ],
+ "dish:chettinad_chicken": [
+  "chettinad chicken",
+  "chettinad chicken",
+  "chettinad kozhi",
+  "चेट्टिनाड चिकन",
+  "చెట్టినాడ్ చికెన్",
+  "chettinad chiken"
+ ],
+ "dish:pepper_chicken": [
+  "pepper chicken",
+  "pepper chicken",
+  "milagu kozhi",
+  "पेपर चिकन",
+  "మిరియాల చికెన్",
+  "pepper chiken"
+ ],
+ "dish:meen_kuzhambu": [
+  "meen kuzhambu",
+  "meen kuzhambu",
+  "fish kuzhambu",
+  "मीन कुझम्बु",
+  "మీన్కుజంబు",
+  "meen kuzhambu"
+ ],
+ "dish:mutton_kuzhambu": [
+  "mutton kuzhambu",
+  "mutton kuzhambu",
+  "mutton kuzhambu",
+  "मटन कुझम्बु",
+  "మటన్ కుజంబు",
+  "mutton kuzhambu"
+ ],
+ "dish:parotta": [
+  "parotta",
+  "parotta",
+  "parotta",
+  "परोट्टा",
+  "పరోట్టా",
+  "parota"
+ ],
+ "dish:rava_kesari": [
+  "rava kesari",
+  "rava kesari",
+  "kesari bath",
+  "रवा केसरी",
+  "రవ కేసరి",
+  "rava kesri"
+ ],
+ "dish:kozhukattai": [
+  "kozhukattai sweet",
+  "kozhukattai modakam",
+  "kozhukattai snack",
+  "कोझुकट्टई",
+  "కొజుకట్టై",
+  "kozhukatai"
+ ],
+ "dish:matta_rice": [
+  "kaala chaval",
+  "kallu annam",
+  "kerala matta rice",
+  "कट्टा चावल",
+  "కల్లు అన్నం",
+  "matta ricee"
+ ],
+ "dish:puttu": [
+  "puttu steamed",
+  "puttu idiyappam",
+  "puttu breakfast",
+  "पुट्टु",
+  "పుట్టు",
+  "puttuu"
+ ],
+ "dish:appam": [
+  "appam pancake",
+  "appam aappa",
+  "appam dosa",
+  "अप्पाम",
+  "అప్పాం",
+  "appamm"
+ ],
+ "dish:kappa_puzhukku": [
+  "kappa mash",
+  "kappa pulusu",
+  "tapioca puzhukku",
+  "कप्पा पुजुक्कु",
+  "కప్పా పుజుక్కు",
+  "kappa puzhuk"
+ ],
+ "dish:kanji_payar": [
+  "kanji payar",
+  "kanji paaya",
+  "rice kanji",
+  "कांजी पायार",
+  "కాంజి పయార్",
+  "kanji payarrr"
+ ],
+ "dish:kadala_curry": [
+  "kadala curry",
+  "kadala kari",
+  "black chickpea curry",
+  "कडाला करी",
+  "కడాలా కరీ",
+  "kadala curri"
+ ],
+ "dish:veg_stew": [
+  "veg stew",
+  "vegetable ishtu",
+  "kerala veg stew",
+  "वेज़ स्ट्यू",
+  "వెజ్ స్ట్యూ",
+  "veg stewe"
+ ],
+ "dish:chicken_stew": [
+  "chicken ishtu",
+  "kerala chicken stew",
+  "chicken curry stew",
+  "चिकन स्ट्यू",
+  "చికెన్ స్ట్యూ",
+  "chiken stew"
+ ],
+ "dish:kerala_fish_curry": [
+  "meen curry",
+  "kerala fish curry",
+  "fish meen curry",
+  "मेन् करी",
+  "మీన్కర్రీ",
+  "meen curri"
+ ],
+ "dish:meen_varuthathu": [
+  "meen fry",
+  "fish varuthathu",
+  "kerala fish fry",
+  "मीन वरुथथु",
+  "మీన్ వరుత్తు",
+  "meen varuthatu"
+ ],
+ "dish:cabbage_thoran": [
+  "cabbage thoran",
+  "cabbage thoran kerala",
+  "cabbage stir fry",
+  "पत्ता गोभी थोरन",
+  "క్యాబేజీ తోరన్",
+  "cabbage thoranr"
+ ],
+ "dish:beans_thoran": [
+  "beans thoran",
+  "bean thoran",
+  "green beans thoran",
+  "बीन्स थोरन",
+  "బీన్స్ తోరన్",
+  "beans thoranr"
+ ],
+ "dish:olan": [
+  "olan curry",
+  "olan veg",
+  "coconut milk olan",
+  "ओलन",
+  "ఓలన్",
+  "olanr"
+ ],
+ "dish:erissery": [
+  "erissery pumpkin",
+  "erissery curry",
+  "pumpkin erissery",
+  "एरिशेरी",
+  "ఎరిస్సేరి",
+  "erisseryy"
+ ],
+ "dish:avial": [
+  "avial veg",
+  "avial curry",
+  "mixed veg avial",
+  "अवियल",
+  "అవియల్",
+  "aviall"
+ ],
+ "dish:parippu_curry": [
+  "parippu curry",
+  "parippu dal",
+  "kerala dal",
+  "परिप्पु करी",
+  "పరిప్పు కర్రీ",
+  "parippu curri"
+ ],
+ "dish:beef_ularthiyathu": [
+  "beef ularthiyathu",
+  "beef fry kerala",
+  "kerala beef fry",
+  "बीफ़ उलर्थियथु",
+  "బీఫ్ ఉలర్తియత్",
+  "beef ularthiyath"
+ ],
+ "dish:egg_roast": [
+  "egg roast",
+  "egg roast kerala",
+  "kerala egg roast",
+  "एग रोस्ट",
+  "ఎగ్ రోస్ట్",
+  "egg roost"
+ ],
+ "dish:pazham_pori": [
+  "pazham pori",
+  "banana fritters",
+  "pazham pori snack",
+  "पझम पोरी",
+  "పజం పొరి",
+  "pazham porri"
+ ],
+ "dish:banana_chips": [
+  "kela ke chips",
+  "అరటి చిప్స్",
+  "banana chippz",
+  "केले के चिप्स",
+  "అరటి చిప్స్",
+  "bananna chips"
+ ],
+ "dish:unniyappam": [
+  "unniyapam",
+  "ఉన్నియప్పం",
+  "unni appam",
+  "उन्नियप्पम",
+  "ఉన్నియప్పం",
+  "unniyappammm"
+ ],
+ "dish:palada_payasam": [
+  "palaada paayasam",
+  "పలాడ పాయసం",
+  "palaada payasum",
+  "पलडा पायसम",
+  "పలాడ పాయసం",
+  "palada payasum"
+ ],
+ "dish:coconut_water": [
+  "nariyal ka pani",
+  "kobbari neeru",
+  "coconut water",
+  "नारियल पानी",
+  "నారియల్ నీరు",
+  "coconut watr"
+ ],
+ "dish:bisi_bele_bath": [
+  "bisi bele bhath",
+  "ಬಿಸಿ ಬೆಳೆ ಬಾತ್",
+  "bisi bele bhat",
+  "बिसी बेले भात",
+  "ಬಿಸಿ ಬೆಳೆ ಬಾತ್",
+  "bisi bele baath"
+ ],
+ "dish:vangi_bath": [
+  "baingan bath",
+  "వెంగి బాత్",
+  "vangi bhath",
+  "बैंगन चावल (वांगी भात)",
+  "వెంగి బాత్",
+  "vangi baath"
+ ],
+ "dish:akki_rotti": [
+  "akki rotti",
+  "అక్కి రొట్టి",
+  "akki roti",
+  "अक्की रोटी",
+  "అక్కి రొట్టి",
+  "akki rotiy"
+ ],
+ "dish:ragi_rotti": [
+  "ragi roti",
+  "రాగి రొట్టి",
+  "ragi rotti",
+  "रागी रोटी",
+  "రాగి రొట్టి",
+  "ragi rottti"
+ ],
+ "dish:neer_dosa": [
+  "neer dosa",
+  "నీర దోస",
+  "neer dosha",
+  "नीर डोसा",
+  "నీర దోస",
+  "neer dossa"
+ ],
+ "dish:set_dosa": [
+  "set dosha",
+  "సెట్ దోస",
+  "set dosa",
+  "सेट डोसा",
+  "సెట్ దోస",
+  "set dosaa"
+ ],
+ "dish:rava_idli": [
+  "rava idly",
+  "రవ్వ ఇడ్లి",
+  "rava idli",
+  "रवा इडली",
+  "రవ్వ ఇడ్లి",
+  "rava idlli"
+ ],
+ "dish:kosambari": [
+  "kosam bari",
+  "కోసంబరి",
+  "kosam bari",
+  "कोसम्बरी",
+  "కోసంబరి",
+  "kosambary"
+ ],
+ "dish:tovve": [
+  "tovve dal",
+  "ತೊವ್ವೆ ದಾಲ್",
+  "tovve dahl",
+  "तोव्वे",
+  "ತೊವ್ವೆ ದಾಲ್",
+  "tovve dall"
+ ],
+ "dish:kori_gassi": [
+  "kori gassi",
+  "కోరి గస్సి",
+  "kori gassy",
+  "कोरी गस्सी",
+  "కోరి గస్సి",
+  "kori gasi"
+ ],
+ "dish:mysore_pak": [
+  "mysore pakka",
+  "మైసూర్ పాక్",
+  "mysore pak",
+  "मैसूर पाक",
+  "మైసూర్ పాక్",
+  "mysore pakk"
+ ],
+ "dish:plain_paratha": [
+  "plain parantha",
+  "ప్లెయిన్ పరాటా",
+  "plain paratha",
+  "सादा पराठा",
+  "ప్లెయిన్ పరాటా",
+  "plain paraatha"
+ ],
+ "dish:aloo_paratha": [
+  "aloo parantha",
+  "అలూ పరాటా",
+  "aloo paratha",
+  "आलू पराठा",
+  "అలూ పరాటా",
+  "aloo paratha"
+ ],
+ "dish:gobi_paratha": [
+  "gobhi parantha",
+  "గోబి పరాటా",
+  "gobhi paratha",
+  "गोभी पराठा",
+  "గోబి పరాటా",
+  "gobhi paratha"
+ ],
+ "dish:mooli_paratha": [
+  "mooli parantha",
+  "ముల్లంగి పరాటా",
+  "muli paratha",
+  "मूली पराठा",
+  "ముల్లంగి పరాటా",
+  "muli paratha"
+ ],
+ "dish:makki_roti": [
+  "makki ki roti",
+  "మక్కి రొటి",
+  "makki roti",
+  "मक्की की रोटी",
+  "మక్కి రొటి",
+  "makki ki rottti"
+ ],
+ "dish:puri": [
+  "poori roti",
+  "puri bhath",
+  "puri bhaji",
+  "पूरा रोटी",
+  "పూరి బటాటా",
+  "poree"
+ ],
+ "dish:bhatura": [
+  "bhature roti",
+  "bhatura bhaji",
+  "bhatura ki sabzi",
+  "भटूरा रोटी",
+  "భటూరా దోస",
+  "batura"
+ ],
+ "dish:jeera_rice": [
+  "jeera chawal",
+  "jeera annam",
+  "jeera rice bowl",
+  "जीरा भात",
+  "జీరా అన్నం",
+  "jeera riss"
+ ],
+ "dish:matar_pulao": [
+  "matar chawal",
+  "matar bhat",
+  "matar pulao veg",
+  "मटर पुलाव",
+  "మటర్ పులావ్",
+  "matar plao"
+ ],
+ "dish:besan_chilla": [
+  "besan cheela",
+  "besan pancake",
+  "besan chilla snack",
+  "बेसन चीला",
+  "బెసన్ చిల్లా",
+  "bisan chilla"
+ ],
+ "dish:moong_chilla": [
+  "moong cheela",
+  "moong dosa",
+  "moong chilla roll",
+  "मूंग चीला",
+  "ముంగ్ చిల్లా",
+  "moong cheelaa"
+ ],
+ "dish:namkeen_dalia": [
+  "namkeen dalia",
+  "namkeen upma",
+  "namkeen daliya snack",
+  "नमकीन दलिया",
+  "నమ్కీన్ దాలియా",
+  "namkin dalia"
+ ],
+ "dish:meetha_dalia": [
+  "meetha dalia",
+  "sweet dalia",
+  "meetha daliya milk",
+  "मीठा दलिया",
+  "మిఠాయి దాలియా",
+  "meetha daliaa"
+ ],
+ "dish:dal_tadka": [
+  "dal tadka fry",
+  "dal tadka masala",
+  "dal tadka style",
+  "दाल तड़का",
+  "దాల్ తడ్కా",
+  "dal tadkaa"
+ ],
+ "dish:dhuli_moong_dal": [
+  "dhuli moong dal",
+  "dhuli moong",
+  "dhuli moong ki dal",
+  "धुली मूंग दाल",
+  "ధులీ ముంగ్ దాల్",
+  "dhuli moongdaal"
+ ],
+ "dish:masoor_dal": [
+  "masoor dal fry",
+  "masoor dal tadka",
+  "masoor dal tadka",
+  "मसूर दाल",
+  "మసూర్ పప్పు",
+  "masoor dahl"
+ ],
+ "food:chana_dal": [
+  "chana dal",
+  "cikkala pappu",
+  "dal bhai",
+  "चना दाल",
+  "చన దాల్",
+  "channa dal"
+ ],
+ "dish:dal_makhani": [
+  "dal makhani butter",
+  "dal makhani gravy",
+  "dal makhani style",
+  "दाल मखनी",
+  "దాల్ మఖని",
+  "dal makhanee"
+ ],
+ "ingredient:rajma": [
+  "rajmah",
+  "rajma (chat)",
+  "rajma (Hinglish)",
+  "राजमा",
+  "రాజ్మా",
+  "rajmah"
+ ],
+ "dish:chole": [
+  "chole masala",
+  "chole curry",
+  "chole bhature",
+  "छोले",
+  "చోళె",
+  "cholle"
+ ],
+ "dish:kala_chana": [
+  "kala chana curry",
+  "kala chana masala",
+  "kala chana sabzi",
+  "काला चना",
+  "కల చన",
+  "kala chanaa"
+ ],
+ "dish:sabut_moong": [
+  "sabut moong dal",
+  "sabut moong",
+  "sabut moong ki dal",
+  "साबुत मूंग दाल",
+  "సాబుత్ ముంగ్",
+  "sabuth moong"
+ ],
+ "dish:lobia": [
+  "lobia curry",
+  "lobia sabzi",
+  "lobia masala",
+  "लोबिया",
+  "లోబియా",
+  "lobiya"
+ ],
+ "dish:kadhi_pakora": [
+  "kadhi pakora curry",
+  "kadhi pakora rice",
+  "kadhi pakora snack",
+  "कढ़ी पकौड़ा",
+  "కడ్హీ పకోడా",
+  "kadhi pakoraa"
+ ],
+ "dish:aloo_gobi": [
+  "aloo gobhi sabzi",
+  "aloo gobi fry",
+  "aloo gobi mix",
+  "आलू गोभी",
+  "ఆలూ గోబీ",
+  "aloo gobiie"
+ ],
+ "dish:aloo_matar": [
+  "aloo mutter sabzi",
+  "alu muttar",
+  "aloo mutter ki chatni style",
+  "आलू मटर की सब्ज़ी",
+  "అలూ మట్ర్",
+  "aloo muttr"
+ ],
+ "dish:jeera_aloo": [
+  "jeera aloo fry",
+  "jeerra aloo",
+  "jeera aloo ki chatpati",
+  "जीरा आलू की सब्ज़ी",
+  "జీరా అలూ",
+  "jeera alooo"
+ ],
+ "dish:bhindi_masala": [
+  "bhindi masala fry",
+  "bhendi masala",
+  "bhindi masala style",
+  "भिंडी मसाला की सब्ज़ी",
+  "భీండి మసాలా",
+  "bhindi masalaa"
+ ],
+ "dish:baingan_bharta": [
+  "baingan bharta dry",
+  "vankaya bharta",
+  "baingan bharta style",
+  "बैंगन भरता की सब्ज़ी",
+  "వంకాయ భర్తా",
+  "baingan bhartae"
+ ],
+ "dish:palak_paneer": [
+  "palak paneer curry",
+  "palaku paneer",
+  "palak paneer masaledar",
+  "पालक पनीर की करी",
+  "పాలక్ పనీర్",
+  "palak paner"
+ ],
+ "dish:matar_paneer": [
+  "matar paneer gravy",
+  "mutta paneer",
+  "matar paneer style",
+  "मटर पनीर की ग्रेवी",
+  "మటర్ పనీర్",
+  "matar paner"
+ ],
+ "dish:paneer_butter_masala": [
+  "paneer butter masala rich",
+  "paneer makhni",
+  "paneer butter masala chatpata",
+  "पनीर बटर मसाला रिच",
+  "పనీర్ బటర్ మసాలా",
+  "paneer butter masla"
+ ],
+ "dish:kadai_paneer": [
+  "kadai paneer spicy",
+  "kadhai paneer masala",
+  "kadai paneer style",
+  "कड़ाही पनीर मसाला",
+  "కడాయి పనీర్",
+  "kadai paneerr"
+ ],
+ "dish:paneer_bhurji": [
+  "paneer bhurji scramble",
+  "paneer bhurji masala",
+  "paneer bhurji chatpata",
+  "पनीर भुर्जी स्क्रैम्बल",
+  "పనీర్ బుర్జీ",
+  "paneer bhurjii"
+ ],
+ "dish:mix_veg": [
+  "mix veg sabzi",
+  "miks veg",
+  "mixed veg chatpata",
+  "मिक्स वेज सब्ज़ी",
+  "మిక్స్ వెజ్",
+  "mix vegg"
+ ],
+ "dish:lauki_sabzi": [
+  "lauki sabzi fry",
+  "doodhi sabzi",
+  "lauki sabzi chatpati",
+  "लौकी की सब्ज़ी",
+  "లౌకీ కూర",
+  "lauki sabz"
+ ],
+ "dish:tinda_masala": [
+  "tinda masala dry",
+  "tindey ki sabzi",
+  "tinda masala chatpata",
+  "टिंडा मसाला की सब्ज़ी",
+  "టిండా మసాలా",
+  "tinda masla"
+ ],
+ "dish:arbi_fry": [
+  "arbi fry spicy",
+  "arbi ki fry",
+  "arbi fry chatpata",
+  "अरबी फ्राई स्पाइसी",
+  "అర్బీ ఫ్రై",
+  "arbi fryy"
+ ],
+ "dish:karela_pyaz": [
+  "karela pyaz fry",
+  "karela pyaz ki sabzi",
+  "karela pyaz chatpata",
+  "करेला प्याज़ की सब्ज़ी",
+  "కరేలా ఉల్లి",
+  "karela pyazz"
+ ],
+ "dish:sarson_ka_saag": [
+  "sarson ka saag makki",
+  "sarson da saag",
+  "sarson ka saag style",
+  "सरसों का साग मक्की के साथ",
+  "సర్సోం కా సాగ్",
+  "sarson ka saagg"
+ ],
+ "dish:gajar_matar": [
+  "gajar matar fry",
+  "gajar mutter",
+  "gajar matar chatpata",
+  "गाजर मटर की सब्ज़ी",
+  "గాజర్ మటర్",
+  "gajar muttar"
+ ],
+ "dish:patta_gobhi_matar": [
+  "patta gobhi matar fry",
+  "cabbage matar sabzi",
+  "patta gobhi matar chatpata",
+  "पत्ता गोभी मटर की सब्ज़ी",
+  "పట్ట గోభి మటర్",
+  "patta gobhi matarr"
+ ],
+ "dish:methi_aloo": [
+  "methi aloo dry",
+  "methi alu",
+  "methi aloo chatpata",
+  "मेथी आलू की सब्ज़ी",
+  "మెంతికూర ఆలూ",
+  "methi alooe"
+ ],
+ "dish:khatta_meetha_kaddu": [
+  "khatta meetha kaddu fry",
+  "khatta meetha kaddu ki sabzi",
+  "khatta meetha kaddu chatpata",
+  "खट्टा मीठा कद्दू की सब्ज़ी",
+  "కట్టా మీథా కడ్డూ",
+  "khatta meetha kaddoo"
+ ],
+ "dish:soya_matar": [
+  "soya chunks matar fry",
+  "nutrela matar dry",
+  "soya matar chatpata",
+  "सोया चंक्स मटर की सब्ज़ी",
+  "సోయా మటర్",
+  "soya matarr"
+ ],
+ "dish:anda_curry": [
+  "anda ki curry",
+  "anda karri",
+  "egg ki curry",
+  "अंडा की करी",
+  "అండా కర్రీ",
+  "anda curri"
+ ],
+ "dish:chicken_curry_north": [
+  "murga masala",
+  "chikkin curry north",
+  "chicken ki masala",
+  "चिकन की करी (उत्तरी)",
+  "చికెన్ మసాలా",
+  "chiken curry north"
+ ],
+ "dish:butter_chicken": [
+  "butter murgh",
+  "butter chicken masala",
+  "butter chicken ki gravy",
+  "बटर मुर्ग",
+  "బట్టర్ చికెన్",
+  "buttr chicken"
+ ],
+ "dish:kadai_chicken": [
+  "kadhai murgh",
+  "kadai chicken masala",
+  "kadaai chicken",
+  "कड़ाही मुर्ग",
+  "కడాయి చికెన్",
+  "kadai chikcen"
+ ],
+ "dish:mutton_curry_north": [
+  "gosht ki curry",
+  "mutton masala north",
+  "mutton ki gravy",
+  "मटन की करी (उत्तरी)",
+  "మటన్ కర్రీ",
+  "moton curry north"
+ ],
+ "dish:rogan_josh": [
+  "rogan josh masala",
+  "roghan josh gravy",
+  "rogan josh ki sabzi",
+  "रोगन जोश मसाला",
+  "రోగన్ జోష్",
+  "rogan joshh"
+ ],
+ "dish:keema_matar": [
+  "keema aloo matar",
+  "keema mattar",
+  "keema aur matar",
+  "कीमा मटर",
+  "కీమా మటర్",
+  "keema matarr"
+ ],
+ "dish:samosa": [
+  "samosa chatni",
+  "samosa fry",
+  "samosa snack",
+  "समोसा चटनी",
+  "సమోసా",
+  "samosae"
+ ],
+ "dish:aloo_tikki": [
+  "aloo tikki chatni",
+  "aloo tikki fry",
+  "aloo tikki snack",
+  "आलू टिक्की चटनी",
+  "ఆలూ టిక్కీ",
+  "aloo tikkiy"
+ ],
+ "dish:chana_chaat": [
+  "chana chatni",
+  "chana chaat masala",
+  "chana chat",
+  "चना चाट मसाला",
+  "చన చాట్",
+  "chana chat"
+ ],
+ "dish:fruit_chaat": [
+  "fruit chatni",
+  "fruit chaat masala",
+  "fruit chaat snack",
+  "फ्रूट चाट मसाला",
+  "ఫ్రూట్ చాట్",
+  "fruit chatt"
+ ],
+ "dish:boondi_raita": [
+  "boondi raita masala",
+  "boondi raita chatni",
+  "boondi raita snack",
+  "बूंदी रायता मसाला",
+  "బూందీ రాయతా",
+  "boondi raaitaa"
+ ],
+ "dish:cucumber_raita": [
+  "kheera raita",
+  "cucumber raita masala",
+  "cucumber raita chatni",
+  "खीरा रायता मसाला",
+  "కీరా రాయతా",
+  "cucumber raaita"
+ ],
+ "dish:hari_chutney": [
+  "dhaniya pudina chutney",
+  "green chutney masala",
+  "hari chutney chatni",
+  "हरी चटनी मसाला",
+  "హరీఛట్నీ",
+  "hari chutny"
+ ],
+ "dish:sweet_lassi": [
+  "meethi lassi",
+  "sweet lassi masala",
+  "sweet lassi chatni",
+  "मीठी लस्सी मसाला",
+  "మిఠా లసీ",
+  "sweett lassi"
+ ],
+ "dish:haldi_doodh": [
+  "haldi milk",
+  "golden milk haldi",
+  "haldi doodh masala",
+  "हल्दी दूध मसाला",
+  "హల్దీ దూద్",
+  "haldi doodhh"
+ ],
+ "dish:rice_kheer": [
+  "chawal ki kheer",
+  "rice kheer masala",
+  "rice kheer chatni",
+  "चावल की खीर मसाला",
+  "బియ్యం ఖీర్",
+  "rice kheir"
+ ],
+ "dish:gajar_halwa": [
+  "gajar ka halwa",
+  "gajar halwa masala",
+  "gajar halwa chatni",
+  "गाजर का हलवा मसाला",
+  "కారెట్ హల్వా",
+  "gajar halwaa"
+ ],
+ "dish:sooji_halwa": [
+  "suji halwa",
+  "sooji halwa masala",
+  "sooji halwa chatni",
+  "सूजी हलवा मसाला",
+  "సూజీ హల్వా",
+  "sooji halw"
+ ],
+ "dish:besan_ladoo": [
+  "besan laddu",
+  "besan ladoo masala",
+  "besan ladoo chatni",
+  "बेसन के लड्डू मसाला",
+  "బేసన్ లడ్డు",
+  "besan ladoo"
+ ],
+ "dish:gulab_jamun": [
+  "gulab jamun",
+  "gulab jamun",
+  "gulab jamun",
+  "गुलाब जामुं",
+  "గులాబ్ జామూన్",
+  "gulab jammun"
+ ],
+ "dish:sabudana_khichdi": [
+  "sabudana khichdi",
+  "sabudana khichdi",
+  "sabudana khichdi",
+  "साबुदाना खिचड़ी",
+  "సబ్బుదాన ఖిచ్డీ",
+  "sabudana khicdi"
+ ],
+ "dish:thalipeeth": [
+  "thalipeeth",
+  "thalipeeth",
+  "thalipeeth",
+  "थालीपीठ",
+  "థాలీపీఠ్",
+  "thalipeet"
+ ],
+ "dish:varan": [
+  "varan",
+  "varan",
+  "varan",
+  "वरण",
+  "వరణ",
+  "varrn"
+ ],
+ "dish:amti": [
+  "amti",
+  "amti",
+  "amti",
+  "आमटी",
+  "ఆమ్టీ",
+  "amtee"
+ ],
+ "dish:matki_usal": [
+  "matki usal",
+  "matki usal",
+  "matki usal",
+  "मटकी उसळ",
+  "మట్కి ఉసాల్",
+  "matki usaal"
+ ],
+ "dish:pithla": [
+  "pithla",
+  "pithla",
+  "pithla",
+  "पिठला",
+  "పిఠ్లా",
+  "pithlaa"
+ ],
+ "dish:batata_bhaji": [
+  "batata bhaji",
+  "batata bhaji",
+  "batata bhaji",
+  "बटाटा भाजी",
+  "బటాటా భాజీ",
+  "batata bhajii"
+ ],
+ "dish:sol_kadhi": [
+  "sol kadhi",
+  "sol kadhi",
+  "sol kadhi",
+  "सोल कढ़ी",
+  "సోల్ కఢీ",
+  "sol kadhee"
+ ],
+ "dish:shrikhand": [
+  "shrikhand",
+  "shrikhand",
+  "shrikhand",
+  "श्रीखंड",
+  "శ్రీఖండ్",
+  "shrikhandd"
+ ],
+ "dish:dhokla": [
+  "dhokla",
+  "dhokla",
+  "dhokla",
+  "ढोकला",
+  "ధోక్లా",
+  "dhoklla"
+ ],
+ "dish:thepla": [
+  "thepla",
+  "thepla",
+  "thepla",
+  "थेपला",
+  "థెప్లా",
+  "thepala"
+ ],
+ "dish:gujarati_dal": [
+  "gujarati dal",
+  "gujarati dal",
+  "gujarati dal",
+  "गुजराती दाल",
+  "గుజరాతీ దాల్",
+  "gujarati daal"
+ ],
+ "dish:gujarati_kadhi": [
+  "gujarati kadhi",
+  "gujarati kadhi",
+  "gujarati kadhi",
+  "गुजराती कढ़ी",
+  "గుజరాతీ కఢీ",
+  "gujarati kadi"
+ ],
+ "dish:undhiyu": [
+  "undhiyu",
+  "undhiyu",
+  "undhiyu",
+  "उंधियू",
+  "ఉంధియూ",
+  "undhiyoo"
+ ],
+ "dish:dal_baati": [
+  "dal baati",
+  "dal baati",
+  "dal baati",
+  "दाल बाटी",
+  "దాల్ బాటీ",
+  "dal baatiy"
+ ],
+ "dish:gatte_ki_sabzi": [
+  "gatte ki sabzi",
+  "gatte ki sabzi",
+  "gatte ki sabzi",
+  "गट्टे की सब्ज़ी",
+  "గట్టె కి సబ్జీ",
+  "gatte ki sabzzi"
+ ],
+ "dish:goan_fish_curry": [
+  "goan fish curry",
+  "goan fish curry",
+  "goan fish curry",
+  "गोअन फिश करी",
+  "గోయన్ ఫిష్ కర్రీ",
+  "goan fish curri"
+ ],
+ "dish:machher_jhol": [
+  "machher jhol",
+  "machher jhol",
+  "machher jhol",
+  "माछेर झोल",
+  "మచ్చెర్ జోల్",
+  "machher jholi"
+ ],
+ "dish:shorshe_ilish": [
+  "shorshe ilish",
+  "shorshe ilish",
+  "shorshe ilish",
+  "सरसों इलिश",
+  "శోర్షె ఇలిష్",
+  "shorshe ilishh"
+ ],
+ "dish:cholar_dal": [
+  "chola dal",
+  "చోలా దాల్",
+  "chola dal (chatty style)",
+  "छोला दाल",
+  "చోలా దాల్",
+  "cholaar daal"
+ ],
+ "dish:aloo_posto": [
+  "aloo posto",
+  "అలూ పోస్తో",
+  "aloo posto (spicy)",
+  "आलू पोस्तो",
+  "అలూ పోస్తో",
+  "alu posto"
+ ],
+ "dish:shukto": [
+  "shukto bhaja",
+  "శుక్తో",
+  "shukto veg",
+  "शुक्तो",
+  "శుక్తో",
+  "shuktoo"
+ ],
+ "dish:begun_bhaja": [
+  "begun bhaja",
+  "బెగున్ భజా",
+  "begun fry",
+  "बेंगन भजिया",
+  "బెగున్ భజా",
+  "begun bhaja"
+ ],
+ "dish:luchi": [
+  "luchi roti",
+  "లుచీ రొట్టి",
+  "luchi bhaji",
+  "लुची रोटी",
+  "లుచీ",
+  "loochi"
+ ],
+ "dish:mishti_doi": [
+  "mishti doi",
+  "మిష్టీ దోయ్",
+  "sweet doi",
+  "मिष्टी दोई",
+  "మిష్టీ దోయ్",
+  "mishti doy"
+ ],
+ "dish:rosogolla": [
+  "roshogolla",
+  "రశోగొల్లా",
+  "rosogolla sweet",
+  "रसोघोल्ला",
+  "రశోగొల్లా",
+  "rasgulla"
+ ],
+ "dish:chirer_pulao": [
+  "chira pulao",
+  "చిరే పులావ్",
+  "poha pulao",
+  "चिरे पुलाव",
+  "చిరే పులావ్",
+  "chire pulao"
+ ],
+ "dish:dalma": [
+  "dalma curry",
+  "దల్మా",
+  "dalma veg",
+  "दालमा करी",
+  "దల్మా",
+  "dalmaa"
+ ],
+ "dish:santula": [
+  "santula veg",
+  "సంతులా",
+  "santula stew",
+  "संतुला",
+  "సంతుల",
+  "santoola"
+ ],
+ "dish:litti_chokha": [
+  "litti chokha",
+  "లిట్టి చోఖా",
+  "litti and chokha",
+  "लिट्टी चोखा",
+  "లిట్టి చోఖా",
+  "litti chokhaa"
+ ],
+ "dish:sattu_drink": [
+  "sattu ka ghol",
+  "సట్టు గోళ్",
+  "sattu sharbat",
+  "सत्तू का घोल",
+  "సట్టు గోళ్",
+  "sattu ghol"
+ ],
+ "dish:masor_tenga": [
+  "masor tenga fish",
+  "మాసోర్ టెంగా",
+  "sour fish curry",
+  "मासोर टेंगा",
+  "మాసోర్ టెంగా",
+  "masor tennga"
+ ],
+ "dish:aloo_pitika": [
+  "aloo pitika mash",
+  "అలూ పితికా",
+  "mashed aloo pitika",
+  "आलू पितिका",
+  "అలూ పితికా",
+  "alu pitikaa"
+ ],
+ "dish:pork_bamboo_shoot": [
+  "pork bamboo shoot",
+  "పోర్క్ బాంబూ షూట్",
+  "pork with bamboo",
+  "पोर्क बांस शॉट",
+  "పోర్క్ బాంబూ షూట్",
+  "pork bambu shoot"
+ ],
+ "dish:veg_momos": [
+  "veg momos",
+  "వెజ్ మోమోస్",
+  "vegetable momos",
+  "वेज मोमोज़",
+  "వెజ్ మోమోస్",
+  "veg momoss"
+ ],
+ "dish:chicken_momos": [
+  "chicken momos",
+  "చికెన్ మోమోస్",
+  "chicken dumplings",
+  "चिकन मोमोज़",
+  "చికెన్ మోమోస్",
+  "chiken momos"
+ ],
+ "dish:thukpa": [
+  "thukpa soup",
+  "థుక్పా",
+  "noodle thukpa",
+  "थुकपा सूप",
+  "థుక్పా",
+  "thukpaa"
+ ],
+ "ingredient:rice": [
+  "chaawal",
+  "బియ్యం",
+  "plain rice",
+  "चावल",
+  "బియ్యం",
+  "ricee"
+ ],
+ "ingredient:rice flour": [
+  "chaawal ka aata",
+  "బియ్యం పిండి",
+  "rice flour",
+  "चावल का आटा",
+  "బియ్యం పిండి",
+  "rice flourr"
+ ],
+ "ingredient:brown rice": [
+  "bhura chawal",
+  "బ్రౌన్ బియ్యం",
+  "brown chawal",
+  "भूरा चावल",
+  "బ్రౌన్ రైస్",
+  "brown ricee"
+ ],
+ "ingredient:parboiled rice": [
+  "usna chawal",
+  "ఉప్పు బియ్యం",
+  "parboil rice",
+  "उसना चावल",
+  "ఉస్నా రైస్",
+  "parboiled riec"
+ ],
+ "ingredient:idli rava": [
+  "idli rawa",
+  "ఇడ్లీ రవా",
+  "idli suji",
+  "इडली रवा",
+  "ఇడ్లీ రవా",
+  "idli ravaa"
+ ],
+ "ingredient:rice flakes": [
+  "poha flakes",
+  "పొహా",
+  "poha flakes",
+  "पोहा फ्लेक्स",
+  "పొహా ఫ్లేక్స్",
+  "poha flaks"
+ ],
+ "ingredient:puffed rice": [
+  "murmure",
+  "మురుమురె",
+  "puffed rice",
+  "मुरमुरे",
+  "ముర్మురె",
+  "puffed rrice"
+ ],
+ "ingredient:semolina": [
+  "sooji",
+  "సోనీ",
+  "semi suji",
+  "सूजी",
+  "సోనీ",
+  "semolinaa"
+ ],
+ "ingredient:wheat flour": [
+  "gehun atta",
+  "గోధుమ పిండి",
+  "wheat atta",
+  "गेहूँ का आटा",
+  "గోధుమ పిండి",
+  "wheat flr"
+ ],
+ "ingredient:refined wheat flour": [
+  "maida flour",
+  "మైదా",
+  "refined maida",
+  "मैदा",
+  "మైదా",
+  "maidaa"
+ ],
+ "ingredient:vermicelli": [
+  "seviyan",
+  "సెవియాన్",
+  "vermi noodle",
+  "सेवीयां",
+  "సేవియాన్",
+  "vermicellli"
+ ],
+ "ingredient:dalia": [
+  "broken wheat",
+  "డాలియా",
+  "cracked wheat",
+  "दलिया",
+  "డాలియా",
+  "dalila"
+ ],
+ "ingredient:maize flour": [
+  "makka atta",
+  "మక్కా పిండి",
+  "corn flour",
+  "मक्के का आटा",
+  "మక్కా పిండి",
+  "maize flr"
+ ],
+ "ingredient:jowar flour": [
+  "jowar atta",
+  "జవార పిండి",
+  "sorghum flour",
+  "ज्वार का आटा",
+  "జవార పిండి",
+  "jowar flr"
+ ],
+ "ingredient:bajra flour": [
+  "bajra atta",
+  "బజ్రా పిండి",
+  "pearl millet flour",
+  "बाजरे का आटा",
+  "బజ్రా పిండి",
+  "bajra flr"
+ ],
+ "ingredient:ragi flour": [
+  "ragi atta",
+  "రాగి పిండి",
+  "finger millet flour",
+  "रागी का आटा",
+  "రాగి పిండి",
+  "ragi flr"
+ ],
+ "ingredient:little millet": [
+  "kutki",
+  "చిన్న ధాన్యం",
+  "little millet",
+  "कुटकी",
+  "చిన్న మిల్లెట్",
+  "little milt"
+ ],
+ "ingredient:tender corn": [
+  "kachha bhutta",
+  "కచ్చా మొక్కజొన్న",
+  "tender corn",
+  "कच्चा भुट्टा",
+  "కచ్చా కార్న్",
+  "tender cornn"
+ ],
+ "ingredient:sweet corn": [
+  "meetha bhutta",
+  "మధుర మొక్కజొన్న",
+  "sweet corn",
+  "स्वीट कॉर्न",
+  "మిఠి కార్న్",
+  "sweet cornn"
+ ],
+ "ingredient:oats": [
+  "jau",
+  "ఓట్స్",
+  "oats",
+  "ओट्स",
+  "ఓట్స్",
+  "oatses"
+ ],
+ "ingredient:whole wheat bread": [
+  "brown bread",
+  "గోధుమ బ్రెడ్",
+  "whole wheat loaf",
+  "आटा ब्रेड",
+  "గోధుమ బ్రెడ్",
+  "whole wheat breadd"
+ ],
+ "ingredient:toor dal": [
+  "arhar dal",
+  "తొర దాల్",
+  "toor dal",
+  "अरहर दाल",
+  "తొర దాల్",
+  "toor dall"
+ ],
+ "ingredient:moong dal": [
+  "moong daal",
+  "mung dāl",
+  "moong daal (chat)",
+  "मूंग दाल",
+  "మూంగ్ దాల్",
+  "moongdall"
+ ],
+ "ingredient:whole moong": [
+  "sabaat moong",
+  "puni moong",
+  "whole moong (Hinglish)",
+  "साबुत मूंग",
+  "సంపూర్ణ మూంగ్",
+  "whole mong"
+ ],
+ "ingredient:urad dal": [
+  "urad daal",
+  "uddalu pappu",
+  "urad dal (chat)",
+  "उड़द दाल",
+  "ఉడ్డు పప్పు",
+  "uraddal"
+ ],
+ "ingredient:chana dal": [
+  "chana daal",
+  "chana pappu",
+  "chana dal (Hinglish)",
+  "चना दाल",
+  "చన పప్పు",
+  "chanadal"
+ ],
+ "ingredient:besan": [
+  "besan flour",
+  "besan pindi",
+  "besan (Hinglish)",
+  "बेसन",
+  "బెసన్",
+  "bessan"
+ ],
+ "ingredient:roasted gram": [
+  "bhuna chana",
+  "roasted chana",
+  "roasted gram (Hinglish)",
+  "भुना चना",
+  "వేపిన చన",
+  "roastgram"
+ ],
+ "ingredient:black chana": [
+  "kala chana",
+  "black chana (chat)",
+  "kala chana (Hinglish)",
+  "काला चना",
+  "కల చన",
+  "blakchana"
+ ],
+ "ingredient:kabuli chana": [
+  "kabuli chana",
+  "white chickpea",
+  "kabuli chana (Hinglish)",
+  "काबुली चना",
+  "కబూలి చన",
+  "kabulichana"
+ ],
+ "ingredient:whole urad": [
+  "sabaat urad",
+  "whole urad (chat)",
+  "whole urad (Hinglish)",
+  "साबुत उड़द",
+  "సంపూర్ణ ఉరద్",
+  "wholeurad"
+ ],
+ "ingredient:horse gram": [
+  "kulthi dal",
+  "horse gram (chat)",
+  "horse gram (Hinglish)",
+  "कुल्थी",
+  "కుల్తి",
+  "horsegram"
+ ],
+ "ingredient:cowpea": [
+  "lobia",
+  "cowpea (chat)",
+  "cowpea (Hinglish)",
+  "लोबिया",
+  "లోబియా",
+  "cowepea"
+ ],
+ "ingredient:white cowpea": [
+  "safed lobia",
+  "white cowpea (chat)",
+  "white cowpea (Hinglish)",
+  "सफ़ेद लोबिया",
+  "తెల్ల లోబియా",
+  "whitelobia"
+ ],
+ "ingredient:masoor dal": [
+  "masoor daal",
+  "masoor pappu",
+  "masoor dal (Hinglish)",
+  "मसूर दाल",
+  "మసూర్ పప్పు",
+  "masoordal"
+ ],
+ "ingredient:moth bean": [
+  "moth bean",
+  "moth bean (chat)",
+  "moth bean (Hinglish)",
+  "मोठ",
+  "మోత్ బీన్",
+  "mothbean"
+ ],
+ "ingredient:dry peas": [
+  "sukhi matar",
+  "dry peas (chat)",
+  "dry peas (Hinglish)",
+  "सूखी मटर",
+  "సుఖి మటర్",
+  "drypeaz"
+ ],
+ "ingredient:onion": [
+  "pyaaz",
+  "onion (chat)",
+  "onion (Hinglish)",
+  "प्याज़",
+  "ఉల్లిపాయ",
+  "onoin"
+ ],
+ "ingredient:small onion": [
+  "chhota pyaaz",
+  "small onion (chat)",
+  "small onion (Hinglish)",
+  "छोटा प्याज़",
+  "చిన్న ఉల్లిపాయ",
+  "smallpyaaz"
+ ],
+ "ingredient:spring onion": [
+  "hara pyaaz",
+  "spring onion (chat)",
+  "spring onion (Hinglish)",
+  "हरा प्याज़",
+  "హరా ఉల్లిపాయ",
+  "springpyaaz"
+ ],
+ "ingredient:tomato": [
+  "tamatar",
+  "tomato (chat)",
+  "tomato (Hinglish)",
+  "टमाटर",
+  "టమాటా",
+  "tomatto"
+ ],
+ "ingredient:potato": [
+  "alu",
+  "aloo",
+  "aloo bharta",
+  "आलू",
+  "అలూ",
+  "aloo"
+ ],
+ "ingredient:brinjal": [
+  "baingan",
+  "baingan bharta",
+  "வங்காயம்",
+  "बैंगन",
+  "వంకాయ",
+  "baingan"
+ ],
+ "ingredient:okra": [
+  "bhindi",
+  "bhindi sabzi",
+  "भिंडी",
+  "भिन्डी",
+  "భిండి",
+  "bhindi"
+ ],
+ "ingredient:ivy gourd": [
+  "konduri",
+  "konduri podi",
+  "कुंदूरू",
+  "कुंदरी",
+  "కుందూరి",
+  "konduri"
+ ],
+ "ingredient:bitter gourd": [
+  "karela",
+  "karela sabzi",
+  "करेला",
+  "करिल",
+  "కరెలా",
+  "karela"
+ ],
+ "ingredient:bottle gourd": [
+  "lauki",
+  "lauki ki sabzi",
+  "लौकी",
+  "లౌకి",
+  "லௌகி",
+  "lauki"
+ ],
+ "ingredient:ridge gourd": [
+  "torai",
+  "torai ki sabzi",
+  "तोरई",
+  "तोरी",
+  "తొరై",
+  "torai"
+ ],
+ "ingredient:snake gourd": [
+  "chichinda",
+  "chichinda ki sabzi",
+  "चिचिंडा",
+  "చిచిందా",
+  "சிச்சிண்டா",
+  "chichinda"
+ ],
+ "ingredient:ash gourd": [
+  "petha",
+  "petha ka halwa",
+  "पेठा",
+  "పెథా",
+  "பேதா",
+  "petha"
+ ],
+ "ingredient:pumpkin": [
+  "kaddu",
+  "kaddu ki sabzi",
+  "कद्दू",
+  "కద్దూ",
+  "கद्दூ",
+  "kaddu"
+ ],
+ "ingredient:cabbage": [
+  "patta gobhi",
+  "patta gobhi ki sabzi",
+  "पत्ता गोभी",
+  "పట్టా గోభి",
+  "பட்டா கோபி",
+  "patta gobhi"
+ ],
+ "ingredient:cauliflower": [
+  "phool gobhi",
+  "phool gobhi ki sabzi",
+  "फूलगोभी",
+  "ఫూల్ గోభి",
+  "பூல் கோபி",
+  "phool gobhi"
+ ],
+ "ingredient:carrot": [
+  "gajar",
+  "gajar ka halwa",
+  "गाजर",
+  "గజర్",
+  "காஜர்",
+  "gajar"
+ ],
+ "food:beetroot": [
+  "chukandar",
+  "చుకందర్",
+  "beetroot",
+  "चुकंदर",
+  "చుకందర్",
+  "chukandarrr"
+ ],
+ "ingredient:french beans": [
+  "green beans",
+  "green beans ki sabzi",
+  "हरी बीन",
+  "గ్రీన్ బీన్స్",
+  "பச்சை பீன்ஸ்",
+  "green beans"
+ ],
+ "ingredient:cluster beans": [
+  "gawar phali",
+  "gawar phali ki sabzi",
+  "ग्वार फली",
+  "గ్వార్ ఫాలి",
+  "கவார் பாளி",
+  "gawar phali"
+ ],
+ "ingredient:field beans": [
+  "sem",
+  "sem ki sabzi",
+  "सेम",
+  "సెం",
+  "சேம்",
+  "sem"
+ ],
+ "ingredient:drumstick": [
+  "sahjan",
+  "sahjan ki sabzi",
+  "सहजन",
+  "సహజన్",
+  "சஹ்ஜன்",
+  "sahjan"
+ ],
+ "ingredient:colocasia": [
+  "arbi",
+  "arbi ki sabzi",
+  "अरबी",
+  "అర్బీ",
+  "அர்பி",
+  "arbi"
+ ],
+ "ingredient:elephant yam": [
+  "zimikand",
+  "zimikand ki sabzi",
+  "जिमिकंद",
+  "జిమికంద్",
+  "ஜிமிகண்ட்",
+  "zimikand"
+ ],
+ "ingredient:tapioca": [
+  "tapiyoka",
+  "tapioka",
+  "tapioca bhaji",
+  "टैपिओका",
+  "టాపియోకా",
+  "tapiocae"
+ ],
+ "ingredient:raw banana": [
+  "kaccha kela",
+  "kacchi vankaya",
+  "raw banana slice",
+  "कच्चा केला",
+  "కచ్చా వంకాయ",
+  "rawbananna"
+ ],
+ "ingredient:ripe plantain": [
+  "pakka kela",
+  "paka pandu",
+  "ripe plantain fry",
+  "पका केला",
+  "పాకా ప్లాంటెయిన్",
+  "ripeplanatin"
+ ],
+ "ingredient:radish": [
+  "mooli",
+  "mullangi",
+  "radish salad",
+  "मूली",
+  "ముల్లంగి",
+  "radishe"
+ ],
+ "ingredient:capsicum": [
+  "shimla mirch",
+  "shimla mirchi",
+  "capsicum stir fry",
+  "शिमला मिर्च",
+  "శిమ్లా మిర్చి",
+  "capsicumz"
+ ],
+ "ingredient:chow chow": [
+  "chocho",
+  "chow-chow",
+  "chow chow pickle",
+  "चौ चौ",
+  "చో-చో",
+  "chowchoww"
+ ],
+ "ingredient:knol khol": [
+  "kohlrabi",
+  "kollu kool",
+  "knol khol sabzi",
+  "गोलभाजी",
+  "కోల్రాబి",
+  "knolkhol"
+ ],
+ "ingredient:cucumber": [
+  "kheera",
+  "kheera",
+  "cucumber raita",
+  "खीरा",
+  "వెల్లుల్లి",
+  "cucamber"
+ ],
+ "ingredient:yellow cucumber": [
+  "peela kheera",
+  "pachadi kakadi",
+  "yellow cucumber salad",
+  "पीला खीरा",
+  "పసుపు వెల్లుల్లి",
+  "yellowcucumber"
+ ],
+ "ingredient:raw mango": [
+  "kaccha aam",
+  "kacchi mamidikaya",
+  "raw mango chutney",
+  "कच्चा आम",
+  "కచ్చా మామిడి",
+  "rawmanggo"
+ ],
+ "ingredient:green peas": [
+  "hari matar",
+  "pachchani batani",
+  "green peas pulao",
+  "हरी मटर",
+  "హరిత మటర్",
+  "greenpeass"
+ ],
+ "ingredient:mushroom": [
+  "kumbal",
+  "gubbi",
+  "mushroom gravy",
+  "मशरूम",
+  "మష్రూమ్",
+  "mushroomm"
+ ],
+ "ingredient:tinda": [
+  "tindoo",
+  "tinda",
+  "tinda sabzi",
+  "टिंडा",
+  "టిండా",
+  "tindda"
+ ],
+ "ingredient:parwal": [
+  "parwal",
+  "parwal",
+  "parwal bharta",
+  "परवल",
+  "పర్వల్",
+  "parwalz"
+ ],
+ "ingredient:sweet potato": [
+  "shakarkand",
+  "sakkarakaya",
+  "sweet potato fries",
+  "शकरकंद",
+  "షకరకాయ",
+  "sweetpotatoe"
+ ],
+ "ingredient:bamboo shoot": [
+  "bans ki konpal",
+  "veduru chiguru",
+  "bamboo shoot curry",
+  "बांस की कोंपल",
+  "బాంచ్ షూట్",
+  "bambooshoot"
+ ],
+ "ingredient:sago": [
+  "sabudana",
+  "sagubiyyam",
+  "sago vada",
+  "साबूदाना",
+  "సబ్బుదానా",
+  "sagoo"
+ ],
+ "ingredient:spinach": [
+  "palak",
+  "palakoora",
+  "spinach dal",
+  "पालक",
+  "పాలక",
+  "spinache"
+ ],
+ "ingredient:amaranth leaves": [
+  "chaulai",
+  "thotakoora",
+  "amaranth leaves stir fry",
+  "चौलाई",
+  "చౌలై",
+  "amaranthleaf"
+ ],
+ "ingredient:fenugreek leaves": [
+  "methi ke patte",
+  "menthikoora",
+  "fenugreek leaves sabzi",
+  "मेथी के पत्ते",
+  "మెంతి ఆకులు",
+  "fenugreekleaf"
+ ],
+ "ingredient:gongura": [
+  "gongeera",
+  "gōṅgura",
+  "gongura leaf",
+  "गोंगुरे",
+  "గోంగురా",
+  "gonjura"
+ ],
+ "ingredient:ponnaganti": [
+  "ponnangi",
+  "ponnangati",
+  "ponnanganti koora",
+  "पोननगंटी",
+  "పొన్నగంటి",
+  "ponnaganti sag"
+ ],
+ "ingredient:drumstick leaves": [
+  "sahjan patta",
+  "sajjan patta",
+  "drumstick patta",
+  "सहजन पत्ता",
+  "సజ్జన్ పత్త",
+  "drumstik leaves"
+ ],
+ "ingredient:mustard leaves": [
+  "sarson ka patta",
+  "sarson patta",
+  "mustard patta",
+  "सरसों पत्ता",
+  "సర్సన్ పత్త",
+  "musterd leaves"
+ ],
+ "ingredient:bathua": [
+  "bathuwa",
+  "bathua patta",
+  "bathua leaf",
+  "बथुवा",
+  "బతువా",
+  "bathuwa"
+ ],
+ "ingredient:coriander leaves": [
+  "dhaniya patta",
+  "dhaniya leaf",
+  "coriander patta",
+  "धनिया पत्ता",
+  "ధనియాపత్త",
+  "corander leaves"
+ ],
+ "ingredient:curry leaves": [
+  "kadi patta",
+  "curry patta",
+  "curry leaf",
+  "करी पत्ता",
+  "కరీ పత్త",
+  "curry patti"
+ ],
+ "ingredient:mint leaves": [
+  "pudina patta",
+  "pudina leaf",
+  "mint patta",
+  "पुदीना पत्ता",
+  "పుదీనా పత్త",
+  "pudinae"
+ ],
+ "ingredient:ginger": [
+  "adrak root",
+  "adrak tukda",
+  "ginger root",
+  "अदरक रूट",
+  "అదరక్",
+  "ingger"
+ ],
+ "ingredient:garlic": [
+  "lehsun",
+  "lehsun ki kali",
+  "garlic cloves",
+  "लहसुन की कली",
+  "వెల్లులి",
+  "garic"
+ ],
+ "ingredient:green chilli": [
+  "hari mirch",
+  "hari mirchi",
+  "green mirch",
+  "हरी मिर्ची",
+  "హరిమిర్చి",
+  "greeen chilli"
+ ],
+ "ingredient:dry red chilli": [
+  "sukhi mirch",
+  "sukhi mirchi",
+  "dry red mirch",
+  "सूखी मिर्च",
+  "సూకీ మిర్చి",
+  "dryred chilli"
+ ],
+ "ingredient:chilli powder": [
+  "lal mirch powder",
+  "lal mirchi powder",
+  "chilli masala",
+  "लाल मिर्च पाउडर",
+  "లాల్ మిర్చి పౌడర్",
+  "chilli powdr"
+ ],
+ "ingredient:turmeric": [
+  "haldi powder",
+  "haldi root",
+  "turmeric powder",
+  "हल्दी पाउडर",
+  "హల్దీ",
+  "turmric"
+ ],
+ "ingredient:cumin seeds": [
+  "jeera",
+  "jeera dana",
+  "cumin dana",
+  "जीरा दाना",
+  "జీలకర్ర",
+  "cuminseeds"
+ ],
+ "ingredient:mustard seeds": [
+  "rai",
+  "rai dana",
+  "mustard dana",
+  "राई दाना",
+  "రాయి",
+  "mustardseeds"
+ ],
+ "ingredient:fenugreek seeds": [
+  "methi dana",
+  "methi seeds",
+  "fenugreek dana",
+  "मेथी दाना",
+  "మెంతి",
+  "fenugreekseeds"
+ ],
+ "ingredient:asafoetida": [
+  "hing powder",
+  "hing ke tukde",
+  "asafoetida powder",
+  "हींग पाउडर",
+  "హింగు",
+  "asfoetida"
+ ],
+ "ingredient:black pepper": [
+  "kali mirch",
+  "kali mirchi",
+  "black peppercorn",
+  "काली मिर्च",
+  "కాలి మిర్చి",
+  "blackpeppar"
+ ],
+ "ingredient:coriander seeds": [
+  "dhaniya dana",
+  "dhaniya seeds",
+  "coriander dana",
+  "धनिया दाना",
+  "ధనియాదానం",
+  "corriander seeds"
+ ],
+ "ingredient:cloves": [
+  "lavang ke daane",
+  "lavangu",
+  "lavangz",
+  "लौंग के दाने",
+  "లవంగ",
+  "lvg"
+ ],
+ "ingredient:cardamom": [
+  "elaichi powder",
+  "elaakayi",
+  "cardamom powder",
+  "इलायची पाउडर",
+  "ఇలాయచి",
+  "cardamom powdr"
+ ],
+ "ingredient:ajwain": [
+  "ajwain ke dana",
+  "vamu powder",
+  "ajwain powder",
+  "अजवाइन के दाने",
+  "అజ్వైను",
+  "ajwan"
+ ],
+ "ingredient:tamarind": [
+  "imli chutney base",
+  "chintha pandu pulp",
+  "tamarind paste",
+  "इमली का पेस्ट",
+  "చింత పండు",
+  "tamrind"
+ ],
+ "ingredient:jaggery": [
+  "gur",
+  "bellam sweet",
+  "jaggery blocks",
+  "गुड़ के टुकड़े",
+  "బెల్లం",
+  "jagri"
+ ],
+ "ingredient:sugar": [
+  "cheeni",
+  "panchadara",
+  "sugar granules",
+  "चीनी के दाने",
+  "చెని",
+  "suger"
+ ],
+ "ingredient:salt": [
+  "namak",
+  "uppu",
+  "salt shaker",
+  "नमक",
+  "ఉప్పు",
+  "slt"
+ ],
+ "ingredient:honey": [
+  "shahad",
+  "thene",
+  "honey drizzle",
+  "शहद",
+  "తేనె",
+  "honee"
+ ],
+ "ingredient:peanuts": [
+  "moongphali",
+  "verusenaga",
+  "peanut bites",
+  "मूंगफली",
+  "మూగ్ఫలీ",
+  "peanats"
+ ],
+ "ingredient:cashew": [
+  "kaju nuts",
+  "jeedi pappu",
+  "cashew pieces",
+  "काजू के टुकड़े",
+  "జీడి పప్పు",
+  "cashew"
+ ],
+ "ingredient:almonds": [
+  "badam slices",
+  "badam pappu",
+  "almond pieces",
+  "बादाम के टुकड़े",
+  "బదాం",
+  "almond"
+ ],
+ "ingredient:pistachios": [
+  "pista",
+  "pistachiyo",
+  "pistachios",
+  "पिस्ते",
+  "పిస్తేలు",
+  "pistachioss"
+ ],
+ "ingredient:raisins": [
+  "kishmish",
+  "endhu draksha",
+  "raisinz",
+  "किशमिश",
+  "కిష్మిష్",
+  "raisin"
+ ],
+ "ingredient:oil": [
+  "tel",
+  "nune",
+  "oilz",
+  "तेल",
+  "నూనె",
+  "oilll"
+ ],
+ "ingredient:groundnut oil": [
+  "moongphali tel",
+  "verusenaga nune",
+  "groundnut oill",
+  "मूंगफली तेल",
+  "వెరుసెనగ నూనె",
+  "groundnut oyl"
+ ],
+ "ingredient:sesame oil": [
+  "til tel",
+  "nuvvula nune",
+  "sesam oil",
+  "तिल तेल",
+  "నువ్వుల నూనె",
+  "sesam oil"
+ ],
+ "ingredient:coconut oil": [
+  "nariyal tel",
+  "kobbari nune",
+  "coconut oill",
+  "नारियल तेल",
+  "కొబ్బరి నూనె",
+  "coconut oyl"
+ ],
+ "ingredient:mustard oil": [
+  "sarson tel",
+  "aava nune",
+  "mustard oill",
+  "सरसों तेल",
+  "అవ నూనె",
+  "mustard oyl"
+ ],
+ "ingredient:ghee": [
+  "ghyi",
+  "neyyi",
+  "gheezz",
+  "घी",
+  "నెయ్యి",
+  "ghee"
+ ],
+ "ingredient:butter": [
+  "makhan",
+  "venna",
+  "buttr",
+  "मक्खन",
+  "వెన్న",
+  "buttrr"
+ ],
+ "ingredient:milk": [
+  "doodh",
+  "aavu paalu",
+  "milkz",
+  "दूध",
+  "పాలు",
+  "milkk"
+ ],
+ "ingredient:fortified milk": [
+  "fortified doodh",
+  "fortified paalu",
+  "fort milk",
+  "फ़ोर्टिफ़ाइड दूध",
+  "ఫోర్టిఫైడ్ పాలు",
+  "fortifed milk"
+ ],
+ "ingredient:curd": [
+  "dahi",
+  "perugu",
+  "curdz",
+  "दही",
+  "పెరుగు",
+  "curd"
+ ],
+ "ingredient:buttermilk": [
+  "chaachh",
+  "majjiga",
+  "buttermilkk",
+  "छाछ",
+  "మజ్జిగ",
+  "buttermilk"
+ ],
+ "ingredient:paneer": [
+  "paneer",
+  "chhena",
+  "paaneer",
+  "पनीर",
+  "పనీర్",
+  "paneer"
+ ],
+ "ingredient:khoa": [
+  "khoya",
+  "khoa",
+  "khoaa",
+  "खोया",
+  "ఖోవా",
+  "khoya"
+ ],
+ "ingredient:fresh cream": [
+  "malai",
+  "meegada",
+  "fresh creamz",
+  "फ्रेश क्रीम",
+  "ఫ్రెష్ క్రీమ్",
+  "fresh cream"
+ ],
+ "ingredient:soya chunks": [
+  "soya badi",
+  "soya chunks",
+  "soya chnks",
+  "सोया चंक्स",
+  "సోయా చంక్స్",
+  "soya chunk"
+ ],
+ "ingredient:cornflour": [
+  "corn flour",
+  "cornflour",
+  "corn flourz",
+  "कॉर्नफ्लोर",
+  "కార్న్ ఫ్లూర్",
+  "cornflour"
+ ],
+ "ingredient:egg": [
+  "anda",
+  "guddu",
+  "eggz",
+  "अंडा",
+  "గుడ్డు",
+  "eggs"
+ ],
+ "ingredient:chicken": [
+  "desi murga ka paankh",
+  "desi murge paalu",
+  "desi chicken wings",
+  "देशी मुर्गा का पंख",
+  "దేశీ ముర్గె పంక్",
+  "desi murga ka pankh"
+ ],
+ "ingredient:mutton": [
+  "bakre ka kandha",
+  "bakre ki kandha",
+  "desi mutton shoulder",
+  "बकरे का कंधा",
+  "బక్రే కందా",
+  "bakre ka kantha"
+ ],
+ "food:chicken_liver": [
+  "kaleji",
+  "కలేజీ",
+  "chicken kaleji",
+  "कलेजी",
+  "కలేజీ",
+  "kalejee"
+ ],
+ "food:mutton_liver": [
+  "bheja",
+  "goat liver",
+  "mutton liver",
+  "भेजा",
+  "భేజా",
+  "bhejaa"
+ ],
+ "ingredient:sardine": [
+  "noona kavallu",
+  "sardine",
+  "sardine fish",
+  "नूना कवल्लु",
+  "నూనా కవళ్ళు",
+  "noona kavalu"
+ ],
+ "ingredient:mackerel": [
+  "kannangadatha",
+  "mackerel",
+  "bangda fish",
+  "कन्नंगडथा",
+  "కన్నంగదత",
+  "kannangadatha"
+ ],
+ "ingredient:anchovy": [
+  "nattoo",
+  "anchovy",
+  "ankovi fish",
+  "नट्टू",
+  "నట్టూ",
+  "natto"
+ ],
+ "ingredient:hilsa": [
+  "palasah",
+  "hilsa",
+  "hilsa fish",
+  "पलसह",
+  "పలసహ",
+  "palasah"
+ ],
+ "ingredient:pork": [
+  "pandi bhujamu mamsam",
+  "suar ka kandha",
+  "pork shoulder",
+  "पांडी भुजामु मांसम",
+  "పండి భుజము మాంసం",
+  "pandi bhujamu mamsam"
+ ],
+ "food:moringa_leaves": [
+  "sahij",
+  "murungai",
+  "moringa bhai",
+  "सहज",
+  "మురుంగై",
+  "morenga"
+ ],
+ "food:palak_spinach": [
+  "palak",
+  "palakaya",
+  "spinach bhai",
+  "पालक",
+  "పాలక",
+  "palak"
+ ],
+ "food:methi_leaves": [
+  "methi",
+  "methi patti",
+  "fenugreek bhai",
+  "मेथी",
+  "మెంతి",
+  "methii"
+ ],
+ "food:amaranth_leaves": [
+  "chaulai",
+  "soppu",
+  "amaranth bhai",
+  "चौलाई",
+  "చౌలై",
+  "chawla"
+ ],
+ "food:curry_leaves": [
+  "kadi patta",
+  "karivepaku",
+  "curry leaves bhai",
+  "करी पत्ता",
+  "కరివేపాకు",
+  "curry leaf"
+ ],
+ "food:ragi_flour": [
+  "ragi",
+  "ragi maida",
+  "finger millet bhai",
+  "रागी",
+  "రాగి",
+  "raggi"
+ ],
+ "food:bajra_pearl_millet": [
+  "bajra",
+  "sajja",
+  "pearl millet bhai",
+  "बाजरा",
+  "బజ్రా",
+  "bajara"
+ ],
+ "food:sesame_seeds_til": [
+  "til",
+  "ellu",
+  "sesame bhai",
+  "तिल",
+  "ఎల్లు",
+  "till"
+ ],
+ "food:garden_cress_seeds_aliv": [
+  "aliv",
+  "jhunka",
+  "cress bhai",
+  "अलीव",
+  "అలివ్",
+  "alivv"
+ ],
+ "food:pumpkin_seeds": [
+  "kaddu ke beej",
+  "gummadi beej",
+  "pumpkin seeds bhai",
+  "कद्दू के बीज",
+  "కద్దు బీజాలు",
+  "pumpkin seed"
+ ],
+ "food:roasted_chana": [
+  "bhuna chana",
+  "putnalu",
+  "roasted chana bhai",
+  "भुना चना",
+  "భునా చన",
+  "bhuna chana"
+ ],
+ "food:rajma_kidney_beans": [
+  "rajma",
+  "bendi",
+  "kidney beans bhai",
+  "राजमा",
+  "రాజ్మా",
+  "rajmaa"
+ ],
+ "food:black_urad_dal": [
+  "sabut urad",
+  "minumulu",
+  "black urad bhai",
+  "साबुत उड़द",
+  "సబుత్ ఉరదు",
+  "urad dal"
+ ],
+ "food:paneer_cottage_cheese": [
+  "paneer",
+  "paneer",
+  "cottage cheese bhai",
+  "पनीर",
+  "పనీర్",
+  "panir"
+ ],
+ "food:curd_yogurt": [
+  "dahi",
+  "perugu",
+  "yogurt bhai",
+  "दही",
+  "పెరుగు",
+  "dahhi"
+ ],
+ "food:cow_milk_whole": [
+  "doodh",
+  "paalu",
+  "milk bhai",
+  "दूध",
+  "పాలు",
+  "milk"
+ ],
+ "food:whole_egg_boiled": [
+  "ubla anda",
+  "ఉబ్లా అండా",
+  "boiled anda",
+  "उबला अंडा",
+  "ఉబ్లా అండా",
+  "ubla andaa"
+ ],
+ "food:chicken_breast": [
+  "murga ka breast",
+  "చికెన్ బ్రెస్ట్",
+  "chicken breast",
+  "मुर्गा का ब्रेस्ट",
+  "చికెన్ బ్రెస్ట్",
+  "chikcen breast"
+ ],
+ "food:mutton_goat_meat": [
+  "bakri ka gosht",
+  "మేక మాంసం",
+  "goat meat",
+  "बकरी का गोश्त",
+  "మేక మాంసం",
+  "goat gosht"
+ ],
+ "food:rohu_freshwater_fish": [
+  "rohu machhi",
+  "రోహు చేప",
+  "rohu fish",
+  "रोहू मछली",
+  "రోహు చేప",
+  "rohu machi"
+ ],
+ "food:mackerel_bangda": [
+  "bangda",
+  "బంగడా",
+  "bangda fish",
+  "बांगडा",
+  "బంగడా",
+  "bangdae"
+ ],
+ "food:fortified_milk_fssai": [
+  "fortified doodh",
+  "ఫోర్టిఫైడ్ పాలు",
+  "fortified milk",
+  "फोर्टिफाइड दूध",
+  "ఫోర్టిఫైడ్ పాలు",
+  "fortified doodh"
+ ],
+ "food:fortified_soy_milk": [
+  "fortified soya doodh",
+  "ఫోర్టిఫైడ్ సోయా పాలు",
+  "fortified soy milk",
+  "फोर्टिफाइड सोया दूध",
+  "ఫోర్టిఫైడ్ సోయా పాలు",
+  "fortified soya dhood"
+ ],
+ "food:sun_exposed_mushrooms": [
+  "dhup me mushroom",
+  "సూర్యకాంతి మష్రూమ్",
+  "sun exposed mushroom",
+  "धूप में मशरूम",
+  "సూర్యకాంతి మష్రూమ్",
+  "sun exposd mushroom"
+ ],
+ "food:amla_indian_gooseberry": [
+  "amla",
+  "అమ్లా",
+  "amla fruit",
+  "आंवला",
+  "అమ్లా",
+  "amlaa"
+ ],
+ "food:lemon_citrus": [
+  "nimbu ka ras",
+  "నిమ్మరసం",
+  "lemon juice",
+  "नींबू रस",
+  "నిమ్మరసం",
+  "nimboo ras"
+ ],
+ "food:guava_peru": [
+  "amrud",
+  "అమ్రుద్",
+  "guava fruit",
+  "अमरूद",
+  "అమ్రుద్",
+  "amrood"
+ ],
+ "food:dates_khajoor": [
+  "khajoor",
+  "ఖజూర్",
+  "dates",
+  "खजूर",
+  "ఖజూర్",
+  "khajoorr"
+ ],
+ "food:almonds_badam": [
+  "badam",
+  "బాదం",
+  "almonds",
+  "बादाम",
+  "బాదం",
+  "badaam"
+ ],
+ "food:black_raisins_kishmish": [
+  "kishmish",
+  "కిష్మిష్",
+  "black raisins",
+  "किशमिश",
+  "కిష్మిష్",
+  "kishmishh"
+ ],
+ "food:tofu_firm": [
+  "soy paneer",
+  "సోయా పన్నీర్",
+  "firm tofu",
+  "सोय पनीर",
+  "సోయా పన్నీర్",
+  "soy paneer"
+ ],
+ "food:horse_gram_kulthi": [
+  "kulthi",
+  "కుల్తి",
+  "horse gram",
+  "कुल्थी",
+  "కుల్తి",
+  "kulthi"
+ ],
+ "food:moth_beans_matki": [
+  "matki beans",
+  "మట్కి బీన్స్",
+  "moth beans",
+  "मटकी बीन्स",
+  "మట్కి బీన్స్",
+  "matki beens"
+ ],
+ "food:soybean_cooked": [
+  "bhatt",
+  "భట్",
+  "cooked soybeans",
+  "भट",
+  "భట్",
+  "bhatt"
+ ],
+ "food:lobia_black_eyed_peas": [
+  "chawli",
+  "chavli",
+  "chawli bhindi",
+  "चौली",
+  "చావ్లీ",
+  "chawlli"
+ ],
+ "food:drumstick_vegetable": [
+  "sahjan phali",
+  "murungakai",
+  "drumstick pod",
+  "सहजन फली",
+  "మరుంగక్కై",
+  "drumstik"
+ ],
+ "food:bitter_gourd_karela": [
+  "karela",
+  "pavakkai",
+  "bitter gourd",
+  "करेला",
+  "పవక్కాయి",
+  "karela"
+ ],
+ "food:bottle_gourd_lauki": [
+  "lauki",
+  "sorakaya",
+  "bottle gourd",
+  "लौकी",
+  "లౌకి",
+  "lauky"
+ ],
+ "food:raw_banana_plantain": [
+  "kachcha kela",
+  "aratikaya",
+  "raw plantain",
+  "कच्चा केला",
+  "అరటికాయ",
+  "rawbananna"
+ ],
+ "food:sweet_potato": [
+  "shakarkandi",
+  "genasu",
+  "sweet potato",
+  "शकरकंद",
+  "శకరకంది",
+  "shakarkandii"
+ ],
+ "food:lotus_seeds_makhana": [
+  "phool makhana",
+  "makhana",
+  "fox nuts",
+  "फूल मखाना",
+  "ఫూల్ మఖనా",
+  "makhanaa"
+ ],
+ "food:flaxseeds_alsi": [
+  "alsi",
+  "agase",
+  "flax seed",
+  "अलसी",
+  "అల్సి",
+  "alsee"
+ ],
+ "food:sunflower_seeds": [
+  "surajmukhi ke beej",
+  "sunflower beej",
+  "sunflower seeds",
+  "सूरजमुखी के बीज",
+  "సూర్యముఖి బీజాలు",
+  "surajmukhi"
+ ],
+ "food:cashewnuts_kaju": [
+  "kaju",
+  "kaju nuts",
+  "cashew nut",
+  "काजू",
+  "కాజు",
+  "kajoo"
+ ],
+ "food:jowar_sorghum": [
+  "jowar",
+  "jonna",
+  "sorghum",
+  "ज्वार",
+  "జొన్న",
+  "jowarr"
+ ],
+ "food:foxtail_millet_kangni": [
+  "kangni",
+  "korralu",
+  "foxtail millet",
+  "कांगनी",
+  "కాంగ్ని",
+  "kangnii"
+ ],
+ "food:little_millet_kutki": [
+  "kutki",
+  "sama",
+  "little millet",
+  "कुटकी",
+  "కుట్కీ",
+  "kutkii"
+ ],
+ "food:cod_liver_oil_capsule": [
+  "cod liver oil",
+  "cod liver oil capsule",
+  "cod liver oil supplement",
+  "कोड लिवर ऑइल",
+  "కోడ్ లివర్ ఆయిల్",
+  "codlivreoil"
+ ],
+ "food:hilsa_fish_ilish": [
+  "ilish",
+  "hilsa fish",
+  "ilish fish",
+  "इलिश",
+  "ఇలిష్",
+  "ilsh"
+ ],
+ "food:prawn_shrimp": [
+  "jhinga",
+  "prawns",
+  "shrimp",
+  "झींगा",
+  "జింక",
+  "jhiga"
+ ],
+ "food:papaya_ripe": [
+  "papita",
+  "boppaya",
+  "ripe papaya",
+  "पपीता",
+  "పప్పయట",
+  "papitaa"
+ ],
+ "food:orange_mosambi": [
+  "mosambi",
+  "sweet lime",
+  "mosambi juice",
+  "मोसंबी",
+  "మొసంబీ",
+  "mosambii"
+ ],
+ "food:dried_figs_anjeer": [
+  "anjeer",
+  "dried figs",
+  "dry fig",
+  "अंजीर",
+  "అంజీర్",
+  "anjir"
+ ],
+ "food:dried_apricots_khumani": [
+  "khumani",
+  "khumarini",
+  "dry apricots bhai",
+  "खुमा​नी",
+  "ఖుమాని",
+  "khumanni"
+ ],
+ "food:ghee_clarified_butter": [
+  "desi ghee",
+  "nellu ghee",
+  "ghee bhai",
+  "देसी घी",
+  "నెయ్యి",
+  "gheee"
+ ],
+ "food:coconut_oil_virgin": [
+  "nariyal tel",
+  "thengai ennai",
+  "coco oil",
+  "नारियल तेल",
+  "కొబ్బరి నూనె",
+  "coconut oyl"
+ ],
+ "food:tamarind_imli": [
+  "imli",
+  "puli",
+  "tamarind paste",
+  "इमली",
+  "ఇమ్లీ",
+  "imlli"
+ ],
+ "food:jaggery_gud": [
+  "gur",
+  "bellam",
+  "jaggery bhai",
+  "गुड़",
+  "గుర్",
+  "gurr"
+ ],
+ "food:wheat_germ": [
+  "gehoon ka germ",
+  "gandham",
+  "wheat germ",
+  "गेहूँ का जर्म",
+  "గోధుమ జెర్మ్",
+  "wheat germm"
+ ],
+ "food:tempeh": [
+  "tempe",
+  "tempe",
+  "tempeh bhai",
+  "टेम्पेह",
+  "టెంపె",
+  "tempehh"
+ ],
+ "food:ifct_a001_amaranth_seed": [
+  "rajgira",
+  "ramdana",
+  "amaranth seed",
+  "राजगीरा",
+  "రాజగిరా",
+  "rajgiraa"
+ ],
+ "food:ifct_a004_barley": [
+  "jau",
+  "jowar",
+  "barley bhai",
+  "जौ",
+  "జవ",
+  "jauu"
+ ],
+ "food:ifct_a006_maize_dry": [
+  "makka",
+  "mokka",
+  "dry corn",
+  "मक्का",
+  "మక్క",
+  "makkaa"
+ ],
+ "food:ifct_a011_rice_flakes": [
+  "poha",
+  "atukulu",
+  "rice flakes",
+  "पोहे",
+  "అటుకులు",
+  "pohha"
+ ],
+ "food:ifct_a013_brown_rice": [
+  "brown chawal",
+  "dampudu biyyam",
+  "brown rice",
+  "भूरा चावल",
+  "బ్రౌన్ బియ్యం",
+  "brown chawall"
+ ],
+ "food:ifct_a014_parboiled_rice": [
+  "usna chawal",
+  "uppudu biyyam",
+  "parboiled rice",
+  "उसना चावल",
+  "ఉస్నా బియ్యం",
+  "parboiled chaval"
+ ],
+ "food:ifct_a015_white_rice_raw_milled": [
+  "chawal",
+  "biyyam",
+  "white rice",
+  "चावल",
+  "బియ్యం",
+  "white rrice"
+ ],
+ "food:ifct_a017_kodo_millet": [
+  "varagu",
+  "karralu",
+  "kodo millet",
+  "वर्गु",
+  "వరగు",
+  "varaggu"
+ ],
+ "food:ifct_a019_whole_wheat_flour": [
+  "atta",
+  "sampurna godhuma pindi",
+  "whole wheat flour",
+  "आटा",
+  "గోధుమ పిండి",
+  "attaaa"
+ ],
+ "food:ifct_a020_whole_wheat": [
+  "gehun",
+  "godhumalu",
+  "whole wheat",
+  "गेहूँ",
+  "గోధుమ",
+  "gehunn"
+ ],
+ "food:ifct_a021_broken_wheat": [
+  "dalia",
+  "bulgur",
+  "broken wheat",
+  "दालिया",
+  "దాలి",
+  "daliaa"
+ ],
+ "food:ifct_a022_semolina": [
+  "rava",
+  "gehun suji",
+  "semolina",
+  "रवा",
+  "సెమోలినా",
+  "ravaa"
+ ],
+ "food:ifct_b002_whole_bengal_gram": [
+  "chana",
+  "sanagalu",
+  "whole bengal gram",
+  "चना",
+  "చన",
+  "channa"
+ ],
+ "food:ifct_b003_split_black_gram": [
+  "Urad dal",
+  "Urad pappu",
+  "उड़द दाल",
+  "ఉరద్ దాల్",
+  "Urad daal",
+  "Uraddaal"
+ ],
+ "food:ifct_b010_split_green_gram": [
+  "Moong dal",
+  "Mung pappu",
+  "मूंग दाल",
+  "మూంగ్ దాల్",
+  "Moongdaal",
+  "Mungdal"
+ ],
+ "food:ifct_b011_whole_green_gram": [
+  "Whole moong",
+  "Mung whole",
+  "पूरे मूंग",
+  "పూర్తి మూఙ్",
+  "Whole moong dal",
+  "Mong"
+ ],
+ "food:ifct_b013_red_lentil_dal": [
+  "Masoor dal",
+  "Lanka pappu",
+  "मसूर दाल",
+  "మసూర్ దాల్",
+  "Masoordaal",
+  "Masur dal"
+ ],
+ "food:ifct_b014_whole_brown_lentil": [
+  "Whole masoor",
+  "Sabut masoor",
+  "साबुत मसूर",
+  "సబుత్ మసూర్",
+  "Whole masur",
+  "Masoor whole"
+ ],
+ "food:ifct_b017_dried_peas": [
+  "Sukhe matar",
+  "Sukhi matar",
+  "सुखे मटर",
+  "సూకే మటార్",
+  "Sukhe matra",
+  "Sukhe mater"
+ ],
+ "food:ifct_b021_split_red_gram": [
+  "Toor dal",
+  "Kandi pappu",
+  "तूर दाल",
+  "టూర్ దాల్",
+  "Toor daal",
+  "Tur dal"
+ ],
+ "food:ifct_b022_whole_red_gram": [
+  "Arhar whole",
+  "Arhar sabud",
+  "अरहर साबुद",
+  "అర్హర్ సాబుద్",
+  "Arhar sabud",
+  "Arhar sabudda"
+ ],
+ "food:ifct_b023_rice_bean": [
+  "Meth bean",
+  "Naurangi dal",
+  "मेथ बीन्स",
+  "నౌరంగి బీన్",
+  "Meth bean",
+  "Meth bea"
+ ],
+ "food:ifct_c001_agathi_leaves": [
+  "Agasthi leaves",
+  "Agathi patra",
+  "अगस्थी पत्ते",
+  "అగస్ఠి ఆకులు",
+  "Agasthi patra",
+  "Agasthi leaf"
+ ],
+ "food:ifct_c007_malabar_spinach": [
+  "Malabar spinach",
+  "Bachhali",
+  "मलाबार पालक",
+  "బచ్చలి",
+  "Malabar spnch",
+  "Malabar spinash"
+ ],
+ "food:ifct_c008_bathua_leaves": [
+  "Bathua",
+  "Bathua sagu",
+  "बथुआ",
+  "బతూవా",
+  "Bathua sag",
+  "Bathua saggu"
+ ],
+ "food:ifct_c009_beetroot_greens": [
+  "Beet greens",
+  "Beetroot sag",
+  "बीट ग्रीन्स",
+  "బీట్ రూట్ సాగ్",
+  "Beet greans",
+  "Beet rooot greens"
+ ],
+ "food:ifct_c015_green_cabbage": [
+  "Patta gobhi",
+  "Bandh gobi",
+  "पत्ता गोभी",
+  "బంధ్ గోబీ",
+  "Patta gobi",
+  "Patta gobhi"
+ ],
+ "food:ifct_c018_colocasia_leaves": [
+  "Arbi patta",
+  "Arvi ka sag",
+  "अर्बी पत्ता",
+  "అర్బి పట్టు",
+  "Arbi patta",
+  "Arbi pattae"
+ ],
+ "food:ifct_c021_garden_cress_greens": [
+  "Garden cress",
+  "Adityala akulu",
+  "गार्डन क्रेस",
+  "అదిత్యల ఆకులు",
+  "Garden cress",
+  "Garden cresss"
+ ],
+ "food:ifct_c022_gongura": [
+  "Gongura",
+  "Gogu leaves",
+  "गोंगुरा",
+  "గోంగురా",
+  "Gongura",
+  "Gongurra"
+ ],
+ "food:ifct_c026_mustard_greens": [
+  "Sarson ka saag",
+  "Ava akulu",
+  "सरसों का साग",
+  "అవ ఆకులు",
+  "Sarson ka sag",
+  "Sarson ka saag"
+ ],
+ "food:ifct_c029_ponnaganni_leaves": [
+  "Ponnaganni",
+  "Ponnaganti koora",
+  "पोननगन्नी पत्ता",
+  "పొన్నగన్ని ఆకులు",
+  "Ponnaganni leaf",
+  "Ponnaganni leav"
+ ],
+ "food:ifct_c031_radish_leaves": [
+  "Mooli patta",
+  "Muli ka sag",
+  "मूली पत्ता",
+  "ములీ పట్టు",
+  "Mooli patta",
+  "Muli patta"
+ ],
+ "food:ifct_c017_cauliflower_greens": [
+  "phoolgobhi ke patte",
+  "puvvu pattalu",
+  "cauliflower greens",
+  "फूलगोभी के पत्ते",
+  "ఫూల్ గోభి పత్తెలు",
+  "phool gobi patta"
+ ],
+ "food:ifct_c030_tender_pumpkin_leaves": [
+  "kumarah sag",
+  "gummadi akulu",
+  "tender pumpkin leaves",
+  "कुमारह साग",
+  "గుమ్మడి ఆకులు",
+  "kumra sag"
+ ],
+ "food:ifct_c034_tender_tamarind_leaves": [
+  "imli ke patte",
+  "chinta chiguru",
+  "tamarind leaves",
+  "इमली के पत्ते",
+  "చింత చిగురు",
+  "tamrind leaves"
+ ],
+ "food:ifct_d001_ash_gourd": [
+  "petha bhindi",
+  "petha gummadi",
+  "ash gourd",
+  "पेठा भिंडी",
+  "పెథా బిందీ",
+  "ash goord"
+ ],
+ "food:ifct_d031_brinjal": [
+  "baingan ka bharta",
+  "vankaya",
+  "brinjal",
+  "बैंगन का भरता",
+  "వంకాయ",
+  "brinjhal"
+ ],
+ "food:ifct_d033_green_capsicum": [
+  "hari shimla mirch",
+  "shimla mirchi",
+  "green capsicum",
+  "हरी शिमला मिर्च",
+  "హరీఈ శిమ్లా మిర్చి",
+  "green capsicun"
+ ],
+ "food:ifct_d036_cauliflower": [
+  "phool gobhi",
+  "go puvvu",
+  "cauliflower",
+  "फूल गोभी",
+  "ఫూల్ గోభి",
+  "cauliflower"
+ ],
+ "food:ifct_d039_cluster_beans": [
+  "gawar ki phalli",
+  "gawar",
+  "cluster beans",
+  "गावर की फली",
+  "గవార్",
+  "claster beans"
+ ],
+ "food:ifct_d043_cucumber": [
+  "kheere ka salad",
+  "kheera",
+  "cucumber",
+  "खीरे का सलाद",
+  "కీరా",
+  "cucumbur"
+ ],
+ "food:ifct_d049_french_beans": [
+  "sannachikkudu",
+  "bakla",
+  "french beans",
+  "सन्नाचिक्कुडु",
+  "బనానా బీన్స్",
+  "french beanz"
+ ],
+ "food:ifct_d054_ivy_gourd": [
+  "kundru",
+  "dondakaya",
+  "ivy gourd",
+  "कुंदरु",
+  "కుందురు",
+  "ivy gourd"
+ ],
+ "food:ifct_d056_ladies_finger": [
+  "bhindi ki sabzi",
+  "bendakaya",
+  "ladies finger",
+  "भिंडी की सब्ज़ी",
+  "బెండకాయ",
+  "ladies fingerr"
+ ],
+ "food:ifct_d060_pointed_gourd": [
+  "parwal ki sabzi",
+  "kommu potla",
+  "pointed gourd",
+  "परवल की सब्ज़ी",
+  "కమ్ము పోట్ల",
+  "pointed gourd"
+ ],
+ "food:ifct_d061_fresh_green_peas": [
+  "hara matar",
+  "matar",
+  "green peas",
+  "हरा मटर",
+  "మటర్",
+  "green peass"
+ ],
+ "food:ifct_d062_banana_flower": [
+  "kele ka phool",
+  "arati puvvu",
+  "banana flower",
+  "केले का फूल",
+  "అరటి పువ్వు",
+  "banana flouer"
+ ],
+ "food:ifct_d064_banana_stem": [
+  "kele ka tana",
+  "arati doota",
+  "banana stem",
+  "केले का तना",
+  "అరటి తొణు",
+  "banana stemm"
+ ],
+ "food:ifct_d066_pumpkin": [
+  "kaddu ka halwa",
+  "gummadi",
+  "pumpkin",
+  "कद्दू का हलवा",
+  "గుమ్మడి",
+  "pumpkinn"
+ ],
+ "food:ifct_d068_ridge_gourd": [
+  "turai ki sabzi",
+  "beera kaya",
+  "ridge gourd",
+  "तुरई की सब्ज़ी",
+  "బీరా కాయ",
+  "ridge gourdd"
+ ],
+ "food:ifct_d070_snake_gourd": [
+  "potla kaya",
+  "chichinda",
+  "snake gourd",
+  "पोटला काया",
+  "చిచింద",
+  "snake gourdd"
+ ],
+ "food:ifct_d073_round_gourd": [
+  "tinda ki sabzi",
+  "round gourd",
+  "tinda",
+  "टिंडा की सब्ज़ी",
+  "టిండా",
+  "round gourdd"
+ ],
+ "food:ifct_d076_tomato": [
+  "tamatar",
+  "tamata",
+  "tomaato",
+  "टमाटर",
+  "టమాటర",
+  "tomoto"
+ ],
+ "food:ifct_d032_broad_beans": [
+  "bakla",
+  "broad bean",
+  "broadbean",
+  "బకలా",
+  "बक्ला",
+  "brod beans"
+ ],
+ "food:ifct_d053_knol_khol": [
+  "ganth gobhi",
+  "knol khol",
+  "knolkhul",
+  "गांठ गोभी",
+  "గంథ్ గోభి",
+  "knol-khol"
+ ],
+ "food:ifct_f002_carrot": [
+  "gajar",
+  "gajjar",
+  "gajer",
+  "गाजर",
+  "గాజర్",
+  "carot"
+ ],
+ "food:ifct_f004_colocasia": [
+  "arbi",
+  "arvi",
+  "arbiya",
+  "अरबी",
+  "అర్బి",
+  "arbhi"
+ ],
+ "food:ifct_f006_potato": [
+  "aloo",
+  "alu",
+  "alooe",
+  "आलू",
+  "అలూ",
+  "potatoo"
+ ],
+ "food:ifct_f010_white_radish": [
+  "mooli",
+  "muli",
+  "moolii",
+  "मूली",
+  "మూలీ",
+  "moolly"
+ ],
+ "food:ifct_f015_tapioca": [
+  "cassava",
+  "kappal",
+  "kappalu",
+  "कसावा",
+  "కప్పల",
+  "tapiocae"
+ ],
+ "food:ifct_f017_elephant_foot_yam": [
+  "suran",
+  "kandha dumma",
+  "suranam",
+  "सुरन",
+  "సురన్",
+  "surann"
+ ],
+ "food:ifct_e001_apple": [
+  "seb",
+  "sebu",
+  "sebb",
+  "सेब",
+  "సెబ్",
+  "aple"
+ ],
+ "food:ifct_e008_bael_fruit": [
+  "bel",
+  "bele",
+  "bail",
+  "बेल",
+  "బెల్",
+  "bael"
+ ],
+ "food:ifct_e012_banana": [
+  "kela",
+  "kelaa",
+  "kelaa",
+  "केला",
+  "కేలా",
+  "bananna"
+ ],
+ "food:ifct_e016_custard_apple": [
+  "sitaphal",
+  "sita phal",
+  "sitaphl",
+  "सीताफल",
+  "సీతాఫలం",
+  "custard applee"
+ ],
+ "food:ifct_e025_black_grapes": [
+  "angoor",
+  "angur",
+  "angoori",
+  "अंगूर",
+  "అంగూర్",
+  "grapes"
+ ],
+ "food:ifct_e030_ripe_jackfruit": [
+  "kathal",
+  "kathaal",
+  "kathl",
+  "कटहल",
+  "కథల్",
+  "jackfruit"
+ ],
+ "food:ifct_e031_jamun": [
+  "jamun",
+  "jamunaa",
+  "jamoon",
+  "जामुन",
+  "జామున్",
+  "jamoon"
+ ],
+ "food:ifct_e036_mango": [
+  "aam",
+  "aam paka",
+  "am",
+  "आम",
+  "ఆం",
+  "mangoe"
+ ],
+ "food:ifct_e047_orange": [
+  "santra",
+  "santraa",
+  "santr",
+  "संतरा",
+  "సంత్రా",
+  "orenge"
+ ],
+ "food:ifct_e051_pear": [
+  "nashpati",
+  "nashpatiy",
+  "nashpati",
+  "नाशपाती",
+  "నాష్పతి",
+  "pearrr"
+ ],
+ "food:ifct_e052_phalsa": [
+  "falsa",
+  "phalsa",
+  "phalsaa",
+  "फ़ाल्सा",
+  "ఫల్సా",
+  "phalsa"
+ ],
+ "food:ifct_e053_pineapple": [
+  "Ananas",
+  "Anasa Pandu",
+  "Pineapple",
+  "Pineapple / Ananas",
+  "pineapple",
+  "pineaple"
+ ],
+ "food:ifct_e055_pomegranate": [
+  "Anar",
+  "Danimma Pandu",
+  "Pomegranate",
+  "Pomegranate / Anar",
+  "anar",
+  "pomegranatee"
+ ],
+ "food:ifct_e060_sapota": [
+  "Chikoo",
+  "Chiku",
+  "Sapota",
+  "Sapota / Chikoo",
+  "chikoo",
+  "chiku"
+ ],
+ "food:ifct_e065_watermelon": [
+  "Puchakaya",
+  "Tarbooz",
+  "Tarbuj",
+  "Watermelon",
+  "tarbuj",
+  "watermellon"
+ ],
+ "food:ifct_e068_indian_jujube": [
+  "Ber",
+  "Indian Jujube",
+  "Indian Jujube / Ber",
+  "Regu Pandu",
+  "ber",
+  "jujube"
+ ],
+ "food:ifct_e067_wood_apple": [
+  "Kaith",
+  "Kaitha",
+  "Velega Pandu",
+  "Wood Apple",
+  "kaith",
+  "woodaple"
+ ],
+ "food:ifct_e020_fresh_fig": [
+  "Anjeer",
+  "Atti Pandu",
+  "Fresh Fig",
+  "Fresh Fig / Anjeer",
+  "anjeer",
+  "figg"
+ ],
+ "food:ifct_g009_coriander_leaves": [
+  "Coriander Leaves",
+  "Coriander Leaves / Dhaniya Patta",
+  "Dhaniya Patta",
+  "Hara Dhania",
+  "dhaniya patta",
+  "corianderleaf"
+ ],
+ "food:ifct_g016_mint_leaves": [
+  "Mint Leaves",
+  "Mint Leaves / Pudina",
+  "Pudina",
+  "mint",
+  "pudina",
+  "mintleaf"
+ ],
+ "food:ifct_g011_garlic": [
+  "Garlic",
+  "Garlic / Lahsun",
+  "Lahsun",
+  "Lehsan",
+  "lahsun",
+  "garlicc"
+ ],
+ "food:ifct_g014_fresh_ginger": [
+  "Adrak",
+  "Allam",
+  "Fresh Ginger",
+  "Fresh Ginger / Adrak",
+  "adrak",
+  "ginger"
+ ],
+ "food:ifct_g017_onion": [
+  "Neerulli",
+  "Onion",
+  "Onion / Pyaz",
+  "Pyaz",
+  "pyaz",
+  "onoin"
+ ],
+ "food:ifct_g024_coriander_seeds": [
+  "Coriander Seeds",
+  "Coriander Seeds / Dhaniya",
+  "Dhania",
+  "Dhaniya",
+  "dhaniya",
+  "corianderseed"
+ ],
+ "food:ifct_g025_cumin_seeds": [
+  "Cumin Seeds",
+  "Cumin Seeds / Jeera",
+  "Jeelakarra",
+  "Jeera",
+  "jeera",
+  "cuminseed"
+ ],
+ "food:ifct_g026_fenugreek_seeds": [
+  "Fenugreek Seeds",
+  "Fenugreek Seeds / Methi Dana",
+  "Menthulu",
+  "Methi",
+  "methi",
+  "fenugreekseed"
+ ],
+ "food:ifct_g029_ajwain": [
+  "Ajwain",
+  "Ajwain / Carom Seeds",
+  "Ajwan",
+  "Carom Seeds",
+  "ajwain",
+  "ajwan"
+ ],
+ "food:ifct_g031_black_pepper": [
+  "Black Pepper",
+  "Black Pepper / Kali Mirch",
+  "Kali Mirch",
+  "Kalimirchi",
+  "kali mirch",
+  "blackpeppr"
+ ],
+ "food:ifct_g032_poppy_seeds": [
+  "Gasagasalu",
+  "Khus Khus",
+  "Poppy Seeds",
+  "Poppy Seeds / Khus Khus",
+  "khus khus",
+  "poppyseds"
+ ],
+ "food:ifct_g033_turmeric_powder": [
+  "Haldi",
+  "Pasupu",
+  "Turmeric Powder",
+  "Turmeric Powder / Haldi",
+  "haldi",
+  "turmericpowder"
+ ],
+ "food:ifct_h006_dry_coconut": [
+  "Dry Coconut",
+  "Dry Coconut / Kopra",
+  "Endu Kobbari",
+  "Kopra",
+  "dry coconut",
+  "drycoconut"
+ ],
+ "food:ifct_h007_fresh_coconut": [
+  "nariyal",
+  "kobbari",
+  "narial",
+  "नारियल",
+  "కొబ్బరి",
+  "fresh cocunut"
+ ],
+ "food:ifct_h012_groundnut": [
+  "moongphali",
+  "peanut",
+  "ground nut",
+  "मूंगफली",
+  "పీనట్",
+  "groundnutt"
+ ],
+ "food:ifct_h013_mustard_seeds": [
+  "sarso",
+  "rai",
+  "mustard",
+  "सरसों",
+  "ఆవాలు",
+  "musturd"
+ ],
+ "food:ifct_h015_niger_seeds": [
+  "ramtel",
+  "kala til",
+  "niger seed",
+  "काला तिल",
+  "నల్లతిల",
+  "nigerseed"
+ ],
+ "food:ifct_h018_pistachio": [
+  "pista",
+  "pistachio",
+  "pistacho",
+  "पिस्ता",
+  "పిస్తా",
+  "pistachioo"
+ ],
+ "food:ifct_h021_walnut": [
+  "akhrot",
+  "walnut",
+  "akhrotka",
+  "अखरोट",
+  "ఆక్రోట్",
+  "walnutt"
+ ],
+ "food:ifct_h019_safflower_seeds": [
+  "kusum",
+  "kardi",
+  "safflower",
+  "कुसुम",
+  "కుసుమ",
+  "safflowerseeds"
+ ],
+ "food:ifct_l001_buffalo_milk_whole": [
+  "bhains ka doodh",
+  "buffalo milk",
+  "gedha dhood",
+  "भैंस का दूध",
+  "గేదె పాలు",
+  "buffalo milkk"
+ ],
+ "food:ifct_l004_khoa": [
+  "mawa",
+  "khoa",
+  "khoya",
+  "खोया",
+  "ఖోయా",
+  "khoay"
+ ],
+ "food:ifct_m009_country_hen_egg_boiled": [
+  "desi anda",
+  "boiled egg",
+  "udikina anda",
+  "देशी अंडा",
+  "దేశీ గుడ్డు",
+  "boiledegg"
+ ],
+ "food:ifct_m011_duck_egg_boiled": [
+  "batak anda",
+  "duck egg",
+  "udikina batakh",
+  "बत्तख अंडा",
+  "బాతు గుడ్డు",
+  "duckegg"
+ ],
+ "food:ifct_n001_chicken_leg_skinless": [
+  "murga leg",
+  "chicken leg",
+  "kodi kaalu",
+  "मुर्गा लेग",
+  "కోడి లెగ్",
+  "chickenleg"
+ ],
+ "food:ifct_n006_chicken_gizzard": [
+  "gizzard",
+  "murga pathri",
+  "kodi gizzard",
+  "गुर्दा",
+  "గుడ్డె",
+  "gizzrad"
+ ],
+ "food:ifct_o011_goat_kidney": [
+  "bakre ka gurda",
+  "goat kidney",
+  "meka mutrapindalu",
+  "बकरी का गुर्दा",
+  "మేక గుండె",
+  "goatkidneyy"
+ ],
+ "food:ifct_p003_anchovy": [
+  "nethili",
+  "anchovy",
+  "nattoo",
+  "एंकोवी",
+  "నెత్తిలి",
+  "anchovyy"
+ ],
+ "food:ifct_p007_bombay_duck": [
+  "bombil",
+  "bombay duck",
+  "cucah sawahri",
+  "बॉम्बे डक",
+  "బాంబే డక్",
+  "bombaydduck"
+ ],
+ "food:ifct_p026_pearl_spot": [
+  "karimeen",
+  "pearl spot",
+  "cashi mara",
+  "पर्ल स्पॉट",
+  "కరిమిన్",
+  "pearlspott"
+ ],
+ "food:ifct_p039_mullet": [
+  "mullet",
+  "kathiparega",
+  "mullett",
+  "मल्ली",
+  "కథిపారేగ",
+  "mullett"
+ ],
+ "food:ifct_p055_black_pomfret": [
+  "black pomfret",
+  "nallachanduva",
+  "black pomfret fish",
+  "काला पोम्पफ्रेट",
+  "నల్లచందు",
+  "blackpomfret"
+ ],
+ "food:ifct_p057_white_pomfret": [
+  "white pomfret",
+  "thellachanduva",
+  "white pomfret fish",
+  "सफेद पोम्पफ्रेट",
+  "తెల్లచందు",
+  "whitepomfret"
+ ],
+ "food:ifct_p060_queen_fish": [
+  "queen fish",
+  "kāṇḍi mīna",
+  "queen fish bhaji",
+  "क्वीन फिश",
+  "క్వీన్ ఫిష్",
+  "queenfsh"
+ ],
+ "food:ifct_p065_red_snapper": [
+  "red snapper",
+  "chinna mīna",
+  "red snapper fry",
+  "रेड स्नैपर",
+  "రెడ్ స్నాప్పర్",
+  "red snappr"
+ ],
+ "food:ifct_p068_salmon": [
+  "salmon",
+  "sālmana",
+  "salmon grill",
+  "सैल्मन",
+  "సాల్మన్",
+  "salmonn"
+ ],
+ "food:ifct_p071_sardine": [
+  "sardine",
+  "sāḍi mīna",
+  "sardine masala",
+  "सार्डिन",
+  "సార్డిన్",
+  "sardinne"
+ ],
+ "food:ifct_p084_tuna": [
+  "tuna",
+  "tūna mīna",
+  "tuna salad",
+  "ट्यूना",
+  "ట్యూనా",
+  "tunae"
+ ],
+ "food:ifct_p087_seer_fish": [
+  "seer fish",
+  "sīr mīna",
+  "seer fish fry",
+  "सीर मछली",
+  "సీర్ ఫిష్",
+  "seerfsh"
+ ],
+ "food:ifct_p083_tilapia": [
+  "tilapia",
+  "tilāpiyā",
+  "tilapia curry",
+  "तिलापिया",
+  "టిలాపియా",
+  "tilapya"
+ ],
+ "food:ifct_q001_crab": [
+  "crab",
+  "kēkḍa",
+  "crab masala",
+  "केकड़ा",
+  "కెక్డా",
+  "crabb"
+ ],
+ "food:ifct_s002_catla": [
+  "catla",
+  "kāṭlā mīna",
+  "catla fry",
+  "कटला",
+  "కాట్లా",
+  "catlla"
+ ],
+ "food:ifct_s005_pangas": [
+  "pangas",
+  "pāṅgās mīna",
+  "pangas tikka",
+  "पंगस",
+  "పాంగస్",
+  "pangass"
+ ],
+ "dish:banana": [
+  "kela",
+  "kelaa",
+  "banaana",
+  "केला",
+  "బనానా",
+  "bananna"
+ ],
+ "dish:guava": [
+  "amrud",
+  "amrood",
+  "jamu pandu",
+  "अमरूद",
+  "అమ్రుద్",
+  "guvva"
+ ],
+ "dish:apple": [
+  "seb",
+  "seeb",
+  "aple",
+  "सेब",
+  "ఆపిల్",
+  "appple"
+ ],
+ "dish:orange": [
+  "santra",
+  "santraa",
+  "oranj",
+  "संतरा",
+  "ఆరెంజ్",
+  "orenge"
+ ],
+ "dish:papaya": [
+  "boppayi",
+  "boppai",
+  "papita",
+  "पपीता",
+  "పప్పాయి",
+  "papayya"
+ ],
+ "dish:watermelon": [
+  "tarbooz",
+  "tarbuz",
+  "watermelon",
+  "तरबूज़",
+  "తర్బూజ్",
+  "turbuz"
+ ],
+ "dish:pomegranate": [
+  "anar",
+  "anarr",
+  "pomegranate",
+  "अनार",
+  "అనార్",
+  "anarr"
+ ],
+ "dish:sapota": [
+  "chikoo",
+  "chikooo",
+  "sapotaa",
+  "चीकू",
+  "చిక్కు",
+  "sapot"
+ ],
+ "dish:mango": [
+  "aam",
+  "aamm",
+  "mangoo",
+  "आम",
+  "మామిడి పండు",
+  "mengo"
+ ],
+ "dish:grapes": [
+  "angoora",
+  "drakshaa",
+  "grapez",
+  "अंगूर",
+  "ద్రాక్ష",
+  "grapess"
+ ],
+ "dish:chana_dal": [
+  "chane ki dal",
+  "chana daal",
+  "chana dal",
+  "चना दाल",
+  "చనాపప్పు",
+  "chanaa dal"
+ ],
+ "dish:rajma": [
+  "rajmah",
+  "rajma masala",
+  "raajma",
+  "राजमा",
+  "రాజ్మా",
+  "rajmaa"
+ ],
+ "ingredient:beetroot": [
+  "chukandar",
+  "chukandarr",
+  "beetroot",
+  "चुकंदर",
+  "బీట్‌రూట్",
+  "beet rooot"
+ ],
+ "ingredient:coriander powder": [
+  "dhaniya powder",
+  "dhaniyalu",
+  "coriander powdr",
+  "धनिया पाउडर",
+  "ధనియాపొడి",
+  "corianderpowder"
+ ],
+ "ingredient:poppy seeds": [
+  "postdana",
+  "gasagasalu",
+  "poppy seed",
+  "खसखस",
+  "పోస్ట్ దానా",
+  "popsey seeds"
+ ],
+ "ingredient:lemon juice": [
+  "nimah pandu",
+  "nimbhu",
+  "lemon jus",
+  "नींबू का रस",
+  "నిమ్మరసం",
+  "lemonj juice"
+ ],
+ "ingredient:black salt": [
+  "kala namak",
+  "black salt",
+  "namak",
+  "काला नमक",
+  "బ్లాక్ సాల్ట్",
+  "blacksaltt"
+ ],
+ "ingredient:fresh coconut": [
+  "nariyal",
+  "kobbari",
+  "fresh coconut",
+  "ताज़ा नारियल",
+  "కొబ్బరి",
+  "freshcoconut"
+ ],
+ "ingredient:dry coconut": [
+  "dry coconut",
+  "nariyal",
+  "endu kobbari",
+  "सूखा नारियल",
+  "ఎండు కొబ్బరి",
+  "drycoconut"
+ ],
+ "ingredient:coconut milk": [
+  "nariyal doodh",
+  "kobbari paalu",
+  "coconut milk",
+  "नारियल का दूध",
+  "కొబ్బరి పాలు",
+  "coconutmil"
+ ],
+ "ingredient:coconut water": [
+  "nariyal ka paani",
+  "kobbari neeru",
+  "coco water",
+  "नारियल का पानी",
+  "నారియల్ నీరు",
+  "coconut watter"
+ ],
+ "ingredient:sesame seeds": [
+  "til ke beej",
+  "nuvvulu",
+  "til seeds",
+  "तिल के बीज",
+  "తిల గింజలు",
+  "sesam seeds"
+ ],
+ "ingredient:country chicken": [
+  "desi murge ka tukda",
+  "desi murge ka paankh",
+  "desi chicken",
+  "देशी मुर्गे का टुकड़ा",
+  "దేశీ కోడి ముక్క",
+  "desi murga"
+ ],
+ "ingredient:beef": [
+  "gaay ka maas",
+  "aavu bhujamu mamsam",
+  "beef meat",
+  "गाय का मांस",
+  "గో మాంసం",
+  "beefh"
+ ],
+ "ingredient:chicken liver": [
+  "murga ki kaleji",
+  "kodi kaleyam",
+  "chicken liver piece",
+  "मुर्गा की कलेजी",
+  "కోడి కాలేయం",
+  "chiken liver"
+ ],
+ "ingredient:mutton liver": [
+  "bakre ki kaleji",
+  "meka kaleyam",
+  "mutton liver piece",
+  "बकरा की कलेजी",
+  "మేక కాలేయం",
+  "moton liver"
+ ],
+ "ingredient:freshwater fish": [
+  "rohu fish",
+  "bocha-gandumeenu",
+  "fresh fish",
+  "रॉहू मछली",
+  "రొహు చేప",
+  "freshwater fsh"
+ ],
+ "ingredient:seer fish": [
+  "varimeen fish",
+  "vanjiramu",
+  "seer fish fillet",
+  "सुरमई मछली",
+  "వంజరం చేప",
+  "seer fis"
+ ],
+ "ingredient:prawns": [
+  "bada jhinga",
+  "chinna royya",
+  "prawn snack",
+  "बड़ा झींगा",
+  "బడా జింక",
+  "prawnz"
+ ]
+}

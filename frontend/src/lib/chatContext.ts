@@ -15,6 +15,8 @@ export interface ChatContext {
   plans: { name: string; purpose: string; foods: string[] }[];
   diet_type: string;
   allergens: string[];
+  /** The 7-day plan on screen (or saved with the report): dish names per meal for each day. */
+  diet_plan: { style: string; days: { kcal: number; meals: Record<string, string[]> }[] } | null;
   /** Set when the results belong to a saved report, so a signed-in user's chat can be linked to it. */
   reportId: string | null;
   reportDate: string;
@@ -45,6 +47,15 @@ export function chatContextFromAnalysis(result: FullAnalysisResponse, reportId?:
     })),
     diet_type: result.user_profile.diet_type,
     allergens: result.user_profile.allergens,
+    diet_plan: result.diet_plan?.days?.length
+      ? {
+          style: result.diet_plan.style,
+          days: result.diet_plan.days.slice(0, 7).map((d) => ({
+            kcal: Math.round(d.totals.energy_kcal),
+            meals: Object.fromEntries(Object.entries(d.meals).map(([slot, items]) => [slot, items.map((i) => i.name)])),
+          })),
+        }
+      : null,
   };
 }
 
@@ -65,6 +76,6 @@ export function useChatContext(): ChatContext | null {
 /** The part of the context the assistant API understands. */
 export function contextPayload(context: ChatContext | null) {
   if (!context) return null;
-  const { markers, plans, diet_type, allergens } = context;
-  return { markers, plans, diet_type, allergens };
+  const { markers, plans, diet_type, allergens, diet_plan } = context;
+  return { markers, plans, diet_type, allergens, diet_plan };
 }

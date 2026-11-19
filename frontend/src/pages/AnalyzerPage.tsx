@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AlertTriangle, BookmarkCheck, FileCheck2, UserPlus } from 'lucide-react';
 import { useAuth } from '../auth/AuthContext';
 import { AnalysisLoadingModal } from '../components/AnalysisLoadingModal';
-import { Hero } from '../components/Hero';
+import { ArticlesSection, FaqSection, HomeHero, HowItWorksSection, ScienceBand } from '../components/HomeSections';
 import { ResultsView } from '../components/ResultsView';
 import { Stepper } from '../components/Stepper';
 import { Alert, Button, Card } from '../components/ui';
@@ -91,9 +91,9 @@ export const AnalyzerPage: React.FC<{ analyzer: Analyzer }> = ({ analyzer }) => 
 
   return (
     <div className="space-y-10">
-      {step === 'upload' && <Hero />}
+      {step === 'upload' && <HomeHero />}
 
-      <div className="mx-auto max-w-3xl">
+      <div id="analyze" className="mx-auto max-w-3xl scroll-mt-24">
         <Stepper steps={steps} currentIndex={currentStepIdx} />
       </div>
 
@@ -158,6 +158,15 @@ export const AnalyzerPage: React.FC<{ analyzer: Analyzer }> = ({ analyzer }) => 
           </div>
         )}
       </div>
+
+      {step === 'upload' && (
+        <>
+          <HowItWorksSection />
+          <ScienceBand />
+          <ArticlesSection />
+          <FaqSection />
+        </>
+      )}
 
       <AnalysisLoadingModal
         isOpen={analyzer.isAnalyzing}

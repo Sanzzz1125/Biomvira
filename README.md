@@ -173,7 +173,7 @@ Frontend regression tests: `cd frontend && npm test`.
 | Part | Host | Notes |
 |---|---|---|
 | Database | **Neon** Postgres, Singapore | Use the *pooled* connection string as `DATABASE_URL`. |
-| API | **Render** web service (Docker, `backend/Dockerfile`), Singapore | Env vars: `DATABASE_URL`, `COOKIE_SECURE=true`, optional `GEMINI_API_KEY`. Sleeps after 15 min idle (first request ~30–60 s). |
+| API | **Render** web service (Docker, `backend/Dockerfile`), Singapore | Env vars: `DATABASE_URL`, `COOKIE_SECURE=true`, optional `GEMINI_API_KEY` and `GROQ_API_KEY` (free; assistant answers in natural language). Sleeps after 15 min idle (first request ~30–60 s). |
 | Frontend | **Vercel**, root directory `frontend` | `frontend/vercel.json` forwards `/api/*` to the Render URL, so the browser sees one domain and login cookies stay first-party. |
 
 After the first deploy, create the owner from your laptop against the production database:

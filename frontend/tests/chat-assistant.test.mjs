@@ -117,7 +117,7 @@ test('guests see the welcome view, get formatted answers and follow-ups keep the
   assert.ok(rows.some((r) => r.includes('Little Millet') && r.includes('Kutki')), 'Hindi name shown as a sub-label');
   assert.match(log.textContent, /Tips/);
   assert.ok(button('What is the normal range of Hemoglobin?'), 'follow-up suggestions are shown');
-  assert.deepEqual(chatPosts()[0], { message: 'foods for low hb', topic: null, context: null, conversation_id: null, report_id: null });
+  assert.deepEqual(chatPosts()[0], { message: 'foods for low hb', topic: null, context: null, conversation_id: null, report_id: null, language: 'en', history: [] });
 
   await act(async () => { button('What is the normal range of Hemoglobin?').click(); await wait(650); });
   assert.equal(chatPosts()[1].topic, 'test:hemoglobin');

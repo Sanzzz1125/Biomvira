@@ -96,3 +96,11 @@ def signed_in(api, make_user):
         assert client.login(email).status_code == 200
         return client
     return _signed_in
+
+
+@pytest.fixture(autouse=True)
+def no_real_language_model(monkeypatch):
+    """Tests never call the assistant's real model, even when backend/.env has a key (tests that need it mock it)."""
+    from app.config import settings
+    monkeypatch.setattr(settings, "groq_api_key", "")
+    monkeypatch.setattr(settings, "chat_llm_api_key", "")

@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { hasKey, StringKey, useLanguage, useT } from '../lib/i18n';
+import { translateText } from '../lib/domTranslate';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   Activity,
   Ban,
@@ -12,10 +14,13 @@ import {
   Sparkles,
   Stethoscope,
   ThumbsUp,
+  Utensils,
 } from 'lucide-react';
 import { FullAnalysisResponse, UserProfile } from '../types';
 import { RangeSliderBar } from './RangeSliderBar';
 import { FoodCard } from './FoodCard';
+import { PlanBuilder, WeekPlan } from './PlanBuilder';
+import { useLocalizedResult } from '../hooks/useLocalizedResult';
 import { ClinicalNarrative } from './ClinicalNarrative';
 import { Alert, Badge, Button, Card, SectionTitle, STATUS_META, cx } from './ui';
 import { chatContextFromAnalysis, setChatContext } from '../lib/chatContext';
@@ -24,7 +29,8 @@ interface ResultsViewProps {
   result: FullAnalysisResponse;
   profile: UserProfile;
   isExporting: boolean;
-  onDownload: () => void;
+  /** Downloads the report PDF; the 7-day plan on screen (if any) is included in it. */
+  onDownload: (dietPlan?: WeekPlan | null) => void;
   onReset: () => void;
   resetLabel?: string;
   resetIcon?: React.ReactNode;
@@ -40,7 +46,7 @@ const SUMMARY_CARDS = [
 ] as const;
 
 export const ResultsView: React.FC<ResultsViewProps> = ({
-  result,
+  result: source,
   profile,
   isExporting,
   onDownload,
@@ -49,13 +55,41 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
   resetIcon = <RotateCcw className="h-4 w-4" aria-hidden />,
   savedReportId = null,
 }) => {
+  const result = useLocalizedResult(source);
+  const t = useT();
+  const language = useLanguage();
   const [markerFilter, setMarkerFilter] = useState<'all' | 'flagged'>('all');
+  const [picked, setPicked] = useState<string[]>([]);
+  const togglePick = (id: string) =>
+    setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id].slice(0, 30)));
+  // Picks reach the diet plan when the person asks for it ("Update my diet plan"), not on every tap.
+  const [appliedPicks, setAppliedPicks] = useState<string[]>([]);
+  const [rebuildToken, setRebuildToken] = useState(0);
+  const picksChanged = [...picked].sort().join() !== [...appliedPicks].sort().join();
+  const [week, setWeek] = useState<WeekPlan | null>(null);
+  // Foods come first (pick what you like, then build the plan); a saved plan opens on the plan itself.
+  const [activeTab, setActiveTab] = useState<'plan' | 'tests' | 'foods'>(source.diet_plan ? 'plan' : 'foods');
+  // The plan builder starts (and builds its options) the first time its tab is opened, with the picks made by then.
+  const [planOpened, setPlanOpened] = useState(!!source.diet_plan);
+  const tabsRef = useRef<HTMLDivElement>(null);
+  // A new tab starts at its top: scroll back to where the tab bar sits when the page has scrolled past it.
+  const openTab = (id: 'plan' | 'tests' | 'foods') => {
+    setActiveTab(id);
+    if (id === 'plan') setPlanOpened(true);
+    const top = tabsRef.current?.getBoundingClientRect().top;
+    if (top !== undefined && top < 0) window.scrollTo?.({ top: window.scrollY + top - 72, behavior: 'smooth' });
+  };
+  const applyPicks = () => {
+    setAppliedPicks(picked);
+    if (planOpened && picksChanged) setRebuildToken((n) => n + 1);
+    openTab('plan');
+  };
 
   // Let the assistant answer questions about these results while they are on screen.
   useEffect(() => {
-    setChatContext(chatContextFromAnalysis(result, savedReportId));
+    setChatContext(chatContextFromAnalysis(week ? { ...source, diet_plan: week } : source, savedReportId));
     return () => setChatContext(null);
-  }, [result, savedReportId]);
+  }, [source, savedReportId, week]);
 
   const totalMarkers = result.marker_analyses.length || 1;
   const optimalCount = result.status_summary['normal'] || 0;
@@ -71,8 +105,14 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
   );
 
   const filters = [
-    { id: 'all' as const, label: `All (${result.marker_analyses.length})` },
-    { id: 'flagged' as const, label: `Needs attention (${flaggedCount})` },
+    { id: 'all' as const, label: t('allCount', { n: result.marker_analyses.length }) },
+    { id: 'flagged' as const, label: t('needsAttentionCount', { n: flaggedCount }) },
+  ];
+
+  const tabs = [
+    { id: 'foods' as const, label: t('tabStepFoods'), icon: <Salad className="h-4 w-4" aria-hidden /> },
+    { id: 'plan' as const, label: t('tabStepPlan'), icon: <Utensils className="h-4 w-4" aria-hidden /> },
+    { id: 'tests' as const, label: t('tabTests', { n: result.marker_analyses.length }), icon: <Activity className="h-4 w-4" aria-hidden /> },
   ];
 
   // Plans saved before "maintain" plans existed have no purpose and are improvement plans.
@@ -80,7 +120,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
   const maintainPlans = result.recommendations.filter((p) => p.purpose === 'maintain');
 
   return (
-    <div className="mx-auto max-w-6xl space-y-10 animate-fade-in">
+    <div className="mx-auto max-w-6xl space-y-8 animate-fade-in">
       {/* Header */}
       <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
@@ -92,25 +132,22 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
               Ref #{result.analysis_id.slice(0, 8)}
             </span>
           </div>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">
-            Personalized Clinical Nutrition Plan
-          </h2>
-          <p className="mt-2 text-[15px] text-slate-600">
-            Formulated for a{' '}
-            <span className="font-semibold capitalize text-slate-900">
-              {profile.diet_type.replace('_', ' ')}
-            </span>{' '}
-            diet
-            {profile.allergens.length > 0 ? (
-              <>
-                , strictly excluding{' '}
-                <span className="font-semibold text-slate-900">
-                  {profile.allergens.join(', ')}
-                </span>.
-              </>
-            ) : (
-              <>, with zero dietary exclusions.</>
-            )}
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">{t('resultsTitle')}</h2>
+          <p className="mt-2 text-[15px] text-slate-600" translate="no">
+            {(() => {
+              const diet = language === 'en' ? profile.diet_type.replace('_', ' ') : t(`diet_${profile.diet_type}` as StringKey);
+              const [before, after] = t('formulated', { diet: '\u0000' }).split('\u0000');
+              const list = profile.allergens.map((a) => (hasKey(`allergen_${a}`) ? t(`allergen_${a}` as StringKey) : a)).join(', ');
+              const [exBefore, exAfter] = t('excluding', { list: '\u0000' }).split('\u0000');
+              return (
+                <>
+                  {before}<span className="font-semibold capitalize text-slate-900">{diet}</span>{after}
+                  {profile.allergens.length > 0 ? (
+                    <>{exBefore}<span className="font-semibold text-slate-900">{list}</span>{exAfter}</>
+                  ) : t('noExclusions')}
+                </>
+              );
+            })()}
           </p>
         </div>
 
@@ -123,7 +160,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
             {resetLabel}
           </Button>
           <Button
-            onClick={onDownload}
+            onClick={() => onDownload(week)}
             loading={isExporting}
             icon={<Download className="h-4 w-4" aria-hidden />}
           >
@@ -132,76 +169,41 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
         </div>
       </div>
 
-      {/* Biomarker Index Bar */}
-      <Card className="overflow-hidden p-6 bg-gradient-to-r from-slate-900 to-slate-800 text-white shadow-xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <span className="text-[11px] font-mono tracking-wider uppercase text-emerald-400 font-semibold block">
+      {/* Summary: score and status counts in one band */}
+      <Card className="overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 p-5 text-white shadow-xl sm:p-6">
+        <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <div className="min-w-0">
+            <span className="block text-[11px] font-semibold uppercase tracking-wider text-emerald-400">
               Health score
             </span>
-            <h3 className="text-2xl font-bold text-white tracking-tight mt-0.5">
-              {optimalCount} of {result.marker_analyses.length} results in the healthy range
+            <h3 className="mt-0.5 text-xl font-bold tracking-tight text-white sm:text-2xl">
+              {t('inHealthyRange', { a: optimalCount, n: result.marker_analyses.length })}
             </h3>
-            <p className="text-xs text-slate-300 mt-1 max-w-xl leading-relaxed">
+            <p className="mt-1 max-w-xl text-xs leading-relaxed text-slate-300">
               {flaggedCount === 0
                 ? 'All your results are within healthy ranges.'
-                : `${flaggedCount} result${flaggedCount > 1 ? 's need' : ' needs'} attention. Your food plan is below, and anything for a doctor is marked clearly.`}
+                : t(flaggedCount > 1 ? 'needManySentence' : 'needOneSentence', { n: flaggedCount })}
             </p>
           </div>
-
-          <div className="flex items-center gap-4 self-start md:self-auto shrink-0">
-            <div className="text-right">
-              <span className="text-3xl font-mono font-bold text-emerald-400 tabular-nums">
-                {optimalPercent}%
-              </span>
-              <p className="text-[10px] uppercase font-mono tracking-wider text-slate-400">
-                In range
-              </p>
-            </div>
-          </div>
+          <ul aria-label="Summary" className="grid shrink-0 grid-cols-4 gap-2">
+            {SUMMARY_CARDS.map(({ key, label, status }) => (
+              <li key={key} className="min-w-[68px] rounded-xl bg-white/5 px-3 py-2 text-center ring-1 ring-white/10">
+                <p className="text-2xl font-bold tabular-nums text-white">{result.status_summary[key] || 0}</p>
+                <p className="mt-0.5 flex items-center justify-center gap-1 text-[11px] text-slate-300">
+                  <span className={cx('h-1.5 w-1.5 rounded-full', STATUS_META[status].dot)} aria-hidden />
+                  {label}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
-
-        {/* Visual Multi-Segment Bar */}
-        <div className="mt-5 h-2.5 w-full overflow-hidden rounded-full bg-slate-700/60 flex">
-          <div
-            style={{ width: `${(optimalCount / totalMarkers) * 100}%` }}
-            className="bg-emerald-500 h-full transition-all duration-500"
-            title={`${optimalCount} Optimal`}
-          />
-          <div
-            style={{ width: `${(borderlineCount / totalMarkers) * 100}%` }}
-            className="bg-amber-500 h-full transition-all duration-500"
-            title={`${borderlineCount} Borderline`}
-          />
-          <div
-            style={{ width: `${(lowCount / totalMarkers) * 100}%` }}
-            className="bg-red-500 h-full transition-all duration-500"
-            title={`${lowCount} Low`}
-          />
-          <div
-            style={{ width: `${(elevatedCount / totalMarkers) * 100}%` }}
-            className="bg-indigo-500 h-full transition-all duration-500"
-            title={`${elevatedCount} Elevated`}
-          />
+        <div className="mt-5 flex h-2 w-full overflow-hidden rounded-full bg-slate-700/60" aria-hidden>
+          <div style={{ width: `${(optimalCount / totalMarkers) * 100}%` }} className="h-full bg-emerald-500" />
+          <div style={{ width: `${(borderlineCount / totalMarkers) * 100}%` }} className="h-full bg-amber-500" />
+          <div style={{ width: `${(lowCount / totalMarkers) * 100}%` }} className="h-full bg-red-500" />
+          <div style={{ width: `${(elevatedCount / totalMarkers) * 100}%` }} className="h-full bg-indigo-500" />
         </div>
       </Card>
-
-      {/* Summary Stat Cards */}
-      <section aria-label="Summary" className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {SUMMARY_CARDS.map(({ key, label, hint, status }) => {
-          const meta = STATUS_META[status];
-          return (
-            <Card key={key} className="relative overflow-hidden p-5 shadow-card hover:shadow-card-lg transition-shadow">
-              <span className={cx('absolute inset-x-0 top-0 h-1', meta.bar)} aria-hidden />
-              <p className="text-sm font-medium text-slate-600">{label}</p>
-              <p className="mt-2 text-4xl font-bold tracking-tight text-slate-900 tabular-nums">
-                {result.status_summary[key] || 0}
-              </p>
-              <p className="mt-1 text-xs text-slate-500">{hint}</p>
-            </Card>
-          );
-        })}
-      </section>
 
       {/* Critical Physician advisory */}
       {result.requires_physician_consult && (
@@ -222,6 +224,30 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
         </Alert>
       )}
 
+      {/* The diet plan is the main result; test details and foods are one tap away. */}
+      <div ref={tabsRef} aria-hidden className="-mb-8 h-0" />
+      <div className="sticky top-16 z-20 -mx-4 scroll-mt-16 border-b border-slate-200 bg-white/95 px-4 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border sm:px-2">
+        <div role="tablist" aria-label={t('resultTabs')} className="flex gap-1 overflow-x-auto py-2">
+          {tabs.map((tab) => (
+            <button key={tab.id} type="button" role="tab" id={`tab-${tab.id}`} aria-controls={`panel-${tab.id}`}
+              aria-selected={activeTab === tab.id} onClick={() => openTab(tab.id)}
+              className={cx('inline-flex h-11 shrink-0 items-center gap-2 rounded-xl px-4 text-sm font-semibold transition-colors',
+                activeTab === tab.id ? 'bg-brand-600 text-white' : 'text-slate-700 hover:bg-slate-100')}>
+              {tab.icon}
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <section id="diet-plan" role="tabpanel" aria-labelledby="tab-plan" hidden={activeTab !== 'plan'}>
+        {planOpened && (
+          <PlanBuilder result={source} profile={profile} picked={appliedPicks} reportId={savedReportId}
+            rebuildToken={rebuildToken} onWeekChange={setWeek} onChooseFoods={() => openTab('foods')} />
+        )}
+      </section>
+
+      <div id="panel-tests" role="tabpanel" aria-labelledby="tab-tests" hidden={activeTab !== 'tests'} className="space-y-10">
       {/* Biomarkers Overview */}
       <section aria-labelledby="biomarkers-heading" className="space-y-5">
         <SectionTitle
@@ -267,6 +293,13 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
         )}
       </section>
 
+        <section>
+          <ClinicalNarrative result={result} />
+        </section>
+      </div>
+
+      <div id="panel-foods" role="tabpanel" aria-labelledby="tab-foods" hidden={activeTab !== 'foods'} className="space-y-10">
+        <p className="rounded-xl border border-brand-200 bg-brand-50/60 px-4 py-3 text-sm text-brand-800">{t('foodsIntro')}</p>
       {/* Food plans */}
       <section className="space-y-5">
         <SectionTitle
@@ -297,22 +330,24 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
                     <div>
                       <p className="eyebrow">Food plan</p>
                       <h4 className="mt-0.5 text-lg font-semibold text-slate-900">
-                        For {plan.biomarker_display_name}
+                        {t('forName', { name: plan.biomarker_display_name })}
                       </h4>
                     </div>
                     <Badge tone={meta.tone} className="self-start sm:self-auto">
                       <span className={cx('h-1.5 w-1.5 rounded-full', meta.dot)} aria-hidden />
-                      {meta.label} Status
+                      {t('statusLabel', { label: translateText(meta.label) })}
                     </Badge>
                   </div>
 
-                  <div className="space-y-6 p-6">
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                  <div className="space-y-6 p-4 sm:p-6">
+                    <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                       {plan.recommended_foods.map((food) => (
                         <FoodCard
                           key={food.id}
                           food={food}
                           targetNutrientName={plan.biomarker_display_name}
+                          selected={picked.includes(food.id)}
+                          onToggle={() => togglePick(food.id)}
                         />
                       ))}
                     </div>
@@ -399,10 +434,18 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
         </section>
       )}
 
-      {/* Clinical Synthesis & Narrative */}
-      <section>
-        <ClinicalNarrative result={result} />
-      </section>
+      </div>
+
+      {activeTab === 'foods' && (
+        <div className="sticky bottom-24 z-20 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-2xl border border-brand-200 bg-white px-4 py-3 shadow-card-lg sm:w-fit sm:max-w-[calc(100%-340px)]">
+          <Button onClick={applyPicks} icon={<Sparkles className="h-4 w-4" aria-hidden />}>
+            {!planOpened ? t('buildPlanNow') : picksChanged ? t('updatePlan') : t('seePlan')}
+          </Button>
+          <span className="text-sm font-medium text-slate-800">
+            {picked.length === 1 ? t('foodsPickedOne') : picked.length > 1 ? t('foodsPickedBar', { n: picked.length }) : t('noPicksYet')}
+          </span>
+        </div>
+      )}
     </div>
   );
 };

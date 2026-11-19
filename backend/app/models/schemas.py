@@ -101,4 +101,5 @@ class FullAnalysisResponse(BaseModel):
     requires_physician_consult: bool
     consult_reasons: List[str]
     saved_to_history: bool = False
+    diet_plan: Optional[Dict[str, Any]] = None
 
