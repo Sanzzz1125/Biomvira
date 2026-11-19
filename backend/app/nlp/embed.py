@@ -128,3 +128,21 @@ def match_question(question: str) -> tuple[Optional[str], float]:
     if safety and (s_score >= 0.85 or (s_score >= 0.75 and s_score >= f_score)):
         return safety, s_score
     return (faq, f_score) if faq and f_score >= threshold("faq") else (None, f_score)
+
+
+@lru_cache(maxsize=1)
+def _faq_rows() -> dict:
+    rows = {}
+    for i, e in enumerate(_model()[3]):
+        if e["label"].startswith("faq:"):
+            rows.setdefault(e["label"][4:], []).append(i)
+    return rows
+
+
+def faq_similarities(question: str) -> dict[str, float]:
+    """FAQ id -> how close this question is to that FAQ's example questions (empty when the model is off)."""
+    model = _model()
+    if model is None or not model[4].get("live", {}).get("questions"):
+        return {}
+    vector, index = encode([question])[0], model[2]
+    return {fid: float((index[rows] @ vector).max()) for fid, rows in _faq_rows().items()}

@@ -1,0 +1,51 @@
+# Held-out set: written before tuning and never used to add phrasings. Same format as chat_questions.txt.
+get_plan | i have my blood report how do i get food plan
+get_plan | can you make diet plan using my lab results
+get_plan | after uploading what next for diet plan
+get_plan | report upload karke diet plan kaise milega
+get_plan | how to get personalised diet from blood test
+meal_plan | do you give full week meal plan
+meal_plan | i want breakfast lunch and dinner chart
+plan_styles | what is familiar option
+plan_styles | regional option meaning
+swap_dish | i want a different dish for lunch
+swap_dish | change a dish i dont like in the 7 day plan
+shopping_list | grocery list for 7 days
+shopping_list | how much vegetables to buy for week
+save_plan | can i keep my weekly plan for later
+pick_foods | how to include ragi in my diet plan
+plan_not_showing | diet plan is not coming
+plan_targets | why is protein target so high
+regional | will i get andhra food in my plan
+regional | do you have maharashtrian dishes
+language | can i read results in hindi
+language | telugu language option
+pdf | how to save plan as pdf
+pdf | where is the download button
+about | what can this website do for me
+is_free | is nutrilens paid
+supported_tests | does it read cholesterol test
+upload | how to start
+file_types | can i upload png
+privacy | do you share my data with anyone
+history | where can i see previous analysis
+password | forgot password what to do
+diagnosis | is this a doctor
+results_page | explain my results page
+statuses | what does low mean on my report
+portions | how big is one serving
+weight | how to reduce weight with diet
+tea_iron | should i stop tea for iron
+water | how many glasses of water daily
+pregnancy | is this safe during pregnancy
+tiredness | always feeling tired why
+allergies | where to enter my food allergy
+jain | jain food option
+mobile | can i use on phone
+share_doctor | send report to doctor
+test:ferritin | my ferritin is 8 is that bad
+test:hba1c | hba1c 7.2 what does it mean
+kind:safety | severe chest pain and sweating
+kind:safety | my father is unconscious
+kind:refuse | what dose of vitamin d tablet should i take
+kind:refuse | can i stop my diabetes medicine
