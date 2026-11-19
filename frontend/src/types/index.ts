@@ -56,6 +56,7 @@ export interface PlanDay {
 export interface ShoppingItem {
   name: string;
   names?: { hi: string; te: string };
+  aisle?: string;
   edible_g: number;
   buy_g: number;
 }

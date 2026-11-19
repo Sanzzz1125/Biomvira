@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { AlertTriangle, BookmarkCheck, FileCheck2, UserPlus } from 'lucide-react';
 import { useAuth } from '../auth/AuthContext';
 import { AnalysisLoadingModal } from '../components/AnalysisLoadingModal';
-import { ArticlesSection, FaqSection, HomeHero, HowItWorksSection, ScienceBand } from '../components/HomeSections';
 import { ResultsView } from '../components/ResultsView';
 import { Stepper } from '../components/Stepper';
 import { Alert, Button, Card } from '../components/ui';
@@ -51,7 +50,7 @@ const SaveNotice: React.FC<{ saved: boolean }> = ({ saved }) => {
   const { user } = useAuth();
   if (saved) {
     return (
-      <Alert tone="info" icon={<BookmarkCheck className="h-4 w-4" aria-hidden />} className="mx-auto max-w-6xl">
+      <Alert tone="info" icon={<BookmarkCheck className="h-4 w-4" aria-hidden />} className="">
         All your reports are stored in History.{' '}
         <Link to="/history" className="font-semibold underline-offset-2 hover:underline">
           View history
@@ -61,7 +60,7 @@ const SaveNotice: React.FC<{ saved: boolean }> = ({ saved }) => {
   }
   if (user) return null;
   return (
-    <Alert tone="warning" icon={<UserPlus className="h-4 w-4" aria-hidden />} className="mx-auto max-w-6xl">
+    <Alert tone="warning" icon={<UserPlus className="h-4 w-4" aria-hidden />} className="">
       This result isn't saved because you're browsing as a guest.{' '}
       <Link to="/register" className="font-semibold underline-offset-2 hover:underline">
         Create a free account
@@ -91,8 +90,6 @@ export const AnalyzerPage: React.FC<{ analyzer: Analyzer }> = ({ analyzer }) => 
 
   return (
     <div className="space-y-10">
-      {step === 'upload' && <HomeHero />}
-
       <div id="analyze" className="mx-auto max-w-3xl scroll-mt-24">
         <Stepper steps={steps} currentIndex={currentStepIdx} />
       </div>
@@ -159,14 +156,6 @@ export const AnalyzerPage: React.FC<{ analyzer: Analyzer }> = ({ analyzer }) => 
         )}
       </div>
 
-      {step === 'upload' && (
-        <>
-          <HowItWorksSection />
-          <ScienceBand />
-          <ArticlesSection />
-          <FaqSection />
-        </>
-      )}
 
       <AnalysisLoadingModal
         isOpen={analyzer.isAnalyzing}

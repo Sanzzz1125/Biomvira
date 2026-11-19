@@ -1,3 +1,4 @@
+import { HomePage } from './pages/HomePage';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Link, Outlet, Route, Routes, useLocation } from 'react-router-dom';
 import { Compass } from 'lucide-react';
@@ -82,8 +83,9 @@ export const App: React.FC = () => {
           <ScrollToTop />
           <Routes>
             <Route element={<SiteLayout />}>
-              <Route index element={<AnalyzerPage analyzer={analyzer} />} />
-              <Route path="history" element={<HistoryPage />} />
+              <Route index element={<HomePage />} />
+              <Route path="analyze" element={<AnalyzerPage analyzer={analyzer} />} />
+              <Route path="history" element={<RequireAuth><HistoryPage /></RequireAuth>} />
               <Route path="science" element={<SciencePage />} />
               <Route path="faq" element={<FaqPage />} />
               <Route path="articles" element={<ArticlesPage />} />

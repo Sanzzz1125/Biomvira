@@ -171,8 +171,11 @@ for (const [role, showsAdmin] of [['user', false], ['admin', true], ['owner', tr
     try {
       await act(() => root.render(withProviders(React.createElement(Navbar, { onOpenDisclaimer() {} }))));
       await settle();
-      const adminLinks = [...document.querySelectorAll('a')].filter(a => a.getAttribute('href') === '/admin');
-      assert.equal(adminLinks.length > 0, showsAdmin);
+      const adminLinks = () => [...document.querySelectorAll('a')].filter(a => a.getAttribute('href') === '/admin');
+      assert.equal(adminLinks().length, 0);  // no Admin button in the navbar for anyone
+      const menu = [...document.querySelectorAll('button[aria-haspopup="menu"]')].find(b => !(b.getAttribute('aria-label') || '').startsWith('Language'));
+      await act(async () => { menu.click(); });
+      assert.equal(adminLinks().length > 0, showsAdmin);  // admins reach the portal from their account menu
       assert.equal([...document.querySelectorAll('a')].some(a => a.textContent === 'Log in'), false);
     } finally { globalThis.fetch = originalFetch; }
   });
@@ -204,6 +207,7 @@ test('the application defaults to 25 and sends an edited age through analysis to
   }) };
   };
   try {
+    window.history.pushState({}, '', '/analyze');  // the analyser has its own page; the home page links to it
     await act(() => root.render(React.createElement(App)));
     const pasteTab = [...document.querySelectorAll('button')].find(el => el.textContent.includes('Paste text'));
     await act(() => pasteTab.click());

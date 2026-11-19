@@ -963,6 +963,84 @@ def personal_marker(marker: dict, plans: list[dict]) -> Reply:
                  + ["Summarise my results", "What should I eat?"])
 
 
+# Everyday words for a body area -> the report categories that hold those tests (for "is my sugar high?").
+TOPIC_CATEGORIES = [
+    (re.compile(r"\b(sugar|diabet\w*|glucose|hba1c|insulin)\b"), {"Blood Sugar Control"}),
+    (re.compile(r"\b(thyroid|tsh|t3|t4)\b"), {"Thyroid Function"}),
+    (re.compile(r"\b(cholesterol|lipid\w*|ldl|hdl|triglyceride\w*|heart)\b"), {"Blood Fats (Lipids)"}),
+    (re.compile(r"\b(iron|anaemi\w*|anemi\w*|haemoglobin|hemoglobin|hb|blood count|cbc|ferritin)\b"),
+     {"Iron Studies", "Hematology", "Complete Blood Count"}),
+    (re.compile(r"\b(kidney\w*|creatinine|urea|uric)\b"), {"Kidney Function"}),
+    (re.compile(r"\b(liver|sgpt|sgot|alt|ast|bilirubin)\b"), {"Liver Function"}),
+    (re.compile(r"\b(vitamin\w*|b12|vit d|vitamin d)\b"), {"Fat-Soluble Vitamin", "Water-Soluble Vitamin"}),
+]
+AVOID_PERSONAL = re.compile(r"\b(avoid|limit|not eat|stop eating|bad for me|should not eat|shouldnt eat|cut down)\b")
+NORMAL_PERSONAL = re.compile(r"\b(normal|fine|good|ok|okay|in range|healthy)\b.*\b(results?|tests?|values?)\b|"
+                             r"\bwhich (results?|tests?|values?) (are|is) (normal|fine|good|ok)\b")
+PLAN_PERSONAL = re.compile(r"\b(diet plan|meal plan|7 day|weekly plan|my plan|today'?s? (meals?|menu))\b")
+
+
+def personal_topic(text: str, context: dict) -> Optional[Reply]:
+    """'is my sugar high?', 'do I have diabetes?', 'is my thyroid normal?': the person's own results in that area."""
+    markers = context.get("markers") or []
+    for pattern, categories in TOPIC_CATEGORIES:
+        if pattern.search(text):
+            own = [m for m in markers if BIOMARKERS_CONFIG.get(m.get("key"), {}).get("category") in categories]
+            if own:
+                reply = _join([personal_marker(m, context.get("plans", [])) for m in own[:4]])
+                if re.search(r"\b(diabet\w*|do i have|am i)\b", text):
+                    reply.reply += ("\n\nNutriLens can't diagnose a condition. Please ask your doctor what these "
+                                    "results mean for you.")
+                return reply
+            names = ", ".join(sorted(categories)).lower()
+            return Reply(f"Your report doesn't include tests for this ({names}), so I can't tell from it. "
+                         "A doctor can advise which tests to do.", suggestions=_suggest(context))
+    return None
+
+
+def personal_normal(context: dict) -> Reply:
+    normal = [m for m in context.get("markers") or [] if (m.get("status") or "").lower() == "normal"]
+    if not normal:
+        return Reply("None of your results is in the normal range in this report. Ask me about any one of them.",
+                     suggestions=_suggest(context))
+    lines = [f"**{len(normal)} of your results {'is' if len(normal) == 1 else 'are'} in the healthy range:**", ""]
+    lines += [f"- **{m.get('name')}**: {_num(m.get('value'))} {m.get('unit', '')}" for m in normal]
+    return Reply("\n".join(lines), suggestions=_suggest(context))
+
+
+def personal_avoid(context: dict) -> Optional[Reply]:
+    """Foods to limit for this person's out-of-range results (the same rules as their food plan)."""
+    diet = context.get("diet_type") if context.get("diet_type") in DIET_LABEL else None
+    allergens = [a.lower() for a in context.get("allergens") or []]
+    parts, seen = [], set()
+    for m in context.get("markers") or []:
+        status = (m.get("status") or "").lower()
+        if status not in ("low", "high", "borderline"):
+            continue
+        direction = "high" if status == "high" else "low" if status == "low" else problem_direction(m.get("key"))
+        plan = plan_for(m.get("key"), direction)
+        if plan and plan not in seen and ABSORPTION_RULES.get(plan, {}).get("donts"):
+            seen.add(plan)
+            parts.append(foods_answer(plan, diet, allergens, f"To limit for your {m.get('name')}", avoid=True))
+    if not parts:
+        return None
+    return Reply("\n\n".join(parts[:3]), suggestions=_suggest(context))
+
+
+def personal_week(context: dict) -> Optional[Reply]:
+    plan = context.get("diet_plan") or {}
+    days = plan.get("days") or []
+    if not days:
+        return None
+    first = days[0]
+    lines = [f"**Your 7-day plan** ({plan.get('style') or 'your chosen'} style), day 1, about {first.get('kcal', '?')} kcal:", ""]
+    for slot, names in (first.get("meals") or {}).items():
+        if names:
+            lines.append(f"- **{slot.title()}**: {', '.join(names)}")
+    lines += ["", "Open **2. Diet plan** to see every day, swap a dish or get the shopping list."]
+    return Reply("\n".join(lines), suggestions=["Can I swap a dish?", "Where is the shopping list?"])
+
+
 def personal_summary(context: dict) -> Reply:
     markers = context.get("markers", [])
     flagged = [m for m in markers if (m.get("status") or "").lower() not in ("normal", "")]
@@ -1246,6 +1324,20 @@ def answer(message: str, topic: Optional[str] = None, context: Optional[dict] = 
         if reply:
             return reply
 
+    if has_context and personal:
+        if PLAN_PERSONAL.search(text) and context.get("diet_plan"):
+            return personal_week(context)
+        if AVOID_PERSONAL.search(text):
+            reply = personal_avoid(context)
+            if reply:
+                return reply
+        if NORMAL_PERSONAL.search(text):
+            return personal_normal(context)
+        own_tests = [k for k in tests if any(m.get("key") == k for m in context["markers"])]
+        if not own_tests:
+            reply = personal_topic(text, context)
+            if reply:
+                return reply
     if has_context and personal and not entities and SUMMARY.search(text):
         return personal_summary(context)
     if has_context and personal and not entities and EAT_PERSONAL.search(text):

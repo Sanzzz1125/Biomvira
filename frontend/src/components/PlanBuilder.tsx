@@ -6,6 +6,7 @@ import { Alert, Badge, Button, Card, cx } from './ui';
 import { localizeWords, StringKey, useLanguage, useT } from '../lib/i18n';
 
 const SLOTS: MealSlot[] = ['breakfast', 'lunch', 'snack', 'dinner'];
+const AISLES = ['grains', 'pulses', 'vegetables', 'greens', 'fruits', 'dairy', 'meat_fish', 'nuts_seeds', 'spices', 'oils', 'other'];
 const UNITS: Record<string, string> = {
   iron_mg: 'mg', calcium_mg: 'mg', folate_ug: 'µg', vitamin_c_mg: 'mg', vitamin_b12_ug: 'µg', vitamin_d_iu: 'IU',
   zinc_mg: 'mg', magnesium_mg: 'mg', fibre_g: 'g',
@@ -302,18 +303,31 @@ export const PlanBuilder: React.FC<{
               </p>
             )}
             {showList ? (
-              <div>
+              <div className="space-y-4">
                 <p className="text-sm text-slate-600">{t('shoppingHint')}</p>
-                <ul className="mt-3 grid gap-x-6 gap-y-1.5 sm:grid-cols-2 lg:grid-cols-3">
-                  {week.shopping.filter((i) => i.buy_g >= 5).map((i) => (
-                    <li key={i.name} className="flex justify-between border-b border-slate-100 py-1 text-sm">
-                      <span className="capitalize text-slate-800">{(language !== 'en' && i.names?.[language]) || i.name}</span>
-                      <span className="tabular-nums text-slate-600">
-                        {i.buy_g >= 1000 ? `${(i.buy_g / 1000).toFixed(1)} kg` : `${Math.ceil(i.buy_g / 10) * 10} g`}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {AISLES.filter((a) => week.shopping.some((i) => (i.aisle ?? 'other') === a && i.buy_g >= 5)).map((a) => {
+                    const items = week.shopping.filter((i) => (i.aisle ?? 'other') === a && i.buy_g >= 5);
+                    return (
+                      <section key={a} className="rounded-2xl border border-slate-200 bg-white p-4">
+                        <h4 className="flex items-center justify-between text-sm font-semibold text-slate-900">
+                          {t(`aisle_${a}` as StringKey)}
+                          <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600">{items.length}</span>
+                        </h4>
+                        <ul className="mt-3 divide-y divide-slate-100">
+                          {items.map((i) => (
+                            <li key={i.name} className="flex items-center justify-between gap-3 py-1.5 text-sm">
+                              <span className="min-w-0 truncate capitalize text-slate-800">{(language !== 'en' && i.names?.[language]) || i.name}</span>
+                              <span className="shrink-0 rounded-md bg-brand-50 px-2 py-0.5 text-xs font-semibold tabular-nums text-brand-800">
+                                {i.buy_g >= 1000 ? `${(i.buy_g / 1000).toFixed(1)} kg` : `${Math.ceil(i.buy_g / 10) * 10} g`}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    );
+                  })}
+                </div>
               </div>
             ) : (
               <>

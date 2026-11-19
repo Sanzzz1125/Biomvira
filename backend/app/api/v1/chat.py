@@ -196,6 +196,13 @@ def chat(body: ChatRequest, request: Request, db: Session = Depends(get_db),
     if conversation.message_count + 2 > MAX_MESSAGES:
         raise HTTPException(409, "This chat is full. Please start a new chat.")
 
+    if context is None and report is None:
+        # Not on a report page: answer from the person's latest saved report.
+        # The chat itself stays general (not linked), so deleting that report never deletes it.
+        latest = db.scalars(select(Report).where(Report.owner_id == user.id).order_by(Report.created_at.desc())
+                            .limit(1)).first()
+        if latest is not None:
+            context = _context_from_report(latest)
     if context is None and report is not None:
         context = _context_from_report(report)
     earlier = db.scalars(select(ChatMessage).where(ChatMessage.conversation_id == conversation.id)

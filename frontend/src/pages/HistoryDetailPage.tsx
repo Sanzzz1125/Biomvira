@@ -56,7 +56,7 @@ export const HistoryDetailPage: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
           to="/history"
           className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
@@ -70,7 +70,7 @@ export const HistoryDetailPage: React.FC = () => {
         profile={result.user_profile}
         isExporting={exporting}
         onDownload={download}
-        onReset={() => navigate('/')}
+        onReset={() => navigate('/analyze')}
         resetLabel="Analyze another report"
         resetIcon={<ScanLine className="h-4 w-4" aria-hidden />}
         savedReportId={id}

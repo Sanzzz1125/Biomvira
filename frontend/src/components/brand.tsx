@@ -7,12 +7,17 @@ import { formatDateTime, initials } from '../lib/format';
 import { Role } from '../types';
 import { Badge, Button, cx } from './ui';
 
+/** A link to the page you are already on scrolls back to its top (the address does not change, so nothing else would). */
+export const toTopIfHere = (to: string) => () => {
+  if (window.location.pathname === to) window.scrollTo?.({ top: 0, behavior: 'smooth' });
+};
+
 export const Logo: React.FC<{ to?: string; inverted?: boolean; className?: string }> = ({
   to = '/',
   inverted = false,
   className,
 }) => (
-  <Link to={to} className={cx('flex items-center gap-2.5 rounded-lg', className)} aria-label="NutriLens home">
+  <Link to={to} onClick={toTopIfHere(to)} className={cx('flex items-center gap-2.5 rounded-lg', className)} aria-label="NutriLens home">
     <span
       className={cx(
         'flex h-9 w-9 items-center justify-center rounded-lg shadow-sm',

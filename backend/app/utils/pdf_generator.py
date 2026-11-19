@@ -432,16 +432,18 @@ class ScoreCard(Flowable):
         c, w, h = self.canv, self.width, self.height
         optimal = self.counts.get("normal", 0)
         flagged = self.total - optimal
-        c.setFillColor(SLATE_900)
-        c.roundRect(0, 0, w, h, 9, stroke=0, fill=1)
+        c.setFillColor(WHITE)  # light card, as on the website
+        c.setStrokeColor(SLATE_200)
+        c.setLineWidth(0.8)
+        c.roundRect(0, 0, w, h, 9, stroke=1, fill=1)
 
-        c.setFillColor(EMERALD_400)
+        c.setFillColor(BRAND_700)
         _spaced(c, 16, h - 20, L("HEALTH SCORE"), "Helvetica-Bold", 6.8, 0.9)
 
-        c.setFillColor(WHITE)
+        c.setFillColor(SLATE_900)
         c.setFont("Helvetica-Bold", 15)
         c.drawString(16, h - 39, L("{a} of {n} results in range", a=optimal, n=self.total))
-        c.setFillColor(SLATE_300)
+        c.setFillColor(SLATE_600)
         c.setFont("Helvetica", 8)
         if flagged == 0:
             note = L("All tested laboratory biomarkers are balanced within reference intervals.")
@@ -450,7 +452,7 @@ class ScoreCard(Flowable):
                      n=flagged)
         c.drawString(16, h - 52, note)
 
-        c.setFillColor(EMERALD_400)
+        c.setFillColor(BRAND_600)
         c.setFont("Helvetica-Bold", 22)
         c.drawRightString(w - 16, h - 40, f"{round(optimal / self.total * 100)}%")
         c.setFillColor(SLATE_400)
@@ -461,7 +463,7 @@ class ScoreCard(Flowable):
         clip = c.beginPath()
         clip.roundRect(bar_x, bar_y, bar_w, bar_h, bar_h / 2)
         c.clipPath(clip, stroke=0, fill=0)
-        c.setFillColor(SLATE_700)
+        c.setFillColor(SLATE_100)
         c.rect(bar_x, bar_y, bar_w, bar_h, stroke=0, fill=1)
         x = bar_x
         for status, color in (("normal", EMERALD_500), ("borderline", AMBER_500), ("low", RED_500), ("high", INDIGO_500)):

@@ -101,8 +101,9 @@ def localize_words(text: str, lang: str) -> str:
     return re.sub(r"[A-Za-z]+", lambda m: UNIT_WORDS.get(m.group(0).lower(), (m.group(0),) * 2)[i], text)
 
 
-def _esc(text) -> str:
-    return str(text).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+AISLE_LABELS = {"grains": "Grains & millets", "pulses": "Pulses & dals", "vegetables": "Vegetables",
+                "greens": "Leafy greens", "fruits": "Fruits", "dairy": "Milk & dairy", "meat_fish": "Meat, fish & eggs",
+                "nuts_seeds": "Nuts & seeds", "spices": "Spices & masalas", "oils": "Oils & ghee", "other": "Other"}
 
 
 def generate_diet_plan_pdf(days: list, shopping_list: list, title: str = "Your 7-day diet plan", lang: str = "en") -> bytes:
@@ -115,65 +116,98 @@ def generate_diet_plan_pdf(days: list, shopping_list: list, title: str = "Your 7
 
 
 def _build(days: list, shopping_list: list, title: str, lang: str) -> bytes:
-    regular, bold = font("Helvetica"), font("Helvetica-Bold")
-    shaped = {"shaping": 1} if lang != "en" else {}
-    styles = getSampleStyleSheet()
-    h1 = ParagraphStyle("h1", parent=styles["Heading1"], textColor=BRAND, fontSize=18, spaceAfter=4, fontName=bold,
-                        leading=26 if shaped else 22, **shaped)
-    h2 = ParagraphStyle("h2", parent=styles["Heading2"], fontSize=13, spaceBefore=8, spaceAfter=4, fontName=bold,
-                        leading=19 if shaped else 16, **shaped)
-    body = ParagraphStyle("body", parent=styles["BodyText"], fontSize=9.5, leading=15 if shaped else 13,
-                          fontName=regular, **shaped)
-    small = ParagraphStyle("small", parent=body, fontSize=8, leading=12 if shaped else 10,
-                           textColor=colors.HexColor("#475569"))
-    head = ParagraphStyle("head", parent=body, fontName=bold)
+    """The 7-day plan in the report's design: one card per day (four meals side by side), then the shopping list."""
+    from reportlab.lib.pagesizes import A4
+    from reportlab.platypus import BaseDocTemplate, Frame, KeepTogether, PageTemplate, Paragraph, Spacer
+
+    from app.plan.engine import AISLES, aisle as aisle_of
+    from app.plan.nutrition import ingredients
+    from app.plan.ingredient_names import INGREDIENTS
+    from app.utils import pdf_generator as g
+
+    st = g.ST
 
     def dish(item: dict) -> str:
-        name = (item.get("names") or {}).get(lang) if lang != "en" else None
-        amount = localize_words(portion(item.get("servings", 1), item["serving"]), lang)
-        return f"{_esc(name or item['name'])} &middot; {_esc(amount)}"
+        name = ((item.get("names") or {}).get(lang) if lang != "en" else None) or item.get("name", "")
+        amount = localize_words(portion(item.get("servings", 1), str(item.get("serving", ""))), lang)
+        return f'<b>{g._t(name)}</b><br/><font size="7" color="{g._hex(g.SLATE_500)}">{g._t(amount)}</font>'
 
-    story = [Paragraph(_esc(L(title)), h1),
-             Paragraph(_esc(L("Built by NutriLens from your report and profile. Amounts are per person. This plan "
-                              "supports, and does not replace, advice from your doctor or dietitian.")), small),
-             Spacer(1, 4 * mm)]
+    def chip(label: str, value: str):
+        return (g.Box([Paragraph(f'<font size="6.6" color="{g._hex(g.SLATE_500)}">{g._t(L(label))}</font><br/>'
+                                 f'<font name="{font("Helvetica-Bold")}" size="9" color="{g._hex(g.SLATE_900)}">{value}</font>',
+                                 st["small"])], fill=g.SLATE_50, stroke=g.SLATE_200, radius=6, pad_x=7, pad_y=4), None, "left")
+
+    story = [Paragraph(L(title), st["title"]), Spacer(1, 3),
+             Paragraph(g._t(L("Built by NutriLens from your report and profile. Amounts are per person. This plan "
+                              "supports, and does not replace, advice from your doctor or dietitian.")), st["subtitle"]),
+             Spacer(1, 12)]
     for i, day in enumerate(days[:7]):
-        t = day.get("totals", {})
-        story.append(Paragraph(L(DAY_NAMES[i] if len(days) > 1 else "Day plan"), h2))
-        rows = [[Paragraph(L("Meal"), head), Paragraph(L("Dishes"), head)]]
+        totals = day.get("totals") or {}
+        meals = day.get("meals") or {}
+        columns = []
         for key, label in SLOTS:
-            items = day.get("meals", {}).get(key, [])
-            rows.append([Paragraph(L(label), body), Paragraph("<br/>".join(dish(it) for it in items), body)])
-        table = Table(rows, colWidths=[36 * mm, 136 * mm])
-        table.setStyle(TableStyle([
-            ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#e8f3ef")),
-            ("VALIGN", (0, 0), (-1, -1), "TOP"), ("GRID", (0, 0), (-1, -1), 0.4, colors.HexColor("#cbd5e1"))]))
-        story.append(table)
-        story.append(Paragraph(_esc(L(
-            "About {kcal} kcal, protein {protein} g, iron {iron} mg, calcium {calcium} mg, salt about {salt} g.",
-            kcal=round(t.get("energy_kcal", 0)), protein=round(t.get("protein_g", 0)), iron=f"{t.get('iron_mg', 0):.1f}",
-            calcium=round(t.get("calcium_mg", 0)), salt=day.get("salt_g", 0))), small))
-    if shopping_list:
-        story += [PageBreak(), Paragraph(L("Shopping list for the week"), h2),
-                  Paragraph(L("Weights as bought, before peeling and cleaning."), small), Spacer(1, 2 * mm)]
-        items = [i for i in shopping_list if i.get("buy_g", 0) >= 5]
+            body = "<br/>".join(dish(it) for it in meals.get(key, [])) or "-"
+            columns.append((g._stack(Paragraph(g._t(L(label)).upper(), st["eyebrow"]), Spacer(1, 3),
+                                     Paragraph(body, st["cell_small"])), None, "left"))
+        chips = g.Row([chip("Calories", f"{round(totals.get('energy_kcal', 0))} kcal"),
+                       chip("Protein", f"{round(totals.get('protein_g', 0))} g"),
+                       chip("Iron", f"{totals.get('iron_mg', 0):.1f} mg"),
+                       chip("Calcium", f"{round(totals.get('calcium_mg', 0))} mg"),
+                       chip("Salt", f"{day.get('salt_g', 0)} g")], gap=6)
+        card = g.Box([Paragraph(g._t(L(DAY_NAMES[i] if len(days) > 1 else "Day plan")), st["card_title"]), Spacer(1, 6),
+                      g.Row(columns, gap=10), Spacer(1, 8), chips], accent=g.BRAND_500, pad_y=10)
+        story += [KeepTogether([card]), Spacer(1, 10)]
 
-        def label(item: dict) -> str:
-            name = item["name"]
+    items = [it for it in shopping_list if it.get("buy_g", 0) >= 5]
+    if items:
+        table = ingredients()
+        groups: dict[str, list] = {}
+        for it in items:
+            name = it["name"]
+            group = it.get("aisle")
+            if not group and name in INGREDIENTS:
+                codes = INGREDIENTS[name][0]
+                group = aisle_of(name, table[codes if isinstance(codes, str) else codes[0]])
+            groups.setdefault(group or "other", []).append(it)
+
+        def line(it: dict) -> str:
+            name = it["name"]
             if lang != "en":
-                name = (item.get("names") or {}).get(lang) or INGREDIENT_NAMES.get(name, (name, name))[lang == "te"]
-            else:
-                name = name.capitalize()
-            grams = item["buy_g"]
+                name = (it.get("names") or {}).get(lang) or INGREDIENT_NAMES.get(name, (name, name))[lang == "te"]
+            grams = it["buy_g"]
             weight = f"{round(grams / 1000, 1)} kg" if grams >= 1000 else f"{-(-grams // 10) * 10} g"
-            return f"{_esc(name)}: {weight}"
+            return f"{g._t(name[:1].upper() + name[1:])} <font color=\"{g._hex(g.SLATE_500)}\">{weight}</font>"
 
-        cells = [Paragraph(label(i), body) for i in items]
-        rows = [cells[j:j + 3] + [""] * (3 - len(cells[j:j + 3])) for j in range(0, len(cells), 3)]
-        table = Table(rows, colWidths=[58 * mm] * 3)
-        table.setStyle(TableStyle([("LINEBELOW", (0, 0), (-1, -1), 0.3, colors.HexColor("#e2e8f0"))]))
-        story.append(table)
+        cards = []
+        for key in [a for a in AISLES if a in groups]:
+            rows = groups[key]
+            half = (len(rows) + 1) // 2
+            cols = [(g._stack(*[Paragraph(line(r), st["cell"]) for r in part]), None, "left")
+                    for part in (rows[:half], rows[half:]) if part]
+            cards.append(g.Box([Paragraph(g._t(L(AISLE_LABELS[key])), st["do_title"]), Spacer(1, 4),
+                                g.Row(cols, gap=8)], fill=g.WHITE, pad_y=8))
+        story += [g.PageBreak(), g.SectionTitle(L("Shopping list for the week"),
+                                                L("Weights as bought, before peeling and cleaning.")), Spacer(1, 8)]
+        story += g._grid(cards)
+
+    def header(c, _doc):
+        top = g.PAGE_H - 10 * 2.834645669
+        g._draw_logo(c, g.MARGIN_X, top - 14, 14)
+        c.setFillColor(g.SLATE_900)
+        c.setFont("Helvetica-Bold", 10)
+        c.drawString(g.MARGIN_X + 19, top - 10, "NutriLens")
+        c.setFillColor(g.SLATE_500)
+        c.setFont("Helvetica", 7.5)
+        c.drawRightString(g.PAGE_W - g.MARGIN_X, top - 10, L("7-day diet plan"))
+        c.setStrokeColor(g.SLATE_200)
+        c.setLineWidth(0.6)
+        c.line(g.MARGIN_X, g.PAGE_H - 16 * 2.834645669, g.PAGE_W - g.MARGIN_X, g.PAGE_H - 16 * 2.834645669)
+
     buffer = BytesIO()
-    SimpleDocTemplate(buffer, pagesize=A4, leftMargin=18 * mm, rightMargin=18 * mm, topMargin=16 * mm,
-                      bottomMargin=16 * mm, title=L(title)).build(story)
+    doc = BaseDocTemplate(buffer, pagesize=A4, leftMargin=g.MARGIN_X, rightMargin=g.MARGIN_X, topMargin=g.LATER_TOP,
+                          bottomMargin=g.BOTTOM, title=L(title), author="NutriLens")
+    frame = Frame(g.MARGIN_X, g.BOTTOM, g.CONTENT_W, g.PAGE_H - g.BOTTOM - g.LATER_TOP, leftPadding=0, rightPadding=0,
+                  topPadding=0, bottomPadding=0)
+    doc.addPageTemplates([PageTemplate("page", [frame], onPage=header)])
+    doc.build(story, canvasmaker=g._NumberedCanvas)
     return buffer.getvalue()

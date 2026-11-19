@@ -77,7 +77,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
     setActiveTab(id);
     if (id === 'plan') setPlanOpened(true);
     const top = tabsRef.current?.getBoundingClientRect().top;
-    if (top !== undefined && top < 0) window.scrollTo?.({ top: window.scrollY + top - 72, behavior: 'smooth' });
+    if (top !== undefined && top < 0) window.scrollTo?.({ top: window.scrollY + top - 92, behavior: 'smooth' });
   };
   const applyPicks = () => {
     setAppliedPicks(picked);
@@ -120,7 +120,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
   const maintainPlans = result.recommendations.filter((p) => p.purpose === 'maintain');
 
   return (
-    <div className="mx-auto max-w-6xl space-y-8 animate-fade-in">
+    <div className="space-y-8 animate-fade-in">
       {/* Header */}
       <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
@@ -169,27 +169,37 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
         </div>
       </div>
 
-      {/* Summary: score and status counts in one band */}
-      <Card className="overflow-hidden bg-gradient-to-r from-slate-900 to-slate-800 p-5 text-white shadow-xl sm:p-6">
+      {/* Health score: a light card in the site's colours (the PDF uses the same design) */}
+      <Card className="overflow-hidden p-5 shadow-card sm:p-6">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-          <div className="min-w-0">
-            <span className="block text-[11px] font-semibold uppercase tracking-wider text-emerald-400">
-              Health score
-            </span>
-            <h3 className="mt-0.5 text-xl font-bold tracking-tight text-white sm:text-2xl">
-              {t('inHealthyRange', { a: optimalCount, n: result.marker_analyses.length })}
-            </h3>
-            <p className="mt-1 max-w-xl text-xs leading-relaxed text-slate-300">
-              {flaggedCount === 0
-                ? 'All your results are within healthy ranges.'
-                : t(flaggedCount > 1 ? 'needManySentence' : 'needOneSentence', { n: flaggedCount })}
-            </p>
+          <div className="flex min-w-0 items-center gap-5">
+            <div className="relative h-20 w-20 shrink-0" aria-hidden>
+              <svg viewBox="0 0 36 36" className="h-20 w-20 -rotate-90">
+                <circle cx="18" cy="18" r="15.5" fill="none" stroke="#e2e8f0" strokeWidth="3.5" />
+                <circle cx="18" cy="18" r="15.5" fill="none" stroke="#167c64" strokeWidth="3.5" strokeLinecap="round"
+                  strokeDasharray={`${(optimalCount / totalMarkers) * 97.4} 97.4`} />
+              </svg>
+              <span className="absolute inset-0 flex items-center justify-center text-lg font-bold tabular-nums text-slate-900">
+                {optimalPercent}%
+              </span>
+            </div>
+            <div className="min-w-0">
+              <p className="eyebrow">Health score</p>
+              <h3 className="mt-0.5 text-xl font-bold tracking-tight text-slate-900 sm:text-2xl">
+                {t('inHealthyRange', { a: optimalCount, n: result.marker_analyses.length })}
+              </h3>
+              <p className="mt-1 max-w-xl text-sm leading-relaxed text-slate-600">
+                {flaggedCount === 0
+                  ? 'All your results are within healthy ranges.'
+                  : t(flaggedCount > 1 ? 'needManySentence' : 'needOneSentence', { n: flaggedCount })}
+              </p>
+            </div>
           </div>
           <ul aria-label="Summary" className="grid shrink-0 grid-cols-4 gap-2">
             {SUMMARY_CARDS.map(({ key, label, status }) => (
-              <li key={key} className="min-w-[68px] rounded-xl bg-white/5 px-3 py-2 text-center ring-1 ring-white/10">
-                <p className="text-2xl font-bold tabular-nums text-white">{result.status_summary[key] || 0}</p>
-                <p className="mt-0.5 flex items-center justify-center gap-1 text-[11px] text-slate-300">
+              <li key={key} className="min-w-[72px] rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-center">
+                <p className="text-2xl font-bold tabular-nums text-slate-900">{result.status_summary[key] || 0}</p>
+                <p className="mt-0.5 flex items-center justify-center gap-1 text-[11px] font-medium text-slate-600">
                   <span className={cx('h-1.5 w-1.5 rounded-full', STATUS_META[status].dot)} aria-hidden />
                   {label}
                 </p>
@@ -197,7 +207,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
             ))}
           </ul>
         </div>
-        <div className="mt-5 flex h-2 w-full overflow-hidden rounded-full bg-slate-700/60" aria-hidden>
+        <div className="mt-5 flex h-2 w-full overflow-hidden rounded-full bg-slate-100" aria-hidden>
           <div style={{ width: `${(optimalCount / totalMarkers) * 100}%` }} className="h-full bg-emerald-500" />
           <div style={{ width: `${(borderlineCount / totalMarkers) * 100}%` }} className="h-full bg-amber-500" />
           <div style={{ width: `${(lowCount / totalMarkers) * 100}%` }} className="h-full bg-red-500" />
@@ -226,7 +236,7 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
 
       {/* The diet plan is the main result; test details and foods are one tap away. */}
       <div ref={tabsRef} aria-hidden className="-mb-8 h-0" />
-      <div className="sticky top-16 z-20 -mx-4 scroll-mt-16 border-b border-slate-200 bg-white/95 px-4 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border sm:px-2">
+      <div className="sticky top-[76px] z-20 -mx-4 scroll-mt-16 border-b border-slate-200 bg-white/95 px-4 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border sm:px-2">
         <div role="tablist" aria-label={t('resultTabs')} className="flex gap-1 overflow-x-auto py-2">
           {tabs.map((tab) => (
             <button key={tab.id} type="button" role="tab" id={`tab-${tab.id}`} aria-controls={`panel-${tab.id}`}

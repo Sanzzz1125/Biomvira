@@ -1,9 +1,10 @@
+import { LanguageMenu } from './LanguageMenu';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { Language, LANGUAGES, setLanguage, useLanguage } from '../lib/i18n';
-import { BookOpen, ChevronDown, FlaskConical, History, Languages, LayoutDashboard, LogOut, ScanLine, Settings, ShieldCheck } from 'lucide-react';
+import { useLanguage } from '../lib/i18n';
+import { House, BookOpen, ChevronDown, FlaskConical, History, LayoutDashboard, LogOut, ScanLine, Settings, ShieldCheck } from 'lucide-react';
 import { useAuth, wasSignedIn } from '../auth/AuthContext';
-import { Avatar, Logo, RoleBadge, Skeleton } from './brand';
+import { Avatar, Logo, RoleBadge, Skeleton, toTopIfHere } from './brand';
 import { useToast } from './Toast';
 import { cx } from './ui';
 
@@ -11,16 +12,28 @@ interface NavbarProps {
   onOpenDisclaimer: () => void;
 }
 
+// Floating header looks. 'plain' was the approved one; 'tinted' is the current trial. Switch here.
+const FLOATING = {
+  plain: 'h-14 rounded-2xl border border-slate-200/70 bg-white/85 shadow-[0_10px_30px_-12px_rgba(15,23,42,0.28)] backdrop-blur-xl backdrop-saturate-150',
+  glossy: 'h-14 rounded-2xl border border-white/70 bg-gradient-to-b from-white/90 via-white/75 to-brand-50/70 '
+    + 'shadow-[inset_0_1px_0_rgba(255,255,255,0.9),inset_0_-1px_0_rgba(22,124,100,0.08),0_12px_32px_-12px_rgba(15,23,42,0.30)] '
+    + 'ring-1 ring-brand-600/10 backdrop-blur-2xl backdrop-saturate-[1.8]',
+  // white only, a little see-through, no colour, gradient or shine
+  tinted: 'h-14 rounded-2xl border border-slate-200/60 bg-white/70 shadow-[0_10px_30px_-14px_rgba(15,23,42,0.25)] backdrop-blur-md',
+} as const;
+const FLOATING_STYLE: keyof typeof FLOATING = 'tinted';
+
 const navClass = ({ isActive }: { isActive: boolean }) =>
   cx(
     'flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-    isActive ? 'bg-brand-50 text-brand-700' : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+    isActive ? 'bg-brand-50 text-brand-700 group-data-[floating=true]/header:bg-brand-600/10 group-data-[floating=true]/header:text-brand-900'
+      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 group-data-[floating=true]/header:text-black group-data-[floating=true]/header:hover:bg-white/70'
   );
 
 const iconNavClass = ({ isActive }: { isActive: boolean }) =>
   cx(
     'flex h-9 w-9 items-center justify-center rounded-lg transition-colors',
-    isActive ? 'bg-brand-50 text-brand-700' : 'text-slate-600 hover:bg-slate-100'
+    isActive ? 'bg-brand-50 text-brand-700 group-data-[floating=true]/header:bg-brand-600/10' : 'text-slate-600 hover:bg-slate-100 group-data-[floating=true]/header:text-black'
   );
 
 const UserMenu: React.FC = () => {
@@ -117,21 +130,31 @@ const UserMenu: React.FC = () => {
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
   const { user, ready, isStaff } = useAuth();
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const language = useLanguage();
   const links = [
-    { to: '/', label: 'Analyze', icon: ScanLine, end: true },
-    { to: '/history', label: 'History', icon: History, end: false },
-    ...(isStaff ? [{ to: '/admin', label: 'Admin', icon: LayoutDashboard, end: false }] : []),
+    { to: '/', label: 'Home', icon: House, end: true },
+    { to: '/analyze', label: 'Analyze', icon: ScanLine, end: false },
+    // History exists in the page only for signed-in users (not hidden: never rendered for guests).
+    ...(user ? [{ to: '/history', label: 'History', icon: History, end: false }] : []),
   ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <header data-floating={scrolled} className={cx('group/header sticky top-0 z-40 transition-[padding,background-color,border-color] duration-300',
+      scrolled ? 'border-b border-transparent px-2 pt-2 sm:px-4 sm:pt-3 lg:px-6' : 'border-b border-slate-200/80 bg-white/85 backdrop-blur-md')}>
+      <div className={cx('mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 transition-[height,border-radius,box-shadow,background-color] duration-300 sm:px-6 lg:px-8',
+        scrolled ? FLOATING[FLOATING_STYLE] : 'h-16')}>
         <div className="flex items-center gap-8">
           <Logo />
           <nav aria-label="Primary" className="hidden items-center gap-1 sm:flex">
             {links.map(({ to, label, icon: Icon, end }) => (
-              <NavLink key={to} to={to} end={end} className={navClass}>
+              <NavLink key={to} to={to} end={end} className={navClass} onClick={toTopIfHere(to)}>
                 <Icon className="h-4 w-4" aria-hidden />
                 {label}
               </NavLink>
@@ -150,7 +173,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
         <div className="flex items-center gap-1.5 sm:gap-2">
           <nav aria-label="Primary mobile" className="flex items-center gap-1 sm:hidden">
             {links.map(({ to, label, icon: Icon, end }) => (
-              <NavLink key={to} to={to} end={end} aria-label={label} className={iconNavClass}>
+              <NavLink key={to} to={to} end={end} aria-label={label} className={iconNavClass} onClick={toTopIfHere(to)}>
                 <Icon className="h-[18px] w-[18px]" aria-hidden />
               </NavLink>
             ))}
@@ -159,21 +182,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
           <button
             type="button"
             onClick={onOpenDisclaimer}
-            className="hidden h-9 items-center gap-2 rounded-lg px-2.5 sm:flex text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+            className="hidden h-9 items-center gap-2 rounded-lg px-2.5 sm:flex text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 group-data-[floating=true]/header:text-black group-data-[floating=true]/header:hover:bg-white/70"
           >
             <ShieldCheck className="h-4 w-4 text-brand-600" aria-hidden />
             <span className="hidden lg:inline">Safety &amp; privacy</span>
             <span className="sr-only lg:hidden">Safety and privacy</span>
           </button>
 
-          <label className="flex h-9 items-center gap-1 rounded-lg px-1.5 text-slate-600 hover:bg-slate-100 focus-within:ring-2 focus-within:ring-brand-600">
-            <Languages className="h-4 w-4 text-brand-600" aria-hidden />
-            <span className="sr-only">Language</span>
-            <select value={language} onChange={(e) => setLanguage(e.target.value as Language)}
-              className="cursor-pointer appearance-none border-0 bg-transparent bg-none p-0 text-sm font-medium focus:outline-none focus:ring-0">
-              {LANGUAGES.map((l) => <option key={l.id} value={l.id} aria-label={l.native}>{{ en: 'EN', hi: 'हि', te: 'తె' }[l.id]}</option>)}
-            </select>
-          </label>
+          <LanguageMenu />
 
           <span className="mx-1 hidden h-6 w-px bg-slate-200 sm:block" aria-hidden />
 
@@ -185,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
             <div className="flex items-center gap-1.5">
               <Link
                 to="/login"
-                className="hidden h-9 items-center rounded-lg px-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 sm:flex"
+                className="hidden h-9 items-center rounded-lg px-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 sm:flex group-data-[floating=true]/header:text-black group-data-[floating=true]/header:hover:bg-white/70"
               >
                 Log in
               </Link>
@@ -197,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
               </Link>
               <Link
                 to="/login"
-                className="flex h-9 items-center rounded-lg bg-brand-600 px-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:hidden"
+                className="flex h-9 items-center whitespace-nowrap rounded-lg bg-brand-600 px-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:hidden"
               >
                 Log in
               </Link>

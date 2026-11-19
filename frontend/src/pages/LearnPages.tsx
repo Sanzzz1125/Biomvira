@@ -1,3 +1,4 @@
+import { ArticleArt } from '../components/ArticleArt';
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, BookOpen, Scale } from 'lucide-react';
@@ -6,11 +7,12 @@ import { Card, PageHeader } from '../components/ui';
 /* ------------------------------------------------------------------ Science */
 
 const SOURCES = [
-  ['Indian Food Composition Tables 2017', 'ICMR-National Institute of Nutrition. Nutrients of 542 Indian foods, the base of every value we show.'],
+  ['Indian Food Composition Tables 2017', 'ICMR-National Institute of Nutrition. Nutrients of 542 Indian foods, the base of our nutrient values.'],
   ['Nutrient Requirements for Indians 2020', 'ICMR-NIN. Daily needs (RDA) for iron, calcium, B12, vitamin D and more, by age and sex.'],
-  ['USDA FoodData Central', 'US Department of Agriculture. Vitamin B12 and vitamin D, which the Indian tables do not list.'],
+  ['USDA FoodData Central', 'US Department of Agriculture. Vitamin B12 and vitamin D, which the Indian tables do not list, and a few foods they do not include.'],
   ['Nutrient retention factors', 'IFCT 2017 and USDA Release 6. How much of each vitamin survives boiling, frying or steaming.'],
   ['UK Composition of Foods (CoFID 2021)', 'Measured values of South Asian home dishes, used to check our recipes are realistic.'],
+  ['Nutritive Value of Indian Foods', 'ICMR-NIN. Used only for foxtail millet and makhana, which the 2017 tables do not include.'],
   ['National NCD Monitoring Survey', 'ICMR, published 2023. Indians eat about 8 g of salt a day; our typical days are checked against it.'],
 ];
 
@@ -20,13 +22,13 @@ export const SciencePage: React.FC = () => (
       description="Every number comes from a published source, and every step can be checked." />
     <Card className="space-y-4 p-6 text-[15px] leading-relaxed text-slate-700 sm:p-8">
       <h2 className="text-lg font-semibold text-slate-900">Reading your report</h2>
-      <p>Values are read from the PDF or photo, converted to standard units, and shown to you before anything is used. Each result is compared with the range printed on your report or a clinical reference range.</p>
+      <p>Values are read from the PDF or photo and converted to standard units, and you can check and correct them before the analysis. Each result is compared with the range printed on your report or a clinical reference range.</p>
       <h2 className="text-lg font-semibold text-slate-900">Dishes measured, not guessed</h2>
-      <p>Each of our 240+ dishes is a standard home recipe written in grams of raw ingredients. Its nutrients are added up from the Indian Food Composition Tables, with cooking losses applied to the vitamins heat destroys. Diet type and allergens are worked out from the ingredients, never typed by hand. Each dish is checked against measured values of similar dishes, and the oil and salt in a typical day are checked against what Indian adults actually eat.</p>
+      <p>Each of our 278 dishes is a standard home recipe written in grams of raw ingredients. Its nutrients are added up from the Indian Food Composition Tables, with cooking losses applied to the vitamins heat destroys. Diet type and allergens are worked out from the ingredients, never typed by hand. Dishes are checked against lab-measured values of similar South Asian dishes where these exist, and the salt in a typical day is checked against what Indian adults actually eat.</p>
       <h2 className="text-lg font-semibold text-slate-900">Building your plan</h2>
-      <p>Your energy need comes from your age, sex, weight and activity (FAO/WHO/UNU equations with ICMR activity levels), and protein from 0.83 g per kg of body weight. A mathematical optimiser then chooses dishes and servings so that each day meets your calories within 5%, your protein, and the nutrients your report shows as low, while keeping salt, fat and sugar in check and following how Indian meals are actually eaten.</p>
+      <p>Your energy need comes from your age, sex, weight and activity (FAO/WHO/UNU equations with ICMR activity levels), adjusted for your BMI, and protein from 0.83 g per kg of body weight. A mathematical optimiser then chooses dishes and servings so that each day meets your calories within 5% and your protein, and aims for the nutrients your report shows as low, while keeping salt and fat within limits, sweets to a few times a week, and following how Indian meals are actually eaten.</p>
       <h2 className="text-lg font-semibold text-slate-900">What we do not do</h2>
-      <p>NutriLens does not diagnose or treat. It does not replace your doctor or dietitian, and plans are for adults. Vitamin D in fish varies a lot, so plans count it at half and never rely on it.</p>
+      <p>NutriLens does not diagnose or treat. It does not replace your doctor or dietitian, and plans are for adults. Vitamin D in fish varies a lot, so plans count it at half.</p>
     </Card>
     <section>
       <h2 className="text-lg font-semibold text-slate-900">Sources</h2>
@@ -41,10 +43,10 @@ export const SciencePage: React.FC = () => (
 
 /* ------------------------------------------------------------------ FAQ */
 
-const FAQS = [
+export const FAQS = [
   ['Is my report kept private?', 'Names, phone numbers and IDs are removed before a report is read. As a guest nothing is saved; with an account your reports are kept in your History, which only you can see, and you can delete them at any time.'],
   ['Which tests can NutriLens read?', 'Over 60 common blood tests, including haemoglobin, ferritin, vitamin D, vitamin B12, folate, HbA1c, glucose, cholesterol, thyroid, kidney and liver tests.'],
-  ['How are my calories worked out?', 'From your age, sex, weight and activity using the FAO/WHO/UNU equations that ICMR-NIN uses. If your BMI is 25 or more, the plan aims a little lower for gentle weight loss.'],
+  ['How are my calories worked out?', 'From your age, sex, weight and activity using the FAO/WHO/UNU equations that ICMR-NIN uses. If your BMI is 25 or more, the plan aims about 15% lower (at most 500 kcal) for gentle weight loss; under 18.5, about 10% higher.'],
   ['Why three plan options?', 'Familiar keeps dishes from your region and the foods you picked, Most nutritious packs in the most nutrients, and Regional uses only dishes cooked in your state. Pick the one that suits you, then make a 7-day plan from it.'],
   ['Can I change a dish I do not like?', 'Yes. Press Swap next to any dish in your 7-day plan; the rest of the day stays the same and the numbers are rebalanced.'],
   ['I have an allergy that is not in the list.', 'Type it in the highlighted box on the profile page. Every dish that contains it is left out of your plans.'],
@@ -97,7 +99,7 @@ export const ARTICLES: Article[] = [
     body: [
       'Eating about 300-500 kcal less than you use each day leads to a steady loss of around a quarter to half a kilogram a week, which is easier to keep off than fast loss.',
       'Keep protein up (dal, curd, eggs, paneer, fish, chicken) so you stay full and keep muscle. Fill up on vegetables and salads, and reduce portions of rice, rotis, oil and sweets rather than cutting whole meals.',
-      'Walking 30 minutes most days and sleeping well help as much as the diet. NutriLens plans aim slightly below your need if your BMI is 25 or more.',
+      'Walking 30 minutes most days and sleeping well help as much as the diet. If your BMI is 25 or more, NutriLens plans aim about 15% below your need, never more than 500 kcal.',
     ],
     source: 'ICMR-NIN Dietary Guidelines for Indians, 2024; WHO guidance on healthy weight.',
   },
@@ -120,7 +122,7 @@ ARTICLES.unshift(
     body: [
       'Tea and coffee contain tannins and other polyphenols. In the gut they bind the iron from plant foods such as dal, greens and millets, so less of it is absorbed. Studies show a cup of tea with a meal can cut iron absorption from that meal by more than half.',
       'You do not need to give up chai. Have it at least an hour before or after meals instead of with them, especially at breakfast and lunch when you eat iron-rich foods.',
-      'At the same meal, add vitamin C: a squeeze of lemon on dal, a guava or orange, amla, or tomato in the curry. Vitamin C can more than offset what tea takes away.',
+      'At the same meal, add vitamin C: a squeeze of lemon on dal, a guava or orange, amla, or tomato in the curry. Vitamin C can offset much of what tea takes away.',
     ],
     source: 'ICMR-NIN Dietary Guidelines for Indians, 2024; studies on polyphenols and non-haem iron absorption.',
   },
@@ -152,13 +154,16 @@ export const ArticlesPage: React.FC = () => (
     <div className="grid gap-4 sm:grid-cols-2">
       {ARTICLES.map((a) => (
         <Link key={a.slug} to={`/articles/${a.slug}`} className="group">
-          <Card className="h-full p-6 transition-colors group-hover:border-brand-300">
+          <Card className="h-full overflow-hidden transition-colors group-hover:border-brand-300">
+            <ArticleArt slug={a.slug} className="h-40" />
+            <div className="p-6">
             <p className="eyebrow">{a.category}</p>
             <h2 className="mt-1 text-lg font-semibold text-slate-900">{a.title}</h2>
             <p className="mt-2 text-sm text-slate-600">{a.summary}</p>
             <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-700">
               Read <ArrowRight className="h-4 w-4" aria-hidden />
             </span>
+            </div>
           </Card>
         </Link>
       ))}

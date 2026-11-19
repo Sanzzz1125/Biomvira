@@ -1,14 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './brand';
+import { useAuth } from '../auth/AuthContext';
+
+/** Only signed-in users have reports: for guests the link is not rendered at all. */
+const MyReportsLink: React.FC = () => {
+  const { user } = useAuth();
+  return user ? <Link to="/history" className="text-slate-600 hover:text-slate-900">My reports</Link> : null;
+};
 
 interface FooterProps {
   onOpenDisclaimer: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenDisclaimer }) => (
-  <footer className="mt-20 border-t border-slate-200 bg-white">
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+  <footer className="border-t border-slate-200 bg-white">
+    <div className="mx-auto max-w-7xl px-4 pb-5 pt-10 sm:px-6 lg:px-8">
       <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
           <Logo />
@@ -17,12 +24,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDisclaimer }) => (
           </p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-8 gap-y-2 text-sm">
-          <Link to="/" className="text-slate-600 hover:text-slate-900">
+          <Link to="/analyze" className="text-slate-600 hover:text-slate-900">
             Analyze a report
           </Link>
-          <Link to="/history" className="text-slate-600 hover:text-slate-900">
-            My reports
-          </Link>
+          <MyReportsLink />
           <Link to="/science" className="text-slate-600 hover:text-slate-900">Science</Link>
           <Link to="/articles" className="text-slate-600 hover:text-slate-900">Articles</Link>
           <Link to="/faq" className="text-slate-600 hover:text-slate-900">FAQ</Link>

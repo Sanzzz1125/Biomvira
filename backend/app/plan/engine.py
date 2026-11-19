@@ -436,5 +436,28 @@ def shopping_list(days: list) -> list:
         code = codes if isinstance(codes, str) else codes[0]
         yield_factor = table[code].get("yield_factor") or 1.0
         out.append({"name": name, "names": local_names(name), "edible_g": round(grams),
-                    "buy_g": round(grams / max(yield_factor, 0.3))})
+                    "buy_g": round(grams / max(yield_factor, 0.3)), "aisle": aisle(name, table[code])})
     return out
+
+
+AISLES = ("grains", "pulses", "vegetables", "greens", "fruits", "dairy", "meat_fish", "nuts_seeds", "spices", "oils",
+          "other")
+_GROUP_AISLE = {
+    "Cereals and Millets": "grains", "Grain Legumes": "pulses", "Green Leafy Vegetables": "greens",
+    "Other Vegetables": "vegetables", "Roots and Tubers": "vegetables", "Mushrooms": "vegetables", "Fruits": "fruits",
+    "Milk and Milk Products": "dairy", "Egg and Egg Products": "meat_fish", "Poultry": "meat_fish",
+    "Animal Meat": "meat_fish", "Marine Fish": "meat_fish", "Marine Shellfish": "meat_fish",
+    "Marine Mollusks": "meat_fish", "Fresh Water Fish and Shellfish": "meat_fish", "Nuts and Oil Seeds": "nuts_seeds",
+    "Condiments and Spices": "spices", "Edible Oils and Fats": "oils", "Indian foods (NVIF)": "grains",
+}
+_NAME_AISLE = {"curd": "dairy", "butter": "dairy", "fresh cream": "dairy", "milk": "dairy", "fortified milk": "dairy",
+               "buttermilk": "dairy", "paneer": "dairy", "khoa": "dairy", "tofu": "pulses", "soya chunks": "pulses",
+               "kabuli chana": "pulses", "oats": "grains", "whole wheat bread": "grains", "sago": "grains",
+               "cornflour": "grains", "coconut milk": "other", "mushroom": "vegetables", "onion": "vegetables",
+               "small onion": "vegetables", "spring onion": "vegetables", "coriander leaves": "greens",
+               "mint leaves": "greens", "curry leaves": "greens", "drumstick leaves": "greens"}
+
+
+def aisle(name: str, food: dict) -> str:
+    """The shopping-list section an ingredient belongs to (from its IFCT food group)."""
+    return _NAME_AISLE.get(name) or _GROUP_AISLE.get(food.get("group"), "other")

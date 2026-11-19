@@ -33,7 +33,7 @@ Almonds, cashews, peanuts
 Already have an account?
 Always consult a certified medical practitioner before changing your diet, supplements or prescribed treatment.
 Always strictly excluded
-An optimisation engine picks dishes and portions that meet your calories, protein and nutrient targets, never breaking your diet or allergies.
+An optimisation engine picks dishes and portions that meet your calories and protein and aim for the nutrients your report shows as low, never breaking your diet or allergies.
 Analyse my report
 Analysis complete
 Analyze a lab report while you're logged in and it will appear here automatically.
@@ -56,7 +56,7 @@ Ask next
 Assam
 Assistant is typing
 At least 8 characters
-At the same meal, add vitamin C: a squeeze of lemon on dal, a guava or orange, amla, or tomato in the curry. Vitamin C can more than offset what tea takes away.
+At the same meal, add vitamin C: a squeeze of lemon on dal, a guava or orange, amla, or tomato in the curry. Vitamin C can offset much of what tea takes away.
 Atta, maida, rava, barley
 Back to NutriLens
 Back to chat
@@ -126,7 +126,7 @@ Doctor review
 Does it work for vegetarians and vegans?
 Download PDF
 Each millet has a strength: bajra has the most iron (about 6.4 mg per 100 g), ragi is exceptionally rich in calcium (about 364 mg per 100 g), and jowar is mild and easy to make into rotis.
-Each of our 240+ dishes is a standard home recipe written in grams of raw ingredients. Its nutrients are added up from the Indian Food Composition Tables, with cooking losses applied to the vitamins heat destroys. Diet type and allergens are worked out from the ingredients, never typed by hand. Each dish is checked against measured values of similar dishes, and the oil and salt in a typical day are checked against what Indian adults actually eat.
+Each of our 278 dishes is a standard home recipe written in grams of raw ingredients. Its nutrients are added up from the Indian Food Composition Tables, with cooking losses applied to the vitamins heat destroys. Diet type and allergens are worked out from the ingredients, never typed by hand. Dishes are checked against lab-measured values of similar South Asian dishes where these exist, and the salt in a typical day is checked against what Indian adults actually eat.
 Each result compared with your lab's reference range or clinical guidelines.
 Eat well, the Indian way
 Eating about 300-500 kcal less than you use each day leads to a steady loss of around a quarter to half a kilogram a week, which is easier to keep off than fast loss.
@@ -142,7 +142,7 @@ Enter your email address.
 Enter your name.
 Enter your password to confirm.
 Enter your password.
-Every dish is checked against lab-measured values of home-cooked Indian food, and a typical day against the salt Indians actually eat.
+Dishes are checked against lab-measured values of similar home-cooked South Asian dishes where these exist, and a typical day against the salt Indians actually eat.
 Every number comes from a published source, and every step can be checked.
 Every test is checked against your lab's range, in plain language, with clear notes on when to see a doctor.
 Evidence-based nutrition guidance from your lab reports, built on ICMR-NIN food data.
@@ -164,7 +164,7 @@ Forgot password?
 Four numbers, what each one means, and which food changes help.
 From a lab report to a week of meals in four steps
 From blood report to a diet plan you can actually follow.
-From your age, sex, weight and activity using the FAO/WHO/UNU equations that ICMR-NIN uses. If your BMI is 25 or more, the plan aims a little lower for gentle weight loss.
+From your age, sex, weight and activity using the FAO/WHO/UNU equations that ICMR-NIN uses. If your BMI is 25 or more, the plan aims about 15% lower (at most 500 kcal) for gentle weight loss; under 18.5, about 10% higher.
 Full name
 General guidance from NutriLens, not medical advice.
 General information, not medical advice.
@@ -205,7 +205,7 @@ I have an allergy that is not in the list.
 I understand
 ICMR-NIN Dietary Guidelines for Indians, 2024.
 ICMR-NIN. Daily needs (RDA) for iron, calcium, B12, vitamin D and more, by age and sex.
-ICMR-National Institute of Nutrition. Nutrients of 542 Indian foods, the base of every value we show.
+ICMR-National Institute of Nutrition. Nutrients of 542 Indian foods, the base of our nutrient values.
 IFCT 2017 and USDA Release 6. How much of each vitamin survives boiling, frying or steaming.
 IU
 In healthy range
@@ -292,7 +292,7 @@ None of your results needs a corrective food plan. See the foods below to keep y
 Nothing pasted yet
 NutriLens Assistant
 NutriLens assistant
-NutriLens does not diagnose or treat. It does not replace your doctor or dietitian, and plans are for adults. Vitamin D in fish varies a lot, so plans count it at half and never rely on it.
+NutriLens does not diagnose or treat. It does not replace your doctor or dietitian, and plans are for adults. Vitamin D in fish varies a lot, so plans count it at half.
 NutriLens home
 NutriLens is an
 NutriLens is an educational nutrition tool and does not replace medical advice.
@@ -426,7 +426,7 @@ These results are within range. Including these foods regularly helps keep them 
 This area is limited to a different role. If you think this is a mistake, contact the NutriLens owner.
 This chat is full. Start a new chat to keep going.
 This link can't be used
-Three plan options and a 7-day menu with a shopping list, all within your daily targets.
+Three plan options and a 7-day menu with a shopping list, built for your daily targets.
 Tip
 Tips
 Tips that help your body use these foods, such as pairing iron foods with vitamin C.
@@ -438,7 +438,7 @@ Tripura
 Try asking
 Type it in the highlighted box on the profile page. Every dish that contains it is left out of your plans.
 UK Composition of Foods (CoFID 2021)
-US Department of Agriculture. Vitamin B12 and vitamin D, which the Indian tables do not list.
+US Department of Agriculture. Vitamin B12 and vitamin D, which the Indian tables do not list, and a few foods they do not include.
 USDA FoodData Central
 Understand a result
 Unit
@@ -454,7 +454,7 @@ Used to apply ICMR-NIN recommended daily allowances.
 Using the results on this page
 Uttar Pradesh
 Uttarakhand
-Values are read from the PDF or photo, converted to standard units, and shown to you before anything is used. Each result is compared with the range printed on your report or a clinical reference range.
+Values are read from the PDF or photo and converted to standard units, and you can check and correct them before the analysis. Each result is compared with the range printed on your report or a clinical reference range.
 Values, units and reference ranges were read automatically.
 Vegan
 Vegetarian
@@ -466,9 +466,9 @@ View history
 View or edit results
 View report
 Vitamin D
-Walking 30 minutes most days and sleeping well help as much as the diet. NutriLens plans aim slightly below your need if your BMI is 25 or more.
+Walking 30 minutes most days and sleeping well help as much as the diet. If your BMI is 25 or more, NutriLens plans aim about 15% below your need, never more than 500 kcal.
 We could not read this report. Try a clearer copy, or paste the report text instead.
-We do not guess. Every number on your plan comes from official Indian food tables and published clinical ranges, and every plan is checked against your targets before you see it.
+We do not guess. The numbers on your plan come from ICMR-NIN's food tables (with USDA values where those tables have none) and published clinical ranges, and every plan is checked against your targets before you see it.
 Weak
 Weight loss
 Welcome back
@@ -505,9 +505,9 @@ Your account has been deleted
 Your account is ready
 Your age, sex and food preferences help us pick the right reference ranges and only suggest foods you can eat.
 Your blood report, turned into meals you will actually eat.
-Your calories and protein come from your age, sex, height, weight and activity. An optimisation engine then picks dishes and portions from 270+ Indian home recipes so each day meets your targets and the nutrients your report shows as low, within your diet, region and allergies.
+Your calories and protein come from your age, sex, height, weight and activity. An optimisation engine then picks dishes and portions from 278 Indian home recipes so each day meets your calories and protein and aims for the nutrients your report shows as low, within your diet, region and allergies.
 Your chats
-Your energy need comes from your age, sex, weight and activity (FAO/WHO/UNU equations with ICMR activity levels), and protein from 0.83 g per kg of body weight. A mathematical optimiser then chooses dishes and servings so that each day meets your calories within 5%, your protein, and the nutrients your report shows as low, while keeping salt, fat and sugar in check and following how Indian meals are actually eaten.
+Your energy need comes from your age, sex, weight and activity (FAO/WHO/UNU equations with ICMR activity levels), adjusted for your BMI, and protein from 0.83 g per kg of body weight. A mathematical optimiser then chooses dishes and servings so that each day meets your calories within 5% and your protein, and aims for the nutrients your report shows as low, while keeping salt and fat within limits, sweets to a few times a week, and following how Indian meals are actually eaten.
 Your food plan
 Your food plan, notes on each result, and anything to discuss with a doctor.
 Your lab's own range first, then published guidelines, with separate ranges for men and women where needed.
@@ -549,3 +549,32 @@ Healthy range
 One or more results need a doctor’s attention. Dietary changes should complement, not replace, medical evaluation.
 (Ref:
 FAQ
+Home
+Meals from your own kitchen
+Home dishes from your state, not a foreign diet chart
+Plans are built from 278 home-style dishes cooked across India. Here is what one day can look like.
+Breakfast
+Lunch
+Evening snack
+Dinner
+Snack
+An example day. Your own plan is built for your report, your calorie and nutrient targets, your diet and your allergies.
+Checking 61 ranges…
+Matching ICMR-NIN foods…
+Building your 7-day plan…
+Lab report
+7-day plan
+Indian home dishes
+Show fewer questions
+Nutritive Value of Indian Foods
+ICMR-NIN. Used only for foxtail millet and makhana, which the 2017 tables do not include.
+NutriLens engine
+Live example
+Report
+Results
+Foods
+Plan
+Values from ICMR-NIN food tables (IFCT 2017) and nutrient needs (RDA 2020).
+Understanding your results…
+Choosing foods for you…
+Planning your week…

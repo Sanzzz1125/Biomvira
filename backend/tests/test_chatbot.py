@@ -257,3 +257,10 @@ def test_full_chats_ask_for_a_new_chat(signed_in, monkeypatch):
     client.post("/api/v1/chat", json={"message": "what is t3", "conversation_id": cid})
     response = client.post("/api/v1/chat", json={"message": "what is t4", "conversation_id": cid})
     assert response.status_code == 409
+
+
+def test_without_a_report_open_the_latest_report_is_used(signed_in):
+    client = signed_in("latest@example.com")
+    _report(client)
+    reply = client.post("/api/v1/chat", json={"message": "summarise my results"}).json()["reply"]
+    assert "I don't have your results yet" not in reply and "need attention" in reply or "healthy range" in reply

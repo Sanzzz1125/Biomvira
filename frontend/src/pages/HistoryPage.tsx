@@ -136,7 +136,7 @@ const ReportList: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto max-w-6xl space-y-8">
+    <div className="space-y-8">
       <PageHeader
         eyebrow="History"
         title="My reports"
@@ -146,7 +146,7 @@ const ReportList: React.FC = () => {
             : `${total} saved ${total === 1 ? 'analysis' : 'analyses'}. Only you can see these.`
         }
         actions={
-          <Link to="/" className={buttonClasses('primary')}>
+          <Link to="/analyze" className={buttonClasses('primary')}>
             <Plus className="h-4 w-4" aria-hidden /> New analysis
           </Link>
         }
@@ -171,7 +171,7 @@ const ReportList: React.FC = () => {
             title="No saved reports yet"
             description="Analyze a lab report while you're logged in and it will appear here automatically."
             action={
-              <Link to="/" className={buttonClasses('primary')}>
+              <Link to="/analyze" className={buttonClasses('primary')}>
                 Analyze a report
               </Link>
             }
