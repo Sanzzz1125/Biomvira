@@ -3,7 +3,7 @@ import pytest
 
 from app.plan.engine import Person, eligible, options, shopping_list, swap, targets, week
 
-PERSON = Person(age=24, sex="female", height_cm=160, weight_kg=57, activity="walking", diet="veg",
+PERSON = Person(age=24, sex="female", height_cm=160, weight_kg=57, activity="moderate", diet="veg",
                 allergens=("nuts", "sesame"), avoid_words=("brinjal",), region="telangana",
                 low_nutrients=("iron_mg", "vitamin_b12_mcg"), picked_foods=("ifct_c022_gongura",))
 
@@ -14,11 +14,21 @@ def _dishes(day):
 
 def test_targets_follow_the_equations():
     t = targets(PERSON)
-    assert t["energy_kcal"] == round((14.7 * 57 + 496) * 1.65)
+    assert t["energy_kcal"] == round((14.7 * 57 + 496) * 1.70)  # FAO/WHO/UNU BMR x PAL for 4-5 workouts a week
     assert t["protein_g"] == round(0.83 * 57, 1)
     assert t["rda"]["iron_mg"] == 29 and t["low"] == ["iron_mg", "vitamin_b12_ug"]
     with pytest.raises(ValueError):
         targets(Person(age=15, sex="male", height_cm=160, weight_kg=50))
+
+
+@pytest.mark.parametrize("activity,pal", [
+    ("sedentary", 1.53), ("light", 1.60), ("moderate", 1.70), ("active", 1.80), ("very_active", 2.00),
+    ("extra_active", 2.30),
+    # values saved before the six levels: the nearest level
+    ("none", 1.53), ("walking", 1.60), ("cycling", 1.80), ("running", 2.00), ("unknown", 1.53), (None, 1.53)])
+def test_activity_levels(activity, pal):
+    person = Person(age=24, sex="female", height_cm=160, weight_kg=50, activity=activity)  # BMI 19.5: no adjustment
+    assert targets(person)["energy_kcal"] == round((14.7 * 50 + 496) * pal)
 
 
 def test_filters_respect_diet_allergies_and_dislikes():

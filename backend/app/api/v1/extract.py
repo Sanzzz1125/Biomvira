@@ -35,21 +35,17 @@ def process_report(data, filename, mime, raw_text):
                 for name in names]
     warnings += [f'Page {page} is a picture that could not be read automatically. If it shows results not listed '
                  'below, add them manually.' for page in re.findall(r'\[\[PAGE (\d+) unread\]\]', text)]
-    if not markers or missing or any(m.warnings for m in markers):
-        evidence = clinical_evidence_only(sanitized)
-        if not evidence:
-            pass  # no de-identified evidence to send; local results stand
-        else:
-            try:
-                candidates = extract_with_gemini_fallback(sanitized)
-                # Keep disagreements rather than silently overriding local evidence.
-                for candidate in candidates:
-                    if not any(m.biomarker_key == candidate.biomarker_key and m.canonical_value == candidate.canonical_value for m in markers):
-                        candidate.verification_status = 'conflict'
-                        candidate.warnings.append('AI/local disagreement requires manual verification.')
-                        markers.append(candidate)
-            except ValueError:
-                pass  # the AI helper is optional; local results stand
+    if missing:
+        # Tests named on the report whose value the rules could not read: the optional AI helper may read them from
+        # those rows (clinical tokens only). Anything it returns is marked for the person to check.
+        try:
+            recovered = extract_with_gemini_fallback(sanitized, missing)
+        except ValueError:
+            recovered = []  # the AI helper is optional; local results stand
+        for marker in recovered:
+            markers.append(marker)
+            name = BIOMARKERS_CONFIG[marker.biomarker_key]['display_name']
+            warnings = [w for w in warnings if not w.startswith(f'{name} is mentioned')]
     if not markers:
         warnings.append("We couldn't find supported test results in this report. Try a clearer copy, or add your results manually.")
     # Do not expose arbitrary report headers as an allegedly anonymous preview.

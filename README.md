@@ -15,7 +15,7 @@ that fit your needs, diet, allergies, region and language.
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![OR-Tools](https://img.shields.io/badge/OR--Tools-MILP-4285F4?logo=google&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?logo=postgresql&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-651%20backend%20%C2%B7%2025%20frontend-167C64)
+![Tests](https://img.shields.io/badge/tests-703%20backend%20%C2%B7%2025%20frontend-167C64)
 
 <img src=".github/assets/diet-plan.jpg" alt="Three one-day diet plan options built from a report" width="900">
 
@@ -38,7 +38,8 @@ NutriLens closes that gap. It turns the numbers on an Indian lab report into rea
 | 📄 **Reads real lab reports** | Text PDFs, scans and photos from any Indian lab. 61 common tests across blood count, sugar, lipids, liver, kidney, thyroid, iron and vitamins. Indian number formats (1,50,000) and SI units handled. |
 | 🔒 **Private by design** | Names, phone numbers and patient IDs are removed on the server before anything else runs. Only you can open your saved reports. |
 | 🩺 **Safety first** | Each result is judged against the lab's own range or a clinical guideline. Values that need a doctor (very low haemoglobin, high HbA1c, abnormal potassium and more) are flagged instead of getting a meal plan. |
-| 🥗 **Foods you choose** | Foods that help each result are shown first, filtered strictly by diet type and allergies. You tick the ones you like. |
+| 🥗 **Foods you choose** | Foods that help each result are shown first, filtered strictly by diet type, the meats you eat and your allergies. You tick the ones you like. |
+| 🚫 **Allergies in your own words** | Eight allergy groups, plus anything you type in English, Hindi or Telugu ("eggplant", "मूंगफली", "పల్లీలు"), with spelling slips forgiven. Each typed allergy shows how many dishes it leaves out, or says plainly that it was not recognised. |
 | 📅 **A real diet planner** | An optimiser picks dishes and servings from **278 Indian home dishes** for breakfast, lunch, snack and dinner. You get three one-day options (familiar, nutrient-dense, regional), a 7-day plan, one-tap dish swaps and a shopping list grouped by aisle. |
 | 🗣️ **English, हिंदी, తెలుగు** | The whole site, your results, the assistant and both downloadable PDFs follow your language. |
 | 💬 **An assistant that knows your report** | Ask about any test, food or feature. Answers come from checked data; a free language model only rewords them, and every number it writes is verified. Emergencies get helpline numbers and medicine questions are never answered with doses. |
@@ -62,7 +63,7 @@ flowchart LR
 **Rules decide, models assist.** No model decides a result or a plan.
 
 - **Dish nutrients** are calculated from raw ingredients using the *Indian Food Composition Tables 2017* (ICMR-NIN), with USDA SR Legacy and NIN's NVIF data for the few ingredients IFCT lacks. Cooking losses are applied to heat-sensitive vitamins. Diet type and allergens are derived from the ingredients, never typed by hand.
-- **The diet planner** is a mixed-integer linear program solved with Google OR-Tools (SCIP, falling back to CBC). It must hit the energy target within 5% (FAO/WHO/UNU equations), keep fat under 35% of energy and follow real meal structure. It then minimises shortfalls in protein and in the nutrients your report found low, keeps salt and saturated fat down, and prefers your region's dishes and the foods you ticked.
+- **The diet planner** is a mixed-integer linear program solved with Google OR-Tools (SCIP, falling back to CBC). It must hit the energy target within 5% (FAO/WHO/UNU equations, with six activity levels from "little or no exercise" to "a physical job"), keep fat under 35% of energy and follow real meal structure. It then minimises shortfalls in protein and in the nutrients your report found low, keeps salt and saturated fat down, and prefers your region's dishes and the foods you ticked.
 - **The assistant** answers in three layers: safety and personal rules, a fine-tuned multilingual **e5-small** model (int8 ONNX, 22.7 MB, CPU) that finds the closest of 139 topics, and an optional **Groq** language model that rewords the answer from the facts only.
 
 ## Results
@@ -151,7 +152,7 @@ Without a `DATABASE_URL` the backend uses a local SQLite file, so you can develo
 |---|---|---|
 | `DATABASE_URL` | For production | Neon PostgreSQL connection string (pooled) |
 | `GROQ_API_KEY` | Optional | Free key from [console.groq.com](https://console.groq.com/keys); lets the assistant answer in natural language. Without it, rule-based answers are used. |
-| `GEMINI_API_KEY` | Optional | Fallback for report rows the rules cannot read (anonymised text only) |
+| `GEMINI_API_KEY` | Optional | Reads report rows the rules could not read. It sees only numbers, units and the test name from those rows, a value is kept only if it is printed on that row, and every value is shown to the user to confirm |
 | `COOKIE_SECURE` | Production | Set to `true` behind HTTPS |
 
 Create the single **owner** account once per database:
@@ -179,7 +180,7 @@ python run.py        # app at http://localhost:8000, API docs at /docs
 ## Testing
 
 ```bash
-.venv/bin/python -m pytest -q     # backend: 656 tests (651 pass; 5 need a live PostgreSQL server)
+.venv/bin/python -m pytest -q     # backend: 708 tests (703 pass; 5 need a live PostgreSQL server)
 cd frontend && npm test           # frontend: 25 tests
 ```
 
@@ -192,7 +193,7 @@ All routes are under `/api/v1`. Interactive documentation is at `/docs`.
 | Area | Endpoints | Access |
 |---|---|---|
 | Reports | `POST /extract-report` · `POST /diet-text` · `POST /analyze-and-recommend` · `POST /export-plan-pdf` · `POST /localize-analysis` | Anyone |
-| Diet plans | `POST /diet-plan/options` · `/diet-plan/week` · `/diet-plan/swap` · `/diet-plan/pdf` | Anyone |
+| Diet plans | `POST /diet-plan/options` · `/diet-plan/week` · `/diet-plan/swap` · `/diet-plan/pdf` · `/diet-plan/allergy-check` | Anyone |
 | Assistant | `POST /chat` · `GET`/`DELETE /chat/conversations…` | Anyone; saved chats when signed in |
 | History | `GET /history` · `GET`/`DELETE /history/{id}` · `PUT /history/{id}/diet-plan` | Signed in, own reports only |
 | Accounts | `/auth/register` · `/login` · `/logout` · `/session` · `/me` · `/change-password` · `/delete-account` · invites · resets | Anyone / signed in |

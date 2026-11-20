@@ -12,7 +12,7 @@ import { needsReview } from '../lib/review';
 export type Step = 'upload' | 'verify' | 'profile' | 'results';
 
 const DEFAULT_PROFILE: UserProfile = {
-  age: 25, gender: 'female', diet_type: 'veg', allergens: [], height_cm: null, weight_kg: null, activity: 'none',
+  age: 25, gender: 'female', diet_type: 'veg', allergens: [], height_cm: null, weight_kg: null, activity: 'sedentary',
   region: '', meats: [], custom_allergies: [], existing_diet: '',
 };
 

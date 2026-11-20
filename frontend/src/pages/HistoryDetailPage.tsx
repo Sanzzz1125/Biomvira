@@ -4,7 +4,8 @@ import { ArrowLeft, FileQuestion, ScanLine } from 'lucide-react';
 import { EmptyState, PageSpinner } from '../components/brand';
 import { ResultsView } from '../components/ResultsView';
 import { useToast } from '../components/Toast';
-import { Card, buttonClasses } from '../components/ui';
+import { Alert, Card, buttonClasses } from '../components/ui';
+import { useT } from '../lib/i18n';
 import { formatDateTime } from '../lib/format';
 import { historyApi } from '../services/accounts';
 import { downloadPlanPdf } from '../services/api';
@@ -65,6 +66,7 @@ export const HistoryDetailPage: React.FC = () => {
         </Link>
         <p className="text-sm text-slate-500">Saved {formatDateTime(result.timestamp)}</p>
       </div>
+      {result.user_profile.custom_allergies === undefined && <OlderReportNote />}
       <ResultsView
         result={result}
         profile={result.user_profile}
@@ -77,4 +79,10 @@ export const HistoryDetailPage: React.FC = () => {
       />
     </div>
   );
+};
+
+/** Reports saved before November 2026 kept only the diet type and the allergy groups: say so plainly. */
+const OlderReportNote: React.FC = () => {
+  const t = useT();
+  return <Alert tone="info" title={t('olderReportTitle')}>{t('olderReportText')}</Alert>;
 };

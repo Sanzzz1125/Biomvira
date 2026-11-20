@@ -4,12 +4,13 @@ from typing import List, Literal, Optional
 from fastapi import APIRouter, HTTPException, Response
 from pydantic import BaseModel, Field
 
-from app.plan import engine
+from app.models.schemas import Activity
+from app.plan import allergy, engine
+from app.plan.catalog import catalog
 from app.utils.diet_plan_pdf import generate_diet_plan_pdf
 
 router = APIRouter()
 
-Activity = Literal["none", "walking", "cycling", "running"]
 Style = Literal["familiar", "nutritious", "regional"]
 Slot = Literal["breakfast", "lunch", "snack", "dinner"]
 GLUCOSE_MARKERS = {"hba1c", "fasting_glucose", "postprandial_glucose"}
@@ -27,7 +28,7 @@ class PlanProfile(BaseModel):
     gender: Literal["male", "female"]
     height_cm: float = Field(ge=120, le=220)
     weight_kg: float = Field(ge=30, le=200)
-    activity: Activity = "none"
+    activity: Activity = "sedentary"
     diet_type: Literal["veg", "vegan", "eggetarian", "non_veg"] = "veg"
     meats: List[str] = Field(default_factory=list, max_length=8)
     allergens: List[str] = Field(default_factory=list, max_length=12)
@@ -58,7 +59,7 @@ def person_from(request: PlanRequest) -> engine.Person:
         conditions.append("diabetes")
     if any(m.biomarker_key in LIPID_MARKERS and m.status in ("high", "borderline") for m in request.markers):
         conditions.append("high_cholesterol")
-    return engine.Person(age=p.age, sex=p.gender, height_cm=p.height_cm, weight_kg=p.weight_kg, activity=p.activity,
+    return engine.Person(age=p.age, sex=p.gender, height_cm=p.height_cm, weight_kg=p.weight_kg, activity=engine.activity_level(p.activity),
                          diet=p.diet_type, meats=tuple(p.meats), allergens=tuple(p.allergens),
                          avoid_words=tuple(w[:40] for w in p.custom_allergies), region=p.region,
                          low_nutrients=low, conditions=tuple(conditions), picked_foods=tuple(request.picked_foods),
@@ -108,3 +109,25 @@ def plan_pdf(request: PdfRequest, lang: str = "en"):
         raise HTTPException(400, "That plan could not be read.")
     return Response(pdf, media_type="application/pdf",
                     headers={"Content-Disposition": 'attachment; filename="NutriLens_7_day_plan.pdf"'})
+
+
+class AllergyCheck(BaseModel):
+    words: List[str] = Field(default_factory=list, max_length=20)
+
+
+@router.post("/diet-plan/allergy-check")
+def allergy_check(request: AllergyCheck):
+    """What each typed allergy was understood as, and how many of our dishes and foods it leaves out, so the person
+    can see that "eggplant" was understood and that a misspelt word was not."""
+    from app.engine.recommender import FOODS_DATABASE
+    dishes = list(catalog().values())
+    out = []
+    for word in request.words:
+        a = allergy.resolve(word[:40])
+        foods = 0
+        for f in FOODS_DATABASE:
+            codes, allergens, _ = engine.food_facts(f)
+            foods += allergy.blocks_food(f, codes, allergens, a)
+        out.append({"text": a.text, "known": a.known, "groups": sorted(a.groups),
+                    "dishes_removed": sum(allergy.blocks_dish(d, a) for d in dishes), "foods_removed": foods})
+    return {"results": out}

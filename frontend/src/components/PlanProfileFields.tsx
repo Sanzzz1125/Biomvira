@@ -1,7 +1,7 @@
-import { readDietFile } from '../services/api';
+import { AllergyCheck, checkAllergies, readDietFile } from '../services/api';
 import React from 'react';
-import { Bike, Footprints, Loader2, Plus, Sofa, Upload, X, Zap } from 'lucide-react';
-import { Activity, UserProfile } from '../types';
+import { Bike, Dumbbell, Flame, Footprints, HardHat, Loader2, Plus, Sofa, Upload, X } from 'lucide-react';
+import { ActivityLevel, UserProfile, activityLevel } from '../types';
 import { cx } from './ui';
 import { StringKey, useT } from '../lib/i18n';
 
@@ -39,11 +39,13 @@ export const REGIONS: { id: string; label: string }[] = [
   { id: 'tripura', label: 'Tripura' },
 ];
 
-const ACTIVITIES: { id: Activity; icon: React.ReactNode }[] = [
-  { id: 'none', icon: <Sofa className="h-4 w-4" aria-hidden /> },
-  { id: 'walking', icon: <Footprints className="h-4 w-4" aria-hidden /> },
-  { id: 'cycling', icon: <Bike className="h-4 w-4" aria-hidden /> },
-  { id: 'running', icon: <Zap className="h-4 w-4" aria-hidden /> },
+const ACTIVITIES: { id: ActivityLevel; icon: React.ReactNode }[] = [
+  { id: 'sedentary', icon: <Sofa className="h-4 w-4 shrink-0" aria-hidden /> },
+  { id: 'light', icon: <Footprints className="h-4 w-4 shrink-0" aria-hidden /> },
+  { id: 'moderate', icon: <Bike className="h-4 w-4 shrink-0" aria-hidden /> },
+  { id: 'active', icon: <Dumbbell className="h-4 w-4 shrink-0" aria-hidden /> },
+  { id: 'very_active', icon: <Flame className="h-4 w-4 shrink-0" aria-hidden /> },
+  { id: 'extra_active', icon: <HardHat className="h-4 w-4 shrink-0" aria-hidden /> },
 ];
 
 const MEATS = ['chicken', 'mutton', 'fish', 'shellfish', 'egg', 'beef', 'pork'];
@@ -90,13 +92,13 @@ export const BodyFields: React.FC<{ profile: UserProfile; setProfile: Setter; er
       </div>
       <div className="sm:col-span-2">
         <span id="activity-label" className="mb-1.5 block text-sm font-medium text-slate-700">{t('activity')}</span>
-        <div role="radiogroup" aria-labelledby="activity-label" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div role="radiogroup" aria-labelledby="activity-label" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {ACTIVITIES.map((a) => {
-            const selected = (profile.activity ?? 'none') === a.id;
+            const selected = activityLevel(profile.activity) === a.id;
             return (
               <button key={a.id} type="button" role="radio" aria-checked={selected} className={choice(selected)}
                 onClick={() => setProfile((p) => ({ ...p, activity: a.id }))}>
-                <span className="flex items-center gap-2 text-sm font-semibold text-slate-900">{a.icon}{t(`act_${a.id}` as StringKey)}</span>
+                <span className="flex items-start gap-2 text-sm font-semibold leading-snug text-slate-900">{a.icon}{t(`act_${a.id}` as StringKey)}</span>
                 <span className="mt-0.5 block text-xs text-slate-500">{t(`act_${a.id}_hint` as StringKey)}</span>
               </button>
             );
@@ -140,6 +142,24 @@ export const CustomAllergyField: React.FC<{ profile: UserProfile; setProfile: Se
   const t = useT();
   const [text, setText] = React.useState('');
   const items = profile.custom_allergies ?? [];
+  // What each word was understood as, so "eggplant" visibly works and a misspelt word is not silently ignored.
+  const [checks, setChecks] = React.useState<Record<string, AllergyCheck>>({});
+  const key = items.join('\u0000');
+  React.useEffect(() => {
+    let live = true;
+    checkAllergies(items)
+      .then((rows) => live && setChecks(Object.fromEntries(rows.map((r, i) => [items[i], r]))))
+      .catch(() => live && setChecks({}));
+    return () => { live = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
+  const status = (item: string) => {
+    const c = checks[item];
+    if (!c) return null;
+    if (!c.known) return <span className="font-semibold text-red-700">{t('allergyUnknown')}</span>;
+    if (c.dishes_removed === 0) return <span className="text-slate-600">{t('allergyNoDish')}</span>;
+    return <span className="text-slate-600">{c.dishes_removed === 1 ? t('allergyRemovesOne') : t('allergyRemoves', { n: c.dishes_removed })}</span>;
+  };
   const add = () => {
     const value = text.trim();
     if (!value || items.some((i) => i.toLowerCase() === value.toLowerCase())) return setText('');
@@ -161,14 +181,17 @@ export const CustomAllergyField: React.FC<{ profile: UserProfile; setProfile: Se
         </button>
       </div>
       {items.length > 0 && (
-        <ul className="mt-3 flex flex-wrap gap-2">
+        <ul className="mt-3 flex flex-wrap gap-2" aria-live="polite">
           {items.map((item) => (
-            <li key={item} className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-sm font-medium text-red-900 ring-1 ring-red-300">
-              {item}
-              <button type="button" aria-label={`${t('remove')} ${item}`} className="rounded-full p-0.5 hover:bg-red-100"
-                onClick={() => setProfile((p) => ({ ...p, custom_allergies: (p.custom_allergies ?? []).filter((i) => i !== item) }))}>
-                <X className="h-3.5 w-3.5" aria-hidden />
-              </button>
+            <li key={item} className="inline-flex max-w-full flex-col rounded-xl bg-white px-3 py-1.5 ring-1 ring-red-300">
+              <span className="inline-flex items-center gap-1 text-sm font-medium text-red-900">
+                <span className="break-words">{item}</span>
+                <button type="button" aria-label={`${t('remove')} ${item}`} className="rounded-full p-0.5 hover:bg-red-100"
+                  onClick={() => setProfile((p) => ({ ...p, custom_allergies: (p.custom_allergies ?? []).filter((i) => i !== item) }))}>
+                  <X className="h-3.5 w-3.5" aria-hidden />
+                </button>
+              </span>
+              <span className="text-xs">{status(item)}</span>
             </li>
           ))}
         </ul>

@@ -231,7 +231,9 @@
         "eggetarian",
         "non_veg"
       ],
-      "allergens": [],
+      "allergens": [
+        "sesame"
+      ],
       "serving_size": "25g (2 tablespoons)",
       "nutrients": {
         "iron_mg": 3.7,
@@ -2984,7 +2986,9 @@
         "eggetarian",
         "non_veg"
       ],
-      "allergens": [],
+      "allergens": [
+        "mustard"
+      ],
       "serving_size": "100g raw (about 1 cup chopped)",
       "nutrients": {
         "iron_mg": 2.8,
@@ -4833,7 +4837,9 @@
         "eggetarian",
         "non_veg"
       ],
-      "allergens": [],
+      "allergens": [
+        "mustard"
+      ],
       "serving_size": "10g (2 teaspoons)",
       "nutrients": {
         "iron_mg": 1.3,

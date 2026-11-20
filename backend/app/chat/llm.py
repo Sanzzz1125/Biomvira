@@ -35,7 +35,7 @@ NutriLens (free website) reads an Indian blood report and turns it into a person
 - Upload: PDF, JPG or PNG up to 10 MB, or Paste text. Name and phone number are removed before anything else. The file is never stored.
 - Reads 61 common tests: blood count, sugar (HbA1c, fasting, post-meal), cholesterol and lipids, liver, kidney, thyroid, iron studies, vitamins D, B12, folate, calcium, electrolytes, uric acid, CRP/ESR.
 - Each result is compared with the lab's own range (or a published range) and marked low, borderline, normal (optimal) or high (elevated). Results needing medical care are flagged "Please review these results with a doctor".
-- Profile step: age, sex, height, weight, state/region, activity (none, walking, cycling, running), diet type (vegetarian, vegan, eggetarian, non-vegetarian with chosen meats), allergies (dairy, gluten, nuts, soy, eggs, seafood, sesame, mustard, or typed in), and optionally what they usually eat.
+- Profile step: age, sex, height, weight, state/region, activity (little or no exercise; exercise 1-3 times a week; 4-5 times a week; daily, or intense 3-4 times a week; intense 6-7 times a week; very intense daily or a physical job), diet type (vegetarian, vegan, eggetarian, non-vegetarian with chosen meats), allergies (dairy, gluten, nuts, soy, eggs, seafood, sesame, mustard, or typed in), and optionally what they usually eat.
 - Results page "Your personalised diet plan": health score band; doctor warning when needed; tabs "1. Pick foods", "2. Diet plan", "Test results".
 - 1. Pick foods: Indian foods (187 foods, values from ICMR-NIN IFCT 2017, with USDA or NVIF for the few IFCT lacks) chosen for each result that needs attention ("improve", up to 8 foods) and for healthy results ("keep healthy", 4 foods), with amount per serving, cooking tip and tips/habits to limit. "Add to plan" on any food, then "Build my diet plan" / "Update my diet plan".
 - 2. Diet plan: three one-day options built automatically: Familiar (region's dishes plus picked foods), Most nutritious (most nutrients for the calories), Regional (only the state's dishes). "Make my 7-day plan": breakfast, lunch, evening snack, dinner for 7 days; Swap any dish (day rebalanced, other meals kept); Shopping list (weights as bought); PDF; "Save with my report" when signed in (then shown when the report is opened from History). Diet plans are for adults 18+; need height 120-220 cm and weight 30-200 kg.
@@ -168,7 +168,10 @@ def _results(context: Optional[dict], lang: str = "en") -> str:
         lines.append(f"- Food plan to {p.get('purpose', 'improve')} {_local(p.get('name'), lang)}:")
         lines += [f"  - {_food_fact(f, lang)}" for f in p.get("foods") or []]
     if context.get("diet_type"):
-        lines.append(f"- Diet type: {context['diet_type']}; allergies: {', '.join(context.get('allergens') or []) or 'none'}")
+        allergies = (context.get("allergens") or []) + (context.get("custom_allergies") or [])
+        lines.append(f"- Diet type: {context['diet_type']}; allergies: {', '.join(allergies) or 'none'}")
+        if context.get("meats"):
+            lines.append(f"- Meats eaten: {', '.join(context['meats'])}")
     plan = context.get("diet_plan") or {}
     for i, day in enumerate((plan.get("days") or [])[:7], 1):
         meals = "; ".join(f"{slot}: {', '.join(names)}" for slot, names in (day.get("meals") or {}).items() if names)

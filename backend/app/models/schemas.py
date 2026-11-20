@@ -1,4 +1,4 @@
-from typing import List, Optional, Dict, Any
+from typing import Annotated, Any, Dict, List, Literal, Optional
 from pydantic import BaseModel, Field
 from enum import Enum
 
@@ -14,11 +14,25 @@ class MarkerStatus(str, Enum):
     NORMAL = "normal"
     HIGH = "high"
 
+Activity = Literal["sedentary", "light", "moderate", "active", "very_active", "extra_active",
+                   "none", "walking", "cycling", "running"]  # the last four: saved before November 2026
+
+
 class UserProfile(BaseModel):
+    """Everything the person told us. Saved with the report, so a reopened report rebuilds the same plans with the
+    same typed allergies, meats, body measurements, activity and region."""
     age: int = Field(default=25, ge=1, le=120)
     gender: str = Field(default="female", description="male or female for sex-specific reference ranges")
     diet_type: DietType = Field(default=DietType.VEG)
-    allergens: List[str] = Field(default_factory=list, description="e.g. ['dairy', 'nuts', 'gluten', 'soy', 'eggs', 'seafood']")
+    allergens: List[str] = Field(default_factory=list, max_length=12,
+                                 description="e.g. ['dairy', 'nuts', 'gluten', 'soy', 'eggs', 'seafood']")
+    custom_allergies: List[Annotated[str, Field(max_length=40)]] = Field(default_factory=list, max_length=20)
+    meats: List[Annotated[str, Field(max_length=20)]] = Field(default_factory=list, max_length=8)
+    height_cm: Optional[float] = Field(default=None, ge=30, le=272)
+    weight_kg: Optional[float] = Field(default=None, ge=2, le=400)
+    activity: Activity = "sedentary"
+    region: str = Field(default="", max_length=40)
+    existing_diet: str = Field(default="", max_length=4000)
 
 class ReferenceRange(BaseModel):
     low: Optional[float] = None

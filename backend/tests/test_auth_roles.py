@@ -308,3 +308,18 @@ def test_cli_refuses_a_second_owner(make_user, db_sessions, monkeypatch):
     assert cli.create_owner("second@example.com", "Second") == 1
     with db_sessions() as db:
         assert [u.email for u in db.query(User).filter_by(role="owner")] == ["first@example.com"]
+
+
+def test_sign_in_forms_only_accepted_from_our_own_site(api, make_user):
+    """Login CSRF: another site must not be able to sign a visitor into an account it controls."""
+    make_user("asha@example.com")
+    body = {"email": "asha@example.com", "password": PASSWORD}
+    for origin in ("https://evil.example", "null"):
+        response = api().post("/api/v1/auth/login", json=body, headers={"Origin": origin})
+        assert response.status_code == 403
+        response = api().post("/api/v1/auth/register", json={"name": "X", "email": "x@example.com", "password": PASSWORD},
+                              headers={"Origin": origin})
+        assert response.status_code == 403
+    for origin in ("http://testserver", "https://nutrilens-sand.vercel.app", "http://localhost:5173"):
+        assert api().post("/api/v1/auth/login", json=body, headers={"Origin": origin}).status_code == 200
+    assert api().post("/api/v1/auth/login", json=body).status_code == 200  # no Origin: not a browser form

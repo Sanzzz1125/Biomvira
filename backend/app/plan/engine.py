@@ -16,10 +16,11 @@ at half, so a plan never relies on them.
 from collections import defaultdict
 from dataclasses import dataclass, field
 
+from app.plan import allergy
 from app.plan.catalog import catalog, lines_of
 from app.plan.ingredient_local import local_names
 from app.plan.ingredient_names import expand, INGREDIENTS
-from app.plan.nutrition import ingredients
+from app.plan.nutrition import ingredients, meat_type
 
 SLOTS = ("breakfast", "lunch", "snack", "dinner")
 # States where plain rice is the everyday staple, so it counts as a regional dish there.
@@ -31,8 +32,23 @@ MAX_SERVINGS = {"staple": 4, "breakfast": 3, "rice_dish": 2, "dal": 2, "curry": 
                 "side": 2, "snack": 1, "drink": 1, "fruit": 1, "sweet": 1}
 REPEATABLE_ROLES = {"staple", "drink"}  # roles never counted as a "main" dish
 REPEATABLE_DISHES = {"tea", "filter_coffee", "milk", "fortified_milk"}  # may appear at two meals of a day
-ACTIVITY_PAL = {"none": 1.53, "walking": 1.65, "cycling": 1.8, "running": 2.0}  # ICMR-NIN 2020: 1.53 sedentary,
-# 1.8 moderate, 2.3 heavy; walking and running lie between.
+# Physical activity level (PAL): energy need = BMR x PAL. Anchored on ICMR-NIN 2020 (1.53 sedentary, 1.8 moderate,
+# 2.3 heavy) and kept inside the FAO/WHO/UNU 2004 bands (1.40-1.69 light, 1.70-1.99 active, 2.00-2.40 vigorous).
+ACTIVITY_PAL = {
+    "sedentary": 1.53,     # little or no exercise
+    "light": 1.60,         # exercise 1-3 times a week
+    "moderate": 1.70,      # exercise 4-5 times a week
+    "active": 1.80,        # daily exercise, or intense exercise 3-4 times a week
+    "very_active": 2.00,   # intense exercise 6-7 times a week
+    "extra_active": 2.30,  # very intense exercise daily, or a physical job
+}
+# Values saved before the six levels existed (none 1.53, walking 1.65, cycling 1.8, running 2.0) -> nearest level.
+LEGACY_ACTIVITY = {"none": "sedentary", "walking": "light", "cycling": "active", "running": "very_active"}
+
+
+def activity_level(value: str | None) -> str:
+    value = LEGACY_ACTIVITY.get(value or "", value or "")
+    return value if value in ACTIVITY_PAL else "sedentary"
 DIET_ALLOWS = {"vegan": {"vegan"}, "veg": {"vegan", "vegetarian"}, "vegetarian": {"vegan", "vegetarian"},
                "eggetarian": {"vegan", "vegetarian", "eggetarian"},
                "non_veg": {"vegan", "vegetarian", "eggetarian", "non_veg"}}
@@ -52,7 +68,7 @@ class Person:
     sex: str  # "male" or "female"
     height_cm: float
     weight_kg: float
-    activity: str = "none"
+    activity: str = "sedentary"
     diet: str = "veg"
     meats: tuple = ()  # for non-vegetarians: kinds they eat, e.g. ("chicken", "egg", "fish"); empty = all
     allergens: tuple = ()  # ingredient allergen groups: nuts, sesame, mustard, dairy, gluten, soy, eggs, seafood
@@ -79,7 +95,7 @@ def bmr(person: Person) -> float:
 
 
 def targets(person: Person) -> dict:
-    energy = bmr(person) * ACTIVITY_PAL.get(person.activity, 1.53)
+    energy = bmr(person) * ACTIVITY_PAL[activity_level(person.activity)]
     bmi = person.weight_kg / (person.height_cm / 100) ** 2
     if bmi >= 25:  # gentle loss: about 15% below need, never more than 500 kcal
         energy -= min(0.15 * energy, 500)
@@ -128,7 +144,22 @@ FOOD_CODES = {  # foods.json ids that are not named after an IFCT code
     "jowar_sorghum": {"A005"}, "little_millet_kutki": {"A016"}, "prawn_shrimp": {"S008", "S009", "S010", "Q007"},
     "mutton_liver": {"O008"}, "papaya_ripe": {"E049"}, "orange_mosambi": {"E047"}, "ghee_clarified_butter": {"T013"},
     "tamarind_imli": {"E064"}, "jaggery_gud": {"I001"}, "soybean_cooked": {"X007"}, "coconut_oil_virgin": {"T001"},
+    "garden_cress_seeds_aliv": {"H008"}, "pumpkin_seeds": {"X020"}, "fortified_soy_milk": {"X024"},
+    "amla_indian_gooseberry": {"E021"}, "dates_khajoor": {"E017", "E018"}, "lotus_seeds_makhana": {"X027"},
+    "flaxseeds_alsi": {"H014"}, "sunflower_seeds": {"H020"}, "foxtail_millet_kangni": {"X026"},
+    "cod_liver_oil_capsule": {"X022"}, "hilsa_fish_ilish": {"P017"}, "dried_figs_anjeer": {"X025"},
+    "dried_apricots_khumani": {"E005"}, "wheat_germ": {"X021"}, "tempeh": {"X023"},
 }
+
+
+def food_facts(food: dict) -> tuple[set, set, set]:
+    """A food card's ingredient codes, full allergen set and kinds of meat, from the same ingredient data the dishes
+    use, so a card can never be labelled differently from the dishes made of it."""
+    table = ingredients()
+    codes = {c for c in food_codes(food["id"]) if c in table}
+    allergens = set(food.get("allergens", [])) | {a for c in codes for a in table[c]["allergens"]}
+    meats = {m for c in codes if (m := meat_type(c, table[c]))}
+    return codes, allergens, meats
 
 
 def food_codes(food_id: str) -> set:
@@ -147,15 +178,13 @@ def food_codes(food_id: str) -> set:
 def eligible(person: Person) -> list:
     """Dishes this person can eat: diet, kinds of meat, allergens and words to avoid."""
     allowed = DIET_ALLOWS.get(person.diet, DIET_ALLOWS["veg"])
-    allergens, words = set(person.allergens), [w.strip().lower() for w in person.avoid_words if w.strip()]
+    allergens = set(person.allergens)
     meats = set(person.meats)
-    if meats:
-        meats.add("egg") if "egg" in meats else None
-    names = {x["code"]: x["name"].lower() for x in ingredients().values()}
-    # Custom allergies in any language or spelling ("groundnut", "मूंगफली", "వేరుశనగ") -> our ingredients (e5 model).
+    # Typed allergies in any language or spelling ("groundnut", "eggplant", "मूंगफली", "వేరుశనగ"): see plan/allergy.py.
+    avoids = [allergy.resolve(w) for w in person.avoid_words if w.strip()]
     blocked = set()
-    if words:
-        from app.nlp import embed
+    if avoids:
+        from app.nlp import embed  # extra matches once e5 name matching meets its target (off until then)
         for word in person.avoid_words:
             blocked |= set(embed.match_items(word, "ingredient"))
     out = []
@@ -164,9 +193,7 @@ def eligible(person: Person) -> list:
             continue
         if meats and set(d["meat_types"]) - meats:
             continue
-        text = " ".join([d["name"], *d["also_called"], *(i["name"] for i in d["ingredients"]),
-                         *(names[c] for c in dish_codes(d["id"]))]).lower()
-        if any(w in text for w in words):
+        if any(allergy.blocks_dish(d, a) for a in avoids):
             continue
         if blocked and {n for i in d["ingredients"] for n, _ in expand(i["name"], i["grams"])} & blocked:
             continue

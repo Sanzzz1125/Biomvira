@@ -66,7 +66,7 @@ PICK = {
     "C008": ("Bathua Leaves", None, [], None), "C009": ("Beetroot Greens", None, [], None),
     "C015": ("Green Cabbage / Patta Gobhi", None, [], None), "C018": ("Colocasia Leaves / Arbi Patta", None, [], None),
     "C021": ("Garden Cress Greens", None, [], None), "C022": ("Gongura / Gogu Leaves", None, [], None),
-    "C026": ("Mustard Greens / Sarson ka Saag", None, [], None), "C029": ("Ponnaganni Leaves", None, [], None),
+    "C026": ("Mustard Greens / Sarson ka Saag", None, ["mustard"], None), "C029": ("Ponnaganni Leaves", None, [], None),
     "C031": ("Radish Leaves / Mooli Patta", None, [], None), "C017": ("Cauliflower Greens", None, [], None),
     "C030": ("Tender Pumpkin Leaves", None, [], None), "C034": ("Tender Tamarind Leaves", None, [], None),
     # other vegetables
@@ -104,7 +104,7 @@ PICK = {
     "G033": ("Turmeric Powder / Haldi", None, [], None),
     # nuts and oil seeds
     "H006": ("Dry Coconut / Kopra", None, [], None), "H007": ("Fresh Coconut", (30, "30g (2 tablespoons grated)"), [], None),
-    "H012": ("Groundnut / Peanut", None, ["nuts"], None), "H013": ("Mustard Seeds / Rai", (10, "10g (2 teaspoons)"), [], None),
+    "H012": ("Groundnut / Peanut", None, ["nuts"], None), "H013": ("Mustard Seeds / Rai", (10, "10g (2 teaspoons)"), ["mustard"], None),
     "H015": ("Niger Seeds / Ramtil", (10, "10g (1 tablespoon)"), [], None), "H018": ("Pistachio / Pista", None, ["nuts"], None),
     "H021": ("Walnut / Akhrot", None, ["nuts"], None), "H019": ("Safflower Seeds / Kusum", (10, "10g (1 tablespoon)"), [], None),
     # dairy

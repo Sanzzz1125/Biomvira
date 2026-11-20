@@ -2,7 +2,16 @@ export type DietType = 'veg' | 'vegan' | 'eggetarian' | 'non_veg';
 
 export type MarkerStatus = 'low' | 'borderline' | 'normal' | 'high';
 
-export type Activity = 'none' | 'walking' | 'cycling' | 'running';
+/** How active the person is (energy need = BMR x activity factor, see backend plan/engine.py). */
+export type ActivityLevel = 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active' | 'extra_active';
+/** Older saved reports used four kinds of exercise; they map to the nearest level. */
+export type Activity = ActivityLevel | 'none' | 'walking' | 'cycling' | 'running';
+export const ACTIVITY_LEVELS: ActivityLevel[] = ['sedentary', 'light', 'moderate', 'active', 'very_active', 'extra_active'];
+const LEGACY_ACTIVITY: Record<string, ActivityLevel> = { none: 'sedentary', walking: 'light', cycling: 'active', running: 'very_active' };
+export const activityLevel = (a?: Activity | string | null): ActivityLevel => {
+  const level = LEGACY_ACTIVITY[a ?? ''] ?? a;
+  return ACTIVITY_LEVELS.includes(level as ActivityLevel) ? (level as ActivityLevel) : 'sedentary';
+};
 
 export interface UserProfile {
   age: number;

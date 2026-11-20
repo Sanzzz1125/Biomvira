@@ -167,15 +167,25 @@ class RecommendationEngine:
 
     def filter_foods(self, profile: UserProfile) -> List[Dict[str, Any]]:
         """Applies hard constraints for diet type and allergens."""
+        from app.plan import allergy
+        from app.plan.engine import food_facts
         eligible_foods = []
         user_allergens = {a.strip().lower() for a in profile.allergens}
         user_diet = profile.diet_type.value
+        avoids = [allergy.resolve(w) for w in getattr(profile, "custom_allergies", []) or [] if w.strip()]
+        meats = set(getattr(profile, "meats", []) or [])
 
         for food in self.foods_db:
-            # 1. Allergen Check: Strict zero tolerance
-            food_allergens = {a.lower() for a in food.get("allergens", [])}
-            if user_allergens.intersection(food_allergens):
+            # 1. Allergen Check: strict zero tolerance. The card's own labels plus those of the ingredients it is
+            # made of (the same data the dishes use), then typed allergies ("peanut", "eggplant", "पालक").
+            codes, food_allergens, food_meats = food_facts(food)
+            if user_allergens.intersection(a.lower() for a in food_allergens):
                 continue  # Disqualified due to allergen
+            if any(allergy.blocks_food(food, codes, food_allergens, a) for a in avoids):
+                continue
+            # A non-vegetarian who picked the meats they eat sees only those (the planner does the same).
+            if meats and food_meats - meats:
+                continue
 
             # 2. Diet Type Check
             food_diets = food.get("diet_type", [])

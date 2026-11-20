@@ -11,23 +11,34 @@ import { Footer } from './components/Footer';
 import { Navbar } from './components/Navbar';
 import { ServerWakeNotice } from './components/ServerWakeNotice';
 import { LanguagePrompt } from './components/LanguagePrompt';
-import { ArticlePage, ArticlesPage, FaqPage, SciencePage } from './pages/LearnPages';
 import { ToastProvider } from './components/Toast';
 import { Card, buttonClasses } from './components/ui';
+import { PageSpinner } from './components/brand';
 import { useAnalyzer } from './hooks/useAnalyzer';
-import { AccountPage } from './pages/AccountPage';
-import { AnalyzerPage } from './pages/AnalyzerPage';
-import { HistoryDetailPage } from './pages/HistoryDetailPage';
-import { HistoryPage } from './pages/HistoryPage';
-import { AdminAccess } from './pages/admin/AdminAccess';
-import { AdminAudit } from './pages/admin/AdminAudit';
-import { AdminDashboard } from './pages/admin/AdminDashboard';
-import { AdminLayout } from './pages/admin/AdminLayout';
-import { AdminUsers } from './pages/admin/AdminUsers';
-import { InvitePage } from './pages/auth/InvitePage';
-import { LoginPage } from './pages/auth/LoginPage';
-import { RegisterPage } from './pages/auth/RegisterPage';
-import { ResetPasswordPage } from './pages/auth/ResetPasswordPage';
+
+// Pages other than the home page load when first opened, so the home page downloads only what it shows.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function page<M extends Record<string, any>, K extends keyof M>(load: () => Promise<M>, name: K) {
+  return React.lazy(() => load().then((m) => ({ default: m[name] as React.ComponentType<any> })));
+}
+const AnalyzerPage = page(() => import('./pages/AnalyzerPage'), 'AnalyzerPage');
+const SciencePage = page(() => import('./pages/LearnPages'), 'SciencePage');
+const FaqPage = page(() => import('./pages/LearnPages'), 'FaqPage');
+const ArticlesPage = page(() => import('./pages/LearnPages'), 'ArticlesPage');
+const ArticlePage = page(() => import('./pages/LearnPages'), 'ArticlePage');
+const AccountPage = page(() => import('./pages/AccountPage'), 'AccountPage');
+const HistoryPage = page(() => import('./pages/HistoryPage'), 'HistoryPage');
+const HistoryDetailPage = page(() => import('./pages/HistoryDetailPage'), 'HistoryDetailPage');
+const AdminLayout = page(() => import('./pages/admin/AdminLayout'), 'AdminLayout');
+const AdminDashboard = page(() => import('./pages/admin/AdminDashboard'), 'AdminDashboard');
+const AdminUsers = page(() => import('./pages/admin/AdminUsers'), 'AdminUsers');
+const AdminAccess = page(() => import('./pages/admin/AdminAccess'), 'AdminAccess');
+const AdminAudit = page(() => import('./pages/admin/AdminAudit'), 'AdminAudit');
+const LoginPage = page(() => import('./pages/auth/LoginPage'), 'LoginPage');
+const RegisterPage = page(() => import('./pages/auth/RegisterPage'), 'RegisterPage');
+const InvitePage = page(() => import('./pages/auth/InvitePage'), 'InvitePage');
+const ResetPasswordPage = page(() => import('./pages/auth/ResetPasswordPage'), 'ResetPasswordPage');
+const Loading = () => <PageSpinner label="Loading…" />;
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -49,7 +60,9 @@ const SiteLayout: React.FC = () => {
       </a>
       <Navbar onOpenDisclaimer={() => setShowDisclaimer(true)} />
       <main id="main" className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
-        <Outlet />
+        <React.Suspense fallback={<Loading />}>
+          <Outlet />
+        </React.Suspense>
       </main>
       <Footer onOpenDisclaimer={() => setShowDisclaimer(true)} />
       <DisclaimerModal isOpen={showDisclaimer} onClose={() => setShowDisclaimer(false)} />
@@ -92,7 +105,7 @@ export const App: React.FC = () => {
               <Route path="articles/:slug" element={<ArticlePage />} />
               <Route path="history/:id" element={<RequireAuth><HistoryDetailPage /></RequireAuth>} />
               <Route path="account" element={<RequireAuth><AccountPage /></RequireAuth>} />
-              <Route path="admin" element={<RequireAuth roles={['admin', 'owner']}><AdminLayout /></RequireAuth>}>
+              <Route path="admin" element={<RequireAuth roles={['admin', 'owner']}><React.Suspense fallback={<Loading />}><AdminLayout /></React.Suspense></RequireAuth>}>
                 <Route index element={<AdminDashboard />} />
                 <Route path="users" element={<AdminUsers />} />
                 <Route path="access" element={<RequireAuth roles={['owner']}><AdminAccess /></RequireAuth>} />
@@ -100,10 +113,10 @@ export const App: React.FC = () => {
               </Route>
               <Route path="*" element={<NotFound />} />
             </Route>
-            <Route path="login" element={<LoginPage />} />
-            <Route path="register" element={<RegisterPage />} />
-            <Route path="invite/:token" element={<InvitePage />} />
-            <Route path="reset-password/:token" element={<ResetPasswordPage />} />
+            <Route path="login" element={<React.Suspense fallback={<Loading />}><LoginPage /></React.Suspense>} />
+            <Route path="register" element={<React.Suspense fallback={<Loading />}><RegisterPage /></React.Suspense>} />
+            <Route path="invite/:token" element={<React.Suspense fallback={<Loading />}><InvitePage /></React.Suspense>} />
+            <Route path="reset-password/:token" element={<React.Suspense fallback={<Loading />}><ResetPasswordPage /></React.Suspense>} />
           </Routes>
           <ServerWakeNotice />
         </AuthProvider>

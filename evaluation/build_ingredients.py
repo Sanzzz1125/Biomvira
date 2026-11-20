@@ -53,7 +53,7 @@ SEAFOOD_GROUPS = {"Marine Fish", "Fresh Water Fish and Shellfish", "Marine Shell
 ALLERGEN_CODES = {
     "nuts": {"H001", "H005", "H012", "H017", "H018", "H021", "T005"},  # almond, cashew, groundnut, pine, pistachio, walnut, groundnut oil
     "sesame": {"H009", "H010", "H011", "T004"},  # gingelly (sesame) seeds and oil
-    "mustard": {"H013", "T006"},
+    "mustard": {"H013", "T006", "C026"},  # seeds, oil, and the leaves (sarson ka saag): people avoiding mustard expect all three
     "dairy": {"L001", "L002", "L003", "L004", "T013"},  # milks, paneer, khoa, ghee
     "gluten": {"A004", "A018", "A019", "A020", "A021", "A022", "A023", "A024"},  # barley and all wheat products
     "soy": {"B024", "B025", "T011"},

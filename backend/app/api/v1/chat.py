@@ -7,7 +7,7 @@ the account deletes its chats (ON DELETE CASCADE).
 import re
 import uuid
 from datetime import datetime
-from typing import Any, List, Optional
+from typing import Annotated, Any, List, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Response
 from pydantic import BaseModel, Field
@@ -58,6 +58,8 @@ class ChatContext(BaseModel):
     plans: List[ChatPlan] = Field(default_factory=list, max_length=40)
     diet_type: Optional[str] = Field(default=None, max_length=20)
     allergens: List[str] = Field(default_factory=list, max_length=10)
+    custom_allergies: List[Annotated[str, Field(max_length=40)]] = Field(default_factory=list, max_length=20)
+    meats: List[Annotated[str, Field(max_length=20)]] = Field(default_factory=list, max_length=8)
     diet_plan: Optional[ChatDietPlan] = None
 
 
@@ -147,6 +149,8 @@ def _context_from_report(report: Report) -> dict[str, Any]:
                   for p in analysis.get("recommendations", [])],
         "diet_type": (analysis.get("user_profile") or {}).get("diet_type"),
         "allergens": (analysis.get("user_profile") or {}).get("allergens", []),
+        "custom_allergies": (analysis.get("user_profile") or {}).get("custom_allergies", []),
+        "meats": (analysis.get("user_profile") or {}).get("meats", []),
         "diet_plan": plan_summary(analysis.get("diet_plan")),
     }
 

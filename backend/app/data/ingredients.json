@@ -3822,7 +3822,9 @@
    },
    "diet": "vegan",
    "animal_source": "none",
-   "allergens": [],
+   "allergens": [
+    "mustard"
+   ],
    "yield_factor": 0.7667,
    "preparation": "Thicker stem removal, Washing",
    "usable_in_plans": true,

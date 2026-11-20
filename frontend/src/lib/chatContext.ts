@@ -15,6 +15,9 @@ export interface ChatContext {
   plans: { name: string; purpose: string; foods: string[] }[];
   diet_type: string;
   allergens: string[];
+  /** Allergies the person typed in ("peanut", "brinjal") and, for non-vegetarians, the meats they eat. */
+  custom_allergies: string[];
+  meats: string[];
   /** The 7-day plan on screen (or saved with the report): dish names per meal for each day. */
   diet_plan: { style: string; days: { kcal: number; meals: Record<string, string[]> }[] } | null;
   /** Set when the results belong to a saved report, so a signed-in user's chat can be linked to it. */
@@ -47,6 +50,8 @@ export function chatContextFromAnalysis(result: FullAnalysisResponse, reportId?:
     })),
     diet_type: result.user_profile.diet_type,
     allergens: result.user_profile.allergens,
+    custom_allergies: result.user_profile.custom_allergies ?? [],
+    meats: result.user_profile.meats ?? [],
     diet_plan: result.diet_plan?.days?.length
       ? {
           style: result.diet_plan.style,
@@ -76,6 +81,6 @@ export function useChatContext(): ChatContext | null {
 /** The part of the context the assistant API understands. */
 export function contextPayload(context: ChatContext | null) {
   if (!context) return null;
-  const { markers, plans, diet_type, allergens, diet_plan } = context;
-  return { markers, plans, diet_type, allergens, diet_plan };
+  const { markers, plans, diet_type, allergens, custom_allergies, meats, diet_plan } = context;
+  return { markers, plans, diet_type, allergens, custom_allergies, meats, diet_plan };
 }

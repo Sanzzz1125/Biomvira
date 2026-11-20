@@ -1,5 +1,6 @@
 import os
 import secrets
+from urllib.parse import urlsplit
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -47,8 +48,27 @@ UNSAFE_METHODS = {"POST", "PUT", "PATCH", "DELETE"}
 PRIVATE_PREFIXES = ("/api/v1/auth", "/api/v1/history", "/api/v1/admin")
 
 
+def _origin_allowed(request: Request) -> bool:
+    """Login CSRF guard: sign-in, registration and link forms may only come from our own site. Browsers always send
+    Origin on a cross-site POST; requests without one (curl, tests, server-to-server) carry no victim's cookies."""
+    origin = request.headers.get("origin")
+    if origin is None:
+        return True
+    host = urlsplit(origin).netloc.lower()
+    if not host:
+        return False  # "null" origin: sandboxed iframe or file
+    own = {request.headers.get("host", "").lower(), request.headers.get("x-forwarded-host", "").lower()}
+    trusted = {urlsplit(o.strip()).netloc.lower() for o in
+               (settings.trusted_origins + "," + settings.allowed_origins).split(",") if o.strip()}
+    return host in own | trusted
+
+
 @app.middleware("http")
 async def security_middleware(request: Request, call_next):
+    if (request.method in UNSAFE_METHODS and request.url.path.startswith("/api/v1/auth")
+            and not _origin_allowed(request)):
+        return JSONResponse({"detail": "Security check failed. Open NutriLens from its own address and try again."},
+                            status_code=403)
     # CSRF (double-submit): signed-in requests that change data must echo the CSRF cookie.
     if (request.method in UNSAFE_METHODS and request.url.path.startswith("/api/")
             and request.cookies.get(settings.session_cookie_name)):

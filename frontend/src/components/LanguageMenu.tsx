@@ -34,8 +34,8 @@ export const LanguageMenu: React.FC = () => {
         aria-label={`Language: ${current.label}`}
         className="flex h-9 items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 group-data-[floating=true]/header:border-slate-300/70 group-data-[floating=true]/header:bg-white/60 group-data-[floating=true]/header:text-black">
         <Languages className="h-4 w-4 text-brand-600" aria-hidden />
-        <span className="hidden sm:inline">{current.native}</span>
-        <span className="sm:hidden">{{ en: 'EN', hi: 'हि', te: 'తె' }[current.id]}</span>
+        <span className="hidden xl:inline">{current.native}</span>
+        <span className="xl:hidden">{{ en: 'EN', hi: 'हि', te: 'తె' }[current.id]}</span>
         <ChevronDown className={cx('h-3.5 w-3.5 text-slate-400 transition-transform', open && 'rotate-180')} aria-hidden />
       </button>
       {open && (

@@ -209,7 +209,10 @@ test('the application defaults to 25 and sends an edited age through analysis to
   try {
     window.history.pushState({}, '', '/analyze');  // the analyser has its own page; the home page links to it
     await act(() => root.render(React.createElement(App)));
-    const pasteTab = [...document.querySelectorAll('button')].find(el => el.textContent.includes('Paste text'));
+    // The analyser page loads on first visit (code splitting): wait for it like a user would.
+    const findPaste = () => [...document.querySelectorAll('button')].find(el => el.textContent.includes('Paste text'));
+    for (let i = 0; i < 100 && !findPaste(); i++) await act(() => new Promise(resolve => setTimeout(resolve, 20)));
+    const pasteTab = findPaste();
     await act(() => pasteTab.click());
     const textarea = document.getElementById('report-text');
     await act(() => {

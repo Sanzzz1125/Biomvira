@@ -4,7 +4,7 @@ from PIL import Image
 from reportlab.pdfgen import canvas
 from app.parsers import pdf_extractor as pdf
 from app.parsers.regex_matcher import extract_biomarkers_with_regex as parse
-from app.parsers.sanitizer import clinical_evidence_only
+from app.parsers.sanitizer import clinical_evidence_only, sanitize_report_text
 from app.api.v1 import extract
 from app.config import settings
 from app.engine.unit_converter import convert_to_canonical
@@ -100,7 +100,7 @@ def test_privacy():
 
 
 def test_ai_failure(monkeypatch):
-    def fail(text): raise ValueError('private')
+    def fail(*args): raise ValueError('private')
     monkeypatch.setattr(extract,'extract_with_gemini_fallback',fail)
     result=extract.process_report(None,'','','Vitamin D 12 ng/mL\nFolate unknown')
     # The optional AI helper failing is not the user's concern: local results stand and the message is plain.
@@ -125,11 +125,17 @@ def test_http_paste_and_invalid():
         assert response.status_code==422 and 'not a PDF' in response.json()['detail']
 
 
+# A row the rules cannot read: the value sits two lines below the test name, after personal details.
+MISSED = 'Patient Name: Secret Person\nVitamin D Total\nSecret Person Ref Dr Kumar\n12 ng/mL 30 - 100'
+
+
 @pytest.mark.parametrize('response,expected',[
     ('not json',0),
-    ('[{"biomarker_key":"potassium","detected_value":5,"detected_unit":"mmol/L"}]',0),
-    ('[{"biomarker_key":"vitamin_d","detected_value":99,"detected_unit":"ng/mL"}]',0),
-    ('[{"biomarker_key":"vitamin_d","detected_value":12,"detected_unit":"ng/mL"}]',1),
+    ('[{"biomarker_key":"potassium","detected_value":5,"detected_unit":"mmol/L"}]',0),   # not asked about
+    ('[{"biomarker_key":"vitamin_d","detected_value":99,"detected_unit":"ng/mL"}]',0),  # not on the row
+    ('[{"biomarker_key":"vitamin_d","detected_value":12,"detected_unit":"nmol/L"}]',0), # unit not on the row
+    ('[{"biomarker_key":"vitamin_d","detected_value":12,"detected_unit":"ng/mL","ref_low":30,"ref_high":100}]',1),
+    ('[{"biomarker_key":"vitamin_d","detected_value":12,"detected_unit":"ng/mL","ref_low":30,"ref_high":150}]',1),  # range dropped
     ('[{"biomarker_key":"vitamin_d","detected_value":"<12","detected_unit":"ng/mL"}]',0),
 ])
 def test_mock_gemini_grounding(monkeypatch,response,expected):
@@ -137,13 +143,39 @@ def test_mock_gemini_grounding(monkeypatch,response,expected):
     from google import genai
     from app.parsers.llm_fallback import extract_with_gemini_fallback
     def generate(**kwargs):
-        assert 'Secret' not in kwargs['contents']
+        assert 'Secret' not in kwargs['contents'] and 'Kumar' not in kwargs['contents']
+        assert 'vitamin_d: 12 ng/mL 30 - 100' in kwargs['contents']
         assert kwargs['config'].response_schema is not None
         return SimpleNamespace(text=response)
     monkeypatch.setattr(settings,'gemini_api_key','test-only')
     monkeypatch.setattr(genai,'Client',lambda **kw: SimpleNamespace(models=SimpleNamespace(generate_content=generate)))
-    result=extract_with_gemini_fallback('Patient Name: Secret Person\nVitamin D 12 ng/mL')
+    result=extract_with_gemini_fallback(sanitize_report_text(MISSED)[0])
     assert len(result)==expected
+    for marker in result:
+        assert marker.extraction_method=='llm_fallback' and marker.verification_status=='needs_review'
+        rng=marker.report_reference_range
+        assert (rng.low,rng.high)==(30,100) if '"ref_high":100' in response else rng is None
+
+
+def test_gemini_only_for_rows_the_rules_missed(monkeypatch):
+    from google import genai
+    calls=[]
+    monkeypatch.setattr(settings,'gemini_api_key','test-only')
+    monkeypatch.setattr(genai,'Client',lambda **kw: calls.append(kw))
+    from app.parsers.llm_fallback import extract_with_gemini_fallback
+    assert extract_with_gemini_fallback('Vitamin D 12 ng/mL 30-100')==[] and calls==[]  # read by the rules: not sent
+
+
+def test_recovered_row_reaches_review(monkeypatch):
+    from app.models.schemas import DetectedBiomarker
+    def recover(text, missing):
+        assert missing=={'vitamin_d'}
+        return [DetectedBiomarker(biomarker_key='vitamin_d',display_name='Vitamin D',detected_value=12,detected_unit='ng/mL',
+                                  canonical_value=12,canonical_unit='ng/mL',extraction_method='llm_fallback')]
+    monkeypatch.setattr(extract,'extract_with_gemini_fallback',recover)
+    result=extract.process_report(None,'','',MISSED)
+    assert [m.extraction_method for m in result.extracted_biomarkers]==['llm_fallback']
+    assert not any('could not be read' in w for w in result.warnings)
 
 
 def test_ocr_timeout(monkeypatch):

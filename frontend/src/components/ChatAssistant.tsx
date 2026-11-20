@@ -496,7 +496,7 @@ export const ChatAssistant: React.FC = () => {
         aria-expanded={open}
         aria-controls="nl-assistant"
         className={cx(
-          'fixed bottom-5 right-5 z-40 flex h-[52px] items-center gap-2.5 rounded-full bg-brand-600 pl-2 pr-5 text-[14.5px] font-semibold text-white shadow-[0_10px_24px_-6px_rgba(22,124,100,0.45),0_2px_6px_rgba(15,23,42,0.08)] transition hover:bg-brand-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-300',
+          'fixed bottom-4 right-4 z-40 flex h-[52px] items-center gap-2.5 rounded-full bg-brand-600 px-2 text-[14.5px] sm:bottom-5 sm:right-5 sm:pr-5 font-semibold text-white shadow-[0_10px_24px_-6px_rgba(22,124,100,0.45),0_2px_6px_rgba(15,23,42,0.08)] transition hover:bg-brand-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-300',
           open && 'max-sm:hidden'
         )}
       >
@@ -507,7 +507,8 @@ export const ChatAssistant: React.FC = () => {
             <MessageCircleQuestion className="h-[18px] w-[18px]" aria-hidden />
           )}
         </span>
-        {open ? 'Close' : 'Ask NutriLens'}
+        {/* Phones: icon only, so it never covers the page's own buttons. */}
+        <span className="sr-only sm:not-sr-only">{open ? 'Close' : 'Ask NutriLens'}</span>
       </button>
 
       {open && (

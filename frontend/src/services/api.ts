@@ -1,5 +1,6 @@
 import {
   ExtractionResponse, FullAnalysisResponse, MarkerInput, MealSlot, PlanDay, PlanStyle, ShoppingItem, UserProfile,
+  activityLevel,
 } from '../types';
 import { apiFetch, apiJson } from './http';
 import { currentLanguage } from '../lib/i18n';
@@ -129,7 +130,7 @@ const planBody = (input: PlanInput) => ({
     gender: input.profile.gender,
     height_cm: input.profile.height_cm,
     weight_kg: input.profile.weight_kg,
-    activity: input.profile.activity ?? 'none',
+    activity: activityLevel(input.profile.activity),
     diet_type: input.profile.diet_type,
     meats: input.profile.meats ?? [],
     allergens: input.profile.allergens,
@@ -177,4 +178,20 @@ export async function saveDietPlan(reportId: string, style: PlanStyle, days: Pla
 /** The same results in Hindi or Telugu; results are stored in English. */
 export async function localizeAnalysis(analysis: FullAnalysisResponse, lang: string): Promise<FullAnalysisResponse> {
   return apiJson<FullAnalysisResponse>(`/localize-analysis?lang=${lang}`, { method: 'POST', json: analysis });
+}
+
+
+export interface AllergyCheck {
+  text: string;
+  known: boolean;
+  groups: string[];
+  dishes_removed: number;
+  foods_removed: number;
+}
+
+/** What each typed allergy was understood as, and how many dishes and foods it leaves out. */
+export async function checkAllergies(words: string[]): Promise<AllergyCheck[]> {
+  if (!words.length) return [];
+  const r = await apiJson<{ results: AllergyCheck[] }>('/diet-plan/allergy-check', { method: 'POST', json: { words } });
+  return r.results;
 }

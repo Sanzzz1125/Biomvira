@@ -15,6 +15,7 @@ Pipeline for each message:
 """
 from __future__ import annotations
 
+import contextvars
 import difflib
 import math
 import re
@@ -663,8 +664,17 @@ def plan_for(key: str, direction: Optional[str]) -> Optional[str]:
     return None
 
 
+# Meats a non-vegetarian picked on the profile page, for the question being answered (set in answer()).
+_MEATS: contextvars.ContextVar[tuple] = contextvars.ContextVar("meats", default=())
+ALLERGEN_GROUPS = {"dairy", "gluten", "nuts", "soy", "eggs", "seafood", "sesame", "mustard"}
+
+
 def ranked_foods(plan: str, diet: str, allergens: list[str], limit: int = 6) -> list[dict]:
-    foods = ENGINE.filter_foods(UserProfile(diet_type=DietType(diet), allergens=allergens))
+    """allergens holds allergy groups and, from the person's profile, typed allergies ("peanut", "brinjal")."""
+    groups = [a for a in allergens if a in ALLERGEN_GROUPS]
+    typed = [a for a in allergens if a not in ALLERGEN_GROUPS]
+    foods = ENGINE.filter_foods(UserProfile(diet_type=DietType(diet), allergens=groups, custom_allergies=typed[:20],
+                                            meats=list(_MEATS.get())[:8]))
     if plan in TAG_PROFILES:
         ranked = ENGINE.rank_by_tags(foods, plan)
     elif plan.startswith("tag:"):
@@ -1011,7 +1021,7 @@ def personal_normal(context: dict) -> Reply:
 def personal_avoid(context: dict) -> Optional[Reply]:
     """Foods to limit for this person's out-of-range results (the same rules as their food plan)."""
     diet = context.get("diet_type") if context.get("diet_type") in DIET_LABEL else None
-    allergens = [a.lower() for a in context.get("allergens") or []]
+    allergens = [a.lower() for a in (context.get("allergens") or []) + (context.get("custom_allergies") or [])]
     parts, seen = [], set()
     for m in context.get("markers") or []:
         status = (m.get("status") or "").lower()
@@ -1246,6 +1256,14 @@ def find_entities(text: str) -> list[tuple[str, str]]:
 
 
 def answer(message: str, topic: Optional[str] = None, context: Optional[dict] = None) -> Reply:
+    token = _MEATS.set(tuple((context or {}).get("meats") or ()))
+    try:
+        return _answer(message, topic, context)
+    finally:
+        _MEATS.reset(token)
+
+
+def _answer(message: str, topic: Optional[str] = None, context: Optional[dict] = None) -> Reply:
     raw = (message or "").strip()
     if not raw:
         return Reply("Please type a question, for example: \"What foods help with low vitamin D?\"", kind="fallback",
@@ -1253,8 +1271,9 @@ def answer(message: str, topic: Optional[str] = None, context: Optional[dict] = 
     raw = raw[:500]
     text = clean(raw)
     allergens, text_for_foods = detect_allergens(text)
-    if context and context.get("allergens"):
-        allergens = sorted(set(allergens) | {a.lower() for a in context["allergens"]})
+    if context and (context.get("allergens") or context.get("custom_allergies")):
+        allergens = sorted(set(allergens) | {a.lower() for a in (context.get("allergens") or [])
+                                             + (context.get("custom_allergies") or [])})
     diet = detect_diet(text) or (context.get("diet_type") if context else None)
     if diet not in DIET_LABEL:
         diet = None

@@ -1,8 +1,8 @@
 import { LanguageMenu } from './LanguageMenu';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { useLanguage } from '../lib/i18n';
-import { House, BookOpen, ChevronDown, FlaskConical, History, LayoutDashboard, LogOut, ScanLine, Settings, ShieldCheck } from 'lucide-react';
+import { LANGUAGES, setLanguage, useLanguage } from '../lib/i18n';
+import { House, BookOpen, ChevronDown, CircleHelp, FlaskConical, History, LayoutDashboard, LogOut, Menu, ScanLine, Settings, ShieldCheck, X } from 'lucide-react';
 import { useAuth, wasSignedIn } from '../auth/AuthContext';
 import { Avatar, Logo, RoleBadge, Skeleton, toTopIfHere } from './brand';
 import { useToast } from './Toast';
@@ -25,7 +25,7 @@ const FLOATING_STYLE: keyof typeof FLOATING = 'tinted';
 
 const navClass = ({ isActive }: { isActive: boolean }) =>
   cx(
-    'flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+    'flex items-center gap-2 whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium transition-colors xl:px-3',
     isActive ? 'bg-brand-50 text-brand-700 group-data-[floating=true]/header:bg-brand-600/10 group-data-[floating=true]/header:text-brand-900'
       : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 group-data-[floating=true]/header:text-black group-data-[floating=true]/header:hover:bg-white/70'
   );
@@ -73,7 +73,7 @@ const UserMenu: React.FC = () => {
         className="flex items-center gap-2 rounded-full py-1 pl-1 pr-2 transition-colors hover:bg-slate-100"
       >
         <Avatar name={user.name} />
-        <span className="hidden max-w-[140px] truncate text-sm font-medium text-slate-800 md:inline">
+        <span className="hidden max-w-[140px] truncate text-sm font-medium text-slate-800 xl:inline">
           {user.name.split(' ')[0]}
         </span>
         <ChevronDown className={cx('h-4 w-4 text-slate-500 transition-transform', open && 'rotate-180')} aria-hidden />
@@ -128,8 +128,95 @@ const UserMenu: React.FC = () => {
   );
 };
 
+/** Phones and tablets: every link, the language, safety and the account in one panel under the header. */
+const MobileMenu: React.FC<{ links: { to: string; label: string; icon: React.ElementType; end: boolean }[];
+  onOpenDisclaimer: () => void }> = ({ links, onOpenDisclaimer }) => {
+  const { user, isStaff, logout } = useAuth();
+  const { notify } = useToast();
+  const language = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => setOpen(false), [location.pathname]);
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: MouseEvent | KeyboardEvent) => {
+      if (e instanceof KeyboardEvent ? e.key === 'Escape' : !ref.current?.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', close);
+    document.addEventListener('keydown', close);
+    return () => {
+      document.removeEventListener('mousedown', close);
+      document.removeEventListener('keydown', close);
+    };
+  }, [open]);
+  const row = 'flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-[15px] font-medium text-slate-700 transition-colors hover:bg-slate-100';
+  const all = [...links, { to: '/science', label: 'Science', icon: FlaskConical, end: false },
+    { to: '/articles', label: 'Articles', icon: BookOpen, end: false }, { to: '/faq', label: 'FAQ', icon: CircleHelp, end: false }];
+  return (
+    <div ref={ref} className="lg:hidden">
+      <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} aria-controls="site-menu"
+        aria-label={open ? 'Close menu' : 'Open menu'}
+        className="flex h-9 w-9 items-center justify-center rounded-lg text-slate-700 transition-colors hover:bg-slate-100 group-data-[floating=true]/header:text-black">
+        {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+      </button>
+      {open && (
+        <div id="site-menu" className="absolute inset-x-0 top-full z-50 mt-2 max-h-[calc(100dvh-5.5rem)] overflow-y-auto rounded-2xl border border-slate-200 bg-white p-2 shadow-card-lg animate-fade-in">
+          {user && (
+            <div className="flex items-center gap-3 px-3 pb-3 pt-2">
+              <Avatar name={user.name} size="lg" />
+              <div className="min-w-0">
+                <p className="truncate text-sm font-semibold text-slate-900">{user.name}</p>
+                <p className="truncate text-xs text-slate-500">{user.email}</p>
+              </div>
+            </div>
+          )}
+          <nav aria-label="Menu" className="grid gap-0.5">
+            {all.map(({ to, label, icon: Icon, end }) => (
+              <NavLink key={to} to={to} end={end} onClick={toTopIfHere(to)}
+                className={({ isActive }) => cx(row, isActive && 'bg-brand-50 text-brand-700')}>
+                <Icon className="h-[18px] w-[18px]" aria-hidden /> {label}
+              </NavLink>
+            ))}
+            <button type="button" className={row} onClick={() => { setOpen(false); onOpenDisclaimer(); }}>
+              <ShieldCheck className="h-[18px] w-[18px] text-brand-600" aria-hidden /> Safety &amp; privacy
+            </button>
+          </nav>
+          <div className="my-2 h-px bg-slate-100" />
+          <div className="grid grid-cols-3 gap-1.5 px-1" role="radiogroup" aria-label="Language" translate="no">
+            {LANGUAGES.map((l) => (
+              <button key={l.id} type="button" role="radio" aria-checked={l.id === language} onClick={() => setLanguage(l.id)}
+                className={cx('rounded-lg border px-2 py-2 text-sm font-medium transition-colors',
+                  l.id === language ? 'border-brand-600 bg-brand-50 text-brand-700' : 'border-slate-200 text-slate-700 hover:bg-slate-50')}>
+                {l.native}
+              </button>
+            ))}
+          </div>
+          <div className="my-2 h-px bg-slate-100" />
+          {user ? (
+            <div className="grid gap-0.5">
+              <Link to="/account" className={row}><Settings className="h-[18px] w-[18px] text-slate-500" aria-hidden /> Account settings</Link>
+              {isStaff && <Link to="/admin" className={row}><LayoutDashboard className="h-[18px] w-[18px] text-slate-500" aria-hidden /> Admin portal</Link>}
+              <button type="button" className={cx(row, 'text-red-600 hover:bg-red-50')}
+                onClick={async () => { setOpen(false); navigate('/', { replace: true }); await logout(); notify('info', 'You have been logged out'); }}>
+                <LogOut className="h-[18px] w-[18px]" aria-hidden /> Log out
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 gap-2 p-1">
+              <Link to="/login" className="flex h-10 items-center justify-center rounded-lg border border-slate-300 text-sm font-semibold text-slate-800 hover:bg-slate-50">Log in</Link>
+              <Link to="/register" className="flex h-10 items-center justify-center rounded-lg bg-brand-600 text-sm font-semibold text-white hover:bg-brand-700">Get started</Link>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
 export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
-  const { user, ready, isStaff } = useAuth();
+  const { user, ready } = useAuth();
   const [scrolled, setScrolled] = React.useState(false);
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -137,7 +224,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
-  const language = useLanguage();
   const links = [
     { to: '/', label: 'Home', icon: House, end: true },
     { to: '/analyze', label: 'Analyze', icon: ScanLine, end: false },
@@ -146,23 +232,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
   ];
 
   return (
-    <header data-floating={scrolled} className={cx('group/header sticky top-0 z-40 transition-[padding,background-color,border-color] duration-300',
+    <header data-floating={scrolled} className={cx('group/header sticky top-0 z-50 transition-[padding,background-color,border-color] duration-300',
       scrolled ? 'border-b border-transparent px-2 pt-2 sm:px-4 sm:pt-3 lg:px-6' : 'border-b border-slate-200/80 bg-white/85 backdrop-blur-md')}>
-      <div className={cx('mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 transition-[height,border-radius,box-shadow,background-color] duration-300 sm:px-6 lg:px-8',
+      <div className={cx('relative mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 transition-[height,border-radius,box-shadow,background-color] duration-300 sm:px-6 lg:px-8',
         scrolled ? FLOATING[FLOATING_STYLE] : 'h-16')}>
-        <div className="flex items-center gap-8">
+        <div className="flex min-w-0 items-center gap-6 xl:gap-8">
           <Logo />
-          <nav aria-label="Primary" className="hidden items-center gap-1 sm:flex">
+          {/* Laptops and desktops: the links in the bar (icons and the learn pages from 1280 px, where they fit). */}
+          <nav aria-label="Primary" className="hidden items-center gap-0.5 lg:flex">
             {links.map(({ to, label, icon: Icon, end }) => (
               <NavLink key={to} to={to} end={end} className={navClass} onClick={toTopIfHere(to)}>
-                <Icon className="h-4 w-4" aria-hidden />
+                <Icon className="hidden h-4 w-4 xl:block" aria-hidden />
                 {label}
               </NavLink>
             ))}
             {[{ to: '/science', label: 'Science', icon: FlaskConical }, { to: '/articles', label: 'Articles', icon: BookOpen }].map(
               ({ to, label, icon: Icon }) => (
-                <NavLink key={to} to={to} className={(p) => `${navClass(p)} hidden lg:flex`}>
-                  <Icon className="h-4 w-4" aria-hidden />
+                <NavLink key={to} to={to} className={navClass}>
+                  <Icon className="hidden h-4 w-4 xl:block" aria-hidden />
                   {label}
                 </NavLink>
               )
@@ -170,55 +257,42 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
           </nav>
         </div>
 
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          <nav aria-label="Primary mobile" className="flex items-center gap-1 sm:hidden">
-            {links.map(({ to, label, icon: Icon, end }) => (
-              <NavLink key={to} to={to} end={end} aria-label={label} className={iconNavClass} onClick={toTopIfHere(to)}>
-                <Icon className="h-[18px] w-[18px]" aria-hidden />
-              </NavLink>
-            ))}
-          </nav>
-
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <button
             type="button"
             onClick={onOpenDisclaimer}
-            className="hidden h-9 items-center gap-2 rounded-lg px-2.5 sm:flex text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 group-data-[floating=true]/header:text-black group-data-[floating=true]/header:hover:bg-white/70"
+            className="hidden h-9 items-center gap-2 rounded-lg px-2.5 lg:flex text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 group-data-[floating=true]/header:text-black group-data-[floating=true]/header:hover:bg-white/70"
           >
             <ShieldCheck className="h-4 w-4 text-brand-600" aria-hidden />
-            <span className="hidden lg:inline">Safety &amp; privacy</span>
-            <span className="sr-only lg:hidden">Safety and privacy</span>
+            <span className="hidden whitespace-nowrap xl:inline">Safety &amp; privacy</span>
+            <span className="sr-only xl:hidden">Safety and privacy</span>
           </button>
 
-          <LanguageMenu />
+          <div className="hidden sm:block"><LanguageMenu /></div>
 
-          <span className="mx-1 hidden h-6 w-px bg-slate-200 sm:block" aria-hidden />
+          <span className="mx-1 hidden h-6 w-px bg-slate-200 lg:block" aria-hidden />
 
           {!ready && wasSignedIn() ? (
             <Skeleton className="h-8 w-8 rounded-full" />
           ) : user ? (
-            <UserMenu />
+            <div className="hidden lg:block"><UserMenu /></div>
           ) : (
             <div className="flex items-center gap-1.5">
               <Link
                 to="/login"
-                className="hidden h-9 items-center rounded-lg px-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 sm:flex group-data-[floating=true]/header:text-black group-data-[floating=true]/header:hover:bg-white/70"
+                className="flex h-9 items-center whitespace-nowrap rounded-lg bg-brand-600 px-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 lg:bg-transparent lg:text-slate-700 lg:shadow-none lg:hover:bg-slate-100 lg:group-data-[floating=true]/header:text-black lg:group-data-[floating=true]/header:hover:bg-white/70"
               >
                 Log in
               </Link>
               <Link
                 to="/register"
-                className="hidden h-9 items-center rounded-lg bg-brand-600 px-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:flex"
+                className="hidden h-9 items-center whitespace-nowrap rounded-lg bg-brand-600 px-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 lg:flex"
               >
                 Get started
               </Link>
-              <Link
-                to="/login"
-                className="flex h-9 items-center whitespace-nowrap rounded-lg bg-brand-600 px-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 sm:hidden"
-              >
-                Log in
-              </Link>
             </div>
           )}
+          <MobileMenu links={links} onOpenDisclaimer={onOpenDisclaimer} />
         </div>
       </div>
     </header>

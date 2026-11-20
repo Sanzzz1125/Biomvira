@@ -59,6 +59,8 @@ class Settings(BaseSettings):
     # Comma-separated list of allowed origins. In production the frontend reaches the API through
     # Vercel's /api rewrite (same origin), so CORS is only needed for local tooling.
     allowed_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
+    # Sites allowed to send sign-in and registration forms (the API's own host is always allowed).
+    trusted_origins: str = "https://nutrilens-sand.vercel.app"
 
     # --- PDF Export ---
     pdf_brand_color: str = "#2563EB"

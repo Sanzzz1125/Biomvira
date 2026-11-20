@@ -11,33 +11,22 @@ from pydantic import BaseModel
 from typing import Literal
 
 class AIResult(BaseModel):
-    biomarker_key: Literal["vitamin_d", "vitamin_b12", "folate", "ferritin", "hemoglobin", "calcium"]
+    biomarker_key: str
     detected_value: float
     detected_unit: str
     ref_low: Optional[float] = None
     ref_high: Optional[float] = None
 
-SYSTEM_PROMPT = """You are an expert diagnostic laboratory data extractor.
-Your task is to extract exact biomarker test results from sanitized blood report text.
-Target biomarkers:
-1. vitamin_d (Vitamin D, 25-OH Vitamin D)
-2. vitamin_b12 (Vitamin B12, Cobalamin)
-3. folate (Folate, Folic acid, Vitamin B9)
-4. ferritin (Serum Ferritin)
-5. hemoglobin (Hemoglobin, Hb)
-6. calcium (Calcium, Total Calcium)
 
-Return ONLY a raw JSON array of objects without any markdown formatting or code blocks.
-Each object must contain:
-- biomarker_key: exactly one of: "vitamin_d", "vitamin_b12", "folate", "ferritin", "hemoglobin", "calcium"
-- detected_value: float or string containing the number
-- detected_unit: string (e.g., "ng/mL", "pg/mL", "g/dL", "mg/dL", "nmol/L", "pmol/L")
-- ref_low: float or null
-- ref_high: float or null
-- confidence: float between 0.0 and 1.0
-
-Do NOT fabricate values. If a biomarker is not mentioned in the text, omit it entirely.
+SYSTEM_PROMPT = """You read laboratory test rows that a rule-based reader could not parse.
+Each input line starts with a test key, followed by the numbers, units and range tokens from that row of the report
+(everything else on the row was removed for privacy).
+For each line, return the result value, its unit and the reference range if one is printed.
+Return ONLY a JSON array of objects with: biomarker_key (exactly the key given at the start of the line),
+detected_value (number), detected_unit (string, as printed), ref_low (number or null), ref_high (number or null).
+Never invent a number: use only numbers present on that line. If the value is not clear, leave that test out.
 """
+
 
 def _resolve_biomarker_key(raw_key: str) -> Optional[str]:
     """Resolves an LLM-provided key or alias to a canonical biomarker key."""
@@ -159,15 +148,61 @@ def parse_llm_json_response(raw_text: str) -> List[DetectedBiomarker]:
 
     return results
 
-def extract_with_gemini_fallback(sanitized_text: str) -> List[DetectedBiomarker]:
+_NUMBER = re.compile(r"^[<>≤≥]?\d+(?:[.,]\d+)*$")
+_RANGE_WORDS = {"-", "–", "—", "to", "<", ">", "≤", "≥", "upto", "up"}
+
+
+def _units() -> set:
+    units = {"%", "fl", "pg", "iu", "mm/hr", "lakh", "lakhs", "million", "thousand", "cells/cumm", "/cumm", "x10^3/ul"}
+    for cfg in BIOMARKERS_CONFIG.values():
+        for unit in [cfg.get("canonical_unit", "")] + list(cfg.get("alternate_units", [])):
+            if unit:
+                units.add(unit.lower())
+    return units
+
+
+def missed_rows(sanitized_text: str, keys: set) -> Dict[str, str]:
+    """For each test named on a row whose value the rules could not read: that row (and the next lines up to the
+    next test) reduced to clinical tokens only - numbers, units and range words. Names, addresses and any other words
+    are dropped, so nothing personal can reach the AI helper."""
+    from app.parsers.regex_matcher import aliases
+    units = _units()
+    lines = [l.strip() for l in sanitized_text.splitlines() if l.strip() and not l.startswith("[[PAGE")]
+    rows: Dict[str, str] = {}
+    for i, line in enumerate(lines):
+        for key, match in aliases(line):
+            if key not in keys or key in rows or match.start() > 30:
+                continue
+            window = [line[match.end():]]
+            for nxt in lines[i + 1:i + 3]:
+                if aliases(nxt):
+                    break  # the next test's row
+                window.append(nxt)
+            tokens = []
+            for token in re.split(r"\s+", " ".join(window).replace("(", " ").replace(")", " ")):
+                t = token.strip(":;,")
+                if _NUMBER.match(t) or t.lower() in units or t.lower() in _RANGE_WORDS:
+                    tokens.append(t)
+            if any(_NUMBER.match(t) for t in tokens):
+                rows[key] = f"{key}: {' '.join(tokens)}"
+    return rows
+
+
+def _numbers(row: str) -> set:
+    return {float(t.lstrip("<>≤≥").replace(",", "")) for t in row.split() if _NUMBER.match(t)}
+
+
+def extract_with_gemini_fallback(sanitized_text: str, missing: Optional[set] = None) -> List[DetectedBiomarker]:
+    """Ask Gemini to read rows the rules missed (tests named on the report whose value could not be read).
+
+    Gemini sees only those rows, reduced to clinical tokens. A value is kept only if it is a number printed on that
+    test's own row and its unit is recognised; it is always marked for the person to check before analysis.
     """
-    Fallback extraction using Gemini API for ambiguous, noisy, or multi-column layouts.
-    Uses settings.gemini_model and settings.gemini_api_key.
-    """
-    from app.parsers.sanitizer import clinical_evidence_only
-    from app.parsers.regex_matcher import extract_biomarkers_with_regex
-    evidence = clinical_evidence_only(sanitized_text)
-    if not evidence:
+    from app.parsers.regex_matcher import extract_biomarkers_with_regex, found_keys, mentioned_keys
+    if missing is None:
+        missing = mentioned_keys(sanitized_text) - found_keys(extract_biomarkers_with_regex(sanitized_text))
+    rows = missed_rows(sanitized_text, set(missing))
+    if not rows:
         return []
     api_key = settings.gemini_api_key or os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
@@ -181,26 +216,29 @@ def extract_with_gemini_fallback(sanitized_text: str) -> List[DetectedBiomarker]
         client = genai.Client(api_key=api_key, http_options={"timeout": settings.gemini_timeout_ms})
         response = client.models.generate_content(
             model=model_name,
-            contents=f"{SYSTEM_PROMPT}\n\nReport Text:\n{evidence}",
+            contents=f"{SYSTEM_PROMPT}\n\nRows:\n" + "\n".join(rows.values()),
             config=types.GenerateContentConfig(
                 response_mime_type="application/json",
                 response_schema=list[AIResult]
             )
         )
-
         if not response or not response.text:
             return []
-
-        candidates = parse_llm_json_response(response.text)
-        grounded = extract_biomarkers_with_regex(sanitized_text)
         accepted = []
-        for candidate in candidates:
-            source = next((m for m in grounded if m.biomarker_key == candidate.biomarker_key
-                           and m.canonical_value == candidate.canonical_value
-                           and not m.qualifier and not m.warnings), None)
-            if source:
-                accepted.append(source.model_copy(update={"extraction_method": "llm_fallback"}))
+        for candidate in parse_llm_json_response(response.text):
+            row = rows.get(candidate.biomarker_key)
+            if row is None or candidate.detected_value not in _numbers(row):
+                continue  # only tests we asked about, and only numbers printed on their own row
+            if candidate.detected_unit.lower() not in {t.lower() for t in row.split()}:
+                continue  # the unit must be printed on the row too
+            rng = candidate.report_reference_range
+            if rng and not ({rng.low, rng.high} <= _numbers(row)):
+                rng = None
+            if any(m.biomarker_key == candidate.biomarker_key for m in accepted):
+                continue
+            accepted.append(candidate.model_copy(update={
+                "report_reference_range": rng, "extraction_method": "llm_fallback", "verification_status": "needs_review",
+                "warnings": ["Read by the AI helper from a row the rules could not read. Check it against your report."]}))
         return accepted
     except Exception:
         raise ValueError("Gemini is unavailable or returned an invalid response.") from None
-

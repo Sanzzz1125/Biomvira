@@ -44,7 +44,7 @@ export const RangeSliderBar: React.FC<RangeSliderBarProps> = ({ analysis }) => {
   })();
 
   return (
-    <Card className="p-5 transition-shadow hover:shadow-card-lg">
+    <Card className="min-w-0 p-5 transition-shadow hover:shadow-card-lg">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <h4 className="truncate text-[15px] font-semibold text-slate-900">{display_name}</h4>
@@ -99,7 +99,7 @@ export const RangeSliderBar: React.FC<RangeSliderBarProps> = ({ analysis }) => {
         </div>
       </div>
 
-      <p className="mt-3 flex items-center justify-between border-t border-slate-100 pt-3 text-xs text-slate-500">
+      <p className="mt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-slate-100 pt-3 text-xs text-slate-500">
         <span>
           Healthy range{' '}
           <span className="font-medium text-slate-700 tabular-nums">
