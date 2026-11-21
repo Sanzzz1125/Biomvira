@@ -159,6 +159,10 @@ export async function planSwap(input: PlanInput, day: PlanDay, slot: MealSlot, d
   });
 }
 
+export async function getShoppingList(days: PlanDay[]): Promise<{ shopping_list: ShoppingItem[] }> {
+  return apiJson('/diet-plan/shopping-list', { method: 'POST', json: { days }, signal: AbortSignal.timeout(PLAN_TIMEOUT) });
+}
+
 export async function downloadDietPlanPdf(days: PlanDay[], shopping: ShoppingItem[]): Promise<void> {
   const response = await apiFetch(`/diet-plan/pdf?lang=${currentLanguage()}`, { method: 'POST', json: { days, shopping_list: shopping } });
   const url = window.URL.createObjectURL(await response.blob());

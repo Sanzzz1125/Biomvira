@@ -30,7 +30,7 @@ def _ask_password() -> str:
         return password
 
 
-def create_owner(email: str, name: str) -> int:
+def create_owner(email: str, name: str, password: str | None = None) -> int:
     email = normalize_email(email)
     with SessionLocal() as db:
         owner = db.query(User).filter_by(role=ROLE_OWNER).first()
@@ -42,10 +42,24 @@ def create_owner(email: str, name: str) -> int:
         if user is not None:
             user.role = ROLE_OWNER
             user.status = STATUS_ACTIVE
-            print(f"Existing account {email} is now the owner (password unchanged).")
+            if password is not None:
+                prob = password_problem(password)
+                if prob:
+                    print(f"Error: {prob}")
+                    return 1
+                user.password_hash = hash_password(password)
+            print(f"Existing account {email} is now the owner.")
         else:
+            if password is None:
+                pwd = _ask_password()
+            else:
+                prob = password_problem(password)
+                if prob:
+                    print(f"Error: {prob}")
+                    return 1
+                pwd = password
             user = User(email=email, name=name.strip() or "Owner",
-                        password_hash=hash_password(_ask_password()), role=ROLE_OWNER)
+                        password_hash=hash_password(pwd), role=ROLE_OWNER)
             db.add(user)
             db.flush()
             print(f"Owner account created for {email}.")
@@ -54,14 +68,22 @@ def create_owner(email: str, name: str) -> int:
     return 0
 
 
-def set_password(email: str) -> int:
+def set_password(email: str, password: str | None = None) -> int:
     email = normalize_email(email)
     with SessionLocal() as db:
         user = db.query(User).filter_by(email=email).first()
         if user is None:
             print(f"No account found for {email}.")
             return 1
-        user.password_hash = hash_password(_ask_password())
+        if password is None:
+            pwd = _ask_password()
+        else:
+            prob = password_problem(password)
+            if prob:
+                print(f"Error: {prob}")
+                return 1
+            pwd = password
+        user.password_hash = hash_password(pwd)
         user.failed_logins = 0
         user.locked_until = None
         revoke_sessions(db, user.id)
@@ -77,14 +99,16 @@ def main(argv: list[str] | None = None) -> int:
     owner = sub.add_parser("create-owner", help="Create the single owner account")
     owner.add_argument("--email", required=True)
     owner.add_argument("--name", default="Owner")
+    owner.add_argument("--password", default=None, help="Password (prompts if omitted)")
     reset = sub.add_parser("set-password", help="Set a new password for any account")
     reset.add_argument("--email", required=True)
+    reset.add_argument("--password", default=None, help="Password (prompts if omitted)")
     args = parser.parse_args(argv)
 
     run_migrations()
     if args.command == "create-owner":
-        return create_owner(args.email, args.name)
-    return set_password(args.email)
+        return create_owner(args.email, args.name, args.password)
+    return set_password(args.email, args.password)
 
 
 if __name__ == "__main__":

@@ -40,42 +40,45 @@ class RuleEngine:
         borderline_band = target_interval.get("borderline", {})
         high_band = target_interval.get("high", {})
 
-        range_low = marker.reference_low
-        range_high = marker.reference_high
+        raw_low = marker.reference_low
+        raw_high = marker.reference_high
+        lab_low, lab_high = None, None
 
-        # Markers whose printed reference text is a multi-band table (lipids) or follows a guideline (blood sugar)
-        # are judged against the standard bands; the others prefer the range printed on the report.
-        # A one-sided printed range ("< 5", "> 60") is completed with 0 or the standard upper limit.
-        has_custom_report_range = (bio_info.get("use_report_range", True)
-                                   and (range_low is not None or range_high is not None))
+        if raw_low is not None:
+            lab_low, _ = convert_to_canonical(marker.biomarker_key, raw_low, marker.unit)
+        if raw_high is not None:
+            lab_high, _ = convert_to_canonical(marker.biomarker_key, raw_high, marker.unit)
 
-        if not has_custom_report_range:
+        # Retain reporting lab interval when provided
+        has_custom_report_range = (lab_low is not None or lab_high is not None)
+
+        if has_custom_report_range:
+            range_low = lab_low if lab_low is not None else 0.0
+            range_high = lab_high if lab_high is not None else max(normal_band.get("max", range_low), range_low)
+        else:
             range_low = normal_band.get("min", 0.0)
             range_high = normal_band.get("max", 100.0)
-        else:
-            # Normalize report ranges if passed in alternate units
-            if range_low is not None:
-                range_low, _ = convert_to_canonical(marker.biomarker_key, range_low, marker.unit)
-            if range_high is not None:
-                range_high, _ = convert_to_canonical(marker.biomarker_key, range_high, marker.unit)
-            if range_low is None:
-                range_low = 0.0
-            if range_high is None:
-                range_high = max(normal_band.get("max", range_low), range_low)
+
+        # Guideline metadata (kept separate and traceable from laboratory intervals)
+        guideline = bio_info.get("clinical_guideline") or {}
+        guideline_threshold = guideline.get("threshold")
+        guideline_source = guideline.get("source")
 
         # 2. Status Classification
         status = MarkerStatus.NORMAL
         if direction == "higher_is_worse":
-            # Lower values are better: normal up to a ceiling, then borderline, then high.
+            normal_floor = normal_band.get("min", 0.0)
             high_cut = high_band.get("min", range_high)
-            if range_low > 0 and canonical_val < range_low:
+            guideline_normal_max = normal_band.get("max", range_high)
+
+            if normal_floor > 0 and canonical_val < normal_floor:
                 status = MarkerStatus.LOW
-            elif canonical_val <= range_high:
-                status = MarkerStatus.NORMAL
-            elif canonical_val < high_cut:
-                status = MarkerStatus.BORDERLINE
-            else:
+            elif canonical_val >= high_cut:
                 status = MarkerStatus.HIGH
+            elif canonical_val <= guideline_normal_max and canonical_val <= range_high:
+                status = MarkerStatus.NORMAL
+            else:
+                status = MarkerStatus.BORDERLINE
         elif direction == "two_sided":
             if canonical_val < range_low:
                 status = MarkerStatus.LOW
@@ -145,5 +148,9 @@ class RuleEngine:
             range_high=round(self._display_ceiling(range_high), 2),
             percentage_of_optimal=pct,
             clinical_warning=clinical_warning,
-            target_nutrient_key=food_plan_on.get(status.value) or bio_info.get("target_nutrient_key") or ""
+            target_nutrient_key=food_plan_on.get(status.value) or bio_info.get("target_nutrient_key") or "",
+            lab_range_low=round(lab_low, 2) if lab_low is not None else None,
+            lab_range_high=round(self._display_ceiling(lab_high), 2) if lab_high is not None else None,
+            guideline_threshold=guideline_threshold,
+            guideline_source=guideline_source,
         )

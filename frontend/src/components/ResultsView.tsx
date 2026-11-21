@@ -234,6 +234,19 @@ export const ResultsView: React.FC<ResultsViewProps> = ({
         </Alert>
       )}
 
+      {!!result.allergy_conflicts?.length && (
+        <Alert tone="warning" title={t('conflictTitle')}>
+          <p>{t('conflictText')}</p>
+          <ul className="mt-2 list-disc space-y-0.5 pl-5">
+            {result.allergy_conflicts.map((name) => <li key={name}>{name}</li>)}
+          </ul>
+          <Button size="sm" variant="secondary" className="mt-3"
+            onClick={() => { setRebuildToken((n) => n + 1); openTab('plan'); }}>
+            {t('conflictRebuild')}
+          </Button>
+        </Alert>
+      )}
+
       {/* The diet plan is the main result; test details and foods are one tap away. */}
       <div ref={tabsRef} aria-hidden className="-mb-8 h-0" />
       <div className="sticky top-[76px] z-20 -mx-4 scroll-mt-16 border-b border-slate-200 bg-white/95 px-4 backdrop-blur sm:mx-0 sm:rounded-2xl sm:border sm:px-2">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowLeft, BookmarkCheck, CalendarDays, Check, Download, Loader2, RefreshCw, ShoppingBasket, Sparkles } from 'lucide-react';
-import { downloadDietPlanPdf, planOptions, planSwap, planWeek, PlanInput, PlanMarker, saveDietPlan } from '../services/api';
+import { downloadDietPlanPdf, getShoppingList, planOptions, planSwap, planWeek, PlanInput, PlanMarker, saveDietPlan } from '../services/api';
 import { FullAnalysisResponse, MealSlot, PlanDay, PlanStyle, ShoppingItem, UserProfile } from '../types';
 import { Alert, Badge, Button, Card, cx } from './ui';
 import { localizeWords, StringKey, useLanguage, useT } from '../lib/i18n';
@@ -68,7 +68,9 @@ const Totals: React.FC<{ day: PlanDay }> = ({ day }) => {
   const tr = useT();
   const t = day.targets;
   const watched = t.low.length ? t.low : ['iron_mg', 'calcium_mg'];
+  const short = Object.entries(day.shortfalls ?? {});
   return (
+    <div className="space-y-3">
     <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
       <Stat label={tr('calories')} value={`${fmt(day.totals.energy_kcal)} kcal`} hint={`${tr('target')} ${fmt(t.energy_kcal)}`} />
       <Stat label={tr('protein')} value={`${fmt(day.totals.protein_g)} g`} hint={`${tr('target')} ${fmt(t.protein_g)} g`} />
@@ -79,6 +81,17 @@ const Totals: React.FC<{ day: PlanDay }> = ({ day }) => {
             good={day.rda_met[key]} />
         );
       })}
+    </div>
+    {short.length > 0 && (
+      <div className="rounded-xl border border-amber-200 bg-amber-50/80 p-3 text-xs leading-relaxed text-amber-900">
+        <p className="font-semibold text-amber-950">{tr('shortfallTitle')}</p>
+        {short.map(([key, s]) => {
+          const unit = UNITS[key] ?? '';
+          const vars = { n: tr(`nut_${key}` as StringKey), a: `${fmt(s.actual)} ${unit}`, b: `${fmt(s.target)} ${unit}`, p: fmt(s.pct_met) };
+          return <p key={key} className="mt-1">{tr(key === 'vitamin_d_iu' ? 'shortfallVitD' : 'shortfall', vars)}</p>;
+        })}
+      </div>
+    )}
     </div>
   );
 };
@@ -179,7 +192,10 @@ export const PlanBuilder: React.FC<{
 
   const swap = (slot: MealSlot, dishId: string) => week && run(`${slot}:${dishId}`, async () => {
     const r = await planSwap(input(week.style), week.days[dayIndex], slot, dishId);
-    setWeek({ ...week, days: week.days.map((d, i) => (i === dayIndex ? r.day : d)) });
+    const days = week.days.map((d, i) => (i === dayIndex ? r.day : d));
+    // The shopping list follows the swapped dish; if that request fails, the old list stays rather than none.
+    const shopping = await getShoppingList(days).then((s) => s.shopping_list).catch(() => week.shopping);
+    setWeek({ ...week, days, shopping });
     setSaved(false);
   });
 

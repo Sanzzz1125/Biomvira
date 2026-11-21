@@ -35,14 +35,18 @@ REPEATABLE_DISHES = {"tea", "filter_coffee", "milk", "fortified_milk"}  # may ap
 # Physical activity level (PAL): energy need = BMR x PAL. Anchored on ICMR-NIN 2020 (1.53 sedentary, 1.8 moderate,
 # 2.3 heavy) and kept inside the FAO/WHO/UNU 2004 bands (1.40-1.69 light, 1.70-1.99 active, 2.00-2.40 vigorous).
 ACTIVITY_PAL = {
-    "sedentary": 1.53,     # little or no exercise
-    "light": 1.60,         # exercise 1-3 times a week
+    "sedentary": 1.40,     # little or no exercise (ICMR-NIN 2020 sedentary)
+    "light": 1.55,         # exercise 1-3 times a week
     "moderate": 1.70,      # exercise 4-5 times a week
-    "active": 1.80,        # daily exercise, or intense exercise 3-4 times a week
+    "active": 1.80,        # daily exercise, or intense exercise 3-4 times a week (ICMR-NIN 2020 moderate)
     "very_active": 2.00,   # intense exercise 6-7 times a week
-    "extra_active": 2.30,  # very intense exercise daily, or a physical job
+    "extra_active": 2.30,  # very intense exercise daily, or a physical job (ICMR-NIN 2020 heavy)
 }
-# Values saved before the six levels existed (none 1.53, walking 1.65, cycling 1.8, running 2.0) -> nearest level.
+# ICMR-NIN 2020 lowers the FAO/WHO/UNU BMR by 10% for men and 9% for women for Indian adults, then multiplies by
+# PAL 1.4 / 1.8 / 2.3. This gives its published needs: 2,110 kcal for a sedentary 65 kg man; 1,660 / 2,130 /
+# 2,720 kcal for a 55 kg woman. The levels in between stay inside the FAO bands (1.40-1.69, 1.70-1.99, 2.00-2.40).
+ICMR_BMR_FACTOR = {"male": 0.90, "female": 0.91}
+# Values saved before the six levels existed (none, walking, cycling, running) -> nearest level.
 LEGACY_ACTIVITY = {"none": "sedentary", "walking": "light", "cycling": "active", "running": "very_active"}
 
 
@@ -95,7 +99,9 @@ def bmr(person: Person) -> float:
 
 
 def targets(person: Person) -> dict:
-    energy = bmr(person) * ACTIVITY_PAL[activity_level(person.activity)]
+    pal = ACTIVITY_PAL[activity_level(person.activity)]
+    bmr_kcal = bmr(person) * ICMR_BMR_FACTOR.get(person.sex, 0.91)
+    energy = bmr_kcal * pal
     bmi = person.weight_kg / (person.height_cm / 100) ** 2
     if bmi >= 25:  # gentle loss: about 15% below need, never more than 500 kcal
         energy -= min(0.15 * energy, 500)
@@ -108,8 +114,9 @@ def targets(person: Person) -> dict:
            "fibre_g": round(15 * energy / 1000)}  # 30 g per 2000 kcal
     low = {REPORT_KEYS[k] for k in person.low_nutrients if k in REPORT_KEYS}
     sodium = 1500 if "hypertension" in person.conditions else 2000
-    return {"energy_kcal": round(energy), "protein_g": round(0.83 * person.weight_kg, 1), "rda": rda,
-            "low": sorted(low), "sodium_mg": sodium, "bmi": round(bmi, 1)}
+    return {"energy_kcal": round(energy), "bmr_kcal": round(bmr_kcal), "pal": pal,
+            "protein_g": round(0.83 * person.weight_kg, 1), "rda": rda, "low": sorted(low), "sodium_mg": sodium,
+            "bmi": round(bmi, 1)}
 
 
 # ----------------------------------------------------------------------------------------------- dishes
@@ -261,11 +268,16 @@ def solve_day(person: Person, dishes: list, request: DayRequest):
     solver.Add(count("breakfast", ("chutney",)) <= 1)
     solver.Add(count("breakfast", ("drink",)) <= 1)
     solver.Add(count("breakfast", ("fruit",)) <= 1)
+    extra_starches = []
     for slot in ("lunch", "dinner"):
         bread, rd, bf = count(slot, ("staple",)), count(slot, ("rice_dish",)), count(slot, ("breakfast",))
         solver.Add(rd + bf <= 1)
         solver.Add(bread <= 2 - 2 * (rd + bf))
         solver.Add(bread + rd + bf >= 1)
+        # a second kind of staple (rice and roti together) only when the targets need it
+        extra_starch = solver.NumVar(0, 1, "")
+        solver.Add(bread - extra_starch <= 1)
+        extra_starches.append(extra_starch)
         staple_n = [n[k] for k in n if k[1] == slot and by_id[k[0]]["role"] == "staple"]
         solver.Add(solver.Sum(staple_n) <= 4)
         solver.Add(solver.Sum([n[k] for k in n if k[1] == slot and by_id[k[0]]["role"] == "staple"
@@ -312,13 +324,13 @@ def solve_day(person: Person, dishes: list, request: DayRequest):
     solver.Add(sodium - sodium_excess <= t["sodium_mg"])
     solver.Add(sodium <= t["sodium_mg"] + 1500)
 
-    cost = [50 * protein_short / max(t["protein_g"], 1), 20 * fat_excess / 100, 20 * sat_excess / 100,
-            (40 if "hypertension" in person.conditions else 15) * sodium_excess / 1000]
+    cost = [150 * protein_short / max(t["protein_g"], 1), 20 * fat_excess / 100, 20 * sat_excess / 100,
+            (40 if "hypertension" in person.conditions else 15) * sodium_excess / 1000] + [3.0 * s for s in extra_starches]
     for key, rda in t["rda"].items():
         short = solver.NumVar(0, rda, "")
         solver.Add(total(key, credit=True) + short >= rda)
         low = key in t["low"]
-        weight = 60 if low else (12 if request.style == "nutritious" else 4)
+        weight = 120 if low else (12 if request.style == "nutritious" else 4)
         cost.append(weight * short / rda)
 
     picked = [food_codes(f) for f in person.picked_foods]
@@ -390,7 +402,11 @@ def describe_day(chosen: dict, by_id: dict, t: dict) -> dict:
             totals[key] += servings * (value or 0)
     totals = {k: round(v, 1) for k, v in totals.items()}
     met = {k: totals.get(k, 0) >= rda for k, rda in t["rda"].items()}
-    return {"meals": meals, "totals": totals, "targets": t, "rda_met": met,
+    # Low nutrients the day still falls short of, shown openly (vitamin D rarely comes from food alone).
+    shortfalls = {k: {"actual": totals.get(k, 0), "target": t["rda"][k],
+                      "pct_met": round(100 * totals.get(k, 0) / t["rda"][k], 1)}
+                  for k in t.get("low", []) if k in t["rda"] and totals.get(k, 0) < t["rda"][k]}
+    return {"meals": meals, "totals": totals, "targets": t, "rda_met": met, "shortfalls": shortfalls,
             "salt_g": round(totals.get("sodium_mg", 0) * 2.54 / 1000, 1)}
 
 

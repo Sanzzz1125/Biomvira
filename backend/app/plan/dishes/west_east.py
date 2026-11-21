@@ -152,9 +152,6 @@ DISHES = [
     dish("aloo_pitika", "Aloo pitika (mashed potato)", "curry", "lunch dinner", "assam", "1 katori", 110, "boiling",
          [("potato", 100), ("onion", 10, "none"), ("green chilli", 2, "none"), ("coriander leaves", 2, "none"),
           ("mustard oil", 4, "none"), ("salt", 0.8)], also_called=("alu pitika",)),
-    dish("pork_bamboo_shoot", "Pork with bamboo shoot", "curry", "lunch dinner", HILL_NE, "1 katori", 180, "boiling",
-         [("pork", 100), ("bamboo shoot", 40), ("ginger", 4), ("garlic", 4), ("green chilli", 3), ("salt", 1.2),
-          ("oil", 4, "frying")], also_called=("pork bamboo", "wak me-a.a", "pork curry"), max_per_week=2),
     dish("veg_momos", "Vegetable momos (steamed)", "snack", "snack dinner", "sikkim meghalaya arunachal_pradesh "
          "nagaland manipur mizoram delhi himachal_pradesh", "6 momos", 150, "steaming",
          [("refined wheat flour", 45), ("cabbage", 40), ("carrot", 15), ("onion", 15), ("ginger", 2), ("garlic", 2),

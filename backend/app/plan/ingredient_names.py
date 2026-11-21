@@ -172,7 +172,6 @@ INGREDIENTS = {
     "chicken": (("N001", "N002", "N003", "N004"), "Chicken, poultry"),
     "country chicken": (("N007", "N008", "N009", "N010"), "Country hen"),
     "mutton": (("O001", "O002", "O003"), "Goat"),
-    "beef": (("O025", "O027"), "Beef"),
     "chicken liver": ("N005", "chicken, liver"),
     "mutton liver": ("O008", "Goat, liver"),
     "freshwater fish": (("S006", "S002"), ("Rohu", "Catla")),
@@ -181,7 +180,6 @@ INGREDIENTS = {
     "mackerel": ("P034", "Mackerel"),
     "anchovy": ("P003", "Anchovy"),
     "hilsa": ("P017", "Hilsa"),
-    "pork": (("O048", "O049"), "Pork"),
     "prawns": (("S008", "S009"), "Prawns"),
     # fruits
     "banana": ("E012", "Banana, ripe, robusta"),

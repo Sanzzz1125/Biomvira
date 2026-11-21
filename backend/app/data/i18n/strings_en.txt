@@ -672,3 +672,63 @@ A type of white blood cell; they fight viral infections and make antibodies.
 A type of white blood cell; they rise with allergies and worm infections.
 A type of white blood cell; they clear damaged cells and germs.
 A type of white blood cell; they take part in allergic reactions.
+< 5.7% (Normal), 5.7–6.4% (Prediabetes), ≥ 6.5% (Diabetes threshold)
+70–99 mg/dL (Normal), 100–125 mg/dL (Impaired Fasting Glucose), ≥ 126 mg/dL (Diabetes threshold)
+< 200 mg/dL (Desirable)
+< 150 mg/dL (Normal)
+< 100 mg/dL (Optimal)
+Build meals around vegetables, whole grains, low-fat plant milks, legumes and pulses; these are low in purines.
+Choose fortified plant milks or breakfast cereals to meet daily vitamin B12 needs.
+Consume Vitamin D foods with healthy culinary fats (cold-pressed oils or nuts) because Vitamin D is fat-soluble.
+Consume Vitamin D foods with healthy culinary fats (cold-pressed vegetable oils) because Vitamin D is fat-soluble.
+Consume Vitamin D foods with healthy culinary fats (ghee, cold-pressed oils, or whole milk) because Vitamin D is fat-soluble.
+Cut back on sugar and refined flour, choose fibre-rich foods, and include omega-3 sources such as flaxseed.
+Eat more fibre from pulses, whole grains and vegetables, use oil in moderation, and replace some saturated fat with seeds.
+Include a protein food at every meal: dal, sprouts, soya or pulses for vegetarians; eggs, fish or chicken for non-vegetarians.
+Include a small handful of nuts or seeds (almonds, flaxseed, sesame, pumpkin or sunflower seeds) as part of your daily fat.
+Include healthy seeds (flaxseed, sesame, pumpkin or sunflower seeds) as part of your daily fat.
+Include healthy seeds (flaxseed, sesame, pumpkin or sunflower seeds) as part of your daily fat; non-vegetarians can choose fish such as mackerel.
+Increase soluble fibre from pulses and whole grains, add seeds, and reduce fried and bakery foods.
+Limit butter, deep-fried snacks, bakery items, vanaspati and processed meats.
+Pair dietary fat-soluble sources with healthy lipids (cold-pressed oils, ghee, whole milk) to optimize micellar intestinal uptake.
+Pair dietary fat-soluble sources with healthy lipids (cold-pressed oils, nuts) to optimize micellar intestinal uptake.
+Pair dietary fat-soluble sources with healthy lipids (cold-pressed vegetable oils) to optimize micellar intestinal uptake.
+Replace saturated and trans fats with unsaturated fats from nuts and seeds, and stay physically active.
+Replace saturated and trans fats with unsaturated fats from seeds and fish, and stay physically active.
+Replace saturated and trans fats with unsaturated fats from seeds, and stay physically active.
+Replace some saturated fat with unsaturated fat from nuts and seeds.
+Replace some saturated fat with unsaturated fat from seeds and, for non-vegetarians, fish.
+Replace some saturated fat with unsaturated fat from seeds.
+Use small amounts of cooking oil and prefer nuts and seeds for healthy fats.
+Use small amounts of cooking oil and prefer seeds and fish for healthy fats.
+Use small amounts of cooking oil and prefer seeds for healthy fats.
+Build meals around whole grains and millets (ragi, jowar, bajra), pulses and non-starchy vegetables; eat grains with dal or sprouts rather than on their own.
+Consume diverse calcium reservoirs like ragi (finger millet) and green leafy vegetables alongside optimal Vitamin D.
+Consume diverse calcium reservoirs like ragi (finger millet), curd, and green leafy vegetables alongside optimal Vitamin D.
+Consume diverse calcium reservoirs like ragi (finger millet), sesame seeds (til), and green leafy vegetables alongside optimal Vitamin D.
+Include a protein food at every meal: dal, sprouts or pulses for vegetarians; chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts or pulses for vegetarians; eggs or chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts or pulses for vegetarians; eggs, fish or chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts or pulses for vegetarians; fish or chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, curd or paneer for vegetarians; chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, curd or paneer for vegetarians; eggs or chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, curd or paneer for vegetarians; eggs, fish or chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, curd or paneer for vegetarians; fish or chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, curd, paneer or soya for vegetarians; chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, curd, paneer or soya for vegetarians; eggs or chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, curd, paneer or soya for vegetarians; fish or chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, soya or pulses for vegetarians; chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, soya or pulses for vegetarians; eggs or chicken for non-vegetarians.
+Include a protein food at every meal: dal, sprouts, soya or pulses for vegetarians; fish or chicken for non-vegetarians.
+Include a small handful of nuts or seeds (almonds, flaxseed, pumpkin or sunflower seeds) as part of your daily fat.
+Include a small handful of nuts or seeds (almonds, flaxseed, pumpkin or sunflower seeds) as part of your daily fat; non-vegetarians can choose fish such as mackerel.
+Include healthy seeds (flaxseed, pumpkin or sunflower seeds) as part of your daily fat.
+Include healthy seeds (flaxseed, pumpkin or sunflower seeds) as part of your daily fat; non-vegetarians can choose fish such as mackerel.
+Pair carbohydrates with dal, sprouts or vegetables, use millets and whole grains, and keep portions steady.
+Regularly incorporate fermented dairy (curd, paneer) or fortified plant beverages; non-vegetarians benefit from eggs and lean poultry.
+Regularly incorporate fermented dairy (curd, paneer) or fortified plant beverages; non-vegetarians benefit from fish and lean poultry.
+Regularly incorporate fermented dairy (curd, paneer) or fortified plant beverages; non-vegetarians benefit from lean poultry.
+Regularly incorporate fortified plant beverages; non-vegetarians benefit from eggs and lean poultry.
+Regularly incorporate fortified plant beverages; non-vegetarians benefit from eggs, fish, and lean poultry.
+Regularly incorporate fortified plant beverages; non-vegetarians benefit from fish and lean poultry.
+Regularly incorporate fortified plant beverages; non-vegetarians benefit from lean poultry.

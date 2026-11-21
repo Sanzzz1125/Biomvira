@@ -139,8 +139,6 @@ SYNONYMS = {
     "chicken liver": ["meat", "poultry", "chicken", "liver", "organ meat"],
     "mutton": ["meat", "red meat", "goat", "lamb", "sheep", "gosht", "bakra", "meka", "mamsam", "मटन", "बकरा", "మటన్", "మేక"],
     "mutton liver": ["meat", "red meat", "organ meat", "mutton", "goat", "liver", "kaleji", "कलेजी"],
-    "beef": ["meat", "red meat", "cow meat", "buffalo meat", "gomamsam"],
-    "pork": ["meat", "red meat", "pig", "suar", "pandi", "pandi mamsam", "सूअर", "పంది"],
     "seer fish": ["surmai", "vanjaram", "king fish", "kingfish"],
     "sardine": ["sardines", "mathi", "chaala", "tarli"],
     "mackerel": ["bangda", "ayala", "kanaganthi"],
@@ -376,3 +374,43 @@ def blocks_food(food: dict, codes: set, allergens: set, avoid: Avoid) -> bool:
         return False
     names = [food.get("name") or "", food.get("hindi_name") or ""]
     return any(_contains(norm(part), avoid.phrase) for n in names for part in re.split(r"[/,()]", n))
+
+
+def saved_report_conflicts(analysis: dict) -> dict:
+    """A saved report checked against today's rules: suggested foods and saved plan dishes that its own profile
+    (diet, meats, allergy groups, typed allergies) now excludes, and dishes no longer offered (beef and pork were
+    removed). The lab results themselves are never changed."""
+    from app.engine.recommender import FOODS_DATABASE
+    from app.plan.engine import DIET_ALLOWS, food_facts
+    profile = analysis.get("user_profile") or {}
+    groups = set(profile.get("allergens") or [])
+    typed = [resolve(w) for w in profile.get("custom_allergies") or [] if w and w.strip()]
+    meats = set(profile.get("meats") or [])
+    diet = profile.get("diet_type") or "veg"
+    foods = {f["id"]: f for f in FOODS_DATABASE}
+    found = []
+    for plan in analysis.get("recommendations") or []:
+        for item in plan.get("recommended_foods") or []:
+            food = foods.get(item.get("id"))
+            if food is None:
+                continue
+            codes, allergens, food_meats = food_facts(food)
+            if (groups & allergens or (meats and food_meats - meats)
+                    or any(blocks_food(food, codes, allergens, a) for a in typed)):
+                found.append(item.get("name") or food["name"])
+    dishes = catalog_dishes()
+    allowed = DIET_ALLOWS.get(diet, DIET_ALLOWS["veg"])
+    for day in ((analysis.get("diet_plan") or {}).get("days") or []):
+        for items in (day.get("meals") or {}).values():
+            for item in items:
+                d = dishes.get(item.get("dish_id"))
+                if (d is None or d["diet"] not in allowed or groups & set(d["allergens"])
+                        or (meats and set(d["meat_types"]) - meats) or any(blocks_dish(d, a) for a in typed)):
+                    found.append(item.get("name") or item.get("dish_id"))
+    found = list(dict.fromkeys(found))
+    return {"allergy_conflicts": found, "can_regenerate": bool(found)}
+
+
+def catalog_dishes() -> dict:
+    from app.plan.catalog import catalog
+    return catalog()

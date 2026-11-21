@@ -193,6 +193,7 @@ def localize_analysis(data: dict, lang: str) -> dict:
     for m in out.get("marker_analyses", []):
         m["display_name"] = tr(m.get("display_name"), lang)
         m["clinical_warning"] = warning(m.get("clinical_warning"), lang)
+        m["guideline_threshold"] = tr(m.get("guideline_threshold"), lang)
     for plan in out.get("recommendations", []):
         plan["biomarker_display_name"] = _amount(plan.get("biomarker_display_name") or "", lang)
         plan["absorption_dos"] = [tr(x, lang) for x in plan.get("absorption_dos", [])]
@@ -205,6 +206,6 @@ def localize_analysis(data: dict, lang: str) -> dict:
     out["consult_reasons"] = [warning(x, lang) for x in out.get("consult_reasons", [])]
     model = FullAnalysisResponse.model_validate(out)
     out["grounded_explanation"], _, _ = generate_grounded_explanation(model.marker_analyses, model.recommendations,
-                                                                      lang=lang)
+                                                                      lang=lang, user_profile=model.user_profile)
     out["language"] = lang
     return out

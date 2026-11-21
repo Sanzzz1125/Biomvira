@@ -349,12 +349,17 @@
         }
       },
       "direction": "higher_is_worse",
-      "use_report_range": false,
+      "use_report_range": true,
       "supports_food_plan": true,
       "target_nutrient_key": "glycemic_support",
       "absorption_notes": "HbA1c reflects average blood sugar over about three months.",
       "clinical_warning_high_threshold": 6.5,
-      "clinical_warning_message": "HbA1c is 6.5% or higher, which is in the range used to diagnose diabetes. Please see a doctor to confirm this and to plan treatment; food changes alone are not a substitute."
+      "clinical_warning_message": "HbA1c is 6.5% or higher, which is in the range used to diagnose diabetes. Please see a doctor to confirm this and to plan treatment; food changes alone are not a substitute.",
+      "clinical_guideline": {
+        "threshold": "< 5.7% (Normal), 5.7–6.4% (Prediabetes), ≥ 6.5% (Diabetes threshold)",
+        "source": "ICMR Guidelines for Management of Type 2 Diabetes (2018) / ADA Standards of Care (2024)",
+        "rationale": "Diagnostic criteria define HbA1c < 5.7% as normal, 5.7–6.4% as prediabetes, and ≥ 6.5% as requiring clinical evaluation for diabetes."
+      }
     },
     {
       "key": "fasting_glucose",
@@ -389,13 +394,18 @@
         }
       },
       "direction": "higher_is_worse",
-      "use_report_range": false,
+      "use_report_range": true,
       "supports_food_plan": true,
       "target_nutrient_key": "glycemic_support",
       "absorption_notes": "",
       "clinical_warning_high_threshold": 126.0,
       "clinical_warning_message": "Fasting glucose is 126 mg/dL or higher, which is in the range used to diagnose diabetes. Please see a doctor to confirm this and to plan treatment; food changes alone are not a substitute.",
-      "low_status_message": "Fasting glucose is below 70 mg/dL. Low blood sugar can need urgent care; please speak to a doctor."
+      "low_status_message": "Fasting glucose is below 70 mg/dL. Low blood sugar can need urgent care; please speak to a doctor.",
+      "clinical_guideline": {
+        "threshold": "70–99 mg/dL (Normal), 100–125 mg/dL (Impaired Fasting Glucose), ≥ 126 mg/dL (Diabetes threshold)",
+        "source": "ICMR Guidelines for Management of Type 2 Diabetes (2018) / ADA Standards of Care (2024)",
+        "rationale": "Normal fasting plasma glucose is 70–99 mg/dL following an overnight fast of 8–10 hours."
+      }
     },
     {
       "key": "postprandial_glucose",
@@ -476,10 +486,15 @@
         }
       },
       "direction": "higher_is_worse",
-      "use_report_range": false,
+      "use_report_range": true,
       "supports_food_plan": true,
       "target_nutrient_key": "lipid_support",
-      "absorption_notes": ""
+      "absorption_notes": "",
+      "clinical_guideline": {
+        "threshold": "< 200 mg/dL (Desirable)",
+        "source": "Lipid Association of India (LAI) 2020 / NCEP ATP III Adult Treatment Panel",
+        "rationale": "Total cholesterol < 200 mg/dL is classified as desirable for cardiovascular health."
+      }
     },
     {
       "key": "triglycerides",
@@ -512,12 +527,17 @@
         }
       },
       "direction": "higher_is_worse",
-      "use_report_range": false,
+      "use_report_range": true,
       "supports_food_plan": true,
       "target_nutrient_key": "lipid_support",
       "absorption_notes": "",
       "clinical_warning_high_threshold": 500.0,
-      "clinical_warning_message": "Triglycerides are 500 mg/dL or higher (very high), which can raise the risk of pancreatitis. Please see a doctor to confirm this and to plan treatment; food changes alone are not a substitute."
+      "clinical_warning_message": "Triglycerides are 500 mg/dL or higher (very high), which can raise the risk of pancreatitis. Please see a doctor to confirm this and to plan treatment; food changes alone are not a substitute.",
+      "clinical_guideline": {
+        "threshold": "< 150 mg/dL (Normal)",
+        "source": "Lipid Association of India (LAI) 2020 / NCEP ATP III Guidelines",
+        "rationale": "Fasting serum triglycerides < 150 mg/dL is desirable to mitigate metabolic and cardiovascular risk."
+      }
     },
     {
       "key": "ldl_cholesterol",
@@ -550,12 +570,17 @@
         }
       },
       "direction": "higher_is_worse",
-      "use_report_range": false,
+      "use_report_range": true,
       "supports_food_plan": true,
       "target_nutrient_key": "lipid_support",
       "absorption_notes": "",
       "clinical_warning_high_threshold": 190.0,
-      "clinical_warning_message": "LDL cholesterol is 190 mg/dL or higher (very high). Please see a doctor to confirm this and to plan treatment; food changes alone are not a substitute."
+      "clinical_warning_message": "LDL cholesterol is 190 mg/dL or higher (very high). Please see a doctor to confirm this and to plan treatment; food changes alone are not a substitute.",
+      "clinical_guideline": {
+        "threshold": "< 100 mg/dL (Optimal)",
+        "source": "Lipid Association of India (LAI) 2020 / NCEP ATP III Adult Treatment Panel",
+        "rationale": "Cardiovascular risk guidelines define LDL < 100 mg/dL as optimal for adults; lab reference intervals often show broader population distributions (e.g. 0–129 mg/dL)."
+      }
     },
     {
       "key": "hdl_cholesterol",

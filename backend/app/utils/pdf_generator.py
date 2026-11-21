@@ -581,10 +581,19 @@ def _status_pill(status: Any) -> Pill:
 
 
 def _range_text(marker: dict) -> str:
-    low, high, unit = marker.get("range_low"), marker.get("range_high"), _clean(marker.get("unit"))
+    lab_low = marker.get("lab_range_low")
+    lab_high = marker.get("lab_range_high")
+    low = lab_low if lab_low is not None else marker.get("range_low")
+    high = lab_high if lab_high is not None else marker.get("range_high")
+    unit = _clean(marker.get("unit"))
     if not float(low or 0):
-        return L("Up to {x}", x=f"{_num(high)} {unit}".strip())
-    return f"{_num(low)} – {_num(high)} {unit}".strip()
+        base = L("Up to {x}", x=f"{_num(high)} {unit}".strip())
+    else:
+        base = f"{_num(low)} – {_num(high)} {unit}".strip()
+    gt = marker.get("guideline_threshold")
+    if gt:
+        base = L("{x} (Guideline: {y})", x=base, y=gt)
+    return base
 
 
 def _result_cell(marker: dict) -> Paragraph:

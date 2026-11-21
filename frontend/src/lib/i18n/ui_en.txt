@@ -1,7 +1,7 @@
 **Limit or avoid:**
 **Tips:**
 180+ ICMR-NIN Indian foods
-278 Indian home dishes built from ICMR-NIN food data, matched to your diet and allergies.
+276 Indian home dishes built from ICMR-NIN food data, matched to your diet and allergies.
 A PDF or a phone photo from any Indian lab. Your name and phone number are removed first.
 A good meal does not need special foods. ICMR-NIN suggests filling about half the plate with vegetables and fruit, and splitting the rest between cereals (rice, roti, millets) and pulses, eggs, fish or meat.
 A letter and a number
@@ -126,7 +126,7 @@ Doctor review
 Does it work for vegetarians and vegans?
 Download PDF
 Each millet has a strength: bajra has the most iron (about 6.4 mg per 100 g), ragi is exceptionally rich in calcium (about 364 mg per 100 g), and jowar is mild and easy to make into rotis.
-Each of our 278 dishes is a standard home recipe written in grams of raw ingredients. Its nutrients are added up from the Indian Food Composition Tables, with cooking losses applied to the vitamins heat destroys. Diet type and allergens are worked out from the ingredients, never typed by hand. Dishes are checked against lab-measured values of similar South Asian dishes where these exist, and the salt in a typical day is checked against what Indian adults actually eat.
+Each of our 276 dishes is a standard home recipe written in grams of raw ingredients. Its nutrients are added up from the Indian Food Composition Tables, with cooking losses applied to the vitamins heat destroys. Diet type and allergens are worked out from the ingredients, never typed by hand. Dishes are checked against lab-measured values of similar South Asian dishes where these exist, and the salt in a typical day is checked against what Indian adults actually eat.
 Each result compared with your lab's reference range or clinical guidelines.
 Eat well, the Indian way
 Eating about 300-500 kcal less than you use each day leads to a steady loss of around a quarter to half a kilogram a week, which is easier to keep off than fast loss.
@@ -164,7 +164,7 @@ Forgot password?
 Four numbers, what each one means, and which food changes help.
 From a lab report to a week of meals in four steps
 From blood report to a diet plan you can actually follow.
-From your age, sex, weight and activity using the FAO/WHO/UNU equations that ICMR-NIN uses. If your BMI is 25 or more, the plan aims about 15% lower (at most 500 kcal) for gentle weight loss; under 18.5, about 10% higher.
+From your age, sex, weight and activity, the way ICMR-NIN 2020 does it: the FAO/WHO/UNU equations, about 10% lower for Indian adults, times your activity level. If your BMI is 25 or more, the plan aims about 15% lower (at most 500 kcal) for gentle weight loss; under 18.5, about 10% higher.
 Full name
 General guidance from NutriLens, not medical advice.
 General information, not medical advice.
@@ -505,9 +505,9 @@ Your account has been deleted
 Your account is ready
 Your age, sex and food preferences help us pick the right reference ranges and only suggest foods you can eat.
 Your blood report, turned into meals you will actually eat.
-Your calories and protein come from your age, sex, height, weight and activity. An optimisation engine then picks dishes and portions from 278 Indian home recipes so each day meets your calories and protein and aims for the nutrients your report shows as low, within your diet, region and allergies.
+Your calories and protein come from your age, sex, height, weight and activity. An optimisation engine then picks dishes and portions from 276 Indian home recipes so each day meets your calories and protein and aims for the nutrients your report shows as low, within your diet, region and allergies.
 Your chats
-Your energy need comes from your age, sex, weight and activity (FAO/WHO/UNU equations with ICMR activity levels), adjusted for your BMI, and protein from 0.83 g per kg of body weight. A mathematical optimiser then chooses dishes and servings so that each day meets your calories within 5% and your protein, and aims for the nutrients your report shows as low, while keeping salt and fat within limits, sweets to a few times a week, and following how Indian meals are actually eaten.
+Your energy need comes from your age, sex, weight and activity (the ICMR-NIN 2020 method), adjusted for your BMI, and protein from 0.83 g per kg of body weight. A mathematical optimiser then chooses dishes and servings so that each day meets your calories within 5% and your protein, and aims for the nutrients your report shows as low, while keeping salt and fat within limits, sweets to a few times a week, and following how Indian meals are actually eaten.
 Your food plan
 Your food plan, notes on each result, and anything to discuss with a doctor.
 Your lab's own range first, then published guidelines, with separate ranges for men and women where needed.
@@ -552,7 +552,7 @@ FAQ
 Home
 Meals from your own kitchen
 Home dishes from your state, not a foreign diet chart
-Plans are built from 278 home-style dishes cooked across India. Here is what one day can look like.
+Plans are built from 276 home-style dishes cooked across India. Here is what one day can look like.
 Breakfast
 Lunch
 Evening snack

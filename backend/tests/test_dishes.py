@@ -135,7 +135,7 @@ def test_every_region_and_meal_has_choices():
     ("mudda_pappu", "vegetarian", []), ("egg_curry", "eggetarian", ["egg"]),
     ("chicken_curry", "non_veg", ["chicken"]), ("mutton_biryani", "non_veg", ["mutton"]),
     ("chepala_pulusu", "non_veg", ["fish"]), ("royyala_iguru", "non_veg", ["shellfish"]),
-    ("beef_ularthiyathu", "non_veg", ["beef"]), ("kerala_fish_curry", "non_veg", ["fish"]), ("appam", "vegan", []),
+    ("mutton_kuzhambu", "non_veg", ["mutton"]), ("kerala_fish_curry", "non_veg", ["fish"]), ("appam", "vegan", []),
     ("avial", "vegetarian", []), ("egg_roast", "eggetarian", ["egg"]),
 ])
 def test_diet_is_derived_from_ingredients(dish_id, diet, meats):

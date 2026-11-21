@@ -84,6 +84,10 @@ class MarkerAnalysisResult(BaseModel):
     percentage_of_optimal: float
     clinical_warning: Optional[str] = None
     target_nutrient_key: str
+    lab_range_low: Optional[float] = None
+    lab_range_high: Optional[float] = None
+    guideline_threshold: Optional[str] = None
+    guideline_source: Optional[str] = None
 
 class FoodRecommendation(BaseModel):
     id: str
@@ -116,4 +120,6 @@ class FullAnalysisResponse(BaseModel):
     consult_reasons: List[str]
     saved_to_history: bool = False
     diet_plan: Optional[Dict[str, Any]] = None
+    allergy_conflicts: List[str] = Field(default_factory=list)
+    can_regenerate: bool = False
 

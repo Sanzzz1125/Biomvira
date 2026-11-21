@@ -15,7 +15,7 @@ that fit your needs, diet, allergies, region and language.
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![OR-Tools](https://img.shields.io/badge/OR--Tools-MILP-4285F4?logo=google&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?logo=postgresql&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-703%20backend%20%C2%B7%2025%20frontend-167C64)
+![Tests](https://img.shields.io/badge/tests-884%20backend%20%C2%B7%2025%20frontend-167C64)
 
 <img src=".github/assets/diet-plan.jpg" alt="Three one-day diet plan options built from a report" width="900">
 
@@ -40,7 +40,7 @@ NutriLens closes that gap. It turns the numbers on an Indian lab report into rea
 | 🩺 **Safety first** | Each result is judged against the lab's own range or a clinical guideline. Values that need a doctor (very low haemoglobin, high HbA1c, abnormal potassium and more) are flagged instead of getting a meal plan. |
 | 🥗 **Foods you choose** | Foods that help each result are shown first, filtered strictly by diet type, the meats you eat and your allergies. You tick the ones you like. |
 | 🚫 **Allergies in your own words** | Eight allergy groups, plus anything you type in English, Hindi or Telugu ("eggplant", "मूंगफली", "పల్లీలు"), with spelling slips forgiven. Each typed allergy shows how many dishes it leaves out, or says plainly that it was not recognised. |
-| 📅 **A real diet planner** | An optimiser picks dishes and servings from **278 Indian home dishes** for breakfast, lunch, snack and dinner. You get three one-day options (familiar, nutrient-dense, regional), a 7-day plan, one-tap dish swaps and a shopping list grouped by aisle. |
+| 📅 **A real diet planner** | An optimiser picks dishes and servings from **276 Indian home dishes** for breakfast, lunch, snack and dinner. You get three one-day options (familiar, nutrient-dense, regional), a 7-day plan, one-tap dish swaps and a shopping list grouped by aisle. |
 | 🗣️ **English, हिंदी, తెలుగు** | The whole site, your results, the assistant and both downloadable PDFs follow your language. |
 | 💬 **An assistant that knows your report** | Ask about any test, food or feature. Answers come from checked data; a free language model only rewords them, and every number it writes is verified. Emergencies get helpline numbers and medicine questions are never answered with doses. |
 | 👥 **Accounts and administration** | Private history, saved chats, four roles (guest, user, admin, owner), invitations and an audit log. |
@@ -63,7 +63,7 @@ flowchart LR
 **Rules decide, models assist.** No model decides a result or a plan.
 
 - **Dish nutrients** are calculated from raw ingredients using the *Indian Food Composition Tables 2017* (ICMR-NIN), with USDA SR Legacy and NIN's NVIF data for the few ingredients IFCT lacks. Cooking losses are applied to heat-sensitive vitamins. Diet type and allergens are derived from the ingredients, never typed by hand.
-- **The diet planner** is a mixed-integer linear program solved with Google OR-Tools (SCIP, falling back to CBC). It must hit the energy target within 5% (FAO/WHO/UNU equations, with six activity levels from "little or no exercise" to "a physical job"), keep fat under 35% of energy and follow real meal structure. It then minimises shortfalls in protein and in the nutrients your report found low, keeps salt and saturated fat down, and prefers your region's dishes and the foods you ticked.
+- **The diet planner** is a mixed-integer linear program solved with Google OR-Tools (SCIP, falling back to CBC). It must hit the energy target within 5% (the ICMR-NIN 2020 method: FAO/WHO/UNU BMR lowered about 10% for Indian adults, times six activity levels from "little or no exercise" to "a physical job"), keep fat under 35% of energy and follow real meal structure. It then minimises shortfalls in protein and in the nutrients your report found low, keeps salt and saturated fat down, and prefers your region's dishes and the foods you ticked.
 - **The assistant** answers in three layers: safety and personal rules, a fine-tuned multilingual **e5-small** model (int8 ONNX, 22.7 MB, CPU) that finds the closest of 139 topics, and an optional **Groq** language model that rewords the answer from the facts only.
 
 ## Results
@@ -77,7 +77,7 @@ Measured with the scripts kept alongside the project report.
 | Diet plans within 5% of the energy target (112 profiles × 3 options) | **336 / 336** |
 | Diet plans meeting the protein target | **336 / 336** |
 | Dishes breaking the person's diet or allergies | **0** |
-| Time per one-day plan / per week (median) | **0.76 s / 1.6 s** |
+| Time per one-day plan / per week (median) | **0.86 s / 2.8 s** |
 | Assistant on unseen hand-written questions (language model off) | **82%** |
 | e5 topic matching: English · Hindi script · Telugu script | **99% · 96% · 86%** |
 
@@ -180,7 +180,7 @@ python run.py        # app at http://localhost:8000, API docs at /docs
 ## Testing
 
 ```bash
-.venv/bin/python -m pytest -q     # backend: 708 tests (703 pass; 5 need a live PostgreSQL server)
+.venv/bin/python -m pytest -q     # backend: 889 tests (884 pass; 5 need a live PostgreSQL server)
 cd frontend && npm test           # frontend: 25 tests
 ```
 

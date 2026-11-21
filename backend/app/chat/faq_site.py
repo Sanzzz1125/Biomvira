@@ -99,7 +99,7 @@ FAQ_SITE = [
      ["Which foods are rich in iron?", "Which foods are rich in calcium?"]),
     ("regional", ["south indian foods", "do you have north indian foods", "telugu food names", "local foods",
                   "foods from my state", "do you include regional foods"],
-     'Yes. Diet plans use **278 home-style dishes** from every Indian state and union territory: for '
+     'Yes. Diet plans use **276 home-style dishes** from every Indian state and union territory: for '
      'example pesarattu and gongura pachadi from Andhra and Telangana, sambar and kootu from Tamil Nadu, '
      'puttu and avial from Kerala, rajma and makki roti from Punjab, poha and thalipeeth from Maharashtra, '
      'machher jhol from Bengal and litti chokha from Bihar. Choose your state in your profile; the '
@@ -331,7 +331,7 @@ FAQ_SITE = [
     ("calories_bmi", ["calorie counter", "how many calories should i eat", "calculate my bmi", "what is my bmi",
                       "calorie plan"],
      'NutriLens works out your **daily calorie and protein targets** from your age, sex, height, weight '
-     'and activity (FAO/WHO/UNU energy equations). If your BMI is 25 or more the target is about 15% '
+     'and activity (the ICMR-NIN 2020 method: FAO/WHO/UNU equations, about 10% lower for Indian adults, times your activity level). If your BMI is 25 or more the target is about 15% '
      'lower, and under 18.5 about 10% higher. Each day of your diet plan shows its calories and protein '
      'next to your targets, plus the nutrients your report shows as low.',
      ["How to lose weight?"]),
@@ -475,13 +475,13 @@ FAQ_SITE = [
                       "how much protein is in my plan", "what does target mean in my plan", "calorie target"],
      "Each plan day shows **calories** and **protein** next to your targets, and the nutrients your report shows as low "
      "(for example iron or vitamin B12) next to the recommended amount. Calories come from your age, sex, height, "
-     "weight and activity (FAO/WHO/UNU equations, adjusted for BMI); protein and nutrient targets come from the "
+     "weight and activity (the ICMR-NIN 2020 method, adjusted for BMI); protein and nutrient targets come from the "
      "ICMR-NIN 2020 recommended amounts.",
      ["How is the diet decided?", "Is this a weight-loss plan?"]),
     ("non_veg_meats", ["i eat only chicken", "choose which meats", "i dont eat beef", "fish only non veg",
                        "can i exclude pork", "custom allergy", "i dont like a food"],
      "In **Your profile**, choose **Non-vegetarian** and tick the meats you eat (for example chicken, fish, eggs, mutton); "
-     "the others are never used. You can also type foods you are allergic to or don't eat, and dishes containing them "
+     "the others are never used. NutriLens does not use beef or pork in any dish. You can also type foods you are allergic to or don't eat, and dishes containing them "
      "are left out.",
      ["How do I get my diet plan?", "Which diets are supported?"]),
     ("plan_children", ["can my 15 year old use the diet plan", "diet plan for children", "plan for my kid",
@@ -492,7 +492,7 @@ FAQ_SITE = [
      ["How do I get my diet plan?", "Which tests are supported?"]),
     ("dish_count", ["how many dishes are there", "how many recipes do you have", "how many dishes in the planner",
                     "is my favourite dish there", "list of dishes"],
-     "The planner uses **278 home-style dishes** from every Indian state and union territory: breakfasts, rice and "
+     "The planner uses **276 home-style dishes** from every Indian state and union territory: breakfasts, rice and "
      "roti, dals, curries, chutneys, snacks, drinks and a few sweets. Each dish's nutrients are calculated from its "
      "raw ingredients using the Indian Food Composition Tables. Choose your state in your profile to see your "
      "region's dishes more often.",

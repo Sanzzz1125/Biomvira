@@ -99,17 +99,35 @@ export const RangeSliderBar: React.FC<RangeSliderBarProps> = ({ analysis }) => {
         </div>
       </div>
 
-      <p className="mt-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 border-t border-slate-100 pt-3 text-xs text-slate-500">
-        <span>
-          Healthy range{' '}
-          <span className="font-medium text-slate-700 tabular-nums">
-            {range_low}–{range_high} {unit}
+      <div className="mt-3 border-t border-slate-100 pt-3 text-xs text-slate-500">
+        <p className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+          {/* The range the lab printed, kept as printed; otherwise the standard healthy range. */}
+          {analysis.lab_range_high != null || analysis.lab_range_low != null ? (
+            <span>
+              {t('labRange')}{' '}
+              <span className="font-medium text-slate-700 tabular-nums">
+                {analysis.lab_range_low ?? 0}–{analysis.lab_range_high ?? range_high} {unit}
+              </span>
+            </span>
+          ) : (
+            <span>
+              Healthy range{' '}
+              <span className="font-medium text-slate-700 tabular-nums">
+                {range_low}–{range_high} {unit}
+              </span>
+            </span>
+          )}
+          <span>
+            <span className="font-semibold text-slate-700 tabular-nums">{percentage_of_optimal}%</span> of optimal
           </span>
-        </span>
-        <span>
-          <span className="font-semibold text-slate-700 tabular-nums">{percentage_of_optimal}%</span> of optimal
-        </span>
-      </p>
+        </p>
+        {analysis.guideline_threshold && (
+          <p className="mt-2 rounded-md bg-slate-50 px-2.5 py-1.5 text-[11px] leading-relaxed text-slate-600">
+            {t('guidelineTarget')} <span className="font-semibold text-slate-800">{analysis.guideline_threshold}</span>
+            {analysis.guideline_source && <span className="block text-[10px] italic text-slate-500">{analysis.guideline_source}</span>}
+          </p>
+        )}
+      </div>
 
       {clinical_warning && (
         <div className="mt-4 flex items-start gap-2.5 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-800">

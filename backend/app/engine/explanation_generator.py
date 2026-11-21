@@ -1,6 +1,7 @@
-from typing import List, Tuple, Dict
+from typing import List, Tuple, Dict, Optional
 from app.engine.rule_engine import BIOMARKERS_CONFIG
-from app.models.schemas import MarkerAnalysisResult, NutrientRecommendationPlan, MarkerStatus
+from app.engine.allergen_rules import sanitize_tip_text
+from app.models.schemas import MarkerAnalysisResult, NutrientRecommendationPlan, MarkerStatus, UserProfile
 
 BIOMARKER_CLINICAL_PROFILES: Dict[str, Dict[str, str]] = {
     "vitamin_d": {
@@ -209,6 +210,7 @@ def generate_grounded_explanation(
     marker_analyses: List[MarkerAnalysisResult],
     recommendations: List[NutrientRecommendationPlan],
     lang: str = "en",
+    user_profile: Optional[UserProfile] = None,
 ) -> Tuple[str, bool, List[str]]:
     """
     Generates a deterministic, medically safe explanation grounded solely in the structured findings, in English,
@@ -252,9 +254,14 @@ def generate_grounded_explanation(
         if micronutrient_high:
             detail += L["micro_high"]
         elif profile:
+            strat = profile.get("repletion_strategy", "")
+            if user_profile:
+                algs = user_profile.allergens
+                diet_v = user_profile.diet_type.value if hasattr(user_profile.diet_type, "value") else str(user_profile.diet_type)
+                strat = sanitize_tip_text(strat, algs, diet_v)
             detail += L["role"].format(x=tr(profile.get("role", ""), lang))
             detail += L["relevance"].format(x=tr(profile.get("depletion_impact", ""), lang))
-            detail += L["context"].format(x=tr(profile.get("repletion_strategy", ""), lang))
+            detail += L["context"].format(x=tr(strat, lang))
         lines.append(detail)
 
     improve = [p for p in recommendations if getattr(p, "purpose", "improve") == "improve"]

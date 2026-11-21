@@ -12,7 +12,7 @@ FAQ = [
      'PDF or photo of your report, or paste its text. It reads 61 common tests (blood count, sugar, '
      'cholesterol, liver, kidney, thyroid, iron and vitamins).\n- Each result is marked low, borderline, '
      'normal or high and explained in plain language.\n- You pick Indian foods that help your results, and '
-     'NutriLens builds **diet plans** from 278 home-style dishes of your state: three one-day options, '
+     'NutriLens builds **diet plans** from 276 home-style dishes of your state: three one-day options, '
      'then a full **7-day plan** with a shopping list.\n- Everything works in **English, Hindi and '
      'Telugu**, including the PDFs.',
      ["How do I upload my report?", "Which tests are supported?", "Is my data private?"]),
@@ -64,7 +64,7 @@ FAQ = [
                      "are the nutrient values correct", "which food database do you use", "how many foods are there"],
      'Nutrient values come from the **Indian Food Composition Tables (IFCT 2017)** by ICMR-National '
      'Institute of Nutrition, Hyderabad, with USDA values for a few foods IFCT does not list. The food '
-     'suggestions use **187 Indian foods**; the diet plans use **278 dishes** whose nutrients are '
+     'suggestions use **187 Indian foods**; the diet plans use **276 dishes** whose nutrients are '
      'calculated from their raw ingredients, with cooking losses from IFCT. Dishes were checked against '
      'lab-measured values of cooked food (UK CoFID) and typical days against the salt Indians actually '
      'eat.',

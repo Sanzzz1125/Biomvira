@@ -30,7 +30,7 @@ export const HomeHero: React.FC = () => (
         </div>
         <p className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-700">
           <span><strong className="font-semibold">61</strong> common blood tests</span>
-          <span><strong className="font-semibold">278</strong> Indian home dishes</span>
+          <span><strong className="font-semibold">276</strong> Indian home dishes</span>
           <span translate="no">English · हिन्दी · తెలుగు</span>
         </p>
       </div>
@@ -154,7 +154,7 @@ export const ArticlesSection: React.FC = () => {
 const HOME_FAQ = [
   ['Is my report stored?', 'The file you upload is never stored. Your name and phone number are removed before anything else. Results are saved only if you are signed in, and only you can see them.'],
   ['Which labs and tests are supported?', 'Printed reports from any Indian lab, as a PDF or a clear photo. NutriLens reads 61 common tests: blood count, sugar, cholesterol, liver, kidney, thyroid, iron and vitamins.'],
-  ['How are the diet plans made?', 'Your calories and protein come from your age, sex, height, weight and activity. An optimisation engine then picks dishes and portions from 278 Indian home recipes so each day meets your calories and protein and aims for the nutrients your report shows as low, within your diet, region and allergies.'],
+  ['How are the diet plans made?', 'Your calories and protein come from your age, sex, height, weight and activity. An optimisation engine then picks dishes and portions from 276 Indian home recipes so each day meets your calories and protein and aims for the nutrients your report shows as low, within your diet, region and allergies.'],
   ['Is this a medical diagnosis?', 'No. NutriLens gives general nutrition guidance. Results that need medical care are clearly marked, and you should always talk to your doctor before changing treatment.'],
   ['Is NutriLens free?', 'Yes. Analysing reports, diet plans and saving them to your account are free.'],
 ];

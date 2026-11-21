@@ -48,7 +48,7 @@ const ACTIVITIES: { id: ActivityLevel; icon: React.ReactNode }[] = [
   { id: 'extra_active', icon: <HardHat className="h-4 w-4 shrink-0" aria-hidden /> },
 ];
 
-const MEATS = ['chicken', 'mutton', 'fish', 'shellfish', 'egg', 'beef', 'pork'];
+const MEATS = ['chicken', 'mutton', 'fish', 'shellfish', 'egg'];
 
 type Setter = React.Dispatch<React.SetStateAction<UserProfile>>;
 

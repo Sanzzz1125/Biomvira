@@ -14,7 +14,7 @@ const POINTS = [
   {
     icon: Apple,
     title: 'Indian food plans',
-    text: '278 Indian home dishes built from ICMR-NIN food data, matched to your diet and allergies.',
+    text: '276 Indian home dishes built from ICMR-NIN food data, matched to your diet and allergies.',
   },
   {
     icon: ShieldCheck,

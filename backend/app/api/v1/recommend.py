@@ -50,7 +50,7 @@ def analyze_and_recommend(
 
     # 3. Generate grounded explanation
     explanation, requires_consult, consult_reasons = generate_grounded_explanation(
-        marker_analyses, recommendations
+        marker_analyses, recommendations, user_profile=request.user_profile
     )
 
     response = FullAnalysisResponse(

@@ -356,7 +356,7 @@ export const RegionalKitchens: React.FC = () => {
           <p className="eyebrow">Meals from your own kitchen</p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">Home dishes from your state, not a foreign diet chart</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-slate-600">
-            Plans are built from 278 home-style dishes cooked across India. Here is what one day can look like.
+            Plans are built from 276 home-style dishes cooked across India. Here is what one day can look like.
           </p>
         </div>
       </div>

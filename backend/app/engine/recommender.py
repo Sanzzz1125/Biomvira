@@ -3,6 +3,7 @@ import re
 import os
 from typing import List, Dict, Any, Optional
 from app.engine.rule_engine import BIOMARKERS_CONFIG
+from app.engine.allergen_rules import sanitize_tip_text
 from app.models.schemas import (
     UserProfile,
     MarkerAnalysisResult,
@@ -305,8 +306,11 @@ class RecommendationEngine:
                     )
                 )
 
-            # Get absorption guidelines
+            # Absorption tips, reworded so they never suggest a food this person excludes
             rules = ABSORPTION_RULES.get(nutrient_key, {"dos": [], "donts": []})
+            diet = profile.diet_type.value if hasattr(profile.diet_type, "value") else str(profile.diet_type)
+            dos = [sanitize_tip_text(d, profile.allergens, diet) for d in rules.get("dos", [])]
+            donts = [sanitize_tip_text(d, profile.allergens, diet) for d in rules.get("donts", [])]
 
             plans.append(
                 NutrientRecommendationPlan(
@@ -314,8 +318,8 @@ class RecommendationEngine:
                     biomarker_display_name=marker.display_name,
                     status=marker.status,
                     recommended_foods=formatted_foods,
-                    absorption_dos=rules.get("dos", []),
-                    absorption_donts=rules.get("donts", []),
+                    absorption_dos=dos,
+                    absorption_donts=donts,
                     purpose=purpose,
                 )
             )
