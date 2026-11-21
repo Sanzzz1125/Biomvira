@@ -38,3 +38,7 @@ test_reports/
 # Local only: reports and Claude Code settings are never pushed
 NutriLens Final Report*.pdf
 .claude/
+
+# Final capstone documents (report, PPT, poster): kept locally, never pushed
+Capstone Docs/
+Latest Docs/
