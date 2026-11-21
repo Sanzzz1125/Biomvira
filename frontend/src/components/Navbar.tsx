@@ -196,6 +196,7 @@ const MobileMenu: React.FC<{ links: { to: string; label: string; icon: React.Ele
           <div className="my-2 h-px bg-slate-100" />
           {user ? (
             <div className="grid gap-0.5">
+              <Link to="/history" className={row}><History className="h-[18px] w-[18px] text-slate-500" aria-hidden /> My reports</Link>
               <Link to="/account" className={row}><Settings className="h-[18px] w-[18px] text-slate-500" aria-hidden /> Account settings</Link>
               {isStaff && <Link to="/admin" className={row}><LayoutDashboard className="h-[18px] w-[18px] text-slate-500" aria-hidden /> Admin portal</Link>}
               <button type="button" className={cx(row, 'text-red-600 hover:bg-red-50')}
@@ -227,8 +228,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDisclaimer }) => {
   const links = [
     { to: '/', label: 'Home', icon: House, end: true },
     { to: '/analyze', label: 'Analyze', icon: ScanLine, end: false },
-    // History exists in the page only for signed-in users (not hidden: never rendered for guests).
-    ...(user ? [{ to: '/history', label: 'History', icon: History, end: false }] : []),
   ];
 
   return (
