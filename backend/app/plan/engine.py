@@ -13,6 +13,8 @@ Three one-day options differ in what they favour: dishes from the person's regio
 7-day plan is solved day by day with weekly limits and variety. Values that are estimates (vitamin D in fish) count
 at half, so a plan never relies on them.
 """
+import os
+import threading
 from collections import defaultdict
 from dataclasses import dataclass, field
 
@@ -228,7 +230,16 @@ class DayRequest:
     time_limit_s: float = 4.0
 
 
+# Each solve takes its own memory in OR-Tools; on the 512 MB server, days are solved one at a time (others wait).
+_SOLVER_SLOTS = threading.BoundedSemaphore(int(os.environ.get("PLAN_SOLVER_SLOTS", "1")))
+
+
 def solve_day(person: Person, dishes: list, request: DayRequest):
+    with _SOLVER_SLOTS:
+        return _solve_day(person, dishes, request)
+
+
+def _solve_day(person: Person, dishes: list, request: DayRequest):
     from ortools.linear_solver import pywraplp
 
     t = targets(person)

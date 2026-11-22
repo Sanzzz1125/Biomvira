@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 
 from app.config import settings
 from app.core.deps import get_current_user, get_optional_user
-from app.core.ratelimit import enforce_rate_limit
+from app.core.ratelimit import enforce_rate_limit, site_wide
 from app.core.security import (
     hash_password, needs_rehash, normalize_email, password_problem, verify_password,
 )
@@ -38,6 +38,8 @@ def _check_password(password: str) -> None:
 @router.post("/register", response_model=UserOut, status_code=201)
 def register(body: RegisterRequest, request: Request, response: Response, db: Session = Depends(get_db)):
     enforce_rate_limit(request, "register")
+    if not site_wide("register", 30, 3600):  # sign-up spam with faked IPs stops here
+        raise HTTPException(429, "Too many new accounts right now. Please try again later.")
     _check_password(body.password)
     email = normalize_email(body.email)
     if db.query(User).filter_by(email=email).first():

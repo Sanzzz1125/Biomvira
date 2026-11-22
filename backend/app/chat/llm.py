@@ -43,7 +43,7 @@ Biomvira (free website) reads an Indian blood report and turns it into a persona
 - Dishes: 276 home-style dishes from every Indian state and union territory; nutrients calculated from raw ingredients (IFCT 2017, USDA for a few) with IFCT cooking losses; checked against lab-measured cooked food (UK CoFID) and typical-day salt (about 8 g/day eaten in India). An optimisation solver (OR-Tools) picks dishes and portions.
 - PDFs: "Download PDF" on the results page (results, 7-day plan if made, food plans, explanations) and "PDF" inside the 7-day plan (meals and shopping list). Both in the chosen language.
 - Languages: English, Hindi and Telugu for the whole website, results, diet plans and PDFs (language button at the top).
-- Accounts: optional and free. Signed-in users get History (saved reports, plans and assistant chats); guests' results and chats are not saved. Account page: change name/password, delete account (removes everything). Forgot password: ask an administrator for a reset link.
+- Accounts: optional and free. Signed-in users get My reports (saved reports, plans and assistant chats), opened from the menu under their name at the top right (on phones, the ☰ menu); there is no History tab; guests' results and chats are not saved. Account page: change name/password, delete account (removes everything). Forgot password: ask an administrator for a reset link.
 - No ads, no tracking; only sign-in cookies. Not a medical device; no diagnosis, medicines or doses.
 - Other pages: Science (how Biomvira works), Articles, FAQ.
 """
@@ -213,6 +213,9 @@ def numbers(text: str) -> set:
 
 def _complete(messages: list[dict], max_tokens: int = 900) -> Optional[str]:
     """One chat completion from the first model that answers; None when none can."""
+    from app.core.ratelimit import site_wide
+    if not site_wide("llm", 25, 60):  # protects the free Groq quota; the assistant answers from its rules instead
+        return None
     key = settings.chat_llm_api_key or settings.groq_api_key
     url = settings.chat_llm_base_url.rstrip("/") + "/chat/completions"
     now = time.monotonic()

@@ -135,7 +135,7 @@ FAQ_SITE = [
                         "two separate reports at once", "upload more than one file"],
      "Upload **one file at a time**. A multi-page PDF is fine. If your results are in two reports, either analyse each one "
      "separately, or choose **Paste text** and paste the values from both.",
-     ["Can I paste text?", "Where is my history?"]),
+     ["Can I paste text?", "Where are my reports?"]),
     ("password_pdf", ["my pdf has a password", "locked pdf", "encrypted report", "pdf asks for password",
                       "protected pdf cannot upload"],
      "Password-protected PDFs can't be read. Open it with its password and save or print it as a new PDF without a "
@@ -216,12 +216,12 @@ FAQ_SITE = [
     # ---- History, PDF, sharing ----
     ("history_compare", ["can i compare my reports", "track my progress", "see if my levels improved",
                          "compare old and new results", "trend of my vitamin d"],
-     "Sign in and every analysis is saved to **History**, newest first. Open two reports to compare your values over time. "
+     "Sign in and every analysis is saved in **My reports** (the menu under your name at the top right), newest first. Open two reports to compare your values over time. "
      "This is a good way to see whether your food changes are working.",
-     ["Where is my history?", "How often should I repeat my tests?"]),
+     ["Where are my reports?", "How often should I repeat my tests?"]),
     ("old_pdf", ["download an old report", "get pdf of previous analysis", "pdf from history", "reprint old plan"],
-     "Open **History**, click the report you want, and use **Download PDF** on that page.",
-     ["Where is my history?"]),
+     "Open **My reports** from the menu under your name at the top right, click the report you want, and use **Download PDF** on that page.",
+     ["Where are my reports?"]),
     ("share_doctor", ["how do i share my report with my doctor", "send my plan to doctor", "share with family",
                       "email my report", "whatsapp my plan", "share results"],
      "Click **Download PDF** on the results page, then share the PDF file however you like: email, WhatsApp or print. "
@@ -235,15 +235,15 @@ FAQ_SITE = [
      "Guest analyses and chats aren't saved at all, and the uploaded file itself is never stored.",
      ["How do I delete my account?", "Is my data private?"]),
     ("delete_report", ["delete my old report", "how to delete one report", "remove a report from history", "delete an old analysis"],
-     "Open **History** and choose **Delete** on the report, then confirm. Its assistant chats are deleted too. This can't "
+     "Open **My reports** (the menu under your name at the top right) and choose **Delete** on the report, then confirm. Its assistant chats are deleted too. This can't "
      "be undone.",
-     ["Where is my history?"]),
+     ["Where are my reports?"]),
 
     # ---- Account ----
     ("guest", ["using biomvira as a guest", "what happens if i do not log in", "what is guest mode", "continue as guest", "use without signing in", "difference between guest and account",
                "why sign up"],
      "As a **guest** you can analyse reports and download the PDF, but results aren't saved. With a free **account**, "
-     "every analysis is saved to History so you can come back to it and track changes.",
+     "every analysis is saved in **My reports** so you can come back to it and track changes.",
      ["How do I sign up?"]),
     ("password_rules", ["password requirements", "my password is not accepted", "what password should i use",
                         "password rules", "password too weak"],
@@ -260,7 +260,7 @@ FAQ_SITE = [
      ["I forgot my password"]),
     ("session", ["how long do i stay logged in", "why was i logged out", "logged out automatically",
                  "session expired", "keep me signed in"],
-     "You stay signed in on a device for about **7 days**. Changing your password signs you out on your other devices.",
+     "For your safety you are signed out after **2 hours** without using Biomvira, and after **1 day** at most. Changing your password signs you out on your other devices.",
      ["How do I log in?"]),
     ("logout", ["how do i log out", "sign out", "logout button"],
      "Open the menu with your name at the top right and choose **Log out**.", ["How do I delete my account?"]),
@@ -456,8 +456,8 @@ FAQ_SITE = [
     ("save_plan", ["can i save my diet plan", "how to save the 7 day plan", "where is my saved plan",
                    "will my diet plan be saved"],
      "When you are **signed in**, click **Save with my report** in your 7-day plan. Opening that report from "
-     "**History** later shows the saved plan. Guests can download the plan as a PDF instead.",
-     ["Where is my history?", "Can I download my plan?"]),
+     "**My reports** later shows the saved plan. Guests can download the plan as a PDF instead.",
+     ["Where are my reports?", "Can I download my plan?"]),
     ("pick_foods", ["how do i add foods to my plan", "what is add to plan", "can i choose my own foods",
                     "how to include a food in diet plan", "pick foods", "update my diet plan"],
      "In **1. Pick foods**, tap **Add to plan** on the foods you like, then click **Build my diet plan** (or **Update "

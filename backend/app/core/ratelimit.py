@@ -40,6 +40,20 @@ class RateLimiter:
 limiter = RateLimiter()
 
 
+def per_visitor(bucket: str, per_minute: int):
+    """A FastAPI dependency: at most per_minute requests a minute from one visitor for this group of endpoints."""
+    def check(request: Request) -> None:
+        if not limiter.allow(f"{bucket}:{client_ip(request)}", per_minute):
+            raise HTTPException(429, "Too many requests. Please wait a minute and try again.")
+    return check
+
+
+def site_wide(bucket: str, limit: int, window_seconds: int) -> bool:
+    """A cap for the whole site, whatever IP a request claims to come from (X-Forwarded-For can be faked when the
+    API is called directly)."""
+    return limiter.allow(f"site:{bucket}", limit, window_seconds)
+
+
 def enforce_rate_limit(request: Request, bucket: str) -> None:
     if not limiter.allow(f"{bucket}:{client_ip(request)}", settings.auth_rate_limit_per_minute):
         raise HTTPException(429, "Too many attempts. Please wait a minute and try again.")

@@ -1219,7 +1219,7 @@ def safety_and_smalltalk(text: str, raw: str, context: Optional[dict], has_entit
                      "- **Your results:** what a test means and whether your value is normal\n"
                      "- **Foods:** Indian foods for iron, vitamin D, B12, calcium, blood sugar, cholesterol and more, "
                      "for your diet and allergies\n"
-                     "- **Using Biomvira:** uploading reports, the review step, your plan, PDF and history\n"
+                     "- **Using Biomvira:** uploading reports, the review step, your plan, PDF and My reports\n"
                      "- **Privacy and safety:** how your data is handled and when to see a doctor",
                      kind="smalltalk", suggestions=_suggest(context))
     if ACK.match(text):

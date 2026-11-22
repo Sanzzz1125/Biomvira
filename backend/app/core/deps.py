@@ -1,4 +1,5 @@
 """Request dependencies: who is calling, and what are they allowed to do."""
+from datetime import timedelta
 from typing import Optional
 
 from fastapi import Depends, HTTPException, Request
@@ -15,8 +16,16 @@ def get_optional_user(request: Request, db: Session = Depends(get_db)) -> Option
     if not token:
         return None
     session = db.query(UserSession).filter_by(token_hash=hash_token(token)).first()
-    if session is None or session.expires_at <= utcnow():
+    now = utcnow()
+    hard_end = session.created_at + timedelta(hours=settings.session_max_hours) if session else None
+    if session is None or session.expires_at <= now or hard_end <= now:
         return None
+    # Sliding idle timeout: each use moves the end to 2 hours from now, never past 1 day after sign-in.
+    # Written at most every few minutes, so ordinary page loads do not all write to the database.
+    new_end = min(now + timedelta(minutes=settings.session_idle_minutes), hard_end)
+    if abs((new_end - session.expires_at).total_seconds()) > 300:
+        session.expires_at = new_end
+        db.commit()
     user = db.get(User, session.user_id)
     if user is None or user.status != STATUS_ACTIVE:
         return None

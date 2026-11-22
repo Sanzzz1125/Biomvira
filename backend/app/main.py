@@ -31,6 +31,10 @@ app = FastAPI(
     version=settings.app_version,
     debug=settings.debug,
     lifespan=lifespan,
+    # The public server does not publish a map of its endpoints; local development keeps /docs.
+    docs_url="/docs" if settings.api_docs else None,
+    redoc_url="/redoc" if settings.api_docs else None,
+    openapi_url="/openapi.json" if settings.api_docs else None,
 )
 
 # CORS is only for local tooling; production traffic is same-origin through Vercel's /api rewrite.
@@ -98,7 +102,7 @@ def health():
         "tagline": "From laboratory insights to personalized nutrition",
         "version": settings.app_version,
         "status": "online",
-        "docs_url": "/docs",
+        "docs_url": "/docs" if settings.api_docs else None,
     }
 
 # Local all-in-one mode: serve the built frontend when it exists (production uses Vercel).

@@ -1,7 +1,9 @@
 """Diet plans: three one-day options, a 7-day plan, swapping a dish, and a shopping list."""
 from typing import List, Literal, Optional
 
-from fastapi import APIRouter, HTTPException, Response
+from fastapi import APIRouter, Depends, HTTPException, Response
+
+from app.core.ratelimit import per_visitor
 from pydantic import BaseModel, Field
 
 from app.models.schemas import Activity
@@ -9,7 +11,7 @@ from app.plan import allergy, engine
 from app.plan.catalog import catalog
 from app.utils.diet_plan_pdf import generate_diet_plan_pdf
 
-router = APIRouter()
+router = APIRouter(dependencies=[Depends(per_visitor("plan", 30))])
 
 Style = Literal["familiar", "nutritious", "regional"]
 Slot = Literal["breakfast", "lunch", "snack", "dinner"]

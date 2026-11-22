@@ -20,7 +20,7 @@ from app.models.entities import (
 def _set_cookie(response: Response, name: str, value: str, *, http_only: bool) -> None:
     response.set_cookie(
         name, value,
-        max_age=settings.session_ttl_days * 86400,
+        max_age=settings.session_max_hours * 3600,
         httponly=http_only,
         secure=settings.cookie_secure,
         samesite="lax",
@@ -41,7 +41,7 @@ def start_session(db: Session, user: User, request: Request, response: Response)
     db.add(UserSession(
         user_id=user.id,
         token_hash=hash_token(token),
-        expires_at=now + timedelta(days=settings.session_ttl_days),
+        expires_at=now + timedelta(minutes=settings.session_idle_minutes),
         ip=client_ip(request),
         user_agent=(request.headers.get("user-agent") or "")[:255],
     ))

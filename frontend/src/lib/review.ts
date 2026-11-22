@@ -14,7 +14,9 @@ export function reviewReason(marker: DetectedBiomarker, all: DetectedBiomarker[]
   if (marker.qualifier) return `Reported as ${marker.qualifier}${marker.detected_value}; enter an exact value or remove this test.`;
   if (all.filter((m) => m.biomarker_key === marker.biomarker_key).length > 1)
     return 'This test appears more than once; keep the current result and remove the other.';
-  if (marker.extraction_method === 'ocr_regex') return 'Read from a scanned image; please confirm the value.';
+  // Photo values are only flagged when the two OCR readings disagreed (backend: pdf_extractor._unsure_tests).
+  if (marker.extraction_method === 'ocr_regex' && marker.warnings?.some((w) => w.startsWith('OCR transcription')))
+    return 'Read from a scanned image; please confirm the value.';
   if (marker.extraction_method === 'llm_fallback') return 'Read with the AI helper; please confirm the value.';
   return null;
 }

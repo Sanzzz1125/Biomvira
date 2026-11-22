@@ -11,7 +11,7 @@ def diet_text(data, filename, mime):
     """Text of a diet chart (Tesseract for photos and scans), with names and phone numbers removed."""
     import re
     text, _ = sanitize_report_text(extract_upload(data, filename, mime))
-    text = re.sub(r"\[\[PAGE \d+[^\]]*\]\]", " ", text)
+    text = re.sub(r"\[\[[^\]]*\]\]", " ", text)
     return " ".join(text.split())[:4000]
 
 

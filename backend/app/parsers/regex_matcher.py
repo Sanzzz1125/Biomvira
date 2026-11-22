@@ -75,7 +75,7 @@ def mentioned_keys(text):
     Explanatory prose such as "HbA1c is a form of hemoglobin ..." also contains biomarker names but is not
     a result, so a name only counts when it starts a line and either a digit follows within the next two lines or the line is short.
     """
-    lines = [l.strip() for l in text.splitlines() if not l.startswith('[[PAGE')]
+    lines = [l.strip() for l in text.splitlines() if not l.startswith('[[')]
     keys = set()
     for i, line in enumerate(lines):
         for key, match in aliases(line):
@@ -89,6 +89,8 @@ def mentioned_keys(text):
 
 
 def extract_biomarkers_with_regex(text):
+    # Photo OCR marks the tests whose two readings disagreed: "[[UNSURE hemoglobin,rbc]]" (pdf_extractor.ocr_image).
+    unsure = {k for m in re.finditer(r'\[\[UNSURE ([a-z0-9_,]*)\]\]', text or '') for k in m.group(1).split(',') if k}
     detected = []
     page = None
     method = 'regex'
@@ -100,6 +102,8 @@ def extract_biomarkers_with_regex(text):
             page, mode = boundary.groups(); page = int(page)
             method = 'ocr_regex' if mode == 'ocr' else 'regex'
             header = None; pending = ''; continue
+        if original.startswith('[['):
+            continue  # other internal markers are not report rows
         line = original.strip()
         cells = [s.strip() for s in re.split(r'\s*\|\s*|\t+|\s{2,}', line)]
         if any(re.fullmatch(r'(?:current\s+)?result|value', c, re.I) for c in cells) and any(re.search('test|parameter|investigation', c, re.I) for c in cells):
@@ -199,7 +203,7 @@ def extract_biomarkers_with_regex(text):
             warnings.append('Missing or unsupported unit; correct before analysis.')
         if qualifier:
             warnings.append('Qualified result is a bound, not an exact measurement; cannot analyze as exact.')
-        if method == 'ocr_regex':
+        if method == 'ocr_regex' and key in unsure:
             warnings.append('OCR transcription requires comparison with the original image.')
         flag = re.search(r'(?:^|\s|\|)(H|L|High|Low|\*+)(?=\s|\||$)(?!\s*:)', rest, re.I)
         marker = DetectedBiomarker(

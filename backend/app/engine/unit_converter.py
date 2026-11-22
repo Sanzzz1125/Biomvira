@@ -165,6 +165,8 @@ def clean_unit_string(unit: str) -> str:
         top = re.sub(r"^(?:millions?|mill?|mil\.)$", "10^6", top)
         top = re.sub(r"^(?:thou(?:sands?)?|k|thousand)$", "10^3", top)
         u = f"{top}/{bottom}"
+    if re.fullmatch(r"(?:lakhs?|lacs?)", u):
+        u = "lakh/ul"  # "2.5 LAKH" in a count row: lakhs per cumm
     return _CANONICAL_ALIASES.get(u, u)
 
 def convert_to_canonical(biomarker_key: str, value: float, unit: str) -> Tuple[float, str]:

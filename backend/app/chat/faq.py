@@ -160,17 +160,18 @@ FAQ = [
      '**Download PDF** at the top of the results page: your results, your 7-day diet plan (if you made '
      "one), the food plans and what your results mean.\n- **PDF** inside the 7-day plan: just the week's "
      'meals and the shopping list, handy for the kitchen.',
-     ["Where is my history?"]),
-    ("history", ["where is my history", "how do i see old reports", "are my analyses saved", "how to view previous results",
-                 "my report is not in history"],
-     "If you are **signed in**, every analysis is saved to **History** (top menu), where you can open or delete it. "
+     ["Where are my reports?"]),
+    ("history", ["where is my history", "where are my reports", "how do i see old reports", "are my analyses saved",
+                 "how to view previous results", "my report is not in history"],
+     "If you are **signed in**, every analysis is saved in **My reports**: open " + "the menu under your name at the top right" + " and choose "
+     "**My reports**. There you can open, download or delete any report. On a phone, it is in the menu (☰). "
      "As a guest, results are not saved; sign in before analysing to keep them.",
      ["Do I need an account?", "Is my data private?"]),
     ("account", ["do i need an account", "how do i sign up", "how to register", "how to create an account",
                  "can i use it without login", "how do i log in"],
      "You can analyse a report **without an account**. Create a free account with **Sign up** if you want your analyses saved "
-     "to History.",
-     ["Where is my history?", "I forgot my password"]),
+     "to **My reports**.",
+     ["Where are my reports?", "I forgot my password"]),
     ("password", ["i forgot my password", "how to reset password", "cannot log in", "login not working",
                   "how do i change my password"],
      "- **Change password:** open **Account** from the top menu while signed in.\n"
@@ -178,7 +179,7 @@ FAQ = [
      ["How do I delete my account?"]),
     ("delete_account", ["how do i delete my account", "remove my account", "delete my data", "erase my information"],
      "Open **Account** from the top menu and choose **Delete account**. This permanently removes your account, saved "
-     "history and assistant chats.",
+     "reports and assistant chats.",
      ["Is my data private?"]),
 
     # ---- Privacy & safety ----

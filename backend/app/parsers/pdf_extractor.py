@@ -1,5 +1,6 @@
 """Bounded local PDF/image extraction. No report images leave this process."""
 import io
+import os
 import re
 import shutil
 import subprocess
@@ -7,7 +8,7 @@ import tempfile
 import time
 from pathlib import Path
 import pdfplumber
-from PIL import Image, ImageOps, ImageFilter, UnidentifiedImageError
+from PIL import Image, ImageChops, ImageFilter, ImageOps, UnidentifiedImageError
 from app.config import settings
 
 
@@ -24,17 +25,82 @@ def usable(text):
             and sum(c == '\ufffd' or (ord(c) < 32 and c not in '\n\t') for c in text) / max(len(text), 1) < .02)
 
 
+OCR_SIDE = 2600  # long side of the page given to Tesseract: big photos shrink, small ones grow
+# A lone ":" that OCR read as "2" or "3" between a test name and its value ("Total RBC Count 2 3.91"). Not touched
+# when the next number starts a range ("Eosinophils 3 1 - 6"), so a real single-digit result is never removed.
+COLON_READ_AS_DIGIT = re.compile(r'^(\s*[A-Za-z][^\d\n]{2,60}?)\s+[23:;|!]\s+(?=\d[\d,]*(?:\.\d+)?(?![\d.,])(?!\s*[-–]\s*\d))',
+                                 re.M)
+
+
+def _otsu(gray):
+    hist = gray.histogram(); total = sum(hist); weighted = sum(i * hist[i] for i in range(256))
+    w_back = s_back = 0; best, threshold = 0.0, 128
+    for t in range(256):
+        w_back += hist[t]
+        if 0 < w_back < total:
+            s_back += t * hist[t]
+            m_back, m_fore = s_back / w_back, (weighted - s_back) / (total - w_back)
+            between = w_back * (total - w_back) * (m_back - m_fore) ** 2
+            if between > best:
+                best, threshold = between, t
+    return threshold
+
+
+def flatten_for_ocr(image):
+    """Upright (EXIF), grey, resized to OCR_SIDE, and uneven lighting and shadows removed (the page minus a blurred
+    copy of itself)."""
+    gray = ImageOps.exif_transpose(image).convert('L')
+    scale = OCR_SIDE / max(gray.size)
+    gray = gray.resize((max(1, round(gray.width * scale)), max(1, round(gray.height * scale))), Image.LANCZOS)
+    background = gray.filter(ImageFilter.GaussianBlur(max(9, OCR_SIDE // 100)))
+    return ImageOps.autocontrast(ImageOps.invert(ImageChops.subtract(background, gray)))
+
+
+def prepare_for_ocr(image, flat=None):
+    """A phone photo or scanned page as clean black text on white: the flattened page in black/white (Otsu)."""
+    flat = flat if flat is not None else flatten_for_ocr(image)
+    threshold = _otsu(flat)
+    return flat.point(lambda p: 255 if p > threshold else 0)
+
+
+def _tesseract(img, path, env, timeout):
+    img.save(path)
+    result = subprocess.run(['tesseract', str(path), 'stdout', '--psm', '6'], env=env,
+                            capture_output=True, timeout=timeout, check=True)
+    return result.stdout.decode('utf-8', errors='replace')
+
+
+def _unsure_tests(raw, fixed, flat, angle, path, env, deadline):
+    """Which tests a person should check. The page is read a second time from the grey (not black/white) image;
+    a value is sure only when both readings agree and the ':' correction was not needed on its row. If the second
+    reading cannot be made, every value is treated as unsure."""
+    from app.parsers.regex_matcher import extract_biomarkers_with_regex as read
+    main = {m.biomarker_key: m.detected_value for m in read(fixed)}
+    before = {m.biomarker_key: m.detected_value for m in read(raw)}
+    unsure = {k for k, v in main.items() if before.get(k) != v}
+    remaining = deadline - time.monotonic()
+    try:
+        if remaining < 3:
+            raise subprocess.TimeoutExpired('tesseract', 0)
+        second = COLON_READ_AS_DIGIT.sub(r'\1 : ', _tesseract(flat.rotate(angle, expand=True), path, env,
+                                                              min(settings.ocr_timeout_seconds, remaining)))
+    except (subprocess.TimeoutExpired, OSError, subprocess.CalledProcessError):
+        return set(main)
+    other = {m.biomarker_key: m.detected_value for m in read(second)}
+    return unsure | {k for k, v in main.items() if other.get(k) != v}
+
+
 def ocr_image(image, deadline, angles=(0, 90, 270, 180)):
     if image.width * image.height > settings.max_image_pixels:
         raise ReportError('Image exceeds safe pixel limit.')
     if not shutil.which('tesseract'):
         raise ReportError('OCR is unavailable. Install Tesseract on the server or paste report text.')
-    image = ImageOps.exif_transpose(image).convert('RGB')
-    gray = ImageOps.autocontrast(ImageOps.grayscale(image)).filter(ImageFilter.SHARPEN)
-    if max(gray.size) < 1600:
-        scale = min(2, 1600 / max(gray.size))
-        gray = gray.resize((int(gray.width * scale), int(gray.height * scale)))
-    best = ''
+    flat = flatten_for_ocr(image)
+    gray = prepare_for_ocr(image, flat)
+    # One thread: on a small shared server, Tesseract's default threading makes it many times slower.
+    env = {**os.environ, 'OMP_THREAD_LIMIT': '1'}
+    best = best_raw = ''
+    best_angle = 0
     with tempfile.TemporaryDirectory(prefix='biomvira-') as directory:
         path = Path(directory) / 'page.png'
         # Bounded orientation trials also handle mobile captures lacking EXIF.
@@ -44,23 +110,26 @@ def ocr_image(image, deadline, angles=(0, 90, 270, 180)):
                 raise ReportError('Report processing timed out. Try fewer pages.')
             gray.rotate(angle, expand=True).save(path)
             try:
-                result = subprocess.run(['tesseract', str(path), 'stdout', '--psm', '6'],
+                result = subprocess.run(['tesseract', str(path), 'stdout', '--psm', '6'], env=env,
                                         capture_output=True, timeout=min(settings.ocr_timeout_seconds, remaining), check=True)
             except subprocess.TimeoutExpired:
                 raise ReportError('OCR timed out. Try a clearer or smaller report.') from None
             except (OSError, subprocess.CalledProcessError):
                 raise ReportError('OCR failed. Try a clearer image or paste report text.') from None
-            candidate = result.stdout.decode('utf-8', errors='replace')
+            raw = result.stdout.decode('utf-8', errors='replace')
+            candidate = COLON_READ_AS_DIGIT.sub(r'\1 : ', raw)
             from app.parsers.regex_matcher import extract_biomarkers_with_regex
             if len(extract_biomarkers_with_regex(candidate)) > len(extract_biomarkers_with_regex(best)):
-                best = candidate
+                best, best_raw, best_angle = candidate, raw, angle
             elif not best and usable(candidate):
-                best = candidate
+                best, best_raw, best_angle = candidate, raw, angle
             if extract_biomarkers_with_regex(best):
                 break
-    if not usable(best):
-        raise ReportError('No readable laboratory text found. Upload a clearer report or paste text.')
-    return best
+        if not usable(best):
+            raise ReportError('No readable laboratory text found. Upload a clearer report or paste text.')
+        unsure = _unsure_tests(best_raw, best, flat, best_angle, path, env, deadline)
+    # Values both readings agree on go straight through; only these are shown for the person to check.
+    return best + (f"\n[[UNSURE {','.join(sorted(unsure))}]]" if unsure else '')
 
 
 def extract_text_and_tables_from_pdf(file_bytes: bytes) -> str:
@@ -144,10 +213,11 @@ def extract_upload(data, filename, mime):
     if len(data) > settings.max_upload_bytes:
         raise ReportError('File exceeds the configured upload size limit.')
     ext = Path(filename or '').suffix.lower()
-    expected = {'.pdf': 'application/pdf', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png'}
+    expected = {'.pdf': {'application/pdf'}, '.jpg': {'image/jpeg', 'image/jpg', 'image/pjpeg'},
+                '.jpeg': {'image/jpeg', 'image/jpg', 'image/pjpeg'}, '.png': {'image/png'}}
     if ext not in expected:
         raise ReportError('Supported formats are PDF, JPG, JPEG and PNG.')
-    if mime != expected[ext]:
+    if mime not in expected[ext]:
         raise ReportError('File MIME type does not match its extension.')
     if ext == '.pdf':
         if not data.startswith(b'%PDF-'):
@@ -161,6 +231,10 @@ def extract_upload(data, filename, mime):
                 raise ReportError('Image exceeds safe pixel limit.')
             image.verify()
         with Image.open(io.BytesIO(data)) as image:
+            if image.format == 'JPEG':
+                # JPEG can decode at 1/2, 1/4 or 1/8 size for free; ask for the smallest that still covers OCR_SIDE,
+                # so a 48 MP photo is decoded at about 12 MP (a quarter of the memory).
+                image.draft('L', (OCR_SIDE, OCR_SIDE))
             return '[[PAGE 1 ocr]]\n' + ocr_image(image, time.monotonic() + settings.processing_timeout_seconds)
     except (UnidentifiedImageError, OSError, Image.DecompressionBombError):
         raise ReportError('Image is corrupted or exceeds safe limits.') from None

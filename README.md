@@ -209,7 +209,7 @@ All routes are under `/api/v1`. Interactive documentation is at `/docs`.
 | **Admin** | Everything a user can, plus the admin portal: dashboard, user management, invitations and the audit log. |
 | **Owner** | Exactly one, enforced by the database. Everything an admin can, plus managing admins and transferring ownership. |
 
-Nobody, including admins and the owner, can read another person's reports. Passwords are hashed with Argon2id; sessions are random tokens in HttpOnly cookies, stored only as hashes; state-changing requests need a CSRF token; five failed logins lock an account for 15 minutes; invitation and reset links are single-use and expire after 48 hours.
+Nobody, including admins and the owner, can read another person's reports. Passwords are hashed with Argon2id; sessions are random tokens in HttpOnly cookies, stored only as hashes, that end after 2 hours without use or 1 day at most; state-changing requests need a CSRF token; five failed logins lock an account for 15 minutes; invitation and reset links are single-use and expire after 48 hours.
 
 ## Deployment
 

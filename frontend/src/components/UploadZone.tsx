@@ -11,6 +11,7 @@ import {
   UploadCloud,
 } from 'lucide-react';
 import { extractReport } from '../services/api';
+import { MAX_PHOTO_BYTES, preparePhoto } from '../lib/photo';
 import { ExtractionResponse } from '../types';
 import { Alert, Button, Card, cx } from './ui';
 
@@ -42,32 +43,34 @@ export const UploadZone: React.FC<UploadZoneProps> = ({
     }
   };
 
+  // PDFs up to 10 MB; photos up to 30 MB, shrunk in the browser before upload (lib/photo.ts).
+  const acceptFile = async (file: File) => {
+    const isPhoto = /\.(jpe?g|png)$/i.test(file.name);
+    const limit = isPhoto ? MAX_PHOTO_BYTES : 10 * 1024 * 1024;
+    if (!/\.(pdf|jpe?g|png)$/i.test(file.name) || !file.size || file.size > limit) {
+      setSelectedFile(null);
+      setError('Choose a non-empty PDF, JPG, JPEG or PNG up to 10 MB.');
+      return;
+    }
+    const ready = isPhoto ? await preparePhoto(file) : file;
+    if (ready.size > 10 * 1024 * 1024) {
+      setSelectedFile(null);
+      setError('Choose a non-empty PDF, JPG, JPEG or PNG up to 10 MB.');
+      return;
+    }
+    setSelectedFile(ready);
+    setError(null);
+  };
+
   const handleDrop = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      const file = e.dataTransfer.files[0];
-      if (/\.(pdf|jpe?g|png)$/i.test(file.name) && file.size > 0 && file.size <= 10 * 1024 * 1024) {
-        setSelectedFile(file);
-        setError(null);
-      } else {
-        setError('Choose a non-empty PDF, JPG, JPEG or PNG up to 10 MB.');
-      }
-    }
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) void acceptFile(e.dataTransfer.files[0]);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const file = e.target.files[0];
-      if (!/\.(pdf|jpe?g|png)$/i.test(file.name) || !file.size || file.size > 10 * 1024 * 1024) {
-        setSelectedFile(null);
-        setError("Choose a non-empty PDF, JPG, JPEG or PNG up to 10 MB.");
-        return;
-      }
-      setSelectedFile(file);
-      setError(null);
-    }
+    if (e.target.files && e.target.files[0]) void acceptFile(e.target.files[0]);
   };
 
   const handleProcess = async (fileToProcess?: File, textToProcess?: string) => {

@@ -104,3 +104,9 @@ def no_real_language_model(monkeypatch):
     from app.config import settings
     monkeypatch.setattr(settings, "groq_api_key", "")
     monkeypatch.setattr(settings, "chat_llm_api_key", "")
+
+
+@pytest.fixture(autouse=True)
+def fresh_rate_limits():
+    limiter.reset()
+    yield

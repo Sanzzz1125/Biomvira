@@ -37,17 +37,20 @@ class Settings(BaseSettings):
 
     max_upload_bytes: int = 10 * 1024 * 1024
     max_report_pages: int = 20
-    max_image_pixels: int = 20_000_000
+    api_docs: bool = True  # /docs and /openapi.json; the production Docker image sets API_DOCS=false
+    max_image_pixels: int = 60_000_000  # 48-50 MP phone cameras; JPEGs are decoded at a reduced size
     max_text_chars: int = 200_000
     processing_timeout_seconds: int = 90
-    ocr_timeout_seconds: int = 15
-    max_parallel_reports: int = 2
+    ocr_timeout_seconds: int = 40
+    max_parallel_reports: int = 1  # OCR uses ~160 MB; one at a time keeps the 512 MB server safe (others wait)
     gemini_timeout_ms: int = 15000
 
     # --- Auth & sessions ---
     session_cookie_name: str = "nl_session"
     csrf_cookie_name: str = "nl_csrf"
-    session_ttl_days: int = 7
+    # A sign-in ends after 2 hours without use, and after 1 day at most (health data on shared devices).
+    session_idle_minutes: int = 120
+    session_max_hours: int = 24
     # Must be true in production (HTTPS). Locally the site runs on plain http.
     cookie_secure: bool = False
     max_failed_logins: int = 5
@@ -60,7 +63,7 @@ class Settings(BaseSettings):
     # Vercel's /api rewrite (same origin), so CORS is only needed for local tooling.
     allowed_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
     # Sites allowed to send sign-in and registration forms (the API's own host is always allowed).
-    trusted_origins: str = "https://nutrilens-sand.vercel.app"
+    trusted_origins: str = "https://biomvira.vercel.app,https://nutrilens-sand.vercel.app"
 
     # --- PDF Export ---
     pdf_brand_color: str = "#2563EB"

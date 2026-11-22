@@ -2,7 +2,9 @@ import asyncio
 import re
 import uuid
 from typing import Optional
-from fastapi import APIRouter, UploadFile, File, Form, HTTPException
+from contextlib import asynccontextmanager
+from fastapi import APIRouter, Depends, UploadFile, File, Form, HTTPException
+from app.core.ratelimit import per_visitor
 import base64
 import json
 import os
@@ -17,8 +19,21 @@ from app.parsers.regex_matcher import extract_biomarkers_with_regex, mentioned_k
 from app.engine.rule_engine import BIOMARKERS_CONFIG
 from app.parsers.llm_fallback import extract_with_gemini_fallback
 
-router = APIRouter()
+router = APIRouter(dependencies=[Depends(per_visitor("upload", 10))])
 _slots = asyncio.Semaphore(settings.max_parallel_reports)
+
+
+@asynccontextmanager
+async def report_slot(wait_seconds: float = 60):
+    """One report is read at a time (OCR needs memory); the next upload waits its turn instead of failing."""
+    try:
+        await asyncio.wait_for(_slots.acquire(), timeout=wait_seconds)
+    except asyncio.TimeoutError:
+        raise HTTPException(503, 'Report processor is busy. Please retry shortly.') from None
+    try:
+        yield
+    finally:
+        _slots.release()
 
 
 def _kill_worker(worker):
@@ -76,9 +91,7 @@ async def diet_text(file: UploadFile = File(...)):
         await file.close()
     if len(data) > settings.max_upload_bytes:
         raise HTTPException(413, 'File exceeds the configured upload size limit.')
-    if _slots.locked():
-        raise HTTPException(503, 'Report processor is busy. Please retry shortly.')
-    async with _slots:
+    async with report_slot():
         payload = json.dumps(dict(mode='diet', data=base64.b64encode(data).decode(), filename=file.filename or '',
                                   mime=file.content_type or '', text=None)).encode()
         env = dict(os.environ, PYTHONPATH=str(Path(__file__).resolve().parents[3]))
@@ -115,9 +128,7 @@ async def extract_report(file: Optional[UploadFile] = File(None), raw_text: Opti
         raise HTTPException(400, 'Upload PDF, JPG, JPEG, PNG or paste report text.')
     if raw_text and len(raw_text) > settings.max_text_chars:
         raise HTTPException(413, 'Report exceeds text limit.')
-    if _slots.locked():
-        raise HTTPException(503, 'Report processor is busy. Please retry shortly.')
-    async with _slots:
+    async with report_slot():
         try:
             payload = json.dumps(dict(data=base64.b64encode(data).decode() if data is not None else None,
                                       filename=file.filename if file else '', mime=file.content_type if file else '', text=raw_text)).encode()

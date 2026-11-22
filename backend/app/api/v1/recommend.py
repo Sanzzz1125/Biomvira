@@ -1,3 +1,4 @@
+from app.core.ratelimit import per_visitor
 import uuid
 from datetime import datetime, timezone
 from typing import Optional
@@ -15,7 +16,7 @@ from app.engine.recommender import RecommendationEngine
 from app.engine.explanation_generator import generate_grounded_explanation
 from app.models.database import get_db
 
-router = APIRouter()
+router = APIRouter(dependencies=[Depends(per_visitor("analyze", 30))])
 rule_engine = RuleEngine()
 recommender = RecommendationEngine()
 
