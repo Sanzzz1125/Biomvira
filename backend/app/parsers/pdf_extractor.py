@@ -26,10 +26,32 @@ def usable(text):
 
 
 OCR_SIDE = 2600  # long side of the page given to Tesseract: big photos shrink, small ones grow
-# A lone ":" that OCR read as "2" or "3" between a test name and its value ("Total RBC Count 2 3.91"). Not touched
-# when the next number starts a range ("Eosinophils 3 1 - 6"), so a real single-digit result is never removed.
-COLON_READ_AS_DIGIT = re.compile(r'^(\s*[A-Za-z][^\d\n]{2,60}?)\s+[23:;|!]\s+(?=\d[\d,]*(?:\.\d+)?(?![\d.,])(?!\s*[-–]\s*\d))',
+# A lone ":" that OCR read as "2", "3", "i", "L" or "+" between a test name and its value ("Total RBC Count 2 3.91",
+# "Basophils L 0 %"). Not touched when the next number starts a range ("Eosinophils 3 1 - 6"), so a real single-digit
+# result is never removed.
+COLON_READ_AS_DIGIT = re.compile(r'^(\s*[A-Za-z][^\d\n]{2,60}?)\s+[23:;|!iIlL+]\s+(?=\d[\d,]*(?:\.\d+)?(?![\d.,])(?!\s*[-–]\s*\d))',
                                  re.M)
+# A range dash that OCR read as "=" ("Normal : 40= 75%"). Lab rows never put "=" between two numbers.
+DASH_READ_AS_EQUALS = re.compile(r'(?<=\d)\s*=\s*(?=\d)')
+# The "/" of "/Cumm" read as "{", "|", "(", "[", "i", "l" or "!" ("8,400 {Cumm", "LAKH icumm").
+SLASH_BEFORE_CUMM = re.compile(r'(?<=[\s\d])[{|(\[iIl!]\s?(?=c(?:u\.?\s*)?mm\b)', re.I)
+
+
+# Zeros of a range read as letters ("Normal : QO - 02%"): a lone token of only 0/O/o/Q right beside a range dash.
+ZEROS_READ_AS_LETTERS = re.compile(r'(?<![\w.])(?=[0OoQ]{0,2}[OoQ])[0OoQ]{1,3}(?=\s*[-–]\s*\d)'
+                                   r'|(?<=\d)(\s*[-–]\s*)(?=[0OoQ]{0,2}[OoQ])[0OoQ]{1,3}(?![\w.])')
+
+
+def _zeros(match):
+    return (match.group(1) or '') + '0' * len(match.group().replace(match.group(1) or '', '', 1))
+
+
+def fix_ocr_text(raw):
+    """Repairs OCR's usual misreadings of lab-report punctuation; real digits are never changed."""
+    text = COLON_READ_AS_DIGIT.sub(r'\1 : ', raw)
+    text = DASH_READ_AS_EQUALS.sub(' - ', text)
+    text = ZEROS_READ_AS_LETTERS.sub(_zeros, text)
+    return SLASH_BEFORE_CUMM.sub('/', text)
 
 
 def _otsu(gray):
@@ -72,22 +94,29 @@ def _tesseract(img, path, env, timeout):
 
 def _unsure_tests(raw, fixed, flat, angle, path, env, deadline):
     """Which tests a person should check. The page is read a second time from the grey (not black/white) image;
-    a value is sure only when both readings agree and the ':' correction was not needed on its row. If the second
-    reading cannot be made, every value is treated as unsure."""
+    a row is sure only when both readings agree on its value (and on its printed range, when both found one) and the
+    ':' correction did not change its value. If the second reading cannot be made, every value is treated as unsure."""
     from app.parsers.regex_matcher import extract_biomarkers_with_regex as read
-    main = {m.biomarker_key: m.detected_value for m in read(fixed)}
-    before = {m.biomarker_key: m.detected_value for m in read(raw)}
-    unsure = {k for k, v in main.items() if before.get(k) != v}
+
+    def rows(text):
+        return {m.biomarker_key: (m.detected_value, m.report_reference_range) for m in read(text)}
+
+    main = rows(fixed)
+    before = rows(raw)
+    unsure = {k for k, (v, _) in main.items() if k not in before or before[k][0] != v}
     remaining = deadline - time.monotonic()
     try:
         if remaining < 3:
             raise subprocess.TimeoutExpired('tesseract', 0)
-        second = COLON_READ_AS_DIGIT.sub(r'\1 : ', _tesseract(flat.rotate(angle, expand=True), path, env,
-                                                              min(settings.ocr_timeout_seconds, remaining)))
+        second = fix_ocr_text(_tesseract(flat.rotate(angle, expand=True), path, env,
+                                         min(settings.ocr_timeout_seconds, remaining)))
     except (subprocess.TimeoutExpired, OSError, subprocess.CalledProcessError):
         return set(main)
-    other = {m.biomarker_key: m.detected_value for m in read(second)}
-    return unsure | {k for k, v in main.items() if other.get(k) != v}
+    other = rows(second)
+    for k, (value, ref) in main.items():
+        if k not in other or other[k][0] != value or (ref and other[k][1] and ref != other[k][1]):
+            unsure.add(k)
+    return unsure
 
 
 def ocr_image(image, deadline, angles=(0, 90, 270, 180)):
@@ -117,7 +146,7 @@ def ocr_image(image, deadline, angles=(0, 90, 270, 180)):
             except (OSError, subprocess.CalledProcessError):
                 raise ReportError('OCR failed. Try a clearer image or paste report text.') from None
             raw = result.stdout.decode('utf-8', errors='replace')
-            candidate = COLON_READ_AS_DIGIT.sub(r'\1 : ', raw)
+            candidate = fix_ocr_text(raw)
             from app.parsers.regex_matcher import extract_biomarkers_with_regex
             if len(extract_biomarkers_with_regex(candidate)) > len(extract_biomarkers_with_regex(best)):
                 best, best_raw, best_angle = candidate, raw, angle

@@ -112,3 +112,51 @@ def test_unsure_marker_controls_the_review_warning():
     text = "[[PAGE 1 ocr]]\nHaemoglobin : 10.2 g/dL\nVitamin D : 18 ng/mL\n[[UNSURE vitamin_d]]"
     flagged = {m.biomarker_key for m in extract_biomarkers_with_regex(text) if any(w.startswith("OCR transcription") for w in m.warnings)}
     assert flagged == {"vitamin_d"}
+
+
+@pytest.mark.parametrize("line,expected", [
+    ("Basophils L 0 % Normal : 00 - 02%", "Basophils : 0 % Normal : 00 - 02%"),      # ':' read as L
+    ("Eosinophils i 3 % Normal : 02 - 06", "Eosinophils : 3 % Normal : 02 - 06"),    # ':' read as i
+    ("Neutrophils + 81 % Normal: 40= 75%", "Neutrophils : 81 % Normal: 40 - 75%"),   # ':' as +, '-' as '='
+    ("Total WBC Count : 8,400 {Cumm 4,000 - 11,000", "Total WBC Count : 8,400 /Cumm 4,000 - 11,000"),
+    ("platelet Count : 2,53,000 LAKH icumm 1.5 - 4.0", "platelet Count : 2,53,000 LAKH /cumm 1.5 - 4.0"),
+    ("Haemoglobin : 10.2 gms % 12.5 - 18.0", "Haemoglobin : 10.2 gms % 12.5 - 18.0"),  # clean rows unchanged
+    ("Basophils : 0 % Normal : QO - 02%", "Basophils : 0 % Normal : 00 - 02%"),       # zeros read as letters
+    ("Basophils : 0 % Normal : 00 - O2%", "Basophils : 0 % Normal : 00 - O2%"),       # not a lone token: kept
+    ("Basophils : 0 % Normal : 0 - O", "Basophils : 0 % Normal : 0 - 0"),
+    ("Vitamin D : 18 ng/mL NO - 2 tablets", "Vitamin D : 18 ng/mL NO - 2 tablets"),    # words never touched
+])
+def test_fix_ocr_text(line, expected):
+    assert pdf.fix_ocr_text(line) == expected
+
+
+def test_photo_rows_with_misread_punctuation_parse_fully():
+    text = pdf.fix_ocr_text("Total WBC Count : 8,400 {Cumm 4.000 - 11,000/Cum'\n"
+                            "Neutrophils + 81 % Normal: 40= 75%\nLymphocytes i 14 % Normal : 20= 45%\n"
+                            "Basophils L 0 % Normal : 00 - 02%")
+    rows = {m.biomarker_key: m for m in extract_biomarkers_with_regex(text)}
+    wbc = rows["wbc"]
+    assert (wbc.detected_value, wbc.canonical_unit) == (8400, "cells/µL") and not wbc.warnings
+    assert (wbc.report_reference_range.low, wbc.report_reference_range.high) == (4000, 11000)
+    for key, low, high in (("neutrophils", 40, 75), ("lymphocytes", 20, 45), ("basophils", 0, 2)):
+        assert (rows[key].report_reference_range.low, rows[key].report_reference_range.high) == (low, high)
+        assert not rows[key].warnings and rows[key].abnormal_flag is None
+
+
+@pytest.mark.parametrize("range_text,expected", [
+    ("4.000 - 11,000", (4000, 11000)),   # thousands comma read as a dot
+    ("4.0 - 11.0", (4.0, 11.0)),
+    ("4.000 - 11.000", (4.0, 11.0)),     # both ends alike: kept as printed
+    ("1.5 - 4.0", (1.5, 4.0)),
+])
+def test_range_thousands_dot(range_text, expected):
+    from app.parsers.regex_matcher import RANGE_PATTERN, read_range
+    assert read_range(RANGE_PATTERN.search(range_text)) == expected
+
+
+def test_disagreeing_ranges_are_flagged(monkeypatch):
+    main = "Neutrophils : 81 % 40 - 72%\nLymphocytes : 14 % 20 - 45%"
+    second = "Neutrophils : 81 % 40 - 75%\nLymphocytes : 14 %"   # no range in the second reading: not a disagreement
+    monkeypatch.setattr(pdf, "_tesseract", lambda *a, **k: second)
+    unsure = pdf._unsure_tests(main, main, Image.new("L", (10, 10)), 0, "x.png", {}, pdf.time.monotonic() + 30)
+    assert unsure == {"neutrophils"}

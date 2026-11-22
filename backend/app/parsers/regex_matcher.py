@@ -31,6 +31,17 @@ def to_float(text):
     return float(text.replace(',', '')) if re.fullmatch(r'\d{1,3}(?:,\d{2})*(?:,\d{3})+(?:\.\d+)?', text) else float(text.replace(',', '.'))
 
 
+def read_range(match):
+    """(low, high) of a RANGE_PATTERN match. A thousands comma that OCR read as a dot ("4.000 - 11,000") is put
+    back when the other end shows the range is in thousands; "4.0 - 11.0" and "4.000 - 11.000" stay as printed."""
+    if not match:
+        return None
+    low, high = to_float(match[1]), to_float(match[2])
+    if re.fullmatch(r'\d{1,3}\.\d{3}', match[1]) and high >= 1000 and low * 1000 <= high:
+        low *= 1000
+    return low, high
+
+
 def mask_units(text):
     return UNIT.sub(lambda m: ' ' * len(m.group()), text)
 
@@ -137,7 +148,7 @@ def extract_biomarkers_with_regex(text):
             rest = rest[:band.start()]
         ref = RANGE_PATTERN.search(mask_units(rest))
         search = rest[:ref.start()] if ref else rest
-        ref = (to_float(ref[1]), to_float(ref[2])) if ref else None
+        ref = read_range(ref)
         warnings = []
         grouped = SEX_AGE_RANGE.search(rest)
         if grouped:
@@ -150,8 +161,7 @@ def extract_biomarkers_with_regex(text):
                 if unit_columns:
                     search += ' ' + cells[unit_columns[0]]
                 range_columns = [i for i,c in enumerate(header) if 'reference' in c or 'range' in c]
-                ref = RANGE_PATTERN.search(cells[range_columns[0]]) if range_columns else None
-                ref = (to_float(ref[1]), to_float(ref[2])) if ref else None
+                ref = read_range(RANGE_PATTERN.search(cells[range_columns[0]]) if range_columns else None)
         # Mask units before searching: g/100ml must not supply a patient value.
         numbers = list(VALUE.finditer(mask_units(search)))
         if len(numbers) > 1 and not numbers[0].group(1):
