@@ -230,25 +230,23 @@ export const PlanBuilder: React.FC<{
           </Alert>
         )}
 
-        {!ready && (
-          <div className="grid gap-4 sm:grid-cols-3">
-            {profile.age < 18 ? (
-              <p className="text-sm text-slate-600 sm:col-span-3">{t('adultsOnly')}</p>
-            ) : (
-              <>
-                <label className="text-sm font-medium text-slate-700">{t('height')}
-                  <input type="number" min={120} max={220} className="field mt-1.5" value={profile.height_cm ?? ''}
-                    onChange={(e) => setProfile({ ...profile, height_cm: Number(e.target.value) || null })} />
-                </label>
-                <label className="text-sm font-medium text-slate-700">{t('weight')}
-                  <input type="number" min={30} max={200} className="field mt-1.5" value={profile.weight_kg ?? ''}
-                    onChange={(e) => setProfile({ ...profile, weight_kg: Number(e.target.value) || null })} />
-                </label>
-                <p className="self-end text-xs text-slate-500">{t('neededForCalories')}</p>
-              </>
-            )}
-          </div>
-        )}
+        <div className="grid gap-4 sm:grid-cols-3">
+          {profile.age < 18 ? (
+            <p className="text-sm text-slate-600 sm:col-span-3">{t('adultsOnly')}</p>
+          ) : (
+            <>
+              <label className="text-sm font-medium text-slate-700">{t('height')}
+                <input type="number" min={120} max={220} className="field mt-1.5" value={profile.height_cm ?? ''}
+                  onChange={(e) => setProfile({ ...profile, height_cm: Number(e.target.value) || null })} />
+              </label>
+              <label className="text-sm font-medium text-slate-700">{t('weight')}
+                <input type="number" min={30} max={200} className="field mt-1.5" value={profile.weight_kg ?? ''}
+                  onChange={(e) => setProfile({ ...profile, weight_kg: Number(e.target.value) || null })} />
+              </label>
+              <p className="self-end text-xs text-slate-500">{t('neededForCalories')}</p>
+            </>
+          )}
+        </div>
 
         {!week && (!options || !ready) && (
           <Button onClick={buildOptions} loading={loading === 'options'} disabled={!ready || !!loading}
