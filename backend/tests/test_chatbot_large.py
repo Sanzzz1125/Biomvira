@@ -1,4 +1,4 @@
-"""Large evaluation of the NutriLens assistant: thousands of questions across five suites.
+"""Large evaluation of the Biomvira assistant: thousands of questions across five suites.
 
 1. WEBSITE: hand-written questions about using the site, phrased differently from the FAQ bank (held out).
 2. GENERATED: every test, condition and food asked in several ways, built from the data files.
@@ -102,7 +102,7 @@ WEBSITE = [
     ("do you show ads", ("faq:cookies_ads",)),
     ("how can i contact the team", ("faq:contact",)),
     ("i want to report a bug", ("faq:contact",)),
-    ("who should use nutrilens", ("faq:who_for",)),
+    ("who should use biomvira", ("faq:who_for",)),
     ("can it read a report from the usa", ("faq:foreign_report",)),
     ("is a 2 year old report ok", ("faq:old_report",)),
     ("can i upload my urine report", ("faq:unsupported_reports",)),
@@ -111,12 +111,12 @@ WEBSITE = [
     ("are my chats saved", ("faq:chatbot",)),
     ("is zinc test supported", ("faq:unsupported_test",)),
     ("does it cost money", ("faq:is_free",)),
-    ("what is nutrilens about", ("faq:about",)),
+    ("what is biomvira about", ("faq:about",)),
     ("is my report stored on your server", ("faq:privacy",)),
     ("can my doctor be replaced by this", ("faq:diagnosis",)),
     ("how accurate is the reading", ("faq:accuracy",)),
     ("how are the foods picked", ("faq:how_it_works",)),
-    ("which tests does nutrilens read", ("faq:supported_tests",)),
+    ("which tests does biomvira read", ("faq:supported_tests",)),
     ("why no plan for my thyroid result", ("faq:plan_tests",)),
     ("how much protein should i eat daily", ("faq:protein_need",)),
     ("daily calcium needed", ("faq:calcium_need",)),
@@ -214,7 +214,7 @@ FRESH2 = [
  ("can i share my plan on whatsapp", ("faq:share_doctor",)), ("where are my saved analyses", ("faq:history",)),
  ("i want to delete everything", ("faq:delete_account","faq:data_retention")), ("can i change my email id", ("faq:change_name_email",)),
  ("i did not get the reset email", ("faq:password","faq:reset_link")), ("is there an ios app", ("faq:mobile",)),
- ("does nutrilens cost anything", ("faq:is_free",)), ("can doctors use nutrilens", ("faq:who_for",)),
+ ("does biomvira cost anything", ("faq:is_free",)), ("can doctors use biomvira", ("faq:who_for",)),
  ("do you keep my chats", ("faq:chatbot",)), ("is my blood report shared with anyone", ("faq:privacy",)),
  ("what is the use of this app", ("faq:about","faq:who_for")), ("how accurate is the ocr", ("faq:accuracy",)),
  ("what is ferritin", ("test:ferritin",)), ("normal vitamin b12 level", ("test:vitamin_b12",)), ("my tsh is 9.2", ("test:tsh",)),
@@ -227,7 +227,7 @@ FRESH2 = [
  ("benefits of amla for hair", ("food:","faq:hair_fall")), ("is banana bad for sugar", ("food:",)), ("is fish good for cholesterol", ("food:","concept:cholesterol")),
  ("how much calcium do adults need", ("faq:calcium_need",)), ("is green tea good", ("faq:tea_iron","faq:hydration_drinks")),
  ("are nuts good for heart", ("faq:nuts_daily","concept:cholesterol")), ("best snacks for evening", ("faq:snacks",)),
- ("hello nutrilens", ("kind:smalltalk",)), ("thanks for the help", ("kind:smalltalk",)), ("bye bye", ("kind:smalltalk",)),
+ ("hello biomvira", ("kind:smalltalk",)), ("thanks for the help", ("kind:smalltalk",)), ("bye bye", ("kind:smalltalk",)),
  ("who is the prime minister", ("kind:refuse",)), ("write me a poem", ("kind:refuse",)), ("what is bitcoin price", ("kind:refuse","faq:is_free")),
  ("my friend is unconscious", ("kind:safety",)), ("i feel like ending it all", ("kind:safety","kind:refuse","kind:fallback")),
  ("how many vitamin d capsules per week", ("kind:refuse",)), ("can i stop insulin if i eat millets", ("kind:refuse",)),

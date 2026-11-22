@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-NutriLens Synthetic Blood Report Generator
+Biomvira Synthetic Blood Report Generator
 Generates realistic Indian diagnostic laboratory blood report PDFs
 mimicking Dr. Lal PathLabs, Metropolis, SRL Diagnostics, Apollo, and Thyrocare.
 """

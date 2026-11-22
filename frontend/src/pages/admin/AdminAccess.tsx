@@ -68,7 +68,7 @@ export const AdminAccess: React.FC = () => {
       <PageHeader
         eyebrow="Admin portal"
         title="Admins & access"
-        description="Decide who can manage NutriLens. Only you, the owner, can add, edit or remove admins."
+        description="Decide who can manage Biomvira. Only you, the owner, can add, edit or remove admins."
       />
       {error && <Alert tone="error">{error}</Alert>}
 

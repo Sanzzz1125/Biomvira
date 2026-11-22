@@ -67,7 +67,7 @@ def _origin_allowed(request: Request) -> bool:
 async def security_middleware(request: Request, call_next):
     if (request.method in UNSAFE_METHODS and request.url.path.startswith("/api/v1/auth")
             and not _origin_allowed(request)):
-        return JSONResponse({"detail": "Security check failed. Open NutriLens from its own address and try again."},
+        return JSONResponse({"detail": "Security check failed. Open Biomvira from its own address and try again."},
                             status_code=403)
     # CSRF (double-submit): signed-in requests that change data must echo the CSRF cookie.
     if (request.method in UNSAFE_METHODS and request.url.path.startswith("/api/")

@@ -22,7 +22,7 @@ export const Forbidden: React.FC = () => (
     <EmptyState
       icon={Lock}
       title="You don't have access to this page"
-      description="This area is limited to a different role. If you think this is a mistake, contact the NutriLens owner."
+      description="This area is limited to a different role. If you think this is a mistake, contact the Biomvira owner."
       action={
         <Link to="/" className="text-sm font-semibold text-brand-700 hover:underline">
           Go to the analyzer

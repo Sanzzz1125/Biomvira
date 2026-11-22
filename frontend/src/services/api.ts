@@ -45,7 +45,7 @@ export async function downloadPlanPdf(analysisData: FullAnalysisResponse): Promi
   const url = window.URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `NutriLens_Nutrition_Plan_${analysisData.analysis_id.slice(0, 8)}.pdf`;
+  a.download = `Biomvira_Nutrition_Plan_${analysisData.analysis_id.slice(0, 8)}.pdf`;
   document.body.appendChild(a);
   a.click();
   window.URL.revokeObjectURL(url);
@@ -168,7 +168,7 @@ export async function downloadDietPlanPdf(days: PlanDay[], shopping: ShoppingIte
   const url = window.URL.createObjectURL(await response.blob());
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'NutriLens_7_day_plan.pdf';
+  a.download = 'Biomvira_7_day_plan.pdf';
   document.body.appendChild(a);
   a.click();
   window.URL.revokeObjectURL(url);

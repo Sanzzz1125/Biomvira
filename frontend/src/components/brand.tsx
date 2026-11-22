@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, Copy, Crown, Leaf, ShieldCheck, User as UserIcon } from 'lucide-react';
+import { Check, Copy, Crown, ShieldCheck, User as UserIcon } from 'lucide-react';
 import { ROLE_LABEL } from '../auth/AuthContext';
 import { absoluteLink } from '../services/accounts';
 import { formatDateTime, initials } from '../lib/format';
@@ -17,17 +17,10 @@ export const Logo: React.FC<{ to?: string; inverted?: boolean; className?: strin
   inverted = false,
   className,
 }) => (
-  <Link to={to} onClick={toTopIfHere(to)} className={cx('flex items-center gap-2.5 rounded-lg', className)} aria-label="NutriLens home">
-    <span
-      className={cx(
-        'flex h-9 w-9 items-center justify-center rounded-lg shadow-sm',
-        inverted ? 'bg-white text-brand-700' : 'bg-brand-600 text-white'
-      )}
-    >
-      <Leaf className="h-[18px] w-[18px]" strokeWidth={2.25} aria-hidden />
-    </span>
+  <Link to={to} onClick={toTopIfHere(to)} className={cx('flex items-center gap-2.5 rounded-lg', className)} aria-label="Biomvira home">
+    <img src="/biomvira-mark.svg" width={36} height={36} alt="" className="shrink-0" />
     <span className={cx('text-[17px] font-bold tracking-tight', inverted ? 'text-white' : 'text-slate-900')}>
-      NutriLens
+      Biomvira
     </span>
   </Link>
 );

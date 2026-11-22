@@ -67,10 +67,10 @@ pdf | how to download pdf
 pdf | can i print my diet plan
 pdf | download my report as pdf
 pdf | pdf download not working
-about | what is nutrilens
+about | what is biomvira
 about | what does this website do
 about | tell me about this app
-how_it_works | how does nutrilens work
+how_it_works | how does biomvira work
 how_it_works | is this ai
 how_it_works | how do you choose the foods
 is_free | is it free
@@ -134,7 +134,7 @@ cooking_methods | healthy cooking methods
 processed_food | is maida bad
 pregnancy | diet in pregnancy
 pregnancy | i am pregnant can i use this
-children | can children use nutrilens
+children | can children use biomvira
 fasting_test | should i fast before blood test
 retest | when should i repeat the test
 tiredness | i feel tired all the time

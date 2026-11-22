@@ -23,7 +23,7 @@ language | telugu language option
 pdf | how to save plan as pdf
 pdf | where is the download button
 about | what can this website do for me
-is_free | is nutrilens paid
+is_free | is biomvira paid
 supported_tests | does it read cholesterol test
 upload | how to start
 file_types | can i upload png

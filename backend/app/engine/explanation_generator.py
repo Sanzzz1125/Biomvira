@@ -93,63 +93,63 @@ BIOMARKER_CLINICAL_PROFILES: Dict[str, Dict[str, str]] = {
         "role": "A waste product from muscle that the kidneys filter out of the blood.",
         "depletion_impact": "A value above the range can mean the kidneys are filtering less effectively and needs medical review.",
         "indian_context": "",
-        "repletion_strategy": "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+        "repletion_strategy": "Biomvira does not generate a food plan for this test. Please review it with your doctor."
     },
     "urea": {
         "system": "Kidney Function",
         "role": "A waste product from protein breakdown that the kidneys remove.",
         "depletion_impact": "A value outside the range can reflect kidney function, hydration or protein intake and should be reviewed by a doctor.",
         "indian_context": "",
-        "repletion_strategy": "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+        "repletion_strategy": "Biomvira does not generate a food plan for this test. Please review it with your doctor."
     },
     "uric_acid": {
         "system": "Kidney and Joint Health",
         "role": "A waste product from the breakdown of purines in food and body cells.",
         "depletion_impact": "A value outside the range should be reviewed by a doctor; high levels are linked with gout.",
         "indian_context": "",
-        "repletion_strategy": "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+        "repletion_strategy": "Biomvira does not generate a food plan for this test. Please review it with your doctor."
     },
     "sgot_ast": {
         "system": "Liver Function",
         "role": "An enzyme found in the liver, heart and muscle that rises when these tissues are stressed.",
         "depletion_impact": "A value above the range can point to liver or muscle stress and should be reviewed by a doctor.",
         "indian_context": "",
-        "repletion_strategy": "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+        "repletion_strategy": "Biomvira does not generate a food plan for this test. Please review it with your doctor."
     },
     "sgpt_alt": {
         "system": "Liver Function",
         "role": "An enzyme found mainly in the liver that rises when liver cells are injured.",
         "depletion_impact": "A value above the range can point to liver stress and should be reviewed by a doctor.",
         "indian_context": "",
-        "repletion_strategy": "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+        "repletion_strategy": "Biomvira does not generate a food plan for this test. Please review it with your doctor."
     },
     "alkaline_phosphatase": {
         "system": "Liver and Bone",
         "role": "An enzyme found in the liver, bile ducts and bone.",
         "depletion_impact": "A value outside the range should be reviewed by a doctor to find its source.",
         "indian_context": "",
-        "repletion_strategy": "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+        "repletion_strategy": "Biomvira does not generate a food plan for this test. Please review it with your doctor."
     },
     "bilirubin_total": {
         "system": "Liver Function",
         "role": "A yellow pigment produced when red blood cells break down and cleared by the liver.",
         "depletion_impact": "A value outside the range should be reviewed by a doctor.",
         "indian_context": "",
-        "repletion_strategy": "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+        "repletion_strategy": "Biomvira does not generate a food plan for this test. Please review it with your doctor."
     },
     "total_protein": {
         "system": "Liver and Nutrition",
         "role": "The total of albumin and globulin proteins in the blood.",
         "depletion_impact": "A value outside the range can reflect liver function, nutrition or inflammation and should be reviewed by a doctor.",
         "indian_context": "",
-        "repletion_strategy": "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+        "repletion_strategy": "Biomvira does not generate a food plan for this test. Please review it with your doctor."
     },
     "albumin": {
         "system": "Liver and Nutrition",
         "role": "The main protein made by the liver, which keeps fluid in the blood vessels.",
         "depletion_impact": "A value outside the range should be reviewed by a doctor.",
         "indian_context": "",
-        "repletion_strategy": "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+        "repletion_strategy": "Biomvira does not generate a food plan for this test. Please review it with your doctor."
     },
     "calcium": {
         "system": "Skeletal Density & Neuromuscular Signaling",
@@ -160,7 +160,7 @@ BIOMARKER_CLINICAL_PROFILES: Dict[str, Dict[str, str]] = {
     }
 }
 
-_NO_PLAN = "NutriLens does not generate a food plan for this test. Please review it with your doctor."
+_NO_PLAN = "Biomvira does not generate a food plan for this test. Please review it with your doctor."
 _CBC, _THY, _ELEC = "Complete Blood Count", "Thyroid Function", "Electrolytes"
 
 

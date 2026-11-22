@@ -44,13 +44,13 @@ Article not found.
 Article topics
 Articles
 Arunachal Pradesh
-Ask NutriLens
-Ask a NutriLens administrator to send you a password reset link. It lets you choose a new password in one step.
+Ask Biomvira
+Ask a Biomvira administrator to send you a password reset link. It lets you choose a new password in one step.
 Ask a question
 Ask about a test, a food or your plan
-Ask about the results on this page, your food plan, or anything about NutriLens.
+Ask about the results on this page, your food plan, or anything about Biomvira.
 Ask about these results
-Ask about your blood test results, Indian foods for a nutrient, or how to use NutriLens.
+Ask about your blood test results, Indian foods for a nutrient, or how to use Biomvira.
 Ask me what any value means or which foods help.
 Ask next
 Assam
@@ -58,7 +58,7 @@ Assistant is typing
 At least 8 characters
 At the same meal, add vitamin C: a squeeze of lemon on dal, a guava or orange, amla, or tomato in the curry. Vitamin C can offset much of what tea takes away.
 Atta, maida, rava, barley
-Back to NutriLens
+Back to Biomvira
 Back to chat
 Back to my reports
 Bihar
@@ -99,7 +99,7 @@ Copy
 Could not build the plan. Please try again.
 Couldn't load your chats.
 Couldn't open that chat. It may have been deleted.
-Couldn't reach NutriLens. Please check your connection.
+Couldn't reach Biomvira. Please check your connection.
 Create a free account
 Create a password
 Create account
@@ -118,7 +118,7 @@ Delete your account?
 Delhi
 Diet
 Diet type
-Disclaimer: NutriLens is an educational nutrition-support tool grounded in ICMR-NIN reference data. It does not provide medical diagnoses, treatment plans, or clinical pharmaceutical prescriptions. Always consult a qualified physician or healthcare provider before altering your health regimen.
+Disclaimer: Biomvira is an educational nutrition-support tool grounded in ICMR-NIN reference data. It does not provide medical diagnoses, treatment plans, or clinical pharmaceutical prescriptions. Always consult a qualified physician or healthcare provider before altering your health regimen.
 Dishes measured, not guessed
 Dismiss
 Dismiss notification
@@ -156,7 +156,7 @@ Fish & shellfish
 Fish, prawns, crab
 Follow-up Re-testing Protocol
 Food changes can support your health, but the following results need medical advice:
-Food data: ICMR-NIN Indian Food Composition Tables. NutriLens does not replace medical advice.
+Food data: ICMR-NIN Indian Food Composition Tables. Biomvira does not replace medical advice.
 Food plan
 Food plans only where diet helps
 Foods outside your diet are never recommended.
@@ -166,7 +166,7 @@ From a lab report to a week of meals in four steps
 From blood report to a diet plan you can actually follow.
 From your age, sex, weight and activity, the way ICMR-NIN 2020 does it: the FAO/WHO/UNU equations, about 10% lower for Indian adults, times your activity level. If your BMI is 25 or more, the plan aims about 15% lower (at most 500 kcal) for gentle weight loss; under 18.5, about 10% higher.
 Full name
-General guidance from NutriLens, not medical advice.
+General guidance from Biomvira, not medical advice.
 General information, not medical advice.
 General questions
 Generate my plan
@@ -194,13 +194,13 @@ Hide password
 High
 Himachal Pradesh
 History
-How NutriLens keeps your data and guidance safe
-How NutriLens works
+How Biomvira keeps your data and guidance safe
+How Biomvira works
 How are my calories worked out?
 How are the diet plans made?
 How do I get my diet plan?
 How it works
-I agree that NutriLens stores my analyses in my private account. I can delete them, or my whole account, at any time.
+I agree that Biomvira stores my analyses in my private account. I can delete them, or my whole account, at any time.
 I have an allergy that is not in the list.
 I understand
 ICMR-NIN Dietary Guidelines for Indians, 2024.
@@ -221,7 +221,7 @@ Indian foods from ICMR-NIN tables
 Input method
 Iron foods for vegetarians
 Iron-rich vegetarian foods include amaranth (thotakura), gongura, drumstick leaves, bajra, ragi, horse gram and most dals.
-Is NutriLens free?
+Is Biomvira free?
 Is my report kept private?
 Is my report stored?
 Is this a medical diagnosis?
@@ -277,7 +277,7 @@ New analysis
 New chat
 New chat about this report
 New password
-New to NutriLens?
+New to Biomvira?
 No animal products. Relies on fortified plant milks, tofu, pulses, nuts and seeds.
 No answer yet
 No biomarkers detected
@@ -285,18 +285,18 @@ No meat, fish or eggs. Includes paneer, curd, milk, ghee, pulses and millets.
 No results need attention. All values are within the healthy range.
 No saved chats yet.
 No saved reports yet
-No. NutriLens gives food guidance only. Talk to your doctor before changing any treatment, especially if a result is very low or very high.
-No. NutriLens gives general nutrition guidance. Results that need medical care are clearly marked, and you should always talk to your doctor before changing treatment.
+No. Biomvira gives food guidance only. Talk to your doctor before changing any treatment, especially if a result is very low or very high.
+No. Biomvira gives general nutrition guidance. Results that need medical care are clearly marked, and you should always talk to your doctor before changing treatment.
 Non-vegetarian
 None of your results needs a corrective food plan. See the foods below to keep your healthy results where they are.
 Nothing pasted yet
-NutriLens Assistant
-NutriLens assistant
-NutriLens does not diagnose or treat. It does not replace your doctor or dietitian, and plans are for adults. Vitamin D in fish varies a lot, so plans count it at half.
-NutriLens home
-NutriLens is an
-NutriLens is an educational nutrition tool and does not replace medical advice.
-NutriLens is an educational nutrition tool. It does not provide medical diagnosis or treatment. Consult a qualified healthcare professional before changing your diet or supplements.
+Biomvira Assistant
+Biomvira assistant
+Biomvira does not diagnose or treat. It does not replace your doctor or dietitian, and plans are for adults. Vitamin D in fish varies a lot, so plans count it at half.
+Biomvira home
+Biomvira is an
+Biomvira is an educational nutrition tool and does not replace medical advice.
+Biomvira is an educational nutrition tool. It does not provide medical diagnosis or treatment. Consult a qualified healthcare professional before changing your diet or supplements.
 Nutrient Requirements for Indians 2020
 Nutrient retention factors
 Nutrition
@@ -337,7 +337,7 @@ Preparing your nutrition plan
 Preparing your plan
 Primary Target
 Primary mobile
-Printed reports from any Indian lab, as a PDF or a clear photo. NutriLens reads 61 common tests: blood count, sugar, cholesterol, liver, kidney, thyroid, iron and vitamins.
+Printed reports from any Indian lab, as a PDF or a clear photo. Biomvira reads 61 common tests: blood count, sugar, cholesterol, liver, kidney, thyroid, iron and vitamins.
 Privacy & safety
 Privacy Scrub Active
 Privacy by design
@@ -351,10 +351,10 @@ Questions about your results?
 Questions people ask
 Questions people ask us
 Rajasthan
-Ranges differ slightly between labs and by age and sex, so NutriLens uses the range printed on your report when there is one.
+Ranges differ slightly between labs and by age and sex, so Biomvira uses the range printed on your report when there is one.
 Read
 Read before your next meal
-Read how NutriLens works
+Read how Biomvira works
 Reading report…
 Reading text…
 Reading your blood report: low, normal and high
@@ -371,7 +371,7 @@ Report not found
 Report text
 Reported:
 Results on this page
-Results such as iron, vitamins, sugar, cholesterol, protein and uric acid get Indian food plans based on ICMR-NIN data. Thyroid, electrolytes and results that point to kidney disease are referred to a doctor instead. NutriLens never changes medical treatment.
+Results such as iron, vitamins, sugar, cholesterol, protein and uric acid get Indian food plans based on ICMR-NIN data. Thyroid, electrolytes and results that point to kidney disease are referred to a doctor instead. Biomvira never changes medical treatment.
 Retest in 8–12 Weeks
 Retry
 Review results
@@ -392,7 +392,7 @@ Select anything you need us to exclude.
 Send message
 Send this link privately.
 Set new password
-Set up your NutriLens account.
+Set up your Biomvira account.
 Sex
 Short, sourced reads on diet, nutrition, weight and health.
 Should I stop my medicines or supplements?
@@ -417,13 +417,13 @@ Tea and coffee contain tannins and other polyphenols. In the gut they bind the i
 Tea and coffee reduce iron absorption, so have them an hour away from meals rather than with them. Calcium supplements are best taken at a different time from iron-rich meals.
 Telangana
 Tell us about you
-Tests, foods and using NutriLens
+Tests, foods and using Biomvira
 The analysis from
 The file you upload is never stored. Your name and phone number are removed before anything else. Results are saved only if you are signed in, and only you can see them.
 The owner account can't be deleted. Transfer ownership to an admin from the Admin portal first.
 The page you're looking for doesn't exist or has moved.
 These results are within range. Including these foods regularly helps keep them there.
-This area is limited to a different role. If you think this is a mistake, contact the NutriLens owner.
+This area is limited to a different role. If you think this is a mistake, contact the Biomvira owner.
 This chat is full. Start a new chat to keep going.
 This link can't be used
 Three plan options and a 7-day menu with a shopping list, built for your daily targets.
@@ -445,10 +445,10 @@ Unit
 Units are standardised and each result is checked against your lab\
 Update password
 Upload a PDF, JPG, JPEG or PNG, or paste printed report text.
-Upload a report from any Indian lab. NutriLens explains each result, then builds diet plans from your region's dishes, your diet type and your allergies.
+Upload a report from any Indian lab. Biomvira explains each result, then builds diet plans from your region's dishes, your diet type and your allergies.
 Upload report
 Upload your report
-Use NutriLens
+Use Biomvira
 Use at least 8 characters, including a letter and a number.
 Used to apply ICMR-NIN recommended daily allowances.
 Using the results on this page
@@ -466,7 +466,7 @@ View history
 View or edit results
 View report
 Vitamin D
-Walking 30 minutes most days and sleeping well help as much as the diet. If your BMI is 25 or more, NutriLens plans aim about 15% below your need, never more than 500 kcal.
+Walking 30 minutes most days and sleeping well help as much as the diet. If your BMI is 25 or more, Biomvira plans aim about 15% below your need, never more than 500 kcal.
 We could not read this report. Try a clearer copy, or paste the report text instead.
 We do not guess. The numbers on your plan come from ICMR-NIN's food tables (with USDA values where those tables have none) and published clinical ranges, and every plan is checked against your targets before you see it.
 Weak
@@ -481,7 +481,7 @@ What we do not do
 When should I see a doctor?
 When you're logged in, every analysis is saved privately to your account. Only you can see your reports.
 Which labs and tests are supported?
-Which tests can NutriLens read?
+Which tests can Biomvira read?
 Whole eggs, egg whites
 Why tea after a meal can lower the iron you absorb
 Why three plan options?
@@ -504,7 +504,7 @@ Your account and all saved reports will be permanently deleted. Enter your passw
 Your account has been deleted
 Your account is ready
 Your age, sex and food preferences help us pick the right reference ranges and only suggest foods you can eat.
-Your blood report, turned into meals you will actually eat.
+From Blood Insights to Better Bites.
 Your calories and protein come from your age, sex, height, weight and activity. An optimisation engine then picks dishes and portions from 276 Indian home recipes so each day meets your calories and protein and aims for the nutrients your report shows as low, within your diet, region and allergies.
 Your chats
 Your energy need comes from your age, sex, weight and activity (the ICMR-NIN 2020 method), adjusted for your BMI, and protein from 0.83 g per kg of body weight. A mathematical optimiser then chooses dishes and servings so that each day meets your calories within 5% and your protein, and aims for the nutrients your report shows as low, while keeping salt and fat within limits, sweets to a few times a week, and following how Indian meals are actually eaten.
@@ -568,7 +568,7 @@ Indian home dishes
 Show fewer questions
 Nutritive Value of Indian Foods
 ICMR-NIN. Used only for foxtail millet and makhana, which the 2017 tables do not include.
-NutriLens engine
+Biomvira engine
 Live example
 Report
 Results

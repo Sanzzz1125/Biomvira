@@ -1,4 +1,4 @@
-"""Chat endpoints for the NutriLens assistant.
+"""Chat endpoints for the Biomvira assistant.
 
 Guests' chats are never stored. For signed-in users each conversation is saved to their account, and a conversation
 started from a report is linked to it, so opening that report again continues the same chat. Deleting the report or
@@ -84,7 +84,7 @@ def _respond(body: "ChatRequest", topic: Optional[str], context: Optional[dict],
     better = llm.improve(body.message, result, context, history, body.language)
     if better:
         text, kind = better
-        return Reply(text, kind=kind, suggestions=result.suggestions, topic=result.topic)
+        return Reply(text.replace("NutriLens", "Biomvira"), kind=kind, suggestions=result.suggestions, topic=result.topic)
     return result
 
 
@@ -243,7 +243,7 @@ def list_conversations(db: Session = Depends(get_db), user: User = Depends(get_c
         last = (select(func.max(ChatMessage.id)).where(ChatMessage.conversation_id.in_(ids), ChatMessage.role == "bot")
                 .group_by(ChatMessage.conversation_id))
         for message in db.scalars(select(ChatMessage).where(ChatMessage.id.in_(last))):
-            previews[message.conversation_id] = _plain(message.text)
+            previews[message.conversation_id] = _plain(message.text.replace("NutriLens", "Biomvira"))
     return [ConversationSummary(id=c.id, title=c.title, report_id=c.report_id, report_date=report_date,
                                 preview=previews.get(c.id, ""), message_count=c.message_count, updated_at=c.updated_at)
             for c, report_date in rows]
@@ -259,7 +259,8 @@ def get_conversation(conversation_id: str, db: Session = Depends(get_db), user: 
         id=conversation.id, title=conversation.title, report_id=conversation.report_id,
         report_date=report.created_at if report else None, topic=conversation.topic,
         updated_at=conversation.updated_at,
-        messages=[ChatMessageOut(role=m.role, text=m.text, kind=m.kind, suggestions=m.suggestions or [],
+        messages=[ChatMessageOut(role=m.role, text=m.text.replace("NutriLens", "Biomvira") if m.role == "bot" else m.text,
+                                 kind=m.kind, suggestions=[s.replace("NutriLens", "Biomvira") for s in (m.suggestions or [])],
                                  created_at=m.created_at) for m in messages])
 
 

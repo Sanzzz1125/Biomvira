@@ -1,4 +1,4 @@
-"""multilingual-e5-small (MIT), fine-tuned on NutriLens data, for understanding food names and questions in English,
+"""multilingual-e5-small (MIT), fine-tuned on Biomvira data, for understanding food names and questions in English,
 Hindi, Telugu and Hinglish.
 
 Built offline by evaluation/e5/ (generate_data.py, train.py, compress.py): pruned to the vocabulary of the three

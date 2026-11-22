@@ -35,7 +35,7 @@ def ocr_image(image, deadline, angles=(0, 90, 270, 180)):
         scale = min(2, 1600 / max(gray.size))
         gray = gray.resize((int(gray.width * scale), int(gray.height * scale)))
     best = ''
-    with tempfile.TemporaryDirectory(prefix='nutrilens-') as directory:
+    with tempfile.TemporaryDirectory(prefix='biomvira-') as directory:
         path = Path(directory) / 'page.png'
         # Bounded orientation trials also handle mobile captures lacking EXIF.
         for angle in angles:

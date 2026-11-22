@@ -74,7 +74,7 @@ TEST_INFO = {
     ),
     "creatinine": (
         "Creatinine is a waste product from your muscles that the kidneys clear from the blood. It is a key test of kidney function.",
-        "Low creatinine usually reflects low muscle mass or low protein intake. NutriLens suggests protein-rich foods for this.",
+        "Low creatinine usually reflects low muscle mass or low protein intake. Biomvira suggests protein-rich foods for this.",
         "High creatinine can mean the kidneys are not filtering well, or come from dehydration, a heavy meat meal or high muscle mass. A doctor should review it.",
     ),
     "urea": (
@@ -124,12 +124,12 @@ TEST_INFO = {
     ),
     "total_protein": (
         "Total protein measures the two main protein groups in blood: albumin and globulin.",
-        "Low total protein can come from poor nutrition or from liver or kidney problems. NutriLens suggests protein-rich foods.",
+        "Low total protein can come from poor nutrition or from liver or kidney problems. Biomvira suggests protein-rich foods.",
         "High total protein can come from dehydration, long-term infection or inflammation, and rarely from blood disorders.",
     ),
     "albumin": (
         "Albumin is the main protein made by the liver. It keeps fluid inside blood vessels and carries nutrients and medicines.",
-        "Low albumin can come from low protein intake, liver or kidney disease or inflammation. NutriLens suggests protein-rich foods.",
+        "Low albumin can come from low protein intake, liver or kidney disease or inflammation. Biomvira suggests protein-rich foods.",
         "High albumin is usually due to dehydration.",
     ),
     "globulin": (
@@ -144,7 +144,7 @@ TEST_INFO = {
     ),
     "rbc": (
         "The RBC count is the number of red blood cells, which carry oxygen.",
-        "A low RBC count usually means anaemia. NutriLens suggests iron-rich foods.",
+        "A low RBC count usually means anaemia. Biomvira suggests iron-rich foods.",
         "A high RBC count can come from dehydration, smoking, high altitude or some medical conditions.",
     ),
     "platelets": (
@@ -154,7 +154,7 @@ TEST_INFO = {
     ),
     "pcv": (
         "PCV (haematocrit) is the percentage of your blood made up of red blood cells.",
-        "Low PCV usually means anaemia. NutriLens suggests iron-rich foods.",
+        "Low PCV usually means anaemia. Biomvira suggests iron-rich foods.",
         "High PCV is often due to dehydration, and sometimes smoking or high altitude.",
     ),
     "mcv": (

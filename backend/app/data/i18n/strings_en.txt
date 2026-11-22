@@ -589,7 +589,7 @@ Low HDL is linked with a higher heart risk; higher values are protective.
 Replace saturated and trans fats with unsaturated fats from nuts, seeds and fish, and stay physically active.
 A waste product from muscle that the kidneys filter out of the blood.
 A value above the range can mean the kidneys are filtering less effectively and needs medical review.
-NutriLens does not generate a food plan for this test. Please review it with your doctor.
+Biomvira does not generate a food plan for this test. Please review it with your doctor.
 A waste product from protein breakdown that the kidneys remove.
 A value outside the range can reflect kidney function, hydration or protein intake and should be reviewed by a doctor.
 A waste product from the breakdown of purines in food and body cells.

@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
 from app.core.deps import get_current_user
+from app.i18n import localize_analysis
 from app.models.account_schemas import HistoryItem, HistoryMarker, HistoryPage
 from app.models.database import get_db, utcnow
 from app.models.entities import Report, User
@@ -54,7 +55,7 @@ def list_history(page: int = Query(1, ge=1), page_size: int = Query(12, ge=1, le
 def get_report(report_id: str, db: Session = Depends(get_db), user: User = Depends(get_current_user)):
     from app.plan.allergy import saved_report_conflicts
     analysis = _own_report(db, user, report_id).analysis
-    return {**analysis, **saved_report_conflicts(analysis)}
+    return {**localize_analysis(analysis, "en"), **saved_report_conflicts(analysis)}
 
 
 class SavedPlan(BaseModel):
@@ -92,8 +93,8 @@ def export_plan_pdf(analysis_data: FullAnalysisResponse, lang: str = "en"):
         )
 
     # Caller-supplied IDs are labels only; this endpoint never reads stored reports.
-    analysis_id = re.sub(r"[^A-Za-z0-9_-]", "", str(analysis_data.get("analysis_id", "nutrilens_plan")))
-    filename = f"NutriLens_Plan_{analysis_id[:8]}.pdf"
+    analysis_id = re.sub(r"[^A-Za-z0-9_-]", "", str(analysis_data.get("analysis_id", "biomvira_plan")))
+    filename = f"Biomvira_Plan_{analysis_id[:8]}.pdf"
 
     return StreamingResponse(
         BytesIO(pdf_bytes),

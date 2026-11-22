@@ -187,7 +187,7 @@ export const AnalysisLoadingModal: React.FC<AnalysisLoadingModalProps> = ({
         {/* Footer info banner */}
         <div className="border-t border-slate-100 bg-slate-50 px-6 py-3 text-center">
           <p className="text-xs text-slate-500">
-            Food data: ICMR-NIN Indian Food Composition Tables. NutriLens does not replace medical advice.
+            Food data: ICMR-NIN Indian Food Composition Tables. Biomvira does not replace medical advice.
           </p>
         </div>
       </div>

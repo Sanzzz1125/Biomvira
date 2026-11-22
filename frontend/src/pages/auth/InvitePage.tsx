@@ -78,8 +78,8 @@ export const InvitePage: React.FC = () => {
       title="Accept your invitation"
       subtitle={
         info
-          ? `${info.invited_by ? `${info.invited_by} invited you` : "You've been invited"} to join NutriLens as ${roleText}.`
-          : 'Set up your NutriLens account.'
+          ? `${info.invited_by ? `${info.invited_by} invited you` : "You've been invited"} to join Biomvira as ${roleText}.`
+          : 'Set up your Biomvira account.'
       }
     >
       {linkError ? (

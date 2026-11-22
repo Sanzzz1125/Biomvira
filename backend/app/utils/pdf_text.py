@@ -22,9 +22,9 @@ TEXT = {
         "आपकी लैब रिपोर्ट से प्रमाण-आधारित पोषण मार्गदर्शन", "మీ ల్యాబ్ రిపోర్టు ఆధారంగా పోషణ మార్గదర్శనం"),
     "Ref #{ref}": ("संदर्भ #{ref}", "సూచిక #{ref}"),
     "Page {page} of {total}": ("पृष्ठ {page} / {total}", "పేజీ {page} / {total}"),
-    "NutriLens is an educational nutrition tool. It does not replace medical diagnosis or treatment.": (
-        "NutriLens एक शैक्षिक पोषण साधन है। यह डॉक्टर की जाँच या इलाज की जगह नहीं लेता।",
-        "NutriLens విద్యాపరమైన పోషణ సాధనం. ఇది వైద్య నిర్ధారణకు లేదా చికిత్సకు బదులు కాదు."),
+    "Biomvira is an educational nutrition tool. It does not replace medical diagnosis or treatment.": (
+        "Biomvira एक शैक्षिक पोषण साधन है। यह डॉक्टर की जाँच या इलाज की जगह नहीं लेता।",
+        "Biomvira విద్యాపరమైన పోషణ సాధనం. ఇది వైద్య నిర్ధారణకు లేదా చికిత్సకు బదులు కాదు."),
     "Based on {n} laboratory results, for a <b>{diet}</b> diet {exclusions}.": (
         "{n} लैब नतीजों के आधार पर, <b>{diet}</b> आहार के लिए, {exclusions}।",
         "{n} ల్యాబ్ ఫలితాల ఆధారంగా, <b>{diet}</b> ఆహారం కోసం, {exclusions}."),
@@ -129,13 +129,13 @@ TEXT = {
         "ఆహార ప్రణాళికను 8 నుండి 12 వారాలు క్రమంగా పాటించి, ఆరోగ్యకర పరిధికి బయట ఉన్న పరీక్షలను మళ్లీ చేయించుకోండి, "
         "డాక్టర్ చెబితే అంతకంటే ముందే."),
     "Retest in 8–12 weeks": ("8–12 हफ़्ते में दोबारा जाँच", "8–12 వారాల్లో మళ్లీ పరీక్ష"),
-    "Disclaimer: NutriLens is an educational nutrition-support tool based on ICMR-NIN food composition data and "
+    "Disclaimer: Biomvira is an educational nutrition-support tool based on ICMR-NIN food composition data and "
     "published clinical reference ranges. It does not diagnose or treat any condition. Please consult a qualified "
     "doctor before changing your diet, medicines or supplements.": (
-        "अस्वीकरण: NutriLens, ICMR-NIN के खाद्य आँकड़ों और प्रकाशित चिकित्सा सीमाओं पर आधारित एक शैक्षिक पोषण "
+        "अस्वीकरण: Biomvira, ICMR-NIN के खाद्य आँकड़ों और प्रकाशित चिकित्सा सीमाओं पर आधारित एक शैक्षिक पोषण "
         "साधन है। यह किसी बीमारी की पहचान या इलाज नहीं करता। अपना आहार, दवाएँ या सप्लीमेंट बदलने से पहले योग्य "
         "डॉक्टर से सलाह लें।",
-        "గమనిక: NutriLens, ICMR-NIN ఆహార సమాచారం, ప్రచురించిన వైద్య పరిధుల ఆధారంగా పనిచేసే విద్యాపరమైన పోషణ "
+        "గమనిక: Biomvira, ICMR-NIN ఆహార సమాచారం, ప్రచురించిన వైద్య పరిధుల ఆధారంగా పనిచేసే విద్యాపరమైన పోషణ "
         "సాధనం. ఇది ఏ వ్యాధినీ నిర్ధారించదు, చికిత్స చేయదు. మీ ఆహారం, మందులు లేదా సప్లిమెంట్లు మార్చే ముందు "
         "అర్హత ఉన్న డాక్టర్‌ను సంప్రదించండి."),
     # nutrients named under food amounts
@@ -146,11 +146,11 @@ TEXT = {
     "Vitamin B12": ("विटामिन B12", "విటమిన్ B12"),
     # 7-day diet plan
     "Your 7-day diet plan": ("आपकी 7 दिन की आहार योजना", "మీ 7 రోజుల ఆహార ప్రణాళిక"),
-    "Built by NutriLens from your report and profile. Amounts are per person. This plan supports, and does not "
+    "Built by Biomvira from your report and profile. Amounts are per person. This plan supports, and does not "
     "replace, advice from your doctor or dietitian.": (
-        "NutriLens ने आपकी रिपोर्ट और प्रोफ़ाइल से बनाई। मात्रा प्रति व्यक्ति है। यह योजना डॉक्टर या डाइटीशियन की "
+        "Biomvira ने आपकी रिपोर्ट और प्रोफ़ाइल से बनाई। मात्रा प्रति व्यक्ति है। यह योजना डॉक्टर या डाइटीशियन की "
         "सलाह में मदद करती है, उसकी जगह नहीं लेती।",
-        "మీ రిపోర్టు, ప్రొఫైల్ ఆధారంగా NutriLens తయారు చేసింది. పరిమాణాలు ఒక్కరికి. ఈ ప్రణాళిక డాక్టర్ లేదా "
+        "మీ రిపోర్టు, ప్రొఫైల్ ఆధారంగా Biomvira తయారు చేసింది. పరిమాణాలు ఒక్కరికి. ఈ ప్రణాళిక డాక్టర్ లేదా "
         "డైటీషియన్ సలహాకు తోడు మాత్రమే, బదులు కాదు."),
     "Familiar": ("जाना-पहचाना", "అలవాటైనది"),
     "Most nutritious": ("सबसे पौष्टिक", "అత్యంత పోషకమైనది"),

@@ -2,9 +2,9 @@
  "faq:about:0": [
   "न्यूट्रीलेन्स क्या है?",
   "న్యూట్రిలెన్స్ అంటే ఏమిటి?",
-  "nutrilens kya hai?",
-  "nutrilens enta?",
-  "What exactly is Nutrilens?"
+  "biomvira kya hai?",
+  "biomvira enta?",
+  "What exactly is Biomvira?"
  ],
  "faq:about:1": [
   "यह वेबसाइट क्या करती है?",
@@ -23,9 +23,9 @@
  "faq:how_it_works:0": [
   "न्यूट्रीलेन्स कैसे काम करता है?",
   "న్యూట్రిలెన్స్ ఎలా పనిచేస్తుంది?",
-  "nutrilens kaise kaam karta hai?",
-  "nutrilens ela panichestundi?",
-  "How does Nutrilens function?"
+  "biomvira kaise kaam karta hai?",
+  "biomvira ela panichestundi?",
+  "How does Biomvira function?"
  ],
  "faq:how_it_works:1": [
   "यह मेरी रिपोर्ट का विश्लेषण कैसे करता है?",
@@ -44,9 +44,9 @@
  "faq:who_made:0": [
   "न्यूट्रीलेन्स किसने बनाया?",
   "న్యూట్రిలెన్స్‌ను ఎవరు నిర్మించారు?",
-  "nutrilens kisne banaya?",
-  "nutrilens ni evaru create chesaru?",
-  "Who developed Nutrilens?"
+  "biomvira kisne banaya?",
+  "biomvira ni evaru create chesaru?",
+  "Who developed Biomvira?"
  ],
  "faq:who_made:1": [
   "इसे किसने बनाया?",
@@ -65,9 +65,9 @@
  "faq:is_free:0": [
   "क्या न्यूट्रीलेन्स मुफ्त है?",
   "న్యూట్రిలెన్స్ ఉచితమా?",
-  "nutrilens free hai?",
-  "nutrilens free ga unda?",
-  "Is Nutrilens free of charge?"
+  "biomvira free hai?",
+  "biomvira free ga unda?",
+  "Is Biomvira free of charge?"
  ],
  "faq:is_free:1": [
   "क्या मुझे भुगतान करना पड़ेगा?",
@@ -590,9 +590,9 @@
  "faq:accuracy:0": [
   "नुट्रीलेन्स की सटीकता कितनी है?",
   "న్యూట్రిలెన్స్ ఖచ్చితత్వం ఎంత?",
-  "nutrilens ki accuracy kitni hai?",
-  "nutrilens accuracy enta?",
-  "How accurate is Nutrilens?"
+  "biomvira ki accuracy kitni hai?",
+  "biomvira accuracy enta?",
+  "How accurate is Biomvira?"
  ],
  "faq:accuracy:1": [
   "क्या मैं परिणामों पर भरोसा कर सकता हूँ?",
@@ -1827,11 +1827,11 @@
   "Remove a report from history."
  ],
  "faq:guest:0": [
-  "गेस्ट के तौर पर NutriLens का उपयोग",
-  "గెస్ట్ గా NutriLens ని ఉపయోగించడం",
-  "guest ke taur par NutriLens ka upyog",
-  "Guest ga NutriLens vadadam?",
-  "Using NutriLens as a guest."
+  "गेस्ट के तौर पर Biomvira का उपयोग",
+  "గెస్ట్ గా Biomvira ని ఉపయోగించడం",
+  "guest ke taur par Biomvira ka upyog",
+  "Guest ga Biomvira vadadam?",
+  "Using Biomvira as a guest."
  ],
  "faq:guest:1": [
   "अगर मैं लॉग इन नहीं करता तो क्या होगा?",
@@ -2186,16 +2186,16 @@
  "faq:who_for:0": [
   "क्या डॉक्टर न्यूट्रिलेंस इस्तेमाल कर सकते हैं?",
   "డాక్టర్లు న్యూట్రిలెన్స్ ఉపయోగించగలరా?",
-  "kya doctors nutrilens use kar sakte hain?",
+  "kya doctors biomvira use kar sakte hain?",
   "ḍākṭarlru nyūṭrilens upayōgin̄cagalārā?",
-  "Can doctors use Nutrilens?"
+  "Can doctors use Biomvira?"
  ],
  "faq:who_for:1": [
   "न्यूट्रिलेंस किसके लिए है?",
   "న్యూట్రిలెన్స్ ఎవరికోసం?",
-  "nutrilens kiske liye hai?",
+  "biomvira kiske liye hai?",
   "nyūṭrilens evarikōsamā?",
-  "Who is Nutrilens intended for?"
+  "Who is Biomvira intended for?"
  ],
  "faq:who_for:2": [
   "यह किसे उपयोग कर सकता है?",

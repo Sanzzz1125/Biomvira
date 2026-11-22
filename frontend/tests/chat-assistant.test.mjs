@@ -80,7 +80,7 @@ const button = (label) =>
 const chatPosts = () => requests.filter((r) => r.path.endsWith('/chat') && r.method === 'POST').map((r) => r.body);
 
 async function openPanel() {
-  await act(async () => { button('Ask NutriLens').click(); await wait(60); });
+  await act(async () => { button('Ask Biomvira').click(); await wait(60); });
 }
 
 async function ask(text, ms = 650) {
@@ -138,7 +138,7 @@ test('a failed message offers Retry and resends without duplicating the question
   await render();
   await openPanel();
   await ask('what is tsh');
-  assert.match(document.body.textContent, /Couldn't reach NutriLens/);
+  assert.match(document.body.textContent, /Couldn't reach Biomvira/);
   mockApi({ chatReplies: [reply({ reply: 'TSH is a thyroid hormone.' })] });
   await act(async () => { button('Retry').click(); await wait(650); });
   assert.match(document.body.textContent, /TSH is a thyroid hormone/);
@@ -176,9 +176,9 @@ test('signed-in users continue their saved chat, see past chats, and start new o
   assert.match(document.body.textContent, /How can I help, Asha\?/);
   assert.match(document.body.textContent, /your chats are saved to your account/);
   mockApi({ user: USER, chatReplies: [reply({ conversation_id: 'c3', saved: true })] });
-  await ask('is nutrilens free');
+  await ask('is biomvira free');
   assert.equal(chatPosts().at(-1).conversation_id, null, 'a new chat starts a new conversation');
-  assert.equal(chatPosts().at(-1).message, 'is nutrilens free');
+  assert.equal(chatPosts().at(-1).message, 'is biomvira free');
 });
 
 test('on a saved report the chat is linked to that report', async () => {

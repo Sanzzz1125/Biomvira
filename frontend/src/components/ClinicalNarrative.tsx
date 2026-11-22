@@ -254,7 +254,7 @@ export const ClinicalNarrative: React.FC<ClinicalNarrativeProps> = ({ result }) 
 
           {/* Non-diagnostic Disclaimer */}
           <p className="border-t border-slate-200 pt-4 text-xs leading-relaxed text-slate-500 italic">
-            Disclaimer: NutriLens is an educational nutrition-support tool grounded in ICMR-NIN reference data. It does not provide medical diagnoses, treatment plans, or clinical pharmaceutical prescriptions. Always consult a qualified physician or healthcare provider before altering your health regimen.
+            Disclaimer: Biomvira is an educational nutrition-support tool grounded in ICMR-NIN reference data. It does not provide medical diagnoses, treatment plans, or clinical pharmaceutical prescriptions. Always consult a qualified physician or healthcare provider before altering your health regimen.
           </p>
         </div>
       </Card>

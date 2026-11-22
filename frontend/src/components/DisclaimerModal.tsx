@@ -11,7 +11,7 @@ const POINTS = [
   {
     icon: FileCheck2,
     title: 'Food plans only where diet helps',
-    text: 'Results such as iron, vitamins, sugar, cholesterol, protein and uric acid get Indian food plans based on ICMR-NIN data. Thyroid, electrolytes and results that point to kidney disease are referred to a doctor instead. NutriLens never changes medical treatment.',
+    text: 'Results such as iron, vitamins, sugar, cholesterol, protein and uric acid get Indian food plans based on ICMR-NIN data. Thyroid, electrolytes and results that point to kidney disease are referred to a doctor instead. Biomvira never changes medical treatment.',
   },
   {
     icon: AlertTriangle,
@@ -68,7 +68,7 @@ export const DisclaimerModal: React.FC<DisclaimerModalProps> = ({ isOpen, onClos
               <h2 id="disclaimer-title" className="text-lg font-semibold">
                 Safety &amp; privacy
               </h2>
-              <p className="text-sm text-slate-500">How NutriLens keeps your data and guidance safe</p>
+              <p className="text-sm text-slate-500">How Biomvira keeps your data and guidance safe</p>
             </div>
           </div>
           <button
@@ -86,7 +86,7 @@ export const DisclaimerModal: React.FC<DisclaimerModalProps> = ({ isOpen, onClos
           <div className="flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
             <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" aria-hidden />
             <p className="leading-relaxed">
-              NutriLens is an <strong>educational nutrition tool</strong>. It does not diagnose
+              Biomvira is an <strong>educational nutrition tool</strong>. It does not diagnose
               conditions, prescribe medication or replace medical advice.
             </p>
           </div>

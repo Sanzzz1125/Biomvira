@@ -38,7 +38,7 @@ export const RegisterPage: React.FC = () => {
     setBusy(true);
     try {
       const me = await register(name.trim(), email.trim(), password);
-      notify('success', `Welcome to NutriLens, ${me.name.split(' ')[0]}`, 'Your analyses will now be saved to your history.');
+      notify('success', `Welcome to Biomvira, ${me.name.split(' ')[0]}`, 'Your analyses will now be saved to your history.');
       navigate('/', { replace: true });
     } catch (err) {
       setFormError((err as Error).message);
@@ -106,7 +106,7 @@ export const RegisterPage: React.FC = () => {
               aria-invalid={errors.consent ? true : undefined}
             />
             <span>
-              I agree that NutriLens stores my analyses in my private account. I can delete them, or my
+              I agree that Biomvira stores my analyses in my private account. I can delete them, or my
               whole account, at any time.
             </span>
           </label>

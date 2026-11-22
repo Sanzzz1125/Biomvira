@@ -49,7 +49,7 @@ export const LoginPage: React.FC = () => {
       subtitle="Log in to see your saved reports and manage your account."
       footer={
         <>
-          New to NutriLens? <AuthLink to="/register">Create a free account</AuthLink>
+          New to Biomvira? <AuthLink to="/register">Create a free account</AuthLink>
         </>
       }
     >
@@ -90,7 +90,7 @@ export const LoginPage: React.FC = () => {
         />
         {showHelp && (
           <Alert tone="info" icon={<Info className="h-4 w-4" aria-hidden />}>
-            Ask a NutriLens administrator to send you a password reset link. It lets you choose a new
+            Ask a Biomvira administrator to send you a password reset link. It lets you choose a new
             password in one step.
           </Alert>
         )}

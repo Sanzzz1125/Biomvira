@@ -1,5 +1,5 @@
 """
-PDF export for NutriLens analyses.
+PDF export for Biomvira analyses.
 
 Builds an A4 report that mirrors the on-screen results page: the same sections, status colours and
 brand palette, laid out for print with running headers, page numbers and text that wraps instead
@@ -238,17 +238,29 @@ ST = _Styles({
 
 
 # ── Drawing building blocks ───────────────────────────────────────────────────
-def _draw_logo(c: rl_canvas.Canvas, x: float, y: float, size: float, *, fill=BRAND_600, ink=WHITE) -> None:
-    """The NutriLens mark: a rounded tile with a leaf outline."""
+def _draw_logo(c: rl_canvas.Canvas, x: float, y: float, size: float) -> None:
+    """Draw the same folded-leaf vector as frontend/public/biomvira-mark.svg."""
     c.saveState()
-    c.setFillColor(fill)
-    c.roundRect(x, y, size, size, size * 0.26, stroke=0, fill=1)
-    c.translate(x + size / 2, y + size / 2)
-    c.rotate(40)
-    c.setStrokeColor(ink)
-    c.setLineWidth(max(0.8, size * 0.075))
-    c.ellipse(-size * 0.27, -size * 0.14, size * 0.27, size * 0.14, stroke=1, fill=0)
-    c.line(-size * 0.34, 0, size * 0.16, 0)
+    c.setFillColor(BRAND_600)
+    c.roundRect(x, y, size, size, size * 0.23, stroke=0, fill=1)
+    # Map the SVG's 100 × 100, top-left coordinate space onto the PDF tile.
+    c.translate(x, y + size)
+    c.scale(size / 100, -size / 100)
+    leaf = c.beginPath()
+    leaf.moveTo(19, 88)
+    leaf.curveTo(12, 74, 15, 54, 23, 43)
+    leaf.curveTo(36, 25, 60, 27, 83, 19)
+    leaf.curveTo(77, 38, 63, 44, 49, 50)
+    leaf.curveTo(33, 57, 23, 67, 19, 88)
+    leaf.close()
+    leaf.moveTo(19, 88)
+    leaf.curveTo(25, 69, 39, 63, 54, 56)
+    leaf.curveTo(69, 49, 80, 38, 83, 19)
+    leaf.curveTo(89, 39, 83, 64, 68, 74)
+    leaf.curveTo(52, 85, 32, 78, 19, 88)
+    leaf.close()
+    c.setFillColor(WHITE)
+    c.drawPath(leaf, stroke=0, fill=1)
     c.restoreState()
 
 
@@ -491,7 +503,7 @@ class SectionTitle(Flowable):
 
     def draw(self):
         c = self.canv
-        _draw_logo(c, 0, self.height - 19, 19, fill=BRAND_50, ink=BRAND_600)
+        _draw_logo(c, 0, self.height - 19, 19)
         c.setStrokeColor(BRAND_100)
         c.setLineWidth(0.6)
         c.roundRect(0, self.height - 19, 19, 19, 19 * 0.26, stroke=1, fill=0)
@@ -849,7 +861,7 @@ def _closing(flagged: bool) -> list:
             (Pill(L("Retest in 8–12 weeks"), BRAND_700, BRAND_50, BRAND_200, size=7, dot=False), "auto", "right"),
         ], gap=10, valign="middle")], fill=SLATE_50, pad_y=10), Spacer(1, 10)]
     story.append(Paragraph(L(
-        "Disclaimer: NutriLens is an educational nutrition-support tool based on ICMR-NIN food composition data and "
+        "Disclaimer: Biomvira is an educational nutrition-support tool based on ICMR-NIN food composition data and "
         "published clinical reference ranges. It does not diagnose or treat any condition. Please consult a qualified "
         "doctor before changing your diet, medicines or supplements."), ST["disclaimer"]))
     return story
@@ -888,7 +900,7 @@ class _NumberedCanvas(rl_canvas.Canvas):
             self.line(MARGIN_X, 13 * mm, PAGE_W - MARGIN_X, 13 * mm)
             self.setFont("Helvetica", 6.8)
             self.setFillColor(SLATE_400)
-            self.drawString(MARGIN_X, 9 * mm, L("NutriLens is an educational nutrition tool. It does not replace "
+            self.drawString(MARGIN_X, 9 * mm, L("Biomvira is an educational nutrition tool. It does not replace "
                                                 "medical diagnosis or treatment."))
             self.setFillColor(SLATE_500)
             self.setFont("Helvetica", 7)
@@ -903,7 +915,7 @@ def _first_page(ref: str, when: str):
         _draw_logo(c, MARGIN_X, top - 22, 22)
         c.setFillColor(SLATE_900)
         c.setFont("Helvetica-Bold", 14)
-        c.drawString(MARGIN_X + 30, top - 10, "NutriLens")
+        c.drawString(MARGIN_X + 30, top - 10, "Biomvira")
         c.setFillColor(SLATE_500)
         c.setFont("Helvetica", 7.6)
         c.drawString(MARGIN_X + 30, top - 20, L("Evidence-based nutrition guidance from your lab report"))
@@ -926,7 +938,7 @@ def _later_pages(ref: str):
         _draw_logo(c, MARGIN_X, top - 12, 12)
         c.setFillColor(SLATE_900)
         c.setFont("Helvetica-Bold", 9)
-        c.drawString(MARGIN_X + 17, top - 9, "NutriLens")
+        c.drawString(MARGIN_X + 17, top - 9, "Biomvira")
         c.setFillColor(SLATE_500)
         c.setFont("Helvetica", 7)
         c.drawRightString(PAGE_W - MARGIN_X, top - 9, f"{L('Personalized Clinical Nutrition Plan')}  |  {L('Ref #{ref}', ref=ref)}")
@@ -948,13 +960,15 @@ def generate_plan_pdf(analysis_data: dict[str, Any], lang: str = "en") -> bytes:
 
 
 def _build(result: dict[str, Any], lang: str) -> bytes:
+    from app.i18n import localize_analysis
+
+    result = localize_analysis(result, "en")
     english = [m for m in result.get("marker_analyses") or [] if isinstance(m, dict)]
     parts = _explanation_parts(result.get("grounded_explanation") or "")
     notes = {m.get("biomarker_key"): parts.get(_clean(m.get("display_name")).lower(), {}) for m in english}
     doctor_only = {m.get("biomarker_key") for m in english
                    if "does not give food advice" in str(m.get("clinical_warning") or "")}
     if lang != "en":
-        from app.i18n import localize_analysis
         result = localize_analysis(result, lang)
     markers = [m for m in result.get("marker_analyses") or [] if isinstance(m, dict)]
     profile = result.get("user_profile") or {}
@@ -1017,7 +1031,7 @@ def _build(result: dict[str, Any], lang: str) -> bytes:
     buffer = BytesIO()
     doc = BaseDocTemplate(
         buffer, pagesize=A4, leftMargin=MARGIN_X, rightMargin=MARGIN_X, topMargin=LATER_TOP, bottomMargin=BOTTOM,
-        title="NutriLens - Personalized Clinical Nutrition Plan", author="NutriLens",
+        title="Biomvira - Personalized Clinical Nutrition Plan", author="Biomvira",
         subject="Personalized nutrition plan from laboratory results",
     )
     frame = dict(leftPadding=0, rightPadding=0, topPadding=0, bottomPadding=0)

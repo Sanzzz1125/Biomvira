@@ -94,7 +94,7 @@ def set_password(email: str, password: str | None = None) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="python -m app.cli", description="NutriLens admin tasks")
+    parser = argparse.ArgumentParser(prog="python -m app.cli", description="Biomvira admin tasks")
     sub = parser.add_subparsers(dest="command", required=True)
     owner = sub.add_parser("create-owner", help="Create the single owner account")
     owner.add_argument("--email", required=True)

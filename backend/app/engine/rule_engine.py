@@ -125,7 +125,7 @@ class RuleEngine:
                 and status.value not in food_plan_on):
             where = "below" if status == MarkerStatus.LOW or (
                 status == MarkerStatus.BORDERLINE and direction == "lower_is_worse") else "above"
-            clinical_warning = (f"{bio_info['display_name']} is {where} its reference range. NutriLens does not give food advice "
+            clinical_warning = (f"{bio_info['display_name']} is {where} its reference range. Biomvira does not give food advice "
                                 "for this test; please review it with your doctor.")
 
         # 4. Percentage of Optimal calculation

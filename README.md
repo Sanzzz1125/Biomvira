@@ -1,10 +1,10 @@
 <div align="center">
 
-# 🌿 NutriLens
+# 🌿 Biomvira
 
-### Personalised Indian diet plans from your blood report
+### From Blood Insights to Better Bites.
 
-Upload a lab report. NutriLens reads it, explains every result, and plans a day or a week of Indian home meals<br>
+Upload a lab report. Biomvira reads it, explains every result, and plans a day or a week of Indian home meals<br>
 that fit your needs, diet, allergies, region and language.
 
 [**Live demo**](https://nutrilens-sand.vercel.app/) · [How it works](#how-it-works) · [Results](#results) · [Getting started](#getting-started) · [API](#api-overview)
@@ -23,13 +23,13 @@ that fit your needs, diet, allergies, region and language.
 
 ---
 
-## Why NutriLens
+## Why Biomvira
 
 A blood report tells you **what is low**. It doesn't tell you **what to cook on Monday**. Nearly 57% of women aged 15–49 in India are anaemic (NFHS-5), and low vitamin D and B12 are common, yet most people get no practical food guidance when their report arrives.
 
-NutriLens closes that gap. It turns the numbers on an Indian lab report into real meals: dal, roti, idli, sambar and curries from your own region, in amounts that meet your energy and protein needs and favour the nutrients your report found low.
+Biomvira closes that gap. It turns the numbers on an Indian lab report into real meals: dal, roti, idli, sambar and curries from your own region, in amounts that meet your energy and protein needs and favour the nutrients your report found low.
 
-> NutriLens is an educational tool. It does not diagnose, prescribe or replace a doctor.
+> Biomvira is an educational tool. It does not diagnose, prescribe or replace a doctor.
 
 ## Features
 
@@ -89,8 +89,8 @@ Measured with the scripts kept alongside the project report.
     <td width="50%"><img src=".github/assets/telugu.jpg" alt="Results page in Telugu"><br><sub>The same results in Telugu</sub></td>
   </tr>
   <tr>
-    <td width="50%"><img src=".github/assets/home.jpg" alt="NutriLens home page"><br><sub>Home page</sub></td>
-    <td width="50%"><img src=".github/assets/assistant.jpg" alt="Assistant answering from the latest report"><br><sub>The assistant answering from your latest report</sub></td>
+    <td width="50%"><img src=".github/assets/home.jpg" alt="Biomvira home page"><br><sub>Home page</sub></td>
+    <td width="50%"><img src=".github/assets/assistant.jpg" alt="Assistant explaining how Biomvira works"><br><sub>The assistant explaining how Biomvira works</sub></td>
   </tr>
 </table>
 
@@ -239,6 +239,6 @@ cd backend && DATABASE_URL="<neon url>" python -m app.cli create-owner --email y
 
 ## About
 
-NutriLens was built as a B.Tech capstone project at the School of Computer Science and Artificial Intelligence, **SR University**, Warangal, under the guidance of Mr. Radhakrishnan P.
+Biomvira was built as a B.Tech capstone project at the School of Computer Science and Artificial Intelligence, **SR University**, Warangal, under the guidance of Mr. Radhakrishnan P.
 
-**Disclaimer:** NutriLens gives general, educational nutrition information. It is not a medical device and does not replace advice from a doctor or a registered dietitian.
+**Disclaimer:** Biomvira gives general, educational nutrition information. It is not a medical device and does not replace advice from a doctor or a registered dietitian.

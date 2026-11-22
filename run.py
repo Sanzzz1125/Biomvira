@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-NutriLens Unified Server Runner
+Biomvira Unified Server Runner
 Starts the FastAPI backend and serves the React frontend at http://127.0.0.1:8000
 """
 import os
@@ -15,7 +15,7 @@ if BACKEND_DIR not in sys.path:
 import uvicorn
 
 if __name__ == "__main__":
-    print("\n🌿 Starting NutriLens Server...")
+    print("\n🌿 Starting Biomvira Server...")
     print("📍 Web Interface: http://localhost:8000")
     print("📚 API Documentation: http://localhost:8000/docs\n")
     uvicorn.run("app.main:app", host="127.0.0.1", port=8000, reload=True)

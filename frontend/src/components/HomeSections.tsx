@@ -14,10 +14,10 @@ export const HomeHero: React.FC = () => (
       <div className="flex min-w-0 flex-[1_1_480px] flex-col gap-6">
         <p className="eyebrow">Blood report to Indian meals</p>
         <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl">
-          Your blood report, turned into meals you will actually eat.
+          From Blood Insights to Better Bites.
         </h1>
         <p className="max-w-xl text-lg leading-relaxed text-slate-600">
-          Upload a report from any Indian lab. NutriLens explains each result, then builds diet plans from your region's dishes, your diet type and your allergies.
+          Upload a report from any Indian lab. Biomvira explains each result, then builds diet plans from your region's dishes, your diet type and your allergies.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link to="/analyze"
@@ -85,7 +85,7 @@ export const ScienceBand: React.FC = () => (
           We do not guess. The numbers on your plan come from ICMR-NIN's food tables (with USDA values where those tables have none) and published clinical ranges, and every plan is checked against your targets before you see it.
         </p>
         <Link to="/science" className="inline-flex items-center gap-1 text-[15px] font-semibold text-[#7dd1b7] hover:text-white">
-          Read how NutriLens works <ArrowRight className="h-4 w-4" aria-hidden />
+          Read how Biomvira works <ArrowRight className="h-4 w-4" aria-hidden />
         </Link>
       </div>
       <div className="grid min-w-0 flex-[2_1_560px] gap-3.5 sm:grid-cols-2">
@@ -153,10 +153,10 @@ export const ArticlesSection: React.FC = () => {
 
 const HOME_FAQ = [
   ['Is my report stored?', 'The file you upload is never stored. Your name and phone number are removed before anything else. Results are saved only if you are signed in, and only you can see them.'],
-  ['Which labs and tests are supported?', 'Printed reports from any Indian lab, as a PDF or a clear photo. NutriLens reads 61 common tests: blood count, sugar, cholesterol, liver, kidney, thyroid, iron and vitamins.'],
+  ['Which labs and tests are supported?', 'Printed reports from any Indian lab, as a PDF or a clear photo. Biomvira reads 61 common tests: blood count, sugar, cholesterol, liver, kidney, thyroid, iron and vitamins.'],
   ['How are the diet plans made?', 'Your calories and protein come from your age, sex, height, weight and activity. An optimisation engine then picks dishes and portions from 276 Indian home recipes so each day meets your calories and protein and aims for the nutrients your report shows as low, within your diet, region and allergies.'],
-  ['Is this a medical diagnosis?', 'No. NutriLens gives general nutrition guidance. Results that need medical care are clearly marked, and you should always talk to your doctor before changing treatment.'],
-  ['Is NutriLens free?', 'Yes. Analysing reports, diet plans and saving them to your account are free.'],
+  ['Is this a medical diagnosis?', 'No. Biomvira gives general nutrition guidance. Results that need medical care are clearly marked, and you should always talk to your doctor before changing treatment.'],
+  ['Is Biomvira free?', 'Yes. Analysing reports, diet plans and saving them to your account are free.'],
 ];
 
 export const FaqSection: React.FC = () => {

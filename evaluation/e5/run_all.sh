@@ -3,7 +3,7 @@
 # Usage (repo root): sh evaluation/e5/run_all.sh <python with torch + sentence-transformers>   (about 15-30 minutes)
 set -e
 PY=${1:-python3}
-OUT=${TMPDIR:-/tmp}/nutrilens-e5
+OUT=${TMPDIR:-/tmp}/biomvira-e5
 .venv/bin/python evaluation/e5/check_variants.py
 $PY evaluation/e5/train.py "$OUT"
 $PY evaluation/e5/compress.py "$OUT"

@@ -1,25 +1,25 @@
-"""Hand-written questions and answers about using NutriLens, privacy, safety and everyday nutrition.
+"""Hand-written questions and answers about using Biomvira, privacy, safety and everyday nutrition.
 
 Each entry: id, example phrasings (the matcher compares a user's question with these), answer, follow-up suggestions.
 Answers use a small markdown subset that the chat window renders: **bold**, "- " bullets and blank-line paragraphs.
 """
 
 FAQ = [
-    # ---- About NutriLens ----
-    ("about", ["what is nutrilens", "what does this website do", "what is this app", "tell me about nutrilens",
-               "what can this site do", "how does nutrilens help me", "what is the purpose of this website"],
-     'NutriLens reads your blood report and turns it into a **personalised Indian diet plan**.\n\n- Upload a '
+    # ---- About Biomvira ----
+    ("about", ["what is biomvira", "what does this website do", "what is this app", "tell me about biomvira",
+               "what can this site do", "how does biomvira help me", "what is the purpose of this website"],
+     'Biomvira reads your blood report and turns it into a **personalised Indian diet plan**.\n\n- Upload a '
      'PDF or photo of your report, or paste its text. It reads 61 common tests (blood count, sugar, '
      'cholesterol, liver, kidney, thyroid, iron and vitamins).\n- Each result is marked low, borderline, '
      'normal or high and explained in plain language.\n- You pick Indian foods that help your results, and '
-     'NutriLens builds **diet plans** from 276 home-style dishes of your state: three one-day options, '
+     'Biomvira builds **diet plans** from 276 home-style dishes of your state: three one-day options, '
      'then a full **7-day plan** with a shopping list.\n- Everything works in **English, Hindi and '
      'Telugu**, including the PDFs.',
      ["How do I upload my report?", "Which tests are supported?", "Is my data private?"]),
-    ("how_it_works", ["how does nutrilens work", "how does it analyse my report", "what algorithm do you use",
+    ("how_it_works", ["how does biomvira work", "how does it analyse my report", "what algorithm do you use",
                       "is this ai", "do you use ai", "how are foods chosen", "how do you recommend foods",
                       "what is the logic behind the diet plan", "do you use machine learning", "how is the diet decided"],
-     'NutriLens uses **checked data and fixed rules**, not guesses:\n\n- It reads the values, units and '
+     'Biomvira uses **checked data and fixed rules**, not guesses:\n\n- It reads the values, units and '
      "ranges from your report and marks each result against your lab's range (or a published range).\n- "
      'Foods for each result are ranked by real nutrient values from the **ICMR-NIN Indian Food Composition '
      'Tables (IFCT 2017)**, or by properties such as low GI or high fibre, and filtered by your diet and '
@@ -29,18 +29,18 @@ FAQ = [
      'shows as low and respect your diet, allergies and region.\n\nEvery food shows why it was chosen, so '
      'you can check the reasoning.',
      ["Where does the food data come from?", "Which tests get a food plan?"]),
-    ("who_made", ["who made nutrilens", "who built this", "who created you", "who developed this website",
+    ("who_made", ["who made biomvira", "who built this", "who created you", "who developed this website",
                   "who are the developers"],
-     "NutriLens was built as a capstone project by students of the School of CS & AI, SR University, Warangal.",
-     ["What is NutriLens?", "How does NutriLens work?"]),
-    ("is_free", ["is nutrilens free", "do i have to pay", "what is the cost", "is there any charge",
+     "Biomvira was built as a capstone project by students of the School of CS & AI, SR University, Warangal.",
+     ["What is Biomvira?", "How does Biomvira work?"]),
+    ("is_free", ["is biomvira free", "do i have to pay", "what is the cost", "is there any charge",
                  "is it paid", "subscription price"],
-     "Yes, NutriLens is **free to use**. There are no charges or subscriptions.",
+     "Yes, Biomvira is **free to use**. There are no charges or subscriptions.",
      ["Do I need an account?", "How do I upload my report?"]),
     ("supported_tests", ["which tests are supported", "what tests can you read", "which biomarkers do you analyse",
-                         "list of supported tests", "what tests does nutrilens check", "can you read my thyroid test",
+                         "list of supported tests", "what tests does biomvira check", "can you read my thyroid test",
                          "which blood tests work", "what parameters are supported", "how many tests do you support"],
-     "NutriLens reads **61 common tests** in these groups:\n\n"
+     "Biomvira reads **61 common tests** in these groups:\n\n"
      "- **Blood count (CBC):** haemoglobin, RBC, PCV, MCV, MCH, MCHC, RDW, WBC, differential count, platelets, ESR\n"
      "- **Iron studies:** ferritin, serum iron, TIBC, transferrin saturation\n"
      "- **Vitamins & minerals:** vitamin D, vitamin B12, folate, calcium, phosphorus\n"
@@ -58,8 +58,8 @@ FAQ = [
      "- **Food plan:** blood count and iron, vitamin D, B12, folate, calcium, blood sugar and cholesterol.\n"
      "- **Food plan + doctor:** liver enzymes, low protein or albumin, and uric acid. Food helps, but a doctor should also review them.\n"
      "- **Doctor review only:** thyroid, electrolytes, most kidney tests, white cell counts and CRP. Diet cannot safely fix these, "
-     "so NutriLens asks you to see a doctor instead of guessing.",
-     ["Which tests are supported?", "How does NutriLens work?"]),
+     "so Biomvira asks you to see a doctor instead of guessing.",
+     ["Which tests are supported?", "How does Biomvira work?"]),
     ("food_source", ["where does the food data come from", "what is the source of nutrient values",
                      "are the nutrient values correct", "which food database do you use", "how many foods are there"],
      'Nutrient values come from the **Indian Food Composition Tables (IFCT 2017)** by ICMR-National '
@@ -71,13 +71,13 @@ FAQ = [
      ["How are foods chosen?", "Which foods are rich in iron?"]),
     ("ranges_source", ["where do the normal ranges come from", "which reference range do you use",
                        "why is my lab range different", "why does the range differ from my report"],
-     "NutriLens **uses the range printed on your report** whenever it is there, because each lab calibrates its own machines. "
+     "Biomvira **uses the range printed on your report** whenever it is there, because each lab calibrates its own machines. "
      "If the report has no range, it uses standard adult ranges from clinical guidelines, separate for men and women where needed.",
-     ["How accurate is NutriLens?", "What do low, borderline and high mean?"]),
+     ["How accurate is Biomvira?", "What do low, borderline and high mean?"]),
 
     # ---- Using the app ----
     ("upload", ["what is the next step after uploading", "what to do after uploading the report", "how do i upload my report", "how to use this website", "how to analyse my report", "where do i upload",
-                "how do i start", "steps to use nutrilens", "how to use the website", "how to use the app", "how to check my report"],
+                "how do i start", "steps to use biomvira", "how to use the website", "how to use the app", "how to check my report"],
      'It takes three steps:\n\n- **Upload** your report on the home page: drag in a PDF or photo, or choose '
      '**Paste text**, then check the values that were read.\n- **Your profile:** age, sex, height, weight, '
      'state, activity, diet type (and which meats, for non-veg), allergies, and optionally what you '
@@ -95,7 +95,7 @@ FAQ = [
      ["Why was a value not read?", "How do I upload my report?"]),
     ("labs", ["which labs are supported", "does it work with my lab", "does it work for apollo report",
               "can it read thyrocare report", "does it support government lab reports", "which hospital reports work"],
-     "NutriLens is designed to work with reports from **any Indian lab**: private chains, hospitals and government labs. "
+     "Biomvira is designed to work with reports from **any Indian lab**: private chains, hospitals and government labs. "
      "It recognises the many different names labs use for the same test (for example Hb, Haemoglobin and Hemoglobin).",
      ["Which file types can I upload?", "Why was a value not read?"]),
     ("not_read", ["why was a value not read", "my test is missing", "some results are missing", "it did not detect my value",
@@ -104,12 +104,12 @@ FAQ = [
      "If a result is missing or looks wrong:\n\n"
      "- Check the result list after upload; you can **edit any value** or use **Add a test** to enter one by hand.\n"
      "- For photos, retake it in good light with the page flat and the numbers in focus.\n"
-     "- If a page is an unclear picture, NutriLens tells you which page could not be read.\n"
+     "- If a page is an unclear picture, Biomvira tells you which page could not be read.\n"
      "- Only the 61 supported tests are read; other tests on the report are skipped.",
      ["Which tests are supported?", "Which file types can I upload?"]),
     ("review_step", ["why do i have to review results", "why was a value marked for review",
                      "what does needs attention mean", "why is a result highlighted", "what is the review step"],
-     "Most reports go straight to your profile. NutriLens only asks you to review when it is **not fully sure** about a value, "
+     "Most reports go straight to your profile. Biomvira only asks you to review when it is **not fully sure** about a value, "
      "for example when there is no unit, the value is written as \"< 5.0\", or the same test appears twice. Check those rows, "
      "correct them if needed, and continue.",
      ["Why was a value not read?", "How do I upload my report?"]),
@@ -153,7 +153,7 @@ FAQ = [
      'Each food shows how much of the key nutrient a normal serving gives, a cooking tip and why it '
      'helps.\n\nTap **Add to plan** on the foods you like, then **Build my diet plan**: your diet plan will '
      'include them.',
-     ["Can I download my plan?", "How does NutriLens work?"]),
+     ["Can I download my plan?", "How does Biomvira work?"]),
     ("pdf", ["can i download my plan", "how to download pdf", "can i print my plan",
              "download pdf not working"],
      'Yes, there are two PDFs, both in the language you have chosen (English, Hindi or Telugu):\n\n- '
@@ -174,7 +174,7 @@ FAQ = [
     ("password", ["i forgot my password", "how to reset password", "cannot log in", "login not working",
                   "how do i change my password"],
      "- **Change password:** open **Account** from the top menu while signed in.\n"
-     "- **Forgot password:** ask a NutriLens administrator to send you a password reset link. It lets you choose a new password.",
+     "- **Forgot password:** ask a Biomvira administrator to send you a password reset link. It lets you choose a new password.",
      ["How do I delete my account?"]),
     ("delete_account", ["how do i delete my account", "remove my account", "delete my data", "erase my information"],
      "Open **Account** from the top menu and choose **Delete account**. This permanently removes your account, saved "
@@ -192,19 +192,19 @@ FAQ = [
      "- Your data is never sold or shared.",
      ["How do I delete my account?", "Is this a medical diagnosis?"]),
     ("diagnosis", ["is this a medical diagnosis", "can i trust this instead of a doctor", "is this medical advice",
-                   "can this replace my doctor", "do i still need a doctor", "is nutrilens a doctor"],
-     "No. NutriLens gives **general nutrition guidance** based on your report; it is not a diagnosis or a substitute for a doctor. "
+                   "can this replace my doctor", "do i still need a doctor", "is biomvira a doctor"],
+     "No. Biomvira gives **general nutrition guidance** based on your report; it is not a diagnosis or a substitute for a doctor. "
      "Always discuss abnormal results, and any change to medicines, with a qualified doctor.",
-     ["When should I see a doctor?", "How accurate is NutriLens?"]),
+     ["When should I see a doctor?", "How accurate is Biomvira?"]),
     ("see_doctor", ["when should i see a doctor", "is my result serious", "should i be worried", "when is a result dangerous",
                     "what results need a doctor"],
      "Please see a doctor if:\n\n"
-     "- NutriLens shows a **\"Please review these results with a doctor\"** warning.\n"
+     "- Biomvira shows a **\"Please review these results with a doctor\"** warning.\n"
      "- A result is far outside its range, or several results are abnormal.\n"
      "- You have symptoms such as chest pain, breathlessness, fainting, bleeding, yellow eyes or severe weakness. For these, get care **immediately**.",
      ["Is this a medical diagnosis?"]),
-    ("accuracy", ["how accurate is nutrilens", "can i trust the results", "is the reading correct", "how reliable is it"],
-     "In testing on real and sample Indian lab reports, NutriLens read **all 103 printed values correctly**, and every food plan "
+    ("accuracy", ["how accurate is biomvira", "can i trust the results", "is the reading correct", "how reliable is it"],
+     "In testing on real and sample Indian lab reports, Biomvira read **all 103 printed values correctly**, and every food plan "
      "respected the user's diet and allergies. Still, always glance at the values it read; you can edit anything before analysis.",
      ["Why was a value not read?", "Is this a medical diagnosis?"]),
     ("medicines", ["should i take supplements", "can i take iron tablets", "which vitamin d tablet should i take",
@@ -215,11 +215,11 @@ FAQ = [
      ["Which foods are rich in iron?", "Which foods are rich in vitamin D?"]),
     ("pregnancy", ["i am pregnant", "is this plan safe in pregnancy", "can pregnant women use this", "diet during pregnancy",
                    "breastfeeding diet"],
-     "NutriLens uses adult ranges and general food plans; it is **not tailored for pregnancy or breastfeeding**, when needs and "
+     "Biomvira uses adult ranges and general food plans; it is **not tailored for pregnancy or breastfeeding**, when needs and "
      "normal ranges change. Please follow your obstetrician's advice. Folate, iron, calcium and protein are especially important at this time.",
      ["Which foods are rich in folate?", "Which foods are rich in iron?"]),
     ("children", ["can children use this", "is it for kids", "my child's report", "age limit", "is this for teenagers"],
-     "NutriLens is designed for **adults**. Children's normal ranges and nutritional needs are different, so please discuss a "
+     "Biomvira is designed for **adults**. Children's normal ranges and nutritional needs are different, so please discuss a "
      "child's report with a paediatrician.",
      ["Which tests are supported?"]),
 
@@ -244,7 +244,7 @@ FAQ = [
      "- **Vitamin B12 and vitamin D**\n"
      "- **TSH** (an underactive thyroid)\n"
      "- **HbA1c or fasting sugar**\n\n"
-     "Upload your report and NutriLens will show which of these are out of range. If tiredness is severe, sudden or comes "
+     "Upload your report and Biomvira will show which of these are out of range. If tiredness is severe, sudden or comes "
      "with breathlessness or weight loss, please see a doctor.",
      ["What foods help with low haemoglobin?", "What does low vitamin B12 mean?", "How do I upload my report?"]),
     ("hair_fall", ["hair fall", "why is my hair falling", "hair loss diet", "foods for hair growth", "which test for hair fall",
@@ -291,7 +291,7 @@ FAQ = [
      ["Which foods are low GI?", "Which foods are high in protein?"]),
     ("weight", ["how to lose weight", "diet for weight loss", "how to reduce belly fat", "how to gain weight",
                 "is my weight ok", "obesity diet"],
-     'NutriLens adjusts your diet plan to your body: if your BMI is 25 or more, the daily calorie target '
+     'Biomvira adjusts your diet plan to your body: if your BMI is 25 or more, the daily calorie target '
      'is set about 15% lower (at most 500 kcal less); if it is under 18.5, about 10% higher. A few safe '
      'principles also help:\n\n- Fill half your plate with vegetables and add protein at each meal.\n- Choose '
      'millets and whole grains over refined flour.\n- Limit sugar, sweet drinks, fried snacks and '
@@ -306,7 +306,7 @@ FAQ = [
      ["What is a healthy diet?"]),
     ("salt_bp", ["blood pressure diet", "how much salt should i eat", "high bp food", "hypertension diet",
                  "do you check blood pressure"],
-     "NutriLens doesn't analyse blood pressure, but for healthy BP: keep salt under about **5 g a day** (one teaspoon in total), "
+     "Biomvira doesn't analyse blood pressure, but for healthy BP: keep salt under about **5 g a day** (one teaspoon in total), "
      "limit pickles, papad and packaged snacks, eat more vegetables, fruit and pulses, and stay active. Follow your doctor's advice "
      "if you take BP medicines.",
      ["What is a healthy diet?"]),

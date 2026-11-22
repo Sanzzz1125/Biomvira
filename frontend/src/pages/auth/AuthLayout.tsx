@@ -67,7 +67,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ title, subtitle, childre
       </div>
 
       <p className="relative max-w-md text-xs leading-relaxed text-brand-100/70">
-        NutriLens is an educational nutrition tool and does not replace medical advice.
+        Biomvira is an educational nutrition tool and does not replace medical advice.
       </p>
     </aside>
 
@@ -80,7 +80,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ title, subtitle, childre
           className="inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
         >
           <ArrowLeft className="h-4 w-4" aria-hidden />
-          Back to NutriLens
+          Back to Biomvira
         </Link>
       </div>
 

@@ -1,4 +1,4 @@
-"""NutriLens assistant: answers questions about tests, foods, diets and the app from a checked knowledge base.
+"""Biomvira assistant: answers questions about tests, foods, diets and the app from a checked knowledge base.
 
 There is no text generation. Every reply is either written by hand (FAQ, safety messages) or assembled from the same
 data the analyser uses (biomarkers.json, foods.json, the food-plan rules), so the assistant can never invent a value.
@@ -11,7 +11,7 @@ Pipeline for each message:
   5. Entity and intent detection: which test, condition, nutrient or food is asked about, and what about it
      (meaning, normal range, low, high, foods, foods to avoid, when to see a doctor).
   6. Otherwise the FAQ is searched with TF-IDF weighted matching (BM25 breaks ties).
-  7. Anything outside nutrition, blood tests and NutriLens is politely declined.
+  7. Anything outside nutrition, blood tests and Biomvira is politely declined.
 """
 from __future__ import annotations
 
@@ -47,6 +47,7 @@ class Reply:
 
 def normalize(text: str) -> str:
     text = text.lower().replace("’", "'")
+    text = re.sub(r"\bnutrilens\b", "biomvira", text)
     text = re.sub(r"(\w)'(\w)", r"\1\2", text)  # don't -> dont, what's -> whats
     text = re.sub(r"\b(?:[a-z]\.){2,}[a-z]?\b", lambda m: m.group(0).replace(".", ""), text)  # e.s.r -> esr
     text = re.sub(r"[^a-z0-9]+", " ", text)
@@ -96,7 +97,7 @@ def stem(word: str) -> str:
 
 # Different ways of saying the same thing, folded into one word before FAQ matching.
 CANON_PHRASES = [
-    (r"\b(nutrilens|this site|this website|this app|the site|the website|the app|this tool|the tool)\b", "site"),
+    (r"\b(biomvira|this site|this website|this app|the site|the website|the app|this tool|the tool)\b", "site"),
     (r"\b(not|cannot|cant|unable to|couldnt|could not|wont|will not) (upload\w*|open\w*|load\w*|process\w*|submit\w*)\b",
      "upload broken"),
     (r"\bkeep (\w+ ){0,3}(healthy|normal)\b", "maintain"),
@@ -248,14 +249,14 @@ CONCEPTS = {
         plan=None, test="creatinine",
         about="The kidneys filter waste from your blood. Creatinine, urea, BUN, eGFR and uric acid show how well they work. "
               "Kidney diets must be planned by a doctor or dietitian, because protein, potassium and phosphorus needs depend "
-              "on the stage of kidney disease. NutriLens therefore flags abnormal kidney results for a doctor instead of "
+              "on the stage of kidney disease. Biomvira therefore flags abnormal kidney results for a doctor instead of "
               "giving a food plan."),
     "thyroid": dict(
         words=["thyroid", "hypothyroid", "hypothyroidism", "hyperthyroid", "hyperthyroidism", "thyroid function",
                "thyroid profile", "goitre", "goiter"],
         plan=None, test="tsh",
         about="The thyroid gland controls how fast your body uses energy. TSH, T3 and T4 (and their free forms) show whether "
-              "it is underactive or overactive. Thyroid problems are treated with medicine, so NutriLens flags abnormal "
+              "it is underactive or overactive. Thyroid problems are treated with medicine, so Biomvira flags abnormal "
               "results for a doctor instead of giving a food plan. Using iodised salt helps prevent iodine deficiency."),
     "vitamin_d": dict(words=["vitamin d", "vitamin d3", "d3", "sunshine vitamin"], plan="vitamin_d_iu", test="vitamin_d"),
     "vitamin_b12": dict(words=["vitamin b12", "b12", "b 12", "cobalamin"], plan="vitamin_b12_mcg", test="vitamin_b12"),
@@ -290,11 +291,11 @@ CONCEPTS = {
         test=None,
         about="The complete blood count (CBC) measures your red cells (haemoglobin, RBC, PCV, MCV, MCH, MCHC, RDW), white "
               "cells (total WBC and the differential count) and platelets. It helps detect anaemia, infection and many "
-              "other conditions. NutriLens gives a food plan for anaemia-related results and flags the others for a doctor."),
+              "other conditions. Biomvira gives a food plan for anaemia-related results and flags the others for a doctor."),
     "electrolytes": dict(
         words=["electrolyte", "electrolytes", "serum electrolytes"], plan=None, test="sodium",
         about="Electrolytes (sodium, potassium, chloride) are salts that control fluid balance, nerves, muscles and heart "
-              "rhythm. Abnormal levels need a doctor's review, so NutriLens doesn't give a food plan for them."),
+              "rhythm. Abnormal levels need a doctor's review, so Biomvira doesn't give a food plan for them."),
 }
 for _key, _concept in CONCEPTS.items():
     if "about" not in _concept:
@@ -475,7 +476,7 @@ def detect_allergens(text: str) -> tuple[list[str], str]:
 DOMAIN_WORDS = {
     "health", "healthy", "blood", "test", "tests", "report", "reports", "lab", "result", "results", "value", "values",
     "level", "levels", "range", "food", "foods", "eat", "eating", "diet", "nutrition", "nutrient", "vitamin", "mineral",
-    "doctor", "plan", "nutrilens", "upload", "pdf", "account", "login", "password", "history", "profile", "allergy",
+    "doctor", "plan", "biomvira", "upload", "pdf", "account", "login", "password", "history", "profile", "allergy",
     "allergic", "allergies", "vegetarian", "vegan", "veg", "meal", "breakfast", "lunch", "dinner", "weight", "fat", "fats",
     "fibre", "water", "exercise", "symptom", "symptoms", "deficiency", "supplement", "supplements", "medicine", "tablet",
     "pregnancy", "pregnant", "score", "data", "privacy", "website", "app", "site", "analyse", "analysis", "body", "sleep",
@@ -734,7 +735,7 @@ def doctor_text(key: str) -> str:
         limits.append(f"{fmt(cfg['clinical_warning_high_threshold'])} {unit} or higher")
     if cfg.get("doctor_above_factor"):
         limits.append(f"more than {fmt(cfg['doctor_above_factor'])} times the upper limit of your report's range")
-    text = f"NutriLens shows a doctor warning when {name} is {' or '.join(limits)}. " if limits else ""
+    text = f"Biomvira shows a doctor warning when {name} is {' or '.join(limits)}. " if limits else ""
     if cfg.get("abnormal_requires_consult"):
         text += f"Any {name} result outside the range should be reviewed by a doctor."
     else:
@@ -783,7 +784,7 @@ def answer_test(key: str, intent: str, direction: Optional[str], diet, allergens
     if intent == "range":
         rows = normal_ranges(key)
         lines = [f"**Normal range for {name}**", ""] + [f"- {g}: {t}" for g, t in rows]
-        lines += ["", "Labs can print slightly different ranges. NutriLens uses the range printed on your report when it is there."]
+        lines += ["", "Labs can print slightly different ranges. Biomvira uses the range printed on your report when it is there."]
         return Reply("\n".join(lines), suggestions=test_suggestions(key, "range"), topic=topic)
     if intent in ("foods", "avoid"):
         direction = direction or problem_direction(key)
@@ -795,7 +796,7 @@ def answer_test(key: str, intent: str, direction: Optional[str], diet, allergens
                          suggestions=test_suggestions(key, "foods"), topic=topic)
         text = (high_text if direction == "high" else low_text) if direction else what
         lines = [f"**{short_name(key)} and diet**", "", text, "",
-                 f"Food can't reliably correct {direction + ' ' if direction else ''}{short_name(key)}, so NutriLens doesn't "
+                 f"Food can't reliably correct {direction + ' ' if direction else ''}{short_name(key)}, so Biomvira doesn't "
                  "give a food plan for it. Please review it with a doctor. A balanced plate with vegetables, whole grains, "
                  "pulses and enough water is still a good base."]
         return Reply("\n".join(lines), suggestions=test_suggestions(key, "foods"), topic=topic)
@@ -804,9 +805,9 @@ def answer_test(key: str, intent: str, direction: Optional[str], diet, allergens
         lines = [f"**{intent.title()} {name}**", "", text]
         plan = plan_for(key, intent)
         if plan:
-            lines += ["", f"NutriLens gives a food plan for {intent} {short_name(key)}, focused on {PLAN_NAMES.get(plan, plan)}."]
+            lines += ["", f"Biomvira gives a food plan for {intent} {short_name(key)}, focused on {PLAN_NAMES.get(plan, plan)}."]
         elif cfg.get("abnormal_requires_consult"):
-            lines += ["", "NutriLens flags this for a doctor's review rather than giving a food plan."]
+            lines += ["", "Biomvira flags this for a doctor's review rather than giving a food plan."]
         return Reply("\n".join(lines), suggestions=test_suggestions(key, intent), topic=topic)
     if intent == "doctor":
         lines = [f"**When to see a doctor about {short_name(key)}**", ""]
@@ -821,9 +822,9 @@ def answer_test(key: str, intent: str, direction: Optional[str], diet, allergens
     lines = [f"**{name}**", "", what, "", f"- **Low:** {low_text}", f"- **High:** {high_text}"]
     plans = [d for d in ("low", "high") if plan_for(key, d)]
     if plans:
-        lines += ["", f"NutriLens gives a food plan when {short_name(key)} is {' or '.join(plans)}."]
+        lines += ["", f"Biomvira gives a food plan when {short_name(key)} is {' or '.join(plans)}."]
     else:
-        lines += ["", "NutriLens doesn't give a food plan for this test; results outside the range are flagged for a doctor."]
+        lines += ["", "Biomvira doesn't give a food plan for this test; results outside the range are flagged for a doctor."]
     return Reply("\n".join(lines), suggestions=test_suggestions(key, "what"), topic=topic)
 
 
@@ -999,7 +1000,7 @@ def personal_topic(text: str, context: dict) -> Optional[Reply]:
             if own:
                 reply = _join([personal_marker(m, context.get("plans", [])) for m in own[:4]])
                 if re.search(r"\b(diabet\w*|do i have|am i)\b", text):
-                    reply.reply += ("\n\nNutriLens can't diagnose a condition. Please ask your doctor what these "
+                    reply.reply += ("\n\nBiomvira can't diagnose a condition. Please ask your doctor what these "
                                     "results mean for you.")
                 return reply
             names = ", ".join(sorted(categories)).lower()
@@ -1155,19 +1156,19 @@ SITE_WORDS = {
     "upload", "report", "pdf", "jpeg", "jpg", "png", "photo", "picture", "image", "file", "account", "login", "logout",
     "password", "history", "profile", "guest", "chat", "chats", "site", "website", "app", "mobile", "phone", "browser",
     "privacy", "cookies", "ads", "admin", "invite", "email", "register", "plan", "diet", "score", "review", "units",
-    "page", "button", "download", "print", "share", "delete", "nutrilens", "ocr", "error", "slow", "loading", "docs",
+    "page", "button", "download", "print", "share", "delete", "biomvira", "ocr", "error", "slow", "loading", "docs",
     "document", "results", "result", "free", "cost", "safe", "secure", "data", "stored", "store", "saved", "save",
     "doctor", "dietitian", "food", "foods", "test", "tests", "lab", "value", "values",
 }
 APP_WORDS = re.compile(r"\b(manually|by myself|upload\w*|download\w*|pdf|history|save[ds]?|delete|account|login|log in|sign (up|in)|"
-                       r"password|register|website|app|site|nutrilens|privacy|private|stored?|data)\b")
+                       r"password|register|website|app|site|biomvira|privacy|private|stored?|data)\b")
 
 DEFAULT_SUGGESTIONS = ["What foods help with low haemoglobin?", "What is HbA1c?", "How do I upload my report?",
                        "Is my data private?"]
 CONTEXT_SUGGESTIONS = ["Summarise my results", "What should I eat?", "When should I see a doctor?"]
 
-SCOPE_LINE = ("I'm the NutriLens assistant, so I can help with **blood test results, food and nutrition, and using "
-              "NutriLens**.")
+SCOPE_LINE = ("I'm the Biomvira assistant, so I can help with **blood test results, food and nutrition, and using "
+              "Biomvira**.")
 
 
 def _suggest(context: Optional[dict]) -> list[str]:
@@ -1199,8 +1200,8 @@ def safety_and_smalltalk(text: str, raw: str, context: Optional[dict], has_entit
         return None
     words = text.split()
     if WHO.search(text):
-        return Reply("I'm the **NutriLens assistant**, an automated helper (not a person or a doctor). I answer from "
-                     "NutriLens's checked knowledge of blood tests and Indian foods, and from your own results once you "
+        return Reply("I'm the **Biomvira assistant**, an automated helper (not a person or a doctor). I answer from "
+                     "Biomvira's checked knowledge of blood tests and Indian foods, and from your own results once you "
                      "analyse a report.", kind="smalltalk", suggestions=_suggest(context))
     if HOW_ARE_YOU.search(text):
         return Reply("I'm doing well, thanks for asking! How can I help with your report or diet today?",
@@ -1211,14 +1212,14 @@ def safety_and_smalltalk(text: str, raw: str, context: Optional[dict], has_entit
     if BYE.search(text) and len(words) <= 5:
         return Reply("Take care! Come back any time you have a question about your report.", kind="smalltalk")
     if GREETING.search(text) and len(words) <= 4:
-        return Reply("Hello! I'm the NutriLens assistant. Ask me about your blood test results, foods for a nutrient, or "
-                     "how to use NutriLens.", kind="smalltalk", suggestions=_suggest(context))
+        return Reply("Hello! I'm the Biomvira assistant. Ask me about your blood test results, foods for a nutrient, or "
+                     "how to use Biomvira.", kind="smalltalk", suggestions=_suggest(context))
     if CAPABILITY.search(text) and len(words) <= 8:
         return Reply("I can help you with:\n\n"
                      "- **Your results:** what a test means and whether your value is normal\n"
                      "- **Foods:** Indian foods for iron, vitamin D, B12, calcium, blood sugar, cholesterol and more, "
                      "for your diet and allergies\n"
-                     "- **Using NutriLens:** uploading reports, the review step, your plan, PDF and history\n"
+                     "- **Using Biomvira:** uploading reports, the review step, your plan, PDF and history\n"
                      "- **Privacy and safety:** how your data is handled and when to see a doctor",
                      kind="smalltalk", suggestions=_suggest(context))
     if ACK.match(text):
@@ -1442,7 +1443,8 @@ _SAFETY_PROBES = {"safety:emergency": "I have severe chest pain right now", "saf
 def _semantic_reply(raw: str, context: Optional[dict]) -> Optional[Reply]:
     """An FAQ answer or safety reply for a question the patterns did not place, in any of the three languages."""
     from app.nlp import embed
-    label, _score = embed.match_question(raw)
+    # The deployed embedding index was trained with the former product name.
+    label, _score = embed.match_question(re.sub(r"\bbiomvira\b", "NutriLens", raw, flags=re.I))
     if not label:
         return None
     if label in _SAFETY_PROBES:
@@ -1459,7 +1461,7 @@ def _fuse(raw: str, faq_hits: list) -> list:
     """Rank FAQ answers by meaning (e5 model) plus word overlap (rules): measured 96% / 89% top-1 on the hand-written
     and held-out question sets, against 92% / 66% for the rules alone (tests/data/chat_questions*.txt)."""
     from app.nlp import embed
-    sims = embed.faq_similarities(raw)
+    sims = embed.faq_similarities(re.sub(r"\bbiomvira\b", "NutriLens", raw, flags=re.I))
     if not sims:
         return faq_hits
     rule = {FAQ[i][0]: s for s, i in faq_hits}

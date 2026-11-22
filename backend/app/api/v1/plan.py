@@ -118,7 +118,7 @@ def plan_pdf(request: PdfRequest, lang: str = "en"):
     except (KeyError, TypeError, ValueError):
         raise HTTPException(400, "That plan could not be read.")
     return Response(pdf, media_type="application/pdf",
-                    headers={"Content-Disposition": 'attachment; filename="NutriLens_7_day_plan.pdf"'})
+                    headers={"Content-Disposition": 'attachment; filename="Biomvira_7_day_plan.pdf"'})
 
 
 class AllergyCheck(BaseModel):

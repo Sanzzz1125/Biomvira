@@ -138,7 +138,7 @@ def _build(days: list, shopping_list: list, title: str, lang: str) -> bytes:
                                  st["small"])], fill=g.SLATE_50, stroke=g.SLATE_200, radius=6, pad_x=7, pad_y=4), None, "left")
 
     story = [Paragraph(L(title), st["title"]), Spacer(1, 3),
-             Paragraph(g._t(L("Built by NutriLens from your report and profile. Amounts are per person. This plan "
+             Paragraph(g._t(L("Built by Biomvira from your report and profile. Amounts are per person. This plan "
                               "supports, and does not replace, advice from your doctor or dietitian.")), st["subtitle"]),
              Spacer(1, 12)]
     for i, day in enumerate(days[:7]):
@@ -195,7 +195,7 @@ def _build(days: list, shopping_list: list, title: str, lang: str) -> bytes:
         g._draw_logo(c, g.MARGIN_X, top - 14, 14)
         c.setFillColor(g.SLATE_900)
         c.setFont("Helvetica-Bold", 10)
-        c.drawString(g.MARGIN_X + 19, top - 10, "NutriLens")
+        c.drawString(g.MARGIN_X + 19, top - 10, "Biomvira")
         c.setFillColor(g.SLATE_500)
         c.setFont("Helvetica", 7.5)
         c.drawRightString(g.PAGE_W - g.MARGIN_X, top - 10, L("7-day diet plan"))
@@ -205,7 +205,7 @@ def _build(days: list, shopping_list: list, title: str, lang: str) -> bytes:
 
     buffer = BytesIO()
     doc = BaseDocTemplate(buffer, pagesize=A4, leftMargin=g.MARGIN_X, rightMargin=g.MARGIN_X, topMargin=g.LATER_TOP,
-                          bottomMargin=g.BOTTOM, title=L(title), author="NutriLens")
+                          bottomMargin=g.BOTTOM, title=L(title), author="Biomvira")
     frame = Frame(g.MARGIN_X, g.BOTTOM, g.CONTENT_W, g.PAGE_H - g.BOTTOM - g.LATER_TOP, leftPadding=0, rightPadding=0,
                   topPadding=0, bottomPadding=0)
     doc.addPageTemplates([PageTemplate("page", [frame], onPage=header)])

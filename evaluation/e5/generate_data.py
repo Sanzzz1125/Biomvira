@@ -1,6 +1,6 @@
 """Build the training and test data for the multilingual-e5-small fine-tune (run once; output in evaluation/e5/data).
 
-Items come from NutriLens's own data: 276 dishes, 165 shopping ingredients, 187 recommended foods and the assistant's
+Items come from Biomvira's own data: 276 dishes, 165 shopping ingredients, 187 recommended foods and the assistant's
 FAQ. A language model (Groq, offline, our static data only) writes the other ways people type them: romanised Hindi
 and Telugu, Hinglish, common misspellings, and the questions in Hindi, Telugu and Hinglish. 30% of the items are held
 out as the test set: the model never sees them, or any phrase for them, in training.
@@ -44,7 +44,7 @@ def ask(prompt: str, model: str = MODEL) -> dict:
 
 
 def items() -> list[dict]:
-    """Every item with the names NutriLens already knows (these become the search index)."""
+    """Every item with the names Biomvira already knows (these become the search index)."""
     from app.engine.recommender import FOODS_DATABASE
     from app.plan.catalog import catalog
     from app.plan.ingredient_local import NAMES

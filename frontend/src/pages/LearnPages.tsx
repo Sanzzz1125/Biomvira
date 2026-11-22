@@ -18,7 +18,7 @@ const SOURCES = [
 
 export const SciencePage: React.FC = () => (
   <div className="mx-auto max-w-4xl space-y-8">
-    <PageHeader eyebrow="Science" title="How NutriLens works"
+    <PageHeader eyebrow="Science" title="How Biomvira works"
       description="Every number comes from a published source, and every step can be checked." />
     <Card className="space-y-4 p-6 text-[15px] leading-relaxed text-slate-700 sm:p-8">
       <h2 className="text-lg font-semibold text-slate-900">Reading your report</h2>
@@ -28,7 +28,7 @@ export const SciencePage: React.FC = () => (
       <h2 className="text-lg font-semibold text-slate-900">Building your plan</h2>
       <p>Your energy need comes from your age, sex, weight and activity (the ICMR-NIN 2020 method), adjusted for your BMI, and protein from 0.83 g per kg of body weight. A mathematical optimiser then chooses dishes and servings so that each day meets your calories within 5% and your protein, and aims for the nutrients your report shows as low, while keeping salt and fat within limits, sweets to a few times a week, and following how Indian meals are actually eaten.</p>
       <h2 className="text-lg font-semibold text-slate-900">What we do not do</h2>
-      <p>NutriLens does not diagnose or treat. It does not replace your doctor or dietitian, and plans are for adults. Vitamin D in fish varies a lot, so plans count it at half.</p>
+      <p>Biomvira does not diagnose or treat. It does not replace your doctor or dietitian, and plans are for adults. Vitamin D in fish varies a lot, so plans count it at half.</p>
     </Card>
     <section>
       <h2 className="text-lg font-semibold text-slate-900">Sources</h2>
@@ -45,13 +45,13 @@ export const SciencePage: React.FC = () => (
 
 export const FAQS = [
   ['Is my report kept private?', 'Names, phone numbers and IDs are removed before a report is read. As a guest nothing is saved; with an account your reports are kept in your History, which only you can see, and you can delete them at any time.'],
-  ['Which tests can NutriLens read?', 'Over 60 common blood tests, including haemoglobin, ferritin, vitamin D, vitamin B12, folate, HbA1c, glucose, cholesterol, thyroid, kidney and liver tests.'],
+  ['Which tests can Biomvira read?', 'Over 60 common blood tests, including haemoglobin, ferritin, vitamin D, vitamin B12, folate, HbA1c, glucose, cholesterol, thyroid, kidney and liver tests.'],
   ['How are my calories worked out?', 'From your age, sex, weight and activity, the way ICMR-NIN 2020 does it: the FAO/WHO/UNU equations, about 10% lower for Indian adults, times your activity level. If your BMI is 25 or more, the plan aims about 15% lower (at most 500 kcal) for gentle weight loss; under 18.5, about 10% higher.'],
   ['Why three plan options?', 'Familiar keeps dishes from your region and the foods you picked, Most nutritious packs in the most nutrients, and Regional uses only dishes cooked in your state. Pick the one that suits you, then make a 7-day plan from it.'],
   ['Can I change a dish I do not like?', 'Yes. Press Swap next to any dish in your 7-day plan; the rest of the day stays the same and the numbers are rebalanced.'],
   ['I have an allergy that is not in the list.', 'Type it in the highlighted box on the profile page. Every dish that contains it is left out of your plans.'],
   ['Does it work for vegetarians and vegans?', 'Yes. Plans respect vegetarian, vegan, egg and non-vegetarian diets, and non-vegetarians can choose which meats they eat.'],
-  ['Should I stop my medicines or supplements?', 'No. NutriLens gives food guidance only. Talk to your doctor before changing any treatment, especially if a result is very low or very high.'],
+  ['Should I stop my medicines or supplements?', 'No. Biomvira gives food guidance only. Talk to your doctor before changing any treatment, especially if a result is very low or very high.'],
 ];
 
 export const FaqPage: React.FC = () => (
@@ -99,7 +99,7 @@ export const ARTICLES: Article[] = [
     body: [
       'Eating about 300-500 kcal less than you use each day leads to a steady loss of around a quarter to half a kilogram a week, which is easier to keep off than fast loss.',
       'Keep protein up (dal, curd, eggs, paneer, fish, chicken) so you stay full and keep muscle. Fill up on vegetables and salads, and reduce portions of rice, rotis, oil and sweets rather than cutting whole meals.',
-      'Walking 30 minutes most days and sleeping well help as much as the diet. If your BMI is 25 or more, NutriLens plans aim about 15% below your need, never more than 500 kcal.',
+      'Walking 30 minutes most days and sleeping well help as much as the diet. If your BMI is 25 or more, Biomvira plans aim about 15% below your need, never more than 500 kcal.',
     ],
     source: 'ICMR-NIN Dietary Guidelines for Indians, 2024; WHO guidance on healthy weight.',
   },
@@ -109,7 +109,7 @@ export const ARTICLES: Article[] = [
     body: [
       'Each result has a reference range: the values seen in most healthy people. A result just outside it is common and often not serious; a result far outside it needs a doctor’s attention.',
       'Some results are linked to food: low haemoglobin or ferritin to iron, low B12 to milk, curd, eggs and meat, low vitamin D to sunlight and fortified milk. Others, like kidney or thyroid tests, need medical advice rather than diet changes.',
-      'Ranges differ slightly between labs and by age and sex, so NutriLens uses the range printed on your report when there is one.',
+      'Ranges differ slightly between labs and by age and sex, so Biomvira uses the range printed on your report when there is one.',
     ],
     source: 'Clinical reference intervals as printed by accredited laboratories.',
   },

@@ -97,7 +97,7 @@ const STRINGS = {
   allergyRemovesOne: { en: '1 dish left out', hi: '1 व्यंजन हटाया गया', te: '1 వంటకం తీసేశాం' },
   allergyNoDish: { en: 'None of our dishes contain it', hi: 'हमारे किसी व्यंजन में यह नहीं है', te: 'మా ఏ వంటకంలోనూ ఇది లేదు' },
   allergyUnknown: { en: 'Not recognised. Check the spelling or try another name', hi: 'पहचाना नहीं गया। वर्तनी जाँचें या दूसरा नाम लिखें', te: 'గుర్తించలేదు. స్పెల్లింగ్ చూడండి లేదా వేరే పేరు రాయండి' },
-  olderReportTitle: { en: 'Saved with an earlier version of NutriLens', hi: 'NutriLens के पुराने संस्करण में सहेजी गई', te: 'NutriLens పాత వెర్షన్‌లో సేవ్ చేసినది' },
+  olderReportTitle: { en: 'Saved with an earlier version of Biomvira', hi: 'Biomvira के पुराने संस्करण में सहेजी गई', te: 'Biomvira పాత వెర్షన్‌లో సేవ్ చేసినది' },
   olderReportText: {
     en: 'This report did not keep allergies you typed in, your activity or your height and weight. If you typed any allergies, analyse the report again so your diet plan leaves them out.',
     hi: 'इस रिपोर्ट में आपके लिखे हुए एलर्जी वाले खाने, आपकी गतिविधि और लंबाई-वज़न सहेजे नहीं गए थे। अगर आपने कोई एलर्जी लिखी थी, तो रिपोर्ट दोबारा जाँचें ताकि डाइट प्लान में वे शामिल न हों।',

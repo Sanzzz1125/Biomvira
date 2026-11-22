@@ -41,7 +41,7 @@ type ApiInit = Omit<RequestInit, 'body'> & { json?: unknown; body?: BodyInit };
 // shown as errors. Genuine application errors (500 and below) are never retried.
 const WAKE_LIMIT_MS = 90_000;
 const GATEWAY = new Set([502, 503, 504]);
-export const WAKE_EVENT = 'nutrilens:server-waking';
+export const WAKE_EVENT = 'biomvira:server-waking';
 
 function announceWaking(waking: boolean) {
   if (typeof window !== 'undefined') window.dispatchEvent(new CustomEvent(WAKE_EVENT, { detail: waking }));

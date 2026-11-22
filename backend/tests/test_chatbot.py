@@ -1,4 +1,4 @@
-"""Tests for the NutriLens assistant.
+"""Tests for the Biomvira assistant.
 
 EVALUATION holds questions phrased the way real users ask them (short, informal, misspelt, Hinglish), written
 separately from the FAQ phrasings, with the topic each should be answered from. The accuracy test reports the share
@@ -55,11 +55,11 @@ EVALUATION = [
     ("is paneer good for protein", "food:"), ("is milk good for bones", "food:"), ("is egg veg", "food:"),
     ("benefits of moringa", "food:"), ("is spinach good for iron", "food:"), ("amla benefits", "food:"),
     ("is curd good for b12", "food:"), ("is bajra good for iron", "food:"),
-    # Using NutriLens, privacy and general nutrition
+    # Using Biomvira, privacy and general nutrition
     ("how do i upload my report", "faq:upload"), ("how to use this site", "faq:upload"), ("can i upload a photo", "faq:file_types"),
     ("what is the max file size", "faq:file_types"), ("does it work for apollo reports", "faq:labs"),
     ("my test is missing from results", "faq:not_read"), ("why do i have to review", "faq:review_step"),
-    ("is my data safe", "faq:privacy"), ("do you store my report", "faq:privacy"), ("is nutrilens free", "faq:is_free"),
+    ("is my data safe", "faq:privacy"), ("do you store my report", "faq:privacy"), ("is biomvira free", "faq:is_free"),
     ("do i need to sign up", "faq:account"), ("forgot password", "faq:password"), ("how to delete my account", "faq:delete_account"),
     ("where can i see old reports", "faq:history"), ("download pdf", "faq:pdf"), ("what is health score", "faq:health_score"),
     ("what does borderline mean", "faq:statuses"), ("which tests do you support", "faq:supported_tests"),
@@ -220,7 +220,7 @@ def test_deleting_a_report_or_chat_removes_its_chats(signed_in):
     client = signed_in("meena@example.com")
     report_id = _report(client)
     linked = client.post("/api/v1/chat", json={"message": "summarise my results", "report_id": report_id}).json()
-    general = client.post("/api/v1/chat", json={"message": "is nutrilens free"}).json()
+    general = client.post("/api/v1/chat", json={"message": "is biomvira free"}).json()
     assert client.delete(f"/api/v1/history/{report_id}").status_code == 204
     ids = [c["id"] for c in client.get("/api/v1/chat/conversations").json()]
     assert ids == [general["conversation_id"]] and linked["conversation_id"] not in ids

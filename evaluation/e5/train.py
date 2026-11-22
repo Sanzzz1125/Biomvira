@@ -1,4 +1,4 @@
-"""Fine-tune multilingual-e5-small on NutriLens names and questions, and measure it on held-out items.
+"""Fine-tune multilingual-e5-small on Biomvira names and questions, and measure it on held-out items.
 
 Accuracy is top-1: the right dish/ingredient/food (or FAQ entry) must be the closest of ALL known names, using only
 phrases for items that were held out of training. Compared with the word matching used before and with the base model.

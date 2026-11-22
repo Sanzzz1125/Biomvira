@@ -67,15 +67,15 @@ TEMPLATES = {
         "h_roadmap": "### Re-evaluation Roadmap",
         "roadmap": ("Dietary changes usually need **8 to 12 weeks** of consistent adherence before blood values change. "
                     "A follow-up laboratory test after about 10–12 weeks, or sooner if your doctor advises, shows "
-                    "whether the changes are working.\n\n*Disclaimer: NutriLens is an educational nutrition-support "
+                    "whether the changes are working.\n\n*Disclaimer: Biomvira is an educational nutrition-support "
                     "platform grounded in ICMR-NIN reference data. It does not provide medical diagnoses, treatment plans, "
                     "or clinical pharmaceutical prescriptions. Always seek the advice of a qualified physician or certified "
                     "clinical dietitian regarding any health condition.*"),
         "times": ("{name} is more than {factor} times the upper limit of its reference range. Please see a doctor; diet "
                   "changes alone are not enough."),
-        "range_below": ("{name} is below its reference range. NutriLens does not give food advice for this test; please "
+        "range_below": ("{name} is below its reference range. Biomvira does not give food advice for this test; please "
                         "review it with your doctor."),
-        "range_above": ("{name} is above its reference range. NutriLens does not give food advice for this test; please "
+        "range_above": ("{name} is above its reference range. Biomvira does not give food advice for this test; please "
                         "review it with your doctor."),
     },
     "hi": {
@@ -104,13 +104,13 @@ TEMPLATES = {
                   "काफ़ी नहीं है। {reasons} जाँच और इलाज के लिए कृपया योग्य डॉक्टर से समय लें।"),
         "h_roadmap": "### दोबारा जाँच कब कराएँ",
         "roadmap": ("ख़ून के मान बदलने में आमतौर पर लगातार **8 से 12 हफ़्ते** लगते हैं। लगभग 10–12 हफ़्ते बाद, या डॉक्टर "
-                    "की सलाह पर पहले, दोबारा जाँच से पता चलता है कि बदलाव काम कर रहे हैं या नहीं।\n\n*अस्वीकरण: NutriLens "
+                    "की सलाह पर पहले, दोबारा जाँच से पता चलता है कि बदलाव काम कर रहे हैं या नहीं।\n\n*अस्वीकरण: Biomvira "
                     "ICMR-NIN के आँकड़ों पर आधारित एक शैक्षिक पोषण सहायता मंच है। यह बीमारी की पहचान, इलाज या दवा नहीं "
                     "देता। किसी भी स्वास्थ्य समस्या के लिए हमेशा योग्य डॉक्टर या प्रमाणित आहार विशेषज्ञ से सलाह लें।*"),
         "times": ("{name} अपनी संदर्भ सीमा की ऊपरी हद से {factor} गुना से अधिक है। कृपया डॉक्टर से मिलें; केवल भोजन बदलना "
                   "काफ़ी नहीं है।"),
-        "range_below": "{name} अपनी संदर्भ सीमा से कम है। NutriLens इस जाँच के लिए भोजन सलाह नहीं देता; कृपया डॉक्टर को दिखाएँ।",
-        "range_above": "{name} अपनी संदर्भ सीमा से अधिक है। NutriLens इस जाँच के लिए भोजन सलाह नहीं देता; कृपया डॉक्टर को दिखाएँ।",
+        "range_below": "{name} अपनी संदर्भ सीमा से कम है। Biomvira इस जाँच के लिए भोजन सलाह नहीं देता; कृपया डॉक्टर को दिखाएँ।",
+        "range_above": "{name} अपनी संदर्भ सीमा से अधिक है। Biomvira इस जाँच के लिए भोजन सलाह नहीं देता; कृपया डॉक्टर को दिखाएँ।",
     },
     "te": {
         "status": {"low": "తక్కువ", "borderline": "సరిహద్దులో", "high": "ఎక్కువ", "normal": "సాధారణం"},
@@ -140,14 +140,14 @@ TEMPLATES = {
         "h_roadmap": "### మళ్లీ ఎప్పుడు పరీక్ష చేయించాలి",
         "roadmap": ("రక్త విలువలు మారడానికి సాధారణంగా నిరంతరంగా **8 నుండి 12 వారాలు** పడుతుంది. సుమారు 10–12 వారాల "
                     "తర్వాత, లేదా డాక్టర్ సలహా మేరకు ముందుగానే, మళ్లీ పరీక్ష చేయిస్తే మార్పులు పనిచేస్తున్నాయో తెలుస్తుంది.\n\n"
-                    "*గమనిక: NutriLens ICMR-NIN సమాచారం ఆధారంగా పనిచేసే విద్యాపరమైన పోషణ సహాయ వేదిక. ఇది వ్యాధి నిర్ధారణ, "
+                    "*గమనిక: Biomvira ICMR-NIN సమాచారం ఆధారంగా పనిచేసే విద్యాపరమైన పోషణ సహాయ వేదిక. ఇది వ్యాధి నిర్ధారణ, "
                     "చికిత్స లేదా మందులు ఇవ్వదు. ఏ ఆరోగ్య సమస్యకైనా ఎప్పుడూ అర్హత ఉన్న డాక్టర్ లేదా ధృవీకృత పోషకాహార నిపుణుల "
                     "సలహా తీసుకోండి.*"),
         "times": ("{name} దాని సూచన పరిధి పై పరిమితి కంటే {factor} రెట్లు ఎక్కువ ఉంది. దయచేసి డాక్టర్‌ను కలవండి; ఆహార "
                   "మార్పులు మాత్రమే సరిపోవు."),
-        "range_below": ("{name} దాని సూచన పరిధి కంటే తక్కువ ఉంది. ఈ పరీక్షకు NutriLens ఆహార సలహా ఇవ్వదు; దయచేసి డాక్టర్‌కు "
+        "range_below": ("{name} దాని సూచన పరిధి కంటే తక్కువ ఉంది. ఈ పరీక్షకు Biomvira ఆహార సలహా ఇవ్వదు; దయచేసి డాక్టర్‌కు "
                         "చూపించండి."),
-        "range_above": ("{name} దాని సూచన పరిధి కంటే ఎక్కువ ఉంది. ఈ పరీక్షకు NutriLens ఆహార సలహా ఇవ్వదు; దయచేసి డాక్టర్‌కు "
+        "range_above": ("{name} దాని సూచన పరిధి కంటే ఎక్కువ ఉంది. ఈ పరీక్షకు Biomvira ఆహార సలహా ఇవ్వదు; దయచేసి డాక్టర్‌కు "
                         "చూపించండి."),
     },
 }
@@ -159,12 +159,15 @@ def T(lang: str) -> dict:
 
 _EN = TEMPLATES["en"]
 _TIMES = re.compile(r"^(?P<name>.+) is more than (?P<factor>[\d.]+) times the upper limit of its reference range\.")
-_RANGE = re.compile(r"^(?P<name>.+) is (?P<where>below|above) its reference range\. NutriLens does not give food advice")
+_RANGE = re.compile(r"^(?P<name>.+) is (?P<where>below|above) its reference range\. Biomvira does not give food advice")
 
 
 def warning(text, lang: str):
     """A doctor warning in the chosen language: a fixed message, or one of the two templates with the test name."""
-    if not text or lang == "en":
+    if not text:
+        return text
+    text = text.replace("NutriLens", "Biomvira")
+    if lang == "en":
         return text
     if text in table(lang):
         return table(lang)[text]
@@ -185,7 +188,15 @@ def _amount(text: str, lang: str) -> str:
 def localize_analysis(data: dict, lang: str) -> dict:
     """A copy of a FullAnalysisResponse dict with every text in the chosen language."""
     if lang not in ("hi", "te"):
-        return data
+        return {
+            **data,
+            "grounded_explanation": data.get("grounded_explanation", "").replace("NutriLens", "Biomvira"),
+            "consult_reasons": [warning(x, "en") for x in data.get("consult_reasons", [])],
+            "marker_analyses": [
+                {**m, "clinical_warning": warning(m.get("clinical_warning"), "en")}
+                for m in data.get("marker_analyses", [])
+            ],
+        }
     from app.engine.explanation_generator import generate_grounded_explanation
     from app.models.schemas import FullAnalysisResponse
 

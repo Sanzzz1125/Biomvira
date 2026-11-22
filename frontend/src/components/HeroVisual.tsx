@@ -10,7 +10,7 @@ const CHIPS = [
 const MEALS = [['B', 'Pesarattu'], ['L', 'Sajja rotte'], ['S', 'Roasted corn'], ['D', 'Mudda pappu']];
 const LEAVES = [{ x: 70, d: 0, s: 1 }, { x: 150, d: 1.6, s: 0.8 }, { x: 300, d: 0.8, s: 1.1 }, { x: 390, d: 2.4, s: 0.9 }, { x: 230, d: 3.2, s: 0.7 }];
 
-/** Hero animation: a report flows in, results and foods circle the NutriLens leaf, a day of meals comes out. */
+/** Hero animation: a report flows in, results and foods circle the Biomvira leaf, a day of meals comes out. */
 export const HeroVisual: React.FC = () => {
   const still = typeof window !== 'undefined' && !!window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   const [step, setStep] = React.useState(still ? 3 : 0);
@@ -80,11 +80,7 @@ export const HeroVisual: React.FC = () => {
           <circle r="54" fill="#167c64" opacity="0.12">
             {!still && <animate attributeName="r" values="48;58;48" dur="2.4s" repeatCount="indefinite" />}
           </circle>
-          <circle r="42" fill="#167c64" />
-          <g transform="rotate(40)" stroke="#fff" strokeWidth="3" fill="none" strokeLinecap="round">
-            <ellipse rx="19" ry="9.5" />
-            <line x1="-24" y1="0" x2="11" y2="0" />
-          </g>
+          <image href="/biomvira-mark.svg" x="-36" y="-36" width="72" height="72" />
         </g>
 
         <g transform="translate(348 132)">

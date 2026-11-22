@@ -66,7 +66,7 @@ const emptyConversation = (reportId: string | null = null): Conversation => ({
 const GENERAL_STARTERS = [
   { icon: Activity, title: 'Understand a result', ask: 'What does high TSH mean?' },
   { icon: Apple, title: 'Find foods', ask: 'Iron foods for vegetarians' },
-  { icon: BookOpen, title: 'Use NutriLens', ask: 'How do I get my diet plan?' },
+  { icon: BookOpen, title: 'Use Biomvira', ask: 'How do I get my diet plan?' },
   { icon: ShieldCheck, title: 'Privacy & safety', ask: 'Is my report stored?' },
 ];
 const RESULT_STARTERS = [
@@ -365,7 +365,7 @@ export const ChatAssistant: React.FC = () => {
           text:
             status === 429
               ? 'You are sending messages very quickly. Please wait a moment.'
-              : "Couldn't reach NutriLens. Please check your connection.",
+              : "Couldn't reach Biomvira. Please check your connection.",
           retry: text,
         });
       }
@@ -508,14 +508,14 @@ export const ChatAssistant: React.FC = () => {
           )}
         </span>
         {/* Phones: icon only, so it never covers the page's own buttons. */}
-        <span className="sr-only sm:not-sr-only">{open ? 'Close' : 'Ask NutriLens'}</span>
+        <span className="sr-only sm:not-sr-only">{open ? 'Close' : 'Ask Biomvira'}</span>
       </button>
 
       {open && (
         <section
           id="nl-assistant"
           role="dialog"
-          aria-label="NutriLens assistant"
+          aria-label="Biomvira assistant"
           onKeyDown={(e) => e.key === 'Escape' && close()}
           className="fixed inset-0 z-50 flex animate-fade-up flex-col bg-white sm:inset-auto sm:bottom-24 sm:right-5 sm:h-[min(720px,calc(100vh-7.5rem))] sm:w-[440px] sm:overflow-hidden sm:rounded-[20px] sm:border sm:border-slate-200 sm:shadow-[0_24px_48px_-12px_rgba(15,23,42,0.18),0_4px_10px_rgba(15,23,42,0.05)]"
         >
@@ -630,10 +630,10 @@ export const ChatAssistant: React.FC = () => {
                   <MessageCircleQuestion className="h-[18px] w-[18px]" aria-hidden />
                 </span>
                 <div className="min-w-0 flex-1">
-                  <h2 className="text-[15px] font-semibold leading-tight text-slate-900">NutriLens Assistant</h2>
+                  <h2 className="text-[15px] font-semibold leading-tight text-slate-900">Biomvira Assistant</h2>
                   <p className="mt-0.5 flex items-center gap-1.5 truncate text-xs text-slate-500">
                     <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" aria-hidden />
-                    {linkedToPage ? 'Using the results on this page' : 'Tests, foods and using NutriLens'}
+                    {linkedToPage ? 'Using the results on this page' : 'Tests, foods and using Biomvira'}
                   </p>
                 </div>
                 {conv.messages.length > 0 && (
@@ -695,8 +695,8 @@ export const ChatAssistant: React.FC = () => {
                       </h3>
                       <p className="max-w-[330px] text-[13.5px] leading-relaxed text-slate-600">
                         {context
-                          ? 'Ask about the results on this page, your food plan, or anything about NutriLens.'
-                          : 'Ask about your blood test results, Indian foods for a nutrient, or how to use NutriLens.'}
+                          ? 'Ask about the results on this page, your food plan, or anything about Biomvira.'
+                          : 'Ask about your blood test results, Indian foods for a nutrient, or how to use Biomvira.'}
                       </p>
                     </div>
                     <div className="space-y-2.5">
@@ -884,7 +884,7 @@ export const ChatAssistant: React.FC = () => {
                 <p className="text-center text-[11.5px] text-slate-500">
                   {input.length > MAX_LENGTH - 80
                     ? `${MAX_LENGTH - input.length} characters left`
-                    : 'General guidance from NutriLens, not medical advice.'}
+                    : 'General guidance from Biomvira, not medical advice.'}
                 </p>
               </form>
             </>

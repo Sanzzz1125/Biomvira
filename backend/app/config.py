@@ -1,5 +1,5 @@
 """
-NutriLens Application Configuration
+Biomvira Application Configuration
 Loads settings from environment variables or a local .env file.
 """
 import os
@@ -10,7 +10,7 @@ BACKEND_DIR = os.path.dirname(os.path.dirname(__file__))
 
 class Settings(BaseSettings):
     # --- Application ---
-    app_name: str = "NutriLens"
+    app_name: str = "Biomvira"
     app_version: str = "1.0.0"
     debug: bool = False
 
