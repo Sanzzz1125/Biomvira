@@ -48,8 +48,9 @@ const ScrollToTop: React.FC = () => {
   return null;
 };
 
-// One official address per page for search engines, whichever domain served it (biomvira.vercel.app is canonical).
-const SITE_URL = 'https://biomvira.vercel.app';
+// One official address per page for search engines, whichever domain served it. biomvira.live redirects to
+// www.biomvira.live, so that is the canonical host; biomvira.vercel.app keeps working as a backup.
+const SITE_URL = 'https://www.biomvira.live';
 const CanonicalLink: React.FC = () => {
   const { pathname } = useLocation();
   useEffect(() => {

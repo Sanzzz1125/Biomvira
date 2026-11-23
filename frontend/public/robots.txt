@@ -9,4 +9,4 @@ Disallow: /register
 Disallow: /invite/
 Disallow: /reset-password/
 
-Sitemap: https://biomvira.vercel.app/sitemap.xml
+Sitemap: https://www.biomvira.live/sitemap.xml

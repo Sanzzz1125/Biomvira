@@ -7,7 +7,7 @@
 Upload a lab report. Biomvira reads it, explains every result, and plans a day or a week of Indian home meals<br>
 that fit your needs, diet, allergies, region and language.
 
-[**Live demo**](https://nutrilens-sand.vercel.app/) · [How it works](#how-it-works) · [Results](#results) · [Getting started](#getting-started) · [API](#api-overview)
+[**Live demo: biomvira.live**](https://www.biomvira.live/) ([backup link](https://biomvira.vercel.app/)) · [How it works](#how-it-works) · [Results](#results) · [Getting started](#getting-started) · [API](#api-overview)
 
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
