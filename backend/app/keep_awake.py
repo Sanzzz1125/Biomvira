@@ -1,10 +1,10 @@
-"""Keep the free Render instance awake during the day.
+"""Keep the free Render instance awake from early morning until midnight (India time).
 
 Render's free plan stops an instance after 15 minutes without incoming requests, and the first request after that
 waits up to a minute. While the instance is running on Render (RENDER_EXTERNAL_URL is set by Render itself), it calls
-its own public health endpoint every 10 minutes between 6:30 AM and 11 PM India time. The request goes through
-Render's public proxy, so it counts as traffic. At night no calls are made and the instance may sleep; the scheduled
-GitHub job wakes it again in the morning.
+its own public health endpoint every 10 minutes from 4:30 AM until midnight India time. The request goes through
+Render's public proxy, so it counts as traffic. After midnight no calls are made and the instance sleeps; two daily
+Vercel cron jobs (frontend/vercel.json, 4:30-5:29 AM and 5:30-6:29 AM IST) wake it again, so it is awake by 6 AM.
 """
 import asyncio
 import os
@@ -13,13 +13,13 @@ from datetime import datetime, time, timedelta, timezone
 import httpx
 
 IST = timezone(timedelta(hours=5, minutes=30))
-DAY_START, DAY_END = time(6, 30), time(23, 0)
+DAY_START = time(4, 30)  # the first Vercel wake-up can arrive at 4:30 AM IST
 INTERVAL_SECONDS = 600
 
 
 def is_daytime(moment: datetime) -> bool:
     local = moment.astimezone(IST).time()
-    return DAY_START <= local < DAY_END
+    return local >= DAY_START  # until midnight
 
 
 async def keep_awake(url: str, interval: float = INTERVAL_SECONDS) -> None:

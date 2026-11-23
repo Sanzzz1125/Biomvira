@@ -5,11 +5,13 @@ from app import keep_awake
 
 
 def test_daytime_window_in_india_time():
-    # 6:30 AM IST is 01:00 UTC; 11 PM IST is 17:30 UTC.
-    assert not keep_awake.is_daytime(datetime(2026, 11, 16, 0, 59, tzinfo=timezone.utc))
-    assert keep_awake.is_daytime(datetime(2026, 11, 16, 1, 0, tzinfo=timezone.utc))
-    assert keep_awake.is_daytime(datetime(2026, 11, 16, 17, 29, tzinfo=timezone.utc))
-    assert not keep_awake.is_daytime(datetime(2026, 11, 16, 17, 30, tzinfo=timezone.utc))
+    # 4:30 AM IST is 23:00 UTC the day before; midnight IST is 18:30 UTC.
+    assert not keep_awake.is_daytime(datetime(2026, 11, 15, 22, 59, tzinfo=timezone.utc))   # 4:29 AM
+    assert keep_awake.is_daytime(datetime(2026, 11, 15, 23, 0, tzinfo=timezone.utc))        # 4:30 AM
+    assert keep_awake.is_daytime(datetime(2026, 11, 16, 0, 30, tzinfo=timezone.utc))        # 6:00 AM
+    assert keep_awake.is_daytime(datetime(2026, 11, 16, 18, 29, tzinfo=timezone.utc))       # 11:59 PM
+    assert not keep_awake.is_daytime(datetime(2026, 11, 16, 18, 30, tzinfo=timezone.utc))   # midnight
+    assert not keep_awake.is_daytime(datetime(2026, 11, 16, 21, 13, tzinfo=timezone.utc))   # 2:43 AM
 
 
 def test_not_started_outside_render(monkeypatch):

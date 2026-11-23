@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /account
+Disallow: /history
+Disallow: /login
+Disallow: /register
+Disallow: /invite/
+Disallow: /reset-password/
+
+Sitemap: https://biomvira.vercel.app/sitemap.xml

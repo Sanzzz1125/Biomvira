@@ -1,5 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "crons": [
+    { "path": "/api/wake?run=first", "schedule": "0 23 * * *" },
+    { "path": "/api/wake?run=backup", "schedule": "0 0 * * *" }
+  ],
+  "functions": {
+    "api/wake.js": { "maxDuration": 60 }
+  },
   "rewrites": [
     { "source": "/api/:path*", "destination": "https://biomvira-api.onrender.com/api/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }

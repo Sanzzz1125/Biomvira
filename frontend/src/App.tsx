@@ -48,6 +48,22 @@ const ScrollToTop: React.FC = () => {
   return null;
 };
 
+// One official address per page for search engines, whichever domain served it (biomvira.vercel.app is canonical).
+const SITE_URL = 'https://biomvira.vercel.app';
+const CanonicalLink: React.FC = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      document.head.appendChild(link);
+    }
+    link.href = SITE_URL + (pathname === '/' ? '/' : pathname.replace(/\/+$/, ''));
+  }, [pathname]);
+  return null;
+};
+
 const SiteLayout: React.FC = () => {
   const [showDisclaimer, setShowDisclaimer] = useState(false);
   return (
@@ -94,6 +110,7 @@ export const App: React.FC = () => {
       <ToastProvider>
         <AuthProvider onSignedOut={analyzer.reset}>
           <ScrollToTop />
+          <CanonicalLink />
           <Routes>
             <Route element={<SiteLayout />}>
               <Route index element={<HomePage />} />
