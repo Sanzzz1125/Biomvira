@@ -26,6 +26,8 @@ def usable(text):
 
 
 OCR_SIDE = 2600  # long side of the page given to Tesseract: big photos shrink, small ones grow
+PDF_MARGIN_SECONDS = 20      # the worker process starts up and parses results inside the same time limit
+NATIVE_RESERVE_SECONDS = 10  # kept free after OCR so the text layer of the remaining pages is always read
 # A lone ":" that OCR read as "2", "3", "i", "L" or "+" between a test name and its value ("Total RBC Count 2 3.91",
 # "Basophils L 0 %"). Not touched when the next number starts a range ("Eosinophils 3 1 - 6"), so a real single-digit
 # result is never removed.
@@ -162,7 +164,10 @@ def ocr_image(image, deadline, angles=(0, 90, 270, 180)):
 
 
 def extract_text_and_tables_from_pdf(file_bytes: bytes) -> str:
-    deadline = time.monotonic() + settings.processing_timeout_seconds
+    # Finish well inside the worker's own time limit (it also has to start up), and stop OCR earlier still: reading
+    # the text layer of the remaining pages is fast, so OCR on one page must never cost the whole report.
+    deadline = time.monotonic() + settings.processing_timeout_seconds - PDF_MARGIN_SECONDS
+    ocr_deadline = deadline - NATIVE_RESERVE_SECONDS
     chunks = []
     failed = None  # OCR error from a picture-only page, raised only if no page was readable
     try:
@@ -193,15 +198,24 @@ def extract_text_and_tables_from_pdf(file_bytes: bytes) -> str:
                 # analyser printout) can hold results that the text layer is missing.
                 covered = sum(max(0, min(i['x1'], page.width) - max(i['x0'], 0)) * max(0, min(i['bottom'], page.height) - max(i['top'], 0))
                               for i in page.images) / max(page.width * page.height, 1)
-                if blank or (covered >= 0.3 and (not usable(text) or missing)):
+                # A letterhead or background picture behind a page with no test on it (a signature or notes page) in a
+                # report whose earlier pages were readable holds no results; OCR there only costs time.
+                notes_page = not blank and not missing and not mentioned_keys(text) and any(usable(c) for c in chunks)
+                # A picture behind the whole page with readable text and several results on top is a letterhead
+                # background, not a scan: test names in its explanation paragraphs must not trigger OCR of the page.
+                background = covered >= 0.95 and usable(text) and len(extract_biomarkers_with_regex(text)) >= 3
+                if (blank or (covered >= 0.3 and (not usable(text) or missing))) and not notes_page and not background:
                     ocr_text = ''
-                    if page.width * page.height * (180 / 72) ** 2 > settings.max_image_pixels:
+                    if time.monotonic() > ocr_deadline:
+                        if blank:
+                            failed = ReportError('Report processing timed out. Try fewer pages or paste text.')
+                    elif page.width * page.height * (180 / 72) ** 2 > settings.max_image_pixels:
                         if blank:
                             failed = ReportError('PDF page exceeds safe rendering limits.')
                     else:
                         try:
                             # A PDF page is already upright, so only phone photos need the rotation trials.
-                            ocr_text = ocr_image(page.to_image(resolution=180).original, deadline, angles=(0,))
+                            ocr_text = ocr_image(page.to_image(resolution=180).original, ocr_deadline, angles=(0,))
                         except ReportError as exc:
                             if blank:
                                 failed = exc
