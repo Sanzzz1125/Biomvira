@@ -116,7 +116,7 @@ CONVERSION_FACTORS.update({
     "esr": {"canonical": "mm/hr", "conversions": {"mm/hr": 1.0}},
     "tsh": {"canonical": "µIU/mL", "conversions": {"uiu/ml": 1.0, "miu/l": 1.0, "uu/ml": 1.0, "mu/l": 1.0}},
     "t3": {"canonical": "ng/dL", "conversions": {"ng/dl": 1.0, "ng/ml": 100.0, "nmol/l": 65.1}},
-    "t4": {"canonical": "µg/dL", "conversions": {"ug/dl": 1.0, "mcg/dl": 1.0, "nmol/l": 1.0 / 12.87}},
+    "t4": {"canonical": "µg/dL", "conversions": {"ug/dl": 1.0, "mcg/dl": 1.0, "nmol/l": 1.0 / 12.87, "ng/ml": 0.1}},
     "ft3": {"canonical": "pg/mL", "conversions": {"pg/ml": 1.0, "pmol/l": 1.0 / 1.536}},
     "ft4": {"canonical": "ng/dL", "conversions": {"ng/dl": 1.0, "pmol/l": 1.0 / 12.87}},
     "sodium": {"canonical": "mmol/L", "conversions": MMOL},

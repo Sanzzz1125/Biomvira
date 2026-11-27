@@ -18,7 +18,11 @@ UNIT = re.compile(
     r'|\b(?:gms?|mg|g)\s?%|(?<![a-z%])%', re.I)
 # Rows that share a name with a supported test but measure something else (platelet distribution width, RDW-SD, ...).
 IGNORE_ROW = re.compile(r'\b(?:pdw|platelet distribution width|plateletcrit|pct|p-?lcr|p-?lcc|platelet large cell'
-                        r'|rdw[\s-]*sd|n\.?rbc|nucleated|immature|uibc|unsaturated iron)\b', re.I)
+                        r'|rdw[\s-]*sd|n\.?rbc|nucleated|immature|uibc|unsaturated iron'
+                        # Derived or different measures that contain a supported test's name: corrected or ionised
+                        # calcium, non-HDL cholesterol, and tumour markers whose short name "CA" means calcium.
+                        r'|corrected\s+calcium|ioni[sz]ed\s+calcium|non[\s-]*hdl|ca[\s-]*(?:19[\s-]*9|125|15[\s-]*3|27[\s-]*29|72[\s-]*4))\b',
+                        re.I)
 METHOD_LINE = re.compile(r'[*\s]*method\s*[:.-]', re.I)
 # Ranges printed per sex or age group ("Male:3.5-7.2 Female:2.6-6.0", "12-18 years: 8.4-10.2") cannot be read as one
 # range without the patient's details, so the app's own sex-specific ranges are used instead.
@@ -89,6 +93,10 @@ def mentioned_keys(text):
     lines = [l.strip() for l in text.splitlines() if not l.startswith('[[')]
     keys = set()
     for i, line in enumerate(lines):
+        # Rows the matcher deliberately skips, and full sentences ("Only free T4 is biologically active."), are not
+        # unread results.
+        if RATIO_ROW.search(line) or IGNORE_ROW.search(line[:40]) or (line.endswith('.') and len(line.split()) >= 5):
+            continue
         for key, match in aliases(line):
             if match.start() > 30:
                 continue
@@ -203,6 +211,10 @@ def extract_biomarkers_with_regex(text):
         if variant and unit.strip() != '%':
             try:
                 convert_to_canonical(variant, value, unit)
+                # Some labs print the differential percentages a second time under an absolute-count unit
+                # ("Neutrophils 57.5 x10^3/µL 40 - 75"); the same number as the percentage row is that copy.
+                if value > 0 and any(m.biomarker_key == key and m.detected_value == value for m in detected):
+                    continue
                 key = variant
             except ValueError:
                 pass
